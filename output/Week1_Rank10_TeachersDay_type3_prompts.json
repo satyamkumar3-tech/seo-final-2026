@@ -1,0 +1,34 @@
+{
+  "occasion": "teachers-day-2026",
+  "article": "Week1 Rank10 - teachers day wishes in english",
+  "wp_post_id": 30030,
+  "workflow": "Magnific Mystic realism with hyper-real theme anchor and negative prompt. People scenes use structure_ref null and exact SKU descriptions read from raw PNGs.",
+  "notes": "Aagarna Pendant: simple yellow gold circular open outline pendant set with small pave diamonds. Xarvithis Pendant: rose gold star/flower shaped outline pendant holding a cluster of small diamonds. Valeria Rose Pendant: delicate rose gold pendant shaped like a detailed rose bloom with diamond accents.",
+  "magnific": {
+    "model": "mystic",
+    "theme_anchor": "Ultra-realistic photography, macro-level detail, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light from the left, warm daylight color temperature, realistic soft shadows. Shot on high-end DSLR, shallow depth of field, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire subjects and jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, product shot on plain background, cropped faces, cut-off heads, cut-off jewellery, out of frame, readable text, logos"
+  },
+  "slots": {
+    "hero": {
+      "structure_ref": null,
+      "prompt": "Teachers' Day 2026 academic celebration hero. Product-focused 85mm photograph of a student presenting a gift to an elegant Indian teacher inside a brightly lit school classroom with books and blackboard in the background. In sharp focus in the foreground, the teacher is wearing a simple yellow gold circular open outline pendant set with small pave diamonds on a thin gold chain. Teacher's complete smiling face is softly visible waist-up with safe margins. Traditional saree clothing, warm soft natural lighting. The Aagarna Pendant and full heads remain entirely in the frame.",
+      "alt": "Happy Teachers Day wishes in english 2026 hero, teacher with The Aagarna Pendant"
+    },
+    "flatlay": {
+      "structure_ref": null,
+      "prompt": "Teachers' Day 2026 cozy classroom desk flatlay, top-down with a 100mm macro lens. A blank cream card with handwritten thank you note, elegant fountain pen, small pile of graded papers, a couple of apples, and a blank dark phone screen fill the warm wooden teacher's desk. At the centre, a delicate rose gold star/flower shaped outline pendant holding a cluster of small diamonds rests fully visible. The Xarvithis Pendant is the sharp-focus jewellery hero with physically accurate scale, facets, reflections, and safe margins. No readable text, no logos.",
+      "alt": "Teachers day message card flatlay with The Xarvithis Pendant"
+    },
+    "lifestyle": {
+      "structure_ref": null,
+      "prompt": "Teachers' Day 2026 celebration portrait of a happy Indian teacher standing next to a classroom bookshelf, shot at eye level on an 85mm lens. In the sharp foreground, the teacher's neck and chest are in sharp focus, showcasing a delicate rose gold pendant shaped like a detailed rose bloom with diamond accents on a thin chain. The teacher's complete, uncropped smiling face appears in the softer background. Soft window daylight, warm books and lights in the distant blur. The Valeria Rose Pendant and full head remain inside the frame with safe margins.",
+      "alt": "Best teachers day quotes 2026 lifestyle with The Valeria Rose Pendant"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/teachers-hero-2026.webp",
+    "flatlay": "output/magnific_generated/teachers-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/teachers-lifestyle-2026.webp"
+  }
+}

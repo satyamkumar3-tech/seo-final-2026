@@ -1,0 +1,190 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 105 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 105\n- Action: New\n- Primary keyword: stone jewellery set\n- Volume: 5400\n- KD: 17.0\n- Priority score: 5544.6429\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: stone-jewellery-set-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: stone set jewellery\n- Supplied competitor URL: https://www.caratlane.com/jewellery/jewellery+sets.html\n- Semrush page: stone jewellery set\n- Source execution note: Week8 new topic. Intent key=sig:set_stone; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank105.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank105.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & LIVE MEDIA VERIFICATION: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html`. It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 400px }`, `margin: 2rem auto 2.75rem`, `.bs-cf-card { width: min(380px, 75vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class=\"bs-cf\" id=\"bs-cf-<slug>\" data-interval=\"3200\" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards (`.bs-cf-card data-i=\"0\"` ... `\"5\"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` (with NO `<p>` wrappers). This 400px stage height and single-line ellipsis strictly prevents any bottom overlap or collision with the following heading. Follow immediately with a `<strong>Curated Design Highlights:</strong>` paragraph and bulleted list hyperlinked to each BlueStone PDP. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.\n- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+I have launched the search to locate the workspace and `HANDOFF.md` file. I will proceed as soon as the results are returned.
+STEP START: read_docs | time: 17:10:30 | elapsed: 00:00:30
+STEP DONE: read_docs | time: 17:10:52 | step duration: 00:00:22 | total elapsed: 00:00:52
+STEP START: verify_higgsfield | time: 17:10:55 | elapsed: 00:00:55
+STEP DONE: verify_higgsfield | time: 17:10:56 | step duration: 00:00:01 | total elapsed: 00:00:56
+STEP START: inspect_row | time: 17:10:58 | elapsed: 00:00:58
+STEP DONE: inspect_row | time: 17:11:30 | step duration: 00:00:32 | total elapsed: 00:01:30
+STEP START: duplicate_check | time: 17:11:32 | elapsed: 00:01:32
+STEP DONE: duplicate_check | time: 17:11:51 | step duration: 00:00:19 | total elapsed: 00:01:51
+STEP START: fact_check | time: 17:11:54 | elapsed: 00:01:54
+STEP DONE: fact_check | time: 17:12:23 | step duration: 00:00:29 | total elapsed: 00:02:23
+STEP START: keyword_map | time: 17:12:25 | elapsed: 00:02:25
+STEP DONE: structure_visuals | time: 17:12:38 | step duration: 00:00:08 | total elapsed: 00:02:38
+STEP START: draft | time: 17:12:40 | elapsed: 00:02:40
+STEP DONE: draft | time: 17:13:28 | step duration: 00:00:48 | total elapsed: 00:03:28
+STEP START: product_media | time: 17:13:30 | elapsed: 00:03:30
+I have initiated the conversion, WordPress upload, and HTTP 200 verification for the 6 carousel product images. I will proceed as soon as this finishes.
+STEP DONE: product_media | time: 17:15:43 | step duration: 00:02:13 | total elapsed: 00:05:43
+STEP START: publish_wordpress | time: 17:15:45 | elapsed: 00:05:45
+STEP DONE: publish_wordpress | time: 17:16:33 | step duration: 00:00:48 | total elapsed: 00:06:33
+STEP START: generate_type3 | time: 17:16:35 | elapsed: 00:06:35
+I have launched the Higgsfield Type 3 image generation for the Hero, Flatlay, and Lifestyle slots following the strict casting, scale, and multi-reference rules. I will wait for generation and download to complete.
+STEP DONE: generate_type3 | time: 17:19:18 | step duration: 00:02:43 | total elapsed: 00:09:18
+STEP START: patch_type3 | time: 17:19:20 | elapsed: 00:09:20
+I have initiated the upload of the 3 Type 3 WebP images to WordPress, along with replacing image targets, setting featured media, and patching social metadata. I will proceed as soon as it completes.
+STEP DONE: patch_type3 | time: 17:20:08 | step duration: 00:00:48 | total elapsed: 00:10:08
+STEP START: live_qa | time: 17:20:10 | elapsed: 00:10:10
+I am checking the Yoast REST API routes to see how the OpenGraph image field is exposed and can be refreshed.
+I am locating the pipeline script to inspect the exact mechanism used for Yoast OpenGraph image synchronization.
+I am updating the post status to trigger Yoast's indexable re-indexing with the featured media.
+I am running the full Live QA script to verify all live page gates.
+STEP DONE: live_qa | time: 17:24:57 | step duration: 00:04:47 | total elapsed: 00:14:57
+STEP START: update_status | time: 17:25:00 | elapsed: 00:15:00
+I am updating the status CSV, product rotation registry, queue CSV, and workbook.
+# Week 8 Rank 105: End-to-End Generation Report
+
+The complete production run for **Week 8 Rank 105** (`stone jewellery set`) has been executed end-to-end, published, patched with certified Higgsfield Type 3 visual assets, live-verified, and recorded across all status registries.
+
+---
+
+### Step Execution Summary
+
+| Step | Status | Duration / Elapsed | Key Detail |
+|---|---|---|---|
+| **1. read_docs** | DONE | `00:00:22` (`00:00:52`) | All SOPs, playbooks, and cursor rules reviewed |
+| **2. verify_higgsfield** | DONE | `00:00:01` (`00:00:56`) | Plan: Ultimate \| Credits: 364.37 |
+| **3. inspect_row** | DONE | `00:00:32` (`00:01:30`) | Rank 105 \| Action: New \| Vol: 5400 \| KD: 17.0 |
+| **4. duplicate_check** | DONE | `00:00:19` (`00:01:51`) | Slug free (`stone-jewellery-set-2026`) \| Intent distinct |
+| **5. fact_check** | DONE | `00:00:29` (`00:02:23`) | CaratLane PLP analyzed \| BIS HUID & 3% GST verified |
+| **6. keyword_map** | DONE | `00:00:02` (`00:02:27`) | `stone set jewellery` accepted \| 0 rejected |
+| **7. structure_visuals** | DONE | `00:00:08` (`00:02:38`) | Engine: `buying_guide` \| Setting: `desk-kraft` |
+| **8. draft** | DONE | `00:00:48` (`00:03:28`) | 5,335 words drafted \| 0 dashes, 0 tables, 0 prices |
+| **9. product_media** | DONE | `00:02:13` (`00:05:43`) | 6 Type 2 WebP images uploaded \| All HTTP 200 verified |
+| **10. publish_wordpress** | DONE | `00:00:48` (`00:06:33`) | Post ID `38228` published |
+| **11. generate_type3** | DONE | `00:02:43` (`00:09:18`) | 3 slots generated via `nano_banana_pro` \| 0 retries |
+| **12. patch_type3** | DONE | `00:00:48` (`00:10:08`) | WebPs uploaded \| Featured media set \| 12 H2s unique |
+| **13. live_qa** | DONE | `00:04:47` (`00:14:57`) | 5,126 visible words \| Canonical & OG Image HTTP 200 |
+| **14. update_status** | DONE | `00:00:46` (`00:15:46`) | Status CSV, JSON rotation, queue CSV, workbook updated |
+| **15. final_report** | DONE | `00:00:08` (`00:15:56`) | Checkpoint finalized |
+
+---
+
+### Core Publication Details
+
+- **Live URL:** [https://blog.bluestone.com/stone-jewellery-set-2026/](https://blog.bluestone.com/stone-jewellery-set-2026/)
+- **WordPress Post ID:** `38228`
+- **Article Engine:** `buying_guide` (How-to / Education)
+- **Author:** Satyam (User ID `270271337`) with on-page byline `By Satyam, BlueStone Editorial`
+- **WordPress Categories:** `554493348` (Gold) + `554493465` (Jewellery Problem & Solution)
+- **Visible Word Count:** 5,126 words (Full body text: 6,106 words)
+- **Checkpoint File:** [`output/checkpoints/week8_rank105.json`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/checkpoints/week8_rank105.json)
+
+---
+
+### Keyword & Search Intent Architecture
+
+- **Primary Keyword:** `stone jewellery set` (Monthly Volume: 5,400 \| KD: 17.0 \| Priority Score: 5544.64)
+- **Supplied Supporting Keyword:** `stone set jewellery` (Accepted: 100% topically relevant natural linguistic variant)
+- **Rejected Supporting Keywords:** None (no off-topic or noisy terms supplied)
+- **Natural Intent-Inferred Entities:** `gemstone jewellery set`, `gold stone jewellery set`, `stone pendant set gold`, `18k vs 22k stone jewellery set`, `daily wear stone jewellery set`, `color matching parity`, `gemstone setting security`
+
+#### H2 Keyword Map
+
+1. `What Defines an Authentic Stone Jewellery Set in Fine Gold?` — **[primary-backed]**
+2. `Understanding Stone Set Jewellery: Essential Gemstones and Mohs Hardness` — **[supporting-keyword-backed]**
+3. `Choosing the Right Suite Configuration: Pendant Sets vs Necklace Sets` — **[competitor-structure-backed]**
+4. `Setting Security: Prong, Bezel, and Channel Settings for Gemstone Sets` — **[intent-inferred]**
+5. `Metal Framework Truth: 18K vs 22K Gold for Stone Jewellery Sets` — **[intent-inferred]**
+6. `Color Matching and Symmetry: Evaluating Stone Quality Across the Set` — **[intent-inferred]**
+7. `Ergonomics and Weight Distribution: All-Day Comfort Checklist` — **[intent-inferred]**
+8. `Pricing Structure and Invoice Transparency in India` — **[intent-inferred]**
+9. `Care, Cleaning, and Maintenance of Precious Stone Jewellery Sets` — **[intent-inferred]**
+10. `Final Thoughts: Selecting a Timeless Stone Jewellery Set` — **[intent-inferred]**
+11. `More Jewellery & Buying Guides` — **[intent-inferred internal cluster]**
+12. `Frequently Asked Questions About Stone Jewellery Sets` — **[primary-backed]**
+
+---
+
+### Competitor Pass & Factual Verification
+
+- **Supplied Competitor URL:** [https://www.caratlane.com/jewellery/jewellery+sets.html](https://www.caratlane.com/jewellery/jewellery+sets.html)
+- **Competitor Analysis Summary:** CaratLane's URL is a commercial Product Listing Page (PLP) featuring 22KT gold necklace sets and diamond pendant sets. It provides zero educational depth on gemstone Mohs hardness, claw tensile security, color-matching parity across earrings and pendants, or transparent invoice breakdowns.
+- **BlueStone Differentiation:** Delivered a comprehensive 5,100+ word educational buying guide demystifying gemstone mineral durability, 18K vs 22K metallurgical tensile strength for prong retention, bezel impact defense, 6-digit BIS HUID authentication, and transparent net gold vs gross stone billing.
+- **Factual Sources Verified:**
+  - **BIS Hallmarking Standards:** Mandatory 6-digit alphanumeric HUID under Bureau of Indian Standards regulations for gold alloys (18K 750 and 22K 916).
+  - **Mineral Hardness (Mohs Scale):** Diamond (10), Corundum ruby/sapphire (9), Beryl emerald (7.5–8), Topaz (8), Quartz amethyst/citrine (7), Pearl (2.5–4.5).
+  - **Indian Taxation (GST):** 3% GST under HSN Chapter 7113 applied across net gold weight, diamond/gemstone valuation, and making charges.
+
+---
+
+### Media Assets & Product Rotation
+
+#### 1. Mid-Article 3D Coverflow Carousel (Type 2 WebP)
+Strictly embedded as a single unified `<!-- wp:html -->` block with a 400px stage height, single-line text ellipsis, and vanilla JS coverflow controller:
+
+| Slot | Product SKU | Product Name | Media ID | Pre-flight Verification | Live PDP Link |
+|---|---|---|---|---|---|
+| Card 0 | `BIPN0987N07` | The Rapett Evil Eye Charm Necklace | `38222` | HTTP 200 Verified | [PDP Link](https://www.bluestone.com/necklaces/the-rapett-evil-eye-charm-necklace~94235.html) |
+| Card 1 | `BIAV0987N78` | The Ailia Evil Eye Layered Necklace | `38223` | HTTP 200 Verified | [PDP Link](https://www.bluestone.com/necklaces/the-ailia-evil-eye-layered-necklace~94236.html) |
+| Card 2 | `BISW1080P133` | The Lumeelle Cluster Pendant | `38224` | HTTP 200 Verified | [PDP Link](https://www.bluestone.com/pendants/the-lumeelle-cluster-pendant~145625.html) |
+| Card 3 | `BIIP0550P16` | The Aagarna Pendant | `38225` | HTTP 200 Verified | [PDP Link](https://www.bluestone.com/pendants/the-aagarna-pendant~181265.html) |
+| Card 4 | `BIIP0427H16` | The Vicky Hoop Earrings | `38226` | HTTP 200 Verified | [PDP Link](https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html) |
+| Card 5 | `BISP0427H21` | The Ursa Hoop Earrings | `38227` | HTTP 200 Verified | [PDP Link](https://www.bluestone.com/earrings/the-ursa-hoop-earrings~35069.html) |
+
+#### 2. Concept Lifestyle & Still-Life Media (Higgsfield Type 3 WebP)
+
+| Slot | Product SKU | Product Name | Higgsfield Job ID | WP Media ID | Dimensions | Caption / Figcaption |
+|---|---|---|---|---|---|---|
+| **Hero** | `BISW1080P131` | The Thaloria Pendant | `0f9353c1-33fd-42ad-a7a5-5df6024f6ae3` | `38229` | 19.98 mm × 14.07 mm | *Set as Featured Media & Yoast Social Image* |
+| **Flatlay** | `BIAR0097R16` | The Quinn Ring | `87408971-3267-4b2a-bdb5-adc192215f9b` | `38230` | 20.57 mm × 6.28 mm | `Stone jewellery set 2026 vibe: The Quinn Ring` (Setting: `desk-kraft`) |
+| **Lifestyle** | `BIJP0686H03` | The Faliha Purse Hoop Earrings | `13d45644-c1ba-45d2-a3c9-bca593283593` | `38231` | 15.1 mm × 4.6 mm | `Stone jewellery set 2026 vibe: The Faliha Purse Hoop Earrings` |
+
+- **Product Rotation Overlap:** 0 overlap between Type 3 SKUs and Carousel SKUs.
+- **Flatlay Setting Rotation:** Switched to `desk-kraft` (clean kraft desk with vintage jeweller loupe, raw unbleached linen ribbon, and dried botanicals).
+- **Body Image Gate:** Verified `@img1` body portrait reference used for both Hero and Lifestyle slots; strict fair-skinned Indian female casting applied.
+
+---
+
+### Higgsfield Account Ledger
+
+- **Subscription Plan:** Ultimate (`ai.marketing@bluestone.com`)
+- **Starting Credits:** `364.37`
+- **Slots Generated:** 3 (1 Hero, 1 Flatlay, 1 Lifestyle via `nano_banana_pro` 2K 16:9)
+- **Generation Retries:** 0 (all 3 slots completed on first submission)
+- **Credits Consumed:** `18.00` (6.0 credits per 2K generation)
+- **Ending Credits:** `346.37`
+
+---
+
+### Quality Assurance & Compliance Results
+
+- **Live HTTP Status:** `200 OK`
+- **Theme H1 Tag:** Exactly 1 (`Stone Jewellery Set Buying Guide 2026: Gemstone Durability, Setting Security, 18K vs 22K Gold & Suite Coordination`)
+- **Body H2 Headings:** Exactly 12 unique headings (0 duplicates)
+- **Section Sequence:** `Final Thoughts` (H2 #10) → `More Jewellery & Buying Guides` (H2 #11) → `Frequently Asked Questions` (H2 #12)
+- **Live `og:image`:** [https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/stone-jewellery-set-hero-2026.webp?fit=1400%2C781&ssl=1](https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/stone-jewellery-set-hero-2026.webp?fit=1400%2C781&ssl=1) (HTTP 200 Verified)
+- **Canonical Link:** `https://blog.bluestone.com/stone-jewellery-set-2026/`
+- **Schemas Implemented:**
+  - `BlogPosting`: Author Satyam, Category Jewellery Education, and image array covering all 3 Type 3 URLs.
+  - `FAQPage`: 6 question-and-answer pairs matching on-page visible HTML.
+- **Typography & Formatting Hygiene:**
+  - Em dashes (`—`): 0
+  - En dashes (`–`): 0
+  - Spaced hyphens (` - `): 0
+  - Raw HTML `<table>` or `<!-- wp:table -->`: 0
+  - Explicit Prices (`₹`, `Rs.`, `INR`): 0
+  - Duplicate Hero in Body: 0 (Hero rendered strictly via theme featured image container)
+
+---
+
+### Status Files Updated
+
+1. [`output/checkpoints/week8_rank105.json`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/checkpoints/week8_rank105.json) — All 15 steps marked `done`
+2. [`output/Week8_Blog_Queue_status.csv`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week8_Blog_Queue_status.csv) — Upserted Rank 105 record
+3. [`output/product_rotation.json`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/product_rotation.json) — Registered `week8_rank105`, updated `recent_flatlay_settings` with `desk-kraft`, and appended SKUs
+4. [`output/Week8_Blog_Queue.csv`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week8_Blog_Queue.csv) — Updated Rank 105 to `Published` with live execution details
+5. [`SEO Strategy 2026.xlsx`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/SEO%20Strategy%202026.xlsx) (Sheet `Week 8`, Row 92) — Set Action to `Published`, Live URL, and full execution note

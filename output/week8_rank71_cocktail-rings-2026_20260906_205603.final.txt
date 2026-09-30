@@ -1,0 +1,179 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 71 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 71\n- Action: New\n- Primary keyword: cocktail rings\n- Volume: 8100\n- KD: 23\n- Priority score: 7277.3437\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: cocktail-rings-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: cocktail ring design | cocktail ring designs gold | gold cocktail ring | gold cocktail ring design | latest cocktail ring designs | womens cocktail rings\n- Supplied competitor URL: blank in source row\n- Semrush page: cocktail rings\n- Source execution note: Week8 new topic. Intent key=sig:cocktail_ring; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank71.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank71.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+I have initiated the conversion of the approved BlueStone cocktail ring PNG assets to high-performance WebP formats and their upload to the WordPress Media Library with descriptive metadata. Awaiting completion of the carousel upload task.
+The carousel media processing and WordPress media upload is running. I will continue immediately once the upload completes.
+Higgsfield Type 3 generation has started via the Higgsfield CLI:
+- Hero slot (`The Gigi Ring`) job submitted: `a82af6de-4ebc-4301-97dd-302cbae0cd15`
+- Flatlay slot (`The Ebony Ring`) references are uploading
+- Lifestyle slot (`The Yuthika Highway Ring`) queued next
+
+Awaiting generation completion.
+Hero and flatlay jobs have completed and converted to WebP. The lifestyle job is currently being processed. Continuing once generation finishes.
+Lifestyle job is in progress. Continuing once generation finishes.
+Lifestyle image generation is finalizing. Continuing shortly.
+WordPress Type 3 image upload and post patching is currently executing. Continuing as soon as it finishes.
+STEP START: 15. Update status files and write the final report | time: 2026-09-06T21:11:08+05:30 | elapsed: 14m 23s
+STEP DONE: 15. Update status files and write the final report | time: 2026-09-06T21:12:25+05:30 | step duration: 1m 17s | total elapsed: 15m 40s
+
+---
+
+# BlueStone SEO Blog Production: Week 8 Rank 71 Final Report
+
+### Executive Summary
+
+| Parameter | Value |
+|---|---|
+| **Rank** | 71 |
+| **Action** | New |
+| **Primary Keyword** | cocktail rings |
+| **Search Volume / KD** | 8,100 / 23 |
+| **Priority Score** | 7277.3437 |
+| **Theme / Category Fit** | How-to / Education / Jewellery Education |
+| **Article Engine** | `buying_guide` |
+| **Live Post URL** | [https://blog.bluestone.com/cocktail-rings-2026/](https://blog.bluestone.com/cocktail-rings-2026/) |
+| **WordPress Post ID** | **`37753`** |
+| **Author** | **Satyam** (ID: `270271337`), Byline: *By Satyam, BlueStone Editorial* |
+| **WordPress Categories** | Ring (`554493326`), Gold (`554493348`), Jewellery Problem & Solution (`554493465`) |
+| **Visible Word Count** | **5,045 words** |
+| **Article Body H2 Count** | **14 unique H2 sections** (all headings unique, zero duplicates) |
+| **Section Ordering** | Final Thoughts (H2 #12) &rarr; More Jewellery Guides (H2 #13) &rarr; FAQs (H2 #14) &rarr; Schema |
+| **Visible FAQs** | **6 complete Q&A pairs** under FAQ H2 |
+| **Purity & BIS Facts** | BIS hallmark with mandatory 6-digit alphanumeric HUID code, 14K (585), 18K (750), 22K (916) verified |
+| **Prohibited Elements** | **0 em dashes**, **0 en dashes**, **0 spaced hyphens**, **0 prices**, **0 HTML tables** |
+
+---
+
+### Duplicate Intent & Cannibalization Verification
+- **Slug Check**: `cocktail-rings-2026` checked against WordPress REST API `posts?slug=cocktail-rings-2026&status=any` &rarr; 0 existing matches.
+- **Search Intent Check**: Scanned WordPress for `posts?search=cocktail%20ring` and all queue CSVs &rarr; No previous cocktail ring article exists in BlueStone's archive. Confirmed as an authentic **New** topic without cannibalization risk.
+
+---
+
+### Competitor Analysis & Current Factual Sources
+- **Competitor URL**: Blank in target row; no competitor URL invented.
+- **Topical Fact-Checking**:
+  1. **BIS Hallmarking & HUID Standards**: Verified mandatory 6-digit alphanumeric HUID compliance enacted by the Bureau of Indian Standards (BIS) along with the 3 official stamps: BIS triangle logo, purity grade (e.g., 750 for 18K, 585 for 14K), and 6-digit HUID code.
+  2. **Gold Alloy Metallurgy for Statement Mountings**: Verified why 18K and 14K gold are structurally superior for prong-set diamond and colored gemstone cocktail rings (higher tensile strength and hardness preventing claw deformation under torque), while 22K gold is reserved for solid carved or kundan-jadau styles.
+  3. **GST & Retail Clarity**: Contextually referenced 3% GST on fine gold jewellery in India without quoting speculative making charges.
+  4. **Ring Mechanics & Sizing Solutions**: Documented counterbalanced euro-shanks (squared bottom corners), tapered shoulders, interior sizing beads, and horseshoe spring inserts to solve ring spinning caused by top-heavy statement heads.
+
+---
+
+### Supporting Keywords Audit & Mapping
+
+All 6 supplied supporting keywords were evaluated and accepted for 100% natural topical relevance:
+
+| Supplied Supporting Keyword | Status | Placement & Natural Integration |
+|---|---|---|
+| `cocktail ring design` | **Accepted** | H2 #4, H2 #5, intro, body paragraphs, and architectural anatomy list |
+| `cocktail ring designs gold` | **Accepted** | H2 #3, H2 #5, alloy purity section, metal finishes analysis |
+| `gold cocktail ring` | **Accepted** | H2 #3, H2 #5, FAQ #3, FAQ #6, BIS hallmarking certification |
+| `gold cocktail ring design` | **Accepted** | H2 #5, yellow vs rose vs white gold finishes, filigree & texturing |
+| `latest cocktail ring designs` | **Accepted** | H2 #4, H2 #10, modern multi-band highway and asymmetrical bypass rings |
+| `womens cocktail rings` | **Accepted** | H2 #6, H2 #8, hand proportions, finger anatomy, and curated BlueStone recommendations |
+
+- **Rejected Keywords**: *None* (all supplied keywords were topically authentic).
+- **Natural Inferred Variants**: `diamond cocktail ring`, `cocktail ring vs engagement ring`, `cocktail ring finger placement`, `cocktail ring sizing and balance`.
+
+---
+
+### H2 Keyword Architecture Map
+
+| # | H2 Heading Text | Classification Label | Target / Inferred Focus |
+|---|---|---|---|
+| **H2 1** | *What Defines Authentic Cocktail Rings: The Origins and 2026 Statement Anatomy* | `primary-backed` | Primary keyword + 1920s Prohibition history and anatomy |
+| **H2 2** | *Cocktail Ring vs Solitaire Engagement Ring: The Key Structural Differences* | `intent-inferred` | Right vs left hand, low vs high profile comparison |
+| **H2 3** | *Evaluating Gold Purity for Cocktail Rings: 14K vs 18K vs 22K Gold Alloys* | `primary-backed` & `supporting-keyword-backed` | `gold cocktail ring`, `cocktail ring designs gold`, BIS HUID |
+| **H2 4** | *Iconic Cocktail Ring Design Archetypes: From Art Deco to Modern Geometry* | `supporting-keyword-backed` | `cocktail ring design`, `latest cocktail ring designs` |
+| **H2 5** | *Handcrafted Gold Cocktail Ring Design Aesthetics and Metal Finishes* | `supporting-keyword-backed` | `gold cocktail ring design`, `cocktail ring designs gold` |
+| **H2 6** | *Curated BlueStone Statement Ring Showcase: Editorial Recommendations* | `supporting-keyword-backed` | `womens cocktail rings` + 6-card Coverflow Carousel |
+| **H2 7** | *Gemstone Settings and Prong Security: Protecting Heavy Statement Stones* | `intent-inferred` | Prongs, bezels, micro-pavé, and under-gallery azurage |
+| **H2 8** | *How to Choose Womens Cocktail Rings for Your Hand Shape and Finger Proportions* | `supporting-keyword-backed` | `womens cocktail rings`, hand anatomy, finger lengths |
+| **H2 9** | *Preventing Ring Spin: Shank Architecture, Balance, and Sizing Solutions* | `intent-inferred` | Euro-shanks, sizing beads, horseshoe springs |
+| **H2 10** | *Occasion Styling: How to Pair Statement Cocktail Rings with Wardrobe and Other Jewellery* | `supporting-keyword-backed` | `latest cocktail ring designs`, one-statement rule, styling |
+| **H2 11** | *Care, Cleaning, and Long-Term Maintenance for Intricate Cocktail Mountings* | `intent-inferred` | Azurage cleaning, lukewarm soak, velvet storage |
+| **H2 12** | *Final Thoughts on Investing in Timeless Cocktail Jewellery* | `intent-inferred` | Conclusion (strictly placed before FAQs) |
+| **H2 13** | *More Jewellery & Buying Guides* | `intent-inferred` | Mandatory internal cluster links to 5 live BlueStone guides |
+| **H2 14** | *Frequently Asked Questions About Cocktail Rings* | `supporting-keyword-backed` & `intent-inferred` | 6 full visible Q&A pairs directly preceding schema |
+
+---
+
+### Media & Product Integration
+
+#### 1. Mid-Article Coverflow Carousel (`bs-cf-cocktail-rings`)
+Sourced strictly from `ProductImages/seo images/Rings/`, converted to WebP (960×535, q=82), and uploaded with descriptive alt text and titles:
+
+| Card # | Product Name | SKU | Item Category | Dimensions (mm) | Media ID | Product Link |
+|---|---|---|---|---|---|---|
+| 1 | The Gigi Ring | `BINS0639R18` | Diamond Studded | 23.00 × 16.12 | `37747` | [The Gigi Ring](https://www.bluestone.com/rings/the-gigi-ring~64382.html) |
+| 2 | The Ebony Ring | `BIIP0090R24` | Diamond Studded | 20.56 × 18.35 | `37748` | [The Ebony Ring](https://www.bluestone.com/rings/the-ebony-ring~9686.html) |
+| 3 | The Yuthika Highway Ring | `BIJP0992R60` | Diamond Studded | 22.62 × 15.07 | `37749` | [The Yuthika Highway Ring](https://www.bluestone.com/rings/the-yuthika-highway-ring~131078.html) |
+| 4 | The Haily Ring | `BINS0639R11` | Plain Gold | 21.96 × 14.64 | `37750` | [The Haily Ring](https://www.bluestone.com/rings/the-haily-ring~64366.html) |
+| 5 | The Viperine Twist Ring | `BIJP0993R123` | Plain Gold | 22.21 × 9.68 | `37751` | [The Viperine Twist Ring](https://www.bluestone.com/rings/the-viperine-twist-ring~124507.html) |
+| 6 | The Malibu Ring | `BIPM0017R18` | Diamond Studded | 21.59 × 8.32 | `37752` | [The Malibu Ring](https://www.bluestone.com/rings/the-malibu-ring~2321.html) |
+
+#### 2. Higgsfield Type 3 Generations (`nano_banana_pro`, 16:9, 2K)
+
+| Slot | Product Name / SKU | Higgsfield Job ID | WP Media ID | Dimensions (mm) | Setting / Scene |
+|---|---|---|---|---|---|
+| **Hero** (Featured) | The Gigi Ring (`BINS0639R18`) | `a82af6de-4ebc-4301-97dd-302cbae0cd15` | **`37754`** | 23.00 × 16.12 | Fair-skinned Indian woman wearing ring at evening cocktail gala |
+| **Flatlay** (In-body) | The Ebony Ring (`BIIP0090R24`) | `09affd71-9609-43fe-a052-fa943eec729c` | **`37755`** | 20.56 × 18.35 | `marble-vanity`: Carrara marble, green velvet ring box, perfume flacon |
+| **Lifestyle** (In-body) | The Yuthika Highway Ring (`BIJP0992R60`) | `fb91aede-e3ab-434b-aaa8-c2c545f4bb2e` | **`37756`** | 22.62 × 15.07 | Fair-skinned Indian woman holding crystal mocktail glass in tailored blazer |
+
+- **In-Body Image Linking**:
+  - Flatlay and Lifestyle images are wrapped in `<a href="<pdp_url>">` with Gutenberg attribute `"linkDestination": "custom"`.
+  - Captions link to product pages:
+    - `<figcaption>Cocktail rings 2026 vibe: <a href="https://www.bluestone.com/rings/the-ebony-ring~9686.html">The Ebony Ring</a></figcaption>`
+    - `<figcaption>Cocktail rings 2026 styling: <a href="https://www.bluestone.com/rings/the-yuthika-highway-ring~131078.html">The Yuthika Highway Ring</a></figcaption>`
+
+---
+
+### Higgsfield Account & Credit Reconciliation
+- **Subscription Plan**: `ultimate` (`ai.marketing@bluestone.com`)
+- **Starting Balance**: `679.37 credits`
+- **Total Generations Submitted**: 3 jobs (`nano_banana_pro`, 2K, 16:9)
+- **Retries**: 0 retries (100% first-pass success across all 3 slots)
+- **Ending Balance**: `673.37 credits` (exactly 6.00 credits consumed)
+
+---
+
+### Live QA & Social Metadata Verification
+
+| Check Item | Requirement | Live Result | Status |
+|---|---|---|---|
+| **HTTP Status Code** | 200 OK | `200` | **PASS** |
+| **H1 Tag Count** | Exactly 1 | `1` (Theme post title above hero) | **PASS** |
+| **Article Body H2s** | Minimum 10 unique | `14` unique H2s | **PASS** |
+| **Section Ordering** | Conclusion before FAQs | Final Thoughts &rarr; More Guides &rarr; FAQ | **PASS** |
+| **Visible Word Count** | &ge; 3,000 words | `5,045` words | **PASS** |
+| **Canonical URL** | Matches slug | `https://blog.bluestone.com/cocktail-rings-2026/` | **PASS** |
+| **Live `og:image`** | Accepted Hero WebP | `https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/cocktail-rings-hero-2026.webp?fit=1400%2C781&ssl=1` | **PASS** |
+| **Yoast Social Meta** | OpenGraph & Twitter Tags | Focus KW, title, meta desc, OG/Twitter tags verified | **PASS** |
+| **FAQPage Schema** | Valid JSON-LD | 6 Q&A pairs verified in Schema graph | **PASS** |
+| **BlogPosting Schema** | Valid JSON-LD | Author Satyam, publisher BlueStone, hero/flatlay/lifestyle image array | **PASS** |
+| **Carousel Rendering** | 6 cards with Buy Now links | 6 cards, 6 functional BlueStone PDP links | **PASS** |
+| **Visible FAQs** | 5 to 7 visible Q&As | 6 visible Q&A blocks in HTML body | **PASS** |
+| **Prohibited Dashes** | No em/en/spaced hyphens | 0 em dashes, 0 en dashes, 0 spaced hyphens | **PASS** |
+| **Price Violations** | No ₹, Rs., or INR figures | 0 price figures | **PASS** |
+| **HTML Table Blocks** | No `<table>` or `wp:table` | 0 table elements (converted to clean bullet cards) | **PASS** |
+| **Internal Blog Links** | &ge; 4 contextual links | 28 internal links | **PASS** |
+
+---
+
+### State Files & Workbook Synchronization
+1. **Checkpoint File**: `output/checkpoints/week8_rank71.json` &rarr; All 15 steps marked `done`.
+2. **Status CSV**: `output/Week8_Blog_Queue_status.csv` &rarr; Upserted Rank 71 (`WP#37753`, Status: `Published`).
+3. **Product Rotation Ledger**: `output/product_rotation.json` &rarr; Logged trio (`BINS0639R18`, `BIIP0090R24`, `BIJP0992R60`) and prepended `marble-vanity` to `recent_flatlay_settings`.
+4. **Queue CSV**: `output/Week8_Blog_Queue.csv` &rarr; Appended/updated Rank 71 with execution details.
+5. **Master Workbook**: `SEO Strategy 2026.xlsx` &rarr; Sheet `Week 8` updated with Live URL and Execution Note for Rank 71.

@@ -1,0 +1,21 @@
+COMMAND:
+[
+  "/Users/vikasindoria/.local/bin/codex",
+  "exec",
+  "--cd",
+  "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context",
+  "--sandbox",
+  "workspace-write",
+  "--output-last-message",
+  "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context/output/week6_rank2_how-to-check-gold-purity-2026_20260818_153330.final.txt",
+  "--approve-for-me",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 6 Rank 2 end-to-end.\n\nTarget row:\n- Rank: 2\n- Primary keyword: how to check gold purity\n- Volume: 5400\n- KD: 14\n- Score: 3.2963\n- Theme: How-to / Education\n- Category fit: Buying Guide\n- Suggested slug: how-to-check-gold-purity-2026\n- Article engine: buying_guide\n- Category hint: `Gold` 554493348 + `Jewellery Problem & Solution` 554493465\n\nMandatory gates:\n- Verify Higgsfield status/balance first using the active working path, MCP balance if available or CLI `higgsfield account status --json`.\n- Do not generate Type 3 images until Higgsfield status succeeds.\n- New WordPress post only. Check duplicate slug before publishing.\n- Week 6 CSV has no supporting keyword or competitor URL column. Do not invent a competitor URL. Use natural supporting phrases and report them as inferred unless backed by supplied data.\n- Build an H2 keyword map. Label every major H2 as primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Do not claim volume/KD for inferred H2s.\n- Use the Week 6 engine rules from docs/WEEK6_CLUSTER_PLAYBOOK.md.\n- If the topic touches GST, hallmarking, purity standards, gold buying dates, measurement charts, BIS rules, or other current facts, use live web search and cite reliable factual sources.\n- Use editorial Type 3 captions that name the product and reflect intent. Do not use robotic captions like `detail: Product`, `look: Product`, or `vibe: Product`.\n- Type 3 hero + lifestyle must obey body_image hard gate. Never generate people shots from packshots alone.\n- If Higgsfield generation or queue errors happen, wait 40 to 50 seconds before retrying once.\n- No prices, no fake stats, no competitor digs.\n- No em dashes, en dashes, or spaced hyphens.\n- Update output/Week6_Gift_Guides_100_status.csv and product_rotation.json when done.\n\n\nProgress display requirement:\nBefore starting each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter finishing each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect Week 6 target row\n4. Check duplicate slug\n5. Fact-check current sources if the topic is factual/current\n6. Build H2 keyword map\n7. Select article structure and visual concept\n8. Draft full article\n9. Select products/media only where useful for intent\n10. Publish WordPress post\n11. Generate Type 3 images through Higgsfield CLI\n12. Patch images into WordPress\n13. Run live QA\n14. Update status files\n15. Final report\n\nFinal report must include:\n- live URL\n- WP post ID\n- article engine used\n- categories used\n- article length in visible words\n- H2 keyword map\n- supporting phrases used and whether inferred or backed\n- competitor URL status\n- factual sources used, if applicable\n- carousel media IDs\n- Type 3 media IDs\n- product SKUs used\n- duplicate/cannibalization note\n"
+]
+
+OUTPUT:
+error: the argument '--sandbox <SANDBOX_MODE>' cannot be used with '--approve-for-me'
+
+Usage: codex exec [OPTIONS] [PROMPT]
+       codex exec [OPTIONS] <COMMAND> [ARGS]
+
+For more information, try '--help'.

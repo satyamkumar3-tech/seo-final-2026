@@ -1,0 +1,146 @@
+COMMAND:
+[
+  "/Users/vikasindoria/.local/bin/codex",
+  "exec",
+  "--cd",
+  "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context",
+  "--skip-git-repo-check",
+  "--output-last-message",
+  "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context/output/week7_rank8_gst-on-gold-jewellery-2026_20260819_133815.final.txt",
+  "--approve-for-me",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 8 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 8\n- Action: New\n- Primary keyword: gst on gold jewellery\n- Volume: 9900\n- KD: 21\n- Priority score: 2.4039\n- Theme: How-to / Education\n- Category fit: Buying Guide\n- Suggested slug: gst-on-gold-jewellery-2026\n- Article engine: buying_guide\n- Category hint: `Gold` 554493348 + `Jewellery Problem & Solution` 554493465\n- Supplied supporting keywords: ear piercing for women | ear lobe piercing | lobe piercing | gold necklace earring set | demi fine jewelry meaning | 2.2 bangle size | bangle size 2.6 | ear piercing ideas | gold gst rate in india | gold tax rate | what is the gst for gold\n- Supplied competitor URL: https://www.caratlane.com/blog/how-much-gst-is-applied-to-gold-jewellery-in-india/\n- Semrush page: gst on gold jewellery\n- Source execution note: Carried from Week6 unique pillar. intent=gst_gold. Active from Rank 10 queue onward. Live WP duplicate-intent gate required.\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank8.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank8.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+OpenAI Codex v0.147.0
+--------
+workdir: /Users/vikasindoria/Documents/Geo and Seo/final seo generation context
+model: gpt-5.6-sol
+provider: openai
+approval: on-request
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: none
+reasoning summaries: none
+session id: 01a01910-54e4-7c73-b6ec-39c7b54fc808
+--------
+user
+Workspace root: final seo generation context
+
+Read these fully before doing task work:
+- HANDOFF.md
+- docs/SOP_ARTICLE_GENERATION.md
+- docs/ARTICLE_WORKFLOW.md
+- docs/WEEK6_CLUSTER_PLAYBOOK.md
+- docs/HIGGSFIELD_IMAGE_GENERATION.md
+- docs/Blog-SEO-AEO-GEO-Checklist-v2.md
+- cursor-rules/new-blogs-only.mdc
+- cursor-rules/carousel-seo-images.mdc
+- cursor-rules/type3-fair-skinned-indians.mdc
+- cursor-rules/image-seo.mdc
+- cursor-rules/product-rotation-captions-education.mdc
+
+Generate Week 7 Rank 8 end-to-end.
+
+Source authority:
+- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.
+- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.
+- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.
+
+Target row:
+- Rank: 8
+- Action: New
+- Primary keyword: gst on gold jewellery
+- Volume: 9900
+- KD: 21
+- Priority score: 2.4039
+- Theme: How-to / Education
+- Category fit: Buying Guide
+- Suggested slug: gst-on-gold-jewellery-2026
+- Article engine: buying_guide
+- Category hint: `Gold` 554493348 + `Jewellery Problem & Solution` 554493465
+- Supplied supporting keywords: ear piercing for women | ear lobe piercing | lobe piercing | gold necklace earring set | demi fine jewelry meaning | 2.2 bangle size | bangle size 2.6 | ear piercing ideas | gold gst rate in india | gold tax rate | what is the gst for gold
+- Supplied competitor URL: https://www.caratlane.com/blog/how-much-gst-is-applied-to-gold-jewellery-in-india/
+- Semrush page: gst on gold jewellery
+- Source execution note: Carried from Week6 unique pillar. intent=gst_gold. Active from Rank 10 queue onward. Live WP duplicate-intent gate required.
+
+Checkpoint and idempotency:
+- Checkpoint file: output/checkpoints/week7_rank8.json
+- Existing step state: {"read_docs": "pending", "verify_higgsfield": "pending", "inspect_row": "pending", "duplicate_check": "pending", "fact_check": "pending", "keyword_map": "pending", "structure_visuals": "pending", "draft": "pending", "product_media": "pending", "publish_wordpress": "pending", "generate_type3": "pending", "patch_type3": "pending", "live_qa": "pending", "update_status": "pending", "final_report": "pending"}
+- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.
+- Mark each step running, then done or failed with:
+  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank8.json --step <step_name> --status <status> --detail key=value
+- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.
+- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.
+- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.
+- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.
+- Do not modify shared helper scripts during an article production run.
+
+Mandatory content gates:
+- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.
+- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.
+- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.
+- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.
+- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.
+- Preserve full article depth. Parallel image work never permits shorter content.
+- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.
+- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.
+- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.
+- No em dashes, en dashes, or spaced hyphens.
+
+Mandatory image gates:
+- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.
+- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.
+- Run no more than two Higgsfield generations simultaneously.
+- On a queue or generation error, wait 45 seconds and retry once.
+- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.
+- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.
+- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.
+- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.
+- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.
+
+WordPress and live QA:
+- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.
+- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.
+- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.
+- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.
+
+
+Progress display requirement:
+Before each major step, print:
+STEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>
+
+After each major step, print:
+STEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>
+
+Use these steps:
+1. Read required docs
+2. Verify Higgsfield status and report credits/plan
+3. Inspect the Week 7 target row
+4. Check duplicate slug and search intent
+5. Analyze the supplied competitor URL and fact-check current sources
+6. Filter and map supporting keywords
+7. Build the H2 keyword map
+8. Select article structure and visual concept
+9. Draft the complete article
+10. Select products and carousel media
+11. Publish the WordPress post
+12. Generate Type 3 images through the Higgsfield CLI
+13. Patch images and social metadata into WordPress
+14. Run live QA
+15. Update status files and write the final report
+
+Final report must include:
+- live URL and WordPress post ID
+- article engine, author, and categories
+- visible article word count
+- primary keyword and supplied metrics
+- supporting keywords used and rejected, with reasons
+- H2 keyword map
+- competitor URL and analysis summary
+- factual sources used
+- carousel and Type 3 media IDs
+- product SKUs and product rotation
+- Higgsfield plan, starting balance, jobs, retries, and ending balance when available
+- duplicate and cannibalization result
+- live og:image verification
+

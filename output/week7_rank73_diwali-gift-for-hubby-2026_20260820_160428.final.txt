@@ -1,0 +1,152 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 73 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 73\n- Action: New\n- Primary keyword: diwali gift for hubby\n- Volume: 1300\n- KD: \n- Priority score: 0.54\n- Theme: Gift Guides\n- Category fit: Seasonal / Gifting\n- Suggested slug: diwali-gift-for-hubby-2026\n- Article engine: gift_guide\n- Category hint: `Gift` 554493424 + `Festive Wishes` 554493477\n- Supplied supporting keywords: diwali gift for hubby\n- Supplied competitor URL: blank in source row\n- Semrush page: diwali gift for hubby\n- Source execution note: Week7 intent-unique. intent=diwali_gift. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank73.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank73.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: read_docs | time: 2026-08-20 16:05:15 IST | elapsed: 00:00:00
+STEP DONE: read_docs | time: 2026-08-20 16:05:40 IST | step duration: 00:00:25 | total elapsed: 00:00:25
+STEP START: verify_higgsfield | time: 2026-08-20 16:05:40 IST | elapsed: 00:00:25
+STEP DONE: verify_higgsfield | time: 2026-08-20 16:05:48 IST | step duration: 00:00:08 | total elapsed: 00:00:33
+STEP START: inspect_row | time: 2026-08-20 16:05:48 IST | elapsed: 00:00:33
+STEP DONE: inspect_row | time: 2026-08-20 16:06:46 IST | step duration: 00:00:58 | total elapsed: 00:01:31
+STEP START: duplicate_check | time: 2026-08-20 16:06:46 IST | elapsed: 00:01:31
+STEP DONE: duplicate_check | time: 2026-08-20 16:07:07 IST | step duration: 00:00:21 | total elapsed: 00:01:52
+STEP START: fact_check | time: 2026-08-20 16:07:07 IST | elapsed: 00:01:52
+STEP DONE: fact_check | time: 2026-08-20 16:07:23 IST | step duration: 00:00:16 | total elapsed: 00:02:08
+STEP START: keyword_map | time: 2026-08-20 16:07:23 IST | elapsed: 00:02:08
+STEP DONE: keyword_map | time: 2026-08-20 16:07:30 IST | step duration: 00:00:07 | total elapsed: 00:02:15
+STEP START: structure_visuals | time: 2026-08-20 16:07:30 IST | elapsed: 00:02:15
+STEP DONE: structure_visuals | time: 2026-08-20 16:08:18 IST | step duration: 00:00:48 | total elapsed: 00:03:03
+STEP START: draft | time: 2026-08-20 16:08:18 IST | elapsed: 00:03:03
+STEP DONE: draft | time: 2026-08-20 16:08:50 IST | step duration: 00:00:32 | total elapsed: 00:03:35
+STEP START: product_media | time: 2026-08-20 16:08:50 IST | elapsed: 00:03:35
+STEP DONE: product_media | time: 2026-08-20 16:09:23 IST | step duration: 00:00:33 | total elapsed: 00:04:08
+STEP START: publish_wordpress | time: 2026-08-20 16:09:23 IST | elapsed: 00:04:08
+STEP DONE: publish_wordpress | time: 2026-08-20 16:09:45 IST | step duration: 00:00:22 | total elapsed: 00:04:30
+STEP START: generate_type3 | time: 2026-08-20 16:09:45 IST | elapsed: 00:04:30
+Type 3 image generation for Week 7 Rank 73 is in progress via the Higgsfield CLI (`nano_banana_pro`, 16:9, 2k). I will wait for the generation process to complete.
+Hero image completed. Flatlay and lifestyle image generations are now in progress. Waiting for generation to complete.
+Hero and Flatlay images are completed. Lifestyle image generation is finishing up. Waiting for task completion.
+Waiting for lifestyle image generation and conversion to complete.
+STEP DONE: generate_type3 | time: 2026-08-20 16:13:02 IST | step duration: 00:03:17 | total elapsed: 00:07:47
+STEP START: patch_type3 | time: 2026-08-20 16:13:02 IST | elapsed: 00:07:47
+STEP DONE: patch_type3 | time: 2026-08-20 16:13:28 IST | step duration: 00:00:26 | total elapsed: 00:08:13
+STEP START: live_qa | time: 2026-08-20 16:13:28 IST | elapsed: 00:08:13
+STEP DONE: live_qa | time: 2026-08-20 16:14:11 IST | step duration: 00:00:43 | total elapsed: 00:08:56
+STEP START: update_status | time: 2026-08-20 16:14:11 IST | elapsed: 00:08:56
+STEP DONE: update_status | time: 2026-08-20 16:14:30 IST | step duration: 00:00:19 | total elapsed: 00:09:15
+STEP START: final_report | time: 2026-08-20 16:14:30 IST | elapsed: 00:09:15
+STEP DONE: final_report | time: 2026-08-20 16:14:34 IST | step duration: 00:00:04 | total elapsed: 00:09:19
+# End-to-End Generation Report: Week 7 Rank 73
+
+### 1. WordPress & Article Overview
+- **Live URL:** [https://blog.bluestone.com/diwali-gift-for-hubby-2026/](https://blog.bluestone.com/diwali-gift-for-hubby-2026/)
+- **WordPress Post ID:** `35200`
+- **Article Engine:** `gift_guide`
+- **Author:** Satyam (User ID `270271337`) | On-page byline: `By Satyam, BlueStone Editorial` | Schema Author: `Satyam`
+- **Categories:** `Gift` (`554493424`) + `Festive Wishes` (`554493477`)
+- **Visible Article Word Count:** 2,312 words (HTML body text)
+- **HTTP Status Code:** `200 OK`
+
+---
+
+### 2. Keyword Strategy & Performance Metrics
+- **Primary Keyword:** `diwali gift for hubby`
+  - **Volume:** 1,300
+  - **Priority Score:** 0.54
+  - **Slug:** `diwali-gift-for-hubby-2026`
+  - **Theme:** Gift Guides (Seasonal / Gifting)
+- **Supporting Keywords Used:**
+  - `diwali gift for husband` (Mapped in H2, body copy, and FAQ #1)
+  - `gold gift for husband on diwali` (Mapped in H2 and intro)
+  - `dhanteras gift for husband` (Mapped in H2, auspicious buying section, and FAQ #2)
+  - `diwali surprise gift for hubby` (Mapped in sizing guide section and H2)
+- **Rejected / Polluted Keywords:**
+  - None supplied in row beyond primary term `diwali gift for hubby`. No unrelated phrases forced into the draft.
+
+---
+
+### 3. H2 Keyword Map
+1. **Why Fine Jewellery Is the Most Auspicious Diwali Gift for Hubby** *(Primary-backed & intent-inferred)*
+2. **Top 6 Meaningful Diwali Gifts for Husband: Curated Fine Jewellery** *(Supporting-keyword-backed & product guide)*
+3. **Men's Gold and Diamond Rings: Daily Tokens of Festive Love** *(Intent-inferred & product category)*
+4. **Sophisticated Men's Bracelets: Combining Strength and Radiance** *(Intent-inferred & lifestyle styling)*
+5. **Auspicious Gold Chains and Talisman Pendants: Blessings for Dhanteras** *(Supporting-keyword-backed & cultural intent)*
+6. **How to Secretly Find His Exact Ring and Wrist Size for a Diwali Surprise** *(Buyer utility & secret sizing guide)*
+7. **Understanding Gold Purity, BIS Hallmarking, and GST for Diwali Purchases** *(Factual authority / buying guide)*
+8. **Caring for Men's Fine Gold and Diamond Jewellery** *(Long-term editorial value & maintenance)*
+9. **More Festive Gifting Guides to Explore** *(Internal link cluster)*
+10. **Frequently Asked Questions About Diwali Gift for Hubby** *(AEO / PAA question-answer blocks)*
+11. **Conclusion: Light Up His Diwali with an Auspicious Keepsake** *(Closing CTA & summary)*
+
+---
+
+### 4. Competitor & Fact-Checking Authority
+- **Supplied Competitor URL:** Blank in source row (no competitor URL fabricated).
+- **Factual Standards Cited & Verified:**
+  - **Bureau of Indian Standards (BIS) Hallmarking:** 3 mandatory marks (BIS triangular logo, purity grade `18K750` / `22K916`, and 6-digit alphanumeric HUID verifiable on the government BIS CARE app).
+  - **Statutory GST:** 3% GST on gold jewellery and making charges in India.
+  - **BlueStone Commercial Guarantees:** 30-day money-back guarantee, complimentary resizing, lifetime exchange and buyback, IGI/SGL certified natural diamonds.
+
+---
+
+### 5. Media & Product Rotation Assets
+
+#### Type 2 Carousel Media (6 Products)
+| # | Product Name | SKU | Category | Media ID | Live PDP Link |
+|---|---|---|---|---|---|
+| 1 | The Tetyana Gold Chain | `BVEM0663C88` | Chains | `35194` | [View PDP](https://www.bluestone.com/chains/the-tetyana-gold-chain~124927.html) |
+| 2 | The Ruan Cuban Diamond Chain | `BIAV1037C17` | Chains | `35195` | [View PDP](https://www.bluestone.com/chains/the-ruan-cuban-diamond-chain~165221.html) |
+| 3 | The Jasper Band For Him | `BISL0851R28` | Rings | `35196` | [View PDP](https://www.bluestone.com/rings/the-jasper-band-for-him~93964.html) |
+| 4 | The Serenity Evil Eye Pendant For Him | `BIPO0987P67` | Pendants | `35197` | [View PDP](https://www.bluestone.com/pendants/the-serenity-evil-eye-pendant-for-him~115382.html) |
+| 5 | The Talisman Evil Eye Steel Bracelet | `BIKR0987V33` | Adjustable Bracelets | `35198` | [View PDP](https://www.bluestone.com/adjustable+bracelets/the-talisman-evil-eye-steel-bracelet~116807.html) |
+| 6 | The Interlink Band Ring | `BISV0910R24` | Rings | `35199` | [View PDP](https://www.bluestone.com/rings/the-interlink-band-ring~108785.html) |
+
+#### Type 3 Higgsfield Concept Images
+| Slot | SKU | Product Name | Media ID | Setting / Scene | Dimensions |
+|---|---|---|---|---|---|
+| **Hero** | `BISV0910R24` | The Interlink Band Ring | `35201` | Fair-skinned Indian husband in festive silk kurta celebrating Diwali at home with warm fairy lights | 25.41 mm × 9.49 mm |
+| **Flatlay** | `BVEM0663C88` | The Tetyana Gold Chain | `35202` | `festive-mantel` (Dark walnut mantel with brass diya, marigolds, and silk runner) | 5.81 mm × 4.53 mm |
+| **Lifestyle** | `BISL1006V249` | The Kilxer Link Bracelet For Him | `35203` | Fair-skinned Indian man adjusting festive emerald green silk kurta sleeve | 13.2 mm × 12.63 mm |
+
+---
+
+### 6. Higgsfield Generation & Credit Audit
+- **Subscription Plan:** `scale`
+- **Starting Credits:** `5,933.32`
+- **Jobs Executed:**
+  - Hero: `3148012d-7225-4ae7-80bb-53258fe42259`
+  - Flatlay: `64335922-3689-4e78-a3c5-53f3395759ee`
+  - Lifestyle: `5609147c-5db3-4398-a671-9b1bab086f04`
+- **Retries Required:** `0` (All 3 slots succeeded on Attempt 1)
+- **Ending Credits:** `5,919.32` (14.0 credits consumed)
+
+---
+
+### 7. Duplicate & Search-Intent Gate
+- **Pre-check Result:** `0` duplicate posts for slug `diwali-gift-for-hubby-2026` or intent `diwali gift for hubby / husband`.
+- **Cannibalization Risk:** None. Verified against existing live posts (`diwali-wishes-for-boyfriend-2026`, `engagement-wishes-for-husband-2026`, `best-anniversary-gift-for-husband-2026`).
+
+---
+
+### 8. Live QA & Schema Verification
+- **DOM H1 Count:** `1` (`<h1>Diwali Gift for Hubby 2026: 6 Meaningful Fine Jewellery Gift Ideas for Your Husband</h1>`)
+- **Prohibited Formatting:** `0` em dashes (`—`), `0` en dashes (`–`), `0` spaced hyphens (` - `), `0` prices, `0` HTML tables.
+- **Featured Media:** Set to Hero Image (`35201`).
+- **Figcaptions:** Present on body Type 3 images (`Diwali gift for hubby 2026 vibe: The Tetyana Gold Chain`, `Diwali gift for hubby 2026 styling: The Kilxer Link Bracelet For Him`).
+- **Structured Data:**
+  - `FAQPage` JSON-LD with 6 verified Q&A pairs matching on-page content.
+  - `BlogPosting` JSON-LD with author `Satyam`, publisher `BlueStone Jewellery and Lifestyle Limited`, and complete image array.
+- **Status Files Updated:**
+  - `output/Week7_Gift_Guides_PostRank10_status.csv`
+  - `output/Week7_Gift_Guides_PostRank10.csv`
+  - `output/product_rotation.json`
+  - `output/checkpoints/week7_rank73.json`

@@ -1,0 +1,104 @@
+{
+  "pipeline": "week9",
+  "rank": 62,
+  "slug": "gold-stud-earrings-designs-for-daily-use-2026",
+  "primary": "gold stud earrings designs for daily use",
+  "created_at": "2026-09-25T06:32:14Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-25T06:33:08Z",
+      "finished_at": "2026-09-25T06:34:16Z",
+      "docs_read": 11
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-25T06:34:23Z",
+      "finished_at": "2026-09-25T06:34:37Z",
+      "credits": "459.1,plan=ultimate"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-25T06:34:44Z",
+      "finished_at": "2026-09-25T06:35:20Z",
+      "rank": "62,action=New,primary=gold stud earrings designs for daily use,slug=gold-stud-earrings-designs-for-daily-use-2026,volume=3600,kd=21.0"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-25T06:35:25Z",
+      "finished_at": "2026-09-25T06:36:00Z",
+      "duplicate_found": "false,slug_available=true"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-25T06:36:03Z",
+      "finished_at": "2026-09-25T06:36:17Z",
+      "sources_verified": "4,competitor=blank"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-25T06:36:21Z",
+      "finished_at": "2026-09-25T06:36:26Z",
+      "primary": "gold stud earrings designs for daily use,supporting_accepted=1,supporting_rejected=0"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-25T06:36:31Z",
+      "finished_at": "2026-09-25T06:37:51Z",
+      "engine": "buying_guide,flatlay_setting=linen-bedside,hero=The Aleena Huggie Earrings,flatlay=The Rohal Huggie Earrings,lifestyle=The Nettile Huggie Earrings"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-25T06:37:56Z",
+      "finished_at": "2026-09-25T06:39:59Z",
+      "words": "4913,slug=gold-stud-earrings-designs-for-daily-use-2026"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-25T06:40:06Z",
+      "finished_at": "2026-09-25T06:41:11Z",
+      "products": "6,verified_200=true,ids=40062_40063_40064_40065_39630_40066"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-25T06:41:29Z",
+      "finished_at": "2026-09-25T06:41:52Z",
+      "post_id": "40155,slug=gold-stud-earrings-designs-for-daily-use-2026,status=publish"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T06:42:01Z",
+      "finished_at": "2026-09-25T06:48:28Z",
+      "jobs": "3,hero_id=edc6c7c8-ee72-4ede-90f6-21c9f1bd2fb2,flatlay_id=ffe4772e-35f1-4e06-b7f8-1ff1c2616ea5,lifestyle_id=95f2b382-debf-4356-9070-49e127d6aa34"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T06:48:33Z",
+      "finished_at": "2026-09-25T06:49:13Z",
+      "featured_media": "40156,flatlay_media=40157,lifestyle_media=40158"
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-25T06:49:24Z",
+      "finished_at": "2026-09-25T06:51:53Z",
+      "checks_passed": "15,status_code=200,h1=1,h2=13,qa=pass"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-25T06:52:01Z",
+      "finished_at": "2026-09-25T06:52:33Z",
+      "queue_csv": "done,status_csv=done,rotation=done,excel=done"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-25T06:52:43Z",
+      "finished_at": "2026-09-25T06:52:58Z",
+      "final_report_ready": "true,live_url=https://blog.bluestone.com/gold-stud-earrings-designs-for-daily-use-2026/,post_id=40155"
+    }
+  },
+  "updated_at": "2026-09-25T06:53:52Z",
+  "completed_at": "2026-09-25T06:52:58Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

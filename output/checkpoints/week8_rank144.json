@@ -1,0 +1,129 @@
+{
+  "pipeline": "week8",
+  "rank": 144,
+  "slug": "purple-earrings-2026",
+  "primary": "purple earrings",
+  "created_at": "2026-09-11T07:46:57Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-11T07:47:22Z",
+      "finished_at": "2026-09-11T07:47:56Z",
+      "note": "Read HANDOFF, SOP, WORKFLOW, PLAYBOOK, HIGGSFIELD, Checklist, and cursor rules"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-11T07:47:59Z",
+      "finished_at": "2026-09-11T07:48:07Z",
+      "plan": "ultimate",
+      "credits": 441.04
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-11T07:48:11Z",
+      "finished_at": "2026-09-11T07:48:20Z",
+      "action": "New",
+      "primary": "purple earrings",
+      "volume": 6600,
+      "kd": 21,
+      "slug": "purple-earrings-2026"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-11T07:48:23Z",
+      "finished_at": "2026-09-11T07:48:52Z",
+      "slug_status": "available",
+      "intent_status": "unique",
+      "search_matches": "none"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-11T07:48:57Z",
+      "finished_at": "2026-09-11T07:49:03Z",
+      "competitor": "blank in source row",
+      "sources": "BIS Hallmarking guidelines (18K 750, 14K 585, 6-digit HUID), GST Council (3% GST on gold jewellery), GIA Gem Encyclopedia (Amethyst, Tanzanite, Purple Sapphire)"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-11T07:49:06Z",
+      "finished_at": "2026-09-11T07:49:14Z",
+      "accepted": "purple and gold earrings, purple earrings india, purple gold earrings",
+      "rejected": "none"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-11T07:49:16Z",
+      "finished_at": "2026-09-11T07:49:55Z",
+      "engine": "How-to / Education",
+      "flatlay_setting": "windowsill-daylight",
+      "hero_sku": "BIIP0279S08",
+      "flatlay_sku": "BIPN0880H218",
+      "lifestyle_sku": "BIIP0427H16"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-11T07:49:57Z",
+      "finished_at": "2026-09-11T07:51:30Z",
+      "word_count": 3161,
+      "title": "Purple Earrings Buying Guide 2026: Gemstones, Gold Settings, Styles, and Everyday Care",
+      "slug": "purple-earrings-2026"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-11T07:51:34Z",
+      "finished_at": "2026-09-11T07:52:27Z",
+      "media_ids": "38710,38711,38712,38713,38714,38715",
+      "count": 6
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-11T07:52:30Z",
+      "finished_at": "2026-09-11T07:52:54Z",
+      "post_id": 38716,
+      "link": "https://blog.bluestone.com/purple-earrings-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-11T07:52:57Z",
+      "finished_at": "2026-09-11T07:58:12Z",
+      "hero_job": "231f5334-290a-4076-a682-381c709db8a6",
+      "flatlay_job": "f0f9897e-28e9-4334-b3d4-c0956ec33cfb",
+      "lifestyle_job": "e02da880-697c-479b-8ed4-72f56fc0fa82"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-11T07:58:15Z",
+      "finished_at": "2026-09-11T07:58:57Z",
+      "hero_id": 38717,
+      "flatlay_id": 38718,
+      "lifestyle_id": 38719
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-11T07:59:01Z",
+      "finished_at": "2026-09-11T08:02:33Z",
+      "word_count": 2976,
+      "og_image": "https://blog.bluestone.com/wp-content/uploads/2026/09/purple-earrings-hero-2026.webp",
+      "checks_passed": "15/15"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-11T08:02:36Z",
+      "finished_at": "2026-09-11T08:03:03Z",
+      "status_csv": "updated",
+      "product_rotation": "updated",
+      "workbook": "updated"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-11T08:03:07Z",
+      "finished_at": "2026-09-11T08:03:14Z",
+      "report": "complete"
+    }
+  },
+  "updated_at": "2026-09-11T08:03:33Z",
+  "completed_at": "2026-09-11T08:03:14Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

@@ -1,0 +1,55 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+    "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+  },
+  "slots": {
+    "hero": {
+      "product_name": "The Le Sommet Ring",
+      "code": "BISE0932R181",
+      "pdp": "https://www.bluestone.com/rings/the-le-sommet-ring~105031.html",
+      "product_dimensions": "21.93mm height by 7.95mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Le Sommet Ring/1_body_portrait.png",
+        "ProductImages/raw/Rings/The Le Sommet Ring/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Candid portrait of an elegant fair-skinned North Indian woman with a delicate light wheatish complexion, radiant skin texture, and refined graceful features, enjoying a serene morning in an airy urban living room. She is physically wearing The Le Sommet Ring from @img2 on her ring finger at true worn scale matching @img1 body_image (product_height_mm=21.93 and product_width_mm=7.95; these are jewellery dimensions, not face or body measurements). The exquisite polished gold chevron v-ring with its crisp architectural contour catches soft natural sunlight with warm specular highlights and realistic contact shadows against her skin. She is dressed in an understated pastel silk tunic. In the softly blurred background are sheer white curtains and a minimalist marble console with a ceramic vase, zero phones, zero screens, zero readable text. Editorial magazine aesthetic, natural depth of field. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen, laptop.",
+      "alt": "modern vanki ring designs 2026 hero: fair-skinned Indian woman wearing elegant gold chevron vanki ring in warm morning sunlight"
+    },
+    "flatlay": {
+      "product_name": "The Viperine Twist Ring",
+      "code": "BIJP0993R123",
+      "pdp": "https://www.bluestone.com/rings/the-viperine-twist-ring~124507.html",
+      "product_dimensions": "22.21mm height by 9.68mm width (jewellery dimensions only)",
+      "setting": "desk-kraft",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Viperine Twist Ring/0_primary.png",
+        "ProductImages/raw/Rings/The Viperine Twist Ring/2_front.png",
+        "ProductImages/raw/Rings/The Viperine Twist Ring/5_close_up.png"
+      ],
+      "prompt": "Top-down commercial jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with gentle falloff. Flatlay setting: desk-kraft. Arranged on a warm natural wood desk in soft directional daylight: @img1, authentic fine 18Kt yellow gold contoured twist ring, accompanied by detailed views from @img2 and @img3, resting centered at true life scale (22.21mm height by 9.68mm width). Beside the gold ring are authentic styling props: a small textured kraft gift box with natural twine, a folded oatmeal linen runner, and an antique unbranded brass jeweller loupe with clear glass lens. Soft natural illumination, delicate organic shadows, Kodak Portra filmic tonal response, analog grain. No people, no hands, no readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark, ruler markings, numbers.",
+      "alt": "modern vanki ring designs 2026 flatlay: The Viperine Twist Ring on warm wooden desk with kraft box and linen",
+      "caption": "The <a href=\"https://www.bluestone.com/rings/the-viperine-twist-ring~124507.html\">Viperine Twist Ring</a> in fine gold highlighting modern contoured curves and ergonomic daily elegance"
+    },
+    "lifestyle": {
+      "product_name": "The Anya Ring",
+      "code": "BIAR0097R04",
+      "pdp": "https://www.bluestone.com/rings/the-anya-ring~7515.html",
+      "product_dimensions": "20.57mm height by 6.28mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Anya Ring/1_body_portrait.png",
+        "ProductImages/raw/Rings/The Anya Ring/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic candid lifestyle action photograph, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A refined fair-skinned North Indian woman with a delicate light wheatish complexion and soft swept-up hair is captured in a graceful candid moment, gently admiring The Anya Ring from @img2 worn on her hand at exact worn scale matching @img1 body_image (product_height_mm=20.57 and product_width_mm=6.28; jewellery dimensions only). The delicate gold ring with sparkling diamond accents rests flush against her finger, catching warm ambient room daylight. Natural skin texture, realistic hand anatomy and fingers, tasteful cream silk blouse, warm serene interior dressing room setting. Editorial fashion quality, zero phone screens, no readable text. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen.",
+      "alt": "modern vanki ring designs 2026 lifestyle: fair-skinned Indian woman styling fine gold chevron ring with contemporary attire",
+      "caption": "The <a href=\"https://www.bluestone.com/rings/the-anya-ring~7515.html\">Anya Ring</a> in 18Kt gold styled gracefully on the hand for sophisticated everyday wear"
+    }
+  },
+  "output": {
+    "hero": "output/modern-vanki-ring-designs-hero-2026.webp",
+    "flatlay": "output/modern-vanki-ring-designs-flatlay-2026.webp",
+    "lifestyle": "output/modern-vanki-ring-designs-lifestyle-2026.webp"
+  }
+}

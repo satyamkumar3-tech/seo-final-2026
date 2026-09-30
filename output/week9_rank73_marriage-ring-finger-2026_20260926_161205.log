@@ -1,0 +1,219 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 9 Rank 73 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 9 and output/Week9_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 9 target block overrides those notes.\n\nTarget row:\n- Rank: 73\n- Action: New\n- Primary keyword: marriage ring finger\n- Volume: 3600\n- KD: 27.0\n- Priority score: 2035.3846\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: marriage-ring-finger-2026\n- Article engine: buying_guide\n- Category hint: `Gift` 554493424 + `Wedding Jewellery` 554493443\n- Supplied supporting keywords: which is ring finger for boy\n- Supplied competitor URL: https://www.caratlane.com/blog/which-hand-to-wear-the-engagement-ring/\n- Semrush page: marriage ring finger\n- Source execution note: Week9 informational gap. Intent key=topic:finger_marriage_ring; brands=CaratLane. Excluded Week1-8 and live BlueStone inventory. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nSERP intelligence (top 5 Google India ranking URLs for this keyword):\n- No pre-fetched Semrush data is available for this keyword.\n- You MUST search Google India for the primary keyword yourself and identify the top 5 organic ranking URLs (exclude ads, featured snippets, and People Also Ask).\n\nSERP intelligence execution instructions:\n- This step runs immediately after the duplicate check passes and before keyword mapping or drafting.\n- For each of the top 5 ranking URLs (whether pre-fetched above or found by searching Google):\n  1. Browse/scrape the URL and read its full content.\n  2. Log each URL scraped by printing: SERP_SCRAPED: <position> | <url> | <domain> | <word_count> | <h2_count>\n  3. Extract: page title, H2/H3 heading outline, key subtopics covered, FAQs answered, and approximate word count.\n- After scraping all URLs, synthesize a SERP Competitive Brief containing:\n  a) Consensus topics: H2 themes that appear across 3+ of the top 5 pages (table stakes your article must cover).\n  b) Common FAQs: questions answered by 2+ competitors (candidates for our FAQ section).\n  c) Content gaps: subtopics, depth, accuracy, or BlueStone-specific angles missing from all 5 pages.\n  d) Intent format: whether Google is ranking listicles, buying guides, long-form education, or gift guides.\n  e) Average word count and depth benchmark across the top 5.\n- Print the synthesized brief as: SERP_BRIEF: <one-line summary of consensus topics and gaps>\n- Use this brief to directly shape the H2 keyword map and article outline. Ensure your article covers all consensus topics\n  and fills the identified content gaps with BlueStone's authentic expertise.\n- Do NOT copy any wording, phrasing, or structure verbatim. Use the analysis only for topical coverage and differentiation.\n- Mark this step done in the checkpoint with:\n  python3 -B scripts/week9_checkpoint.py mark --path <checkpoint> --step serp_intelligence --status done --detail urls_scraped=<count> --detail avg_word_count=<avg>\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week9_rank73.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"serp_intelligence\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week9_checkpoint.py mark --path output/checkpoints/week9_rank73.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, serp_intelligence, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 9 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- CRITICAL RUNTIME EXECUTION GATE \u2014 STRICTLY SYNCHRONOUS ONLY:\n  * DO NOT spawn background tasks or execute commands with asynchronous delays.\n  * Execute ALL python scripts, curl/API calls, Higgsfield generations, and WordPress uploads SYNCHRONOUSLY in the foreground (blocking until full completion).\n  * Wait for each command and script to fully complete before calling the next tool or emitting text.\n  * NEVER end your turn or output messages like \"waiting for background task to finish\" while a task is running, as this triggers watchdog idle termination. Run all scripts synchronously from start to finish.\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Run the SERP intelligence step (serp_intelligence) immediately after the duplicate check passes. Search Google India for the primary keyword (or use the pre-fetched URLs above if available), identify the top 5 organic ranking URLs, and scrape/read each page fully. Log every scraped URL with SERP_SCRAPED. Synthesize a structured competitive brief before keyword mapping or drafting. Mark the serp_intelligence checkpoint step done.\n- Analyze the supplied competitor URL when present, in addition to the SERP top 5. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 9 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & STUDIO IMAGERY: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html` (matching `rudraksh-gold-bracelet-2026` and `mens-black-bracelet-2026`). All 6 carousel images MUST be high-definition studio-styled visuals sourced from `ProductImages/seo images/<Category>/<Product Name>.png` (converted to 960x535 WebP on stone plinths/draped fabric with warm lighting, NEVER plain white packshots). It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 360px }`, `margin: 1.75rem auto 1.25rem`, `.bs-cf-card { width: min(420px, 78vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-cta { background: #111; color: #fff; }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class=\"bs-cf\" id=\"bs-cf-<slug>\" data-interval=\"3200\" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards with initial position classes (`.bs-cf-card is-pos-0 data-index=\"0\"` ... `is-pos--1 data-index=\"5\"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` with the `paint()` and `rel()` rotation functions (with NO `<p>` wrappers). Follow immediately ONLY with a single `<!-- wp:paragraph -->\n<p><strong>Curated Design Highlights:</strong> Explore signature ... <a href=\"<product_url>\">Product Name</a> ...</p>\n<!-- /wp:paragraph -->`. NEVER insert a repetitive product bullet list after the carousel. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.\n- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week9_Blog_Queue_status.csv, output/product_rotation.json, the Week 9 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 9 target row\n4. Check duplicate slug and search intent\n5. Analyze top 5 SERP ranking URLs and synthesize competitive brief\n6. Analyze the supplied competitor URL and fact-check current sources\n7. Filter and map supporting keywords\n8. Build the H2 keyword map (informed by SERP brief + competitor analysis)\n9. Select article structure and visual concept\n10. Draft the complete article\n11. Select products and carousel media\n12. Publish the WordPress post\n13. Generate Type 3 images through the Higgsfield CLI\n14. Patch images and social metadata into WordPress\n15. Run live QA\n16. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- SERP intelligence: list every URL scraped (position, URL, domain, word count, H2 count), consensus topics, content gaps identified, and average competitor word count\n- H2 keyword map (with SERP-informed labels showing which H2s were added based on competitor analysis)\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+### Step Progress Log
+
+```
+STEP START: read_docs | time: 2026-09-26T16:12:30+05:30 | elapsed: 00:00:16
+STEP DONE: read_docs | time: 2026-09-26T16:13:15+05:30 | step duration: 00:00:45 | total elapsed: 00:01:01
+
+STEP START: verify_higgsfield | time: 2026-09-26T16:13:15+05:30 | elapsed: 00:01:01
+STEP DONE: verify_higgsfield | time: 2026-09-26T16:13:26+05:30 | step duration: 00:00:11 | total elapsed: 00:01:12
+
+STEP START: inspect_row | time: 2026-09-26T16:13:26+05:30 | elapsed: 00:01:12
+STEP DONE: inspect_row | time: 2026-09-26T16:13:46+05:30 | step duration: 00:00:20 | total elapsed: 00:01:32
+
+STEP START: duplicate_check | time: 2026-09-26T16:13:46+05:30 | elapsed: 00:01:32
+STEP DONE: duplicate_check | time: 2026-09-26T16:15:09+05:30 | step duration: 00:01:23 | total elapsed: 00:02:55
+
+STEP START: serp_intelligence | time: 2026-09-26T16:15:09+05:30 | elapsed: 00:02:55
+SERP_SCRAPED: 1 | https://www.caratlane.com/blog/which-hand-to-wear-the-engagement-ring/ | caratlane.com | 2109 | 3
+SERP_SCRAPED: 2 | https://www.swashaa.com/blogs/jewellery-guides/which-hand-to-wear-engagement-ring | swashaa.com | 1753 | 3
+SERP_SCRAPED: 3 | https://emori.in/blogs/news/engagement-ring-finger-for-women-and-men-what-it-means-in-india | emori.in | 1174 | 6
+SERP_SCRAPED: 4 | https://tyaani.com/blogs/the-tyaani-take/which-finger-is-the-engagement-ring-worn-on-in-india | tyaani.com | 1641 | 3
+SERP_SCRAPED: 5 | https://lukson.co/blogs/news/engagement-ring-finger-for-women-and-men | lukson.co | 1897 | 12
+SERP_BRIEF: Consensus across top 5 covers 4th finger anatomy, bride left-vs-right hand customs, groom right-hand tradition, and post-marriage stacking; major gaps include BIS HUID hallmarking, 18K/14K metal durability for daily wear, dominant-hand knuckle sizing discrepancies, and band contour stacking ergonomics.
+STEP DONE: serp_intelligence | time: 2026-09-26T16:19:58+05:30 | step duration: 00:04:49 | total elapsed: 00:07:44
+
+STEP START: fact_check | time: 2026-09-26T16:19:58+05:30 | elapsed: 00:07:44
+STEP DONE: fact_check | time: 2026-09-26T16:20:13+05:30 | step duration: 00:00:15 | total elapsed: 00:07:59
+
+STEP START: keyword_map | time: 2026-09-26T16:20:13+05:30 | elapsed: 00:07:59
+STEP DONE: keyword_map | time: 2026-09-26T16:20:25+05:30 | step duration: 00:00:12 | total elapsed: 00:08:11
+
+STEP START: structure_visuals | time: 2026-09-26T16:20:25+05:30 | elapsed: 00:08:11
+STEP DONE: structure_visuals | time: 2026-09-26T16:20:44+05:30 | step duration: 00:00:19 | total elapsed: 00:08:30
+
+STEP START: draft | time: 2026-09-26T16:20:44+05:30 | elapsed: 00:08:30
+STEP DONE: draft | time: 2026-09-26T16:22:25+05:30 | step duration: 00:01:41 | total elapsed: 00:10:11
+
+STEP START: product_media | time: 2026-09-26T16:22:25+05:30 | elapsed: 00:10:11
+STEP DONE: product_media | time: 2026-09-26T16:23:43+05:30 | step duration: 00:01:18 | total elapsed: 00:11:29
+
+STEP START: publish_wordpress | time: 2026-09-26T16:23:43+05:30 | elapsed: 00:11:29
+STEP DONE: publish_wordpress | time: 2026-09-26T16:24:16+05:30 | step duration: 00:00:33 | total elapsed: 00:12:02
+
+STEP START: generate_type3 | time: 2026-09-26T16:24:16+05:30 | elapsed: 00:12:02
+STEP DONE: generate_type3 | time: 2026-09-26T16:28:07+05:30 | step duration: 00:03:51 | total elapsed: 00:15:53
+
+STEP START: patch_type3 | time: 2026-09-26T16:28:07+05:30 | elapsed: 00:15:53
+STEP DONE: patch_type3 | time: 2026-09-26T16:29:01+05:30 | step duration: 00:00:54 | total elapsed: 00:16:47
+
+STEP START: live_qa | time: 2026-09-26T16:29:01+05:30 | elapsed: 00:16:47
+STEP DONE: live_qa | time: 2026-09-26T16:31:41+05:30 | step duration: 00:02:40 | total elapsed: 00:19:27
+
+STEP START: update_status | time: 2026-09-26T16:31:41+05:30 | elapsed: 00:19:27
+STEP DONE: update_status | time: 2026-09-26T16:32:21+05:30 | step duration: 00:00:40 | total elapsed: 00:20:07
+
+STEP START: final_report | time: 2026-09-26T16:32:21+05:30 | elapsed: 00:20:07
+STEP DONE: final_report | time: 2026-09-26T16:32:39+05:30 | step duration: 00:00:18 | total elapsed: 00:20:25
+```
+
+---
+
+### Final End-to-End Production Report: Week 9 Rank 73
+
+#### 1. Publication Details
+- **Live Article URL:** [https://blog.bluestone.com/marriage-ring-finger-2026/](https://blog.bluestone.com/marriage-ring-finger-2026/)
+- **WordPress Post ID:** `40275`
+- **Article Engine:** `buying_guide` (How-to / Education engine)
+- **Author:** Satyam (WP ID `270271337`) | On-page Byline: `By Satyam, BlueStone Editorial`
+- **Assigned Categories:** `Gift` (`554493424`) + `Wedding Jewellery` (`554493443`)
+- **Visible Word Count:** 2,954 words (Benchmark: $\ge 1,800$ words)
+
+---
+
+#### 2. Target Keyword & Supplied Metrics
+- **Primary Keyword:** `marriage ring finger`
+- **Search Volume:** 3,600
+- **Keyword Difficulty (KD):** 27.0
+- **Priority Score:** 2035.3846
+- **Theme:** How-to / Education
+- **Category Fit:** Jewellery Education
+- **Target Slug:** `marriage-ring-finger-2026`
+
+---
+
+#### 3. Supporting Keywords Audit
+- **Used:**
+  - `which is ring finger for boy`: Highly relevant to Indian wedding traditions and groom hand etiquette. Mapped directly to dedicated Section H2 (`Which is Ring Finger for Boy: Groom Traditions in Indian Weddings`) and FAQ Q2.
+- **Rejected:** None supplied that were irrelevant; all supplied terms were integrated topically.
+
+---
+
+#### 4. SERP Intelligence & Competitor Analysis
+##### Top 5 Organic Google India Ranking URLs:
+1. **CaratLane** (`caratlane.com`): `https://www.caratlane.com/blog/which-hand-to-wear-the-engagement-ring/` | 2,109 words | 3 H2s
+2. **Swashaa** (`swashaa.com`): `https://www.swashaa.com/blogs/jewellery-guides/which-hand-to-wear-engagement-ring` | 1,753 words | 3 H2s
+3. **Emori Jewels** (`emori.in`): `https://emori.in/blogs/news/engagement-ring-finger-for-women-and-men-what-it-means-in-india` | 1,174 words | 6 H2s
+4. **Tyaani Jewels** (`tyaani.com`): `https://tyaani.com/blogs/the-tyaani-take/which-finger-is-the-engagement-ring-worn-on-in-india` | 1,641 words | 3 H2s
+5. **Lukson** (`lukson.co`): `https://lukson.co/blogs/news/engagement-ring-finger-for-women-and-men` | 1,897 words | 12 H2s
+
+- **Top 5 Average Word Count:** 1,714 words (BlueStone article achieves 2,954 words, exceeding average by 1,240 words).
+- **Consensus Topics (Covered across 3+ competitors):**
+  - Fourth finger anatomy and the Roman *vena amoris* (vein of love) lore.
+  - Indian bride traditions: ceremonial right hand (*dakshin hasta*) vs modern urban left hand for daily wear.
+  - Groom traditions in India: wearing wedding rings on the right-hand ring finger (*anamika*).
+  - Stacking engagement rings and marriage bands together on one finger.
+- **Content Gaps Identified & Addressed:**
+  - Gold purity differences: explaining why 18K and 14K gold are essential for daily structural durability compared to softer 22K gold.
+  - Bureau of Indian Standards (BIS) mandatory HUID hallmarking regulations (the 3 mandatory laser stamps).
+  - Hand sizing biomechanics: dominant hand fingers being 0.5 to 1 size larger than non-dominant hand fingers.
+  - Ergonomic stacking geometry: curved chevron vs flush bands to prevent stone rubbing and prong loosening.
+
+##### Competitor URL Analysis (`caratlane.com`):
+CaratLane focuses heavily on romantic engagement lore and provides high-level left vs right hand comparisons for brides and grooms. However, it completely conflates engagement rings with marriage rings, omits gold alloy durability guidance for lifetime wear, provides zero hallmarking or verification details, and neglects knuckle sizing and band contour ergonomics.
+
+---
+
+#### 5. H2 Keyword Map & Structure
+1. `Marriage Ring Finger Meaning: History, Anatomy, and the Fourth Digit` — **[primary-backed]** (Volume: 3600, KD: 27.0)
+2. `Which Hand and Marriage Ring Finger for Women in India?` — **[competitor-structure-backed]**
+3. `Which is Ring Finger for Boy: Groom Traditions in Indian Weddings` — **[supporting-keyword-backed]** (`which is ring finger for boy`)
+4. `Cultural and Religious Nuances: Hindu, Christian, and Regional Traditions` — **[competitor-structure-backed]**
+5. `Hand Sizing Reality: Measuring Your Marriage Ring Finger Accurately` — **[intent-inferred — added to fill SERP gap]**
+6. `Curated BlueStone Marriage Rings for Him and Her` — **[intent-inferred — 3D Coverflow carousel section]**
+7. `Gold Purity and Hallmarking: Choosing Daily-Wear 18K and 14K Bands` — **[intent-inferred — added to fill SERP gap]**
+8. `How to Stack Your Engagement Ring and Marriage Band on One Finger` — **[competitor-structure-backed]**
+9. `Final Thoughts on Choosing Your Marriage Ring Finger` — **[intent-inferred]**
+10. `More Jewellery & Buying Guides` — **[intent-inferred — mandatory internal blog cluster]**
+11. `Frequently Asked Questions About the Marriage Ring Finger` — **[primary-backed — 6 visible Q&As]**
+
+---
+
+#### 6. Factual Sources & Standards
+- **BIS Hallmarking Standards:** Verification of the 3 mandatory marks (BIS triangle logo, 750/585 purity fineness, and 6-digit alphanumeric HUID) under Bureau of Indian Standards regulations.
+- **Jewellery Sizing Ergonomics:** Biomechanical knuckle vs base measurements, temperature-induced expansion, and width-dependent sizing rules.
+- **Vedic & Matrimonial Traditions:** Historical significance of the *dakshin hasta* (ceremonial right hand) and *anamika* (solar ring finger).
+
+---
+
+#### 7. Media & Product Integration
+##### Mid-Article 3D Coverflow Carousel (6 Cards):
+- Sourced exclusively from `ProductImages/seo images/Rings/`, converted to 960x535 WebP, pre-flight verified HTTP 200 OK:
+  1. **The Jasper Band For Him** (`BISL0851R28`): Media ID `40269` | [PDP Link](https://www.bluestone.com/rings/the-jasper-band-for-him~93964.html)
+  2. **The Le Sommet Ring** (`BISE0932R181`): Media ID `40270` | [PDP Link](https://www.bluestone.com/rings/the-le-sommet-ring~105031.html)
+  3. **The Interlink Band Ring** (`BISV0910R24`): Media ID `40271` | [PDP Link](https://www.bluestone.com/rings/the-interlink-band-ring~108785.html)
+  4. **The Quinn Ring** (`BIAR0097R16`): Media ID `40272` | [PDP Link](https://www.bluestone.com/rings/the-quinn-ring~57845.html)
+  5. **The Gigi Ring** (`BINS0639R18`): Media ID `40273` | [PDP Link](https://www.bluestone.com/rings/the-gigi-ring~64382.html)
+  6. **The Liza ring** (`BIAR0097R07`): Media ID `40274` | [PDP Link](https://www.bluestone.com/rings/the-liza-ring~7623.html)
+
+##### Type 3 AI Concept Images (Higgsfield `nano_banana_pro`):
+- **Hero Image (Featured Media & Yoast Social Image):**
+  - Media ID: `40276` | Sourced SKU: `The Jasper Band For Him` (`BISL0851R28`, Male)
+  - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/marriage-ring-finger-hero-2026.webp` (HTTP 200 OK)
+  - Alt: `marriage ring finger traditions showing groom wedding band on fourth digit in 2026`
+- **In-Body Flatlay Image (Study Desk setting):**
+  - Media ID: `40277` | Sourced SKU: `The Anya Ring` (`BIAR0097R04`, Female)
+  - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/marriage-ring-finger-flatlay-2026.webp` (HTTP 200 OK)
+  - Wrapped in `<a href="https://www.bluestone.com/rings/the-anya-ring~7515.html">` (`"linkDestination":"custom"`)
+  - Caption: `The <a href="https://www.bluestone.com/rings/the-anya-ring~7515.html">The Anya Ring</a> presented alongside professional sizing tools for marriage ring selection`
+- **In-Body Lifestyle Image:**
+  - Media ID: `40278` | Sourced SKU: `The Malibu Ring` (`BIPM0017R18`, Female)
+  - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/marriage-ring-finger-lifestyle-2026.webp` (HTTP 200 OK)
+  - Wrapped in `<a href="https://www.bluestone.com/rings/the-malibu-ring~2321.html">` (`"linkDestination":"custom"`)
+  - Caption: `The <a href="https://www.bluestone.com/rings/the-malibu-ring~2321.html">The Malibu Ring</a> styled gracefully on the bride ring finger for elegant daily wear`
+
+##### Product Rotation Ledger:
+- Carousel and Type 3 overlap: Exactly 1 SKU (`The Jasper Band For Him`).
+- Flatlay setting: `study-desk` (avoiding repetition of recent `festive-mantel`, `windowsill-daylight`, `linen-bedside`, `marble-vanity`, and `desk-kraft`).
+- Updated in [output/product_rotation.json](file:///Users/satyamkumar/Downloads/seo%20final%202026/output/product_rotation.json).
+
+---
+
+#### 8. Higgsfield Generation Accounting
+- **Subscription Plan:** `ultimate`
+- **Starting Credits:** `76.35`
+- **Ending Credits:** `70.35`
+- **Credits Consumed:** `6.00` (2.00 credits per 2K generation)
+- **Job IDs:**
+  - Hero: `0f4aea29-f7e5-4e6e-97f2-f79a0c6bc211` (57.4s)
+  - Flatlay: `2e76cbb0-17ba-43e6-8fb6-1304fb4283d4` (49.1s)
+  - Lifestyle: `07fa0927-d060-447b-a035-c5976f6271ba` (48.9s)
+- **Generation Retries:** 0 (all 3 passed on first attempt)
+
+---
+
+#### 9. Duplicate & Cannibalization Analysis
+- **Target Slug Check:** `marriage-ring-finger-2026` was completely free on WordPress (0 matching posts).
+- **Cannibalization Gate:** Post 37731 (`engagement-ring-finger-2026`) targets engagement proposals, solitaires, and sagai traditions. Week 9 Rank 73 satisfies the identified informational competitor gap (`topic:finger_marriage_ring`), dedicated to wedding bands, groom ring traditions, daily-wear karatage, and ring stacking geometry.
+
+---
+
+#### 10. Live QA Gate Summary
+- **HTTP Status:** 200 OK
+- **Canonical URL:** `https://blog.bluestone.com/marriage-ring-finger-2026/`
+- **Live og:image:** `https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/marriage-ring-finger-hero-2026.webp?fit=1400%2C781&ssl=1` (verified HTTP 200 OK)
+- **3D Coverflow Carousel:** Rendered with `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card` (all 6 cards), `.bs-cf-dots`, and active rotation script. All 6 card images return HTTP 200 OK.
+- **In-Body Type 3 Images:** Flatlay and Lifestyle present with clean editorial captions and linked PDPs. Hero is not duplicated in body `<img>` tags.
+- **Section Ordering:** Final Thoughts $\rightarrow$ More Jewellery & Buying Guides $\rightarrow$ Frequently Asked Questions.
+- **Prohibited Patterns:** 0 em dashes (`—`), 0 en dashes (`–`), 0 spaced hyphens in editorial copy, 0 raw HTML tables, and 0 price mentions.
+- **Structured Data:** Both `FAQPage` (6 Q&As) and `BlogPosting` (with Satyam author and 3-image array) JSON-LD schemas validated in DOM.
+
+---
+
+#### 11. Artifacts & Status Updates
+- [output/checkpoints/week9_rank73.json](file:///Users/satyamkumar/Downloads/seo%20final%202026/output/checkpoints/week9_rank73.json) — all 16 steps marked `done` / `completed`.
+- [output/Week9_Blog_Queue_status.csv](file:///Users/satyamkumar/Downloads/seo%20final%202026/output/Week9_Blog_Queue_status.csv) — Rank 73 marked `Done`.
+- [output/product_rotation.json](file:///Users/satyamkumar/Downloads/seo%20final%202026/output/product_rotation.json) — updated with Rank 73 trio and `study-desk` flatlay setting.
+- `SEO Strategy 2026.xlsx` Sheet `Week 9` — row 74 updated with live URL and execution note.

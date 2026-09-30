@@ -1,0 +1,88 @@
+{
+  "occasion": "deepavali-tamil-2026",
+  "article": "Week1 Rank49",
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max. FLATLAY: 3-4 refs. Credits: 3 images count 1.",
+  "prompt_rules": {
+    "people_slots": "scene first; 2 refs max; count=1",
+    "flatlay": "3-4 refs; count=1",
+    "credits": "Exactly 3 images"
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg3.bluestone.com/giproduct/BISW1080P132_WAA18DIG4LNBTXXXX_ABCD00-PICS-00000-1024-104460.png",
+        "https://kinclimg4.bluestone.com/giproduct/BISW1080P132_WAA18DIG4LNBTXXXX_ABCD00-PICS-00001-1024-104460.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian complexion.\n\ndeepavali wishes in tamil 2026 candid lifestyle mid-shot fair-skinned Indian woman in home Diwali morning with diyas marigold. She wears The Sarvanya Pendant from (@img1,@img2): rose gold pendant with elegant gemstone arrangement, small on chest. Bare ears wrists. Never floating packshot. 16:9 full face safe margins.",
+      "alt": "deepavali wishes in tamil 2026 hero with The Sarvanya Pendant",
+      "product": {
+        "code": "BISW1080P132",
+        "name": "The Sarvanya Pendant",
+        "pdp": "https://www.bluestone.com/pendants/the-sarvanya-pendant~156927.html"
+      },
+      "caption": "Deepavali 2026 vibe: The Sarvanya Pendant"
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg5.bluestone.com/giproduct/BIDG0393O37_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-28014.png",
+        "https://kinclimg8.bluestone.com/giproduct/BIDG0393O37_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-28014.png",
+        "https://kinclimg5.bluestone.com/giproduct/BIDG0393O37_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-28014.png",
+        "https://kinclimg1.bluestone.com/giproduct/BIDG0393O37_YAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-28014.png"
+      ],
+      "prompt": "deepavali wishes in tamil 2026 top-down flatlay on desk with diya marigold blank cream card. The Estrella Oval Bangle from (@img1,@img2,@img3,@img4) at natural scale: yellow gold oval bangle with star or pave accents at natural scale. No people. No readable text.",
+      "alt": "deepavali wishes in tamil 2026 flatlay with The Estrella Oval Bangle",
+      "product": {
+        "code": "BIDG0393O37",
+        "name": "The Estrella Oval Bangle",
+        "pdp": "https://www.bluestone.com/bangles/the-estrella-oval-bangle~34771.html"
+      },
+      "caption": "Deepavali 2026 vibe: The Estrella Oval Bangle"
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg2.bluestone.com/giproduct/BISL0819N09_YAA18DIG6BEEYXXXX_ABCD00-PICS-00000-1024-61162.png",
+        "https://kinclimg9.bluestone.com/giproduct/BISL0819N09_YAA18DIG6BEEYXXXX_ABCD00-PICS-00001-1024-61162.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only.\n\ndeepavali wishes in tamil 2026 lifestyle mid-shot soft profile with festive diya glow soft blur. Wears The Yfel Evil Eye Pendant Necklace from (@img1,@img2): yellow gold evil eye pendant necklace, small on chest. Bare neck wrists. 16:9 full face safe margins.",
+      "alt": "deepavali wishes in tamil 2026 lifestyle with The Yfel Evil Eye Pendant Necklace",
+      "product": {
+        "code": "BISL0819N09",
+        "name": "The Yfel Evil Eye Pendant Necklace",
+        "pdp": "https://www.bluestone.com/necklaces/the-yfel-evil-eye-pendant-necklace~89724.html"
+      },
+      "caption": "Deepavali 2026 vibe: The Yfel Evil Eye Pendant Necklace"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/deepavali-wishes-tamil-hero-2026.webp",
+    "flatlay": "output/magnific_generated/deepavali-wishes-tamil-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/deepavali-wishes-tamil-lifestyle-2026.webp"
+  },
+  "insert_h2s_json": "output/Week1_Rank49_DeepavaliTamil_insert_h2s.json",
+  "product_media_json": "output/Week1_Rank49_DeepavaliTamil_product_media.json",
+  "output_prefix": "Week1_Rank49_DeepavaliTamil",
+  "schema_keywords": [
+    "deepavali wishes in tamil",
+    "happy diwali wishes in tamil",
+    "deepavali valthukkal in tamil"
+  ],
+  "media_titles": {
+    "hero": "deepavali wishes in tamil 2026 Hero",
+    "flatlay": "deepavali wishes in tamil 2026 Flatlay",
+    "lifestyle": "deepavali wishes in tamil 2026 Lifestyle"
+  },
+  "wp_post_id": 30564,
+  "webp_prefix": "deepavali-wishes-tamil",
+  "caption_occasion": "Deepavali",
+  "caption_year": "2026"
+}

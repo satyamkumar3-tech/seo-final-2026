@@ -1,0 +1,104 @@
+{
+  "pipeline": "week8",
+  "rank": 158,
+  "slug": "party-wear-earrings-2026",
+  "primary": "party wear earrings",
+  "created_at": "2026-09-15T04:49:54Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-15T04:50:23Z",
+      "finished_at": "2026-09-15T04:51:12Z",
+      "all_docs_read": true
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-15T04:51:16Z",
+      "finished_at": "2026-09-15T04:51:23Z",
+      "credits": "310.37,plan=ultimate"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-15T04:51:26Z",
+      "finished_at": "2026-09-15T04:51:34Z",
+      "action": "New,primary=party wear earrings,slug=party-wear-earrings-2026,volume=3600,kd=10.0"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-15T04:51:38Z",
+      "finished_at": "2026-09-15T04:51:53Z",
+      "duplicate_found": "false,slug_available=true,intent_unique=true"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-15T04:51:57Z",
+      "finished_at": "2026-09-15T04:52:28Z",
+      "competitor_analyzed": "true,bis_hallmarking_verified=true,18k_22k_suitability_verified=true"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-15T04:52:30Z",
+      "finished_at": "2026-09-15T04:52:34Z",
+      "primary": "party wear earrings,supplied_supporting=gold party wear earrings,rejected=none"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-15T04:52:38Z",
+      "finished_at": "2026-09-15T04:52:50Z",
+      "engine": "buying_guide,h2_count=10,flatlay_setting=marble-vanity"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-15T04:55:09Z",
+      "finished_at": "2026-09-15T04:57:23Z",
+      "words": "3817,file=output/week8_rank158_article.html"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-15T04:54:16Z",
+      "finished_at": "2026-09-15T04:55:05Z",
+      "carousel_count": "6,media_ids=38844_38845_38846_38847_38848_38849"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-15T04:57:27Z",
+      "finished_at": "2026-09-15T04:57:45Z",
+      "post_id": "38850,url=https://blog.bluestone.com/party-wear-earrings-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-15T04:57:48Z",
+      "finished_at": "2026-09-15T05:01:19Z",
+      "hero_job": "fbd6003f-4db3-49d5-8b63-269f1c033d28,flatlay_job=7666f4d7-221c-4dbb-af5f-abe50ccd247a,lifestyle_job=0a18033f-18ba-4a0f-9c16-534c39cbd935,credits_start=310.37,credits_end=304.37"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-15T05:01:22Z",
+      "finished_at": "2026-09-15T05:01:54Z",
+      "hero_id": "38851,flatlay_id=38852,lifestyle_id=38853"
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-15T05:01:57Z",
+      "finished_at": "2026-09-15T05:03:40Z",
+      "all_passed": "true,h1_count=1,h2_count=11,words=3002,carousel_cards=6,http_200=true,og_image=true"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-15T05:03:44Z",
+      "finished_at": "2026-09-15T05:04:40Z",
+      "queue_status": "updated,product_rotation=updated,excel_row_159=updated"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-15T05:04:44Z",
+      "finished_at": "2026-09-15T05:04:54Z",
+      "article_engine": "buying_guide,post_id=38850,url=https://blog.bluestone.com/party-wear-earrings-2026/,credits_end=304.37"
+    }
+  },
+  "updated_at": "2026-09-15T05:05:09Z",
+  "completed_at": "2026-09-15T05:04:54Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

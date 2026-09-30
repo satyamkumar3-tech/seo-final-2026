@@ -1,0 +1,34 @@
+{
+  "occasion": "raksha-bandhan-2026",
+  "article": "Week1 Rank9 - raksha bandhan quotes in english",
+  "wp_post_id": 14317,
+  "workflow": "Magnific Mystic realism with hyper-real theme anchor and negative prompt. People scenes use structure_ref null and exact SKU descriptions read from raw JPGs.",
+  "notes": "Bandhan Bracelet: polished yellow gold link chain bracelet with diamond-studded connectors. Elize Evil Eye Bracelet: delicate yellow gold chain with a central round evil eye motif set with white diamonds and blue gemstones. Shining Star Bracelet: thin yellow gold chain bracelet featuring a polished five-point star charm.",
+  "magnific": {
+    "model": "mystic",
+    "theme_anchor": "Ultra-realistic photography, macro-level detail, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light from the left, warm daylight color temperature, realistic soft shadows. Shot on high-end DSLR, shallow depth of field, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire subjects and jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, product shot on plain background, cropped faces, cut-off heads, cut-off jewellery, out of frame, readable text, logos"
+  },
+  "slots": {
+    "hero": {
+      "structure_ref": null,
+      "prompt": "Raksha Bandhan 2026 sibling celebration hero. Product-focused 85mm photograph of a sister's hands tying a beautiful modern gold bracelet onto her brother's wrist. The bracelet is a polished yellow gold link chain with diamond-studded connectors, in sharp focus in the foreground. Sibling's complete smiling faces are softly visible waist-up in the background with safe margins. Traditional Indian clothing, warm indoor lighting. The Bandhan Bracelet, hands, and both full heads remain entirely in the frame.",
+      "alt": "Raksha bandhan quotes in english 2026 hero, sister tying The Bandhan Bracelet For Him"
+    },
+    "flatlay": {
+      "structure_ref": null,
+      "prompt": "Raksha Bandhan 2026 writing desk flatlay, top-down with a 100mm macro lens. A blank cream greetings card, elegant fountain pen, small steel dish of red roli powder and rice grains, and a blank dark phone screen fill the dark wooden desk. At the centre, a delicate yellow gold chain bracelet with a central round evil eye motif set with white diamonds and blue gemstones rests fully visible. The Elize Evil Eye Bracelet is the sharp-focus jewellery hero with physically accurate scale, facets, reflections, and safe margins. No readable text, no logos.",
+      "alt": "Rakhi quotes card flatlay with The Elize Evil Eye Bracelet"
+    },
+    "lifestyle": {
+      "structure_ref": null,
+      "prompt": "Raksha Bandhan 2026 celebration portrait of a happy Indian brother and sister standing on a balcony, shot at eye level on an 85mm lens. In the sharp foreground, the sister's wrist is in sharp focus, showcasing a thin yellow gold chain bracelet featuring a polished five-point star charm. Both of their complete, uncropped smiling faces appear in the softer background. Soft sunset daylight, green trees and warm lights in the distant blur. The Shining Star Bracelet and both full heads remain inside the frame with safe margins.",
+      "alt": "Rakhi quotes for brother 2026 lifestyle with The Shining Star Bracelet"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/rakhi-hero-2026.webp",
+    "flatlay": "output/magnific_generated/rakhi-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/rakhi-lifestyle-2026.webp"
+  }
+}

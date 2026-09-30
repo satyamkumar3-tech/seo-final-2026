@@ -1,0 +1,81 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "output_prefix": "Week9_Rank66_GarbaJewellery",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "flatlay_setting": "festive-mantel",
+  "slots": {
+    "hero": {
+      "slot": "hero",
+      "product_name": "The Skein Hoop Earrings",
+      "code": "BINK0363H03",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/earrings/the-skein-hoop-earrings~27215.html",
+      "dimensions": "product_height_mm=17.95, product_width_mm=6.16 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Skein Hoop Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Skein Hoop Earrings/2_front.png"
+      ],
+      "alt": "Garba jewellery 2026 hero lifestyle featuring The Skein Hoop Earrings worn during festive dance",
+      "caption": "The Skein Hoop Earrings worn with dance-proof elegance during Navratri garba celebrations",
+      "prompt": "Photoreal candid lifestyle photograph with high-end fine jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Controlled soft key light with gentle fill, realistic soft shadows, proper shallow depth of field (85mm lens), balanced exposure with no blown whites and no HDR glare. Shot on DSLR, HD quality, 16:9 full frame with safe margins. People are the primary subject and remain candid; the jewellery is an exquisite worn detail that is 100% identical to product refs. Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Mid-shot candid portrait of a graceful, beautiful fair-skinned Indian woman in her late 20s wearing an elegant festive crimson and marigold silk chaniya choli with delicate gold threadwork during a festive evening Garba celebration. Her dark hair is styled in a neat festive braid with fresh jasmine flowers. She is captured mid-twirl with a joyful, radiant smile. She is physically wearing The Skein Hoop Earrings from reference images (@img1 body_image worn scale, @img2 design only) on her earlobes. GENDER LOCK: Female adult woman only. The sculptural hoop earrings hug her lobes with natural contact shadows against skin at EXACT jewellery dimensions: product_height_mm=17.95 x product_width_mm=6.16 (these are jewellery dimensions, not face or body measurements). Keep the jewellery size on the person like @img1 body_image (worn ear scale). Use @img2 only for the jewellery design. Do not make it bigger for visibility. In the warm background, soft bokeh of golden fairy lights and hanging marigolds creates an authentic festive ambience. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Camera focuses naturally on the woman and her earrings; the interwoven yellow gold loops are sharp, true, and refined in authentic 18K yellow gold warmth. Safe margins, full face, ear, and neck clearly visible. CRITICAL anti-collage: the jewellery is physically attached to the earlobe, never a floating cutout, never a giant product diagram composited over the photo, never a packshot overlay. 16:9 landscape. Avoid: floating jewellery overlay, giant earring collage, product cutout over people, packshot composited on lifestyle photo, jewellery upscaled for visibility, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, unreal scale, oversized jewellery, distorted jewellery, warped metal, wrong design, distorted ears, multiple piercings, product shot on plain background, readable text, logos, dark skin, deep brown skin, heavily tanned skin"
+    },
+    "flatlay": {
+      "slot": "flatlay",
+      "product_name": "The Channing Bangle",
+      "code": "BIPS0003O06",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/bangles/the-channing-bangle~975.html",
+      "dimensions": "product_height_mm=50.9, product_width_mm=7.69 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Bangles/The Channing Bangle/0_primary.png",
+        "ProductImages/raw/Bangles/The Channing Bangle/2_front.png",
+        "ProductImages/raw/Bangles/The Channing Bangle/3_side_1.png"
+      ],
+      "alt": "Garba jewellery 2026 festive mantel flatlay featuring The Channing Bangle with marigolds",
+      "caption": "The Channing Bangle styled on a festive mantel with marigold petals and traditional brass dandiya",
+      "prompt": "Photoreal high-end jewellery commercial flatlay, HD quality, no distortion of jewellery, identical scale and design (100% match to refs), physically accurate metal detail, natural textures only, no stylization, no illustration. Controlled soft key light with gentle realistic shadows, proper shallow depth of field, balanced exposure with no blown whites and no HDR glare. Shot on DSLR, 16:9 full frame with safe margins. Top-down editorial jewellery flatlay. Flatlay setting ID: festive-mantel. Surface + props: carved warm teakwood festive mantel shelf, scattered fresh orange and yellow marigold flower petals (genda phool), a pair of polished traditional brass dandiya sticks lying parallel in the soft-focus background, a small hand-crafted brass diya with a tiny warm golden flame, and folded rich crimson Gujarati silk fabric with subtle golden zari borders. Soft warm festive candlelight and twilight ambience. The identical The Channing Bangle from (@img1, @img2, @img3) rests cleanly on the teakwood mantel shelf at EXACT jewellery dimensions: product_height_mm=50.9 x product_width_mm=7.69 (these are jewellery dimensions, not face or body measurements). Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. HD hyperreal yellow gold texture with soft specular highlights and authentic precious metal luster. Props stay secondary; jewellery is the clear subject. No people, no hands, no skin. No floating overlays or cutouts. No readable text, logos, or brand marks on props. Avoid: illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, artificial harsh lighting, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, blurry jewellery, distorted jewellery, warped metal, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, people, hands, skin"
+    },
+    "lifestyle": {
+      "slot": "lifestyle",
+      "product_name": "The Lumeelle Cluster Pendant",
+      "code": "BISW1080P133",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/pendants/the-lumeelle-cluster-pendant~162509.html",
+      "dimensions": "product_height_mm=32.66, product_width_mm=32.66 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Lumeelle Cluster Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Lumeelle Cluster Pendant/2_front.png"
+      ],
+      "alt": "Garba jewellery 2026 candid lifestyle featuring The Lumeelle Cluster Pendant on festive attire",
+      "caption": "The Lumeelle Cluster Pendant worn as a vibrant floral centerpiece for festive Navratri evenings",
+      "prompt": "Photoreal candid lifestyle photograph with high-end fine jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Controlled soft key light with gentle fill, realistic soft shadows, proper shallow depth of field (85mm lens), balanced exposure with no blown whites and no HDR glare. Shot on DSLR, HD quality, 16:9 full frame with safe margins. People are the primary subject and remain candid; the jewellery is an exquisite worn detail that is 100% identical to product refs. Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Close-up candid portrait of an elegant fair-skinned Indian woman in her late 20s wearing a royal peacock blue and emerald green embroidered festive choli at a festive Navratri celebration. Her posture is relaxed and poised as she laughs softly, one hand lightly resting near her collarbone. She is physically wearing The Lumeelle Cluster Pendant on a fine 18K yellow gold chain from reference images (@img1 body_image worn scale, @img2 design only) centered against her collarbone. GENDER LOCK: Female adult woman only. The floral gemstone cluster pendant rests naturally against skin with realistic soft contact shadows at EXACT jewellery dimensions: product_height_mm=32.66 x product_width_mm=32.66 (these are jewellery dimensions, not face or body measurements). Keep the jewellery size on the person like @img1 body_image (worn neck scale). Use @img2 only for the jewellery design. Do not make it bigger for visibility. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Camera focuses sharply on the pendant and neckline; the floral gold cluster and sparkling stones are sharp and true with authentic 18K yellow gold warmth. Bare ears, no other necklaces in frame. Safe margins, neckline, collarbone, and jawline clearly visible. CRITICAL anti-collage: the jewellery is physically worn on the neck, never a floating cutout, never a giant product diagram composited over the photo, never a packshot overlay. 16:9 landscape. Avoid: floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, jewellery upscaled for visibility, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, unreal scale, oversized jewellery, distorted jewellery, warped metal, wrong design, distorted hands, extra necklaces, product shot on plain background, readable text, logos, dark skin, deep brown skin, heavily tanned skin"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/garba-jewellery-hero-2026.webp",
+    "flatlay": "output/magnific_generated/garba-jewellery-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/garba-jewellery-lifestyle-2026.webp"
+  },
+  "higgsfield_jobs": {
+    "hero_accepted_cli_candidate": {
+      "job_id": "765e50ad-ee52-4c76-bb88-3d8416eccaf3",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_080110_765e50ad-ee52-4c76-bb88-3d8416eccaf3.png",
+      "local_raw": "output/magnific_generated/garba-jewellery-hero-2026.raw.png"
+    },
+    "flatlay_accepted_cli_candidate": {
+      "job_id": "b976d316-4932-41de-907d-168a28b118d3",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_080155_b976d316-4932-41de-907d-168a28b118d3.png",
+      "local_raw": "output/magnific_generated/garba-jewellery-flatlay-2026.raw.png"
+    },
+    "lifestyle_accepted_cli_candidate": {
+      "job_id": "cdc820d8-2f55-4d7f-8398-21299bb228a9",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_080234_cdc820d8-2f55-4d7f-8398-21299bb228a9.png",
+      "local_raw": "output/magnific_generated/garba-jewellery-lifestyle-2026.raw.png"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Generate high-depth educational buying guide draft for Week 9 Rank 86: modern vanki ring designs."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+# Ensure no em dashes, en dashes, or spaced hyphens exist in text
+def clean_text(text: str) -> str:
+    # Replace em-dashes and en-dashes
+    text = text.replace("—", ", ").replace("–", ", ")
+    # Replace spaced hyphens ' - ' with ': ' or ', '
+    text = text.replace(" - ", ": ")
+    return text
+
+draft_blocks = [
+    # Byline and Hook
+    '<!-- wp:paragraph {"className":"has-text-align-left"} -->\n<p><em>By Satyam, BlueStone Editorial</em></p>\n<!-- /wp:paragraph -->',
+    
+    '<!-- wp:paragraph -->\n<p>Few ornaments in the vast repertoire of Indian jewellery possess the architectural charisma and ancient cultural resonance of the vanki. Defined by its signature inverted V-shaped silhouette, this historic South Indian ornament has transcended its origins as a royal bridal armlet to emerge as one of the most sought-after contemporary fine jewellery staples: modern vanki ring designs. In 2026, modern women are seeking jewellery that honors rich cultural lineage while seamlessly integrating into fast-paced everyday routines, boardroom wardrobes, and festive evening ensembles.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>Quick Guide Summary (TL;DR):</strong> Modern vanki ring designs adapt the sacred South Indian chevron contour into sleek, lightweight fine gold and diamond finger rings. Traditionally symbolizing divine protection and the auspicious serpent hood (Naga), contemporary interpretations prioritize ergonomic comfort, low-profile bezel or micro-prong diamond settings, and balanced 18K or 14K gold structures. Whether styled as an empowering solo statement on the index finger or stacked gracefully alongside a solitaire engagement ring, a well-crafted modern vanki ring offers timeless grace without compromising daily wearability.</p>\n<!-- /wp:paragraph -->',
+
+    # H2: What Defines Modern Vanki Ring Designs in 2026?
+    '<!-- wp:heading -->\n<h2>What Defines Modern Vanki Ring Designs in 2026?</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>To appreciate modern vanki ring designs, one must first understand their evolutionary journey. Historically known across Tamil Nadu, Andhra Pradesh, Telangana, and Karnataka as the <em>vanki</em> or <em>nelli mothiram</em>, the design originated centuries ago as an elaborate upper-arm armlet (bajuband). Adorned by royalty and consecrated in sacred temple traditions, the armlet was celebrated for its dramatic V-shaped dip that perfectly cupped the curve of the bicep. Temple deities and classical Bharatanatyam dancers wore the vanki as an emblem of divine authority, martial courage, and spiritual alignment.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p>Over the decades, master goldsmiths realized that the flattering, elongating geometry of the inverted V could be translated onto the hand. When scaled down into a finger ring, the pointed apex creates an optical illusion that elongates the fingers, lending an innate elegance to the wearer’s hand. Modern vanki ring designs preserve this iconic chevron geometry while stripping away the excessive bulk, sharp metal corners, and unwieldy back-chain mechanisms of antique arm ornaments.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p>Today, contemporary vanki rings are characterized by refined proportions, refined metal casting, and ergonomic contours. The heavy repoussé temple motifs depicting deities have given way to streamlined polished channels, pavé diamond accents, open-shank silhouettes, and delicate milgrain borders. The result is an ornament that feels authentic to Indian heritage yet looks effortlessly chic when paired with a tailored blazer, a silk saree, or casual linen separates.</p>\n<!-- /wp:paragraph -->',
+
+    # H2: Cultural Symbolism: The Protective Legacy of the V-Shaped Silhouette
+    '<!-- wp:heading -->\n<h2>Cultural Symbolism: The Protective Legacy of the V-Shaped Silhouette</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>Beyond its striking visual symmetry, the vanki ring carries profound cultural symbolism rooted in ancient Vedic and Dravidian iconography. The downward-pointing V-shape is widely acknowledged by jewellery historians to mirror the spread hood of the sacred serpent, or <em>Naga</em>. In Indian iconography, the serpent is revered as a powerful guardian spirit representing perpetual renewal, feminine strength, and protection against malevolent energies and the evil eye.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p>In classical wedding traditions, a vanki was an indispensable constituent of the <em>Shodasha Shringar</em>, the sixteen traditional adornments of an Indian bride. It was believed to create a spiritual shield around the bride as she embarked upon her marital journey. The triangular chevron also forms an inverted delta, an ancient tantric motif symbolizing <em>Shakti</em>, primal feminine vitality and creative fertility.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p>In modern contexts, this symbolism has transitioned from ritualistic superstition to personal empowerment. Wearing modern vanki ring designs today serves as a tactile reminder of resilience, self-possession, and cultural identity. Many contemporary women purchase a gold vanki ring to commemorate a personal milestone, an academic achievement, or a career promotion, celebrating it as a modern talisman of inner grace and unwavering strength.</p>\n<!-- /wp:paragraph -->',
+
+    # H2: Key Variations in Modern Vanki Ring Designs
+    '<!-- wp:heading -->\n<h2>Key Variations in Modern Vanki Ring Designs</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>Modern jewellery artisans have reimagined the vanki silhouette across a diverse spectrum of aesthetics, ensuring there is a design suited for every wardrobe preference:</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->\n<ul>\n<li><strong>Minimalist Plain Gold Bands:</strong> Featuring a crisp, polished V-contour in solid yellow or rose gold, these rings celebrate pure form. With smooth rounded edges and a slender shank, they serve as the ultimate everyday signature piece that never snags on knitwear or formal workwear.</li>\n<li><strong>Diamond-Accented Chevrons:</strong> By encrusting the V-apex or running delicate micro-pavé diamonds along the twin arms of the ring, designers achieve a breathtaking play of light. These designs often double as unconventional engagement rings or anniversary bands.</li>\n<li><strong>Double-Band &amp; Split-Shank Vankis:</strong> For those seeking architectural drama, double-tiered vanki rings feature parallel V-lines connected by subtle bridging pillars. This creates a multi-finger stacked aesthetic from a single, comfortable ring.</li>\n<li><strong>Flora &amp; Organic Fusion:</strong> Incorporating subtle petal motifs, scrolling foliage, or delicate milgrain detailing around the central apex, these designs offer a poetic tribute to traditional South Indian temple aesthetics while retaining contemporary proportions.</li>\n<li><strong>Geometric &amp; Highway Interpretations:</strong> Overlapping crisscross bands that culminate in a defined V-angle bring a bold, cosmopolitan energy to the classic South Indian silhouette.</li>\n</ul>\n<!-- /wp:list -->',
+
+    # H2: Light Weight Rings: How Modern Vanki Engineering Prioritizes Daily Comfort
+    '<!-- wp:heading -->\n<h2>Light Weight Rings: How Modern Vanki Engineering Prioritizes Daily Comfort</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>Historically, traditional vanki jewellery was notoriously heavy. Antique gold armlets and rings were crafted using thick 22K gold plates, frequently filled with lac or wax to support intricate repoussé carving, resulting in pieces weighing 20 to 40 grams. While majestic for wedding rituals, such pieces proved cumbersome and impractical for modern lifestyle routines.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p>The contemporary jewellery revolution has decisively embraced <strong>light weight rings</strong>, utilizing advanced 3D CAD modeling, precision laser casting, and structural honeycombing. A modern gold vanki ring typically weighs between 2 grams and 5 grams, delivering the full visual presence of fine jewellery with virtually zero finger fatigue.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p>Engineers and master jewelers focus on three vital ergonomic criteria when designing modern lightweight vanki rings:</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->\n<ul>\n<li><strong>Rounded Comfort-Fit Inner Core:</strong> The interior surface of the band is gently cambered (domed) rather than flat, allowing the ring to slide effortlessly over knuckles and sit comfortably against the skin even during prolonged desk work or hand swelling.</li>\n<li><strong>Blunted V-Apex:</strong> In antique designs, the sharp point of the V could catch on chiffon, georgette sarees, or delicate laptop bags. Modern craftsmanship rounds the outer tip to a smooth micro-curve, eliminating snagging hazards entirely.</li>\n<li><strong>Tapered Under-Gallery:</strong> By tapering the thickness of the band toward the palm side of the finger, the ring permits natural finger closure and keyboard typing without pinching neighboring fingers.</li>\n</ul>\n<!-- /wp:list -->',
+
+    # Image Slot: Flatlay Placeholder
+    '<!-- wp:image {"sizeSlug":"full","linkDestination":"custom"} -->\n<figure class="wp-block-image size-full"><a href="https://www.bluestone.com/rings/the-viperine-twist-ring~124507.html"><img src="PLACEHOLDER_TYPE3_FLATLAY" alt="modern vanki ring designs 2026 flatlay: The Viperine Twist Ring on warm wooden desk with kraft box and linen"/></a><figcaption>The <a href="https://www.bluestone.com/rings/the-viperine-twist-ring~124507.html">Viperine Twist Ring</a> in fine gold highlighting modern contoured curves and ergonomic daily elegance</figcaption></figure>\n<!-- /wp:image -->',
+
+    # H2: Gold Purity and Metal Choices: 18K vs 14K for Modern Wearers
+    '<!-- wp:heading -->\n<h2>Gold Purity and Metal Choices: 18K vs 14K for Modern Wearers</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>When investing in modern vanki ring designs, selecting the right metal alloy is essential for long-term structural durability. Because the vanki features a distinctive pointed geometry and slender band profile, the physical resilience of the metal determines whether the ring retains its crisp shape under daily pressure.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p>Here is an objective comparison of the most popular karatages for modern vanki rings:</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->\n<ul>\n<li><strong>18Kt Gold (75.0% Pure Gold):</strong> The undisputed industry standard for fine diamond jewellery. 18Kt gold offers an exquisite, warm golden hue while providing the tensile strength needed to hold diamond prongs and preserve the sharp angles of the V-shape. It is highly resistant to everyday bending and scratching.</li>\n<li><strong>14Kt Gold (58.5% Pure Gold):</strong> The superior choice for active daily wear, budget-conscious buyers, and delicate lightweight rings. Because it contains a higher proportion of strengthening alloy metals (copper, silver, and zinc), 14Kt gold is noticeably harder than 18Kt or 22Kt gold. It holds diamonds exceptionally securely and stands up effortlessly to gym sessions, commuting, and manual chores.</li>\n<li><strong>22Kt Gold (91.6% Pure Gold):</strong> While deeply traditional and prized for its rich saffron glow in bridal trousseaus, pure 22Kt gold is relatively soft and malleable. Slender 22Kt V-rings can warp or flatten if subjected to heavy pressure, making 22Kt better suited for occasional festive wear rather than daily office duty.</li>\n</ul>\n<!-- /wp:list -->',
+
+    '<!-- wp:paragraph -->\n<p>Regardless of karatage, always verify that your gold ring carries the mandatory Bureau of Indian Standards (BIS) hallmark. Under current Indian hallmarking regulations, every authentic gold article must display three clear laser engravings: the official triangular BIS logo, the purity mark (such as 750 for 18K or 585 for 14K), and a unique 6-digit alphanumeric Hallmark Unique Identification (HUID) code. You can instantly verify this HUID code on the BIS Care mobile application before completing your purchase.</p>\n<!-- /wp:paragraph -->',
+
+    # H2: How to Style and Wear a Modern Vanki Ring
+    '<!-- wp:heading -->\n<h2>How to Style and Wear a Modern Vanki Ring</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>One of the greatest joys of owning modern vanki ring designs is their incredible styling adaptability. The dynamic geometry of the chevron allows you to wear and pair the piece in multiple ways depending on the occasion:</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>1. The Traditional Point-Outward Orientation (Protective Shield):</strong> When worn with the V-apex pointing outward toward the fingernail, the ring channels its ancient heritage as a protective talisman. This orientation naturally elongates the fingers, drawing the eye forward and creating a sleek, slenderizing silhouette. It pairs gorgeously with Kanjeevaram sarees, Anarkalis, and traditional festive attire.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>2. The Inward Point-Toward-Wrist Orientation (Tiara Effect):</strong> Reversing the ring so that the V-point faces inward toward your wrist transforms the design into an exquisite crown or tiara aesthetic. In this direction, the two outer arms frame the base of your finger, creating an architectural cradle that looks strikingly modern with western suits, cocktail dresses, and tailored separates.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>3. Finger Selection Strategies:</strong></p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->\n<ul>\n<li><strong>Ring Finger:</strong> The classic placement, ideal for delicate diamond-studded vanki rings acting as standalone statements or wedding band companions.</li>\n<li><strong>Index Finger:</strong> A bold, contemporary choice favored by fashion stylists. Wearing a medium-width vanki on your index finger establishes an assertive, commanding presence during presentations and social gatherings.</li>\n<li><strong>Thumb Ring:</strong> Minimalist plain gold vanki bands worn on the thumb offer an edgy, bohemian flair that elevates casual denim and shirt combinations.</li>\n</ul>\n<!-- /wp:list -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>4. The Art of Modern Stacking:</strong> The chevron shape is tailor-made for stacking. Pair your modern vanki ring alongside a solitaire diamond ring: the V-curve gently hugs the contour of the round or oval center stone, framing it like an ornate halo. You can also interlock two vanki rings pointing toward each other to form a stunning geometric diamond-shaped centerpiece on your hand.</p>\n<!-- /wp:paragraph -->',
+
+    # Image Slot: Lifestyle Placeholder
+    '<!-- wp:image {"sizeSlug":"full","linkDestination":"custom"} -->\n<figure class="wp-block-image size-full"><a href="https://www.bluestone.com/rings/the-anya-ring~7515.html"><img src="PLACEHOLDER_TYPE3_LIFESTYLE" alt="modern vanki ring designs 2026 lifestyle: fair-skinned Indian woman styling fine gold chevron ring with contemporary attire"/></a><figcaption>The <a href="https://www.bluestone.com/rings/the-anya-ring~7515.html">Anya Ring</a> in 18Kt gold styled gracefully on the hand for sophisticated everyday wear</figcaption></figure>\n<!-- /wp:image -->',
+
+    # H2: Curated BlueStone Designs: Contemporary Vanki and Geometric Silhouettes
+    '<!-- wp:heading -->\n<h2>Curated BlueStone Designs: Contemporary Vanki and Geometric Silhouettes</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>BlueStone brings together centuries of Indian craftsmanship and cutting-edge jewellery engineering to present modern interpretations of the iconic chevron and vanki silhouette. Explore our curated selection of fine gold and diamond rings engineered for lasting comfort and striking beauty:</p>\n<!-- /wp:paragraph -->',
+
+    # Carousel block placeholder (will be inserted as official 3D coverflow snippet)
+    'CAROUSEL_SNIPPET_PLACEHOLDER',
+
+    # Curated Design Highlights paragraph (strictly following carousel rule)
+    '<!-- wp:paragraph -->\n<p><strong>Curated Design Highlights:</strong> Explore signature geometric and contoured silhouettes including <a href="https://www.bluestone.com/rings/the-le-sommet-ring~105031.html">The Le Sommet Ring</a> featuring crisp chevron lines, <a href="https://www.bluestone.com/rings/the-liza-ring~7623.html">The Liza Ring</a> with delicate diamond shimmer, <a href="https://www.bluestone.com/rings/the-quinn-ring~57845.html">The Quinn Ring</a> for refined daily wear, <a href="https://www.bluestone.com/rings/the-gigi-ring~64382.html">The Gigi Ring</a> for bold statement styling, <a href="https://www.bluestone.com/rings/the-luvee-highway-ring~123242.html">The Luvee Highway Ring</a> showcasing layered multi-band architecture, and <a href="https://www.bluestone.com/rings/the-malibu-ring~2321.html">The Malibu Ring</a> designed for effortless contemporary versatility.</p>\n<!-- /wp:paragraph -->',
+
+    # H2: Buyer Checklist: What to Verify Before Purchasing a Vanki Ring Online
+    '<!-- wp:heading -->\n<h2>Buyer Checklist: What to Verify Before Purchasing a Vanki Ring Online</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>Purchasing modern vanki ring designs online offers access to a stunning variety of styles, but inspecting technical specifications ensures you receive a piece of exceptional quality and durability. Keep this practical checklist in mind before making your selection:</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->\n<ul>\n<li><strong>Ring Sizing for Contoured Bands:</strong> Because of the V-shaped curve, a vanki ring occupies slightly more vertical finger space than a standard straight band. If the band is wide or features a double shank, it is often advisable to select a half size larger to accommodate finger flexibility comfortably.</li>\n<li><strong>Stone Setting Security:</strong> Inspect whether diamonds or gemstones are secured via micro-prongs, channel settings, or bezel mounts. For daily wear, channel and bezel settings offer superior protection against accidental knocks and eliminate prong-lifting risks.</li>\n<li><strong>Transparent Net Gold Weight Billing:</strong> Under Indian legal metrology guidelines, reputable jewellers must bill gold rate strictly based on the net weight of the gold, entirely excluding the weight of diamonds, gemstones, or setting lac. BlueStone provides 100% transparent itemized invoices detailing exact gold weight, karatage, diamond carat weight, and certification grades.</li>\n<li><strong>Standard 3% GST Compliance:</strong> In India, all gold and diamond jewellery purchases are subject to a uniform 3% Goods and Services Tax (GST) applied to the combined value of precious metals and making charges. Ensure your tax invoice reflects genuine BIS compliance and applicable GST.</li>\n<li><strong>Certification &amp; Return Policies:</strong> Confirm that all diamonds are certified by accredited gemological laboratories (such as SGL or IGI) and that the retailer offers a clear 30-day money-back guarantee and lifetime exchange policies.</li>\n</ul>\n<!-- /wp:list -->',
+
+    # H2: How to Clean and Care for Contoured Jewellery
+    '<!-- wp:heading -->\n<h2>How to Clean and Care for Contoured Jewellery</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>Due to its angular geometry, the inner V-corner of a vanki ring can naturally accumulate hand lotion, soap residues, and dust over time. Regular, gentle maintenance preserves the brilliant luster of the gold and the sparkling fire of your diamonds:</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->\n<ul>\n<li><strong>Warm Soapy Soak:</strong> Soak the ring for 10 to 15 minutes in a small bowl of lukewarm water mixed with a few drops of mild, chemical-free dishwashing liquid.</li>\n<li><strong>Soft Bristle Brushing:</strong> Use an ultra-soft baby toothbrush to gently clean around the diamond settings and the inner apex of the V-channel, dislodging trapped particles without scratching the mirror-finish gold.</li>\n<li><strong>Rinse and Dry:</strong> Rinse thoroughly under lukewarm running water (ensuring the sink drain is securely plugged) and pat dry using a clean, lint-free microfiber polishing cloth.</li>\n<li><strong>Safe Storage:</strong> When not being worn, store your vanki ring in a separate fabric-lined jewellery compartment or velvet pouch to prevent diamond-on-gold scratching with other rings.</li>\n</ul>\n<!-- /wp:list -->',
+
+    # H2: Final Thoughts on Choosing Modern Vanki Ring Designs (MUST BE BEFORE FAQ)
+    '<!-- wp:heading -->\n<h2>Final Thoughts on Choosing Modern Vanki Ring Designs</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>Modern vanki ring designs represent the pinnacle of Indian jewellery reinvention. By marrying an ancient talisman of courage, renewal, and feminine grace with contemporary lightweight ergonomics and understated glamour, this iconic silhouette proves that authentic heritage never fades. Whether you choose a subtle 14K plain gold chevron for everyday office wear or a radiant 18K diamond-encrusted vanki for celebratory evenings, you are investing in a timeless work of wearable art that honors tradition while celebrating modern self-expression.</p>\n<!-- /wp:paragraph -->',
+
+    # H2: More Jewellery & Buying Guides (MANDATORY INTERNAL BLOG CLUSTER SECTION)
+    '<!-- wp:heading -->\n<h2>More Jewellery &amp; Buying Guides</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p>Continue your jewellery journey with our comprehensive expert guides. Learn how to verify purity with our guide on <a href="https://blog.bluestone.com/how-to-check-gold-purity-2026/">how to check gold purity in 2026</a>, understand retail pricing through our breakdown of <a href="https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/">GST on gold jewellery in India</a>, discover key security measures in <a href="https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/">buying gold jewellery online safely</a>, find your perfect wrist fit using our <a href="https://blog.bluestone.com/bangle-size-2026/">bangle size buying guide</a>, and explore trending silhouettes in our curated list of <a href="https://blog.bluestone.com/latest-gold-ring-design-2026/">latest gold ring designs for 2026</a>.</p>\n<!-- /wp:paragraph -->',
+
+    # H2: Frequently Asked Questions About Modern Vanki Ring Designs
+    '<!-- wp:heading -->\n<h2>Frequently Asked Questions About Modern Vanki Ring Designs</h2>\n<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>Which finger is a modern vanki ring traditionally worn on?</strong><br>Traditionally, a vanki ring is worn on the ring finger or index finger of the right hand. In modern styling, however, women wear vanki rings on any finger, including the middle finger or thumb, depending on personal comfort and stacking preferences.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>Which direction should the V of a vanki ring point?</strong><br>Traditionally, the pointed apex of the V faces outward toward your fingernail, symbolizing an auspicious shield of protection and gracefully elongating the fingers. Alternatively, wearing the point facing inward toward your wrist creates a crown-like aesthetic that complements modern western attire.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>Can modern vanki rings be worn as daily wear jewellery?</strong><br>Yes. Contemporary modern vanki ring designs are specifically engineered as lightweight rings (typically 2 to 5 grams) with blunted, comfort-curved V-tips and low-profile diamond settings that prevent snagging on clothes, making them ideal for daily office and casual wear.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>What is the difference between a traditional vanki and a modern vanki ring?</strong><br>A traditional vanki was an elaborate, heavy gold armlet worn on the upper arm during bridal ceremonies. A modern vanki ring is an adapted fine jewellery finger ring that retains the distinctive V-silhouette while utilizing lightweight gold casting, diamonds, and minimalist proportions for versatile styling.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>Is 18Kt or 14Kt gold better for a modern vanki ring?</strong><br>Both karats are excellent choices. 18Kt gold offers a rich, classic golden hue and is ideal for diamond settings and festive occasions. 14Kt gold provides greater structural hardness and scratch resistance at an attractive price point, making it exceptionally well-suited for active daily wear.</p>\n<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->\n<p><strong>Can I stack a modern vanki ring with my solitaire diamond ring?</strong><br>Yes, modern vanki rings make superb stacking companions. The contoured V-curve naturally wraps around the base of a round, oval, or pear-cut solitaire, framing the center stone like an elegant crown without causing abrasive metal friction.</p>\n<!-- /wp:paragraph -->'
+]
+
+full_draft_html = "\n\n".join(clean_text(b) for b in draft_blocks)
+
+output_path = ROOT / 'output/week9_rank86_draft.html'
+output_path.write_text(full_draft_html, encoding='utf-8')
+
+# Calculate words
+plain_text = " ".join([w for w in full_draft_html.split() if not w.startswith("<") and not w.endswith(">")])
+words = len(plain_text.split())
+print(f"Draft written successfully to {output_path}")
+print(f"Approximate visible word count: {words}")

@@ -1,0 +1,34 @@
+{
+  "occasion": "engagement-2026",
+  "article": "Week1 Rank7 - engagement quotes",
+  "wp_post_id": 29985,
+  "workflow": "Magnific Mystic realism with hyper-real theme anchor and negative prompt. People scenes use structure_ref null and exact SKU descriptions read from raw JPGs.",
+  "notes": "Malibu Ring: classic white gold band with a single prominent round solitaire diamond. Gigi Ring: polished yellow gold shank with an ornate cluster of round brilliant diamonds. Anya Ring: delicate, simple yellow gold ring set with a single sparkling round diamond.",
+  "magnific": {
+    "model": "mystic",
+    "theme_anchor": "Ultra-realistic photography, macro-level detail, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light from the left, warm daylight color temperature, realistic soft shadows. Shot on high-end DSLR, shallow depth of field, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire subjects and jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, product shot on plain background, cropped faces, cut-off heads, cut-off jewellery, out of frame, readable text, logos"
+  },
+  "slots": {
+    "hero": {
+      "structure_ref": null,
+      "prompt": "Engagement 2026 romantic proposal hero. Product-focused 85mm photograph of a couple's hands in the sharp foreground inside a warm, softly lit Indian home. An Indian man gently slides a classic white gold band with a single prominent round solitaire diamond onto the woman's ring finger. The couple's complete smiling faces are softly visible waist-up in the background with safe margins. No other rings, watches, or bracelets. Traditional festive clothing, soft golden lighting. The Malibu Ring, hands, and both full heads remain entirely in the frame.",
+      "alt": "Congratulations wishes for engagement 2026 hero, couple with The Malibu Ring"
+    },
+    "flatlay": {
+      "structure_ref": null,
+      "prompt": "Engagement 2026 lived-in writing desk flatlay, top-down with a 100mm macro lens. A blank cream congratulations card, elegant fountain pen, small dish of white jasmine blossoms, and a blank dark phone screen fill the warm wooden desk. At the centre, a polished yellow gold shank ring with an ornate cluster of round brilliant diamonds rests fully visible. The Gigi Ring is the sharp-focus jewellery hero with physically accurate scale, facets, reflections, and safe margins. No readable text, no logos.",
+      "alt": "Engagement quotes and wishes card flatlay with The Gigi Ring"
+    },
+    "lifestyle": {
+      "structure_ref": null,
+      "prompt": "Engagement 2026 terrace celebration portrait of a newly engaged Indian couple, shot at eye level on an 85mm lens. In the sharp foreground, the woman's left hand rests on the man's arm, showcasing a delicate, simple yellow gold ring set with a single sparkling round diamond. Both of their complete, uncropped smiling faces appear in the softer background. Soft sunset daylight, decorative flowers and warm lights in the distant blur. The Anya Ring, hands, and both full heads remain inside the frame with safe margins.",
+      "alt": "Happy engagement wishes 2026 lifestyle with The Anya Ring"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/engagement-hero-2026.webp",
+    "flatlay": "output/magnific_generated/engagement-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/engagement-lifestyle-2026.webp"
+  }
+}

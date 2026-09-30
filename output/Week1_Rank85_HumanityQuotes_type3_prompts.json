@@ -1,0 +1,77 @@
+{
+  "workflow": "Higgsfield MCP nano_banana_pro with CDN product reference medias.",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "wp_post_id": 30977,
+  "slug": "humanity-quotes-2026-2",
+  "output_prefix": "Week1_Rank85_HumanityQuotes",
+  "insert_h2s_json": "output/Week1_Rank85_HumanityQuotes_insert_h2s.json",
+  "product_media_json": "output/Week1_Rank85_HumanityQuotes_product_media.json",
+  "caption_occasion": "Humanity quotes",
+  "caption_year": "2026",
+  "schema_keywords": [
+    "humanity quotes",
+    "kindness quotes",
+    "compassion quotes",
+    "humanity quotes 2026"
+  ],
+  "flatlay_setting": "windowsill-daylight",
+  "media_titles": {
+    "hero": "Humanity quotes 2026 Hero The Lumeelle Cluster Pendant",
+    "flatlay": "Humanity quotes 2026 Flatlay The Haily Ring",
+    "lifestyle": "Humanity quotes 2026 Lifestyle The Aleena Huggie Earrings"
+  },
+  "captions": {
+    "flatlay": "Humanity quotes 2026 vibe: The Haily Ring",
+    "lifestyle": "Humanity quotes 2026 moment: The Aleena Huggie Earrings"
+  },
+  "slots": {
+    "hero": {
+      "alt": "humanity quotes 2026 hero with The Lumeelle Cluster Pendant",
+      "product": {
+        "code": "BISW1080P133",
+        "name": "The Lumeelle Cluster Pendant",
+        "gender_tag": "Female",
+        "height_mm": 32.66,
+        "width_mm": 32.66,
+        "size_prompt_note": "overall_product_height_mm=32.66; overall_product_width_mm=32.66; pendant/product dimensions, not face-size; copy worn neck scale from body_image"
+      },
+      "job_id": "e31e92f2-6d6e-4458-bd2e-29a6d62498bc"
+    },
+    "flatlay": {
+      "alt": "humanity quotes 2026 flatlay with The Haily Ring",
+      "product": {
+        "code": "BINS0639R11",
+        "name": "The Haily Ring",
+        "gender_tag": "Female",
+        "height_mm": 21.96,
+        "width_mm": 14.64,
+        "size_prompt_note": "face_height_mm=21.96; face_width_mm=14.64"
+      },
+      "job_id": "c173fa7b-62a7-419b-becd-462e99a2c28c",
+      "caption": "Humanity quotes 2026 vibe: The Haily Ring"
+    },
+    "lifestyle": {
+      "alt": "humanity quotes 2026 lifestyle with The Aleena Huggie Earrings",
+      "product": {
+        "code": "BIIP0279S08",
+        "name": "The Aleena Huggie Earrings",
+        "gender_tag": "Female",
+        "height_mm": 17.23,
+        "width_mm": 9.5,
+        "size_prompt_note": "face_height_mm=17.23; face_width_mm=9.5"
+      },
+      "job_id": "82d61c44-9ec8-4b95-ac31-36bf6c34e086",
+      "caption": "Humanity quotes 2026 moment: The Aleena Huggie Earrings"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/humanity-quotes-hero-2026.webp",
+    "flatlay": "output/magnific_generated/humanity-quotes-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/humanity-quotes-lifestyle-2026.webp"
+  }
+}

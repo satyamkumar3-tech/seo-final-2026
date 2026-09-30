@@ -1,0 +1,155 @@
+{
+  "rank": "Week3-4 Rank 17",
+  "slug": "diwali-greeting-card-2026",
+  "primary_kw": "diwali greeting card",
+  "output_prefix": "Week34_Rank17_DiwaliGreetingCard",
+  "caption_occasion": "Diwali greeting card",
+  "caption_year": "2026",
+  "flatlay_setting": "gift-wrapping-station",
+  "workflow": "Higgsfield CLI nano_banana_pro. People shots require @img1 body_image plus @img2 design. Max 2 concurrent generations total. If queue/generation error occurs, wait 40-50 seconds before retry. No visible screens/devices.",
+  "higgsfield_jobs": {
+    "hero_accepted_cli_candidate": {
+      "job_id": "31de88e2-dc41-455c-aeb8-c053b0878cec",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GwrMYSstFWd2sn4uUzDNUNAQXa/hf_20260730_092547_31de88e2-dc41-455c-aeb8-c053b0878cec.png",
+      "local_raw": "output/magnific_generated/diwali-greeting-card-hero-2026.raw.png"
+    },
+    "flatlay_accepted_cli_candidate": {
+      "job_id": "a36cfd87-e611-4b0b-b54d-e33c9da6a21b",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GwrMYSstFWd2sn4uUzDNUNAQXa/hf_20260730_092636_a36cfd87-e611-4b0b-b54d-e33c9da6a21b.png",
+      "local_raw": "output/magnific_generated/diwali-greeting-card-flatlay-2026.raw.png"
+    },
+    "lifestyle_accepted_cli_candidate": {
+      "job_id": "dd776292-2f50-459f-8c88-966d11756cc3",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GwrMYSstFWd2sn4uUzDNUNAQXa/hf_20260730_092652_dd776292-2f50-459f-8c88-966d11756cc3.png",
+      "local_raw": "output/magnific_generated/diwali-greeting-card-lifestyle-2026.raw.png"
+    },
+    "hero_rejected": {
+      "reason": "visual QA failed: cropped face, extra jewellery, or blank rectangle prop",
+      "local_raw": "output/magnific_generated/diwali-greeting-card-hero-2026.raw.png"
+    },
+    "hero_accepted": {
+      "job_id": "2ef009fc-e3af-4930-be63-dbebdf9614ab",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GwrMYSstFWd2sn4uUzDNUNAQXa/hf_20260730_094943_2ef009fc-e3af-4930-be63-dbebdf9614ab.png",
+      "local_raw": "output/magnific_generated/diwali-greeting-card-hero-2026.regen_earrings_clean.raw.png"
+    },
+    "hero_rejected_second": {
+      "reason": "visual QA failed: cropped face and hand jewellery",
+      "local_raw": "output/magnific_generated/diwali-greeting-card-hero-2026.regen_full_face_no_hand_jewellery.raw.png"
+    },
+    "hero_rejected_third": {
+      "reason": "visual QA failed: pendant attempts introduced extra jewellery or cropped face",
+      "local_raw": "output/magnific_generated/diwali-greeting-card-hero-2026.regen_portrait_no_hands.raw.png"
+    }
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "insert_h2s_json": "output/Week34_Rank17_DiwaliGreetingCard_insert_h2s.json",
+  "product_media_json": "output/Week34_Rank17_DiwaliGreetingCard_product_media.json",
+  "output": {
+    "hero": "output/magnific_generated/diwali-greeting-card-hero-2026.webp",
+    "flatlay": "output/magnific_generated/diwali-greeting-card-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/diwali-greeting-card-lifestyle-2026.webp"
+  },
+  "media_titles": {
+    "hero": "diwali greeting card 2026 Hero",
+    "flatlay": "diwali greeting card 2026 Flatlay",
+    "lifestyle": "diwali greeting card 2026 Lifestyle"
+  },
+  "schema_keywords": [
+    "diwali greeting card",
+    "diwali card making",
+    "diwali card message",
+    "diwali wishes",
+    "handmade diwali card"
+  ],
+  "slots": {
+    "hero": {
+      "code": "BIPM0001H28",
+      "name": "The Rohal Huggie Earrings",
+      "gender": "Female",
+      "category": "Earrings",
+      "height_mm": 16.0,
+      "width_mm": 4.8,
+      "size_prompt_note": "product_height_mm=16.0; product_width_mm=4.8; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html",
+      "cdn_primary": "https://kinclimg5.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIPM0001H28_YAA18DIG6SYEMXXXX_ABCD00-PICS-00004-1024-79820.png",
+      "alt": "diwali greeting card 2026 hero with The Rohal Huggie Earrings",
+      "caption": "Diwali greeting card 2026 mood: The Rohal Huggie Earrings",
+      "product": {
+        "code": "BIPM0001H28",
+        "name": "The Rohal Huggie Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Rohal Huggie Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Rohal Huggie Earrings/0_primary.png"
+      ],
+      "ref_roles": [
+        "body_image",
+        "front_primary"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Diwali greeting card 2026 hero, solo fair-skinned Indian adult woman in an ivory festive blouse standing beside a blurred festive table with diyas, marigold flowers, cream fabric, and a wrapped gift, upper body portrait, full face and full head visible, both ears clearly visible, hands completely out of frame, no card facing camera. Exactly one jewellery wearer only. Casting: fair-skinned Indian adult woman only, light wheatish to fair North Indian or urban Indian complexion, clear fair skin tones. Shot on DSLR, natural skin texture, 85mm candid lifestyle look, 16:9 full frame with safe margins.\n\nNo visible phones, laptops, tablets, TVs, or blank screens anywhere in the image. No poster card, no large blank paper, no upright rectangle, no white screen-like prop, no board, and no placard facing camera. Use warm physical props instead: wrapped gift box, flowers, diya, ceramic cup, brass bowl, tray, ribbon, folded fabric, or a closed book blurred in the background. If any device is unavoidable, show only the back or edge with the screen out of frame. No readable text anywhere. Any card, tag, notebook, label, package, paper, or prop must be blank or turned away from camera.\n\nThe woman physically wears The Rohal Huggie Earrings from @img1 body_image and @img2 design only on her ear. GENDER LOCK: Female product on adult woman only. Product dimensions from PDP: product_height_mm=16.0; product_width_mm=4.8; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Keep the jewellery size on the person like @img1 body_image worn ear scale: subtle real PDP size, not enlarged. Use @img2 only for jewellery design.\n\nReplicate the jewellery exactly, 100 percent identical to refs, zero distortion, HD metal and stone detail. This is the single and only jewellery object in the entire image. Other visible people, if any, wear absolutely no jewellery.\n\nAvoid: visible phone, phone screen, laptop, tablet, TV, blank screen, floating jewellery overlay, giant product collage, product cutout over people, packshot composited on lifestyle photo, oversized jewellery, extra jewellery, extra earrings, extra necklace, extra rings, extra bracelets, watch, bangle, wrong gender wearer, second jewellery wearer, cropped face, cropped head, readable text, letters, numbers, logo, dark skin, deep brown skin, heavily tanned skin, illustration, CGI, HDR glow, necklace, pendant, bracelet, bangle, ring, watch, nose ring, hands, cropped face, cropped head, readable card, blank card, phone."
+    },
+    "flatlay": {
+      "code": "BIAB0503R03",
+      "name": "The Rafia Ring",
+      "gender": "Female",
+      "category": "Rings",
+      "height_mm": 20.92,
+      "width_mm": 9.23,
+      "size_prompt_note": "product_height_mm=20.92; product_width_mm=9.23; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/rings/the-rafia-ring~53638.html",
+      "cdn_primary": "https://kinclimg5.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIAB0503R03_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-42032.png",
+      "alt": "diwali greeting card 2026 flatlay with The Rafia Ring",
+      "caption": "Diwali greeting card 2026 detail: The Rafia Ring",
+      "product": {
+        "code": "BIAB0503R03",
+        "name": "The Rafia Ring",
+        "pdp": "https://www.bluestone.com/rings/the-rafia-ring~53638.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Rafia Ring/0_primary.png",
+        "ProductImages/raw/Rings/The Rafia Ring/2_front.png",
+        "ProductImages/raw/Rings/The Rafia Ring/5_angle.png"
+      ],
+      "ref_roles": [
+        "primary",
+        "front",
+        "angle"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Photoreal high-end jewellery still life, top-down editorial product flatlay. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast.\n\nDiwali greeting card 2026 top-down flatlay. Flatlay setting ID: gift-wrapping-station. Surface and props: cream festive gift wrapping surface with silk ribbon, small wrapped gift, diya, marigold petals, brass bowl, no paper, no card, no book, no text. No visible phones, laptops, tablets, TVs, or blank screens anywhere in the image. No poster card, no large blank paper, no upright rectangle, no white screen-like prop, no board, and no placard facing camera. Use warm physical props instead: wrapped gift box, flowers, diya, ceramic cup, brass bowl, tray, ribbon, folded fabric, or a closed book blurred in the background. If any device is unavoidable, show only the back or edge with the screen out of frame. The identical The Rafia Ring from @img1, @img2 and @img3 rests naturally on the surface at true PDP scale. Product dimensions from PDP: product_height_mm=20.92; product_width_mm=9.23; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Do not enlarge for visibility. Full jewellery visible, 100 percent identical design, zero distortion, HD metal and stone detail.\n\nProps stay secondary. No people, no hands, no logos, no readable text, no letters, no numbers, no other jewellery.\n\nAvoid: phones, laptops, tablets, TVs, blank screens, hands, people, floating overlays, cutouts, incorrect jewellery design, readable text, logos, price tags, blown whites, HDR glow, illustration, CGI."
+    },
+    "lifestyle": {
+      "code": "BISA0255D05",
+      "name": "The Asya Huggie Earrings",
+      "gender": "Female",
+      "category": "Earrings",
+      "height_mm": 19.77,
+      "width_mm": 8.47,
+      "size_prompt_note": "product_height_mm=19.77; product_width_mm=8.47; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html",
+      "cdn_primary": "https://kinclimg5.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BISA0255D05_YAA14DIG6PRWHXXXX_ABCD00-PICS-00004-1024-80521.png",
+      "alt": "diwali greeting card 2026 lifestyle with The Asya Huggie Earrings",
+      "caption": "Diwali greeting card 2026 look: The Asya Huggie Earrings",
+      "product": {
+        "code": "BISA0255D05",
+        "name": "The Asya Huggie Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Asya Huggie Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Asya Huggie Earrings/0_primary.png"
+      ],
+      "ref_roles": [
+        "body_image",
+        "front_primary"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Diwali greeting card 2026 lifestyle, solo fair-skinned Indian adult woman tying ribbon around a wrapped gift beside flowers and diyas, full head visible and both ears visible, cream blouse, no necklace and wrists out of frame. Exactly one jewellery wearer only. Casting: fair-skinned Indian adult woman only, light wheatish to fair North Indian or urban Indian complexion, clear fair skin tones. Shot on DSLR, natural skin texture, 85mm candid lifestyle look, 16:9 full frame with safe margins.\n\nNo visible phones, laptops, tablets, TVs, or blank screens anywhere in the image. No poster card, no large blank paper, no upright rectangle, no white screen-like prop, no board, and no placard facing camera. Use warm physical props instead: wrapped gift box, flowers, diya, ceramic cup, brass bowl, tray, ribbon, folded fabric, or a closed book blurred in the background. If any device is unavoidable, show only the back or edge with the screen out of frame. No readable text anywhere. Any card, tag, notebook, label, package, paper, or prop must be blank or turned away from camera.\n\nThe woman physically wears The Asya Huggie Earrings from @img1 body_image and @img2 design only on her ear. GENDER LOCK: Female product on adult woman only. Product dimensions from PDP: product_height_mm=19.77; product_width_mm=8.47; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Keep the jewellery size on the person like @img1 body_image worn ear scale: subtle real PDP size, not enlarged. Use @img2 only for jewellery design.\n\nReplicate the jewellery exactly, 100 percent identical to refs, zero distortion, HD metal and stone detail. This is the single and only jewellery object in the entire image. Other visible people, if any, wear absolutely no jewellery.\n\nAvoid: visible phone, phone screen, laptop, tablet, TV, blank screen, floating jewellery overlay, giant product collage, product cutout over people, packshot composited on lifestyle photo, oversized jewellery, extra jewellery, extra earrings, extra necklace, extra rings, extra bracelets, watch, bangle, wrong gender wearer, second jewellery wearer, cropped face, cropped head, readable text, letters, numbers, logo, dark skin, deep brown skin, heavily tanned skin, illustration, CGI, HDR glow, necklace, bracelet, ring, watch, readable text, greeting card, phone."
+    }
+  },
+  "wp_post_id": 32687
+}

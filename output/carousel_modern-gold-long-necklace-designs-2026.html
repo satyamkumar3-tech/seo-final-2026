@@ -1,0 +1,265 @@
+<!-- wp:html -->
+<style>
+.bs-cf {
+  max-width: 900px;
+  margin: 1.75rem auto 1.25rem;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  position: relative;
+  perspective: 1200px;
+}
+.bs-cf-stage {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  overflow: visible;
+}
+.bs-cf-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(420px, 78vw);
+  margin-left: calc(min(420px, 78vw) / -2);
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #ececec;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform .45s cubic-bezier(.25,1,.35,1), opacity .45s ease, z-index .45s step-end;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.bs-cf-card.is-pos-0 {
+  transform: translate3d(0, 0, 0) scale(1);
+  z-index: 10;
+  opacity: 1;
+}
+.bs-cf-card.is-pos-1 {
+  transform: translate3d(55%, 0, -120px) scale(0.88);
+  z-index: 7;
+  opacity: 0.85;
+}
+.bs-cf-card.is-pos-2 {
+  transform: translate3d(95%, 0, -220px) scale(0.76);
+  z-index: 4;
+  opacity: 0.55;
+}
+.bs-cf-card.is-pos-3 {
+  transform: translate3d(0, 0, -320px) scale(0.65);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+.bs-cf-card.is-pos--2 {
+  transform: translate3d(-95%, 0, -220px) scale(0.76);
+  z-index: 4;
+  opacity: 0.55;
+}
+.bs-cf-card.is-pos--1 {
+  transform: translate3d(-55%, 0, -120px) scale(0.88);
+  z-index: 7;
+  opacity: 0.85;
+}
+.bs-cf-media {
+  display: block;
+  width: 100%;
+  background: #fbfbfb;
+  overflow: hidden;
+  line-height: 0;
+}
+.bs-cf-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.bs-cf-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.bs-cf-name {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bs-cf-cta {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background .2s;
+}
+.bs-cf-cta:hover {
+  background: #333333;
+}
+.bs-cf-prev, .bs-cf-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 20;
+  user-select: none;
+}
+.bs-cf-prev { left: -8px; }
+.bs-cf-next { right: -8px; }
+.bs-cf-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.bs-cf-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d4d4d4;
+  cursor: pointer;
+  transition: background .3s, transform .3s;
+}
+.bs-cf-dot.is-active {
+  background: #111111;
+  transform: scale(1.25);
+}
+@media (max-width: 700px) {
+  .bs-cf-stage { height: 300px; }
+  .bs-cf-prev, .bs-cf-next { display: none; }
+}
+</style>
+<div class="bs-cf" id="bs-cf-modern-gold-long-necklace-designs-2026" data-interval="3200">
+  <button class="bs-cf-prev" aria-label="Previous product">&#10094;</button>
+  <button class="bs-cf-next" aria-label="Next product">&#10095;</button>
+  <div class="bs-cf-stage">
+    <div class="bs-cf-card is-pos-0" data-index="0">
+      <a class="bs-cf-media" href="https://www.bluestone.com/necklaces/the-ailia-evil-eye-layered-necklace~116379.html"><img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-ailia-evil-eye-layered-necklace-modern-gold-long-necklace-carousel-2026.webp" alt="modern gold long necklace designs 2026: The Ailia Evil Eye Layered Necklace" loading="lazy"/></a>
+      <div class="bs-cf-body">
+        <div class="bs-cf-name">The Ailia Evil Eye Layered Necklace</div>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/necklaces/the-ailia-evil-eye-layered-necklace~116379.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos-1" data-index="1">
+      <a class="bs-cf-media" href="https://www.bluestone.com/necklaces/the-yfel-evil-eye-pendant-necklace~89724.html"><img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-yfel-evil-eye-pendant-necklace-modern-gold-long-necklace-carousel-2026.webp" alt="modern gold long necklace designs 2026: The Yfel Evil Eye Pendant Necklace" loading="lazy"/></a>
+      <div class="bs-cf-body">
+        <div class="bs-cf-name">The Yfel Evil Eye Pendant Necklace</div>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/necklaces/the-yfel-evil-eye-pendant-necklace~89724.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos-2" data-index="2">
+      <a class="bs-cf-media" href="https://www.bluestone.com/necklaces/the-rapett-evil-eye-charm-necklace~114824.html"><img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-rapett-evil-eye-charm-necklace-modern-gold-long-necklace-carousel-2026.webp" alt="modern gold long necklace designs 2026: The Rapett Evil Eye Charm Necklace" loading="lazy"/></a>
+      <div class="bs-cf-body">
+        <div class="bs-cf-name">The Rapett Evil Eye Charm Necklace</div>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/necklaces/the-rapett-evil-eye-charm-necklace~114824.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos-3" data-index="3">
+      <a class="bs-cf-media" href="https://www.bluestone.com/mangalsutra+chains/the-shubhlatika-mangalsutra-necklace~146084.html"><img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-shubhlatika-mangalsutra-necklace-modern-gold-long-necklace-carousel-2026.webp" alt="modern gold long necklace designs 2026: The Shubhlatika Mangalsutra Necklace" loading="lazy"/></a>
+      <div class="bs-cf-body">
+        <div class="bs-cf-name">The Shubhlatika Mangalsutra Necklace</div>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/mangalsutra+chains/the-shubhlatika-mangalsutra-necklace~146084.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos--2" data-index="4">
+      <a class="bs-cf-media" href="https://www.bluestone.com/mangalsutra+chains/the-ninetta-mangalsutra-necklace~97026.html"><img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-ninetta-mangalsutra-necklace-modern-gold-long-necklace-carousel-2026.webp" alt="modern gold long necklace designs 2026: The Ninetta Mangalsutra Necklace" loading="lazy"/></a>
+      <div class="bs-cf-body">
+        <div class="bs-cf-name">The Ninetta Mangalsutra Necklace</div>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/mangalsutra+chains/the-ninetta-mangalsutra-necklace~97026.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos--1" data-index="5">
+      <a class="bs-cf-media" href="https://www.bluestone.com/mangalsutra+chains/the-yeijah-mangaslsutra-necklace~163411.html"><img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-yeijah-mangaslsutra-necklace-modern-gold-long-necklace-carousel-2026.webp" alt="modern gold long necklace designs 2026: The Yeijah Mangaslsutra Necklace" loading="lazy"/></a>
+      <div class="bs-cf-body">
+        <div class="bs-cf-name">The Yeijah Mangaslsutra Necklace</div>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/mangalsutra+chains/the-yeijah-mangaslsutra-necklace~163411.html">Buy now</a>
+      </div>
+    </div>
+  </div>
+  <div class="bs-cf-dots">
+    <div class="bs-cf-dot is-active" data-dot="0"></div>
+    <div class="bs-cf-dot" data-dot="1"></div>
+    <div class="bs-cf-dot" data-dot="2"></div>
+    <div class="bs-cf-dot" data-dot="3"></div>
+    <div class="bs-cf-dot" data-dot="4"></div>
+    <div class="bs-cf-dot" data-dot="5"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var root = document.getElementById("bs-cf-modern-gold-long-necklace-designs-2026");
+  if(!root || root.dataset.ready === "1") return;
+  root.dataset.ready = "1";
+  var cards = Array.from(root.querySelectorAll(".bs-cf-card"));
+  var dots = Array.from(root.querySelectorAll(".bs-cf-dot"));
+  var prev = root.querySelector(".bs-cf-prev");
+  var next = root.querySelector(".bs-cf-next");
+  var active = 0;
+  var total = cards.length;
+  var timer = null;
+
+  function rel(i, a){
+    var d = (i-a) % total;
+    if(d > total / 2) d -= total;
+    if(d < -total / 2) d += total;
+    return d;
+  }
+
+  function paint(){
+    cards.forEach(function(c, i){
+      var r = rel(i, active);
+      c.className = "bs-cf-card is-pos-" + r;
+    });
+    dots.forEach(function(d, i){
+      d.className = "bs-cf-dot" + (i === active ? " is-active" : "");
+    });
+  }
+
+  function go(dir){
+    active = (active + dir + total) % total;
+    paint();
+  }
+
+  if(prev) prev.addEventListener("click", function(){ go(-1); resetAuto(); });
+  if(next) next.addEventListener("click", function(){ go(1); resetAuto(); });
+  dots.forEach(function(d, i){
+    d.addEventListener("click", function(){ active = i; paint(); resetAuto(); });
+  });
+
+  function startAuto(){
+    var iv = parseInt(root.getAttribute("data-interval") || "3200", 10);
+    if(iv > 0) timer = setInterval(function(){ go(1); }, iv);
+  }
+  function stopAuto(){ if(timer) clearInterval(timer); }
+  function resetAuto(){ stopAuto(); startAuto(); }
+
+  root.addEventListener("mouseenter", stopAuto);
+  root.addEventListener("mouseleave", startAuto);
+  startAuto();
+})();
+</script>
+<!-- /wp:html -->

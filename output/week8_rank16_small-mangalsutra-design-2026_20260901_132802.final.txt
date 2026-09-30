@@ -1,0 +1,174 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 16 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 16\n- Action: New\n- Primary keyword: small mangalsutra design\n- Volume: 33100\n- KD: 22\n- Priority score: 30371.0106\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: small-mangalsutra-design-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: gold small mangalsutra design | latest small mangalsutra design | small mangalsutra | small mangalsutra gold\n- Supplied competitor URL: blank in source row\n- Semrush page: small mangalsutra design\n- Source execution note: Week8 new topic. Intent key=sig:mangalsutra_small; brands=CaratLane,Joyalukkas,Kalyan,Malabar,MergedJewellery,ScoringCL,Tanishq; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank16.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank16.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: read_docs | time: 2026-09-01T13:28:45+05:30 | elapsed: 00:00:00
+STEP DONE: read_docs | time: 2026-09-01T13:29:17+05:30 | step duration: 00:00:32 | total elapsed: 00:00:32
+
+STEP START: verify_higgsfield | time: 2026-09-01T13:29:17+05:30 | elapsed: 00:00:32
+STEP DONE: verify_higgsfield | time: 2026-09-01T13:29:31+05:30 | step duration: 00:00:14 | total elapsed: 00:00:46
+
+STEP START: inspect_row | time: 2026-09-01T13:29:31+05:30 | elapsed: 00:00:46
+STEP DONE: inspect_row | time: 2026-09-01T13:30:04+05:30 | step duration: 00:00:33 | total elapsed: 00:01:19
+
+STEP START: duplicate_check | time: 2026-09-01T13:30:04+05:30 | elapsed: 00:01:19
+STEP DONE: duplicate_check | time: 2026-09-01T13:30:23+05:30 | step duration: 00:00:19 | total elapsed: 00:01:38
+
+STEP START: fact_check | time: 2026-09-01T13:30:23+05:30 | elapsed: 00:01:38
+STEP DONE: fact_check | time: 2026-09-01T13:30:30+05:30 | step duration: 00:00:07 | total elapsed: 00:01:45
+
+STEP START: keyword_map | time: 2026-09-01T13:30:30+05:30 | elapsed: 00:01:45
+STEP DONE: keyword_map | time: 2026-09-01T13:30:36+05:30 | step duration: 00:00:06 | total elapsed: 00:01:51
+
+STEP START: structure_visuals | time: 2026-09-01T13:30:36+05:30 | elapsed: 00:01:51
+STEP DONE: structure_visuals | time: 2026-09-01T13:31:00+05:30 | step duration: 00:00:24 | total elapsed: 00:02:15
+
+STEP START: draft | time: 2026-09-01T13:31:00+05:30 | elapsed: 00:02:15
+STEP DONE: draft | time: 2026-09-01T13:33:47+05:30 | step duration: 00:02:47 | total elapsed: 00:05:02
+
+STEP START: product_media | time: 2026-09-01T13:33:47+05:30 | elapsed: 00:05:02
+STEP DONE: product_media | time: 2026-09-01T13:34:27+05:30 | step duration: 00:00:40 | total elapsed: 00:05:42
+
+STEP START: publish_wordpress | time: 2026-09-01T13:34:27+05:30 | elapsed: 00:05:42
+STEP DONE: publish_wordpress | time: 2026-09-01T13:34:55+05:30 | step duration: 00:00:28 | total elapsed: 00:06:10
+
+STEP START: generate_type3 | time: 2026-09-01T13:34:55+05:30 | elapsed: 00:06:10
+Higgsfield image generation for the 3 Type 3 concept slots (Hero, Flatlay, Lifestyle) is underway:
+- **Hero**: The Casma Mangalsutra (`BIMA0780C53`)
+- **Flatlay**: The Aarabhi Mangalsutra (`BISP0506C05`) on `marble-vanity` setting
+- **Lifestyle**: The Yeijah Mangalsutra Necklace (`BIMA1081C01`)
+
+Waiting for generation and WebP post-processing to complete.
+STEP DONE: generate_type3 | time: 2026-09-01T13:40:54+05:30 | step duration: 00:05:59 | total elapsed: 00:12:09
+
+STEP START: patch_type3 | time: 2026-09-01T13:40:54+05:30 | elapsed: 00:12:09
+STEP DONE: patch_type3 | time: 2026-09-01T13:41:21+05:30 | step duration: 00:00:27 | total elapsed: 00:12:36
+
+STEP START: live_qa | time: 2026-09-01T13:41:21+05:30 | elapsed: 00:12:36
+STEP DONE: live_qa | time: 2026-09-01T13:42:12+05:30 | step duration: 00:00:51 | total elapsed: 00:13:27
+
+STEP START: update_status | time: 2026-09-01T13:42:12+05:30 | elapsed: 00:13:27
+STEP DONE: update_status | time: 2026-09-01T13:42:41+05:30 | step duration: 00:00:29 | total elapsed: 00:13:56
+
+STEP START: final_report | time: 2026-09-01T13:42:41+05:30 | elapsed: 00:13:56
+STEP DONE: final_report | time: 2026-09-01T13:42:45+05:30 | step duration: 00:00:04 | total elapsed: 00:14:00
+# Week 8 Rank 16: Small Mangalsutra Design Buying Guide (2026) — Final Production Report
+
+---
+
+### Core Publication & WordPress Details
+* **Live Article URL:** [https://blog.bluestone.com/small-mangalsutra-design-2026/](https://blog.bluestone.com/small-mangalsutra-design-2026/)
+* **WordPress Post ID:** `37160`
+* **Article Slug:** `small-mangalsutra-design-2026`
+* **Article Engine:** `buying_guide` (`How-to / Education` / `Jewellery Education`)
+* **Author:** Satyam (User ID: `270271337`, on-page byline: *By Satyam, BlueStone Editorial*)
+* **Assigned WordPress Categories:**
+  * `554493348` (Gold)
+  * `554493425` (Jewellery & Lifestyle)
+  * `554493465` (Jewellery Problem & Solution)
+  * `554493317` (Jewellery Trends)
+  * `554493443` (Wedding Jewellery)
+* **Article Length:** ~3,469 total words (2,600+ visible body words in live browser DOM)
+* **HTTP Status Code:** `200 OK`
+
+---
+
+### Keyword & Search Metrics Authority
+* **Primary Keyword:** `small mangalsutra design`
+* **Search Volume:** `33,100` | **Keyword Difficulty (KD):** `22` | **Priority Score:** `30371.0106`
+* **Supplied Supporting Keywords Audited & Mapped:**
+  * `gold small mangalsutra design` (Accepted: mapped to H2 on 18K vs 22K gold purity & BIS hallmarking)
+  * `latest small mangalsutra design` (Accepted: mapped to H2 on 2026 trending motifs, solitaires & geometric bars)
+  * `small mangalsutra` (Accepted: mapped to core definition, everyday wear advantages, and FAQs)
+  * `small mangalsutra gold` (Accepted: mapped to gold purity, BIS hallmarking, and care practices)
+* **Rejected Keywords:** None (all 4 supplied phrases were topically aligned and integrated naturally).
+
+---
+
+### H2 Keyword Map & Structural Classification
+1. **What Defines a Small Mangalsutra Design in Modern Jewellery?** — `[primary-backed]`
+2. **Why Modern Women Prefer a Small Mangalsutra for Everyday Wear** — `[intent-inferred]`
+3. **Gold Small Mangalsutra Design: 18K vs 22K Purity & Hallmarking** — `[supporting-keyword-backed: "gold small mangalsutra design" & "small mangalsutra gold"]`
+4. **Latest Small Mangalsutra Design Trends for 2026** — `[supporting-keyword-backed: "latest small mangalsutra design"]`
+5. **Key Buyer Considerations: Weight, Bead Density & Chain Durability** — `[intent-inferred]`
+6. **How to Style a Small Mangalsutra with Western & Traditional Outfits** — `[intent-inferred]`
+7. **Daily Care and Cleaning Tips for Petite Mangalsutras** — `[intent-inferred]`
+8. **Final Thoughts on Choosing the Perfect Small Mangalsutra** — `[intent-inferred]`
+9. **More Jewellery & Buying Guides** — `[mandatory-internal-cluster-links]`
+10. **Frequently Asked Questions About Small Mangalsutra Designs** — `[primary-backed / supporting-keyword-backed]` (7 full visible Q&As)
+
+---
+
+### Competitor Analysis & Factual Verification
+* **Supplied Competitor URL:** Blank in source row (verified without inventing external competitor URLs).
+* **Factual & Regulatory Sources Verified:**
+  * **Bureau of Indian Standards (BIS):** Mandatory 3-mark hallmarking system (BIS triangular mark, gold purity stamp e.g. `18K750` / `22K916`, and 6-digit alphanumeric `HUID` code verifiable via the BIS Care app).
+  * **Taxation & Pricing:** Indian jewellery pricing structure: *(Net Gold Weight × Live Gold Rate) + Diamond/Gemstone Cost + Making Charges + 3% GST*.
+  * **Engineering & Sizing:** Petite pendant dimensions (8 mm to 18 mm width), lightweight gross gold weight (2.5 g to 6 g), single/dual-strand hand-wired black bead chains, and snag-free micro-prong settings.
+
+---
+
+### Product Rotation, Carousel & Media Assets
+
+#### 1. Type 2 Coverflow Carousel (`bs-cf-small-mangalsutra`) — 6 Approved BlueStone Products:
+| # | Product Name | SKU | Category | PDP Link | WP Media ID |
+|---|---|---|---|---|---|
+| 1 | The Casma Mangalsutra | `BIMA0780C53` | Mangalsutra Chains | [View PDP](https://www.bluestone.com/mangalsutra+chains/the-casma-mangalsutra~93030.html) | `37154` |
+| 2 | The Yeijah Mangaslsutra Necklace | `BIMA1081C01` | Mangalsutra Chains | [View PDP](https://www.bluestone.com/mangalsutra+chains/the-yeijah-mangaslsutra-necklace~163411.html) | `37155` |
+| 3 | The Ninetta Mangalsutra Necklace | `BINS0780C08` | Mangalsutra Chains | [View PDP](https://www.bluestone.com/mangalsutra+chains/the-ninetta-mangalsutra-necklace~97026.html) | `37156` |
+| 4 | The Aarabhi Mangalsutra | `BISP0506C05` | Mangalsutra Chains | [View PDP](https://www.bluestone.com/mangalsutra+chains/the-aarabhi-mangalsutra~46940.html) | `37157` |
+| 5 | The Eirini Mangalsutra | `BISP0514C09` | Mangalsutra Chains | [View PDP](https://www.bluestone.com/mangalsutra+chains/the-eirini-mangalsutra~53179.html) | `37158` |
+| 6 | The Shubhlatika Mangalsutra Necklace | `BVPJ0935C06` | Mangalsutra Chains | [View PDP](https://www.bluestone.com/mangalsutra+chains/the-shubhlatika-mangalsutra-necklace~146084.html) | `37159` |
+
+#### 2. Type 3 Concept Images (Higgsfield `nano_banana_pro` 2K):
+* **Hero (Featured Media):**
+  * **Product:** The Casma Mangalsutra (`BIMA0780C53`, 14.13 mm × 15.18 mm)
+  * **Job ID:** `30c21ab7-2f7d-461b-ac00-6cd4ecd68040`
+  * **WP Media ID:** `37161`
+  * **Alt:** `small mangalsutra design 2026: The Casma Mangalsutra worn as an elegant everyday gold necklace`
+* **Flatlay:**
+  * **Setting:** `marble-vanity` (rotated from previous rank 15 `gift-wrapping-station`)
+  * **Product:** The Aarabhi Mangalsutra (`BISP0506C05`, 23.3 mm × 17.7 mm)
+  * **Job ID:** `ee27415b-5665-4840-aa56-d939b662e957`
+  * **WP Media ID:** `37162`
+  * **Alt:** `small mangalsutra design 2026 flatlay: The Aarabhi Mangalsutra in handcrafted gold`
+  * **Caption:** `Small mangalsutra design 2026 flatlay vibe: The Aarabhi Mangalsutra` (linked to PDP)
+* **Lifestyle:**
+  * **Product:** The Yeijah Mangaslsutra Necklace (`BIMA1081C01`, 11.9 mm × 11.9 mm)
+  * **Job ID:** `e09dd6cb-44d5-47b4-b6de-b86e43b1569d`
+  * **WP Media ID:** `37163`
+  * **Alt:** `small mangalsutra design 2026 lifestyle: The Yeijah Mangalsutra Necklace styled with modern workwear`
+  * **Caption:** `Small mangalsutra design 2026 lifestyle vibe: The Yeijah Mangalsutra Necklace` (linked to PDP)
+
+---
+
+### Higgsfield Credits & Account Accounting
+* **Subscription Plan:** `ultimate`
+* **Starting Wallet Balance:** `78.37` credits
+* **Generations Run:** 3 jobs (1 Hero + 1 Flatlay + 1 Lifestyle at 16:9 2K)
+* **Retries / Failures:** 0 (all 3 jobs completed cleanly on first attempt)
+* **Ending Wallet Balance:** `25.37` credits
+
+---
+
+### Quality Assurance & Strict Compliance
+* **Prohibited Characters:** 0 em dashes (`—`), 0 en dashes (`–`), 0 spaced hyphens in article text.
+* **Price Mentions:** 0 numerical prices or fake discounts.
+* **HTML Tables:** 0 raw HTML `<table>` or `<!-- wp:table -->` blocks (converted to structured bullet lists).
+* **Gutenberg Comments:** Strictly formatted closed block comments (`<!-- wp:paragraph -->\n<p>...</p>\n<!-- /wp:paragraph -->`, etc.).
+* **Section Ordering:** Conclusion placed directly before the Mandatory Related Guides section, which is followed by 7 visible FAQ Q&As and trailing JSON-LD schemas (`FAQPage` + `BlogPosting`).
+* **OpenGraph Image:** Hero image `small-mangalsutra-design-hero-2026.webp` (ID `37161`) synced into `featured_media` and Yoast OpenGraph/Twitter social meta.
+* **Ledgers Updated:**
+  * `output/checkpoints/week8_rank16.json` (all 15 steps marked `done`)
+  * `output/Week8_Blog_Queue_status.csv` (Rank 16 upserted)
+  * `output/product_rotation.json` (Rank 16 trio & `marble-vanity` setting recorded)
+  * `SEO Strategy 2026.xlsx` Sheet `Week 8` (Rank 16 published entry recorded)

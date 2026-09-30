@@ -1,0 +1,41 @@
+# Python / OS
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+*.tmp
+
+# Large generated / regenerable files — DO NOT push to GitHub
+# These exceed GitHub's 100 MB file limit or bloat the repo
+*.ndjson
+/ProductImages/
+/output/*.png
+/output/*.raw.png
+/output/*.webp
+/output/*.jpg
+/output/*.jpeg
+/output/magnific_generated/
+/output/Week*_Assets/
+/output/carousel_webp/*/slide_*.webp
+/output/carousel_webp/*/slide_*.png
+/outputs/
+
+# Codex temp dirs (regenerable)
+.codex_tmp/
+.codex_tmp_*/
+.codex_spreadsheet_work/
+
+# Keep all output state & config files (JSON, TXT, MD, CSV)
+!output/product_rotation.json
+!output/publish_configs/
+!output/publish_configs/**
+!output/*.json
+!output/*.txt
+!output/*.md
+!output/*.csv
+!output/carousel_webp/*/media_ids.json
+
+# Intentionally tracking .env for private repo sync
+# (credentials needed on multiple laptops)
+!.env

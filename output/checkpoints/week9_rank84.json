@@ -1,0 +1,126 @@
+{
+  "pipeline": "week9",
+  "rank": 84,
+  "slug": "baby-wearing-earrings-2026",
+  "primary": "baby wearing earrings",
+  "created_at": "2026-09-27T10:11:08Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-27T10:11:38Z",
+      "finished_at": "2026-09-27T10:12:39Z"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-27T10:12:43Z",
+      "finished_at": "2026-09-27T10:12:55Z",
+      "credits": 6,
+      "plan": "ultimate"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-27T10:12:59Z",
+      "finished_at": "2026-09-27T10:13:12Z",
+      "rank": 84,
+      "action": "New",
+      "primary": "baby wearing earrings",
+      "volume": 1900,
+      "kd": 21.0
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-27T10:13:19Z",
+      "finished_at": "2026-09-27T10:14:11Z",
+      "slug": "baby-wearing-earrings-2026",
+      "result": "clean"
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "started_at": "2026-09-27T10:14:17Z",
+      "finished_at": "2026-09-27T10:19:58Z",
+      "urls_scraped": 5,
+      "avg_word_count": 1538
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-27T10:20:08Z",
+      "finished_at": "2026-09-27T10:20:29Z",
+      "sources_checked": "IAP_guidelines,BIS_hallmark_standards,CaratLane_competitor"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-27T10:20:36Z",
+      "finished_at": "2026-09-27T10:20:47Z",
+      "primary": "baby wearing earrings",
+      "supporting": "light weight earrings",
+      "h2_count": 11
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-27T10:20:53Z",
+      "finished_at": "2026-09-27T10:21:20Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "linen-bedside"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-27T10:23:46Z",
+      "finished_at": "2026-09-27T10:25:36Z",
+      "word_count": 3514,
+      "h2_count": 11
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-27T10:22:37Z",
+      "finished_at": "2026-09-27T10:23:40Z",
+      "media_ids": "40397,40398,40399,40400,40401,40402"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-27T10:25:41Z",
+      "finished_at": "2026-09-27T10:26:55Z",
+      "post_id": 40403,
+      "live_url": "https://blog.bluestone.com/baby-wearing-earrings-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-27T10:27:00Z",
+      "finished_at": "2026-09-27T10:31:42Z",
+      "hero_job": "07e2bb8f-9fa6-4c5e-ac9a-f34f7046993c",
+      "flatlay_job": "43abf449-d2fc-4d05-9ea8-0349d7388087",
+      "lifestyle_job": "7254c204-5db1-49cc-9dd0-732c02a08bb6"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-27T10:31:48Z",
+      "finished_at": "2026-09-27T10:32:54Z",
+      "hero_media_id": 40404,
+      "flatlay_media_id": 40405,
+      "lifestyle_media_id": 40406
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-27T10:33:02Z",
+      "finished_at": "2026-09-27T10:36:08Z",
+      "word_count": 3132,
+      "carousel_gate": "passed"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-27T10:36:24Z",
+      "finished_at": "2026-09-27T10:37:13Z",
+      "workbook_updated": "True"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-27T10:37:26Z",
+      "finished_at": "2026-09-27T10:37:36Z",
+      "post_id": 40403,
+      "live_url": "https://blog.bluestone.com/baby-wearing-earrings-2026/"
+    }
+  },
+  "updated_at": "2026-09-27T10:38:54Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

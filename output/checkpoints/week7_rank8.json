@@ -1,0 +1,106 @@
+{
+  "pipeline": "week7",
+  "rank": 8,
+  "slug": "gst-on-gold-jewellery-2026",
+  "primary": "gst on gold jewellery",
+  "created_at": "2026-08-19T09:15:26Z",
+  "status": "running",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-19T09:15:43Z",
+      "started_by": "codex",
+      "finished_at": "2026-08-19T09:16:13Z",
+      "files_read": 11,
+      "week6_queue_ignored": true
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-19T09:16:21Z",
+      "path": "cli",
+      "finished_at": "2026-08-19T09:16:33Z",
+      "plan": "scale",
+      "starting_balance": 7497.32,
+      "verification": "cli"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-19T09:16:49Z",
+      "rank": 8,
+      "finished_at": "2026-08-19T09:17:11Z",
+      "action": "New",
+      "primary": "gst on gold jewellery",
+      "volume": 9900,
+      "kd": 21,
+      "score": 2.4039,
+      "slug": "gst-on-gold-jewellery-2026",
+      "workbook_source": "confirmed",
+      "csv_source": "confirmed"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-19T09:17:19Z",
+      "override": "semantic_intent_only",
+      "finished_at": "2026-08-19T09:18:32Z",
+      "exact_slug_count": 0,
+      "semantic_conflict": true,
+      "conflict_post_ids": "28892,15316",
+      "primary_conflict": 28892,
+      "user_override": "approved",
+      "older_posts_unchanged": true
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-08-19T09:18:41Z",
+      "competitor": "caratlane",
+      "authority": "current_official",
+      "finished_at": "2026-08-19T09:19:21Z",
+      "competitor_analyzed": true,
+      "official_sources": 4,
+      "retail_rate": "3% total transaction value",
+      "job_work": "5% upstream charges only",
+      "artifact": "output/Week7_Rank8_GST_Competitor_Fact_Check.md"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-08-19T09:19:30Z",
+      "phase": "supporting_keyword_audit",
+      "finished_at": "2026-08-19T09:20:03Z",
+      "used_count": 3,
+      "rejected_count": 8,
+      "h2_count": 12,
+      "audit": "output/Week7_Rank8_GST_Keyword_Audit.md",
+      "h2_map": "output/Week7_Rank8_GST_H2_Keyword_Map.md"
+    },
+    "structure_visuals": {
+      "status": "running",
+      "started_at": "2026-08-19T09:20:14Z",
+      "engine": "buying_guide"
+    },
+    "draft": {
+      "status": "pending"
+    },
+    "product_media": {
+      "status": "pending"
+    },
+    "publish_wordpress": {
+      "status": "pending"
+    },
+    "generate_type3": {
+      "status": "pending"
+    },
+    "patch_type3": {
+      "status": "pending"
+    },
+    "live_qa": {
+      "status": "pending"
+    },
+    "update_status": {
+      "status": "pending"
+    },
+    "final_report": {
+      "status": "pending"
+    }
+  },
+  "updated_at": "2026-08-19T09:20:14Z"
+}

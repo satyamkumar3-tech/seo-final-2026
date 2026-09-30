@@ -1,0 +1,34 @@
+{
+  "occasion": "friendship-day-2026",
+  "article": "Week1 Rank12 - friendship day 2023 wishes",
+  "wp_post_id": 30052,
+  "workflow": "Magnific Mystic realism with hyper-real theme anchor and negative prompt. People scenes use structure_ref null and exact SKU descriptions read from raw PNGs.",
+  "notes": "Liza ring: classic yellow gold band ring set with a single straight row of small diamonds across the front. Quinn Ring: yellow gold ring featuring a sparkling wave or curvy pattern of pave diamonds across the band. Gigi Ring: elegant yellow gold split shank ring set with multi-row diamonds along the splitting band.",
+  "magnific": {
+    "model": "mystic",
+    "theme_anchor": "High-end commercial jewellery photography, hyper-realistic, HD quality, no distortion of jewellery, identical scale and design, macro-level detail, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light from the left, warm daylight color temperature, realistic soft shadows, proper shallow depth of field. Shot on high-end DSLR, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire subjects and jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, product shot on plain background, cropped faces, cut-off heads, cut-off jewellery, out of frame, readable text, logos"
+  },
+  "slots": {
+    "hero": {
+      "structure_ref": null,
+      "prompt": "Friendship Day 2026 best friends celebration hero. Product-focused 85mm photograph of two best friends holding hands and laughing. In sharp focus in the foreground, one friend's hand shows a classic yellow gold band ring set with a single straight row of small diamonds across the front, styled as a commercial jewellery close-up with zero distortion. Their complete smiling faces are softly visible in the background with safe margins. Modern casual clothing, soft indoor lighting. The Liza Ring, hands, and full heads remain entirely in the frame.",
+      "alt": "Happy Friendship Day wishes 2026 hero, friends wearing The Liza Ring"
+    },
+    "flatlay": {
+      "structure_ref": null,
+      "prompt": "Friendship Day 2026 writing desk flatlay, top-down with a 100mm macro lens. A blank cream greetings card, elegant fountain pen, small tray of sweet chocolates, and a blank dark phone screen fill the dark wooden desk. At the centre, a yellow gold ring featuring a sparkling wave or curvy pattern of pave diamonds across the band rests fully visible. The Quinn Ring is the sharp-focus commercial jewellery hero with physically accurate scale, facets, reflections, and safe margins. No readable text, no logos.",
+      "alt": "Friendship Day quotes card flatlay with The Quinn Ring"
+    },
+    "lifestyle": {
+      "structure_ref": null,
+      "prompt": "Friendship Day 2026 celebration portrait of two happy childhood friends standing in a cozy café, shot at eye level on an 85mm lens. In the sharp foreground, a friend's hand resting on a coffee cup is in sharp focus, showcasing an elegant yellow gold split shank ring set with multi-row diamonds along the splitting band. Both of their complete, uncropped smiling faces appear in the softer background. Soft window daylight, warm café lights and distant blur. The Gigi Ring and both full heads remain inside the frame with safe margins.",
+      "alt": "Best wishes for best friend 2026 lifestyle with The Gigi Ring"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/friendship-hero-2026.webp",
+    "flatlay": "output/magnific_generated/friendship-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/friendship-lifestyle-2026.webp"
+  }
+}

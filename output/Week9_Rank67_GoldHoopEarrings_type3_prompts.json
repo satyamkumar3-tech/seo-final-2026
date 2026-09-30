@@ -1,0 +1,81 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "output_prefix": "Week9_Rank67_GoldHoopEarrings",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "flatlay_setting": "desk-kraft",
+  "slots": {
+    "hero": {
+      "slot": "hero",
+      "product_name": "The Vicky Hoop Earrings",
+      "code": "BIIP0427H16",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html",
+      "dimensions": "product_height_mm=14.75, product_width_mm=6.04 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Vicky Hoop Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Vicky Hoop Earrings/2_front.png"
+      ],
+      "alt": "Gold hoop earrings for women 2026 hero lifestyle featuring The Vicky Hoop Earrings in 18K yellow gold",
+      "caption": "The Vicky Hoop Earrings worn with effortless everyday elegance in polished 18K yellow gold",
+      "prompt": "Photoreal candid lifestyle photograph with high-end fine jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Controlled soft key light with gentle fill, realistic soft shadows, proper shallow depth of field (85mm lens), balanced exposure with no blown whites and no HDR glare. Shot on DSLR, HD quality, 16:9 full frame with safe margins. People are the primary subject and remain candid; the jewellery is an exquisite worn detail that is 100% identical to product refs. Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Mid-shot candid portrait of an elegant, poised fair-skinned Indian woman in her late 20s wearing a tailored cream silk shirt in a sunlit modern interior with warm neutral architectural decor and gentle morning light. Her dark hair is styled in a relaxed half-up knot, showing her earlobe clearly. She has a serene, radiant smile as she glances slightly off-camera. She is physically wearing The Vicky Hoop Earrings from reference images (@img1 body_image worn scale, @img2 design only) on her earlobes. GENDER LOCK: Female adult woman only. The classic gold hoop earrings hug her lobes with natural contact shadows against skin at EXACT jewellery dimensions: product_height_mm=14.75 x product_width_mm=6.04 (these are jewellery dimensions, not face or body measurements). Keep the earring size on the woman like @img1 body_image (worn ear scale). Use @img2 only for the earring design. Do not make it bigger for visibility. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Camera focuses naturally on the woman and her earrings; the polished yellow gold hoop curves are sharp, true, and refined in authentic 18K yellow gold warmth. Safe margins, full face, ear, and neck clearly visible. This is the only jewellery in the image. CRITICAL anti-collage: the jewellery is physically attached to the earlobe, never a floating cutout, never a giant product diagram composited over the photo, never a packshot overlay. 16:9 landscape. Avoid: floating jewellery overlay, giant earring collage, product cutout over people, packshot composited on lifestyle photo, jewellery upscaled for visibility, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, unreal scale, oversized jewellery, distorted jewellery, warped metal, wrong design, distorted ears, multiple piercings, product shot on plain background, readable text, logos, dark skin, deep brown skin, heavily tanned skin"
+    },
+    "flatlay": {
+      "slot": "flatlay",
+      "product_name": "The Asya Huggie Earrings",
+      "code": "BISA0255D05",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html",
+      "dimensions": "product_height_mm=19.77, product_width_mm=8.47 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Asya Huggie Earrings/0_primary.png",
+        "ProductImages/raw/Earrings/The Asya Huggie Earrings/2_front.png",
+        "ProductImages/raw/Earrings/The Asya Huggie Earrings/3_side_1.png"
+      ],
+      "alt": "Gold hoop earrings for women 2026 desk-kraft flatlay featuring The Asya Huggie Earrings with jewellers tools",
+      "caption": "The Asya Huggie Earrings styled on a warm oak desk beside fine jewellery inspection tools",
+      "prompt": "Photoreal high-end jewellery commercial flatlay, HD quality, no distortion of jewellery, identical scale and design (100% match to refs), physically accurate metal detail, natural textures only, no stylization, no illustration. Controlled soft key light with gentle realistic shadows, proper shallow depth of field, balanced exposure with no blown whites and no HDR glare. Shot on DSLR, 16:9 full frame with safe margins. Top-down editorial jewellery flatlay. Flatlay setting ID: desk-kraft. Surface + props: warm natural oak wood desk surface, a minimalist unbranded kraft paper gift box with a soft textured lid, a blank cream cotton greeting card angled naturally, a folded beige linen napkin, and an antique brass jeweller's caliper and loupe resting softly in the background. Soft diffused natural window daylight. The identical The Asya Huggie Earrings from (@img1, @img2, @img3) rests cleanly on the desk surface at EXACT jewellery dimensions: product_height_mm=19.77 x product_width_mm=8.47 (these are jewellery dimensions, not face or body measurements). Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. HD hyperreal yellow gold texture with soft specular highlights and authentic precious metal luster. Props stay secondary; jewellery is the clear subject. No people, no hands, no skin. No floating overlays or cutouts. No readable text, logos, or brand marks on props. Avoid: illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, artificial harsh lighting, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, blurry jewellery, distorted jewellery, warped metal, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, people, hands, skin"
+    },
+    "lifestyle": {
+      "slot": "lifestyle",
+      "product_name": "The Ursa Hoop Earrings",
+      "code": "BISP0427H21",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/earrings/the-ursa-hoop-earrings~35069.html",
+      "dimensions": "product_height_mm=16.14, product_width_mm=10.07 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Ursa Hoop Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Ursa Hoop Earrings/2_front.png"
+      ],
+      "alt": "Gold hoop earrings for women 2026 candid lifestyle featuring The Ursa Hoop Earrings on earlobe",
+      "caption": "The Ursa Hoop Earrings styled with sculpted golden warmth for everyday sophisticated wear",
+      "prompt": "Photoreal candid lifestyle photograph with high-end fine jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Controlled soft key light with gentle fill, realistic soft shadows, proper shallow depth of field (85mm lens), balanced exposure with no blown whites and no HDR glare. Shot on DSLR, HD quality, 16:9 full frame with safe margins. People are the primary subject and remain candid; the jewellery is an exquisite worn detail that is 100% identical to product refs. Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Close-up three-quarter candid portrait of an elegant fair-skinned Indian woman in her late 20s wearing a chic terracotta fine-knit top at a sunlit artisan cafe. She is captured in a natural, candid gesture gently tucking a strand of dark hair behind her ear, revealing her earlobe. She is physically wearing The Ursa Hoop Earrings from reference images (@img1 body_image worn scale, @img2 design only) on her earlobe. GENDER LOCK: Female adult woman only. The sculpted gold hoop earrings sit with natural contact shadows against skin at EXACT jewellery dimensions: product_height_mm=16.14 x product_width_mm=10.07 (these are jewellery dimensions, not face or body measurements). Keep the earring size on the woman like @img1 body_image (worn ear scale). Use @img2 only for the earring design. Do not make it bigger for visibility. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Camera focuses sharply on the earring and jawline; the sculpted 18K yellow gold contours are sharp and true with authentic precious metal warmth. Bare neck, no other jewellery in frame. Safe margins, jawline, earlobe, and cheekbone clearly visible. CRITICAL anti-collage: the jewellery is physically worn on the earlobe, never a floating cutout, never a giant product diagram composited over the photo, never a packshot overlay. 16:9 landscape. Avoid: floating jewellery overlay, giant earring collage, product cutout over people, packshot composited on lifestyle photo, jewellery upscaled for visibility, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, unreal scale, oversized jewellery, distorted jewellery, warped metal, wrong design, distorted hands, extra earrings, product shot on plain background, readable text, logos, dark skin, deep brown skin, heavily tanned skin"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/gold-hoop-earrings-for-women-hero-2026.webp",
+    "flatlay": "output/magnific_generated/gold-hoop-earrings-for-women-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/gold-hoop-earrings-for-women-lifestyle-2026.webp"
+  },
+  "higgsfield_jobs": {
+    "hero_accepted_cli_candidate": {
+      "job_id": "3077b16e-926c-477b-a844-cb58c012962d",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_081647_3077b16e-926c-477b-a844-cb58c012962d.png",
+      "local_raw": "output/magnific_generated/gold-hoop-earrings-for-women-hero-2026.raw.png"
+    },
+    "flatlay_accepted_cli_candidate": {
+      "job_id": "66c16555-1356-43a8-ac7e-02df1f8fa078",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_081755_66c16555-1356-43a8-ac7e-02df1f8fa078.png",
+      "local_raw": "output/magnific_generated/gold-hoop-earrings-for-women-flatlay-2026.raw.png"
+    },
+    "lifestyle_accepted_cli_candidate": {
+      "job_id": "95b831f4-58eb-43c6-b88d-c0aecc06ab89",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_081904_95b831f4-58eb-43c6-b88d-c0aecc06ab89.png",
+      "local_raw": "output/magnific_generated/gold-hoop-earrings-for-women-lifestyle-2026.raw.png"
+    }
+  }
+}

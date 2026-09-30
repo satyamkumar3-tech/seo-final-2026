@@ -1,0 +1,90 @@
+{
+  "occasion": "ex-girlfriend-birthday-2026",
+  "article": "Week1 Rank40",
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max. FLATLAY: 3-4 refs. Credits: 3 images count 1.",
+  "prompt_rules": {
+    "people_slots": "scene first, jewellery second; 2 refs max; people_theme_anchor; negative_prompt_people; count=1; retry only if QA fails",
+    "flatlay": "product_theme_anchor OK; 3-4 refs; count=1; match exact SKU from refs",
+    "credits": "Exactly 3 images per article (hero+flatlay+lifestyle). No dual variants by default.",
+    "anti_overlay": "Do not lead people prompts with commercial/macro jewellery language"
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg9.bluestone.com/giproduct/BISW1080P131_RAA18DIG4SYTZSURL_ABCD00-PICS-00000-1024-113000.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISW1080P131_RAA18DIG4SYTZSURL_ABCD00-PICS-00001-1024-113000.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian complexion.\n\nbirthday wishes for ex girlfriend 2026 candid lifestyle mid-shot soft cafe morning calm closure mood, blank phone face down. She wears The Thaloria Pendant from (@img1,@img2): rose gold fan pendant, center diamond halo, upper marquise purple stones, lower trillion pink stones, fine rose gold chain, small on chest with contact shadow. Bare ears wrists. Never floating packshot. 16:9 full face safe margins.",
+      "alt": "birthday wishes for ex girlfriend 2026 hero with The Thaloria Pendant",
+      "product": {
+        "code": "BISW1080P131",
+        "name": "The Thaloria Pendant",
+        "pdp": "https://www.bluestone.com/pendants/the-thaloria-pendant~165041.html"
+      },
+      "caption": "Ex birthday 2026 vibe: The Thaloria Pendant"
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg5.bluestone.com/giproduct/BISL0804O13_RAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-60786.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISL0804O13_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-60786.png",
+        "https://kinclimg9.bluestone.com/giproduct/BISL0804O13_RAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-60786.png",
+        "https://kinclimg6.bluestone.com/giproduct/BISL0804O13_RAA18DIG6XXXXXXXX_ABCD00-PICS-00003-1024-60786.png"
+      ],
+      "prompt": "birthday wishes for ex girlfriend 2026 top-down flatlay on cafe table with single soft flower and blank cream card. The Pear Evil Eye Toggle Bangle from (@img1,@img2,@img3,@img4) at natural scale: thin rose gold bangle with circular blue evil eye bead and open pear pave diamond frame at natural scale. No people. No readable text.",
+      "alt": "birthday wishes for ex girlfriend 2026 flatlay with The Pear Evil Eye Toggle Bangle",
+      "product": {
+        "code": "BISL0804O13",
+        "name": "The Pear Evil Eye Toggle Bangle",
+        "pdp": "https://www.bluestone.com/bangles/the-pear-evil-eye-toggle-bangle~87037.html"
+      },
+      "caption": "Ex birthday 2026 vibe: The Pear Evil Eye Toggle Bangle"
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg9.bluestone.com/giproduct/BIJP0686H03_YAA18DIG4XXXXXXXX_ABCD00-PICS-00000-1024-84306.png",
+        "https://kinclimg2.bluestone.com/giproduct/BIJP0686H03_YAA18DIG4XXXXXXXX_ABCD00-PICS-00001-1024-84306.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only.\n\nbirthday wishes for ex girlfriend 2026 lifestyle mid-shot soft profile near window soft blur, quiet mature mood. Wears The Faliha Purse Hoop Earrings from (@img1,@img2): yellow gold purse cage hoop with horizontal baguette diamond bar at top, only near-side earring, natural scale. Bare neck wrists. 16:9 full face safe margins.",
+      "alt": "birthday wishes for ex girlfriend 2026 lifestyle with The Faliha Purse Hoop Earrings",
+      "product": {
+        "code": "BIJP0686H03",
+        "name": "The Faliha Purse Hoop Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-faliha-purse-hoop-earrings~73262.html"
+      },
+      "caption": "Ex birthday 2026 vibe: The Faliha Purse Hoop Earrings"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/ex-girlfriend-birthday-hero-2026.webp",
+    "flatlay": "output/magnific_generated/ex-girlfriend-birthday-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/ex-girlfriend-birthday-lifestyle-2026.webp"
+  },
+  "insert_h2s_json": "output/Week1_Rank40_ExGirlfriendBirthday_insert_h2s.json",
+  "product_media_json": "output/Week1_Rank40_ExGirlfriendBirthday_product_media.json",
+  "output_prefix": "Week1_Rank40_ExGirlfriendBirthday",
+  "schema_keywords": [
+    "birthday wishes for ex girlfriend",
+    "birthday wishes for ex boyfriend",
+    "happy birthday wishes for ex girlfriend",
+    "birthday wishes for ex"
+  ],
+  "media_titles": {
+    "hero": "birthday wishes for ex girlfriend 2026 Hero",
+    "flatlay": "birthday wishes for ex girlfriend 2026 Flatlay",
+    "lifestyle": "birthday wishes for ex girlfriend 2026 Lifestyle"
+  },
+  "wp_post_id": 30478,
+  "webp_prefix": "ex-girlfriend-birthday",
+  "caption_occasion": "Ex birthday",
+  "caption_year": "2026"
+}

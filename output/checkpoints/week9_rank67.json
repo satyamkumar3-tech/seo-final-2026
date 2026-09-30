@@ -1,0 +1,132 @@
+{
+  "pipeline": "week9",
+  "rank": 67,
+  "slug": "gold-hoop-earrings-for-women-2026",
+  "primary": "gold hoop earrings for women",
+  "created_at": "2026-09-25T08:08:20Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "finished_at": "2026-09-25T08:09:29Z",
+      "notes": "all_11_docs_read_fully"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-25T08:09:33Z",
+      "finished_at": "2026-09-25T08:09:48Z",
+      "plan": "ultimate",
+      "credits": 407.1
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-25T08:09:52Z",
+      "finished_at": "2026-09-25T08:10:12Z",
+      "action": "New",
+      "primary": "gold hoop earrings for women",
+      "volume": 3600,
+      "kd": 24.0,
+      "priority_score": 2160,
+      "theme": "How-to / Education"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-25T08:10:17Z",
+      "finished_at": "2026-09-25T08:10:59Z",
+      "exact_slug_matches": 0,
+      "conflict": "none",
+      "action": "New"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-25T08:11:04Z",
+      "finished_at": "2026-09-25T08:11:39Z",
+      "competitor_url": "blank",
+      "bis_hallmarking": "3_marks_huid_biscare",
+      "gst": "3_percent"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-25T08:11:43Z",
+      "finished_at": "2026-09-25T08:11:51Z",
+      "supporting_accepted": "light weight gold earrings",
+      "supporting_rejected": "none",
+      "h2_count": 13
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-25T08:11:56Z",
+      "finished_at": "2026-09-25T08:13:08Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "desk-kraft",
+      "hero_sku": "BIIP0427H16",
+      "flatlay_sku": "BISA0255D05",
+      "lifestyle_sku": "BISP0427H21"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-25T08:13:12Z",
+      "finished_at": "2026-09-25T08:15:29Z",
+      "words": 3912,
+      "file": "output/Week9_Rank67_gold_hoop_earrings_draft.json"
+    },
+    "product_media": {
+      "status": "done",
+      "finished_at": "2026-09-25T08:14:28Z",
+      "carousel_ids": "40206,40207,40208,40209,40210,40211"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-25T08:15:34Z",
+      "finished_at": "2026-09-25T08:15:57Z",
+      "post_id": 40212,
+      "url": "https://blog.bluestone.com/gold-hoop-earrings-for-women-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T08:16:03Z",
+      "finished_at": "2026-09-25T08:20:19Z",
+      "hero_job": "3077b16e-926c-477b-a844-cb58c012962d",
+      "flatlay_job": "66c16555-1356-43a8-ac7e-02df1f8fa078",
+      "lifestyle_job": "95b831f4-58eb-43c6-b88d-c0aecc06ab89"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T08:20:23Z",
+      "finished_at": "2026-09-25T08:21:11Z",
+      "hero_media": 40213,
+      "flatlay_media": 40214,
+      "lifestyle_media": 40215
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-25T08:21:18Z",
+      "finished_at": "2026-09-25T08:23:35Z",
+      "http_status": 200,
+      "canonical": "match",
+      "og_image": "verified",
+      "carousel": "pass",
+      "h1": 1,
+      "h2": 12,
+      "faqs": 6
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-25T08:23:46Z",
+      "finished_at": "2026-09-25T08:24:26Z",
+      "status_csv": "upserted",
+      "product_rotation": "upserted",
+      "excel": "updated"
+    },
+    "final_report": {
+      "status": "done",
+      "finished_at": "2026-09-25T08:24:39Z",
+      "live_url": "https://blog.bluestone.com/gold-hoop-earrings-for-women-2026/",
+      "post_id": 40212
+    }
+  },
+  "updated_at": "2026-09-25T08:25:13Z",
+  "completed_at": "2026-09-25T08:24:39Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

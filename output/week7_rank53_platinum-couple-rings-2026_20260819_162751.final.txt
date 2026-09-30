@@ -1,0 +1,170 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 53 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 53\n- Action: New\n- Primary keyword: platinum couple rings\n- Volume: 6600\n- KD: 18\n- Priority score: 1.8585\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: platinum-couple-rings-2026\n- Article engine: design_listicle\n- Category hint: `Jewellery Trends` 554493317 or `Jewellery & Lifestyle` 554493425\n- Supplied supporting keywords: platinum couple rings\n- Supplied competitor URL: https://www.caratlane.com/jewellery/platinum-rings.html\n- Semrush page: platinum couple rings\n- Source execution note: Week7 intent-unique. intent=couple_rings. Distinct from carried 43. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank53.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank53.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+I have started the conversion and upload process for the six curated carousel images for Week 7 Rank 53 (Platinum Couple Rings) and am waiting for it to complete.
+Waiting for the carousel media upload task to complete.
+Waiting for the media upload task to complete.
+I have launched the Type 3 image generation for Week 7 Rank 53 (Hero, Flatlay, and Lifestyle images) using the Higgsfield CLI and am waiting for the generations to complete.
+Waiting for the Higgsfield generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the Higgsfield Type 3 generation task to complete.
+I have launched the script to upload the three Type 3 WebP images to WordPress and patch the post content and Yoast social metadata. Waiting for completion.
+STEP DONE: Update status files and write the final report | time: 16:39:26 | step duration: 00:00:20 | total elapsed: 00:11:01
+
+---
+
+# Week 7 Rank 53 End-to-End Generation Report
+
+### 1. Publication & WordPress Summary
+- **Live URL:** [https://blog.bluestone.com/platinum-couple-rings-2026/](https://blog.bluestone.com/platinum-couple-rings-2026/)
+- **WordPress Post ID:** `34889`
+- **Slug:** `platinum-couple-rings-2026`
+- **Article Engine:** `design_listicle`
+- **Author:** Satyam (WP user ID `270271337`)
+- **Categories Assigned:**
+  - `Platinum` (ID `554493423`)
+  - `Ring` (ID `554493326`)
+  - `Jewellery Trends` (ID `554493317`)
+  - `Jewellery & Lifestyle` (ID `554493425`)
+- **Visible Article Word Count:** `2,349 words`
+- **Heading Count:** 1 H1 (Theme single template), 11 H2s, 15 H3s
+
+---
+
+### 2. Primary Keyword & Target Metrics
+- **Target Row Rank:** 53
+- **Action:** New
+- **Primary Keyword:** `platinum couple rings`
+- **Volume:** 6,600
+- **KD:** 18
+- **Priority Score:** 1.8585
+- **Theme:** Design Listicles
+- **Target Year:** 2026
+
+---
+
+### 3. Keyword Filtering & Mapping
+- **Supporting Keywords Mapped:**
+  - `platinum couple rings design` (Section 2 & H3s)
+  - `simple platinum couple rings` / `minimalist platinum couple rings` (H3.1)
+  - `platinum couple bands` / `platinum love bands for couples` (Sections 1, 2, 3)
+  - `matching platinum rings for couples` (Section 3)
+  - `diamond platinum couple rings` (H3.2)
+  - `dual tone platinum couple rings` (H3.3)
+  - `Pt950 platinum couple rings` (Section 1 & 5)
+- **Keywords Explicitly Rejected:**
+  - `platinum couple rings price` / `platinum couple rings with price` (Rejected: strict brand policy bans all prices in editorial blogs)
+  - `caratlane platinum couple rings` / `tanishq platinum couple rings` (Rejected: competitor branded terms)
+  - `cheap silver couple rings` / `gold couple ring design` (Rejected: topical metal mismatch)
+
+---
+
+### 4. H2 Keyword & Structure Map
+1. `Why Platinum Couple Rings Are the Ultimate Modern Love Symbol` *(Primary-backed / Intent-inferred)*
+2. `Top Platinum Couple Ring Design Trends for 2026` *(Primary-backed / Supporting-keyword-backed)*
+   - *H3: 1. Minimalist Satin and Matte Platinum Bands*
+   - *H3: 2. Single Diamond and Pavé Solitaire Accent Rings*
+   - *H3: 3. Dual-Tone Fusion: Platinum and Rose Gold Harmony*
+   - *H3: 4. Geometric Facets and Milgrain Edge Detailing*
+   - *H3: 5. Complementary Sister Bands (Coordinated, Not Identical)*
+   - *H3: 6. Interlocking Fingerprint and Wave Silhouette Rings*
+3. `Matching vs Complementary Rings: How Modern Couples Choose` *(Intent-inferred / Supporting-keyword-backed)*
+4. `Handcrafted BlueStone Platinum Rings for Modern Couples` *(Commerce-backed / Brand-curation with 6-card Coverflow Carousel)*
+5. `Verifying Pt950 Authenticity: Hallmarks, PGI Standards, and Quality Cards` *(Competitor-gap-backed / Factual-source-backed)*
+6. `Ring Ergonomics: Why Comfort-Fit Interior Doming Matters for Daily Wear` *(Competitor-structure-backed / Factual-source-backed)*
+7. `Personal Touches: Meaningful Engraving Ideas for Couple Bands` *(Supporting-keyword-backed / Intent-inferred)*
+8. `Long-Term Care: Caring for Platinum and Celebrating the Natural Patina` *(Factual-source-backed / Care Guide)*
+9. `Explore More Fine Jewellery Guides from BlueStone` *(Internal-links-backed: 5 internal links)*
+10. `Frequently Asked Questions About Platinum Couple Rings` *(Supporting-keyword-backed / FAQ-schema-backed)*
+
+---
+
+### 5. Competitor Analysis & Factual Sources
+- **Competitor URL Analyzed:** `https://www.caratlane.com/jewellery/platinum-rings.html`
+- **Competitor Analysis Summary:** CaratLane's URL is a commercial Product Listing Page (PLP) lacking editorial depth, ring styling guidance, comfort-fit ergonomics, patina science, metal comparison, and engraving ideas. BlueStone's guide establishes full topical authority with dedicated styling frameworks, hallmarking verifications, and rich FAQs.
+- **Factual Sources & Regulatory Standards Cited:**
+  - **Pt950 Purity:** 950 parts per thousand (95%) pure platinum alloyed with ruthenium/iridium.
+  - **PGI India (Platinum Guild International):** PGI Purity Assurance Cards with Unique Identification Number (UID) verification.
+  - **Ergonomic Science:** Domed interior comfort-fit profiles vs flat profiles for daily knuckle glide.
+  - **Patina vs Tarnish:** Material displacement characteristics preserving net volume over decades of wear.
+
+---
+
+### 6. Media Assets & Carousel IDs
+#### Type 2 Carousel Assets (6 Curated Products):
+- **Carousel Identifier:** `bs-cf-platinumcouplerings-2026`
+1. `The Jasper Band For Him` (SKU: `BISL0851R28`) | Media ID: `34883` | [PDP Link](https://www.bluestone.com/rings/the-jasper-band-for-him~93964.html)
+2. `The Interlink Band Ring` (SKU: `BISV0910R24`) | Media ID: `34884` | [PDP Link](https://www.bluestone.com/rings/the-interlink-band-ring~108785.html)
+3. `The Le Sommet Ring` (SKU: `BISE0932R181`) | Media ID: `34885` | [PDP Link](https://www.bluestone.com/rings/the-le-sommet-ring~105031.html)
+4. `The Quinn Ring` (SKU: `BIAR0097R16`) | Media ID: `34886` | [PDP Link](https://www.bluestone.com/rings/the-quinn-ring~57845.html)
+5. `The Liza Ring` (SKU: `BIAR0097R07`) | Media ID: `34887` | [PDP Link](https://www.bluestone.com/rings/the-liza-ring~7623.html)
+6. `The Anya Ring` (SKU: `BIAR0097R04`) | Media ID: `34888` | [PDP Link](https://www.bluestone.com/rings/the-anya-ring~7515.html)
+
+#### Type 3 Concept Images (Higgsfield nano_banana_pro):
+- **Hero Image (Featured Media):**
+  - SKU: `BISL0851R28` (The Jasper Band For Him)
+  - Job ID: `59be0b75-44b2-4e5f-846e-ee5727ac9545`
+  - Media ID: `34890`
+  - Alt: `Modern platinum couple rings 2026 featuring The Jasper Band For Him on husband finger`
+- **Flatlay Image (In-Body):**
+  - SKU: `BISE0932R181` (The Le Sommet Ring)
+  - Setting ID: `windowsill-daylight` *(Rotated from Rank 52's `linen-bedside` and Rank 51's `marble-vanity`)*
+  - Job ID: `fbd63a20-d947-4604-9884-d6370098aef5`
+  - Media ID: `34891`
+  - Alt: `Minimalist jewellery styling 2026 featuring The Le Sommet Ring on daylight windowsill setting`
+  - Figcaption: `Platinum ring styling 2026: The Le Sommet Ring`
+- **Lifestyle Image (In-Body):**
+  - SKU: `BIAR0097R04` (The Anya Ring)
+  - Job ID: `2928e9f0-8ee5-46a2-a6de-d6aeeca8573b`
+  - Media ID: `34892`
+  - Alt: `Everyday fine jewellery styling 2026 with The Anya Ring`
+  - Figcaption: `Everyday couple ring elegance 2026: The Anya Ring`
+
+---
+
+### 7. Higgsfield Account & Generation Tracking
+- **Subscription Plan:** `scale`
+- **Starting Balance:** `7,355.32 credits`
+- **Ending Balance:** `7,349.32 credits`
+- **Jobs Executed:** 3 jobs (0 retries required, 100% first-pass generation success)
+
+---
+
+### 8. Live QA Audit Results
+| Check Item | Requirement | Actual Status | Result |
+|---|---|---|---|
+| **Theme H1** | Exactly 1 H1 in DOM | 1 H1 (Theme post title) | **PASSED** |
+| **Visible Word Count** | ≥ 2,000 words | 2,349 words | **PASSED** |
+| **Coverflow Carousel** | Exactly 6 cards with valid PDPs | 6 cards with active Buy now links | **PASSED** |
+| **OG Social Image** | Type 3 Hero WebP | `platinum-couple-rings-hero-2026.webp` | **PASSED** |
+| **In-Body Flatlay** | WebP with `<figcaption>` | `platinum-couple-rings-flatlay-2026.webp` | **PASSED** |
+| **In-Body Lifestyle** | WebP with `<figcaption>` | `platinum-couple-rings-lifestyle-2026.webp` | **PASSED** |
+| **FAQPage Schema** | Valid JSON-LD matching visible FAQs | Valid FAQPage schema with 6 Q&As | **PASSED** |
+| **BlogPosting Schema** | Valid JSON-LD with all 3 Type 3 URLs | Valid BlogPosting schema | **PASSED** |
+| **Prohibited Punctuation** | 0 em dashes, 0 en dashes, 0 spaced hyphens | 0 found | **PASSED** |
+| **Price Prohibition** | 0 prices anywhere in text | 0 found | **PASSED** |
+
+---
+
+### 9. State Updates Completed
+1. **Checkpoint File:** `output/checkpoints/week7_rank53.json` (all 15 steps marked `done`).
+2. **Week 7 Status CSV:** `output/Week7_Gift_Guides_PostRank10_status.csv` (Rank 53 upserted).
+3. **Product Rotation Tracker:** `output/product_rotation.json` (Rank 53 SKUs and `windowsill-daylight` flatlay setting recorded).

@@ -1,0 +1,190 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 9 Rank 41 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 9 and output/Week9_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 9 target block overrides those notes.\n\nTarget row:\n- Rank: 41\n- Action: New\n- Primary keyword: women's solitaire diamond rings\n- Volume: 4400\n- KD: 21.0\n- Priority score: 2812.1739\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: womens-solitaire-diamond-rings-2026\n- Article engine: buying_guide\n- Category hint: `Men's Jewellery` 554493434 where product fit is men's jewellery; otherwise `Gift` 554493424\n- Supplied supporting keywords: women's gemstone rings\n- Supplied competitor URL: blank in source row\n- Semrush page: women's solitaire diamond rings\n- Source execution note: Week9 informational gap. Intent key=topic:diamond_ring_s_solitaire_woman; brands=Malabar. Excluded Week1-8 and live BlueStone inventory. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week9_rank41.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week9_checkpoint.py mark --path output/checkpoints/week9_rank41.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 9 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- CRITICAL RUNTIME EXECUTION GATE \u2014 STRICTLY SYNCHRONOUS ONLY:\n  * DO NOT spawn background tasks or execute commands with asynchronous delays.\n  * Execute ALL python scripts, curl/API calls, Higgsfield generations, and WordPress uploads SYNCHRONOUSLY in the foreground (blocking until full completion).\n  * Wait for each command and script to fully complete before calling the next tool or emitting text.\n  * NEVER end your turn or output messages like \"waiting for background task to finish\" while a task is running, as this triggers watchdog idle termination. Run all scripts synchronously from start to finish.\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 9 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & STUDIO IMAGERY: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html` (matching `rudraksh-gold-bracelet-2026` and `mens-black-bracelet-2026`). All 6 carousel images MUST be high-definition studio-styled visuals sourced from `ProductImages/seo images/<Category>/<Product Name>.png` (converted to 960x535 WebP on stone plinths/draped fabric with warm lighting, NEVER plain white packshots). It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 360px }`, `margin: 1.75rem auto 1.25rem`, `.bs-cf-card { width: min(420px, 78vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-cta { background: #111; color: #fff; }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class=\"bs-cf\" id=\"bs-cf-<slug>\" data-interval=\"3200\" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards with initial position classes (`.bs-cf-card is-pos-0 data-index=\"0\"` ... `is-pos--1 data-index=\"5\"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` with the `paint()` and `rel()` rotation functions (with NO `<p>` wrappers). Follow immediately ONLY with a single `<!-- wp:paragraph -->\n<p><strong>Curated Design Highlights:</strong> Explore signature ... <a href=\"<product_url>\">Product Name</a> ...</p>\n<!-- /wp:paragraph -->`. NEVER insert a repetitive product bullet list after the carousel. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.\n- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week9_Blog_Queue_status.csv, output/product_rotation.json, the Week 9 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 9 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+### Production Execution Log: Week 9 Rank 41
+
+```text
+STEP START: read_docs | time: 2026-09-23T14:11:03+05:30 | elapsed: 0m00s
+STEP DONE: read_docs | time: 2026-09-23T14:13:24+05:30 | step duration: 2m21s | total elapsed: 2m21s
+
+STEP START: verify_higgsfield | time: 2026-09-23T14:13:28+05:30 | elapsed: 2m25s
+STEP DONE: verify_higgsfield | time: 2026-09-23T14:13:57+05:30 | step duration: 0m29s | total elapsed: 2m54s
+
+STEP START: inspect_row | time: 2026-09-23T14:14:00+05:30 | elapsed: 2m57s
+STEP DONE: inspect_row | time: 2026-09-23T14:15:24+05:30 | step duration: 1m24s | total elapsed: 4m21s
+
+STEP START: duplicate_check | time: 2026-09-23T14:15:27+05:30 | elapsed: 4m24s
+STEP DONE: duplicate_check | time: 2026-09-23T14:16:10+05:30 | step duration: 0m43s | total elapsed: 5m07s
+
+STEP START: fact_check | time: 2026-09-23T14:16:13+05:30 | elapsed: 5m10s
+STEP DONE: fact_check | time: 2026-09-23T14:16:24+05:30 | step duration: 0m11s | total elapsed: 5m21s
+
+STEP START: keyword_map | time: 2026-09-23T14:16:29+05:30 | elapsed: 5m26s
+STEP DONE: keyword_map | time: 2026-09-23T14:16:35+05:30 | step duration: 0m06s | total elapsed: 5m32s
+
+STEP START: structure_visuals | time: 2026-09-23T14:16:42+05:30 | elapsed: 5m39s
+STEP DONE: structure_visuals | time: 2026-09-23T14:22:04+05:30 | step duration: 5m22s | total elapsed: 11m01s
+
+STEP START: draft | time: 2026-09-23T14:22:08+05:30 | elapsed: 11m05s
+STEP DONE: draft | time: 2026-09-23T14:23:33+05:30 | step duration: 1m25s | total elapsed: 12m30s
+
+STEP START: product_media | time: 2026-09-23T14:23:37+05:30 | elapsed: 12m34s
+STEP DONE: product_media | time: 2026-09-23T14:25:55+05:30 | step duration: 2m18s | total elapsed: 14m52s
+
+STEP START: publish_wordpress | time: 2026-09-23T14:26:04+05:30 | elapsed: 15m01s
+STEP DONE: publish_wordpress | time: 2026-09-23T14:26:32+05:30 | step duration: 0m28s | total elapsed: 15m29s
+
+STEP START: generate_type3 | time: 2026-09-23T14:26:49+05:30 | elapsed: 15m46s
+STEP DONE: generate_type3 | time: 2026-09-23T14:34:45+05:30 | step duration: 7m56s | total elapsed: 23m42s
+
+STEP START: patch_type3 | time: 2026-09-23T14:34:49+05:30 | elapsed: 23m46s
+STEP DONE: patch_type3 | time: 2026-09-23T14:35:40+05:30 | step duration: 0m51s | total elapsed: 24m37s
+
+STEP START: live_qa | time: 2026-09-23T14:35:57+05:30 | elapsed: 24m54s
+STEP DONE: live_qa | time: 2026-09-23T14:39:14+05:30 | step duration: 3m17s | total elapsed: 28m11s
+
+STEP START: update_status | time: 2026-09-23T14:39:20+05:30 | elapsed: 28m17s
+STEP DONE: update_status | time: 2026-09-23T14:40:03+05:30 | step duration: 0m43s | total elapsed: 29m00s
+
+STEP START: final_report | time: 2026-09-23T14:40:09+05:30 | elapsed: 29m06s
+STEP DONE: final_report | time: 2026-09-23T14:40:34+05:30 | step duration: 0m25s | total elapsed: 29m31s
+```
+
+---
+
+## Final Production Report
+
+### 1. Publication & Core Article Metadata
+- **WordPress Post ID:** `39944`
+- **Live Canonical URL:** [https://blog.bluestone.com/womens-solitaire-diamond-rings-2026/](https://blog.bluestone.com/womens-solitaire-diamond-rings-2026/)
+- **Target Year:** 2026
+- **Article Engine:** `buying_guide`
+- **Post Author:** Satyam (ID `270271337`)
+- **On-Page Byline:** `By Satyam, BlueStone Editorial`
+- **Schema Author:** Satyam (`BlueStone Editorial`)
+- **Categories Assigned:**
+  - `Gift` (ID `554493424`)
+  - `Solitaire` (ID `554493432`)
+  - `Ring` (ID `554493326`)
+  - `diamond ring` (ID `554493475`)
+- **Meta Title:** `Women's Solitaire Diamond Rings Buying Guide 2026 | BlueStone`
+- **Meta Description:** `Explore the definitive women's solitaire diamond rings buying guide for 2026. Discover the 4Cs, 18K gold purity, setting security, Indian sizing, and BIS hallmarking.`
+- **Visible Article Word Count:** 4,770 words
+- **Live QA Status:** **PASSED** (100% checks verified)
+
+---
+
+### 2. Primary & Supporting Keyword Audit
+- **Primary Keyword:** `women's solitaire diamond rings`
+  - **Volume:** 4,400 | **KD:** 21.0 | **Priority Score:** 2812.1739
+  - **Presence:** Title, H1, Meta Description, first 100 words, first H2, featured hero alt, carousel alts, and trailing schema.
+- **Supplied Supporting Keywords:**
+  - `women's gemstone rings`: **ACCEPTED**
+    - *Mapping Rationale:* Topically integrated into a dedicated comparative analysis section (H2: *Women's Solitaire Diamond Rings vs Women's Gemstone Rings: Durability, Brilliance, and Styling Contrast*) and FAQ comparing diamond hardness (Mohs 10) vs precious gems (rubies/sapphires/emeralds), optical dispersion, and styling combinations.
+- **Rejected Keywords:** None.
+
+---
+
+### 3. H2 Keyword & Content Architecture Map
+
+| H2 Heading | Classification | Mapping & Strategic Intent |
+|---|---|---|
+| **What Defines Women's Solitaire Diamond Rings: Timeless Geometry and Center-Stone Architecture** | Primary-backed | Etymology, single-gemstone optical dominance, evolution from bridal to self-purchase |
+| **The 4Cs Quality Framework for Solitaires: Cut, Color, Clarity, and Carat Decisions** | Intent-inferred | Cut light return, color sweet spots (G-H), eye-clean clarity (VS1/VS2), magic size milestone rule |
+| **Solitaire Setting Styles: 4-Prong, 6-Prong, Bezel, and Cathedral Profiles Explained** | Intent-inferred | Light transmission vs claw security, snag-free bezels for active wear |
+| **Precious Metal Selection: 18K Yellow, White, Rose Gold, and 950 Platinum Purity** | Intent-inferred | 18K gold (750) tensile strength vs 22K softness, Pt950 density & hypoallergenic wear |
+| **Curated Women's Solitaire Diamond Ring Designs for Every Celebration** | Intent-inferred | Commerce introduction preceding the 3D coverflow carousel |
+| **Women's Solitaire Diamond Rings vs Women's Gemstone Rings: Durability, Brilliance, and Styling Contrast** | Supporting-keyword-backed | Mohs scale hardness contrast (10 vs 9 vs 7.5-8), rainbow dispersion vs chromatic drama |
+| **Diamond Certification Standards: GIA, IGI, and SGL Lab Reports in India** | Intent-inferred | Third-party laboratory verification, 4Cs parameter verification, girdle laser inscriptions |
+| **Indian Ring Sizing Secrets: Determining Accurate Finger Fit and Resizing Boundaries** | Intent-inferred | BIS scale (Sizes 6-24), knuckle clearance, temperature swell factors, plain shank resizing rules |
+| **Invoice Transparency in India: 3% GST, Net Gold Weight, and BIS HUID Hallmarking Verification** | Intent-inferred / Factual | Statutory 3-mark BIS HUID hallmarking, Gross vs Net Gold Weight separation, 3% GST invoice compliance |
+| **Daily Care, Maintenance, and Ultrasonic Cleaning Routines for Diamond Solitaires** | Intent-inferred | Lipophilic film cleaning, warm soap bath, soft brush routine, safe wear boundaries |
+| **Final Thoughts on Selecting Women's Solitaire Diamond Rings** | Intent-inferred / Conclusion | Concluding buyer reassurance (positioned strictly before Related Guides & FAQs) |
+| **More Jewellery & Buying Guides** | Internal Cluster Links | 5 contextual hyperlinks pointing to published BlueStone buying guides |
+| **Frequently Asked Questions About Women's Solitaire Diamond Rings** | Intent-inferred | 6 visible Q&A pairs directly preceding the trailing JSON-LD schema |
+
+---
+
+### 4. Competitor & Factual Source Verification
+- **Supplied Competitor URL:** Blank in source row; no competitor URL invented.
+- **Factual Authorities Cited:**
+  - **Bureau of Indian Standards (BIS):** Mandatory 6-digit alphanumeric HUID hallmarking, triangular BIS logo, and karat purity marks (`18K750`, `14K585`).
+  - **Gemological Laboratories:** Standards of the Gemological Institute of America (GIA), International Gemological Institute (IGI), and Solitaire Gemological Laboratories (SGL).
+  - **Taxation & Regulatory Standards:** Ministry of Finance statutory 3% GST on fine jewellery and mandatory separation of Gross Weight and Net Gold Weight on tax invoices.
+  - **BlueStone Official Policies:** 30-Day Money Back Guarantee and Lifetime Exchange & Buy-Back (LTE/LBB) frameworks.
+
+---
+
+### 5. Media & Visual Production Summary
+
+#### A. Mid-Article 3D Coverflow Carousel (Type 2 AI Products)
+- Sourced from `ProductImages/seo images/Rings/`, converted to 960x535 WebP (quality 82):
+
+| # | Product Name | SKU | Media ID | Pre-Flight Status | Live Image URL |
+|---|---|---|---|---|---|
+| 1 | The Liza ring | `BIAR0097R07` | `39938` | HTTP 200 OK | [the-liza-ring-solitaire-diamond-ring-carousel-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/the-liza-ring-solitaire-diamond-ring-carousel-2026.webp) |
+| 2 | The Anya Ring | `BIAR0097R04` | `39939` | HTTP 200 OK | [the-anya-ring-solitaire-diamond-ring-carousel-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/the-anya-ring-solitaire-diamond-ring-carousel-2026.webp) |
+| 3 | The Quinn Ring | `BIAR0097R16` | `39940` | HTTP 200 OK | [the-quinn-ring-solitaire-diamond-ring-carousel-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/the-quinn-ring-solitaire-diamond-ring-carousel-2026.webp) |
+| 4 | The Rafia Ring | `BIAB0503R03` | `39941` | HTTP 200 OK | [the-rafia-ring-solitaire-diamond-ring-carousel-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/the-rafia-ring-solitaire-diamond-ring-carousel-2026.webp) |
+| 5 | The Malibu Ring | `BIPM0017R18` | `39942` | HTTP 200 OK | [the-malibu-ring-solitaire-diamond-ring-carousel-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/the-malibu-ring-solitaire-diamond-ring-carousel-2026.webp) |
+| 6 | The Le Sommet Ring | `BISE0932R181` | `39943` | HTTP 200 OK | [the-le-sommet-ring-solitaire-diamond-ring-carousel-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/the-le-sommet-ring-solitaire-diamond-ring-carousel-2026.webp) |
+
+#### B. Type 3 Concept Visuals (Higgsfield CLI)
+- **Model:** `nano_banana_pro` (16:9, 2k, count 1 per slot)
+- **Casting:** Fair-skinned Indian woman (urban light wheatish to fair complexion)
+
+| Slot | Product / SKU | Reference Media | Job ID | Media ID | Alt Text / Caption |
+|---|---|---|---|---|---|
+| **Hero** (Featured) | `The Liza ring`<br>`BIAR0097R07` | `1_body_portrait.png`<br>`2_front.png` | `86e0c4fd-ecff-48ce-96d1-686941603b5d` | `39945` | **Alt:** `women's solitaire diamond rings 2026 buying guide hero showing a fair-skinned Indian woman wearing The Liza ring` |
+| **Flatlay** (In-Body) | `The Liza ring`<br>`BIAR0097R07` | `0_primary.png`<br>`2_front.png` | `750371b8-ccbf-426c-ac6b-5133f2f910ff` | `39946` | **Alt:** `women's solitaire diamond rings 2026 flatlay on velvet vanity tray showing The Liza ring with silk ribbon and vintage mirror`<br>**Caption:** [`The Liza ring`](https://www.bluestone.com/rings/the-liza-ring~7623.html) in 18K yellow gold |
+| **Lifestyle** (In-Body) | `The Anya Ring`<br>`BIAR0097R04` | `1_body_portrait.png`<br>`2_front.png` | `ba40c247-f528-46f7-8adf-9297ffe1807f` | `39947` | **Alt:** `women's gemstone rings and solitaire diamond rings 2026 lifestyle showing a fair-skinned Indian woman wearing The Anya Ring`<br>**Caption:** [`The Anya Ring`](https://www.bluestone.com/rings/the-anya-ring~7515.html) in 18K yellow gold |
+
+---
+
+### 6. Higgsfield Resource Tracking
+- **Plan:** `scale` (`satyam.kumar3@bluestone.com`)
+- **Starting Balance:** 6,157.12 credits
+- **Ending Balance:** 6,135.12 credits
+- **Credits Consumed:** 22.0 credits (3 slots × 1 count)
+- **Jobs Executed:** 3 submitted, 3 completed, 0 retries
+- **Concurrency Compliance:** Phase 1 ran Hero + Flatlay (2 concurrent jobs); Phase 2 ran Lifestyle (1 job), strictly adhering to the concurrency limit.
+
+---
+
+### 7. Duplicate & Cannibalization Result
+- **Slug Check:** `womens-solitaire-diamond-rings-2026` returned 0 matches in WordPress.
+- **Search Intent Query:** No live BlueStone blog targeted `women's solitaire diamond rings` as an informational buying guide.
+- **Result:** Confirmed Action New; zero cannibalization risk.
+
+---
+
+### 8. Live QA Verification Highlights
+- **Canonical URL:** `https://blog.bluestone.com/womens-solitaire-diamond-rings-2026/` (Matched)
+- **Live og:image:** `https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/womens-solitaire-diamond-rings-2026-hero.webp?fit=1400%2C781&ssl=1` (HTTP 200, 1400x781)
+- **Prohibited Punctuation:** 0 em-dashes (`—`), 0 en-dashes (`–`), 0 spaced hyphens (` - `).
+- **Prohibited Tables:** 0 raw HTML `<table>` or `<!-- wp:table -->` blocks.
+- **3D Coverflow Carousel:** Verified `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, `.bs-cf-dots`, `.bs-cf-prev`, `.bs-cf-next`. All 6 images return HTTP 200.
+- **Section Ordering:** Final Thoughts (H2 10) precedes More Jewellery & Buying Guides (H2 11), which precedes Frequently Asked Questions (H2 12).
+- **Internal Cluster Links:** 5 live contextual links verified.
+- **Visible FAQs:** 6 complete question and answer pairs rendered cleanly under H3 headings.
+- **Structured Data:** Full `BlogPosting` and `FAQPage` JSON-LD schemas validated.
+
+---
+
+### 9. File & Status Audit Trail
+- [output/checkpoints/week9_rank41.json](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/checkpoints/week9_rank41.json): All 15 steps marked `done`.
+- [output/Week9_Blog_Queue_status.csv](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week9_Blog_Queue_status.csv): Upserted Rank 41 as `Published` (Word count: 4,770).
+- [output/product_rotation.json](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/product_rotation.json): Upserted `week9_rank41` with SKU mappings.
+- [output/Week9_Blog_Queue.csv](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week9_Blog_Queue.csv): Upserted Rank 41 as `Published`.
+- [SEO Strategy 2026.xlsx](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/SEO%20Strategy%202026.xlsx): Sheet `Week 9` updated with live URL, Post ID `39944`, and Status `Published`.
+- [output/Week9_Rank41_WomensSolitaireDiamondRings_final_report.md](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week9_Rank41_WomensSolitaireDiamondRings_final_report.md): Full production report persisted.

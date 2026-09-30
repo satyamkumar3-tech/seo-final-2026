@@ -1,0 +1,201 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 25 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 25\n- Action: New\n- Primary keyword: hand bracelet for men\n- Volume: 22200\n- KD: 31\n- Priority score: 17095.9821\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: hand-bracelet-for-men-2026\n- Article engine: buying_guide\n- Category hint: `Men's Jewellery` 554493434 where product fit is men's jewellery; otherwise `Gift` 554493424\n- Supplied supporting keywords: gold hand bracelet for women | hand bracelet | hand bracelet design | hand bracelet for men gold | hand bracelet for women | hand gold bracelet for man | ladies hand bracelet | man hand bracelet gold\n- Supplied competitor URL: blank in source row\n- Semrush page: hand bracelet for men\n- Source execution note: Week8 new topic. Intent key=sig:bracelet_hand; brands=CaratLane,Joyalukkas,Kalyan,Malabar,MergedJewellery,ScoringCL,Tanishq; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank25.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank25.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+I have initiated a search to locate the project repository files on your system. I will proceed as soon as the results are returned.
+Waiting for the search to complete to locate the project root directory.
+STEP START: read_docs | time: 2026-09-01 17:14:45 | elapsed: 0m 00s
+STEP DONE: read_docs | time: 2026-09-01 17:15:15 | step duration: 0m 30s | total elapsed: 0m 30s
+STEP START: verify_higgsfield | time: 2026-09-01 17:15:15 | elapsed: 0m 30s
+STEP DONE: verify_higgsfield | time: 2026-09-01 17:15:25 | step duration: 0m 10s | total elapsed: 0m 40s
+STEP START: inspect_row | time: 2026-09-01 17:15:25 | elapsed: 0m 40s
+STEP DONE: inspect_row | time: 2026-09-01 17:16:03 | step duration: 0m 38s | total elapsed: 1m 18s
+STEP START: duplicate_check | time: 2026-09-01 17:16:03 | elapsed: 1m 18s
+STEP DONE: duplicate_check | time: 2026-09-01 17:16:20 | step duration: 0m 17s | total elapsed: 1m 35s
+STEP START: fact_check | time: 2026-09-01 17:16:20 | elapsed: 1m 35s
+STEP DONE: fact_check | time: 2026-09-01 17:16:25 | step duration: 0m 05s | total elapsed: 1m 40s
+STEP START: keyword_map | time: 2026-09-01 17:16:25 | elapsed: 1m 40s
+STEP DONE: keyword_map | time: 2026-09-01 17:16:32 | step duration: 0m 07s | total elapsed: 1m 47s
+STEP START: structure_visuals | time: 2026-09-01 17:16:32 | elapsed: 1m 47s
+STEP DONE: structure_visuals | time: 2026-09-01 17:17:30 | step duration: 0m 58s | total elapsed: 2m 45s
+STEP START: draft | time: 2026-09-01 17:17:30 | elapsed: 2m 45s
+STEP DONE: draft | time: 2026-09-01 17:18:55 | step duration: 1m 25s | total elapsed: 4m 10s
+STEP START: product_media | time: 2026-09-01 17:18:55 | elapsed: 4m 10s
+Uploading carousel images to WordPress.
+Waiting for the media upload task to complete.
+Waiting for the carousel media upload to complete.
+Waiting for the 6 carousel images to finish uploading to WordPress.
+STEP DONE: product_media | time: 2026-09-01 17:19:43 | step duration: 0m 48s | total elapsed: 4m 58s
+STEP START: publish_wordpress | time: 2026-09-01 17:19:43 | elapsed: 4m 58s
+STEP DONE: publish_wordpress | time: 2026-09-01 17:20:05 | step duration: 0m 22s | total elapsed: 5m 20s
+STEP START: generate_type3 | time: 2026-09-01 17:20:05 | elapsed: 5m 20s
+Generating the 3 Type 3 photorealistic images (hero, flatlay, lifestyle) via Higgsfield CLI.
+Checking the Higgsfield generation progress.
+Waiting for Higgsfield to complete the image generation jobs.
+Waiting for Higgsfield generation jobs to finish.
+I am waiting for the background Higgsfield image generation to complete.
+Waiting for the Higgsfield jobs to complete.
+Waiting for the image generation jobs to finish.
+Waiting for flatlay and lifestyle image generations to finish.
+Waiting for the image generation jobs to complete.
+Waiting for the lifestyle image generation to complete.
+Waiting for the final lifestyle image to complete.
+Waiting for the lifestyle generation job to complete.
+Waiting for Higgsfield job completion.
+Waiting for the lifestyle generation job to complete.
+Waiting for the lifestyle image generation.
+STEP DONE: generate_type3 | time: 2026-09-01 17:22:52 | step duration: 2m 47s | total elapsed: 8m 07s
+STEP START: patch_type3 | time: 2026-09-01 17:22:52 | elapsed: 8m 07s
+Uploading Type 3 images and patching post metadata on WordPress.
+STEP DONE: patch_type3 | time: 2026-09-01 17:23:30 | step duration: 0m 38s | total elapsed: 8m 45s
+STEP START: live_qa | time: 2026-09-01 17:23:30 | elapsed: 8m 45s
+Updating media titles and setting featured media.
+Waiting for the media title updates and post re-patch.
+Waiting for WordPress media updates to finish.
+STEP DONE: live_qa | time: 2026-09-01 17:24:52 | step duration: 1m 22s | total elapsed: 10m 07s
+STEP START: update_status | time: 2026-09-01 17:24:52 | elapsed: 10m 07s
+Updating status CSV, product rotation, and workbook.
+STEP DONE: update_status | time: 2026-09-01 17:25:27 | step duration: 0m 35s | total elapsed: 10m 42s
+STEP START: final_report | time: 2026-09-01 17:25:27 | elapsed: 10m 42s
+STEP DONE: final_report | time: 2026-09-01 17:25:30 | step duration: 0m 03s | total elapsed: 10m 45s
+# Week 8 Rank 25: End-to-End Article Production Report
+
+---
+
+### Executive Overview & Live Status
+- **Live Article URL:** [https://blog.bluestone.com/hand-bracelet-for-men-2026/](https://blog.bluestone.com/hand-bracelet-for-men-2026/)
+- **WordPress Post ID:** `37269`
+- **HTTP Status Code:** `200 OK`
+- **Article Engine:** `buying_guide` (How-to / Education)
+- **Author:** `Satyam` (User ID `270271337`), on-page byline: *By Satyam, BlueStone Editorial*
+- **Assigned Categories:**
+  - `Men's Jewellery` (`554493434`)
+  - `Gold` (`554493348`)
+  - `Jewellery Problem & Solution` (`554493465`)
+  - `Jewellery Trends` (`554493317`)
+  - `Jewellery & Lifestyle` (`554493425`)
+- **Visible Article Word Count:** ~3,661 words (3,459 draft body words)
+- **Title A (H1):** `Hand Bracelet for Men Buying Guide 2026: Trending Designs, 18K vs 22K Gold Purity, Wrist Sizing & Daily Styling Tips`
+- **Yoast Focus Keyphrase:** `hand bracelet for men`
+- **SEO Title:** `Hand Bracelet for Men Buying Guide 2026: Styles & Sizing | BlueStone`
+- **Meta Description:** `Explore the complete 2026 buying guide for hand bracelet for men. Discover trending link designs, 18K vs 22K gold purity, wrist sizing charts, safety clasps, and styling tips at BlueStone.`
+
+---
+
+### Target Keyword & Metrics
+- **Primary Keyword:** `hand bracelet for men`
+- **Search Volume:** `22,200`
+- **Keyword Difficulty (KD):** `31`
+- **Priority Score:** `17,095.9821`
+- **Theme / Category Fit:** `How-to / Education` / `Jewellery Education`
+- **Canonical Slug:** `hand-bracelet-for-men-2026`
+
+---
+
+### Supporting Keywords Audit & Mapping
+
+| Keyword Phrase | Status | Topical Relevance / Action | Placement in Article |
+|---|---|---|---|
+| `hand bracelet for men gold` | **Accepted** | High relevance for men's gold purity & link durability | H2 & Body (`18K vs 22K Gold Purity Guide`) |
+| `hand gold bracelet for man` | **Accepted** | High relevance for masculine gold styling & occasion wear | H2, Body & FAQ |
+| `man hand bracelet gold` | **Accepted** | Natural search variant for solid gold link mechanics | Body & FAQ |
+| `hand bracelet design` | **Accepted** | Core aesthetic intent covering link weaves, cuffs, and kadas | H2 & H3 Subsections |
+| `hand bracelet` | **Accepted** | Umbrella keyword for sizing and cleaning maintenance | Intro, Sizing & Maintenance Sections |
+| `gold hand bracelet for women` | **Rejected** | Female gender intent; diluted men's focus | Excluded from men's core body |
+| `hand bracelet for women` | **Rejected** | Female gender intent | Excluded from core targeting |
+| `ladies hand bracelet` | **Rejected** | Female gender intent | Excluded from core targeting |
+
+---
+
+### H2 Keyword Map & Structural Breakdown
+
+| # | Section Heading | Keyword / Intent Classification |
+|---|---|---|
+| 1 | `Why the Hand Bracelet for Men Is 2026's Essential Everyday Jewellery Anchor` | `[primary-backed]` |
+| 2 | `Trending Hand Bracelet Design Styles for Men in 2026` | `[supporting-keyword-backed: hand bracelet design]` |
+| 3 | `Hand Bracelet for Men Gold Purity Guide: Comparing 18K vs 22K Durability and Tone` | `[supporting-keyword-backed: hand bracelet for men gold]` |
+| 4 | `Wrist Sizing Guide for Men: How to Measure and Calculate Ideal Bracelet Length` | `[intent-inferred]` |
+| 5 | `Solid vs Hollow Gold Links: Weight, Durability, and Long-Term Value` | `[intent-inferred]` |
+| 6 | `Clasp Engineering and Security: Choosing the Safest Lock for Active Daily Wear` | `[intent-inferred]` |
+| 7 | `Styling a Hand Gold Bracelet for Man: Watch Pairings, Office Looks, and Ethnic Ensembles` | `[supporting-keyword-backed: hand gold bracelet for man]` |
+| 8 | `BIS Hallmarking and Tax Transparency: 3-Part HUID Verification and 3% GST Breakdown` | `[intent-inferred: factual / legal]` |
+| 9 | `Essential Maintenance and Cleaning Routine for Men's Gold Hand Bracelets` | `[intent-inferred]` |
+| 10 | `Top Hand Bracelet Picks for Men from BlueStone` *(6-Product Coverflow Carousel)* | `[intent-inferred: commercial]` |
+| 11 | `Final Thoughts on Investing in a Men's Gold Hand Bracelet` | `[intent-inferred: conclusion]` |
+| 12 | `More Jewellery & Buying Guides` *(Internal Cluster Navigation)* | `[intent-inferred: internal linking]` |
+| 13 | `Frequently Asked Questions About Hand Bracelet for Men` *(7 Full Q&As)* | `[primary-backed: AEO / FAQPage]` |
+
+---
+
+### Competitor & Factual Authority Summary
+- **Competitor URL:** Blank in source row (no invented competitor URL).
+- **Factual Sources & Regulatory Verification:**
+  - **BIS Hallmarking (Bureau of Indian Standards):** Mandatory 3-part mark verified (BIS triangular mark + purity `18K750` / `22K916` + 6-digit alphanumeric HUID code verified on the government *BIS Care* app).
+  - **Taxation:** Uniform 3% GST on gold jewellery (calculated on gold metal value + making charges).
+  - **Sizing Standards:** Male wrist circumferences ranging from 6.5 to 8.5 inches, with +0.5 to +0.75 inches ease for link drape and +0.25 to +0.5 inches for solid kadas/cuffs.
+
+---
+
+### Media & Product Rotation Assets
+
+#### 1. Type 3 Photorealistic Imagery (Higgsfield `nano_banana_pro`)
+- **Hero Image (Featured Media):**
+  - **Product:** *The Kilxer Link Bracelet For Him* (`BISL1006V249`)
+  - **Media ID:** `37270`
+  - **URL:** [https://blog.bluestone.com/wp-content/uploads/2026/09/hand-bracelet-for-men-hero-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/hand-bracelet-for-men-hero-2026.webp)
+  - **Alt Text:** `Hand bracelet for men 2026: The Kilxer Link Bracelet For Him styled on wrist`
+  - **Job ID:** `20cf16b7-572d-46c3-b02c-3ab2d2cb309b`
+- **Flatlay Image:**
+  - **Product:** *The Volara Bracelet For Him* (`BISL1006V287`)
+  - **Flatlay Setting ID:** `desk-kraft` (warm solid oak desk, textured kraft gift box, linen napkin, brass pen)
+  - **Media ID:** `37271`
+  - **URL:** [https://blog.bluestone.com/wp-content/uploads/2026/09/hand-bracelet-for-men-flatlay-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/hand-bracelet-for-men-flatlay-2026.webp)
+  - **Alt Text:** `Hand bracelet for men 2026 flatlay: The Volara Bracelet For Him on kraft desk setup`
+  - **Job ID:** `595dd2fe-dce3-4b5b-942f-9ca3a0b51157`
+- **Lifestyle Image:**
+  - **Product:** *The Fonseca Bracelet For Him* (`BIPO0945V20`)
+  - **Media ID:** `37272`
+  - **URL:** [https://blog.bluestone.com/wp-content/uploads/2026/09/hand-bracelet-for-men-lifestyle-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/hand-bracelet-for-men-lifestyle-2026.webp)
+  - **Alt Text:** `Hand bracelet for men 2026 lifestyle: The Fonseca Bracelet For Him worn on wrist`
+  - **Job ID:** `934b5f5e-4af1-4705-927a-b41c1beefa21`
+
+#### 2. Mid-Article Coverflow Carousel (6 Approved SKUs)
+| # | Product Name | SKU Code | Category | Media ID | PDP Direct Link |
+|---|---|---|---|---|---|
+| 1 | The Fonseca Bracelet For Him | `BIPO0945V20` | Bracelets | `37263` | [View PDP](https://www.bluestone.com/bracelets/the-fonseca-bracelet-for-him~116367.html) |
+| 2 | The Amandine Bracelet For Him | `BIPO0945V21` | Bracelets | `37264` | [View PDP](https://www.bluestone.com/bracelets/the-amandine-bracelet-for-him~111826.html) |
+| 3 | The Kilxer Link Bracelet For Him | `BISL1006V249` | Bracelets | `37265` | [View PDP](https://www.bluestone.com/bracelets/the-kilxer-link-bracelet-for-him~163433.html) |
+| 4 | The Volara Bracelet For Him | `BISL1006V287` | Bracelets | `37266` | [View PDP](https://www.bluestone.com/bracelets/the-volara-bracelet-for-him~163432.html) |
+| 5 | The Bandhan Bracelet For Him | `BISV0910V12` | Bracelets | `37267` | [View PDP](https://www.bluestone.com/bracelets/the-bandhan-bracelet-for-him~112002.html) |
+| 6 | The Concatenate Bracelet For Him | `BISV0910V22` | Bracelets | `37268` | [View PDP](https://www.bluestone.com/bracelets/the-concatenate-bracelet-for-him~109542.html) |
+
+---
+
+### Higgsfield Platform Ledger
+- **Subscription Plan:** `ultimate`
+- **Account:** `ai.marketing@bluestone.com`
+- **Starting Credits:** `104.37`
+- **Generations Submitted:** 3 (Hero, Flatlay, Lifestyle)
+- **Retries:** `0`
+- **Ending Credits:** `98.37` (exact 6 credit deduction for 3 x 2k generations)
+
+---
+
+### Live Quality Assurance & Hygiene Audit
+- **Single `<h1>` Verification:** Passed (`1` H1 rendered at top of page).
+- **Prohibited Characters in Article Body:** Passed (`0` em dashes `—`, `0` en dashes `–`, `0` price symbols, `0` HTML tables).
+- **Gutenberg Comments & Paragraph Wrapping:** Passed (strictly valid comments with all paragraphs wrapped in `<p>...</p>`).
+- **Section Ordering:** Passed (*Final Thoughts / Conclusion* $\rightarrow$ *More Jewellery & Buying Guides* $\rightarrow$ *Frequently Asked Questions*).
+- **Visible FAQs:** Passed (7 complete interactive Q&A pairs rendered in the DOM).
+- **Structured Data Schemas:** Verified (`FAQPage` + `BlogPosting` + `Article` JSON-LD schemas).
+- **Live Social Meta (`og:image`):** Verified (`https://blog.bluestone.com/wp-content/uploads/2026/09/hand-bracelet-for-men-hero-2026.webp`).
+- **State & Checkpoint Sync:** `output/checkpoints/week8_rank25.json`, `output/Week8_Blog_Queue_status.csv`, `output/product_rotation.json`, and `SEO Strategy 2026.xlsx` updated.

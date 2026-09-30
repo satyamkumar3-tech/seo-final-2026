@@ -1,0 +1,71 @@
+{
+  "occasion": "friendship-day-gifts-2026",
+  "article": "Week1 Rank29 - gifts for friends on friendship day",
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max + people_theme_anchor. FLATLAY: product_theme_anchor + 3-4 refs.",
+  "notes": "Asya Huggie Earrings BISA0255D05: gold huggie with diamond and pearl drop details. Gigi Ring BINS0639R18: elegant yellow gold split shank ring with multi-row diamonds along the splitting band. Shining Star Bracelet BIMG0635V45: yellow gold bracelet with star motif and diamond accents, delicate link construction. People slots: 2 refs max. Credits: exactly 3 images, count 1 each.",
+  "prompt_rules": {
+    "people_slots": "scene first, jewellery second; 2 refs max; people_theme_anchor; negative_prompt_people; count=1; retry only if QA fails",
+    "flatlay": "product_theme_anchor OK; 3-4 refs; count=1",
+    "credits": "Exactly 3 images per article (hero+flatlay+lifestyle). No dual variants by default.",
+    "anti_overlay": "Do not lead people prompts with commercial/macro jewellery language"
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg0.bluestone.com/giproduct/BISA0255D05_YAA14DIG6PRWHXXXX_ABCD00-PICS-00004-1024-80521.png",
+        "https://kinclimg0.bluestone.com/giproduct/BISA0255D05_YAA14DIG6PRWHXXXX_ABCD00-PICS-00000-1024-80521.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin.\n\nFriendship Day gifts for friends 2026 candid lifestyle photograph, mid-shot of people (not a product ad). A fair-skinned Indian young woman laughs with a friend in a bright cafe, warm window light and soft blur behind them. Her face and upper body fill most of the frame. She is physically wearing the identical gold huggie earrings from reference images (@img1, @img2) on both ears at natural product scale with soft contact shadows. The Asya Huggie Earrings stay sharp but small versus her face. Design fidelity: gold huggie shape with diamond and pearl drop accents. ONLY jewellery in the image. Bare neck and wrists. CRITICAL: attached to body, never floating cutout / packshot overlay. 16:9 landscape, full face in frame, safe margins.",
+      "alt": "gifts for friends on friendship day 2026 hero, fair-skinned Indian woman wearing The Asya Huggie Earrings",
+      "product": {
+        "code": "BISA0255D05",
+        "name": "The Asya Huggie Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html"
+      }
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg1.bluestone.com/giproduct/BINS0639R18_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-71114.png",
+        "https://kinclimg4.bluestone.com/giproduct/BINS0639R18_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-71114.png",
+        "https://kinclimg7.bluestone.com/giproduct/BINS0639R18_YAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-71114.png",
+        "https://kinclimg0.bluestone.com/giproduct/BINS0639R18_YAA18DIG6XXXXXXXX_ABCD00-PICS-00003-1024-71114.png"
+      ],
+      "prompt": "Friendship Day gifts for friends 2026 top-down flatlay. A lived-in wooden desk with a blank cream greeting card, fountain pen, two coffee cups with soft reflections, a linen napkin, dried flowers, and a blank dark phone screen fully in frame. The identical yellow gold split shank ring from (@img1, @img2, @img3, @img4) rests on the surface at natural scale, sharp, full piece visible: The Gigi Ring with multi-row diamonds along the splitting band. Warm window light. No people. No floating overlays or cutouts. No readable text.",
+      "alt": "gifts for friends on friendship day 2026 flatlay with The Gigi Ring",
+      "product": {
+        "code": "BINS0639R18",
+        "name": "The Gigi Ring",
+        "pdp": "https://www.bluestone.com/rings/the-gigi-ring~64382.html"
+      }
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg5.bluestone.com/giproduct/BIMG0635V45_YAA18XXXXXXXXXXXX_ABCD00-PICS-00000-1024-47150.png",
+        "https://kinclimg5.bluestone.com/giproduct/BIMG0635V45_YAA18XXXXXXXXXXXX_ABCD00-PICS-00001-1024-47150.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin.\n\nFriendship Day gifts for friends 2026 lifestyle mid-shot. A fair-skinned Indian woman's hand and wrist are in sharp focus as she high-fives a friend across a cafe table, soft home blur behind. She physically wears the identical yellow gold star bracelet from (@img1, @img2) on her wrist at natural product scale with a soft contact shadow: The Shining Star Bracelet with star motif and delicate gold links. Jewellery is sharp but small versus the hand and wrist. This bracelet is the ONLY jewellery in the image. Bare fingers otherwise. Never floating packshot overlay. Full hand, wrist, and bracelet inside frame with safe margins.",
+      "alt": "friendship day gifts for best friend 2026 lifestyle with The Shining Star Bracelet",
+      "product": {
+        "code": "BIMG0635V45",
+        "name": "The Shining Star Bracelet",
+        "pdp": "https://www.bluestone.com/bracelets/the-shining-star-bracelet~63731.html"
+      }
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/friendship-day-gifts-hero-2026.webp",
+    "flatlay": "output/magnific_generated/friendship-day-gifts-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/friendship-day-gifts-lifestyle-2026.webp"
+  },
+  "wp_post_id": 30329
+}

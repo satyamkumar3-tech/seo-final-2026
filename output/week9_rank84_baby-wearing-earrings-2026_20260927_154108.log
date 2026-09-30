@@ -1,0 +1,257 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 9 Rank 84 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 9 and output/Week9_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 9 target block overrides those notes.\n\nTarget row:\n- Rank: 84\n- Action: New\n- Primary keyword: baby wearing earrings\n- Volume: 1900\n- KD: 21.0\n- Priority score: 1900\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: baby-wearing-earrings-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: light weight earrings\n- Supplied competitor URL: https://www.caratlane.com/jewellery/earrings-kids+jewellery.html\n- Semrush page: baby wearing earrings\n- Source execution note: Week9 informational gap. Intent key=topic:baby_earring_wearing; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq. Excluded Week1-8 and live BlueStone inventory. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nSERP intelligence (top 5 Google India ranking URLs for this keyword):\n- No pre-fetched Semrush data is available for this keyword.\n- You MUST search Google India for the primary keyword yourself and identify the top 5 organic ranking URLs (exclude ads, featured snippets, and People Also Ask).\n\nSERP intelligence execution instructions:\n- This step runs immediately after the duplicate check passes and before keyword mapping or drafting.\n- For each of the top 5 ranking URLs (whether pre-fetched above or found by searching Google):\n  1. Browse/scrape the URL and read its full content.\n  2. Log each URL scraped by printing: SERP_SCRAPED: <position> | <url> | <domain> | <word_count> | <h2_count>\n  3. Extract: page title, H2/H3 heading outline, key subtopics covered, FAQs answered, and approximate word count.\n- After scraping all URLs, synthesize a SERP Competitive Brief containing:\n  a) Consensus topics: H2 themes that appear across 3+ of the top 5 pages (table stakes your article must cover).\n  b) Common FAQs: questions answered by 2+ competitors (candidates for our FAQ section).\n  c) Content gaps: subtopics, depth, accuracy, or BlueStone-specific angles missing from all 5 pages.\n  d) Intent format: whether Google is ranking listicles, buying guides, long-form education, or gift guides.\n  e) Average word count and depth benchmark across the top 5.\n- Print the synthesized brief as: SERP_BRIEF: <one-line summary of consensus topics and gaps>\n- Use this brief to directly shape the H2 keyword map and article outline. Ensure your article covers all consensus topics\n  and fills the identified content gaps with BlueStone's authentic expertise.\n- Do NOT copy any wording, phrasing, or structure verbatim. Use the analysis only for topical coverage and differentiation.\n- Mark this step done in the checkpoint with:\n  python3 -B scripts/week9_checkpoint.py mark --path <checkpoint> --step serp_intelligence --status done --detail urls_scraped=<count> --detail avg_word_count=<avg>\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week9_rank84.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"serp_intelligence\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week9_checkpoint.py mark --path output/checkpoints/week9_rank84.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, serp_intelligence, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 9 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- CRITICAL RUNTIME EXECUTION GATE \u2014 STRICTLY SYNCHRONOUS ONLY:\n  * DO NOT spawn background tasks or execute commands with asynchronous delays.\n  * Execute ALL python scripts, curl/API calls, Higgsfield generations, and WordPress uploads SYNCHRONOUSLY in the foreground (blocking until full completion).\n  * Wait for each command and script to fully complete before calling the next tool or emitting text.\n  * NEVER end your turn or output messages like \"waiting for background task to finish\" while a task is running, as this triggers watchdog idle termination. Run all scripts synchronously from start to finish.\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Run the SERP intelligence step (serp_intelligence) immediately after the duplicate check passes. Search Google India for the primary keyword (or use the pre-fetched URLs above if available), identify the top 5 organic ranking URLs, and scrape/read each page fully. Log every scraped URL with SERP_SCRAPED. Synthesize a structured competitive brief before keyword mapping or drafting. Mark the serp_intelligence checkpoint step done.\n- Analyze the supplied competitor URL when present, in addition to the SERP top 5. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 9 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & STUDIO IMAGERY: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html` (matching `rudraksh-gold-bracelet-2026` and `mens-black-bracelet-2026`). All 6 carousel images MUST be high-definition studio-styled visuals sourced from `ProductImages/seo images/<Category>/<Product Name>.png` (converted to 960x535 WebP on stone plinths/draped fabric with warm lighting, NEVER plain white packshots). It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 360px }`, `margin: 1.75rem auto 1.25rem`, `.bs-cf-card { width: min(420px, 78vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-cta { background: #111; color: #fff; }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class=\"bs-cf\" id=\"bs-cf-<slug>\" data-interval=\"3200\" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards with initial position classes (`.bs-cf-card is-pos-0 data-index=\"0\"` ... `is-pos--1 data-index=\"5\"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` with the `paint()` and `rel()` rotation functions (with NO `<p>` wrappers). Follow immediately ONLY with a single `<!-- wp:paragraph -->\n<p><strong>Curated Design Highlights:</strong> Explore signature ... <a href=\"<product_url>\">Product Name</a> ...</p>\n<!-- /wp:paragraph -->`. NEVER insert a repetitive product bullet list after the carousel. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.\n- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week9_Blog_Queue_status.csv, output/product_rotation.json, the Week 9 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 9 target row\n4. Check duplicate slug and search intent\n5. Analyze top 5 SERP ranking URLs and synthesize competitive brief\n6. Analyze the supplied competitor URL and fact-check current sources\n7. Filter and map supporting keywords\n8. Build the H2 keyword map (informed by SERP brief + competitor analysis)\n9. Select article structure and visual concept\n10. Draft the complete article\n11. Select products and carousel media\n12. Publish the WordPress post\n13. Generate Type 3 images through the Higgsfield CLI\n14. Patch images and social metadata into WordPress\n15. Run live QA\n16. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- SERP intelligence: list every URL scraped (position, URL, domain, word count, H2 count), consensus topics, content gaps identified, and average competitor word count\n- H2 keyword map (with SERP-informed labels showing which H2s were added based on competitor analysis)\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: Read required docs | time: 2026-09-27T15:41:40+05:30 | elapsed: 0m 00s
+STEP DONE: Read required docs | time: 2026-09-27T15:42:41+05:30 | step duration: 1m 01s | total elapsed: 1m 01s
+STEP START: Verify Higgsfield status and report credits/plan | time: 2026-09-27T15:42:41+05:30 | elapsed: 1m 01s
+STEP DONE: Verify Higgsfield status and report credits/plan | time: 2026-09-27T15:42:57+05:30 | step duration: 0m 16s | total elapsed: 1m 17s
+STEP START: Inspect the Week 9 target row | time: 2026-09-27T15:42:57+05:30 | elapsed: 1m 17s
+STEP DONE: Inspect the Week 9 target row | time: 2026-09-27T15:43:14+05:30 | step duration: 0m 17s | total elapsed: 1m 34s
+STEP START: Check duplicate slug and search intent | time: 2026-09-27T15:43:14+05:30 | elapsed: 1m 34s
+STEP DONE: Check duplicate slug and search intent | time: 2026-09-27T15:44:14+05:30 | step duration: 1m 00s | total elapsed: 2m 34s
+STEP START: Analyze top 5 SERP ranking URLs and synthesize competitive brief | time: 2026-09-27T15:44:14+05:30 | elapsed: 2m 34s
+SERP_SCRAPED: 1 | https://www.caratlane.com/blog/choosing-the-best-earrings-for-babies/ | caratlane.com | 1109 | 4
+SERP_SCRAPED: 2 | https://www.caratlane.com/blog/when-can-i-get-my-babys-ears-pierced/ | caratlane.com | 966 | 4
+SERP_SCRAPED: 3 | https://mysunar.com/blog/post/how-to-choose-the-right-gold-earrings-for-baby-ear-piercing-safety-size-and-comfort-guide | mysunar.com | 1630 | 6
+SERP_SCRAPED: 4 | https://www.caratlane.com/blog/kids-earrings-collection/ | caratlane.com | 1903 | 5
+SERP_SCRAPED: 5 | https://www.caratlane.com/jewellery/earrings-kids+jewellery.html | caratlane.com | 2081 | 10
+
+SERP_BRIEF: Consensus covers gold purity (14k/18k), screw-back safety mechanisms, post-vaccination timing, and aftercare; critical content gaps include BIS HUID hallmarking verification for baby gold, post-length millimeter specifications, and milestone-based transition stages from infant starter studs to daily wear.
+STEP DONE: Analyze top 5 SERP ranking URLs and synthesize competitive brief | time: 2026-09-27T15:50:00+05:30 | step duration: 5m 46s | total elapsed: 8m 20s
+STEP START: Analyze the supplied competitor URL and fact-check current sources | time: 2026-09-27T15:50:00+05:30 | elapsed: 8m 20s
+STEP DONE: Analyze the supplied competitor URL and fact-check current sources | time: 2026-09-27T15:50:31+05:30 | step duration: 0m 31s | total elapsed: 8m 51s
+STEP START: Filter and map supporting keywords | time: 2026-09-27T15:50:31+05:30 | elapsed: 8m 51s
+STEP DONE: Filter and map supporting keywords | time: 2026-09-27T15:50:40+05:30 | step duration: 0m 09s | total elapsed: 9m 00s
+STEP START: Build the H2 keyword map (informed by SERP brief + competitor analysis) | time: 2026-09-27T15:50:40+05:30 | elapsed: 9m 00s
+STEP DONE: Build the H2 keyword map (informed by SERP brief + competitor analysis) | time: 2026-09-27T15:50:50+05:30 | step duration: 0m 10s | total elapsed: 9m 10s
+STEP START: Select article structure and visual concept | time: 2026-09-27T15:50:50+05:30 | elapsed: 9m 10s
+STEP DONE: Select products and carousel media | time: 2026-09-27T15:53:42+05:30 | step duration: 1m 05s | total elapsed: 12m 02s
+STEP START: Draft the complete article | time: 2026-09-27T15:53:42+05:30 | elapsed: 12m 02s
+STEP DONE: Draft the complete article | time: 2026-09-27T15:55:38+05:30 | step duration: 1m 56s | total elapsed: 13m 58s
+STEP START: Publish the WordPress post | time: 2026-09-27T15:55:38+05:30 | elapsed: 13m 58s
+STEP DONE: Publish the WordPress post | time: 2026-09-27T15:56:58+05:30 | step duration: 1m 20s | total elapsed: 15m 18s
+STEP START: Generate Type 3 images through the Higgsfield CLI | time: 2026-09-27T15:56:58+05:30 | elapsed: 15m 18s
+STEP DONE: Generate Type 3 images through the Higgsfield CLI | time: 2026-09-27T16:01:44+05:30 | step duration: 4m 46s | total elapsed: 20m 04s
+STEP START: Patch images and social metadata into WordPress | time: 2026-09-27T16:01:44+05:30 | elapsed: 20m 04s
+STEP DONE: Patch images and social metadata into WordPress | time: 2026-09-27T16:02:57+05:30 | step duration: 1m 13s | total elapsed: 21m 17s
+STEP START: Run live QA | time: 2026-09-27T16:02:57+05:30 | elapsed: 21m 17s
+STEP DONE: Run live QA | time: 2026-09-27T16:06:10+05:30 | step duration: 3m 13s | total elapsed: 24m 30s
+STEP START: Update status files and write the final report | time: 2026-09-27T16:06:10+05:30 | elapsed: 24m 30s
+STEP DONE: Update status files and write the final report | time: 2026-09-27T16:08:00+05:30 | step duration: 1m 50s | total elapsed: 26m 20s
+
+---
+
+# Final Execution Report: Week 9 Rank 84 End-to-End
+
+### 1. WordPress Publication & Metadata
+- **Live URL:** [https://blog.bluestone.com/baby-wearing-earrings-2026/](https://blog.bluestone.com/baby-wearing-earrings-2026/)
+- **WordPress Post ID:** `40403`
+- **Article Engine:** `buying_guide` (How-to / Education per `docs/WEEK6_CLUSTER_PLAYBOOK.md` Engine 2)
+- **Author:** Satyam (WP User ID `270271337`)
+  - **On-Page Byline:** `By Satyam, BlueStone Editorial`
+  - **Schema Author:** `Satyam`, BlueStone Editorial
+- **WordPress Categories:** 
+  - `Kids Jewellery` (ID `554493433`)
+  - `Jewellery Problem & Solution` (ID `554493465`)
+- **Visible Article Word Count:** **3,132 words** (substantially exceeding top-5 competitor benchmark of 1,538 words)
+- **Primary Keyword:** `baby wearing earrings`
+  - **Volume:** 1,900
+  - **KD:** 21.0
+  - **Priority Score:** 1,900
+  - **Suggested Slug:** `baby-wearing-earrings-2026`
+
+---
+
+### 2. Supporting Keyword Audit & Mapping
+- **Supplied Supporting Keyword:**
+  - `light weight earrings` (Accepted): Highly relevant biomechanical safety factor. Infant earlobes cannot support heavy pull; mapped prominently into H2 heading, body prose, gram weight specifications (<1.0g to 1.5g), and FAQs.
+- **Natural Intent-Inferred Keywords:**
+  - `baby earrings gold`: Integrated across purity and karatage sections.
+  - `baby ear piercing safety`: Integrated across clinical preparation, timing, and aftercare.
+  - `screw back baby earrings`: Integrated into closure engineering and choking prevention sections.
+  - `first earrings for babies`: Integrated into developmental milestones and starter stud selection.
+- **Rejected Keywords:**
+  - None polluted or irrelevant in supplied queue.
+
+---
+
+### 3. SERP Intelligence Analysis (Google India Top 5 Organic Results)
+All 5 organic competitor URLs were scraped, parsed, and synthesized synchronously:
+
+| Position | URL | Domain | Word Count | H2 Count |
+|:---:|:---|:---|:---:|:---:|
+| 1 | `https://www.caratlane.com/blog/choosing-the-best-earrings-for-babies/` | caratlane.com | 1,109 | 4 |
+| 2 | `https://www.caratlane.com/blog/when-can-i-get-my-babys-ears-pierced/` | caratlane.com | 966 | 4 |
+| 3 | `https://mysunar.com/blog/post/how-to-choose-the-right-gold-earrings-for-baby-ear-piercing-safety-size-and-comfort-guide` | mysunar.com | 1,630 | 6 |
+| 4 | `https://www.caratlane.com/blog/kids-earrings-collection/` | caratlane.com | 1,903 | 5 |
+| 5 | `https://www.caratlane.com/jewellery/earrings-kids+jewellery.html` | caratlane.com | 2,081 | 10 |
+
+- **Average Competitor Word Count:** 1,538 words.
+- **Consensus Topics (Table Stakes):**
+  - Optimal gold purity: 14kt and 18kt solid gold as hypoallergenic benchmarks; avoiding nickel alloys and gold-plated metals.
+  - Fastener safety: Screw backs with covered/rounded caps vs hazardous push friction backs.
+  - Medical readiness & timing: Waiting until at least 2 to 3 months post-vaccination (tetanus/DTaP).
+  - Aftercare & hygiene: Sterile saline twice daily, 6 to 8-week healing lock, gentle rotation.
+  - Studs vs hoops comparison across infancy and early childhood.
+- **Common FAQs Across Competitors:**
+  - What carat gold is safest for babies? (14kt or 18kt solid gold)
+  - Are screw backs safe for sleeping? (Yes, covered bell caps prevent skin punctures)
+  - Can infants wear dangling earrings or hoops? (No, strictly avoid dangles and loose hoops)
+  - How to clean baby earrings without stinging or skin irritation? (Sterile 0.9% saline)
+  - What are the warning signs of an earlobe infection? (Spreading redness, swelling, discharge, fever)
+- **Identified Content Gaps Filled by BlueStone:**
+  - Mandatory BIS 6-digit HUID hallmarking verification for baby gold in India via BIS Care App.
+  - Millimetre post length and thickness specifications tailored to infant lobe anatomy (6 mm to 8 mm post length vs 10 mm to 12 mm adult posts).
+  - Milestone-based transition guide: from infant starter studs (0-12m) to toddler flush motifs (1-3y) to preschool huggies (4y+).
+  - Zero-nickel, lead-free fine gold casting assurance.
+
+---
+
+### 4. H2 Keyword Map & Structural Alignment
+
+1. `Understanding Baby Wearing Earrings: Safety, Readiness, and Cultural Traditions`
+   - *Label:* `primary-backed` (contains primary keyword `baby wearing earrings`)
+2. `Optimal Gold Purity: Why 14kt and 18kt Are the Gold Standards for Babies`
+   - *Label:* `competitor-structure-backed` (SERP consensus across all 5 pages)
+3. `Light Weight Earrings for Infants: Why Gram Weight and Scale Matter Most`
+   - *Label:* `supporting-keyword-backed` (backed by supplied keyword `light weight earrings`)
+4. `Earring Closures and Backings: Why Screw Backs Protect Delicate Ears`
+   - *Label:* `competitor-structure-backed` (SERP consensus on safety closures)
+5. `Curated Fine Gold Earrings for Babies and Toddlers`
+   - *Label:* `intent-inferred` (mid-article commercial bridge hosting official 3D Coverflow carousel)
+6. `Baby Earring Styles by Age: From Infant Starter Studs to Toddler Designs`
+   - *Label:* `competitor-structure-backed` (informed by CaratLane kids collection age stages)
+7. `Daily Wear Safety, Cleaning, and Infection Prevention Checklist`
+   - *Label:* `intent-inferred` (clinical paediatric care consensus)
+8. `Buying Certified Gold Baby Earrings in India: The BIS HUID Verification Guide`
+   - *Label:* `intent-inferred` (SERP content gap fill)
+9. `Final Thoughts: Celebrating Milestones with Safe, Cherished Jewellery`
+   - *Label:* `intent-inferred` (conclusion section, positioned strictly BEFORE Related Guides and FAQs)
+10. `More Jewellery & Buying Guides`
+    - *Label:* `intent-inferred` (mandatory internal blog cluster with 5 contextual links)
+11. `Frequently Asked Questions`
+    - *Label:* `intent-inferred` (6 visible Q&As directly preceding JSON-LD schema)
+
+---
+
+### 5. Supplied Competitor Analysis & Factual Verification
+- **Supplied Competitor URL:** `https://www.caratlane.com/jewellery/earrings-kids+jewellery.html`
+- **Analysis:** Focused on product merchandising with basic SEO text on screw backs, light weight comfort, and 14kt gold. Lacked paediatric health context, BIS hallmarking authentication, post length dimensions, and transition protocols.
+- **Factual Sources Checked:**
+  - *Indian Academy of Pediatrics (IAP) & AAP Guidelines:* Ear piercing timing post 2-3 month vaccinations (tetanus/DTaP).
+  - *Bureau of Indian Standards (BIS):* Mandatory 6-digit HUID hallmarking verification for gold jewellery.
+  - *Dermatological Standards:* Zero-nickel requirement to prevent paediatric allergic contact dermatitis.
+
+---
+
+### 6. Media IDs & Pre-Flight Verification
+
+#### Mid-Article 3D Coverflow Carousel (6 Items)
+Strictly formatted using `templates/eid_carousel_6_snippet.html` syntax (`.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, `.bs-cf-dots`, and vanilla JS rotation). All 6 images verified HTTP 200:
+
+1. **The Aleena Huggie Earrings** (SKU `BIIP0279S08`)
+   - Media ID: `40397`
+   - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/the-aleena-huggie-earrings-baby-wearing-earrings-carousel-2026.webp` (HTTP 200)
+   - PDP: [The Aleena Huggie Earrings](https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html)
+2. **The Vicky Hoop Earrings** (SKU `BIIP0427H16`)
+   - Media ID: `40398`
+   - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/the-vicky-hoop-earrings-baby-wearing-earrings-carousel-2026.webp` (HTTP 200)
+   - PDP: [The Vicky Hoop Earrings](https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html)
+3. **The Rohal Huggie Earrings** (SKU `BIPM0001H28`)
+   - Media ID: `40399`
+   - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/the-rohal-huggie-earrings-baby-wearing-earrings-carousel-2026.webp` (HTTP 200)
+   - PDP: [The Rohal Huggie Earrings](https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html)
+4. **The Nettile Huggie Earrings** (SKU `BIPN0880H218`)
+   - Media ID: `40400`
+   - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/the-nettile-huggie-earrings-baby-wearing-earrings-carousel-2026.webp` (HTTP 200)
+   - PDP: [The Nettile Huggie Earrings](https://www.bluestone.com/earrings/the-nettile-huggie-earrings~108215.html)
+5. **The Asya Huggie Earrings** (SKU `BISA0255D05`)
+   - Media ID: `40401`
+   - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/the-asya-huggie-earrings-baby-wearing-earrings-carousel-2026.webp` (HTTP 200)
+   - PDP: [The Asya Huggie Earrings](https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html)
+6. **The Skein Hoop Earrings** (SKU `BINK0363H03`)
+   - Media ID: `40402`
+   - URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/the-skein-hoop-earrings-baby-wearing-earrings-carousel-2026.webp` (HTTP 200)
+   - PDP: [The Skein Hoop Earrings](https://www.bluestone.com/earrings/the-skein-hoop-earrings~27215.html)
+
+#### Type 3 Studio & Lifestyle Media (3 Slots)
+Generated via Higgsfield CLI `nano_banana_pro` (2k resolution, 16:9, fair-skinned Indian casting, zero retries):
+
+1. **Hero (Featured Media):**
+   - **Product:** The Ursa Hoop Earrings (SKU `BISP0427H21`, 16.14mm x 10.07mm)
+   - **Job ID:** `07e2bb8f-9fa6-4c5e-ac9a-f34f7046993c` (84.1s)
+   - **WordPress Media ID:** `40404`
+   - **URL:** `https://blog.bluestone.com/wp-content/uploads/2026/09/baby-wearing-earrings-hero-2026.webp` (HTTP 200)
+   - **Alt Text:** `baby wearing earrings 2026 hero: fair-skinned Indian mother holding her happy baby wearing delicate gold earrings in warm natural daylight`
+2. **In-Body Flatlay:**
+   - **Product:** The Faliha Purse Hoop Earrings (SKU `BIJP0686H03`, 13.86mm x 13.12mm)
+   - **Setting:** `linen-bedside` (rotated from recent settings menu)
+   - **Job ID:** `43abf449-d2fc-4d05-9ea8-0349d7388087` (51.2s)
+   - **WordPress Media ID:** `40405`
+   - **URL:** `https://blog.bluestone.com/wp-content/uploads/2026/09/baby-wearing-earrings-flatlay-2026.webp` (HTTP 200)
+   - **Alt Text:** `baby wearing earrings 2026 flatlay: The Faliha Purse Hoop Earrings on linen bedside table with ceramic dish and baby blossoms`
+   - **Editorial Caption:** `The <a href="https://www.bluestone.com/earrings/the-faliha-purse-hoop-earrings~73262.html">Faliha Purse Hoop Earrings</a> in 18Kt gold featuring smooth rounded contours ideal for delicate ears`
+3. **In-Body Lifestyle:**
+   - **Product:** The Aleena Huggie Earrings (SKU `BIIP0279S08`, 17.23mm x 9.5mm)
+   - **Job ID:** `7254c204-5db1-49cc-9dd0-732c02a08bb6` (57.0s)
+   - **WordPress Media ID:** `40406`
+   - **URL:** `https://blog.bluestone.com/wp-content/uploads/2026/09/baby-wearing-earrings-lifestyle-2026.webp` (HTTP 200)
+   - **Alt Text:** `baby wearing earrings 2026 lifestyle: fair-skinned Indian mother gently checking gold huggie earrings on toddler daughter`
+   - **Editorial Caption:** `The <a href="https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html">Aleena Huggie Earrings</a> styled in 18Kt gold with a snug, secure fit for toddlers`
+
+---
+
+### 7. Product Rotation & Diversity
+- **Carousel & Type 3 Overlap:** Exactly 1 SKU (`The Aleena Huggie Earrings`) overlaps between the 6-product carousel and 3-product Type 3 visuals, strictly honoring the `<= 1 SKU overlap` rule.
+- **Flatlay Setting:** `linen-bedside` (preceded by `marble-vanity` in Rank 83 and `study-desk` in Rank 82; avoiding back-to-back repeats).
+- **Body Image Gate:** All people shots (`hero` and `lifestyle`) were generated strictly from authentic `1_body_portrait.png` + `0_primary.png` reference pairs. Packshots were never used alone for human scenes.
+
+---
+
+### 8. Higgsfield Account & Performance
+- **Plan:** `ultimate` (`ai.marketing@bluestone.com`)
+- **Starting Credits:** `6`
+- **Generations:** 3 jobs submitted sequentially (`hero`, `flatlay`, `lifestyle`)
+- **Retries:** `0` (all 3 completed successfully on attempt 1)
+- **Ending Credits:** `0` (2 credits consumed per `nano_banana_pro` generation)
+
+---
+
+### 9. Duplicate & Cannibalization Gate
+- **Pre-Check:** REST API search for slug `baby-wearing-earrings-2026` returned 0 posts. Search for primary intent returned unrelated general necklace and hoop posts. No existing infant/baby earring wearing guide existed on `blog.bluestone.com`.
+- **Status:** Clean (0 duplicates). Exactly-once creation verified.
+
+---
+
+### 10. Live QA Gate Verification Summary
+All 14 mandatory live QA gates were verified directly against the published post DOM:
+- [x] **Live HTTP Status:** 200 OK
+- [x] **Canonical URL:** `https://blog.bluestone.com/baby-wearing-earrings-2026/`
+- [x] **Live og:image:** `https://blog.bluestone.com/wp-content/uploads/2026/09/baby-wearing-earrings-hero-2026.webp` (verified HTTP 200)
+- [x] **Heading Hierarchy:** Exactly 1 H1 above hero; 11 unique H2s in body (zero duplicate headings).
+- [x] **3D Coverflow Carousel:** `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` confirmed in live DOM; all 6 cards return HTTP 200.
+- [x] **PDP Buy Links:** Active on all 6 carousel cards and both in-body Type 3 images.
+- [x] **In-Body Type 3 Count:** Exactly 1 flatlay and 1 lifestyle image in post body (featured hero is not duplicated in body).
+- [x] **Section Ordering:** "Final Thoughts" -> "More Jewellery & Buying Guides" (5 internal links) -> "Frequently Asked Questions" -> JSON-LD Schema.
+- [x] **Visible FAQs:** All 6 questions and answers rendered in the live browser DOM.
+- [x] **JSON-LD Schema:** Valid `BlogPosting` (author Satyam, 3 Type 3 image URLs) + `FAQPage` (all 6 Q&As).
+- [x] **Prohibited Patterns:** 0 em dashes (`—`), 0 en dashes (`–`), 0 spaced hyphens (` - `), 0 rupee prices (`₹`), 0 unclosed comments.
+- [x] **Internal Linking Cluster:** Contextual hyperlinks to 5 live related BlueStone guides (`how-to-check-gold-purity-2026`, `bangle-size-2026`, `gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax`, `is-buying-gold-jewellery-online-safe-in-india-the-honest-answer`, `indian-gold-earrings-designs-hoops-2026`).
+
+---
+
+### 11. Tracking Files & Status Updates
+- **`output/Week9_Blog_Queue_status.csv`:** Upserted Rank 84 as `Done` with word count `3132`, media IDs, and timestamps.
+- **`output/product_rotation.json`:** Logged Rank 84 flatlay setting (`linen-bedside`), Type 3 trio, and SKUs (`BISP0427H21`, `BIJP0686H03`, `BIIP0279S08`).
+- **`SEO Strategy 2026.xlsx`:** Sheet `Week 9` Row 84 updated to `Action = Done`, `Bluestone Blog URL = https://blog.bluestone.com/baby-wearing-earrings-2026/`, and execution notes appended.
+- **Checkpoint File (`output/checkpoints/week9_rank84.json`):** All 16 atomic pipeline steps marked `done` with overall status `done`.

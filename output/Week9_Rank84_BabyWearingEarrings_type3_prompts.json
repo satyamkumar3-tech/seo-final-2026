@@ -1,0 +1,55 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+    "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+  },
+  "slots": {
+    "hero": {
+      "product_name": "The Ursa Hoop Earrings",
+      "code": "BISP0427H21",
+      "pdp": "https://www.bluestone.com/earrings/the-ursa-hoop-earrings~35069.html",
+      "product_dimensions": "16.14mm height by 10.07mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Ursa Hoop Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Ursa Hoop Earrings/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Candid portrait of an elegant fair-skinned North Indian mother with a delicate light wheatish complexion, warm expressive dark eyes, and a radiant gentle smile, holding her happy 10-month-old baby girl in her arms near a sunlit window. The baby girl has a joyful expression, soft natural skin texture, and is wearing a tiny, delicate gold hoop earring from @img2 at true worn scale matching @img1 body_image (product_height_mm=16.14 and product_width_mm=10.07; these are jewellery dimensions, not face or body measurements). The small polished yellow gold earring rests comfortably and securely on the infant's tiny earlobe, catching the soft morning daylight. The mother wears a simple pastel linen top. Beautiful natural daylight streaming through sheer curtains, soft cream nursery interior with a blurred wooden rocking chair in the background, zero phones, zero readable text. Editorial magazine aesthetic, natural skin texture, gentle depth of field. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen, laptop.",
+      "alt": "baby wearing earrings 2026 hero: fair-skinned Indian mother holding her happy baby wearing delicate gold earrings in warm natural daylight"
+    },
+    "flatlay": {
+      "product_name": "The Faliha Purse Hoop Earrings",
+      "code": "BIJP0686H03",
+      "pdp": "https://www.bluestone.com/earrings/the-faliha-purse-hoop-earrings~73262.html",
+      "product_dimensions": "13.86mm height by 13.12mm width (jewellery dimensions only)",
+      "setting": "linen-bedside",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Faliha Purse Hoop Earrings/0_primary.png",
+        "ProductImages/raw/Earrings/The Faliha Purse Hoop Earrings/2_front.png",
+        "ProductImages/raw/Earrings/The Faliha Purse Hoop Earrings/5_close_up.png"
+      ],
+      "prompt": "Top-down commercial jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with gentle falloff. Flatlay setting: linen-bedside. Arranged on a soft natural ivory organic linen surface atop a warm oak bedside nightstand: @img1, authentic fine 18Kt yellow gold hoop earrings, accompanied by detailed views from @img2 and @img3, resting flat and centered at true life scale (13.86mm height by 13.12mm width). Beside the gold earrings are authentic styling props: a compact handcrafted off-white ceramic dish, a soft folded pastel muslin baby swaddle cloth, an antique miniature brass jeweller loupe with glass lens, and delicate sprigs of dried white baby breath florets without readable markings. Soft directional morning window daylight, warm organic shadows, Kodak Portra filmic tonal response, analog grain. No people, no hands, no readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark, ruler markings, numbers.",
+      "alt": "baby wearing earrings 2026 flatlay: The Faliha Purse Hoop Earrings on linen bedside table with ceramic dish and baby blossoms",
+      "caption": "The <a href=\"https://www.bluestone.com/earrings/the-faliha-purse-hoop-earrings~73262.html\">Faliha Purse Hoop Earrings</a> in 18Kt gold featuring smooth rounded contours ideal for delicate ears"
+    },
+    "lifestyle": {
+      "product_name": "The Aleena Huggie Earrings",
+      "code": "BIIP0279S08",
+      "pdp": "https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html",
+      "product_dimensions": "17.23mm height by 9.5mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Aleena Huggie Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Aleena Huggie Earrings/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic candid lifestyle action photograph, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A gentle, loving fair-skinned North Indian mother with a delicate light wheatish complexion and soft swept-back hair is captured in a tender moment seated on a comfortable cream armchair, gently checking the secure earring on her sweet toddler daughter's earlobe. The child has a happy, calm expression and is wearing The Aleena Huggie Earrings from @img2 at exact worn scale matching @img1 body_image (product_height_mm=17.23 and product_width_mm=9.5; jewellery dimensions only). The delicate yellow gold earring sits comfortably and flush on the earlobe catching soft warm room daylight. Natural skin textures, realistic hand anatomy, serene home interior with sheer curtains and soft morning light. Editorial magazine quality, zero phone screens, no readable text. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen.",
+      "alt": "baby wearing earrings 2026 lifestyle: fair-skinned Indian mother gently checking gold huggie earrings on toddler daughter",
+      "caption": "The <a href=\"https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html\">Aleena Huggie Earrings</a> styled in 18Kt gold with a snug, secure fit for toddlers"
+    }
+  },
+  "output": {
+    "hero": "output/baby-wearing-earrings-hero-2026.webp",
+    "flatlay": "output/baby-wearing-earrings-flatlay-2026.webp",
+    "lifestyle": "output/baby-wearing-earrings-lifestyle-2026.webp"
+  }
+}

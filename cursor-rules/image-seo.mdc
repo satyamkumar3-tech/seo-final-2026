@@ -1,0 +1,28 @@
+---
+description: Image SEO for BlueStone festive blogs: filenames, alts, media titles, WebP.
+alwaysApply: true
+---
+
+# Image SEO (Type 2 + Type 3)
+
+**Last updated: 2026-09-29 | Active pipeline: Week 9**
+
+For every festive blog publish:
+
+1. **WebP only** for carousel and Type 3 (q ~82). No heavy PNG heroes.
+2. **Filenames:** Type 3 `{occasion}-{hero|flatlay|lifestyle}-{year}.webp`; Type 2 `{product-slug}-carousel.webp`.
+3. **Alts unique** with locked festive year + product/scene. **Primary KW in hero alt.**
+4. **Carousel alts:** `{occasion/KW + year} gift idea: {Exact Product Name}` (not bare product name).
+5. **WP media titles** descriptive on upload (`alt_text` + `title` together). Sync body `wp:image` alts.
+5b. **Type 3 body captions:** flatlay + lifestyle Gutenberg images need a short editorial `<figcaption>` that names the product and naturally reflects the target keyword/intent. Avoid robotic patterns like `detail: Product`, `look: Product`, or `vibe: Product`. Rotate products across articles (see `cursor-rules/product-rotation-captions-education.mdc`).
+5c. **Product links in images:** Every in-body product image (Type 3 flatlay & lifestyle) must be wrapped in `<a href="{product_pdp_url}">` with Gutenberg attribute `linkDestination: "custom"`. The `<figcaption>` should also link the product name to its PDP URL. In carousels, every card must wrap the image in `<a class="bs-cf-media" href="{product_url}">` and provide `<a class="bs-cf-cta" href="{product_url}">Buy now</a>`.
+6. Featured hero must **not** also appear in the body.
+7. Gutenberg Type 3: `sizeSlug: "full"` only. No `large` + `width`/`height`/`loading`/`decoding`.
+
+Canonical detail: `docs/HIGGSFIELD_IMAGE_GENERATION.md` → **Image SEO**.
+
+Type 3 people heroes: use people-first prompts + 2 product refs max (see HIGGSFIELD_IMAGE_GENERATION.md). Macro/commercial jewellery lead-ins cause floating packshot overlays.
+
+Credits: exactly **3** Type 3 images per article (`count: 1` each for hero/flatlay/lifestyle). Retry a slot only if QA fails. No dual variants by default. **Campaign hybrid:** candid people + HD jewellery. Lifestyle/hero refs: `@img1` body_image + `@img2` design. Short scale line: keep size like `@img1` body_image; `@img2` design only; do not make bigger for visibility. **If body_image missing, skip that SKU** (do not generate people shots from packshots only). **Flatlay:** rotate setting ID from 8-menu; log in `output/product_rotation.json`. See `docs/HIGGSFIELD_IMAGE_GENERATION.md`.
+
+Avoid empty-screen visuals: do not include visible phones, laptops, tablets, TVs, or blank screens in Type 3 prompts. Use physical props instead. If a device must be present, show only the edge/back or angle the screen away/out of frame. Never prompt for readable text on screens.

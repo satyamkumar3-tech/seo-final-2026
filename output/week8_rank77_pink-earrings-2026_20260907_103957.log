@@ -1,0 +1,239 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 77 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 77\n- Action: New\n- Primary keyword: pink earrings\n- Volume: 8100\n- KD: 18\n- Priority score: 7040.407\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: pink-earrings-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: pink and gold earrings | pink earrings for women | pink gold earrings\n- Supplied competitor URL: blank in source row\n- Semrush page: pink earrings\n- Source execution note: Week8 new topic. Intent key=sig:earring_pink; brands=CaratLane,MergedJewellery,ScoringCL; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank77.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank77.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+I have launched the task to inspect and register the Week 8 Rank 77 target row in `output/Week8_Blog_Queue.csv` and `SEO Strategy 2026.xlsx`. Waiting for completion.
+I am waiting for the live WordPress duplicate and search intent check to complete.
+I am waiting for the carousel image generation and WordPress media upload task to complete.
+I am waiting for the carousel upload task to complete.
+The carousel media upload is progressing in the background. I will await completion before proceeding.
+I am waiting for the background carousel image upload to finish.
+The Type 3 image generation pipeline is running via the Higgsfield CLI in the background. The hero job (`063db707-68b9-4246-8b0c-c52dcbc611d1`) has been dispatched, and flatlay references are currently being processed. I will await completion.
+I will pause execution and wait for the Higgsfield Type 3 generation task to complete.
+I am waiting for the background Higgsfield Type 3 generation task to complete. Once finished, I will proceed to patch the images into WordPress.
+I am standing by as task-221 finishes image generation and WebP conversion.
+Both the hero and flatlay generation jobs have been successfully submitted to Higgsfield (`063db707-68b9-4246-8b0c-c52dcbc611d1` and `01ef0f1a-52da-453f-8845-fb0dce5d5faf`). I am awaiting their completion in the background.
+The image generation jobs are in progress with Higgsfield. I am waiting for the process to complete.
+I am waiting for task-221 to complete. The system will notify me once all three Type 3 images are generated, converted to WebP, and ready.
+I will now yield control to wait for task-221 to finish image generation.
+I will wait for the system to notify me when task-221 completes.
+The hero image generation is complete and converted to WebP (`output/magnific_generated/pink-earrings-hero-2026.webp`). Higgsfield is currently processing the flatlay image. I am waiting for completion.
+I am waiting for the flatlay and lifestyle image generation to complete.
+I am waiting for task-221 to complete.
+I will wait for task-221 to complete.
+I will yield and wait for task-221 to complete.
+I am waiting for the background Higgsfield task-221 to complete.
+I am awaiting the completion of image generation task-221.
+I am standing by for the image generation to complete.
+I will wait for the background generation to complete.
+Flatlay has completed! The script is now downloading the flatlay image and submitting the lifestyle image generation. I am waiting for the entire Type 3 workflow to complete.
+Lifestyle image generation is now being submitted. I am waiting for task-221 to complete.
+I am waiting for the lifestyle image generation to complete.
+The lifestyle job has been queued with Higgsfield (`e8f8fd25-3e6f-4595-b1d7-9c16102fae34`). I am waiting for task-221 to finish image generation and WebP conversion.
+I will pause and wait for the lifestyle generation job to complete.
+I am waiting for task-221 to complete.
+Lifestyle generation is in progress. I will wait for it to complete.
+I am waiting for task-221 to complete.
+I will wait for the final lifestyle generation step to complete.
+I am waiting for the completion of the lifestyle image generation.
+I will wait for task-221 to complete.
+I am waiting for task-221 to finish.
+I am waiting for task-221 to complete.
+I will wait for the final lifestyle generation step to finish.
+I am waiting for task-221 to complete.
+I am waiting for the WordPress patch task to complete.
+### Execution Log & Step Milestones
+
+```text
+STEP START: read_docs | time: 10:40:34 | elapsed: 00:00:00
+STEP DONE: read_docs | time: 10:41:10 | step duration: 00:00:36 | total elapsed: 00:00:36
+
+STEP START: verify_higgsfield | time: 10:41:10 | elapsed: 00:00:36
+STEP DONE: verify_higgsfield | time: 10:41:18 | step duration: 00:00:08 | total elapsed: 00:00:44
+
+STEP START: inspect_row | time: 10:41:18 | elapsed: 00:00:44
+STEP DONE: inspect_row | time: 10:42:22 | step duration: 00:01:04 | total elapsed: 00:01:48
+
+STEP START: duplicate_check | time: 10:42:22 | elapsed: 00:01:48
+STEP DONE: duplicate_check | time: 10:42:57 | step duration: 00:00:35 | total elapsed: 00:02:23
+
+STEP START: fact_check | time: 10:42:57 | elapsed: 00:02:23
+STEP DONE: fact_check | time: 10:43:16 | step duration: 00:00:19 | total elapsed: 00:02:42
+
+STEP START: keyword_map | time: 10:43:16 | elapsed: 00:02:42
+STEP DONE: keyword_map | time: 10:43:22 | step duration: 00:00:06 | total elapsed: 00:02:48
+
+STEP START: structure_visuals | time: 10:43:22 | elapsed: 00:02:48
+STEP DONE: structure_visuals | time: 10:44:02 | step duration: 00:00:40 | total elapsed: 00:03:28
+
+STEP START: draft | time: 10:44:02 | elapsed: 00:03:28
+STEP DONE: draft | time: 10:46:15 | step duration: 00:02:13 | total elapsed: 00:05:41
+
+STEP START: product_media | time: 10:46:15 | elapsed: 00:05:41
+STEP DONE: product_media | time: 10:47:20 | step duration: 00:01:05 | total elapsed: 00:06:46
+
+STEP START: publish_wordpress | time: 10:47:20 | elapsed: 00:06:46
+STEP DONE: publish_wordpress | time: 10:47:42 | step duration: 00:00:22 | total elapsed: 00:07:08
+
+STEP START: generate_type3 | time: 10:47:42 | elapsed: 00:07:08
+STEP DONE: generate_type3 | time: 10:50:20 | step duration: 00:02:38 | total elapsed: 00:09:46
+
+STEP START: patch_type3 | time: 10:50:20 | elapsed: 00:09:46
+STEP DONE: patch_type3 | time: 10:51:08 | step duration: 00:00:48 | total elapsed: 00:10:34
+
+STEP START: live_qa | time: 10:51:08 | elapsed: 00:10:34
+STEP DONE: live_qa | time: 10:52:15 | step duration: 00:01:07 | total elapsed: 00:11:41
+
+STEP START: update_status | time: 10:52:15 | elapsed: 00:11:41
+STEP DONE: update_status | time: 10:53:20 | step duration: 00:01:05 | total elapsed: 00:12:46
+
+STEP START: final_report | time: 10:53:20 | elapsed: 00:12:46
+STEP DONE: final_report | time: 10:53:32 | step duration: 00:00:12 | total elapsed: 00:12:58
+```
+
+---
+
+### Final Production Report: Week 8 Rank 77
+
+#### 1. Live URL & WordPress Metadata
+* **Live URL:** [https://blog.bluestone.com/pink-earrings-2026/](https://blog.bluestone.com/pink-earrings-2026/)
+* **WordPress Post ID:** `37822`
+* **Article Engine:** `buying_guide` (How-to / Education)
+* **Author:** Satyam (WP User ID: `270271337`)
+* **On-Page Byline:** `By Satyam, BlueStone Editorial`
+* **Assigned Categories:**
+  * `Gold` (ID: `554493348`)
+  * `Jewellery Problem & Solution` (ID: `554493465`)
+  * `Jewellery Trends` (ID: `554493317`)
+  * `Gift` (ID: `554493424`)
+* **Live Word Count:** 5,448 visible words
+
+---
+
+#### 2. Target Keyword & Supplied Metrics
+* **Primary Keyword:** `pink earrings`
+* **Search Volume:** 8,100
+* **Keyword Difficulty (KD):** 18
+* **Priority Score:** 7040.407
+* **Theme:** How-to / Education
+* **Category Fit:** Jewellery Education
+* **Suggested Slug:** `pink-earrings-2026`
+
+---
+
+#### 3. Keyword Mapping Audit
+* **Supplied Supporting Keywords Used:**
+  1. `pink and gold earrings`: Accepted and mapped to dedicated H2 on two-tone gold engineering and gemstone mountings.
+  2. `pink earrings for women`: Accepted and mapped to dedicated H2 on earring silhouettes (studs, hoops, drops, jhumkas, climbers).
+  3. `pink gold earrings`: Accepted and mapped to dedicated metallurgical H2 on rose gold karat purity (18K vs 14K) and alloy durability.
+* **Rejected Keywords:** None (all 3 supplied keywords were topically relevant and valuable for fine gold jewellery education).
+* **Natural Long-Tail Variants Integrated:**
+  * `pink stone earrings in gold`
+  * `rose gold pink earrings`
+  * `pink sapphire earrings`
+  * `pink stud earrings for daily wear`
+  * `pink drop earrings for festive occasions`
+  * `18k vs 14k pink gold earrings`
+  * `styling pink earrings with modern and ethnic outfits`
+  * `caring for pink gemstone earrings`
+
+---
+
+#### 4. H2 Keyword Map & Structural Hierarchy
+Every section appears exactly once from introduction to schema:
+
+1. `What Are Pink Earrings? Understanding Pink Gold, Gemstone Accents & Modern Feminine Appeal` — **primary-backed**
+2. `Understanding Pink Gold Earrings: Metallurgy, Karat Purity & Why Rose Gold Glows` — **supporting-keyword-backed** (`pink gold earrings`)
+3. `Pink and Gold Earrings: Harmony of Yellow Gold, White Gold & Blush Tones` — **supporting-keyword-backed** (`pink and gold earrings`)
+4. `Natural Pink Gemstones in Fine Jewellery: Sapphires, Tourmaline, Morganite & Quartz` — **intent-inferred**
+5. `Popular Styles of Pink Earrings for Women: From Daily Studs to Statement Danglers` — **supporting-keyword-backed** (`pink earrings for women`)
+6. `Hallmarking & Purity Standards: Verifying BIS HUID on Pink Gold Earrings in India` — **intent-inferred (regulatory/factual)**
+7. `Earring Backs, Closures & Fitting Security: Choosing the Safest Clasp for Daily Comfort` — **intent-inferred**
+8. `Skin Tone Matching & Wardrobe Styling: How to Pair Pink Earrings with Modern & Ethnic Outfits` — **intent-inferred**
+9. `Cleaning and Caring for Pink Gemstone and Rose Gold Earrings` — **intent-inferred**
+10. `Featured BlueStone Pink and Rose Gold Earrings Collection` — **intent-inferred** (houses Coverflow Carousel)
+11. `Final Thoughts on Investing in Pink Earrings for Your Jewellery Box` — **intent-inferred (Conclusion placed before FAQs)**
+12. `More Jewellery & Buying Guides` — **mandatory internal blog cluster** (contextually linking to 5 live cluster guides)
+13. `Frequently Asked Questions About Pink Earrings` — **primary & supporting-backed** (7 visible, complete Q&A pairs)
+
+---
+
+#### 5. Competitor Analysis & Factual Verification
+* **Competitor URL:** Blank in source row (per playbook rules, no competitor URL was invented).
+* **Factual & Regulatory Sources Verified:**
+  * **BIS Hallmarking & HUID Standards:** Mandatory 3 components in India: (1) BIS triangular logo, (2) Karat purity stamp (`18K750` / `14K585`), and (3) 6-digit alphanumeric HUID code verified via the official BIS CARE mobile application.
+  * **Metallurgical Composition:** 18K rose/pink gold (75% pure gold, ~21-22% copper, ~3-4% silver/zinc); 14K rose/pink gold (58.3% pure gold, ~38-40% copper).
+  * **Gemstone Hardness (Mohs Scale):** Pink Sapphire (Mohs 9, corundum), Pink Spinel (Mohs 8), Morganite (Mohs 7.5 to 8, beryl), Pink Tourmaline (Mohs 7 to 7.5), Rose Quartz (Mohs 7).
+  * **Statutory Taxation:** 3% unified GST on gold jewellery value and craftsmanship making charges in India.
+  * **Jewellery Material Policy:** BlueStone sells 100% fine gold and diamond/gemstone jewellery (no silver, no imitation plated brass).
+
+---
+
+#### 6. Product Rotation & Media Assets
+
+##### In-Body Type 3 Visuals (Higgsfield CLI `nano_banana_pro`, 16:9, 2k, fair-skinned Indian casting, PDP linked):
+* **Hero Image:**
+  * **Media ID:** `37823`
+  * **SKU:** `BINK0363H03` — *The Skein Hoop Earrings* (17.95 mm × 6.16 mm)
+  * **Higgsfield Job ID:** `063db707-68b9-4246-8b0c-c52dcbc611d1` (Retries: 0)
+  * **Alt Text:** `pink earrings 2026 hero, The Skein Hoop Earrings`
+  * **Set as Featured Media & Yoast Social Image:** Yes
+* **Flatlay Image:**
+  * **Media ID:** `37824`
+  * **SKU:** `BISP0427H21` — *The Ursa Hoop Earrings* (16.14 mm × 10.07 mm)
+  * **Setting:** `cafe-tray` (marble bistro tray, espresso cup, velvet jewellery pouch, brass mirror)
+  * **Higgsfield Job ID:** `01ef0f1a-52da-453f-8845-fb0dce5d5faf` (Retries: 0)
+  * **Caption:** `Pink earrings 2026 vibe: The Ursa Hoop Earrings` (PDP linked)
+* **Lifestyle Image:**
+  * **Media ID:** `37825`
+  * **SKU:** `BIPM0001H28` — *The Rohal Huggie Earrings* (16.0 mm × 4.8 mm)
+  * **Higgsfield Job ID:** `e8f8fd25-3e6f-4595-b1d7-9c16102fae34` (Retries: 0)
+  * **Caption:** `Pink earrings 2026 styling: The Rohal Huggie Earrings` (PDP linked)
+
+##### Mid-Article Coverflow Carousel (6 Approved BlueStone Products with Buy Now PDP Links):
+1. **The Skein Hoop Earrings** (`BINK0363H03`) — WP Media ID `37816`
+2. **The Ursa Hoop Earrings** (`BISP0427H21`) — WP Media ID `37817`
+3. **The Rohal Huggie Earrings** (`BIPM0001H28`) — WP Media ID `37818`
+4. **The Aleena Huggie Earrings** (`BIIP0279S08`) — WP Media ID `37819`
+5. **The Vicky Hoop Earrings** (`BIIP0427H16`) — WP Media ID `37820`
+6. **The Nettile Huggie Earrings** (`BIPN0880H218`) — WP Media ID `37821`
+
+---
+
+#### 7. Higgsfield Account & Quota Accounting
+* **Subscription Plan:** `ultimate`
+* **Starting Credit Balance:** `373.37`
+* **Jobs Executed:** 3 jobs (`063db707-68b9-4246-8b0c-c52dcbc611d1`, `01ef0f1a-52da-453f-8845-fb0dce5d5faf`, `e8f8fd25-3e6f-4595-b1d7-9c16102fae34`)
+* **Retries:** 0
+* **Ending Credit Balance:** `367.37` (6.0 credits consumed, exactly 2 credits per 2K slot)
+
+---
+
+#### 8. Duplicate & Cannibalization Gate Result
+* Live slug check for `https://blog.bluestone.com/pink-earrings-2026/` returned `HTTP 404` prior to publishing.
+* Bare slug check for `https://blog.bluestone.com/pink-earrings/` returned `HTTP 404`.
+* Cross-week workbook sheets (`Week 1-2`, `Week 3-4`, `Week 5`, `Week 6`, `Week 7`, `BS Blogs`) confirmed zero intent collisions.
+* WordPress REST search confirmed zero conflicting posts. Duplicate check passed cleanly.
+
+---
+
+#### 9. Live QA Verification Highlights
+* **Public HTTP Status:** `200 OK`
+* **H1 Count:** Exactly 1 (`Pink Earrings Buying Guide 2026: Rose Gold Purity, Gemstones, Styling & Daily Care Checklist`)
+* **Article Body H2 Count:** 13 unique H2s
+* **Section Ordering Check:** `Final Thoughts` (idx 10) → `More Jewellery & Buying Guides` (idx 11) → `Frequently Asked Questions` (idx 12) verified.
+* **Canonical URL:** `https://blog.bluestone.com/pink-earrings-2026/`
+* **og:image Live Header:** `https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/pink-earrings-hero-2026.webp?fit=1400%2C781&ssl=1`
+* **JSON-LD Schema:** Both `FAQPage` (7 questions) and `BlogPosting` (with Satyam author and all 3 Type 3 image URLs) validate in DOM.
+* **Prohibited Dashes:** Zero em dashes (`—`), zero en dashes (`–`), and zero spaced hyphens (` - `).
+* **Price Check:** Zero price mentions or currency symbols in body text.
+* **State Updates:** Upserted into `output/Week8_Blog_Queue_status.csv`, `output/product_rotation.json`, `SEO Strategy 2026.xlsx` sheet `Week 8`, and checkpoint `output/checkpoints/week8_rank77.json`.

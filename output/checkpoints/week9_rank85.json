@@ -1,0 +1,132 @@
+{
+  "pipeline": "week9",
+  "rank": 85,
+  "slug": "stone-necklace-for-women-2026",
+  "primary": "stone necklace for women",
+  "created_at": "2026-09-28T10:28:47Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-28T10:29:23Z",
+      "finished_at": "2026-09-28T10:30:29Z"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-28T10:30:34Z",
+      "finished_at": "2026-09-28T10:30:43Z",
+      "plan": "ultimate",
+      "credits": 500
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-28T10:30:47Z",
+      "finished_at": "2026-09-28T10:31:01Z",
+      "action": "New",
+      "primary": "stone necklace for women",
+      "volume": 1900,
+      "kd": 21.0
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-28T10:31:06Z",
+      "finished_at": "2026-09-28T10:31:35Z",
+      "exact_slug_exists": "False",
+      "intent_conflict": "False"
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "started_at": "2026-09-28T10:31:41Z",
+      "finished_at": "2026-09-28T10:33:46Z",
+      "urls_scraped": 5,
+      "avg_word_count": 9625
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-28T10:33:54Z",
+      "finished_at": "2026-09-28T10:34:19Z",
+      "bis_huid": "verified",
+      "gst_rate": "3% GST",
+      "net_weight_billing": "verified"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-28T10:34:29Z",
+      "finished_at": "2026-09-28T10:34:40Z",
+      "h2_count": 10,
+      "primary_backed": 2,
+      "supporting_backed": 2,
+      "competitor_backed": 2,
+      "intent_inferred": 4
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-28T10:34:44Z",
+      "finished_at": "2026-09-28T10:34:57Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "windowsill-daylight"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-28T10:35:01Z",
+      "finished_at": "2026-09-28T10:38:16Z",
+      "word_count": 2782
+    },
+    "product_media": {
+      "status": "done",
+      "finished_at": "2026-09-28T10:37:13Z",
+      "carousel_items": 6,
+      "media_ids": "40420,40421,40422,40423,40424,40425"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-28T10:38:24Z",
+      "finished_at": "2026-09-28T10:39:01Z",
+      "post_id": 40426,
+      "live_url": "https://blog.bluestone.com/stone-necklace-for-women-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-28T10:39:08Z",
+      "finished_at": "2026-09-28T10:44:42Z",
+      "hero_job": "49d362a4-19c7-4094-8e7e-7086a08c48de",
+      "flatlay_job": "243cbc45-cd32-4549-85a7-fcee21e040f2",
+      "lifestyle_job": "637dfee8-2655-456d-b718-7248c9f68bd2"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-28T10:44:53Z",
+      "finished_at": "2026-09-28T10:45:53Z",
+      "hero_id": 40427,
+      "flatlay_id": 40428,
+      "lifestyle_id": 40429
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-28T10:45:58Z",
+      "finished_at": "2026-09-28T10:49:25Z",
+      "visible_words": 2875,
+      "og_image_ok": "True",
+      "carousel_ok": "True",
+      "headings_ok": "True",
+      "schemas_ok": "True"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-28T10:49:33Z",
+      "finished_at": "2026-09-28T10:50:10Z",
+      "status_csv": "updated",
+      "rotation_json": "updated",
+      "excel": "updated"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-28T10:50:18Z",
+      "finished_at": "2026-09-28T10:50:28Z"
+    }
+  },
+  "updated_at": "2026-09-28T10:51:28Z",
+  "completed_at": "2026-09-28T10:50:28Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

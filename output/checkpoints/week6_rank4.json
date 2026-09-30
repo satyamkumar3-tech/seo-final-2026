@@ -1,0 +1,108 @@
+{
+  "pipeline": "week6",
+  "rank": 4,
+  "slug": "best-rakhi-gift-for-sister-2026",
+  "primary": "best rakhi gift for sister",
+  "created_at": "2026-08-18T11:42:08Z",
+  "status": "skipped",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-18T11:42:26Z",
+      "finished_at": "2026-08-18T11:42:42Z",
+      "docs": 11,
+      "skill": "higgsfield-generate"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-18T11:42:48Z",
+      "finished_at": "2026-08-18T11:43:00Z",
+      "credits": 261.37,
+      "plan": "ultimate",
+      "path": "cli"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-18T11:43:06Z",
+      "finished_at": "2026-08-18T11:43:10Z",
+      "source": "output/Week6_Gift_Guides_100.csv",
+      "engine": "gift_guide",
+      "rank": 4
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-18T11:43:18Z",
+      "finished_at": "2026-08-18T11:44:01Z",
+      "exact_slug_matches": 0,
+      "conflicting_post_id": 32319,
+      "conflicting_url": "https://blog.bluestone.com/best-gift-for-sister-on-raksha-bandhan-2026/",
+      "reason": "near_duplicate_intent",
+      "confirmed_by": "successful_codex_exit"
+    },
+    "fact_check": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "keyword_map": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "structure_visuals": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "draft": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "product_media": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "publish_wordpress": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "generate_type3": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "patch_type3": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "live_qa": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "update_status": {
+      "status": "skipped",
+      "reason": "existing_intent_satisfied",
+      "finished_at": "2026-08-18T11:50:20Z"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-18T11:43:54Z",
+      "finished_at": "2026-08-18T11:43:54Z",
+      "outcome": "skipped_existing_intent",
+      "conflicting_post_id": 32319,
+      "conflicting_url": "https://blog.bluestone.com/best-gift-for-sister-on-raksha-bandhan-2026/"
+    }
+  },
+  "updated_at": "2026-08-18T11:50:20Z",
+  "last_exit_code": 0,
+  "completed_at": "2026-08-18T11:44:01Z",
+  "outcome": "skipped_existing_intent",
+  "skipped_at": "2026-08-18T11:50:20Z",
+  "conflicting_url": "https://blog.bluestone.com/best-gift-for-sister-on-raksha-bandhan-2026/",
+  "conflicting_post_id": 32319
+}

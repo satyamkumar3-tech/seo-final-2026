@@ -1,0 +1,55 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+    "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+  },
+  "slots": {
+    "hero": {
+      "product_name": "The Rohal Huggie Earrings",
+      "code": "BIPM0001H28",
+      "pdp": "https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html",
+      "product_dimensions": "16.0mm height by 4.8mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Rohal Huggie Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Rohal Huggie Earrings/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Candid morning portrait of an elegant fair-skinned North Indian woman with a delicate light wheatish complexion, radiant expressive dark eyes, and a graceful calm smile, seated in a sunlit bedroom preparing for her day. She is physically wearing The Rohal Huggie Earrings from @img2 on her earlobe at true worn scale matching @img1 body_image (product_height_mm=16.0 and product_width_mm=4.8; these are jewellery dimensions only, not face or body measurements). The polished 18Kt yellow gold huggie earring fits snugly and securely around her lower earlobe, catching the soft warm morning window daylight with natural specular highlights. She wears a relaxed ivory silk blouse. Softly blurred in the background is a warm modern bedroom interior with linen curtains; zero phones, zero screens, zero readable text. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen, laptop.",
+      "alt": "daily wear gold earrings for women 2026 hero: fair-skinned Indian woman styling minimalist 18K gold huggie earrings in soft morning light"
+    },
+    "flatlay": {
+      "product_name": "The Nettile Huggie Earrings",
+      "code": "BIPN0880H218",
+      "pdp": "https://www.bluestone.com/earrings/the-nettile-huggie-earrings~108215.html",
+      "product_dimensions": "14.39mm height by 7.8mm width (jewellery dimensions only)",
+      "setting": "marble-vanity",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Nettile Huggie Earrings/0_primary.png",
+        "ProductImages/raw/Earrings/The Nettile Huggie Earrings/2_front.png",
+        "ProductImages/raw/Earrings/The Nettile Huggie Earrings/1_body_portrait.png"
+      ],
+      "prompt": "Top-down commercial fine jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with gentle falloff. Flatlay setting: marble-vanity. Arranged on a smooth light-grey veined natural marble vanity surface in soft diffused morning daylight: @img1, authentic fine 18Kt yellow gold huggie earrings, accompanied by design details from @img2 and @img3, resting centered at true life scale (14.39mm height by 7.8mm width). Beside the gold earrings are authentic tactile vanity styling props: an unglazed handcrafted ceramic ring dish, a soft rolled pale champagne silk ribbon, an unlabelled frosted glass perfume flacon silhouette, and an antique miniature brass loupe with clear glass lens. Soft directional morning window illumination, delicate organic shadows, Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. No people, no hands, no readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark, numbers, phone screen.",
+      "alt": "daily wear gold earrings for women 2026 flatlay: The Nettile Huggie Earrings on soft marble vanity with ceramic dish and silk ribbon",
+      "caption": "The <a href=\"https://www.bluestone.com/earrings/the-nettile-huggie-earrings~108215.html\">Nettile Huggie Earrings</a> in 18Kt gold featuring ergonomic contours crafted for effortless everyday comfort"
+    },
+    "lifestyle": {
+      "product_name": "The Vicky Hoop Earrings",
+      "code": "BIIP0427H16",
+      "pdp": "https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html",
+      "product_dimensions": "14.75mm height by 6.04mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Vicky Hoop Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Vicky Hoop Earrings/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic candid lifestyle action photograph, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A refined fair-skinned North Indian woman with a delicate light wheatish complexion, graceful profile, and softly swept-up hair is captured in an elegant candid close-up, gently adjusting The Vicky Hoop Earrings from @img2 on her earlobe with delicate manicured fingertips at exact worn scale matching @img1 body_image (product_height_mm=14.75 and product_width_mm=6.04; jewellery dimensions only). The sleek 18Kt yellow gold hoop catches radiant morning light, resting smoothly against her earlobe without pulling. She wears a tasteful sage-green tailored linen collar. Warm serene interior setting, sheer curtains in soft focus, zero phone screens, no readable text. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen.",
+      "alt": "daily wear gold earrings for women 2026 lifestyle: fair-skinned Indian woman adjusting lightweight gold hoop earrings with delicate fingertips",
+      "caption": "The <a href=\"https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html\">Vicky Hoop Earrings</a> in fine gold offering featherlight earlobe security for active modern lifestyles"
+    }
+  },
+  "output": {
+    "hero": "output/daily-wear-gold-earrings-for-women-hero-2026.webp",
+    "flatlay": "output/daily-wear-gold-earrings-for-women-flatlay-2026.webp",
+    "lifestyle": "output/daily-wear-gold-earrings-for-women-lifestyle-2026.webp"
+  }
+}

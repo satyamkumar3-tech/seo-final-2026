@@ -1,0 +1,168 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 86 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 86\n- Action: New\n- Primary keyword: finger ring for women\n- Volume: 18100\n- KD: 31\n- Priority score: 8080.3571\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: finger-ring-for-women-2026\n- Article engine: design_listicle\n- Category hint: `Men's Jewellery` 554493434 where product fit is men's jewellery; otherwise `Gift` 554493424\n- Supplied supporting keywords: gold finger ring design\n- Supplied competitor URL: blank in source row\n- Semrush page: finger ring for women\n- Source execution note: Week7 multi-brand fill (strict). intent=sig:finger_ring; brands=CaratLane,Joyalukkas,Kalyan,Malabar,MergedJewellery,ScoringCL; from Jewellery_Keywords_Unique. One URL only. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank86.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank86.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--`.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+I have initiated the conversion and upload of the 6 carousel WebP product assets to WordPress as a background task. I will proceed with building the spliced carousel markup and publishing as soon as it completes.
+Type 3 image generation for Week 7 Rank 86 is currently running sequentially through the Higgsfield CLI (Hero: The Haily Ring, Flatlay: The Viperine Twist Ring, Lifestyle: The Liza ring). I am waiting for the generations to complete.
+The Higgsfield CLI generation task (`task-184`) is in progress generating the 3 Type 3 images sequentially. I will continue as soon as it completes.
+Generation is proceeding in the background through the Higgsfield CLI. I will resume as soon as the images finish.
+Hero image completed successfully (Job ID `f5c8d650-5657-4af6-8ecd-a2bb5c40fc07`). Flatlay image generation is now executing in the background.
+Flatlay image completed successfully (Job ID `01b73365-bf1b-451e-836a-586b9f11fbae`). Lifestyle image generation is now executing in the background.
+Waiting for the final lifestyle image generation to finish.
+Lifestyle image generation is finalizing in the background.
+# Week 7 Rank 86: End-to-End Execution Report
+
+### Step Progression Summary
+- **STEP 1: Read required docs** | Status: `done` (11 documents & cursor rules reviewed)
+- **STEP 2: Verify Higgsfield status** | Status: `done` (Scale plan, starting balance: 4809.32 credits)
+- **STEP 3: Inspect Week 7 target row** | Status: `done` (Rank 86, Primary: `finger ring for women`, Vol: 18100, KD: 31)
+- **STEP 4: Check duplicate slug and search intent** | Status: `done` (0 matching slug collisions; distinct intent from Rank 80/78/68)
+- **STEP 5: Analyze competitor URL & fact-check** | Status: `done` (Competitor URL blank; BIS HUID & 3% GST verified)
+- **STEP 6: Filter & map supporting keywords** | Status: `done` (`gold finger ring design` mapped into H2s, body, and FAQ)
+- **STEP 7 & 8: Structure & visual concept** | Status: `done` (`design_listicle` engine, flatlay setting: `desk-kraft`)
+- **STEP 9: Draft complete article** | Status: `done` (`output/week7_rank86_article.html`, 3,317 words)
+- **STEP 10: Select products & carousel media** | Status: `done` (6 WebP carousel cards uploaded, IDs: 35412–35417)
+- **STEP 11: Publish WordPress post** | Status: `done` (Post ID: `35418`, slug: `finger-ring-for-women-2026`)
+- **STEP 12: Generate Type 3 images** | Status: `done` (Higgsfield CLI `nano_banana_pro`, 3 jobs, 0 retries)
+- **STEP 13: Patch images & social metadata** | Status: `done` (Featured image ID: 35427, in-body flatlay: 35428, lifestyle: 35429)
+- **STEP 14: Run live QA** | Status: `done` (HTTP 200, 1 `<h1>`, 2,739 core body words, 0 em/en-dashes, 0 prices)
+- **STEP 15: Update status files & final report** | Status: `done` (`Week7_Gift_Guides_PostRank10_status.csv` & `product_rotation.json` updated)
+
+---
+
+### Final Article & Publication Details
+
+| Field | Value |
+|---|---|
+| **Live URL** | [https://blog.bluestone.com/finger-ring-for-women-2026/](https://blog.bluestone.com/finger-ring-for-women-2026/) |
+| **WordPress Post ID** | `35418` |
+| **Article Title** | Finger Ring for Women: 18 Trending Gold, Diamond & Daily Wear Styles (2026) |
+| **Slug** | `finger-ring-for-women-2026` |
+| **Article Engine** | `design_listicle` |
+| **Author** | `Satyam` (WP User ID `270271337`), on-page byline: `By Satyam, BlueStone Editorial` |
+| **Category** | `Gift` (ID `554493424`) |
+| **Core Body Word Count** | `2,739` words (Total page text: `3,003` words) |
+| **Primary Keyword** | `finger ring for women` (Volume: `18,100`, KD: `31`, Priority Score: `8080.3571`) |
+| **Yoast Focus Keyphrase** | `finger ring for women` |
+| **Yoast Meta Description** | Discover trending finger ring for women designs in 2026. Explore gold finger ring designs, diamond solitaires, stackable bands, sizing guides & buying tips. |
+
+---
+
+### Keyword Mapping & Search Intent
+
+| Keyword | Type | Volume / Metrics | Status | Placement / Reason |
+|---|---|---|---|---|
+| `finger ring for women` | Primary | Vol: 18,100, KD: 31 | **Used** | H1, Intro (first 100 words), major H2s, Hero Alt, Yoast Focus KW & Meta, BlogPosting schema |
+| `gold finger ring design` | Supporting | Supplied in target row | **Used** | Dedicated H2 ("Daily Wear Gold Finger Ring Designs"), body sections, FAQ Q&A, and schema |
+
+---
+
+### Ordered H2 Keyword Map
+
+1. **Modern Design Trends in Women's Finger Rings for 2026** *(Primary-backed / Editorial Spine)*
+2. **12 Trending Finger Ring for Women Styles Defining 2026** *(Primary-backed / Comprehensive Design Listicle)*
+   - *H3: 1. Classic Diamond Solitaire Finger Rings*
+   - *H3: 2. Modern Multi-Row Highway Rings*
+   - *H3: 3. Elegant Floral Cluster and Botanical Rings*
+   - *H3: 4. Sleek Minimalist Stackable Gold Bands*
+   - *H3: 5. Timeless Eternity and Half-Eternity Diamond Bands*
+   - *H3: 6. Sculptural Twist and Interlink Band Rings*
+   - *H3: 7. Contemporary Geometric Bezel-Set Rings*
+   - *H3: 8. Dazzling Halo and Cluster Statement Rings*
+   - *H3: 9. Dynamic Open-Wrap and Bypass Rings*
+   - *H3: 10. Vintage-Inspired Milgrain and Filigree Rings*
+   - *H3: 11. Dual-Tone Yellow and Rose Gold Rings*
+   - *H3: 12. Broad Statement Cocktail Rings for Festive Glamour*
+3. **Daily Wear Gold Finger Ring Designs: Elegance Meets Durability** *(Supporting-keyword-backed: `gold finger ring design`)*
+4. **Featured BlueStone Ring Collection: 6 Handcrafted Designs** *(Commerce H2 + 6-Card Coverflow Carousel)*
+5. **Gold Purity & Hallmark Verification: 14K vs 18K vs 22K Explained** *(Factual / Buyer Guide Depth)*
+6. **Essential Diamond & Gemstone Settings for Finger Rings** *(Buyer Education / Practical Setting Guide)*
+7. **Complete Finger Ring Sizing & Fit Guide for Women** *(Factual / Indian Standard Sizes 6–30 & Knuckle Fit)*
+8. **Styling Tips: How to Wear and Stack Finger Rings** *(Intent-inferred / Fashion & Everyday Styling)*
+9. **Care and Maintenance Tips for Long-Lasting Ring Radiance** *(Education / Longevity & Ultrasonic/Soapy Water Care)*
+10. **Final Thoughts on Finding Your Perfect Finger Ring** *(Conclusion — placed strictly BEFORE FAQs)*
+11. **Frequently Asked Questions About Finger Rings for Women** *(Visible FAQ Section — 6 Complete Q&A Pairs directly preceding JSON-LD schema)*
+
+---
+
+### Duplicate Intent & Cannibalization Analysis
+
+- **Slug Check:** `finger-ring-for-women-2026` returned 0 prior matches on WordPress.
+- **Intent Parity Check:**
+  - `gold-ring-design-for-female-2026` (Post ID `35315`, Rank 80): Targets gold ring designs for females specifically.
+  - `engagement-rings-2026` (Post ID `35282`, Rank 78): Targets engagement solitaires and proposals.
+  - `kundan-rings-2026` (Post ID `35065`, Rank 68): Targets traditional Kundan heritage craftsmanship.
+- **Conclusion:** `finger-ring-for-women-2026` satisfies the broad umbrella intent for women's finger rings (daily wear, office wear, diamond solitaires, stackable bands, gold designs, sizing, and styling) with zero cannibalization.
+
+---
+
+### Competitor & Factual Source Verification
+
+- **Competitor URL:** Blank in source row (verified; no competitor URL invented).
+- **Factual Standards Applied:**
+  - **BIS Hallmarking & HUID:** Mandatory 6-digit alphanumeric Hallmark Unique Identification (HUID) on 14K (585), 18K (750), and 22K (916) gold verified via the BIS Care App.
+  - **GST on Precious Jewellery:** 3% GST on gold and diamond jewellery in India.
+  - **Diamond Certification:** SGL / IGI certification standards for natural diamond 4Cs.
+  - **Ring Sizing Standards:** Standard Indian numerical sizes 6 to 30 (inner diameters 14.6 mm to 22.2 mm).
+
+---
+
+### Media Assets, Product Selection & Rotation
+
+#### 1. Type 2 Carousel Assets (6 Cards)
+| # | Product Name | Design Code | Category | Dimensions | Media ID | PDP Link |
+|---|---|---|---|---|---|---|
+| 1 | The Rafia Ring | `BIAB0503R03` | Rings (Female) | 20.92 × 9.23 mm | `35412` | [View PDP](https://www.bluestone.com/rings/the-rafia-ring~53638.html) |
+| 2 | The Anya Ring | `BIAR0097R04` | Rings (Female) | 20.57 × 6.28 mm | `35413` | [View PDP](https://www.bluestone.com/rings/the-anya-ring~7515.html) |
+| 3 | The Liza ring | `BIAR0097R07` | Rings (Female) | 21.56 × 7.91 mm | `35414` | [View PDP](https://www.bluestone.com/rings/the-liza-ring~7623.html) |
+| 4 | The Quinn Ring | `BIAR0097R16` | Rings (Female) | 21.60 × 7.84 mm | `35415` | [View PDP](https://www.bluestone.com/rings/the-quinn-ring~57845.html) |
+| 5 | The Malibu Ring | `BIPM0017R18` | Rings (Female) | 21.59 × 8.32 mm | `35416` | [View PDP](https://www.bluestone.com/rings/the-malibu-ring~2321.html) |
+| 6 | The Le Sommet Ring | `BISE0932R181` | Rings (Female) | 21.93 × 7.95 mm | `35417` | [View PDP](https://www.bluestone.com/rings/the-le-sommet-ring~105031.html) |
+
+#### 2. Type 3 Concept Images (Higgsfield CLI `nano_banana_pro`)
+| Slot | Product Name | SKU | Role | Media ID | Higgsfield Job ID | Setting / Prompt Details |
+|---|---|---|---|---|---|---|
+| **Hero** | The Haily Ring | `BINS0639R11` | Featured Media | `35427` | `f5c8d650-5657-4af6-8ecd-a2bb5c40fc07` | Fair-skinned Indian woman wearing The Haily Ring on ring finger, morning sunlit room, 18K solid yellow gold floral cluster halo |
+| **Flatlay** | The Viperine Twist Ring | `BIJP0993R123` | In-Body Image | `35428` | `01b73365-bf1b-451e-836a-586b9f11fbae` | `desk-kraft` setting on warm oak wood desk with kraft gift box, cream card, and textured linen (22.21 × 9.68 mm) |
+| **Lifestyle** | The Liza ring | `BIAR0097R07` | In-Body Image | `35429` | `f8f29f76-398f-4883-a95b-a261e73873ea` | Action close-up of fair-skinned Indian woman's hand holding ceramic teacup near window with The Liza ring (21.56 × 7.91 mm) |
+
+- **Product Rotation Compliance:** Exactly 1 SKU overlap (`The Liza ring`) between the 6 carousel items and 3 Type 3 items. Flatlay setting rotated to `desk-kraft` (preventing repetition of Rank 85's `linen-bedside` and Rank 84's `windowsill-daylight`).
+
+---
+
+### Higgsfield Resource Audit
+
+- **Plan:** `scale`
+- **Account:** `satyam.kumar3@bluestone.com`
+- **Starting Credits:** `4,809.32`
+- **Ending Credits:** `4,459.32`
+- **Jobs Executed:** 3 jobs (`nano_banana_pro`, 16:9, 2K, 1 count)
+- **Retries Required:** `0`
+
+---
+
+### Live QA Audit Checklist
+
+- [x] **HTTP Status:** `200 OK` on `https://blog.bluestone.com/finger-ring-for-women-2026/`
+- [x] **H1 Verification:** Exactly **one** `<h1>` tag (`Finger Ring for Women: 18 Trending Gold, Diamond & Daily Wear Styles (2026)`) above the featured hero image.
+- [x] **Canonical URL:** `https://blog.bluestone.com/finger-ring-for-women-2026/`
+- [x] **Featured Media:** Set to Hero Image (Media ID `35427`).
+- [x] **OpenGraph & Twitter Images:** Verified pointing to the high-res hero WebP.
+- [x] **Word Count:** `2,739` core article words (> 1,500 words minimum requirement).
+- [x] **Dash Checks:** `0` em dashes (`—`), `0` en dashes (`–`), `0` spaced hyphens (` - `) in editorial body text.
+- [x] **Price Gate:** `0` ₹ symbols, `0` price mentions anywhere in content.
+- [x] **Gutenberg Comments:** Strictly formatted with double hyphens (`<!-- wp:paragraph -->`, `<!-- /wp:paragraph -->`, `<!-- wp:image -->`, `<!-- /wp:image -->`, etc.).
+- [x] **No HTML Tables:** All comparison and sizing dimensions formatted as clean structured lists/cards.
+- [x] **Section Sequence:** Final Thoughts / Conclusion placed **before** Frequently Asked Questions; FAQs is the final content section directly preceding trailing JSON-LD schema.
+- [x] **Visible FAQs:** 6 full Q&A pairs rendering under the FAQ heading.
+- [x] **JSON-LD Schema:** Validated `FAQPage` + `BlogPosting` graph containing complete image URLs, author Satyam, and official BlueStone publisher node.
+- [x] **Status Records:** `output/Week7_Gift_Guides_PostRank10_status.csv`, `output/product_rotation.json`, and `output/checkpoints/week7_rank86.json` updated with all artifacts and IDs.

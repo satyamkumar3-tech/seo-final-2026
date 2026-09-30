@@ -1,0 +1,88 @@
+{
+  "occasion": "teachers-day-msg-2026",
+  "article": "Week1 Rank47",
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max. FLATLAY: 3-4 refs. Credits: 3 images count 1.",
+  "prompt_rules": {
+    "people_slots": "scene first; 2 refs max; count=1",
+    "flatlay": "3-4 refs; count=1",
+    "credits": "Exactly 3 images"
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg0.bluestone.com/giproduct/BIIP0550P16_YAA14DIG6SYEMXXXX_ABCD00-PICS-00000-1024-42508.png",
+        "https://kinclimg7.bluestone.com/giproduct/BIIP0550P16_YAA14DIG6SYEMXXXX_ABCD00-PICS-00001-1024-42508.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian complexion.\n\nteachers day msg 2026 candid lifestyle mid-shot fair-skinned Indian woman teacher near classroom bookshelf soft daylight. She wears The Aagarna Pendant from (@img1,@img2): elegant gold pendant with refined stone setting, small on chest. Bare ears wrists. Never floating packshot. 16:9 full face safe margins.",
+      "alt": "teachers day msg 2026 hero with The Aagarna Pendant",
+      "product": {
+        "code": "BIIP0550P16",
+        "name": "The Aagarna Pendant",
+        "pdp": "https://www.bluestone.com/pendants/the-aagarna-pendant~54965.html"
+      },
+      "caption": "Teachers Day 2026 vibe: The Aagarna Pendant"
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg7.bluestone.com/giproduct/BIPS0003O06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-21972.png",
+        "https://kinclimg0.bluestone.com/giproduct/BIPS0003O06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-21972.png",
+        "https://kinclimg7.bluestone.com/giproduct/BIPS0003O06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-21972.png",
+        "https://kinclimg7.bluestone.com/giproduct/BIPS0003O06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-21972.png"
+      ],
+      "prompt": "teachers day msg 2026 top-down flatlay on teacher desk with blank cream card, fountain pen, apple soft blur. The Channing Bangle from (@img1,@img2,@img3,@img4) at natural scale: yellow gold bangle with classic polished design at natural scale. No people. No readable text.",
+      "alt": "teachers day msg 2026 flatlay with The Channing Bangle",
+      "product": {
+        "code": "BIPS0003O06",
+        "name": "The Channing Bangle",
+        "pdp": "https://www.bluestone.com/bangles/the-channing-bangle~975.html"
+      },
+      "caption": "Teachers Day 2026 vibe: The Channing Bangle"
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg9.bluestone.com/giproduct/BIPN0880H218_RAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-80183.png",
+        "https://kinclimg6.bluestone.com/giproduct/BIPN0880H218_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-80183.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only.\n\nteachers day msg 2026 lifestyle mid-shot soft smile profile fair-skinned Indian woman near classroom window. Wears The Nettile Huggie Earrings from (@img1,@img2): yellow gold huggie earrings with delicate detail, only near-side earring. Bare neck wrists. 16:9 full face safe margins.",
+      "alt": "teachers day msg 2026 lifestyle with The Nettile Huggie Earrings",
+      "product": {
+        "code": "BIPN0880H218",
+        "name": "The Nettile Huggie Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-nettile-huggie-earrings~108215.html"
+      },
+      "caption": "Teachers Day 2026 vibe: The Nettile Huggie Earrings"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/teachers-day-msg-hero-2026.webp",
+    "flatlay": "output/magnific_generated/teachers-day-msg-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/teachers-day-msg-lifestyle-2026.webp"
+  },
+  "insert_h2s_json": "output/Week1_Rank47_TeachersDayMsg_insert_h2s.json",
+  "product_media_json": "output/Week1_Rank47_TeachersDayMsg_product_media.json",
+  "output_prefix": "Week1_Rank47_TeachersDayMsg",
+  "schema_keywords": [
+    "teachers day msg",
+    "teachers day message",
+    "teachers day wishes in english"
+  ],
+  "media_titles": {
+    "hero": "teachers day msg 2026 Hero",
+    "flatlay": "teachers day msg 2026 Flatlay",
+    "lifestyle": "teachers day msg 2026 Lifestyle"
+  },
+  "wp_post_id": 30550,
+  "webp_prefix": "teachers-day-msg",
+  "caption_occasion": "Teachers Day",
+  "caption_year": "2026"
+}

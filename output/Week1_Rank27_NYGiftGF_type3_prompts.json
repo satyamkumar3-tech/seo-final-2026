@@ -1,0 +1,71 @@
+{
+  "occasion": "new-year-gift-girlfriend-2027",
+  "article": "Week1 Rank27 - new year gift for girlfriend",
+  "wp_post_id": 30307,
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max + people_theme_anchor. FLATLAY: product_theme_anchor + 3-4 refs.",
+  "notes": "Valeria Rose Pendant: rose gold heart pendant, right half pave diamonds, left half three open rose gold bands, fine rose gold cable chain. Liza Ring: yellow gold interlocking multi-band design with pave diamonds on crossing bands (NOT a simple single-row band). Shining Star Bracelet: yellow gold bracelet with star motif and diamond accents, delicate link construction. People slots: 2 refs max. Credits: exactly 3 images, count 1 each.",
+  "prompt_rules": {
+    "people_slots": "scene first, jewellery second; 2 refs max; people_theme_anchor; negative_prompt_people; count=1; retry only if QA fails",
+    "flatlay": "product_theme_anchor OK; 3-4 refs; count=1",
+    "credits": "Exactly 3 images per article (hero+flatlay+lifestyle). No dual variants by default.",
+    "anti_overlay": "Do not lead people prompts with commercial/macro jewellery language"
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg2.bluestone.com/giproduct/BIHS1145P21_RAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-119073.png",
+        "https://kinclimg2.bluestone.com/giproduct/BIHS1145P21_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-119073.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin.\n\nNew Year gift for girlfriend 2027 candid lifestyle photograph, mid-shot of people (not a product ad). A fair-skinned Indian young woman in a soft champagne dress smiles near warm fairy lights and a softly blurred home celebration. Faces and upper body fill most of the frame. She is physically wearing the rose gold heart pendant from reference images (@img1, @img2) on a fine rose gold cable chain around her neck. The Valeria Rose Pendant rests on her upper chest with a soft contact shadow, at real-world necklace size (about 2 to 3 cm heart, small in frame). Camera focuses on the person; jewellery is sharp but NOT the largest object. Design fidelity: rose gold heart, right-side pave diamonds, left-side open triple rose gold bands. ONLY jewellery in the image. Bare ears and bare wrists. CRITICAL: attached to body, never floating cutout / packshot overlay. 16:9 landscape, full face in frame, safe margins.",
+      "alt": "new year gift for girlfriend 2027 hero, fair-skinned Indian woman wearing The Valeria Rose Pendant",
+      "product": {
+        "code": "BIHS1145P21",
+        "name": "The Valeria Rose Pendant",
+        "pdp": "https://www.bluestone.com/pendants/the-valeria-rose-pendant~181266.html"
+      }
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg3.bluestone.com/giproduct/BIAR0097R07_YAA18DIG4XXXXXXXX_ABCD00-PICS-00000-1024-64632.png",
+        "https://kinclimg3.bluestone.com/giproduct/BIAR0097R07_YAA18DIG4XXXXXXXX_ABCD00-PICS-00001-1024-64632.png",
+        "https://kinclimg3.bluestone.com/giproduct/BIAR0097R07_YAA18DIG4XXXXXXXX_ABCD00-PICS-00002-1024-64632.png",
+        "https://kinclimg3.bluestone.com/giproduct/BIAR0097R07_YAA18DIG4XXXXXXXX_ABCD00-PICS-00003-1024-64632.png"
+      ],
+      "prompt": "New Year gift for girlfriend 2027 top-down flatlay. A lived-in wooden desk with a blank cream greeting card, fountain pen, two champagne flutes with soft reflections, a linen napkin, dried flowers, and a blank dark phone screen fully in frame. The identical yellow gold interlocking multi-band ring from (@img1, @img2, @img3, @img4) rests on the surface at natural scale, sharp, full piece visible: The Liza Ring with crisscross/openwork gold bands and pave diamonds on the crossing bands. Warm window light. No people. No floating overlays or cutouts. No readable text.",
+      "alt": "new year gift for girlfriend 2027 flatlay with The Liza ring",
+      "product": {
+        "code": "BIAR0097R07",
+        "name": "The Liza ring",
+        "pdp": "https://www.bluestone.com/rings/the-liza-ring~7623.html"
+      }
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg5.bluestone.com/giproduct/BIMG0635V45_YAA18XXXXXXXXXXXX_ABCD00-PICS-00000-1024-47150.png",
+        "https://kinclimg5.bluestone.com/giproduct/BIMG0635V45_YAA18XXXXXXXXXXXX_ABCD00-PICS-00001-1024-47150.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin.\n\nNew Year gift for girlfriend 2027 lifestyle mid-shot. A fair-skinned Indian woman's hand and wrist are in sharp focus as she gently holds a blank champagne flute near warm fairy lights, soft home blur behind. She physically wears the identical yellow gold star bracelet from (@img1, @img2) on her wrist at natural product scale with a soft contact shadow: The Shining Star Bracelet with star motif and delicate gold links. Jewellery is sharp but small versus the hand and wrist. This bracelet is the ONLY jewellery in the image. Bare fingers otherwise. Never floating packshot overlay. Full hand, wrist, and bracelet inside frame with safe margins.",
+      "alt": "new year gift for gf 2027 lifestyle with The Shining Star Bracelet",
+      "product": {
+        "code": "BIMG0635V45",
+        "name": "The Shining Star Bracelet",
+        "pdp": "https://www.bluestone.com/bracelets/the-shining-star-bracelet~63731.html"
+      }
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/new-year-gift-girlfriend-hero-2027.webp",
+    "flatlay": "output/magnific_generated/new-year-gift-girlfriend-flatlay-2027.webp",
+    "lifestyle": "output/magnific_generated/new-year-gift-girlfriend-lifestyle-2027.webp"
+  }
+}

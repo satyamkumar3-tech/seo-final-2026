@@ -1,0 +1,164 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 6 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 6\n- Action: New\n- Primary keyword: pearl necklace\n- Volume: 60500\n- KD: 29\n- Priority score: 48315.9722\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: pearl-necklace-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: gold pearl necklace | gold pearl necklace india | gold pearl necklace indian | indian pearl necklace with gold | mens pearl necklace | necklace design pearl | necklace designs pearl | pearl and gold necklace\n- Supplied competitor URL: blank in source row\n- Semrush page: pearl necklace\n- Source execution note: Week8 new topic. Intent key=sig:necklace_pearl; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank6.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank6.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+Converting and uploading the 6 carousel product WebP images to WordPress. The task is currently running in the background.
+Generating Type 3 images (Hero, Flatlay, and Lifestyle) via Higgsfield CLI (`nano_banana_pro`). The task is executing in the background.
+Uploading Type 3 images and patching WordPress post #37015. The task is executing in the background.
+### Production Run Summary: Week 8 Rank 6
+
+`STEP DONE: final_report | time: 2026-08-31T17:02:15+05:30 | step duration: 20s | total elapsed: 10m 05s`
+
+---
+
+### 1. WordPress & Live Publication
+* **Live URL:** [https://blog.bluestone.com/pearl-necklace-2026/](https://blog.bluestone.com/pearl-necklace-2026/)
+* **WordPress Post ID:** `37015`
+* **Status:** `publish` (Live)
+* **Author:** Satyam (ID `270271337`)
+* **On-Page Byline:** `By Satyam, BlueStone Editorial`
+* **Categories:** 
+  * `Pearl` (ID `554493472`)
+  * `Necklace` (ID `554493422`)
+  * `Gold` (ID `554493348`)
+  * `Jewellery Problem & Solution` (ID `554493465`)
+* **Article Engine:** `buying_guide` (How-to / Education, Jewellery Education)
+* **Visible Article Word Count:** `3,119 words` (Draft baseline: `2,875 words`)
+
+---
+
+### 2. Primary Keyword & Supplied Metrics
+* **Primary Keyword:** `pearl necklace`
+* **Volume:** `60,500`
+* **KD:** `29`
+* **Priority Score:** `48,315.9722`
+* **Suggested Slug:** `pearl-necklace-2026`
+* **Target Year:** `2026`
+
+---
+
+### 3. Supporting Keywords Audit & Mapping
+All 8 supplied supporting keywords were evaluated for topical relevance and integrated into headings, body copy, and FAQ schema:
+
+| Supporting Keyword | Status | Mapped Placement | Topical Rationale |
+|---|---|---|---|
+| `gold pearl necklace` | **Used** | H1, Intro, H2, FAQ 2 | Primary commercial and material search intent for fine gold and pearl combinations. |
+| `gold pearl necklace india` | **Used** | H2, Body | Indian market context, regional craft traditions, and BIS hallmarking compliance. |
+| `gold pearl necklace indian` | **Used** | H2, Body | Natural grammatical variant for Indian traditional jewellery architecture. |
+| `indian pearl necklace with gold` | **Used** | H2, Body | Classical heritage styles (Gutpusalu, Satlada, Rani Haar). |
+| `mens pearl necklace` | **Used** | H2, Body, FAQ 7 | Contemporary men's styling, Kantha groomswear, and gender-inclusive layering. |
+| `necklace design pearl` | **Used** | H2, Body | Search phrase for design discovery, silhouette variations, and strand patterns. |
+| `necklace designs pearl` | **Used** | H2, Body | Plural design catalog variant woven naturally into craft curation. |
+| `pearl and gold necklace` | **Used** | H2, Body, FAQ 6 | Material pairing, karatage comparison (14kt vs 18kt vs 22kt), and care protocols. |
+
+* **Rejected Keywords:** None (all 8 supplied terms were directly relevant to the buying guide).
+
+---
+
+### 4. H2 Keyword Map & Intent Taxonomy
+Every major H2 section was categorized and labeled according to intent origin:
+
+1. `Why the Pearl Necklace Remains an Enduring Fine Jewellery Classic in 2026` (`primary-backed`)
+2. `Understanding Pearl Types: Freshwater, Akoya, South Sea, and Heritage Basra Pearls` (`intent-inferred`)
+3. `Evaluating Pearl Quality: The 7 Crucial Value Factors Every Buyer Must Know` (`intent-inferred`)
+4. `Popular Gold Pearl Necklace Designs and Classic Indian Heritage Styles` (`supporting-keyword-backed`: `gold pearl necklace`, `gold pearl necklace india`, `gold pearl necklace indian`, `indian pearl necklace with gold`, `necklace design pearl`, `necklace designs pearl`)
+5. `Pearl and Gold Necklace Karatage, BIS Hallmarking, and Stringing Integrity` (`supporting-keyword-backed`: `pearl and gold necklace`)
+6. `Curated Fine Pearl Jewellery Designs for Modern Styling` (`intent-inferred`)
+7. `Choosing the Right Pearl Necklace Length and Proportion for Your Neckline` (`intent-inferred`)
+8. `Modern Styling: Mens Pearl Necklace Trends and Contemporary Groomswear` (`supporting-keyword-backed`: `mens pearl necklace`)
+9. `Essential Care and Maintenance: How to Preserve Your Pearls for Generations` (`intent-inferred`)
+10. `Common Mistakes to Avoid When Buying a Pearl Necklace in India` (`intent-inferred`)
+11. `Final Thoughts on Investing in a Fine Pearl Necklace` (`intent-inferred`)
+12. `More Jewellery & Buying Guides` (`intent-inferred` — Mandatory internal blog cluster)
+13. `Frequently Asked Questions About Pearl Necklaces` (`primary-backed`)
+
+---
+
+### 5. Competitor & Factual Source Verification
+* **Supplied Competitor URL:** Blank in source row (no invented competitor URL).
+* **Factual Sources Consulted:**
+  * **Gemological Institute of America (GIA):** 7 Pearl Value Factors (Size, Shape, Colour, Lustre, Surface Quality, Nacre Thickness, Matching) and organic hardness benchmarks (Mohs 2.5–4.5).
+  * **Bureau of Indian Standards (BIS):** Mandatory 6-digit alphanumeric HUID hallmarking verification on gold components (clasps, hooks, frames).
+  * **Government of India Tax Authority:** 3% GST on fine jewellery and gemstones.
+  * **BlueStone Craft Guidelines:** "Last on, first off" care rule, pure silk stringing with security knots, flat storage protocols, and no prices in editorial copy.
+
+---
+
+### 6. Media Assets, Rotation & Image IDs
+
+#### A. Type 2 Carousel Media (6 Cards)
+* **Carousel ID:** `bs-cf-pearl-necklace`
+* **Coverflow Cards:**
+  1. `The Thaloria Pendant` (`BISW1080P131`): Media ID `37009` | [PDP Link](https://www.bluestone.com/pendants/the-thaloria-pendant~165041.html)
+  2. `The Sarvanya Pendant` (`BISW1080P132`): Media ID `37010` | [PDP Link](https://www.bluestone.com/pendants/the-sarvanya-pendant~156927.html)
+  3. `The Lumeelle Cluster Pendant` (`BISW1080P133`): Media ID `37011` | [PDP Link](https://www.bluestone.com/pendants/the-lumeelle-cluster-pendant~162509.html)
+  4. `The Tetyana Gold Chain` (`BVEM0663C88`): Media ID `37012` | [PDP Link](https://www.bluestone.com/chains/the-tetyana-gold-chain~124927.html)
+  5. `The Thyvarne Pendant` (`BISW1080P28`): Media ID `37013` | [PDP Link](https://www.bluestone.com/pendants/the-thyvarne-pendant~173761.html)
+  6. `The Shubhlatika Mangalsutra Necklace` (`BVPJ0935C06`): Media ID `37014` | [PDP Link](https://www.bluestone.com/mangalsutra+chains/the-shubhlatika-mangalsutra-necklace~146084.html)
+
+#### B. Type 3 Concept Media (Higgsfield CLI `nano_banana_pro`)
+* **Hero (Featured Media):**
+  * **SKU:** `BISW1080P133` (`The Lumeelle Cluster Pendant`, Female, 32.66 × 32.66 mm)
+  * **WP Media ID:** `37016`
+  * **URL:** `https://blog.bluestone.com/wp-content/uploads/2026/08/pearl-necklace-hero-2026.webp`
+  * **Alt:** `pearl necklace 2026 hero: The Lumeelle Cluster Pendant`
+* **In-Body Flatlay:**
+  * **SKU:** `BISW1080P28` (`The Thyvarne Pendant`, Female, 17.5 × 17.5 mm)
+  * **Setting ID:** `linen-bedside` (rumpled linen fabric, notebook, bedside warm glow)
+  * **WP Media ID:** `37017`
+  * **URL:** `https://blog.bluestone.com/wp-content/uploads/2026/08/pearl-necklace-flatlay-2026.webp`
+  * **Alt:** `pearl necklace 2026 flatlay: The Thyvarne Pendant`
+  * **Caption:** `Pearl necklace 2026 vibe: <a href="https://www.bluestone.com/pendants/the-thyvarne-pendant~173761.html">The Thyvarne Pendant</a>`
+* **In-Body Lifestyle:**
+  * **SKU:** `BISW1080P132` (`The Sarvanya Pendant`, Female, 33.35 × 23.79 mm)
+  * **WP Media ID:** `37018`
+  * **URL:** `https://blog.bluestone.com/wp-content/uploads/2026/08/pearl-necklace-lifestyle-2026.webp`
+  * **Alt:** `pearl necklace 2026 lifestyle: The Sarvanya Pendant`
+  * **Caption:** `Pearl necklace 2026 vibe: <a href="https://www.bluestone.com/pendants/the-sarvanya-pendant~156927.html">The Sarvanya Pendant</a>`
+
+---
+
+### 7. Higgsfield Execution Accounting
+* **Subscription Plan:** `ultimate`
+* **Starting Balance:** `504.37 credits`
+* **Ending Balance:** `498.37 credits`
+* **Credits Consumed:** `6.0 credits` (3 jobs × 2.0 credits per job)
+* **Job Record:**
+  * Hero Job ID: `556376ae-aff2-43a6-91a1-f83b93453134` (Completed on attempt 1)
+  * Flatlay Job ID: `9aeeade1-867e-4bee-a929-1f0ea7c1dde0` (Completed on attempt 1)
+  * Lifestyle Job ID: `a56d8d43-7f2c-4406-aca6-8dbc3d630dde` (Completed on attempt 1)
+* **Retries / Failures:** 0
+
+---
+
+### 8. Live QA & Quality Audit Verification
+* **HTTP Status:** `200 OK`
+* **Single H1 Check:** Passed (`Pearl Necklace Buying Guide 2026: Trending Gold Designs, Pearl Types, Quality Factors & Care`)
+* **OpenGraph Image:** Verified live pointing to Hero WebP (`https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/08/pearl-necklace-hero-2026.webp?fit=1400%2C781&ssl=1`)
+* **Canonical URL:** `https://blog.bluestone.com/pearl-necklace-2026/`
+* **FAQ Rendering:** 7 full Q&A pairs rendered in the visible HTML DOM under H3 headings.
+* **JSON-LD Schema:** Cleanly embedded and parsed (`FAQPage` with 7 items + `BlogPosting` with Satyam author and 9 WebP image URLs).
+* **Copy Restrictions:**
+  * Em dashes (`—`): `0 violations`
+  * En dashes (`–`): `0 violations`
+  * Spaced hyphens (` - `): `0 violations`
+  * Raw HTML tables: `0 violations`
+  * Price mentions: `0 violations`
+* **Duplicate Intent / Cannibalization:** Zero overlap with existing posts (`pearl-ring-2026`, `pearl-chain-2026`, `short-necklace-designs-2026` serve separate distinct intents).
+
+---
+
+### 9. State Files & Checkpoints Updated
+* `output/checkpoints/week8_rank6.json` (All 15 steps marked `done`)
+* `output/Week8_Blog_Queue_status.csv` (Upserted Rank 6 row)
+* `output/product_rotation.json` (Prepended Rank 6 Type 3 trio with `linen-bedside` setting)
+* `output/Week8_Blog_Queue.csv` (Synchronized)

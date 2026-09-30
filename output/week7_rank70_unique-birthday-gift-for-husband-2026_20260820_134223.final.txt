@@ -1,0 +1,200 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 70 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 70\n- Action: New\n- Primary keyword: unique birthday gift for husband\n- Volume: 8100\n- KD: \n- Priority score: 1.2\n- Theme: Gift Guides\n- Category fit: Occasion/Gifting\n- Suggested slug: unique-birthday-gift-for-husband-2026\n- Article engine: gift_guide\n- Category hint: `Men's Jewellery` 554493434 where product fit is men's jewellery; otherwise `Gift` 554493424\n- Supplied supporting keywords: unique birthday gift for husband\n- Supplied competitor URL: blank in source row\n- Semrush page: unique birthday gift for husband\n- Source execution note: Week7 intent-unique. intent=husband_birthday. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank70.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank70.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+```text
+STEP START: read_docs | time: 2026-08-20T13:43:10+05:30 | elapsed: 00:00:34
+```
+```text
+STEP DONE: read_docs | time: 2026-08-20T13:43:58+05:30 | step duration: 00:00:48 | total elapsed: 00:01:22
+
+STEP START: verify_higgsfield | time: 2026-08-20T13:43:58+05:30 | elapsed: 00:01:22
+```
+```text
+STEP DONE: verify_higgsfield | time: 2026-08-20T13:44:10+05:30 | step duration: 00:00:12 | total elapsed: 00:01:34
+
+STEP START: inspect_row | time: 2026-08-20T13:44:10+05:30 | elapsed: 00:01:34
+```
+```text
+STEP DONE: inspect_row | time: 2026-08-20T13:44:42+05:30 | step duration: 00:00:32 | total elapsed: 00:02:06
+
+STEP START: duplicate_check | time: 2026-08-20T13:44:42+05:30 | elapsed: 00:02:06
+```
+```text
+STEP DONE: duplicate_check | time: 2026-08-20T13:44:57+05:30 | step duration: 00:00:15 | total elapsed: 00:02:21
+
+STEP START: fact_check | time: 2026-08-20T13:44:57+05:30 | elapsed: 00:02:21
+```
+```text
+STEP DONE: fact_check | time: 2026-08-20T13:45:10+05:30 | step duration: 00:00:13 | total elapsed: 00:02:34
+
+STEP START: keyword_map | time: 2026-08-20T13:45:10+05:30 | elapsed: 00:02:34
+```
+```text
+STEP DONE: keyword_map | time: 2026-08-20T13:45:16+05:30 | step duration: 00:00:06 | total elapsed: 00:02:40
+
+STEP START: structure_visuals | time: 2026-08-20T13:45:16+05:30 | elapsed: 00:02:40
+```
+```text
+STEP DONE: structure_visuals | time: 2026-08-20T13:45:28+05:30 | step duration: 00:00:12 | total elapsed: 00:02:52
+
+STEP START: draft | time: 2026-08-20T13:45:28+05:30 | elapsed: 00:02:52
+```
+```text
+STEP DONE: draft | time: 2026-08-20T13:46:39+05:30 | step duration: 00:01:11 | total elapsed: 00:04:03
+
+STEP START: product_media | time: 2026-08-20T13:46:39+05:30 | elapsed: 00:04:03
+```
+Uploading the 6 carousel WebP images for Week 7 Rank 70 to WordPress media library...
+```text
+STEP DONE: product_media | time: 2026-08-20T13:47:13+05:30 | step duration: 00:00:34 | total elapsed: 00:04:37
+
+STEP START: publish_wordpress | time: 2026-08-20T13:47:13+05:30 | elapsed: 00:04:37
+```
+```text
+STEP DONE: publish_wordpress | time: 2026-08-20T13:47:29+05:30 | step duration: 00:00:16 | total elapsed: 00:04:53
+
+STEP START: generate_type3 | time: 2026-08-20T13:47:29+05:30 | elapsed: 00:04:53
+```
+Generating Type 3 concept images (Hero, Flatlay, and Lifestyle) via Higgsfield CLI (`nano_banana_pro`, 16:9, 2k)...
+```text
+STEP DONE: generate_type3 | time: 2026-08-20T13:51:38+05:30 | step duration: 00:04:09 | total elapsed: 00:09:02
+
+STEP START: patch_type3 | time: 2026-08-20T13:51:38+05:30 | elapsed: 00:09:02
+```
+```text
+STEP DONE: patch_type3 | time: 2026-08-20T13:52:23+05:30 | step duration: 00:00:45 | total elapsed: 00:09:47
+
+STEP START: live_qa | time: 2026-08-20T13:52:23+05:30 | elapsed: 00:09:47
+```
+```text
+STEP DONE: live_qa | time: 2026-08-20T13:53:19+05:30 | step duration: 00:00:56 | total elapsed: 00:10:43
+
+STEP START: update_status | time: 2026-08-20T13:53:19+05:30 | elapsed: 00:10:43
+```
+```text
+STEP DONE: update_status | time: 2026-08-20T13:53:33+05:30 | step duration: 00:00:14 | total elapsed: 00:10:57
+
+STEP START: final_report | time: 2026-08-20T13:53:33+05:30 | elapsed: 00:10:57
+```
+```text
+STEP DONE: final_report | time: 2026-08-20T13:53:44+05:30 | step duration: 00:00:11 | total elapsed: 00:11:08
+```# Week 7 Rank 70: End-to-End Execution Report
+
+### Executive Summary & WordPress Publishing Details
+* **Target Rank:** 70 (Theme: Gift Guides)
+* **WordPress Post ID:** `35103`
+* **Live URL:** [https://blog.bluestone.com/unique-birthday-gift-for-husband-2026/](https://blog.bluestone.com/unique-birthday-gift-for-husband-2026/)
+* **Article Engine:** `gift_guide`
+* **Author:** Satyam (WP Author ID `270271337`), On-page byline: `By Satyam, BlueStone Editorial`
+* **Categories:** `Men's Jewellery` (ID: `554493434`), `Gift` (ID: `554493424`)
+* **Visible Article Word Count:** 2,199 words (clean editorial content exceeding the >1,500 target)
+* **Publication Status:** Published (HTTP 200)
+
+---
+
+### Keyword & Search Intent Analysis
+* **Primary Keyword:** `unique birthday gift for husband`
+  * **Search Volume:** 8,100
+  * **Priority Score:** 1.2
+  * **Search Intent:** Occasion Gifting / Curated Men's Fine Jewellery Recommendations
+* **Supplied Supporting Keywords:** `unique birthday gift for husband`
+  * **Topical Action:** Accepted and woven naturally into Title, Meta Description, H1, introduction, H2 sections, body copy, FAQs, and JSON-LD schema.
+  * **Rejected Phrases:** None (no polluted or out-of-intent keywords were supplied).
+* **Competitor Analysis:** Competitor URL was blank in the source row. Distinctive BlueStone authority established around 18k/14k hallmarked gold, certified diamonds, talisman symbolism, and men's lifestyle curation.
+* **Duplicate & Cannibalization Check:** Passed. Verified via WordPress REST API; no conflicting post or duplicate slug exists for this intent.
+
+---
+
+### H2 Keyword Map & Article Structure
+1. `Executive Summary: Best Birthday Jewellery Gifts for Husbands` (Intent-Inferred / Direct Answer)
+2. `Why Fine Jewellery Is a Truly Unique Birthday Gift for Husband` (Primary-Keyword-Backed)
+3. `Top Fine Jewellery Categories for His Milestone Birthday` (Supporting-Structure-Backed)
+   * *H3: 1. Statement Rings and Modern Gold Bands*
+   * *H3: 2. Articulated Link Bracelets and Structural Kadas*
+   * *H3: 3. Talisman and Modern Symbolic Pendants*
+   * *H3: 4. Classic Solid Gold Chains*
+4. `Curated BlueStone Recommendations for Your Husband's Birthday` (Primary-Backed Recommendations)
+   * *H3: The Serenity Evil Eye Pendant For Him*
+   * *H3: The Bandhan Bracelet For Him*
+   * *H3: The Fonseca Bracelet For Him*
+   * *H3: The Talisman Evil Eye Pendant For Him*
+   * *H3: The Concatenate Bracelet For Him*
+   * *H3: The Kilxer Link Bracelet For Him*
+5. `Matching the Jewellery Style to Your Husband's Persona` (Audience-Persona-Backed)
+6. `Sizing, Metal Purity, and Hallmarking Guide` (Factual-Authority-Backed)
+7. `Thoughtful Presentation and Unboxing Ideas` (Gifting-Experience-Backed)
+8. `More Festive and Occasion Reads` (Internal Link Hub)
+9. `Conclusion: A Birthday Gift of Lasting Value` (Closing CTA)
+10. `Frequently Asked Questions about Birthday Gifts for Husbands` (AEO / FAQ-Schema-Backed)
+
+---
+
+### Factual Verification & Quality Compliance
+* **Gold Purity & Hallmarking:** Explicitly explained 18k (750) vs 14k (585) durability for men's daily wear and mandated the 6-digit alphanumeric HUID code under Bureau of Indian Standards (BIS) regulations.
+* **Sizing Guidance:** Accurate Indian ring sizing (sizes 16 to 25, average 18 to 22) and wrist circumference measurement (+1.5 to 2 cm ease) provided.
+* **Prohibited Content Audits:** 0 em dashes (`—`), 0 en dashes (`–`), 0 spaced hyphens (` - `) in editorial text, 0 prices, 0 raw HTML tables, 0 competitor digs, 0 fake claims.
+* **BlueStone Value Propositions:** 30-day money-back guarantee, complimentary resizing, lifetime exchange, and insured delivery detailed without scheme dumps.
+
+---
+
+### Product Selection & Visual Media Assets
+
+#### Type 3 Concept Images (Higgsfield CLI `nano_banana_pro`, 16:9, 2K, WebP)
+* **Hero (Featured Media):**
+  * **SKU:** `BIPO0987P67` (`The Serenity Evil Eye Pendant For Him`)
+  * **Dimensions:** Height 30.87 mm, Width 15.91 mm (Necklace worn scale via `@img1` body_image)
+  * **WP Media ID:** `35111`
+  * **Live URL:** [https://blog.bluestone.com/wp-content/uploads/2026/08/unique-birthday-gift-for-husband-hero-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/unique-birthday-gift-for-husband-hero-2026.webp)
+  * **Alt:** `unique birthday gift for husband 2026 hero lifestyle with modern Indian man wearing gold talisman pendant, The Serenity Evil Eye Pendant For Him`
+* **Flatlay (In-Body 1):**
+  * **SKU:** `BISV0910V12` (`The Bandhan Bracelet For Him`)
+  * **Setting:** `gift-wrapping-station` (Rotated setting: kraft paper roll, matte ribbon, blank gift tag, luxury box)
+  * **WP Media ID:** `35112`
+  * **Live URL:** [https://blog.bluestone.com/wp-content/uploads/2026/08/unique-birthday-gift-for-husband-flatlay-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/unique-birthday-gift-for-husband-flatlay-2026.webp)
+  * **Alt:** `unique birthday gift for husband 2026 flatlay at gift wrapping station, The Bandhan Bracelet For Him`
+  * **Caption:** `Unique birthday gift for husband 2026 vibe: The Bandhan Bracelet For Him`
+* **Lifestyle (In-Body 2):**
+  * **SKU:** `BIPO0945V20` (`The Fonseca Bracelet For Him`)
+  * **Dimensions:** Height 11.52 mm, Width 190.5 mm (Wrist worn scale via `@img1` body_image)
+  * **WP Media ID:** `35113`
+  * **Live URL:** [https://blog.bluestone.com/wp-content/uploads/2026/08/unique-birthday-gift-for-husband-lifestyle-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/unique-birthday-gift-for-husband-lifestyle-2026.webp)
+  * **Alt:** `unique birthday gift for husband 2026 lifestyle wrist close up, The Fonseca Bracelet For Him`
+  * **Caption:** `Unique birthday gift for husband 2026 styling: The Fonseca Bracelet For Him`
+
+#### Type 2 Product Carousel (6-Card Coverflow, WebP)
+1. **The Serenity Evil Eye Pendant For Him** (`BIPO0987P67`) | Media ID: `35097`
+2. **The Bandhan Bracelet For Him** (`BISV0910V12`) | Media ID: `35098`
+3. **The Fonseca Bracelet For Him** (`BIPO0945V20`) | Media ID: `35099`
+4. **The Talisman Evil Eye Pendant For Him** (`BIKR0987P33`) | Media ID: `35100`
+5. **The Concatenate Bracelet For Him** (`BISV0910V22`) | Media ID: `35101`
+6. **The Kilxer Link Bracelet For Him** (`BISL1006V249`) | Media ID: `35102`
+
+---
+
+### Higgsfield AI Generation Telemetry
+* **Subscription Plan:** `scale`
+* **Starting Credits:** `6,649.32`
+* **Ending Credits:** `6,635.32` (14.0 credits consumed across 3 x 2K jobs)
+* **Job IDs:**
+  * Hero: `3a2443fd-d538-4edc-acdb-b1073e6f190c` (Status: Complete)
+  * Flatlay: `d3379c56-6055-4015-b651-dfec2e9b6d16` (Status: Complete)
+  * Lifestyle: `6cbe20ec-e968-4dbd-b5f4-0b03687ec692` (Status: Complete)
+* **Retries:** 0
+
+---
+
+### State & Checkpoint Synchronization
+* **Checkpoint File:** `output/checkpoints/week7_rank70.json` (All 15 steps marked `done`).
+* **Week 7 Queue CSV:** `output/Week7_Gift_Guides_PostRank10.csv` updated with Rank 70 `Done`.
+* **Week 7 Status CSV:** `output/Week7_Gift_Guides_PostRank10_status.csv` upserted with Rank 70 live details.
+* **Product Rotation Registry:** `output/product_rotation.json` updated with Rank 70 trio (`BIPO0987P67`, `BISV0910V12`, `BIPO0945V20`) and flatlay setting `gift-wrapping-station`.

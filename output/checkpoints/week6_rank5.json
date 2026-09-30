@@ -1,0 +1,178 @@
+{
+  "pipeline": "week6",
+  "rank": 5,
+  "slug": "wedding-gifts-for-girls-2026",
+  "primary": "wedding gifts for girls",
+  "created_at": "2026-08-18T11:50:54Z",
+  "status": "complete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-18T11:53:44Z",
+      "finished_at": "2026-08-18T11:54:12Z",
+      "files": 11,
+      "skill": "higgsfield-product-photoshoot"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-18T11:54:20Z",
+      "finished_at": "2026-08-18T11:54:34Z",
+      "credits": 261.37,
+      "plan": "ultimate",
+      "path": "cli"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-18T11:54:42Z",
+      "finished_at": "2026-08-18T11:54:50Z",
+      "volume": 8100,
+      "kd": 20,
+      "score": 2.9403,
+      "theme": "Gift_Guides",
+      "category_fit": "Occasion_Gifting",
+      "supporting_column": "absent",
+      "competitor_column": "absent"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-18T11:54:58Z",
+      "finished_at": "2026-08-18T11:55:30Z",
+      "exact_slug_matches": 0,
+      "intent_conflict": "none",
+      "note": "nearest_results_are_distinct_design_or_birthday_intents"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-08-18T11:55:38Z",
+      "finished_at": "2026-08-18T11:55:42Z",
+      "applicability": "not_required",
+      "reason": "gift_guide_contains_no_GST_BIS_hallmarking_purity_dates_or_measurement_claims",
+      "sources": "none"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-08-18T11:55:50Z",
+      "finished_at": "2026-08-18T12:03:18Z",
+      "artifact": "output/Week6_Rank5_Wedding_Gifts_H2_Keyword_Map.md",
+      "major_h2_count": 13,
+      "primary_backed": 3,
+      "intent_inferred": 10,
+      "supporting_backed": 0,
+      "competitor_backed": 0
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-08-18T11:56:27Z",
+      "finished_at": "2026-08-18T11:57:57Z",
+      "artifact": "output/Week6_Rank5_Wedding_Gifts_structure_visuals.md",
+      "engine": "gift_guide",
+      "categories": "554493424,554493443",
+      "target_words": "2400_to_3000",
+      "flatlay_setting": "marble-vanity",
+      "hero_sku": "BVPJ0935C06",
+      "flatlay_sku": "BIPM0017R18",
+      "lifestyle_sku": "BIAV0865V24",
+      "body_image_gate": "passed"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-08-18T11:58:33Z",
+      "finished_at": "2026-08-18T12:03:24Z",
+      "sections": "output/Week6_Rank5_Wedding_Gifts_sections.json",
+      "config": "output/publish_configs/week6_rank5.json",
+      "source_words": 2668,
+      "section_lines": 63,
+      "faqs": 8,
+      "meta_description_chars": 156,
+      "dash_price_checks": "passed"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-08-18T12:03:40Z",
+      "finished_at": "2026-08-18T12:05:59Z",
+      "config": "output/publish_configs/week6_rank5.json",
+      "product_count": 6,
+      "skus": "BVPJ0935C06,BIAR0097R07,BISA0255D05,BIIP0550P16,BIAV0865V25,BIAV0987N78",
+      "seo_images_verified": 6,
+      "upload_state": "deferred_to_exactly_once_publish_script",
+      "type3_manifest": "output/Week6_Rank5_Wedding_Gifts_type3_prompts.json",
+      "type3_overlap": 1,
+      "body_image_gate": "passed"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-08-18T12:06:09Z",
+      "finished_at": "2026-08-18T12:06:51Z",
+      "wp_post_id": 34833,
+      "live_url": "https://blog.bluestone.com/wedding-gifts-for-girls-2026/",
+      "carousel_media_ids": "34827,34828,34829,34830,34831,34832",
+      "article": "output/Week6_Rank5_Wedding_Gifts_article.html",
+      "validation": "passed"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-08-18T12:07:01Z",
+      "finished_at": "2026-08-18T12:09:49Z",
+      "hero_job_id": "fdc54f26-d0f0-43cb-92a9-f892e425f0ab",
+      "flatlay_job_id": "9c39a10c-db4e-40b8-885f-43921dd48c4e",
+      "lifestyle_job_id": "2a8463f4-0b9c-403e-b059-b7ed3d1b9190",
+      "accepted_raw": "output/magnific_generated/wedding-gifts-for-girls-hero-2026.raw.png,output/magnific_generated/wedding-gifts-for-girls-flatlay-2026.raw.png,output/magnific_generated/wedding-gifts-for-girls-lifestyle-2026.raw.png",
+      "outputs": "output/magnific_generated/wedding-gifts-for-girls-hero-2026.webp,output/magnific_generated/wedding-gifts-for-girls-flatlay-2026.webp,output/magnific_generated/wedding-gifts-for-girls-lifestyle-2026.webp",
+      "qa": "all_three_first_pass_body_scale_no_text_no_overlay",
+      "replacements": "none"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-08-18T12:10:00Z",
+      "finished_at": "2026-08-18T12:10:37Z",
+      "type3_media_ids": "34834,34835,34836",
+      "media_checkpoint": "output/Week6_Rank5_Wedding_Gifts_type3_media.json",
+      "featured_media": 34834,
+      "body_media": "34835,34836",
+      "article": "output/Week6_Rank5_Wedding_Gifts_article.html",
+      "captions": "editorial_product_specific"
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-08-18T12:11:24Z",
+      "finished_at": "2026-08-18T12:15:15Z",
+      "artifact": "output/Week6_Rank5_Wedding_Gifts_Checklist_v2.md",
+      "visible_words": 2971,
+      "h1_count": 1,
+      "h2_count": 13,
+      "carousel_cards": 6,
+      "faq_count": 8,
+      "schema_images": 9,
+      "internal_links": 5,
+      "external_product_links": 6,
+      "type3_media": "34834,34835,34836",
+      "og_image": "hero_confirmed",
+      "result": "passed",
+      "browser_note": "in_app_browser_unavailable_http_and_rest_live_checks_completed"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-08-18T12:15:32Z",
+      "finished_at": "2026-08-18T12:17:51Z",
+      "product_rotation": "upserted",
+      "status_csv": "upserted",
+      "status_rows": 1,
+      "rotation_rank_rows": 1,
+      "confirmed_by": "atomic_pipeline_upsert"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-18T12:16:47Z",
+      "finished_at": "2026-08-18T12:17:20Z",
+      "artifact": "output/Week6_Rank5_Wedding_Gifts_final_report.md",
+      "completion": "published_live_qa_passed_status_upserted",
+      "live_url": "https://blog.bluestone.com/wedding-gifts-for-girls-2026/",
+      "wp_post_id": 34833
+    }
+  },
+  "updated_at": "2026-08-18T12:17:51Z",
+  "completed_at": "2026-08-18T12:17:51Z",
+  "last_exit_code": 0,
+  "live_url": "https://blog.bluestone.com/wedding-gifts-for-girls-2026/",
+  "wp_post_id": 34833
+}

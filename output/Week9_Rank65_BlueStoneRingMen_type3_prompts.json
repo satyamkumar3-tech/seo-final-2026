@@ -1,0 +1,81 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "output_prefix": "Week9_Rank65_BlueStoneRingMen",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "flatlay_setting": "cafe-tray",
+  "slots": {
+    "hero": {
+      "slot": "hero",
+      "product_name": "The Interlink Band Ring",
+      "code": "BISV0910R24",
+      "GenderTag": "Male",
+      "pdp": "https://www.bluestone.com/rings/the-interlink-band-ring~108785.html",
+      "dimensions": "product_height_mm=25.41, product_width_mm=9.49 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Interlink Band Ring/1_body_portrait.png",
+        "ProductImages/raw/Rings/The Interlink Band Ring/0_primary.png"
+      ],
+      "alt": "Blue stone ring for men 2026 hero lifestyle featuring The Interlink Band Ring on a gentleman's hand",
+      "caption": "The Interlink Band Ring worn with refined poise as an everyday masculine fine jewellery band",
+      "prompt": "Photoreal candid lifestyle photograph with high-end fine jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Controlled soft key light with gentle fill, realistic soft shadows, proper shallow depth of field (85mm lens), balanced exposure with no blown whites and no HDR glare. Shot on DSLR, HD quality, 16:9 full frame with safe margins. People are the primary subject and remain candid; the jewellery is an exquisite worn detail that is 100% identical to product refs. Casting (required): fair-skinned Indian man only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Mid-shot candid portrait of a distinguished, handsome fair-skinned Indian man in his early 30s wearing a tailored navy blazer and crisp slate shirt in a warm, sophisticated architectural lounge. His left hand rests naturally on the arm of a dark leather chair, with fingers relaxed and clearly visible in the foreground. He is physically wearing The Interlink Band Ring from reference images (@img1 body_image worn scale, @img2 design only) on his ring finger. GENDER LOCK: Male adult man only. The ring rests naturally on his finger with soft natural contact shadows against skin at EXACT jewellery dimensions: product_height_mm=25.41 x product_width_mm=9.49 (these are jewellery dimensions, not face or body measurements). Keep the jewellery size on the person like @img1 body_image (worn finger scale). Use @img2 only for the jewellery design. Do not make it bigger for visibility. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Camera focuses naturally on the gentleman and his hand; the interlocking geometric yellow gold band is sharp, true, and refined in authentic 18K yellow gold warmth. This is the single and only piece of jewellery in the entire image. Bare wrists, bare neck, no other rings. Safe margins, full face, chest, and hand clearly visible. CRITICAL anti-collage: the jewellery is physically attached to the finger, never a floating cutout, never a giant product diagram composited over the photo, never a packshot overlay. 16:9 landscape. Avoid: floating jewellery overlay, giant ring collage, product cutout over people, packshot composited on lifestyle photo, jewellery upscaled for visibility, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, unreal scale, oversized jewellery, distorted jewellery, warped metal, melted stones, wrong design, distorted hands, extra fingers, extra rings, extra bracelets, product shot on plain background, cropped hands, readable text, logos, dark skin, deep brown skin, heavily tanned skin"
+    },
+    "flatlay": {
+      "slot": "flatlay",
+      "product_name": "The Ebony Ring",
+      "code": "BIIP0090R24",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/rings/the-ebony-ring~9686.html",
+      "dimensions": "product_height_mm=20.56, product_width_mm=18.35 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Ebony Ring/0_primary.png",
+        "ProductImages/raw/Rings/The Ebony Ring/2_front.png",
+        "ProductImages/raw/Rings/The Ebony Ring/5_close_up.png"
+      ],
+      "alt": "Blue stone ring for men 2026 cafe tray flatlay featuring The Ebony Ring",
+      "caption": "The Ebony Ring styled on a ceramic cafe tray with brass loupe",
+      "prompt": "Photoreal high-end jewellery commercial flatlay, HD quality, no distortion of jewellery, identical scale and design (100% match to refs), physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Controlled soft key light with gentle realistic shadows, proper shallow depth of field, balanced exposure with no blown whites and no HDR glare. Shot on DSLR, 16:9 full frame with safe margins. Top-down editorial jewellery flatlay. Flatlay setting ID: cafe-tray. Surface + props: matte textured stoneware ceramic cafe tray, a small plain ceramic espresso cup and saucer, corner of a blank linen sketchbook turned away with no readable text, an antique brass jeweller loupe resting parallel, soft warm morning daylight casting gentle amber reflections across the ceramic surface. The identical The Ebony Ring from (@img1, @img2, @img3) rests cleanly on the ceramic tray at EXACT jewellery dimensions: product_height_mm=20.56 x product_width_mm=18.35 (these are jewellery dimensions, not face or body measurements). Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. HD hyperreal yellow gold texture with soft specular highlights, polished stone mounting architecture, and authentic precious metal luster. Props stay secondary; jewellery is the clear subject. No people, no hands, no skin. No floating overlays or cutouts. No readable text, logos, or brand marks on props. Avoid: illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, artificial harsh lighting, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, blurry jewellery, distorted jewellery, warped metal, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, people, hands, skin"
+    },
+    "lifestyle": {
+      "slot": "lifestyle",
+      "product_name": "The Jasper Band For Him",
+      "code": "BISL0851R28",
+      "GenderTag": "Male",
+      "pdp": "https://www.bluestone.com/rings/the-jasper-band-for-him~93964.html",
+      "dimensions": "product_height_mm=24.11, product_width_mm=11.92 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Jasper Band For Him/1_body_portrait.png",
+        "ProductImages/raw/Rings/The Jasper Band For Him/0_primary.png"
+      ],
+      "alt": "Blue stone ring for men 2026 lifestyle action featuring The Jasper Band For Him on a gentleman's hand",
+      "caption": "The Jasper Band For Him worn as a distinguished everyday men's band",
+      "prompt": "Photoreal candid lifestyle photograph with high-end fine jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Controlled soft key light with gentle fill, realistic soft shadows, proper shallow depth of field (85mm lens), balanced exposure with no blown whites and no HDR glare. Shot on DSLR, HD quality, 16:9 full frame with safe margins. People are the primary subject and remain candid; the jewellery is an exquisite worn detail that is 100% identical to product refs. Casting (required): fair-skinned Indian man only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Close-up candid lifestyle photograph of a well-groomed fair-skinned Indian man's hands in action at a natural oak cafe table in a sunlit architectural setting. His left hand is raised naturally, resting near a ceramic cup or adjusting his cuff, with the ring finger positioned sharply in the foreground. He is physically wearing The Jasper Band For Him from reference images (@img1 body_image worn scale, @img2 design only) on his ring finger. GENDER LOCK: Male adult man only. The ring rests naturally on his finger with realistic contact shadows against skin at EXACT jewellery dimensions: product_height_mm=24.11 x product_width_mm=11.92 (these are jewellery dimensions, not face or body measurements). Keep the jewellery size on the person like @img1 body_image (worn finger scale). Use @img2 only for the jewellery design. Do not make it bigger for visibility. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Camera focuses sharply on the hand and ring; the polished gold band with subtle beveled borders is sharp and true with authentic 18K yellow gold warmth. Bare wrists, no other rings or jewellery in frame. Safe margins, full hand and fingers clearly in frame. CRITICAL anti-collage: the jewellery is physically attached to the finger, never a floating cutout, never a giant product diagram composited over the photo, never a packshot overlay. 16:9 landscape. Avoid: floating jewellery overlay, giant ring collage, product cutout over people, packshot composited on lifestyle photo, jewellery upscaled for visibility, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, unreal scale, oversized jewellery, distorted jewellery, warped metal, melted stones, wrong design, distorted hands, extra fingers, extra rings, extra bracelets, product shot on plain background, cropped hands, readable text, logos, dark skin, deep brown skin, heavily tanned skin"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/blue-stone-ring-for-men-hero-2026.webp",
+    "flatlay": "output/magnific_generated/blue-stone-ring-for-men-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/blue-stone-ring-for-men-lifestyle-2026.webp"
+  },
+  "higgsfield_jobs": {
+    "hero_accepted_cli_candidate": {
+      "job_id": "a3d29a21-ec3c-4ebd-842f-8581900e2ecd",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_074425_a3d29a21-ec3c-4ebd-842f-8581900e2ecd.png",
+      "local_raw": "output/magnific_generated/blue-stone-ring-for-men-hero-2026.raw.png"
+    },
+    "flatlay_accepted_cli_candidate": {
+      "job_id": "c43f4cd8-06bb-463d-afcd-9630f605128d",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_074429_c43f4cd8-06bb-463d-afcd-9630f605128d.png",
+      "local_raw": "output/magnific_generated/blue-stone-ring-for-men-flatlay-2026.raw.png"
+    },
+    "lifestyle_accepted_cli_candidate": {
+      "job_id": "6a8c7a75-83df-4278-8250-96e1c1f5bf5d",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_074511_6a8c7a75-83df-4278-8250-96e1c1f5bf5d.png",
+      "local_raw": "output/magnific_generated/blue-stone-ring-for-men-lifestyle-2026.raw.png"
+    }
+  }
+}

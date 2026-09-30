@@ -1,0 +1,32 @@
+---
+description: Mid-article product carousels must use ProductImages/seo images only (never raw packshots) and follow the exact 3D Coverflow specifications.
+alwaysApply: true
+---
+
+# Carousel images = SEO images only & 3D Coverflow Standards
+
+When building or patching BlueStone festive blog carousels (`bs-cf`):
+
+1. **Source Type 2 carousel cards only from** `ProductImages/seo images/<Category>/<Exact Product Name>.png`.
+2. **Never** use `ProductImages/raw/`, multi-angle folders, CDN `giproduct` primary packshots, or Google feed images for carousel cards.
+3. Convert those SEO PNGs to WebP (~960×535, quality ~82) before upload; filename `{product-slug}-carousel.webp`.
+4. Carousel alt: `{occasion/KW + year} gift idea: {Exact Product Name}`; set WP media `title` + `alt_text` on upload (see `.cursor/rules/image-seo.mdc`).
+5. Raw / CDN product angles are for **Type 3 Higgsfield prompts only** (`reference_images` → MCP `media_import_url`), not the mid-article carousel.
+6. If an SEO image is missing for an approved SKU, stop and ask — do not fall back to raw.
+7. **Strict 3D Coverflow Gutenberg Syntax & Sizing Standards (matching `mens-black-bracelet-2026`)**:
+   - Always copy the template from `templates/eid_carousel_6_snippet.html`.
+   - Wrap the entire carousel in a SINGLE `<!-- wp:html -->\n<style>...\n</style>\n<div class="bs-cf" ...>\n...\n</div>\n<script>\n...\n</script>\n<!-- /wp:html -->` block.
+   - **Dimensions**:
+     - `.bs-cf-stage { height: 360px; margin: 0 auto; overflow: visible; }` (on mobile `@media (max-width: 700px) { height: 300px; }`)
+     - `.bs-cf-card { width: min(420px, 78vw); border-radius: 16px; border: 1px solid #ececec; box-shadow: 0 12px 30px rgba(0,0,0,.12); }`
+     - `.bs-cf { max-width: 900px; margin: 1.75rem auto 1.25rem; perspective: 1200px; }`
+     - `.bs-cf-media img { aspect-ratio: 16/9; height: auto; object-fit: cover; object-position: center; }`
+     - `.bs-cf-name { margin: 0 0 10px; font-size: 1rem; font-weight: 600; color: #1a1a1a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }`
+   - **Zero Layout Shift Initial Classes**: Directly render `<div class="bs-cf-card is-pos-0" data-index="0">`, `<div class="bs-cf-card is-pos-1" data-index="1">`, `<div class="bs-cf-card is-pos-2" data-index="2">`, `<div class="bs-cf-card is-pos-3" data-index="3">`, `<div class="bs-cf-card is-pos--2" data-index="4">`, `<div class="bs-cf-card is-pos--1" data-index="5">` in the HTML.
+   - **Script**: Use the official `paint()` / `rel()` logic with `root.dataset.ready = '1'` to prevent broken card overlaps or syntax errors.
+   - Never use custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`.
+   - Never prepend or wrap block lines with single quotes (`'`).
+
+8. **Mandatory Media URL Pre-Flight Verification**: Before inserting carousel HTML into WordPress post content, verify via HTTP HEAD (status 200) or direct REST API media upload response that every single image URL in the carousel exists and is live. NEVER hallucinate, guess, or manually increment upload filenames (e.g. guessing `-carousel-7.webp`) without verifying their existence. Every carousel card must render a real, valid product image.
+
+This applies to all New article scripts (`publish_*`) and any live carousel image swaps. (Legacy `optimize_*` scripts are not used for new queue work.)

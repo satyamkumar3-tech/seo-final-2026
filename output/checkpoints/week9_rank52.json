@@ -1,0 +1,121 @@
+{
+  "pipeline": "week9",
+  "rank": 52,
+  "slug": "stone-stud-earrings-2026",
+  "primary": "stone stud earrings",
+  "created_at": "2026-09-24T07:23:00Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-24T07:35:48Z",
+      "finished_at": "2026-09-24T07:37:06Z"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-24T07:37:09Z",
+      "finished_at": "2026-09-24T07:37:18Z",
+      "plan": "scale",
+      "credits": 1514.47
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-24T07:37:24Z",
+      "finished_at": "2026-09-24T07:37:49Z",
+      "action": "New",
+      "primary": "stone stud earrings",
+      "slug": "stone-stud-earrings-2026",
+      "volume": 2400,
+      "kd": 18.0
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-24T07:37:52Z",
+      "finished_at": "2026-09-24T07:38:14Z",
+      "result": "clear",
+      "slug": "stone-stud-earrings-2026"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-24T07:39:09Z",
+      "finished_at": "2026-09-24T07:39:42Z",
+      "sources": "BIS,Hallmarking,GIA,CaratLane"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-24T07:39:50Z",
+      "finished_at": "2026-09-24T07:39:54Z",
+      "accepted": "white stone stud earrings",
+      "rejected": "none"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-24T07:40:03Z",
+      "finished_at": "2026-09-24T07:43:15Z",
+      "engine": "buying_guide",
+      "concept": "fine_jewellery_buying_guide"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-24T07:43:21Z",
+      "finished_at": "2026-09-24T07:51:46Z",
+      "words": 2083,
+      "path": "output/week9_rank52_stone_stud_earrings_draft.html"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-24T07:51:52Z",
+      "finished_at": "2026-09-24T07:52:00Z",
+      "carousel_media_ids": "40049,40050,40051,40052,40053,40054"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-24T07:52:05Z",
+      "finished_at": "2026-09-24T07:53:18Z",
+      "post_id": 40055,
+      "slug": "stone-stud-earrings-2026",
+      "url": "https://blog.bluestone.com/stone-stud-earrings-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-24T07:53:25Z",
+      "finished_at": "2026-09-24T08:01:52Z",
+      "hero_job": "643f0305-20a4-4c2e-bb03-2f0818c38152",
+      "flatlay_job": "8d3a3171-0ba8-4691-b1b5-d91107b42529",
+      "lifestyle_job": "56e68562-4449-4a39-afce-ee3a0e883119"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-24T08:01:59Z",
+      "finished_at": "2026-09-24T08:03:07Z",
+      "featured_media": 40056,
+      "flatlay_id": 40057,
+      "lifestyle_id": 40058
+    },
+    "live_qa": {
+      "status": "passed",
+      "started_at": "2026-09-24T08:03:13Z",
+      "finished_at": "2026-09-24T08:04:09Z",
+      "word_count": 2224,
+      "carousel_cards": 6
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-24T08:04:21Z",
+      "finished_at": "2026-09-24T08:05:02Z",
+      "status_csv": "output/Week9_Blog_Queue_status.csv",
+      "rotation_json": "output/product_rotation.json",
+      "workbook": "SEO Strategy 2026.xlsx"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-24T08:05:13Z",
+      "finished_at": "2026-09-24T08:05:24Z",
+      "post_id": 40055,
+      "slug": "stone-stud-earrings-2026"
+    }
+  },
+  "updated_at": "2026-09-24T08:06:07Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

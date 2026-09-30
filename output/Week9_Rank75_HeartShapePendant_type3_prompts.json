@@ -1,0 +1,58 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images.",
+  "model": "nano_banana_pro",
+  "year": 2026,
+  "primary_keyword": "heart shape pendant",
+  "slug": "heart-shape-pendant-2026",
+  "flatlay_setting": "desk-kraft",
+  "slots": {
+    "hero": {
+      "slot": "hero",
+      "product_name": "The Lumeelle Cluster Pendant",
+      "code": "BISW1080P133",
+      "gender": "Female",
+      "pdp": "https://www.bluestone.com/pendants/the-lumeelle-cluster-pendant~162509.html",
+      "alt": "heart shape pendant buying guide 2026 showing diamond cluster pendant on graceful neckline",
+      "caption": "The Lumeelle Cluster Pendant as a radiant heart shape pendant reflecting contemporary fine jewellery elegance",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Lumeelle Cluster Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Lumeelle Cluster Pendant/2_front.png"
+      ],
+      "prompt": "High-end authentic Indian lifestyle photography. Rich natural illumination, architectural depth, organic textures, cinematic realism. Hyper-realistic fine jewellery fidelity. Casting: fair-skinned North Indian / urban Indian woman in late 20s with refined natural styling, hair swept back, and gentle poised expression. Candid lifestyle portrait, medium close-up of a fair-skinned Indian woman dressed in an elegant ivory raw silk tunic. Suspended from a delicate 18K gold chain resting at her collarbone, she is physically wearing the heart-shaped diamond cluster pendant from reference images (@img1 body_image worn scale, @img2 design only). GENDER LOCK: adult woman only. The pendant rests naturally against her skin with soft realistic contact shadows at EXACT PDP jewellery dimensions: product_height_mm=32.66, product_width_mm=32.66 (these are fine jewellery dimensions, not body measurements). Keep the jewellery size like @img1 body_image worn scale; use @img2 only for design. Camera focuses softly on the woman; jewellery is razor-sharp, authentic 18K gold with brilliant natural diamond cluster fire, zero distortion, perfectly centered. This is the only necklace on her chest. No floating packshot overlay. Safe margins, 16:9 landscape. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Avoid: dark skin, deep brown skin, heavily tanned skin, floating packshot, product cutout overlay, CGI, fake render, plastic skin, oversaturation, harsh flash, empty phone, blank screen, placards, readable text, extra fingers, deformed hands, distorted jewellery."
+    },
+    "flatlay": {
+      "slot": "flatlay",
+      "product_name": "The Teshvarya Pendant",
+      "code": "BISW1080P32",
+      "gender": "Female",
+      "pdp": "https://www.bluestone.com/pendants/the-teshvarya-pendant~173771.html",
+      "alt": "stone pendant design flatlay with jeweller loupe on natural oak desk in 2026",
+      "caption": "The Teshvarya Pendant displayed alongside goldsmith tools on an oak desk for setting inspection",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Teshvarya Pendant/0_primary.png",
+        "ProductImages/raw/Pendants/The Teshvarya Pendant/2_front.png",
+        "ProductImages/raw/Pendants/The Teshvarya Pendant/5_close_up.png"
+      ],
+      "prompt": "Professional editorial jewellery still life photography. Pure studio lighting, rich tactile surfaces, immaculate focus, natural shadows. Hyper-realistic fine gold and diamond craftsmanship. Top-down flatlay on a natural honey oak desk (setting: desk-kraft). In the center rests the authentic gold and diamond pendant from reference images (@img1, @img2, @img3) at EXACT PDP jewellery dimensions: product_height_mm=22.56, product_width_mm=22.56 (jewellery dimensions, not furniture measurements). The pendant features luminous 18K gold with precision-set stones. Thoughtfully arranged nearby are a small textured kraft paper jewellery box, an antique brass jeweller loupe, a brass precision caliper gauge, and neatly folded natural linen ribbon. Controlled soft daylight streaming from one side, gentle realistic cast shadows, shallow depth of field. Razor-sharp focus on the pendant; props remain secondary. No people, no hands, no floating overlays, no readable text or logos on props. 16:9 landscape. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Avoid: floating cutout, 3D render, cartoon, plastic, blurry, oversaturated, harsh flash, empty screens, readable text, logos, hands, people."
+    },
+    "lifestyle": {
+      "slot": "lifestyle",
+      "product_name": "The Xarvithis Pendant",
+      "code": "BISW1080P246",
+      "gender": "Female",
+      "pdp": "https://www.bluestone.com/pendants/the-xarvithis-pendant~156920.html",
+      "alt": "styling modern heart shape pendant on office workwear neckline in 2026",
+      "caption": "The Xarvithis Pendant styled effortlessly with contemporary tailored workwear",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Xarvithis Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Xarvithis Pendant/2_front.png"
+      ],
+      "prompt": "High-end authentic Indian lifestyle photography. Rich natural illumination, architectural depth, organic textures, cinematic realism. Hyper-realistic fine jewellery fidelity. Casting: fair-skinned North Indian / urban Indian professional woman in her late 20s with tasteful understated makeup and graceful posture. Candid workplace lifestyle photograph, mid-shot close-up of a fair-skinned Indian woman wearing a soft pastel blouse beneath a tailored light taupe blazer in a sunlit modern studio office. Around her neck on a fine 18K gold cable chain, she is physically wearing the modern drop heart pendant from reference images (@img1 body_image worn scale, @img2 design only). GENDER LOCK: adult woman only. The pendant sits gracefully at her collarbone with soft contact shadows at EXACT PDP jewellery dimensions: product_height_mm=20.5, product_width_mm=14.3 (fine jewellery dimensions, not body measurements). Keep the jewellery size like @img1 body_image worn scale; use @img2 only for design details. Warm natural window light with creamy background bokeh. High-end fine jewellery fidelity, zero distortion. Safe margins, 16:9 landscape. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Avoid: dark skin, deep brown skin, heavily tanned skin, floating packshot, product cutout overlay, CGI, fake render, plastic skin, oversaturation, harsh flash, empty phone, blank screen, placards, readable text, extra fingers, deformed hands, distorted jewellery."
+    }
+  },
+  "output": {
+    "hero": "output/heart-shape-pendant-hero-2026.webp",
+    "flatlay": "output/heart-shape-pendant-flatlay-2026.webp",
+    "lifestyle": "output/heart-shape-pendant-lifestyle-2026.webp"
+  }
+}

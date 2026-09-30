@@ -1,0 +1,91 @@
+{
+  "occasion": "1st-wedding-anniversary-2026",
+  "article": "Week1 Rank41",
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max. FLATLAY: 3-4 refs. Credits: 3 images count 1.",
+  "prompt_rules": {
+    "people_slots": "scene first, jewellery second; 2 refs max; people_theme_anchor; negative_prompt_people; count=1; retry only if QA fails",
+    "flatlay": "product_theme_anchor OK; 3-4 refs; count=1; match exact SKU from refs",
+    "credits": "Exactly 3 images per article (hero+flatlay+lifestyle). No dual variants by default.",
+    "anti_overlay": "Do not lead people prompts with commercial/macro jewellery language"
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg3.bluestone.com/giproduct/BISP0506C05_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-38027.png",
+        "https://kinclimg6.bluestone.com/giproduct/BISP0506C05_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-38027.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian couple only. Light wheatish to fair North Indian complexion.\n\n1st wedding anniversary wishes 2026 candid lifestyle mid-shot of fair-skinned Indian couple at home anniversary morning with soft flowers. The woman wears The Aarabhi Mangalsutra from (@img1,@img2): yellow gold floral mangalsutra pendant with diamond center, short black bead drops, black mangalsutra beads on chain, small on chest. Bare ears wrists for her. Never floating packshot. 16:9 full faces safe margins.",
+      "alt": "1st wedding anniversary wishes 2026 hero with The Aarabhi Mangalsutra",
+      "product": {
+        "code": "BISP0506C05",
+        "name": "The Aarabhi Mangalsutra",
+        "pdp": "https://www.bluestone.com/mangalsutra+chains/the-aarabhi-mangalsutra~46940.html"
+      },
+      "caption": "1st anniversary 2026 vibe: The Aarabhi Mangalsutra"
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg1.bluestone.com/giproduct/BENS0325O09_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-24681.png",
+        "https://kinclimg1.bluestone.com/giproduct/BENS0325O09_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-24681.png",
+        "https://kinclimg1.bluestone.com/giproduct/BENS0325O09_YAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-24681.png",
+        "https://kinclimg1.bluestone.com/giproduct/BENS0325O09_YAA18DIG6XXXXXXXX_ABCD00-PICS-00003-1024-24681.png"
+      ],
+      "prompt": "1st wedding anniversary wishes 2026 top-down flatlay on dresser with blank cream card, two rings box soft blur, soft petals. The Tarentella Oval Bangle from (@img1,@img2,@img3,@img4) at natural scale: yellow gold hinged oval bangle with overlapping wave openwork panels bordered in pave diamonds. No people. No readable text.",
+      "alt": "1st wedding anniversary wishes 2026 flatlay with The Tarentella Oval Bangle",
+      "product": {
+        "code": "BENS0325O09",
+        "name": "The Tarentella Oval Bangle",
+        "pdp": "https://www.bluestone.com/bangles/the-tarentella-oval-bangle~31547.html"
+      },
+      "caption": "1st anniversary 2026 vibe: The Tarentella Oval Bangle"
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg3.bluestone.com/giproduct/BIPM0001H28_YAA18DIG6SYEMXXXX_ABCD00-PICS-00000-1024-79820.png",
+        "https://kinclimg6.bluestone.com/giproduct/BIPM0001H28_YAA18DIG6SYEMXXXX_ABCD00-PICS-00001-1024-79820.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only.\n\n1st wedding anniversary wishes 2026 lifestyle mid-shot soft profile near soft window light romantic calm. Wears The Rohal Huggie Earrings from (@img1,@img2): yellow gold huggie with white pave bar and emerald-cut green gem drop, only near-side earring, natural scale. Bare neck wrists. 16:9 full face safe margins.",
+      "alt": "1st wedding anniversary wishes 2026 lifestyle with The Rohal Huggie Earrings",
+      "product": {
+        "code": "BIPM0001H28",
+        "name": "The Rohal Huggie Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html"
+      },
+      "caption": "1st anniversary 2026 vibe: The Rohal Huggie Earrings"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/1st-wedding-anniversary-hero-2026.webp",
+    "flatlay": "output/magnific_generated/1st-wedding-anniversary-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/1st-wedding-anniversary-lifestyle-2026.webp"
+  },
+  "insert_h2s_json": "output/Week1_Rank41_FirstAnniversary_insert_h2s.json",
+  "product_media_json": "output/Week1_Rank41_FirstAnniversary_product_media.json",
+  "output_prefix": "Week1_Rank41_FirstAnniversary",
+  "schema_keywords": [
+    "1st wedding anniversary wishes",
+    "first anniversary wishes",
+    "first wedding anniversary wishes",
+    "love anniversary quotes",
+    "anniversary wishes for wife"
+  ],
+  "media_titles": {
+    "hero": "1st wedding anniversary wishes 2026 Hero",
+    "flatlay": "1st wedding anniversary wishes 2026 Flatlay",
+    "lifestyle": "1st wedding anniversary wishes 2026 Lifestyle"
+  },
+  "wp_post_id": 30485,
+  "webp_prefix": "1st-wedding-anniversary",
+  "caption_occasion": "1st anniversary",
+  "caption_year": "2026"
+}

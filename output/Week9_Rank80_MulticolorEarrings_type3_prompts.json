@@ -1,0 +1,55 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+    "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+  },
+  "slots": {
+    "hero": {
+      "product_name": "The Aleena Huggie Earrings",
+      "code": "BIIP0279S08",
+      "pdp": "https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html",
+      "product_dimensions": "17.23mm height by 9.5mm width (jewellery earring dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Aleena Huggie Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Aleena Huggie Earrings/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Close-up portrait of an elegant fair-skinned North Indian woman in her early 30s with a delicate light wheatish complexion, radiant natural skin texture, and soft serene smile. She is wearing @img2, a refined fine rose gold huggie earring adorned with rich ruby-red gemstones and sparkling diamond accents, measuring exactly 17.23mm by 9.5mm as seen in @img1. The earring sits neatly and securely on her earlobe with comfortable balanced proportions. Her dark silk hair is gently swept behind her ear. Soft warm morning daylight streaming through a tall window, clean warm background, zero phone screens, no readable text. Editorial jewellery magazine aesthetic, natural depth of field. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark.",
+      "alt": "multicolor earrings 2026 hero: elegant fair-skinned Indian woman wearing The Aleena Huggie Earrings in warm morning daylight"
+    },
+    "flatlay": {
+      "product_name": "The Rohal Huggie Earrings",
+      "code": "BIPM0001H28",
+      "pdp": "https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html",
+      "product_dimensions": "16.0mm height by 4.8mm width (jewellery earring dimensions only)",
+      "setting": "study-desk",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Rohal Huggie Earrings/0_primary.png",
+        "ProductImages/raw/Earrings/The Rohal Huggie Earrings/2_front.png",
+        "ProductImages/raw/Earrings/The Rohal Huggie Earrings/6_angle.png"
+      ],
+      "prompt": "Top-down commercial jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with gentle falloff. Arranged on a rich dark walnut study desk: @img1, an authentic fine 18Kt gold huggie earring featuring vibrant green emerald accents and brilliant diamond prongs, accompanied by detailed views from @img2 and @img3. Beside the earrings are physical gemological evaluation props: a vintage antique brass jeweller's loupe, precision brass calipers, a small handcrafted ceramic tray, and small uncut raw mineral swatches (amethyst, tourmaline, sapphire). Soft directional morning daylight, warm organic shadows, Kodak Portra filmic tonal response, analog grain. No readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark.",
+      "alt": "multicolor earrings 2026 flatlay: The Rohal Huggie Earrings on dark walnut study desk with jeweller loupe and gemological swatches",
+      "caption": "The <a href=\"https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html\">Rohal Huggie Earrings</a> feature vibrant emerald accents paired with sparkling diamond prongs on an 18Kt gold huggie framework"
+    },
+    "lifestyle": {
+      "product_name": "The Asya Huggie Earrings",
+      "code": "BISA0255D05",
+      "pdp": "https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html",
+      "product_dimensions": "19.77mm height by 8.47mm width (jewellery earring dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Asya Huggie Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Asya Huggie Earrings/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic candid lifestyle portrait, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A fair-skinned Indian professional woman in her early 30s with refined styling and light wheatish skin tone. She is wearing @img2, authentic fine gold huggie earrings featuring lustrous seed pearls and rich ruby gemstone accents, measuring exactly 19.77mm by 8.47mm as shown in @img1. Styled gracefully with an ivory raw silk kurta at an upscale contemporary outdoor terrace brunch. Soft candid three-quarter profile showing comfortable earlobe fit and natural daylight sparkling through the gemstones. Authentic expression, natural skin pores, beautiful warm ambient daylight, blurred garden background, zero phone screens, no readable text. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark.",
+      "alt": "multicolor earrings 2026 lifestyle: fair-skinned Indian woman styling The Asya Huggie Earrings with contemporary festive attire",
+      "caption": "The <a href=\"https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html\">Asya Huggie Earrings</a> combine lustrous seed pearls and rich ruby stones on a sculpted 14Kt gold silhouette"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/multicolor-earrings-hero-2026.webp",
+    "flatlay": "output/magnific_generated/multicolor-earrings-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/multicolor-earrings-lifestyle-2026.webp"
+  }
+}

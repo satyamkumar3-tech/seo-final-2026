@@ -1,0 +1,132 @@
+{
+  "pipeline": "week9",
+  "rank": 78,
+  "slug": "indian-gold-earrings-designs-hoops-2026",
+  "primary": "indian gold earrings designs hoops",
+  "created_at": "2026-09-26T16:58:09Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-26T16:58:34Z",
+      "finished_at": "2026-09-26T16:59:36Z"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-26T16:59:40Z",
+      "finished_at": "2026-09-26T16:59:50Z",
+      "credits": 42,
+      "plan": "ultimate"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-26T16:59:53Z",
+      "finished_at": "2026-09-26T17:00:08Z",
+      "action": "New",
+      "primary": "indian gold earrings designs hoops",
+      "volume": 2900,
+      "kd": 18.0
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-26T17:00:17Z",
+      "finished_at": "2026-09-26T17:00:55Z",
+      "slug_exists": false,
+      "intent_unique": true
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "started_at": "2026-09-26T17:00:59Z",
+      "finished_at": "2026-09-26T17:03:17Z",
+      "urls_scraped": 5,
+      "avg_word_count": 1163
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-26T17:03:23Z",
+      "finished_at": "2026-09-26T17:03:38Z",
+      "competitor_url": "blank",
+      "bis_marks": "3_part_huid",
+      "gst": "3_percent"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-26T17:03:43Z",
+      "finished_at": "2026-09-26T17:03:50Z",
+      "supporting_accepted": "light weight gold earrings",
+      "supporting_rejected": "none",
+      "h2_count": 12
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-26T17:03:55Z",
+      "finished_at": "2026-09-26T17:05:02Z",
+      "engine": "buying_guide",
+      "categories": "554493348,554493465",
+      "author": 270271337
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-26T17:05:38Z",
+      "finished_at": "2026-09-26T17:08:37Z",
+      "word_count": 3996,
+      "slug": "indian-gold-earrings-designs-hoops-2026"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-26T17:05:57Z",
+      "finished_at": "2026-09-26T17:06:58Z",
+      "media_ids": "40330,40331,40332,40333,40334,40335",
+      "verified_count": 6
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-26T17:08:44Z",
+      "finished_at": "2026-09-26T17:09:07Z",
+      "post_id": 40336,
+      "url": "https://blog.bluestone.com/indian-gold-earrings-designs-hoops-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-26T17:09:13Z",
+      "finished_at": "2026-09-26T17:13:59Z",
+      "hero_job": "bc8ab57a-b903-4dfb-9c63-15654ce2a6ab",
+      "flatlay_job": "8b2f548f-3d83-49fb-a0cf-eb8669467ff9",
+      "lifestyle_job": "4ab9b420-3d19-4e54-a6b9-41799f9bbfa7",
+      "ending_credits": 36
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-26T17:14:08Z",
+      "finished_at": "2026-09-26T17:14:43Z",
+      "hero_id": 40337,
+      "flatlay_id": 40338,
+      "lifestyle_id": 40339
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-26T17:14:50Z",
+      "finished_at": "2026-09-26T17:17:13Z",
+      "visible_words": 2961,
+      "status_code": 200,
+      "qa_passed": true
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-26T17:17:18Z",
+      "finished_at": "2026-09-26T17:17:45Z",
+      "status_csv": "updated",
+      "rotation_json": "updated",
+      "excel_row_updated": 78
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-26T17:17:51Z",
+      "finished_at": "2026-09-26T17:17:55Z"
+    }
+  },
+  "updated_at": "2026-09-26T17:18:46Z",
+  "completed_at": "2026-09-26T17:17:55Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

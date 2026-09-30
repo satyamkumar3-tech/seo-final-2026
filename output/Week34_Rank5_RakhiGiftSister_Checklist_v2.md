@@ -1,0 +1,20 @@
+# Blog SEO + AEO/GEO Checklist v2, Week 3-4 Rank 5
+
+Article: Best Gift for Sister on Raksha Bandhan 2026
+Status: Published and live QA passed
+Date: 2026-07-28
+
+## Gates
+- [x] Primary keyword: best gift for sister on raksha bandhan
+- [x] Optimize treated as New
+- [x] Fresh slug: best-gift-for-sister-on-raksha-bandhan-2026
+- [x] Raksha Bandhan 2026 date checked: August 28, 2026
+- [x] Carousel products from ProductImages/seo images only
+- [x] Type 3 hero and lifestyle use body_image plus design refs
+- [x] Product dimension wording uses product dimensions, not face size
+- [x] Filmic prompt language included
+- [x] WordPress post published: https://blog.bluestone.com/best-gift-for-sister-on-raksha-bandhan-2026/
+- [x] Type 3 images generated and patched
+- [x] Live URL verified
+- [x] Duplicate slug check passed
+- [x] Final Higgsfield balance checked: 25.23 credits, Ultimate plan

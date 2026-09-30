@@ -1,0 +1,55 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+    "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+  },
+  "slots": {
+    "hero": {
+      "product_name": "The Ninetta Mangalsutra Necklace",
+      "code": "BINS0780C08",
+      "pdp": "https://www.bluestone.com/mangalsutra+chains/the-ninetta-mangalsutra-necklace~97026.html",
+      "product_dimensions": "15.6mm height by 18.2mm width (jewellery pendant dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Mangalsutra Chains/The Ninetta Mangalsutra Necklace/1_body_portrait.png",
+        "ProductImages/raw/Mangalsutra Chains/The Ninetta Mangalsutra Necklace/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Medium close-up of an elegant fair-skinned North Indian woman in her early 30s with a warm wheatish complexion, radiant natural skin texture, and soft smile. She is wearing @img2, a refined modern long gold necklace with delicate black bead stations and an intricate geometric gold pendant drop, measuring exactly 15.6mm by 18.2mm as seen in @img1. The necklace rests gracefully on her collarbone and upper chest over a tailored ivory silk blouse. Soft morning architectural daylight through a tall window, clean warm background, zero phone screens, no readable text. Editorial magazine quality, natural depth of field. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark.",
+      "alt": "modern gold long necklace designs 2026 hero: elegant fair-skinned Indian woman wearing The Ninetta Mangalsutra Necklace in warm morning daylight"
+    },
+    "flatlay": {
+      "product_name": "The Rapett Evil Eye Charm Necklace",
+      "code": "BIPN0987N07",
+      "pdp": "https://www.bluestone.com/necklaces/the-rapett-evil-eye-charm-necklace~114824.html",
+      "product_dimensions": "14.8mm height by 12.5mm width (jewellery charm dimensions only)",
+      "setting": "gift-wrapping-station",
+      "local_reference_images": [
+        "ProductImages/raw/Necklaces/The Rapett Evil Eye Charm Necklace/0_primary.png",
+        "ProductImages/raw/Necklaces/The Rapett Evil Eye Charm Necklace/1_front.png",
+        "ProductImages/raw/Necklaces/The Rapett Evil Eye Charm Necklace/4_angle.png"
+      ],
+      "prompt": "Top-down commercial jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with soft falloff. Displayed in an artisanal gift wrapping station on a textured natural oatmeal linen runner: @img1, an authentic fine gold long charm necklace featuring delicate circular blue and gold evil eye charm stations and a fluid gold chain. Beside the necklace are physical props: antique brass jewellery calipers, folded sage green silk ribbon, and a small handcrafted ceramic saucer. Soft directional morning window daylight, warm organic shadows, Kodak Portra filmic tonal response, analog grain. No readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark.",
+      "alt": "modern gold long necklace designs 2026 flatlay: The Rapett Evil Eye Charm Necklace on textured linen runner with brass tweezers and ceramic tray",
+      "caption": "The <a href=\"https://www.bluestone.com/necklaces/the-rapett-evil-eye-charm-necklace~114824.html\">Rapett Evil Eye Charm Necklace</a> showcases delicate gold charm drops on a fluid chain, balancing protective symbolism with modern minimalism"
+    },
+    "lifestyle": {
+      "product_name": "The Casma Mangalsutra",
+      "code": "BIMA0780C53",
+      "pdp": "https://www.bluestone.com/mangalsutra+chains/the-casma-mangalsutra~93030.html",
+      "product_dimensions": "14.13mm height by 15.18mm width (jewellery drop dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Mangalsutra Chains/The Casma Mangalsutra/1_body_portrait.png",
+        "ProductImages/raw/Mangalsutra Chains/The Casma Mangalsutra/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic candid lifestyle portrait, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A fair-skinned Indian professional woman in her early 30s with refined styling and light wheatish skin tone. She is wearing @img2, a modern lightweight gold long necklace featuring a sleek circular pendant drop measuring exactly 14.13mm by 15.18mm on a fluid gold chain, matching the exact proportions of @img1. Styled effortlessly over a contemporary pastel silk saree at a sunlit living room gathering. Soft candid moment, authentic expression, natural skin pores, beautiful warm ambient daylight, blurred warm interior background, zero phone screens, no readable text. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark.",
+      "alt": "modern gold long necklace designs 2026 lifestyle: fair-skinned Indian woman wearing The Casma Mangalsutra with contemporary festive attire",
+      "caption": "The <a href=\"https://www.bluestone.com/mangalsutra+chains/the-casma-mangalsutra~93030.html\">Casma Mangalsutra</a> blends sleek geometric drop styling with lightweight gold crafting for effortless all-day wearability"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/modern-gold-long-necklace-hero-2026.webp",
+    "flatlay": "output/magnific_generated/modern-gold-long-necklace-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/modern-gold-long-necklace-lifestyle-2026.webp"
+  }
+}

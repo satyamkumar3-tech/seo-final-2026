@@ -1,0 +1,113 @@
+{
+  "pipeline": "week9",
+  "rank": 80,
+  "slug": "multicolor-earrings-2026",
+  "primary": "multicolor earrings",
+  "created_at": "2026-09-26T17:39:29Z",
+  "status": "failed",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-26T17:40:03Z",
+      "finished_at": "2026-09-26T17:40:44Z",
+      "docs_reviewed": 11
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-26T17:40:50Z",
+      "finished_at": "2026-09-26T17:40:56Z",
+      "plan": "ultimate",
+      "credits": 30
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-26T17:41:00Z",
+      "finished_at": "2026-09-26T17:41:26Z",
+      "action": "New",
+      "primary": "multicolor earrings",
+      "volume": 2900,
+      "kd": 23.0,
+      "slug": "multicolor-earrings-2026"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-26T17:41:29Z",
+      "finished_at": "2026-09-26T17:41:57Z",
+      "slug_status": "available",
+      "duplicate_intent": "none"
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "started_at": "2026-09-26T17:42:03Z",
+      "finished_at": "2026-09-26T17:44:35Z",
+      "urls_scraped": 5,
+      "avg_word_count": 55702
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-26T17:44:41Z",
+      "finished_at": "2026-09-26T17:44:48Z",
+      "competitor_url": "https://www.caratlane.com/jewellery/multicolored+stone+earrings.html",
+      "bis_huid": "verified",
+      "mohs_scale": "verified"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-26T17:44:54Z",
+      "finished_at": "2026-09-26T17:44:58Z",
+      "primary": "multicolor earrings",
+      "supporting_accepted": "light weight earrings",
+      "supporting_rejected": "none",
+      "h2_count": 8
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-26T17:45:03Z",
+      "finished_at": "2026-09-26T17:45:19Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "study-desk",
+      "author": "Satyam (ID 270271337)"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-26T17:47:26Z",
+      "finished_at": "2026-09-26T17:48:54Z",
+      "word_count": 3494,
+      "file": "output/Week9_Rank80_draft.json"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-26T17:46:22Z",
+      "finished_at": "2026-09-26T17:47:22Z",
+      "carousel_items": 6,
+      "media_ids": "40352,40353,40354,40355,40356,40357",
+      "verified": "HTTP_200"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-26T17:48:59Z",
+      "finished_at": "2026-09-26T17:49:26Z",
+      "post_id": 40358,
+      "url": "https://blog.bluestone.com/multicolor-earrings-2026/"
+    },
+    "generate_type3": {
+      "status": "running",
+      "started_at": "2026-09-26T17:49:31Z"
+    },
+    "patch_type3": {
+      "status": "pending"
+    },
+    "live_qa": {
+      "status": "pending"
+    },
+    "update_status": {
+      "status": "pending"
+    },
+    "final_report": {
+      "status": "pending"
+    }
+  },
+  "updated_at": "2026-09-26T17:56:07Z",
+  "last_exit_code": 3,
+  "failed_at": "2026-09-26T17:56:07Z"
+}

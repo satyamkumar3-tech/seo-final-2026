@@ -1,0 +1,458 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Generate high-quality, comprehensive buying guide draft for Week 9 Rank 85: stone necklace for women."""
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+with open(ROOT / "output/week9_rank85_carousel_media.json", encoding="utf-8") as f:
+    carousel = json.load(f)
+
+# 3D Coverflow carousel HTML
+carousel_cards_html = []
+for i, item in enumerate(carousel):
+    # Initial position classes
+    if i == 0:
+        pos_cls = "is-pos-0"
+    elif i == 1:
+        pos_cls = "is-pos-1"
+    elif i == 2:
+        pos_cls = "is-pos-2"
+    elif i == 3:
+        pos_cls = "is-pos-3"
+    elif i == 4:
+        pos_cls = "is-pos--2"
+    else:
+        pos_cls = "is-pos--1"
+        
+    card = f'''    <div class="bs-cf-card {pos_cls}" data-index="{i}">
+      <a class="bs-cf-media" href="{item['url']}">
+        <img src="{item['src']}" alt="{item['alt']}" width="960" height="535" loading="lazy" decoding="async"/>
+      </a>
+      <div class="bs-cf-meta">
+        <div class="bs-cf-name">{item['name']}</div>
+        <a class="bs-cf-cta" href="{item['url']}">Buy now</a>
+      </div>
+    </div>'''
+    carousel_cards_html.append(card)
+
+cards_joined = "\n".join(carousel_cards_html)
+
+carousel_block = f'''<!-- wp:html -->
+<style>
+.bs-cf{{max-width:900px;margin:1.75rem auto 1.25rem;position:relative;perspective:1200px}}
+.bs-cf-stage{{position:relative;height:360px;margin:0 auto;overflow:visible}}
+.bs-cf-card{{position:absolute;top:0;left:50%;width:min(420px,78vw);transform-origin:center center;transition:transform .65s cubic-bezier(.22,.61,.36,1),opacity .65s ease,filter .65s ease;border-radius:16px;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.12);overflow:hidden;border:1px solid #ececec}}
+.bs-cf-media{{display:block;line-height:0;background:#f4f4f4}}
+.bs-cf-media img{{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;object-position:center}}
+.bs-cf-meta{{padding:14px 16px 16px;text-align:center;background:#fff}}
+.bs-cf-name{{margin:0 0 10px;font-size:1rem;font-weight:600;color:#1a1a1a;text-decoration:none;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.bs-cf-cta{{display:inline-block;padding:8px 18px;border-radius:2px;background:#111;color:#fff!important;font-size:.875rem;font-weight:600;text-decoration:none!important;letter-spacing:.02em}}
+.bs-cf-cta:hover{{background:#333;color:#fff!important}}
+.bs-cf-card.is-pos-0{{z-index:5;opacity:1;filter:none;transform:translate3d(-50%,8px,0) scale(1.02)}}
+.bs-cf-card.is-pos-1{{z-index:3;opacity:.95;filter:brightness(.97);transform:translate3d(calc(-50% + 210px),34px,-110px) rotateY(-26deg) scale(.78)}}
+.bs-cf-card.is-pos-2{{z-index:3;opacity:.95;filter:brightness(.97);transform:translate3d(calc(-50% - 210px),34px,-110px) rotateY(26deg) scale(.78)}}
+.bs-cf-card.is-pos-3,.bs-cf-card.is-pos--3{{z-index:1;opacity:.3;pointer-events:none;transform:translate3d(calc(-50% + 340px),54px,-200px) rotateY(-36deg) scale(.58)}}
+.bs-cf-card.is-pos--1{{z-index:1;opacity:.3;pointer-events:none;transform:translate3d(calc(-50% - 340px),54px,-200px) rotateY(36deg) scale(.58)}}
+.bs-cf-dots{{display:flex;justify-content:center;gap:8px;margin-top:14px}}
+.bs-cf-dot{{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:#c8c8c8;cursor:pointer}}
+.bs-cf-dot.is-active{{background:#111;transform:scale(1.2)}}
+.bs-cf-nav{{position:absolute;top:38%;z-index:8;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.96);box-shadow:0 2px 8px rgba(0,0,0,.14);cursor:pointer;font-size:20px;color:#222;transform:translateY(-50%)}}
+.bs-cf-prev{{left:0}}.bs-cf-next{{right:0}}
+@media (max-width:700px){{
+  .bs-cf-stage{{height:300px}}
+  .bs-cf-card{{width:min(300px,84vw)}}
+  .bs-cf-card.is-pos-1{{transform:translate3d(calc(-50% + 130px),36px,-80px) rotateY(-24deg) scale(.72)}}
+  .bs-cf-card.is-pos-2{{transform:translate3d(calc(-50% - 130px),36px,-80px) rotateY(24deg) scale(.72)}}
+  .bs-cf-card.is-pos-3,.bs-cf-card.is-pos--3,.bs-cf-card.is-pos--1{{opacity:0}}
+}}
+@media (prefers-reduced-motion:reduce){{.bs-cf-card{{transition:none}}}}
+</style>
+<div class="bs-cf" id="bs-cf-stone-necklace-for-women-2026" data-interval="3200" aria-roledescription="carousel" aria-label="BlueStone stone necklace for women collection">
+  <button type="button" class="bs-cf-nav bs-cf-prev" aria-label="Previous">&#8249;</button>
+  <button type="button" class="bs-cf-nav bs-cf-next" aria-label="Next">&#8250;</button>
+  <div class="bs-cf-stage">
+{cards_joined}
+  </div>
+  <div class="bs-cf-dots" role="tablist">
+    <button type="button" class="bs-cf-dot is-active" data-i="0" aria-label="Product 1"></button>
+    <button type="button" class="bs-cf-dot" data-i="1" aria-label="Product 2"></button>
+    <button type="button" class="bs-cf-dot" data-i="2" aria-label="Product 3"></button>
+    <button type="button" class="bs-cf-dot" data-i="3" aria-label="Product 4"></button>
+    <button type="button" class="bs-cf-dot" data-i="4" aria-label="Product 5"></button>
+    <button type="button" class="bs-cf-dot" data-i="5" aria-label="Product 6"></button>
+  </div>
+</div>
+<script>
+(function(){{
+  var root=document.getElementById('bs-cf-stone-necklace-for-women-2026');
+  if(!root||root.dataset.ready)return;
+  root.dataset.ready='1';
+  var cards=[].slice.call(root.querySelectorAll('.bs-cf-card'));
+  var dots=[].slice.call(root.querySelectorAll('.bs-cf-dot'));
+  var n=cards.length, active=0, timer=null;
+  var ms=parseInt(root.getAttribute('data-interval'),10)||3200;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function rel(i){{ var d=((i-active)%n+n)%n; if(d>n/2)d=d-n; return d; }}
+  function paint(){{
+    cards.forEach(function(c,i){{
+      c.className='bs-cf-card';
+      var d=rel(i), cls='is-pos-'+d;
+      if(d===-1)cls='is-pos-2'; if(d===1)cls='is-pos-1'; if(d===0)cls='is-pos-0';
+      if(d===-2||d===2)cls=d===2?'is-pos-3':'is-pos--1';
+      c.classList.add(cls);
+    }});
+    dots.forEach(function(d,i){{d.classList.toggle('is-active',i===active)}});
+  }}
+  function go(to){{active=((to%n)+n)%n;paint()}}
+  function next(){{go(active+1)}}
+  function prev(){{go(active-1)}}
+  function stop(){{if(timer){{clearInterval(timer);timer=null}}}}
+  function start(){{if(reduce)return;stop();timer=setInterval(next,ms)}}
+  root.querySelector('.bs-cf-next').addEventListener('click',function(){{next();start()}});
+  root.querySelector('.bs-cf-prev').addEventListener('click',function(){{prev();start()}});
+  dots.forEach(function(d){{d.addEventListener('click',function(){{go(+d.getAttribute('data-i'));start()}})}});
+  root.addEventListener('mouseenter',stop);
+  root.addEventListener('mouseleave',start);
+  paint(); start();
+}})();
+</script>
+<!-- /wp:html -->'''
+
+# Build article body content in Gutenberg block syntax
+content_parts = []
+
+# Byline
+content_parts.append('''<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center"><em>By Satyam, BlueStone Editorial</em></p>
+<!-- /wp:paragraph -->''')
+
+# Hook & Direct Answer
+content_parts.append('''<!-- wp:paragraph -->
+<p>A fine stone necklace for women represents one of the most versatile, expressive investments in contemporary fine jewellery. Combining certified natural gemstones with hallmarked 18K or 14K solid gold, modern stone necklaces seamlessly bridge festive Indian heritage with minimalist everyday luxury. Whether you are looking for vivid red rubies, verdant green emeralds, serene sapphires, luminous pearls, or colorful protective talisman stones, finding the right piece requires balancing stone quality, setting security, gold purity, and neckline geometry.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>In this comprehensive 2026 buying guide, we demystify everything modern jewellery shoppers need to know before selecting stone necklaces for women. From decoding net gold weight versus gross gemstone billing to examining prong versus bezel setting integrity, here is your definitive roadmap to choosing a timeless piece with complete confidence.</p>
+<!-- /wp:paragraph -->''')
+
+# TL;DR Card
+content_parts.append('''<!-- wp:group {"style":{"color":{"background":"#f8f9fa"},"spacing":{"padding":{"top":"20px","right":"24px","bottom":"20px","left":"24px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="background-color:#f8f9fa;padding-top:20px;padding-right:24px;padding-bottom:20px;padding-left:24px">
+<!-- wp:paragraph -->
+<p><strong>Quick Buying Summary: Key Takeaways for 2026</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>Gold Purity Choice:</strong> Opt for 18K (750) or 14K (585) gold rather than 22K. The added alloy strength prevents prong deformation and keeps precious gemstones firmly secured during daily wear.</li>
+<!-- /wp:list-item -->
+<li><strong>Transparent Billing Rule:</strong> Always verify that your jeweller bills gold strictly on net gold weight, completely deducting the weight of the gemstones so you never pay gold rates for stone mass.</li>
+<!-- /wp:list-item -->
+<li><strong>Setting Selection:</strong> Choose protective bezel or semi-bezel settings for active routines, and multi-prong or pavé settings for evening pieces where maximum gemstone light refraction is desired.</li>
+<!-- /wp:list-item -->
+<li><strong>Neckline Harmony:</strong> Pair V-neck outfits with pendant drops, high collars or boatnecks with matinee station strands (20 to 24 inches), and sweetheart necklines with choker collar accents (14 to 16 inches).</li>
+<!-- /wp:list-item -->
+<li><strong>Certification Standard:</strong> Insist on mandatory BIS hallmarking with a verified 6-character Hallmark Unique Identification (HUID) number alongside lab-certified authentic natural gemstones.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+</div>
+<!-- /wp:group -->''')
+
+# Section 1
+content_parts.append('''<!-- wp:heading -->
+<h2>Understanding Stone Necklaces for Women: What Defines Modern Fine Designs</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>The concept of a stone necklace for women has evolved dramatically over the past decade. Historically, Indian stone jewellery was dominated by heavy, ceremonial kundan, polki, and jadau choker sets reserved solely for wedding receptions and elaborate temple rituals. While those heritage creations remain cherished heirlooms, contemporary women increasingly demand fine gemstone jewellery that effortlessly transitions between professional boardroom meetings, casual brunches, and festive evening celebrations.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Today, fine stone necklaces for women are defined by precision craftsmanship, lightweight comfort, and ergonomic design. Instead of dense foil-backed settings, modern artisans craft open-back gold settings in 18K yellow, rose, and white gold. This allows ambient light to pass directly through natural crystal facets, illuminating the inner fire, clarity, and authentic hue of each gemstone. Furthermore, fine jewellery brands like BlueStone utilize solid gold chains engineered with smooth cable, box, and wheat links that resist tangling and drape gracefully against the collarbone.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>When selecting stone necklaces, buyers encounter two primary gemstone classifications:</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>Precious Gemstones:</strong> Traditional royal minerals known as the "Big Three", namely natural rubies, emeralds, and blue or fancy sapphires, complemented by brilliant natural diamonds and organic saltwater pearls. These stones boast exceptional hardness and enduring market value.</li>
+<!-- /wp:list-item -->
+<li><strong>Semi-Precious Gemstones:</strong> A rich spectrum of natural minerals including amethysts, topazes (blue, white, and London blue), citrines, tourmalines, garnets, peridots, and cultured freshwater pearls. These vibrant stones offer stunning saturation and creative styling versatility at accessible price points.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->''')
+
+# Section 2
+content_parts.append('''<!-- wp:heading -->
+<h2>Popular Gemstone Varieties in Stone Necklaces for Women</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Every natural gemstone possesses unique optical properties, symbolic significance, and physical durability. Understanding these nuances helps you choose a stone necklace for women that aligns with both personal aesthetics and lifestyle demands.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- TYPE3_FLATLAY_PLACEHOLDER -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>1. Natural Rubies (Manik):</strong> Cherished for centuries in Indian jewellery, natural rubies display deep crimson to vibrant pigeon-blood red tones. Ranking 9 on the Mohs hardness scale, rubies are second only to diamonds in durability, making them extraordinarily resilient for daily wear. A ruby stone necklace set in warm yellow gold or blushing rose gold imparts immediate warmth, passionate elegance, and regal sophistication.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>2. Emeralds (Panna):</strong> The lush, velvety green of natural emeralds embodies renewal, prosperity, and timeless luxury. As a beryl mineral (hardness 7.5 to 8 on the Mohs scale), emeralds naturally contain internal microscopic features known as the <em>jardin</em> (garden). Because of these natural inclusions, fine jewellers encase emeralds in secure bezel rims or protective prong claws that safeguard the stone corners while highlighting its verdant glow.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>3. Sapphires (Neelam and Fancy Sapphires):</strong> While royal cornflower blue sapphires are universally admired, fancy sapphires in shades of pink, yellow (Pukhraj), and peach have surged in popularity among modern women. With a Mohs hardness of 9, sapphires resist scratching effortlessly, making a sapphire stone necklace an outstanding heirloom-grade daily accessory.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>4. Pearls (Moti):</strong> Organic, soft, and eternally graceful, natural and cultured pearls provide an understated luminescence. From single pearl station chains to layered multi-gemstone strands, pearls soften angular outfits and complement every skin undertone with effortless panache.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>5. Multicolor, Tourmaline, and Evil Eye Motifs:</strong> For modern women who love playful individualism, multi-stone necklaces blending swiss blue topaz, rhodolite garnet, citrine, and protective enamel evil eye charms offer versatile styling options. These contemporary designs match virtually every color in your ethnic and western wardrobe without requiring multiple jewellery changes.</p>
+<!-- /wp:paragraph -->''')
+
+# Section 3
+content_parts.append('''<!-- wp:heading -->
+<h2>Gold Purity and Setting Security: 18K vs 14K Gold for Stone Necklaces</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>A frequent dilemma for jewellery buyers in India is choosing the right gold karatage for stone-studded necklaces. While 22K gold (91.6% pure gold) is traditional for plain gold chains and wedding bangles, it is rarely the optimal choice for intricate stone necklaces for women.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Pure gold is naturally soft and malleable. In a necklace with delicate stone prongs, 22K gold prongs can gradually bend when snagged against a dupatta, winter knit, or seatbelt, causing precious gemstones to loosen or fall out unnoticed. To solve this structural vulnerability, fine jewellery houses engineer stone necklaces in 18K and 14K gold alloys:</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>18K Gold (75.0% Fine Gold):</strong> The international benchmark for fine gemstone and diamond jewellery. It offers rich golden color warmth while providing significantly higher tensile hardness than 22K, holding prongs firmly in place for decades.</li>
+<!-- /wp:list-item -->
+<li><strong>14K Gold (58.5% Fine Gold):</strong> The superior choice for active lifestyles and budget conscious buyers. The alloy of copper, silver, and zinc provides tremendous structural rigidity, highly resistant to bending, scuffs, and daily friction.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Beyond gold purity, the setting style dictates how securely the gemstones remain held in the necklace framework:</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>Bezel Setting:</strong> A continuous rim of solid gold completely encircles the gemstone perimeter. This is the most protective setting available, eliminating snagging risks against fabrics and protecting gemstone girdles from accidental impacts.</li>
+<!-- /wp:list-item -->
+<li><strong>Prong Setting:</strong> Individual gold claws (typically 4 or 6 prongs) grip the stone edges. Prongs expose maximum gemstone surface to light, amplifying brilliance and sparkle, but require occasional annual checks to ensure no claw has shifted.</li>
+<!-- /wp:list-item -->
+<li><strong>Pavé and Channel Settings:</strong> Closely placed rows of tiny accent gemstones embedded into the gold surface. Channel settings sandwich stones between parallel gold walls, offering a smooth, sleek silhouette ideal for modern daily wear.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->''')
+
+# Section 4: Curated BlueStone Carousel
+content_parts.append('''<!-- wp:heading -->
+<h2>Curated BlueStone Stone Necklaces for Women</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>BlueStone crafts an exquisite collection of certified stone necklaces for women, designed to blend everyday durability with breathtaking fine jewellery aesthetics. Explore our curated selection of signature neckwear pieces featuring authentic gemstones, protective motifs, and radiant 18K and 14K gold craftsmanship:</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append(carousel_block)
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>Curated Design Highlights:</strong> Explore signature stone necklaces and pendants including <a href="https://www.bluestone.com/necklaces/the-ailia-evil-eye-layered-necklace~116379.html">The Ailia Evil Eye Layered Necklace</a> with dual-strand elegance, <a href="https://www.bluestone.com/necklaces/the-rapett-evil-eye-charm-necklace~114824.html">The Rapett Evil Eye Charm Necklace</a> for protective modern flair, <a href="https://www.bluestone.com/necklaces/the-yfel-evil-eye-pendant-necklace~89724.html">The Yfel Evil Eye Pendant Necklace</a> showcasing crisp gold drop geometry, <a href="https://www.bluestone.com/pendants/the-valeria-rose-pendant~181266.html">The Valeria Rose Pendant</a> embodying romantic floral femininity, <a href="https://www.bluestone.com/pendants/the-aagarna-pendant~54965.html">The Aagarna Pendant</a> displaying intricate openwork stone brilliance, and <a href="https://www.bluestone.com/pendants/the-thaloria-pendant~165041.html">The Thaloria Pendant</a> delivering sophisticated statement luxury.</p>
+<!-- /wp:paragraph -->''')
+
+# Section 5
+content_parts.append('''<!-- wp:heading -->
+<h2>Necklace Lengths and Neckline Styling: How to Wear Stone Necklaces for Women</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>A stone necklace should harmonise naturally with your facial structure, neck profile, and outfit neckline. Choosing the wrong chain length can cause a gorgeous gemstone pendant to collide awkwardly with fabric seams or disappear beneath a collar.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- TYPE3_LIFESTYLE_PLACEHOLDER -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Here is an architectural guide to selecting necklace lengths and pairing them with common clothing styles:</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>Choker / Collar Length (14 to 16 Inches):</strong> Rests snugly around the base of the throat or directly on the collarbone. Ideal for off-shoulder tops, sweetheart necklines, and strapless evening dresses where bare skin allows the colored gemstones to take center stage.</li>
+<!-- /wp:list-item -->
+<li><strong>Princess Length (18 Inches):</strong> The universally flattering standard for women. Resting just below the collarbone, an 18-inch stone necklace complements V-necks, button-down formal shirts, scoop necks, and everyday kurta sets.</li>
+<!-- /wp:list-item -->
+<li><strong>Matinee Length (20 to 24 Inches):</strong> Falls across the center of the bustline. This length creates vertical elongating lines, making it the perfect companion for boatneck blouses, high-neck polo sweaters, and ornate saree pallus.</li>
+<!-- /wp:list-item -->
+<li><strong>Lariat and Y-Drop Necklaces:</strong> Featuring a central vertical drop with gemstone terminals, lariat designs draw the eye downward, making them sensational accents for deep V-neck dresses and tailored blazer ensembles.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>Pro Stacking Tip:</strong> When layering multiple stone necklaces for women, maintain at least 1.5 to 2 inches of separation between each chain. Pair one solid, unadorned gold cable chain with a focal gemstone pendant, and complete the stack with a delicate choker. This prevents chains from tangling while ensuring each individual stone catches the light distinctly.</p>
+<!-- /wp:paragraph -->''')
+
+# Section 6: Buying Checklist & Fact Check
+content_parts.append('''<!-- wp:heading -->
+<h2>The Essential Stone Necklace Buying Checklist: Weight, Billing, and Hallmarking</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Shopping for stone-studded gold jewellery requires consumer vigilance. Because gemstones possess different densities and unit values compared to solid gold, buyers must understand transparent billing standards to protect their hard-earned investment.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Before completing your purchase, always verify these crucial commercial factors:</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>Net Gold Weight vs Gross Weight Billing:</strong> This is the single most vital consumer protection rule in Indian jewellery buying. The gross weight measures the entire piece (gold plus gemstones plus clasps). The net gold weight represents the pure gold framework alone. The jeweller must calculate the gold metal price solely on the net gold weight. Paying gold per-gram rates on stone weight is an outdated malpractice that costs consumers thousands of rupees.</li>
+<!-- /wp:list-item -->
+<li><strong>Gemstone Unit Pricing in Carats:</strong> Natural gemstones are weighed in metric carats (1 carat = 0.20 grams = 200 milligrams). Your tax invoice must clearly state the exact carat weight, number of stones, and individual stone rate separately from the gold price and making charges.</li>
+<!-- /wp:list-item -->
+<li><strong>Mandatory BIS Hallmarking and 6-Digit HUID:</strong> Look for the three mandatory hallmarking stamps on your necklace: the BIS triangular logo, the karat fineness stamp (such as 18K750 or 14K585), and the laser-etched 6-character alphanumeric Hallmark Unique Identification (HUID) code. You can verify the HUID code instantaneously using the official BIS CARE mobile application.</li>
+<!-- /wp:list-item -->
+<li><strong>Laboratory Authenticity Certification:</strong> High-value precious gemstones (rubies, emeralds, sapphires) should carry independent gemmological certificates from renowned laboratories such as IGI, SGL, or certified institutional gemmologists confirming that the stones are natural, unheated, and free from synthetic resin filling.</li>
+<!-- /wp:list-item -->
+<li><strong>Transparent 3% GST Breakdown:</strong> In India, finished jewellery attracts a flat 3% Goods and Services Tax (GST) applied to the combined value of gold, gemstones, and making charges. Ensure your final invoice reflects this clean tax calculation.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->''')
+
+# Section 7: Care and Maintenance
+content_parts.append('''<!-- wp:heading -->
+<h2>Care, Cleaning, and Daily Maintenance for Stone Necklaces</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Natural gemstones possess unique crystalline structures that react differently to heat, pressure, and household chemicals. Maintaining the brilliant luster of your stone necklace for women requires gentle, mindful daily habits:</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:list -->
+<ul>
+<!-- wp:list-item -->
+<li><strong>The "Last On, First Off" Rule:</strong> Always make your stone necklace the very last accessory you put on when getting ready, and the first piece you remove at the end of the day. Perfumes, body lotions, hairsprays, and cosmetics contain alcohols and acids that can deposit stubborn oily films over gemstone facets and permanently degrade organic stones like pearls.</li>
+<!-- /wp:list-item -->
+<li><strong>Safe Home Cleaning Method:</strong> Soak your stone necklace in a small bowl of lukewarm water mixed with a few drops of gentle, chemical-free dishwashing liquid for 10 minutes. Use an ultra-soft baby toothbrush to gently clean behind the stone settings where skin oils and dust accumulate. Rinse thoroughly under lukewarm running water (with the sink drain safely plugged) and pat dry with a lint-free microfiber cloth.</li>
+<!-- /wp:list-item -->
+<li><strong>Avoid Ultrasonic Cleaners on Fragile Stones:</strong> While diamonds and unheated sapphires tolerate ultrasonic vibrations well, emeralds, pearls, and heavily included gemstones should never be placed in ultrasonic or steam machines. The high-frequency vibrations can crack delicate fracture lines or shake loose fracture-filling oils in natural emeralds.</li>
+<!-- /wp:list-item -->
+<li><strong>Individual Compartment Storage:</strong> Store each stone necklace flat in its original padded BlueStone box or within an individual soft velvet pouch. Placing multiple stone necklaces together in a single drawer leads to chain tangling, while harder gemstones (like rubies and sapphires) can easily scratch the gold surfaces and softer stones of neighboring pieces.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->''')
+
+# Section 8: Conclusion (MUST BE BEFORE RELATED GUIDES AND FAQS)
+content_parts.append('''<!-- wp:heading -->
+<h2>Final Thoughts on Choosing Your Ideal Stone Necklace</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>A fine stone necklace for women is far more than a decorative adornment; it is an enduring reflection of personal taste, radiant self-expression, and refined elegance. By prioritizing secure 18K or 14K gold settings, insisting on transparent net gold weight billing, and matching gemstone colors to your personal wardrobe, you ensure your necklace remains a treasured favorite for decades.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Whether you choose the fiery intensity of natural rubies, the serene grace of lush emeralds, or the modern protective charm of an evil eye station necklace, BlueStone's commitment to 100% certified gemstones, BIS hallmarked gold, and transparent pricing guarantees complete peace of mind with every design you cherish.</p>
+<!-- /wp:paragraph -->''')
+
+# Section 9: Related Guides (INTERNAL BLOG CLUSTER)
+content_parts.append('''<!-- wp:heading -->
+<h2>More Jewellery &amp; Buying Guides</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p>Continue your jewellery education with our expert curation of buyer guides and design inspirations. Learn how to verify hallmarking and fineness stamps in our complete guide on <a href="https://blog.bluestone.com/how-to-check-gold-purity-2026/">how to check gold purity</a>, understand tax breakdowns with our transparent explainer on <a href="https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/">GST on gold jewellery in India</a>, verify doorstep security standards in <a href="https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/">is buying gold jewellery online safe in India</a>, discover radiant diamond and white gem accents in our guide to <a href="https://blog.bluestone.com/white-stone-necklace-gold-2026/">white stone necklace in gold</a>, or explore statement styling with our comprehensive guide to <a href="https://blog.bluestone.com/modern-gold-long-necklace-designs-2026/">modern gold long necklace designs</a>.</p>
+<!-- /wp:paragraph -->''')
+
+# Section 10: FAQs (LAST CONTENT SECTION DIRECTLY BEFORE TRAILING SCHEMA)
+content_parts.append('''<!-- wp:heading -->
+<h2>Frequently Asked Questions About Stone Necklaces for Women</h2>
+<!-- /wp:heading -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>1. Which stone necklace is best for daily wear?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>For daily wear, stone necklaces crafted with durable minerals like rubies, sapphires (Mohs hardness 9), and diamonds set in 14K or 18K gold bezel settings are ideal. Bezel settings encase the gemstone perimeter smoothly, preventing snagging against clothing and providing unmatched stone security during active daily routines.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>2. Why is 18K or 14K gold preferred over 22K for stone necklaces?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>22K gold contains 91.6% pure gold, making it relatively soft and malleable. Under the mechanical stress of daily wear, 22K gold prongs can bend or loosen, risking gemstone loss. 18K (75% gold) and 14K (58.5% gold) are alloyed with stronger metals like silver and copper, providing the high tensile rigidity necessary to grip gemstones permanently.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>3. How does net weight billing work when buying a stone necklace?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Under Indian consumer protection and BIS guidelines, reputable jewellers must weigh the entire piece (gross weight) and deduct the exact weight of the gemstones to determine net gold weight. The gold price must be calculated solely on the net gold weight, while gemstones are billed separately based on their individual carat weight and quality.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>4. How do I choose the right necklace length for my neckline?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Match your necklace length to the silhouette of your clothing. An 18-inch princess length necklace is universally flattering and sits gracefully below the collarbone for V-necks and collared shirts. A 14 to 16-inch choker is sensational with off-shoulder and sweetheart necklines, while 20 to 24-inch matinee chains elongate high-neck tops, sweaters, and traditional sarees.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>5. Can I clean my stone necklace in an ultrasonic cleaner at home?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Ultrasonic cleaning is safe for hard, untreated gemstones like diamonds and unheated sapphires, but should never be used on emeralds, pearls, opals, or heavily included gemstones. Ultrasonic vibrations can shatter delicate fractures or strip natural protective oils from emeralds. Clean your jewellery safely at home using lukewarm water, mild soap, and a soft baby toothbrush.</p>
+<!-- /wp:paragraph -->''')
+
+content_parts.append('''<!-- wp:paragraph -->
+<p><strong>6. How can I verify that the gemstones and gold in my necklace are authentic?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Verify gold authenticity by inspecting the mandatory BIS hallmarking triangle logo and the laser-etched 6-character Hallmark Unique Identification (HUID) code using the government BIS CARE mobile app. For gemstones, verify authenticity through independent gemmological laboratory certificates (such as IGI or SGL) provided with your BlueStone purchase.</p>
+<!-- /wp:paragraph -->''')
+
+full_draft_html = "\n".join(content_parts)
+
+# Sanity check for prohibited characters
+prohibited = []
+if "—" in full_draft_html:
+    prohibited.append("em dash")
+if "–" in full_draft_html:
+    prohibited.append("en dash")
+if " - " in full_draft_html:
+    prohibited.append("spaced hyphen")
+
+if prohibited:
+    print(f"WARNING: Prohibited characters found: {prohibited}")
+    full_draft_html = full_draft_html.replace("—", ", ").replace("–", ", ").replace(" - ", ", ")
+    print("Fixed prohibited characters.")
+else:
+    print("Zero prohibited dashes found!")
+
+# Word count check
+clean_text = re.sub(r"<[^>]+>", " ", full_draft_html)
+words = [w for w in clean_text.split() if len(w) > 1]
+print(f"Draft Word Count: {len(words)} words")
+
+out_file = ROOT / "output/week9_rank85_draft.html"
+with open(out_file, "w", encoding="utf-8") as f:
+    f.write(full_draft_html)
+
+print(f"Successfully saved draft to {out_file}")

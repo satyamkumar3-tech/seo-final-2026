@@ -1,0 +1,177 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 81 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 81\n- Action: New\n- Primary keyword: boys ring\n- Volume: 40500\n- KD: 36\n- Priority score: 16598.3607\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: boys-ring-2026\n- Article engine: design_listicle\n- Category hint: `Jewellery Trends` 554493317 or `Jewellery & Lifestyle` 554493425\n- Supplied supporting keywords: boys gold ring | boys ring design | boys gold ring design\n- Supplied competitor URL: blank in source row\n- Semrush page: boys ring\n- Source execution note: Week7 multi-brand fill (strict). intent=sig:boys_ring; brands=CaratLane,Joyalukkas,Kalyan,Malabar,MergedJewellery,ScoringCL; from Jewellery_Keywords_Unique. One URL only. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank81.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank81.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--`.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: Read required docs | time: 10:45:00 | elapsed: 0s
+STEP DONE: Read required docs | time: 10:45:56 | step duration: 56s | total elapsed: 56s
+
+STEP START: Verify Higgsfield status and report credits/plan | time: 10:45:56 | elapsed: 56s
+STEP DONE: Verify Higgsfield status and report credits/plan | time: 10:46:04 | step duration: 8s | total elapsed: 1m 4s
+
+STEP START: Inspect the Week 7 target row | time: 10:46:04 | elapsed: 1m 4s
+STEP DONE: Inspect the Week 7 target row | time: 10:46:51 | step duration: 47s | total elapsed: 1m 51s
+
+STEP START: Check duplicate slug and search intent | time: 10:46:51 | elapsed: 1m 51s
+STEP DONE: Check duplicate slug and search intent | time: 10:47:15 | step duration: 24s | total elapsed: 2m 15s
+
+STEP START: Analyze the supplied competitor URL and fact-check current sources | time: 10:47:15 | elapsed: 2m 15s
+STEP DONE: Analyze the supplied competitor URL and fact-check current sources | time: 10:47:23 | step duration: 8s | total elapsed: 2m 23s
+
+STEP START: Filter and map supporting keywords | time: 10:47:23 | elapsed: 2m 23s
+STEP DONE: Filter and map supporting keywords | time: 10:47:29 | step duration: 6s | total elapsed: 2m 29s
+
+STEP START: Build the H2 keyword map | time: 10:47:29 | elapsed: 2m 29s
+STEP DONE: Select article structure and visual concept | time: 10:47:42 | step duration: 13s | total elapsed: 2m 42s
+
+STEP START: Draft the complete article | time: 10:47:42 | elapsed: 2m 42s
+STEP DONE: Draft the complete article | time: 10:48:46 | step duration: 1m 4s | total elapsed: 3m 46s
+
+STEP START: Select products and carousel media | time: 10:48:46 | elapsed: 3m 46s
+I am monitoring the carousel WebP conversions and WordPress media uploads. I will proceed as soon as the upload completes.
+I will pause to let the media upload task complete.
+Waiting for carousel uploads to complete...
+STEP DONE: Select products and carousel media | time: 10:50:03 | step duration: 1m 17s | total elapsed: 5m 3s
+
+STEP START: Publish the WordPress post | time: 10:50:03 | elapsed: 5m 3s
+STEP DONE: Publish the WordPress post | time: 10:50:20 | step duration: 17s | total elapsed: 5m 20s
+
+STEP START: Generate Type 3 images through the Higgsfield CLI | time: 10:50:20 | elapsed: 5m 20s
+Higgsfield Type 3 image generation for Week 7 Rank 81 (Hero, Flatlay, and Lifestyle images) has been initiated and is executing in the background. I will proceed with post-processing and WordPress patching once generation completes.
+STEP DONE: Generate Type 3 images through the Higgsfield CLI | time: 10:53:58 | step duration: 3m 38s | total elapsed: 8m 58s
+
+STEP START: Patch images and social metadata into WordPress | time: 10:53:58 | elapsed: 8m 58s
+I will pause briefly while WordPress completes uploading and patching the images.
+STEP DONE: Patch images and social metadata into WordPress | time: 10:54:23 | step duration: 25s | total elapsed: 9m 23s
+
+STEP START: Run live QA | time: 10:54:23 | elapsed: 9m 23s
+STEP DONE: Run live QA | time: 10:55:19 | step duration: 56s | total elapsed: 10m 19s
+
+STEP START: Update status files and write the final report | time: 10:55:19 | elapsed: 10m 19s
+STEP DONE: Update status files and write the final report | time: 10:55:33 | step duration: 14s | total elapsed: 10m 33s
+
+STEP START: Final report | time: 10:55:33 | elapsed: 10m 33s
+STEP DONE: Final report | time: 10:55:48 | step duration: 15s | total elapsed: 10m 48s
+
+---
+
+# Week 7 Rank 81 End-to-End Publication Report
+
+### 1. Live Article & WordPress Post Details
+- **Live URL:** [https://blog.bluestone.com/boys-ring-2026/](https://blog.bluestone.com/boys-ring-2026/)
+- **WordPress Post ID:** `35336`
+- **Article Engine:** `design_listicle`
+- **Author:** Satyam (ID: `270271337`)
+- **On-Page Byline:** `By Satyam, BlueStone Editorial`
+- **WordPress Categories:** `Jewellery Trends` (ID: `554493317`), `Gold Ring` (ID: `554493461`)
+- **Visible Article Word Count:** 2,182 words (Draft source: 2,445 words)
+- **H1 Count:** Exactly 1 (`Boys Ring: 18 Trending Gold Ring Designs for Boys & Buying Guide (2026)`)
+
+---
+
+### 2. Primary Keyword & Target Metrics
+- **Primary Keyword:** `boys ring`
+- **Volume:** 40,500
+- **KD:** 36
+- **Priority Score:** 16,598.3607
+- **Target Year:** 2026
+- **Slug:** `boys-ring-2026`
+
+---
+
+### 3. Supporting Keywords Audit & Mapping
+- **Supplied Supporting Keywords:** `boys gold ring | boys ring design | boys gold ring design`
+- **Keywords Used:**
+  - `boys gold ring` (Mapped to 14K vs 18K vs 22K gold purity breakdown, durability evaluation, daily wear resilience)
+  - `boys ring design` (Mapped to core design categories: signet rings, textured matte bands, geometric motifs, dual-tone styles)
+  - `boys gold ring design` (Mapped to styling guide for daily wear, milestones like thread ceremonies/graduations, and festive wear)
+- **Keywords Rejected:** None (all supplied keywords were topically relevant).
+
+---
+
+### 4. H2 Keyword Map & Structure
+1. `What Defines Modern Boys Ring Design in 2026?` — **[primary-backed]**
+2. `Top Trending Boys Ring Design Categories in 2026` — **[supporting-keyword-backed: boys ring design]**
+   - *H3: 1. Classic Gold Signet Rings with Monogram or Initial Detailing*
+   - *H3: 2. Brushed, Satin, and Matte Finish Everyday Gold Bands*
+   - *H3: 3. Minimalist Geometric and Grooved Gold Rings*
+   - *H3: 4. Dual-Tone Yellow Gold, White Gold, and Platinum Accent Rings*
+   - *H3: 5. Spiritual, Heritage, and Protective Motif Boys Rings*
+   - *H3: 6. Subtle Diamond Accent and Solitaire Gold Rings*
+3. `Choosing the Right Boys Gold Ring: 14K vs 18K vs 22K Purity` — **[supporting-keyword-backed: boys gold ring]**
+4. `Curated BlueStone Fine Gold Rings for Boys` — **[intent-inferred: Mid-Article Carousel]**
+5. `Boys Gold Ring Design Styling: Daily Wear, Milestones, and Festive Occasions` — **[supporting-keyword-backed: boys gold ring design]**
+6. `How to Find the Perfect Ring Size for Boys and Growing Teens` — **[intent-inferred]**
+7. `Care and Maintenance Tips to Keep a Boys Gold Ring Pristine` — **[intent-inferred]**
+8. `Final Thoughts: Choosing a Timeless Ring for Boys` — **[intent-inferred: Conclusion placed BEFORE FAQs]**
+9. `Frequently Asked Questions About Boys Ring Designs` — **[supporting-keyword-backed & intent-inferred: 6 Full Q&As]**
+
+---
+
+### 5. Competitor & Factual Source Verification
+- **Supplied Competitor URL:** Blank in source row (no synthetic competitor URL invented).
+- **Factual Sources & Industry Standards:**
+  - BIS HUID Hallmarking (Bureau of Indian Standards 6-digit alphanumeric unique identifier for 14K/585, 18K/750, 22K/916).
+  - Indian Jewellery Taxation (3% standard GST on gold jewellery).
+  - BlueStone Material Truth (Fine hallmarked gold and certified natural diamonds, no silver).
+
+---
+
+### 6. Media Assets & Media Library IDs
+
+#### A. Type 2 Carousel Media (6 Products)
+| # | Product Name | Design Code | Media ID | WebP Asset URL |
+|---|---|---|---|---|
+| 1 | The Jasper Band For Him | `BISL0851R28` | `35330` | `https://blog.bluestone.com/wp-content/uploads/2026/08/the-jasper-band-for-him-carousel-13.webp` |
+| 2 | The Interlink Band Ring | `BISV0910R24` | `35331` | `https://blog.bluestone.com/wp-content/uploads/2026/08/the-interlink-band-ring-carousel-13.webp` |
+| 3 | The Ebony Ring | `BIIP0090R24` | `35332` | `https://blog.bluestone.com/wp-content/uploads/2026/08/the-ebony-ring-carousel-14.webp` |
+| 4 | The Le Sommet Ring | `BISE0932R181` | `35333` | `https://blog.bluestone.com/wp-content/uploads/2026/08/the-le-sommet-ring-carousel-11.webp` |
+| 5 | The Anya Ring | `BIAR0097R04` | `35334` | `https://blog.bluestone.com/wp-content/uploads/2026/08/the-anya-ring-carousel-16.webp` |
+| 6 | The Malibu Ring | `BIPM0017R18` | `35335` | `https://blog.bluestone.com/wp-content/uploads/2026/08/the-malibu-ring-carousel-8.webp` |
+
+#### B. Type 3 Concept Images (Higgsfield MCP / CLI)
+| Slot | SKU & Design | Setting / Scene | Media ID | Higgsfield Job ID | Live Media URL |
+|---|---|---|---|---|---|
+| **Hero (Featured)** | `BISL0851R28` (The Jasper Band For Him) | Fair-skinned Indian teenage boy in smart linen shirt, sunlit room | `35337` | `25964e6c-f5a1-4852-a6f7-3e10dda8ac6d` | `https://blog.bluestone.com/wp-content/uploads/2026/08/boys-ring-hero-2026.webp` |
+| **Flatlay** | `BISV0910R24` (The Interlink Band Ring) | `study-desk` (walnut study desk, leather journal, fountain pen, open velvet box) | `35338` | `9a0be093-fd0a-47e9-bf73-0d7b2a255c9d` | `https://blog.bluestone.com/wp-content/uploads/2026/08/boys-ring-flatlay-2026.webp` |
+| **Lifestyle** | `BISV0910R24` (The Interlink Band Ring) | Fair-skinned Indian young man's hand close-up resting on study notebook | `35339` | `2b951e49-d42e-456a-93ad-1a75030970f3` | `https://blog.bluestone.com/wp-content/uploads/2026/08/boys-ring-lifestyle-2026.webp` |
+
+---
+
+### 7. Product Rotation & Settings
+- **Hero SKU:** `BISL0851R28`
+- **Flatlay SKU:** `BISV0910R24`
+- **Lifestyle SKU:** `BISV0910R24`
+- **Flatlay Setting ID:** `study-desk` (Rotated from Rank 80's `windowsill-daylight` and Rank 79's `desk-kraft`).
+- **Product Rotation Log:** Upserted into `output/product_rotation.json`.
+- **Status CSV:** Upserted Rank 81 into `output/Week7_Gift_Guides_PostRank10_status.csv`.
+
+---
+
+### 8. Higgsfield Credits & Account Status
+- **Subscription Plan:** `scale`
+- **Starting Balance:** `5107.82` credits
+- **Jobs Executed:** 3 (Hero, Flatlay, Lifestyle; `count: 1`, `2k`, `16:9`, `nano_banana_pro`)
+- **Retries:** 0 (all 3 slots succeeded on Attempt 1)
+- **Ending Balance:** `5101.82` credits
+
+---
+
+### 9. Quality Assurance & Compliance Gates
+- [x] **Duplicate Check:** Verified via WP REST API; no pre-existing live page satisfies `boys ring` intent.
+- [x] **H1 Verification:** Exactly 1 `<h1>` tag in the rendered DOM (Theme post title above featured media).
+- [x] **Section Ordering:** `Final Thoughts` (H2 #8) is placed before `Frequently Asked Questions` (H2 #9).
+- [x] **FAQ Rendering:** 6 complete FAQ Q&As visible in DOM under the FAQ heading.
+- [x] **Structured Data:** Both `FAQPage` and `BlogPosting` JSON-LD schemas validated.
+- [x] **No Forbidden Formatting:** 0 em-dashes, 0 en-dashes, 0 spaced hyphens in article text.
+- [x] **No Prices:** 0 currency symbols or price mentions in the article.
+- [x] **Clean Captions:** Standard `<figcaption>` tags with editorial captions and no extra CSS classes.
+- [x] **Checkpoint State:** All 15 checkpoints marked done in `output/checkpoints/week7_rank81.json`.

@@ -1,0 +1,186 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 21 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 21\n- Action: New\n- Primary keyword: bangles for girls\n- Volume: 33100\n- KD: 40\n- Priority score: 21960.5769\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: bangles-for-girls-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: bangles design for girl | bangles for girls gold | gold bangles design for girl | gold bangles for girls\n- Supplied competitor URL: blank in source row\n- Semrush page: bangles for girls\n- Source execution note: Week8 new topic. Intent key=sig:bangle_girl; brands=CaratLane,Joyalukkas,Kalyan,Malabar,MergedJewellery,ScoringCL,Tanishq; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank21.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank21.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: read_docs | time: 16:28:22 | elapsed: 0m 30s
+STEP DONE: read_docs | time: 16:29:01 | step duration: 0m 39s | total elapsed: 0m 39s
+STEP START: verify_higgsfield | time: 16:29:03 | elapsed: 0m 41s
+STEP DONE: verify_higgsfield | time: 16:29:14 | step duration: 0m 11s | total elapsed: 0m 52s
+STEP START: inspect_row | time: 16:29:18 | elapsed: 0m 56s
+STEP DONE: inspect_row | time: 16:30:12 | step duration: 0m 54s | total elapsed: 1m 50s
+STEP START: duplicate_check | time: 16:30:14 | elapsed: 1m 52s
+STEP DONE: duplicate_check | time: 16:30:50 | step duration: 0m 36s | total elapsed: 2m 28s
+STEP START: fact_check | time: 16:30:59 | elapsed: 2m 37s
+STEP DONE: fact_check | time: 16:31:06 | step duration: 0m 07s | total elapsed: 2m 44s
+STEP START: keyword_map | time: 16:31:15 | elapsed: 2m 53s
+STEP DONE: keyword_map | time: 16:31:19 | step duration: 0m 04s | total elapsed: 2m 57s
+STEP START: structure_visuals | time: 16:31:22 | elapsed: 3m 00s
+STEP DONE: structure_visuals | time: 16:31:37 | step duration: 0m 15s | total elapsed: 3m 15s
+STEP START: draft | time: 16:31:41 | elapsed: 3m 19s
+STEP DONE: draft | time: 16:32:53 | step duration: 1m 12s | total elapsed: 4m 31s
+STEP START: product_media | time: 16:33:01 | elapsed: 4m 39s
+STEP DONE: product_media | time: 16:33:36 | step duration: 0m 35s | total elapsed: 5m 14s
+STEP START: publish_wordpress | time: 16:33:39 | elapsed: 5m 17s
+STEP DONE: publish_wordpress | time: 16:33:54 | step duration: 0m 15s | total elapsed: 5m 32s
+STEP START: generate_type3 | time: 16:33:58 | elapsed: 5m 36s
+STEP DONE: generate_type3 | time: 16:37:28 | step duration: 3m 30s | total elapsed: 9m 06s
+STEP START: patch_type3 | time: 16:37:32 | elapsed: 9m 10s
+STEP DONE: patch_type3 | time: 16:37:58 | step duration: 0m 26s | total elapsed: 9m 36s
+STEP START: live_qa | time: 16:38:01 | elapsed: 9m 39s
+STEP DONE: live_qa | time: 16:39:48 | step duration: 1m 47s | total elapsed: 11m 26s
+STEP START: update_status | time: 16:39:51 | elapsed: 11m 29s
+STEP DONE: update_status | time: 16:40:53 | step duration: 1m 02s | total elapsed: 12m 31s
+STEP START: final_report | time: 16:40:57 | elapsed: 12m 35s
+STEP DONE: final_report | time: 16:41:04 | step duration: 0m 07s | total elapsed: 12m 42s
+
+---
+
+# Week 8 Rank 21: Final Execution Report
+
+### Executive Summary
+The end-to-end generation for **Week 8 Rank 21** (`bangles for girls`) has been completed, published to WordPress, patched with Higgsfield Type 3 photographic assets, audited live, and synchronized across tracking files and workbooks.
+
+---
+
+### 1. WordPress Publication & Metadata
+- **Live Article URL:** [https://blog.bluestone.com/bangles-for-girls-2026/](https://blog.bluestone.com/bangles-for-girls-2026/)
+- **WordPress Post ID:** `37227`
+- **Slug:** `bangles-for-girls-2026`
+- **Article Engine:** `buying_guide` (How-to / Education)
+- **Author:** `Satyam` (User ID `270271337`)
+  - **On-Page Byline:** `By Satyam, BlueStone Editorial`
+  - **Schema Author:** `Satyam` (`@type: Person`, `jobTitle: BlueStone Editorial`)
+- **WordPress Categories:** 
+  - `Bangle` (ID `554493412`)
+  - `Gold` (ID `554493348`)
+  - `Jewellery Problem & Solution` (ID `554493465`)
+- **Focus Keyphrase:** `bangles for girls`
+- **SEO Title:** `Gold Bangles for Girls Buying Guide 2026: Designs & Sizing | BlueStone`
+- **Meta Description:** `Explore the 2026 buying guide for bangles for girls. Compare trending gold bangles design for girl, 22K vs 18K purity, Indian size charts, and clasp safety.`
+- **Visible Article Word Count:** `3,125 words` (excluding HTML markup, scripts, and theme elements)
+
+---
+
+### 2. Target Row Metrics & Keyword Analysis
+- **Rank:** `21`
+- **Action:** `New`
+- **Primary Keyword:** `bangles for girls`
+- **Search Volume:** `33,100`
+- **Keyword Difficulty (KD):** `40`
+- **Priority Score:** `21960.5769`
+- **Theme:** `How-to / Education`
+- **Category Fit:** `Jewellery Education`
+- **Supplied Supporting Keywords Audit:**
+  - `bangles design for girl`: **Accepted** (Mapped to H2 #3, body styling trends, image alts, and FAQs)
+  - `bangles for girls gold`: **Accepted** (Mapped to H2 #2, purity comparison, daily durability breakdown, and FAQs)
+  - `gold bangles design for girl`: **Accepted** (Mapped to H2 #4, kada silhouettes, openable clasps, and charm accents)
+  - `gold bangles for girls`: **Accepted** (Mapped to H1, H2 #6, safety engineering, buying checklist, and schema)
+- **Rejected Keywords:** None (all 4 supplied keywords were topically aligned and high-intent).
+
+---
+
+### 3. H2 Keyword Map
+
+| # | Section H2 Heading | Keyword Mapping Label |
+|---|---|---|
+| 1 | **Quick Buyer’s Guide: Key Considerations When Choosing Bangles for Girls in 2026** | `primary-backed` |
+| 2 | **Choosing Bangles for Girls Gold: 22K Traditional Luster vs 18K & 14K Daily-Wear Durability** | `supporting-keyword-backed` |
+| 3 | **Trending Bangles Design for Girl in 2026: From Sleek Cuffs to Filigree Classics** | `supporting-keyword-backed` |
+| 4 | **Gold Bangles Design for Girl: Modern Kada Silhouettes, Openable Clasps and Charm Accents** | `supporting-keyword-backed` |
+| 5 | **How to Measure Bangle Size for Girls: Accurate Indian Sizing Chart & Step-by-Step Guide** | `intent-inferred` |
+| 6 | **Safety, Comfort & Clasp Engineering: What Makes Gold Bangles for Girls Safe for Daily Wear?** | `supporting-keyword-backed` |
+| 7 | **Top BlueStone Gold Bangles for Girls: Curated Everyday & Festive Recommendations** | `primary-backed` |
+| 8 | **Verification & Value Checklist: BIS Hallmarking, HUID and GST on Gold Bangles** | `intent-inferred` |
+| 9 | **How to Care for, Clean, and Store Gold Bangles for Long-Lasting Brilliance** | `intent-inferred` |
+| 10 | **Final Thoughts on Selecting the Perfect Gold Bangles for Girls** | `primary-backed` |
+| 11 | **More Jewellery & Gold Buying Guides** | `intent-inferred` |
+| 12 | **Frequently Asked Questions About Bangles for Girls** | `primary-backed` |
+
+---
+
+### 4. Competitor & Factual Verification
+- **Supplied Competitor URL:** Blank in source row (no competitor URL was invented).
+- **Factual Authorities & Standards Cited:**
+  - **Bureau of Indian Standards (BIS):** Mandatory 3-symbol hallmark verification (BIS logo, purity mark `22K916` / `18K750` / `14K585`, and 6-digit alphanumeric HUID code) with instant verification via the BIS CARE mobile app.
+  - **Goods and Services Tax (GST):** 3% statutory GST applied to the full jewellery invoice value (net gold metal + making charges).
+  - **Indian Sizing Standards:** Standard Indian bangle size conversions (Size 2-2 / 54.0 mm, Size 2-4 / 57.2 mm, Size 2-6 / 60.3 mm, Size 2-8 / 63.5 mm) with knuckle circumference vs wrist circumference distinctions for openable/hinged bangles.
+
+---
+
+### 5. Media & Product Rotation
+
+#### Mid-Article Coverflow Carousel (6 Approved Products)
+- **Carousel Component ID:** `bs-cf-bangles-for-girls`
+- **Cards & Media IDs:**
+  1. [The Tarentella Oval Bangle](https://www.bluestone.com/bangles/the-tarentella-oval-bangle~31547.html) (SKU `BENS0325O09`, Media ID `30038`)
+  2. [The Estrella Oval Bangle](https://www.bluestone.com/bangles/the-estrella-oval-bangle~34771.html) (SKU `BIDG0393O37`, Media ID `30653`)
+  3. [The Skein Bangle](https://www.bluestone.com/bangles/the-skein-bangle~27491.html) (SKU `BINK0363B03`, Media ID `30035`)
+  4. [The Channing Bangle](https://www.bluestone.com/bangles/the-channing-bangle~975.html) (SKU `BIPS0003O06`, Media ID `29929`)
+  5. [The Pear Evil Eye Toggle Bangle](https://www.bluestone.com/bangles/the-pear-evil-eye-toggle-bangle~87037.html) (SKU `BISL0804O13`, Media ID `30473`)
+  6. [The Muricelle Bangle](https://www.bluestone.com/bangles/the-muricelle-bangle~1001.html) (SKU `BISM0003O14`, Media ID `30036`)
+
+#### Type 3 Photographic Assets (Higgsfield CLI)
+- **Hero Image (Featured Media & Social):**
+  - **Product:** The Estrella Oval Bangle (`BIDG0393O37`, Female, 50.19mm x 7.1mm)
+  - **Job ID:** `e24f3c11-6393-4129-b2c9-c2684f0a8f47`
+  - **WordPress Media ID:** `37228`
+  - **Live Asset:** [https://blog.bluestone.com/wp-content/uploads/2026/09/bangles-for-girls-hero-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/bangles-for-girls-hero-2026.webp)
+  - **Alt Text:** `Bangles for girls 2026 gold buying guide: The Estrella Oval Bangle worn at family celebration`
+- **Flatlay Image (In-Body #1):**
+  - **Product:** The Skein Bangle (`BINK0363B03`, Female, 51.51mm x 59.04mm)
+  - **Setting ID:** `windowsill-daylight`
+  - **Job ID:** `a697d530-e573-454f-a5e1-8aec9c05cfd6`
+  - **WordPress Media ID:** `37229`
+  - **Live Asset:** [https://blog.bluestone.com/wp-content/uploads/2026/09/bangles-for-girls-flatlay-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/bangles-for-girls-flatlay-2026.webp)
+  - **Alt Text:** `Bangles design for girl 2026: The Skein Bangle textured gold flatlay on daylight windowsill`
+  - **Caption:** `Bangles design for girl 2026 flatlay: The Skein Bangle` (hyperlinked to PDP)
+- **Lifestyle Image (In-Body #2):**
+  - **Product:** The Pear Evil Eye Toggle Bangle (`BISL0804O13`, Female, 57.18mm x 9.57mm)
+  - **Job ID:** `375d864d-f0d5-4f55-8486-ebc9bab60931`
+  - **WordPress Media ID:** `37230`
+  - **Live Asset:** [https://blog.bluestone.com/wp-content/uploads/2026/09/bangles-for-girls-lifestyle-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/bangles-for-girls-lifestyle-2026.webp)
+  - **Alt Text:** `Gold bangles for girls 2026: The Pear Evil Eye Toggle Bangle on wrist in action lifestyle close-up`
+  - **Caption:** `Gold bangles for girls 2026 lifestyle: The Pear Evil Eye Toggle Bangle` (hyperlinked to PDP)
+
+---
+
+### 6. Higgsfield Generation & Credit Accounting
+- **Subscription Plan:** `ultimate`
+- **Account:** `ai.marketing@bluestone.com`
+- **Starting Credits:** `174.87`
+- **Ending Credits:** `158.87`
+- **Total Credits Used:** `16.0`
+- **Retries:** `0` (all 3 slots generated and passed QA on first pass)
+
+---
+
+### 7. Live QA & Schema Verification
+- **DOM H1 Count:** `1` (Theme post title above featured media)
+- **Canonical Link:** `https://blog.bluestone.com/bangles-for-girls-2026/`
+- **OpenGraph Social Image:** `https://blog.bluestone.com/wp-content/uploads/2026/09/bangles-for-girls-hero-2026.webp` (Verified 1400x781 WebP)
+- **Visible FAQs in HTML:** 7 complete Q&A pairs directly under the FAQ heading
+- **Schemas:**
+  - `FAQPage` JSON-LD with 7 entities matching visible text
+  - `BlogPosting` JSON-LD with headline, description, author `Satyam`, and 9 image URLs
+- **Formatting Hygiene:**
+  - Prohibited punctuation: 0 em-dashes, 0 en-dashes, 0 spaced hyphens in article text.
+  - HTML Tables: 0 `<table>` or `<!-- wp:table -->` blocks (structured lists used).
+  - Section Ordering: "Final Thoughts" placed before "More Jewellery & Gold Buying Guides" and "Frequently Asked Questions".
+
+---
+
+### 8. Status & Tracking Files Updated
+1. [output/checkpoints/week8_rank21.json](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/checkpoints/week8_rank21.json) (All 15 steps marked `done`)
+2. [output/Week8_Blog_Queue_status.csv](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week8_Blog_Queue_status.csv) (Upserted Rank 21 row with post ID and SKUs)
+3. [output/product_rotation.json](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/product_rotation.json) (Upserted Rank 21 Type 3 trio with `windowsill-daylight` setting)
+4. [output/Week8_Blog_Queue.csv](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week8_Blog_Queue.csv) (Synchronized Rank 21 row)
+5. [SEO Strategy 2026.xlsx](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/SEO%20Strategy%202026.xlsx) (Sheet `Week 8` updated with live URL and execution note)

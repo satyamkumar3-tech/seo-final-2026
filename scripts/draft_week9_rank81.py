@@ -1,0 +1,349 @@
+#!/usr/bin/env python3
+"""Draft generator for Week 9 Rank 81 - Kids Necklace Buying Guide."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+title = "How to Choose a Kids Necklace: Safe Designs, Gold Purity, Sizing & Styling Guide (2026)"
+slug = "kids-necklace-2026"
+meta_title = "How to Choose a Kids Necklace (2026): Safety, Purity & Size Guide"
+meta_desc = "Discover how to choose a safe kids necklace in 2026. Explore gold purity, child-safe clasps, age-wise sizing from 12 to 16 inches, BIS hallmarking, and styles."
+primary_kw = "kids necklace"
+author_id = 270271337  # Satyam
+categories = [554493433, 554493465]  # Kids Jewellery, Jewellery Problem & Solution
+
+# Build draft text blocks with strict Gutenberg block syntax
+# NO em dashes, NO en dashes, NO spaced hyphens, NO raw HTML tables
+# Every paragraph block MUST explicitly wrap in <p>...</p>
+
+content_blocks = [
+    '<!-- wp:paragraph {"align":"center"} -->',
+    '<p class="has-text-align-center"><em>By Satyam, BlueStone Editorial</em></p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Choosing a kids necklace requires a careful balance between charming aesthetics, lasting durability, and uncompromising physical safety. When shopping for children, jewellery must do far more than look beautiful in a gift box; it must withstand energetic play, resist accidental tugging, and protect sensitive young skin from allergic reactions or abrasions. Whether you are celebrating a naming ceremony, a milestone birthday, or a festive family gathering, selecting the right gold necklace for a child calls for thoughtful attention to metal purity, ergonomic chain profiles, secure clasp mechanics, and age-appropriate proportions.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>At BlueStone, our jewellery specialists frequently guide parents and grandparents through the nuances of purchasing jewellery for young family members. From understanding why 18K and 14K gold are structurally superior to soft 22K gold for everyday wear, to deciphering proper chain lengths across growing age brackets, this comprehensive buying guide provides the actionable facts you need. Below, you will find essential safety checklists, size recommendations, styling suggestions, and maintenance guidance designed to help you invest in an enduring keepsake your child can wear with complete comfort and joy.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p><strong>Quick Buying Summary (TL;DR):</strong></p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>Recommended Metal Purity:</strong> Choose 14K or 18K BIS-hallmarked gold for everyday resilience. Soft 22K gold bends and stretches easily under active play.</li>',
+    '<li><strong>Length Framework:</strong> 12 to 14 inches for toddlers and young children (ages 3 to 6); 14 to 16 inches for ages 7 to 11; 16 to 18 inches for pre-teens and teenagers.</li>',
+    '<li><strong>Clasp Security:</strong> Insist on soldered lobster claw or reinforced spring ring clasps; avoid magnetic, open hook, or friction fasteners.</li>',
+    '<li><strong>Safe Design Features:</strong> Prioritize smooth bezel or flush stone settings, rounded edges, lightweight chain links (under 6 grams), and built-in extender jump rings.</li>',
+    '<li><strong>Adult vs Kids Divide:</strong> Never place heavy adult stone necklaces on young children due to choking hazards, abrasive prongs, and neck strain.</li>',
+    '<li><strong>Authentication:</strong> Always verify the 6-digit alphanumeric HUID code via the official BIS Care app before completing your purchase.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Gold Purity for Children: Why 14K and 18K Outperform 22K for Daily Wear</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>In traditional Indian households, 22K gold has long been celebrated as the benchmark for fine jewellery gifts. While 22K gold boasts an exceptional 91.6 percent pure gold content, pure gold is inherently ductile, malleable, and soft. For an active child who runs, plays, changes clothes independently, and occasionally tugs at their neckline, a 22K gold chain or delicate pendant bail is prone to stretching out of shape, warping, or snapping under sudden pressure. When a link stretches, the structural integrity of the entire chain weakens, significantly increasing the likelihood of losing a precious heirloom.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>For modern children jewellery, fine jewellers strongly recommend 18K (75 percent pure gold) and 14K (58.5 percent pure gold). In these purities, pure gold is alloyed with durable metals such as copper, silver, and zinc in precisely controlled proportions. These alloying elements impart vital tensile strength and surface hardness, allowing delicate chain links and charm bails to endure daily movements without deforming. Furthermore, reputable fine jewellers formulate 14K and 18K gold alloys to be strictly nickel-free and hypoallergenic, ensuring that even children with sensitive skin can wear them without developing allergic contact dermatitis.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Here is how the common gold purities compare when evaluated specifically for children jewellery:</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>18K Gold (75.0% Purity):</strong> The premier standard for luxury kids jewellery. It combines rich, warm golden luster with dependable scratch resistance and high tensile strength. Ideal for celebration pieces, milestone birthday gifts, and daily wear.</li>',
+    '<li><strong>14K Gold (58.5% Purity):</strong> The most durable and budget-friendly choice. Its enhanced hardness makes it exceptionally resilient against rough handling, active outdoor games, and accidental pulls. Perfect for younger children who wear their jewellery continuously.</li>',
+    '<li><strong>22K Gold (91.6% Purity):</strong> Highly traditional and radiant, but structurally soft. Best reserved for ceremonial occasions under close adult supervision rather than unsupervised daily wear.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Kids Necklace Size and Length Guide by Age: 12 to 16 Inches</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Selecting the correct chain length is crucial for both comfort and safety. A necklace that hangs too low can easily catch on furniture edges, playground equipment, or clothing zippers during play. Conversely, a chain that fits too snugly can feel restrictive, irritate delicate neck skin, or pose choking and discomfort risks. Children grow rapidly, meaning a necklace tailored for a preschooler will sit entirely differently on an eight-year-old child.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>To ensure your chosen necklace rests comfortably at or just below the collarbone, use this age-wise length framework:</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>Toddlers and Young Children (Ages 3 to 6 Years):</strong> 12 to 14 inches (30 to 35 cm). At this developmental stage, the necklace should rest neatly above the chest. A 12-inch chain with a 1-inch extender allows the piece to fit neatly without drooping. Necklaces are generally discouraged for infants under three years unless worn strictly during supervised ceremonies.</li>',
+    '<li><strong>Growing Children (Ages 7 to 11 Years):</strong> 14 to 16 inches (35 to 40 cm). This length offers a classic princess drape that rests comfortably on the collarbone over high-neck shirts, school uniforms, or festive lehengas.</li>',
+    '<li><strong>Pre-Teens and Teenagers (Ages 12+ Years):</strong> 16 to 18 inches (40 to 45 cm). As children transition into adolescence, standard adult choker and princess lengths become appropriate, resting gracefully across the upper collarbone.</li>',
+    '<li><strong>The Value of Dual Jump Rings:</strong> Always look for chains engineered with two or three adjustment loops (jump rings) spaced half an inch apart. This adjustable feature allows the necklace to expand as your child grows, extending its wearable lifespan across multiple years.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Essential Child-Safe Features: Smooth Bezels, Secure Clasps, and Rounded Edges</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>When evaluating a kids necklace, scrutinizing the microscopic build quality of individual components is essential. Adult jewellery designs often feature delicate filigree, elevated prong crowns, and ornate flourishes that can snag easily on knit sweaters or scratch sensitive skin. Children jewellery demands specialized design engineering tailored specifically to young wearers.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Key safety and craftsmanship details to inspect include:</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>Bezel and Flush Settings:</strong> If the design incorporates gemstones or sparkling diamonds, insist on smooth bezel or flush rub-over settings. In a bezel setting, a continuous rim of gold wraps securely around the gemstone perimeter, eliminating exposed metal prongs that can catch in hair, loosen over time, or scratch skin.</li>',
+    '<li><strong>Rounded Contours and Smooth Reverse Sides:</strong> Run your fingertips across both the front face and back surface of the pendant. High-quality children jewellery features gently curved edges and mirror-polished reverse plates with zero sharp burrs or abrasive stamping marks.</li>',
+    '<li><strong>Sturdy, Non-Pinching Chain Weaves:</strong> Choose solid link weaves such as rounded cable links, flat curb links, or classic anchor links. Avoid thin herringbone, flat serpentine, or micro-snake chains; these styles can kink irreparably when bent, pinch delicate neck hairs, and snap under moderate tension.</li>',
+    '<li><strong>Soldered Jump Rings and Fasteners:</strong> Ensure that every connecting ring, including the loop attaching the clasp to the chain and the pendant bail, is fully laser-soldered shut. Open or un-soldered split rings can easily spread apart when tugged, causing the chain to separate and drop.</li>',
+    '<li><strong>Clasp Integrity:</strong> A reinforced lobster claw clasp or a sturdy spring ring clasp with a smooth lever mechanism offers the optimum balance of security and ease of use. Steer clear of open S-hooks, friction slides, and magnetic clasps, which detach far too easily during active movement.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- TYPE3_FLATLAY_PLACEHOLDER -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Curated Kids Gold Jewellery Highlights</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Exploring fine gold designs crafted with smooth finishes, lightweight comfort, and protective motifs helps parents choose the perfect keepsake. The interactive showcase below highlights signature BlueStone creations that exemplify child-friendly craftsmanship and timeless beauty.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- CAROUSEL_PLACEHOLDER -->',
+
+    '<!-- wp:paragraph -->',
+    '<p><strong>Curated Design Highlights:</strong> Explore signature pieces including <a href="https://www.bluestone.com/necklaces/the-rapett-evil-eye-charm-necklace~114824.html">The Rapett Evil Eye Charm Necklace</a>, <a href="https://www.bluestone.com/necklaces/the-yfel-evil-eye-pendant-necklace~89724.html">The Yfel Evil Eye Pendant Necklace</a>, <a href="https://www.bluestone.com/kids+bracelets/the-novare-evil-eye-kids-nazariya-bracelet~173235.html">The Novare Evil Eye Kids Nazariya Bracelet</a>, <a href="https://www.bluestone.com/kids+bracelets/the-winkoo-kids-evil-eye-bracelet~181193.html">The Winkoo Kids Evil Eye Bracelet</a>, <a href="https://www.bluestone.com/pendants/the-melene-evil-eye-pendant~82769.html">The Melene Evil Eye Pendant</a>, and <a href="https://www.bluestone.com/pendants/the-ixea-evil-eye-pendant~82777.html">The Ixea Evil Eye Pendant</a>.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Popular Kids Necklace Designs: Animal Motifs, Florals, and Meaningful Keepsakes</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Children connect deeply with imagery that sparks their imagination and mirrors the world around them. While adult necklaces often lean toward geometric abstraction or elaborate heritage silhouettes, kids necklace styles celebrate playful, whimsical, and culturally resonant themes that make wearing jewellery exciting and personal.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Leading design categories that remain timeless favorites among young recipients include:</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>Playful Animal and Nature Motifs:</strong> Fluttering butterflies, songbirds, tiny dolphins, and teddy silhouettes bring joy and whimsy to everyday outfits. These designs utilize polished gold relief and rounded contours to keep the silhouette gentle and featherlight.</li>',
+    '<li><strong>Botanical and Floral Florets:</strong> Sweet daisies, blossoming lotuses, and miniature four-leaf clovers provide classic elegance that transitions seamlessly from casual playdates to festive family weddings.</li>',
+    '<li><strong>Protective Nazariya and Evil Eye Talismans:</strong> Rooted in time-honored Indian traditions, evil eye motifs and black bead accents symbolize protection, blessings, and good fortune for growing children. Modern interpretations encase these motifs within smooth bezel disks for a sleek, contemporary feel.</li>',
+    '<li><strong>Personalised Nameplates and Initial Pendants:</strong> A dainty gold alphabet initial or customized nameplate pendant creates an unforgettable milestone gift. When selecting initial jewellery for children, opt for soft cursive or rounded sans-serif letterforms that eliminate sharp corners.</li>',
+    '<li><strong>Subtle Diamond and Enamel Touches:</strong> High-fire ceramic enamel adds cheerful splashes of pastel pink, sky blue, or mint green, while bezel-set micro diamonds deliver a delicate, understated sparkle without overwhelming small frames.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- TYPE3_LIFESTYLE_PLACEHOLDER -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Kids Necklaces vs Stone Necklaces for Women: Understanding the Safety and Weight Divide</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>A frequent query from well-meaning relatives is whether a delicate women necklace or a miniature adult gemstone piece can be repurposed for a child. While stone necklaces for women are exquisitely designed for adult aesthetics and formal evening wear, placing an adult stone necklace on a young child presents significant physical, ergonomic, and safety hazards that every parent should understand.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Here is why adult stone necklaces are unsuited for young children, and how authentic kids jewellery is engineered differently:</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>Total Weight and Neck Strain:</strong> Traditional stone necklaces for women typically weigh between 15 and 50 grams or more, incorporating substantial gold settings, dense stone clusters, and heavier chains designed to drape against mature collarbones. On a child, this excessive mass causes noticeable cervical strain, uncomfortable postural tugging, and constant fidgeting. A safe kids necklace, by contrast, is engineered to stay strictly lightweight, typically weighing between 2 and 6 grams in total.</li>',
+    '<li><strong>Prong Architecture vs Smooth Bezels:</strong> Women gemstone necklaces predominantly rely on elevated 4-prong or 6-prong settings to maximize light refraction into precious stones. These pointed metal claws easily catch in fine knit fabrics, snag on bedsheets, and scratch sensitive facial skin during spontaneous play. In dedicated kids jewellery, gemstones are securely nestled inside flat, rub-over bezel surrounds that sit completely flush against the metal framework.</li>',
+    '<li><strong>Chain Gauge and Breakaway Safety:</strong> Adult necklace chains are constructed with heavy wire gauges designed to resist substantial tension. If an adult chain catches firmly on an obstacle, it does not yield easily, creating a severe strangulation hazard for a child. Quality children chains use appropriately balanced link thicknesses that withstand normal wear yet remain safe under extreme unexpected loads.</li>',
+    '<li><strong>Alloy and Metallurgical Safety:</strong> Many commercial fashion stone necklaces for women use base-metal alloys, decorative plating, or soldering fluxes that may release traces of nickel, cadmium, or lead when exposed to sweat. Children skin is thinner and more reactive, demanding certified, hypoallergenic solid gold backed by rigorous hallmark testing.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Common Mistakes Parents Make When Buying a Kids Necklace</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Purchasing fine jewellery for a young family member is an emotional and joyful experience, but skipping key practical checks can lead to disappointment or broken keepsakes. Being aware of frequent buying pitfalls ensures you make an informed, confident investment.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Avoid these common oversights when selecting a necklace for your child:</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>Prioritizing High Karat Purity Over Structural Hardness:</strong> Assuming that 22K or 24K gold is inherently better for children simply because it contains more pure gold. For daily wear, structural resilience is paramount; 14K and 18K gold provide the necessary alloy hardness to prevent bent links and snapped bails.</li>',
+    '<li><strong>Choosing Overly Long Chains for Growth Anticipation:</strong> Buying a 16-inch or 18-inch chain for a four-year-old child in hopes that they will grow into it. A dangling, low-hanging chain presents an immediate snagging hazard during play. Instead, purchase an age-appropriate 12-inch or 13-inch chain featuring built-in extender loops.</li>',
+    '<li><strong>Overlooking Reverse-Side Polishing:</strong> Inspecting only the decorative front of the pendant while ignoring the back plate. Hollow hollowed-out cavities or rough casting textures on the reverse can trap sweat, soap residue, and dirt, leading to skin chafing.</li>',
+    '<li><strong>Allowing Unsupervised Wear During Contact Sports or Sleep:</strong> Permitting young children to wear necklaces while tumbling in gymnastics, swimming, or sleeping. Chains should always be safely removed before bedtime and rigorous sports activities.</li>',
+    '<li><strong>Neglecting Hallmarking Verification:</strong> Purchasing unbranded or un-hallmarked gold items from unregulated counters without checking the mandatory Bureau of Indian Standards (BIS) hallmark and 6-digit HUID code.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>BIS Hallmarking and Verification: Checking the 6-Digit HUID Code</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>In India, authenticating gold purity is legally safeguarded by the Bureau of Indian Standards (BIS). Under mandatory government hallmarking regulations, every piece of gold jewellery sold by certified jewellers must carry distinct, laser-engraved hallmark identifiers. When purchasing a precious gold necklace for your child, verifying these stamps provides complete transparency regarding purity and metal integrity.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Every certified gold necklace features three mandatory marks laser-etched onto the clasp tag or pendant bail:</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>The BIS Triangular Logo:</strong> The official triangular mark of the Bureau of Indian Standards confirming third-party purity certification.</li>',
+    '<li><strong>Purity and Fineness Mark:</strong> The exact gold standard, indicated as 18K750 (75.0% purity), 14K585 (58.5% purity), or 22K916 (91.6% purity).</li>',
+    '<li><strong>The 6-Digit Alphanumeric HUID:</strong> The Hallmark Unique Identification code, a unique serial number assigned to that exact jewellery item at an accredited BIS Assaying and Hallmarking Centre.</li>',
+    '<li><strong>How to Verify via the BIS Care App:</strong> Download the official BIS Care application on your smartphone. Navigate to the Verify HUID section and type in the 6-digit code stamped on your jewellery. The app instantly displays the jeweller registration details, assaying centre information, certified purity, article type, and hallmarking date, giving you absolute assurance before you leave the store.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Cleaning, Care, and Daily Storage for Children Gold Jewellery</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Children lead vibrant, active lives filled with outdoor games, art projects, and playtime. Consequently, a kids necklace naturally accumulates traces of baby powder, sunscreen, body lotion, playground dust, and natural skin oils over time. Establishing a gentle, regular cleaning routine keeps the gold glowing brilliantly while preventing bacterial buildup on skin-contact surfaces.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Follow this safe, parent-approved cleaning and maintenance method:</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:list -->',
+    '<ul>',
+    '<li><strong>Gentle Warm Water Soak:</strong> Mix a few drops of mild, pH-neutral baby shampoo into a small bowl of lukewarm water. Submerge the gold necklace for 10 to 15 minutes to loosen accumulated oils and dust. Never use harsh chemical detergents, bleach, alcohol, or boiling water.</li>',
+    '<li><strong>Soft-Bristled Touch:</strong> Use an ultra-soft baby toothbrush to gently clean around charm recesses, chain links, and clasp joints. Apply minimal pressure to avoid dislodging delicate elements or scratching polished gold surfaces.</li>',
+    '<li><strong>Thorough Rinsing and Microfiber Drying:</strong> Rinse the necklace thoroughly under clean running lukewarm water (ensuring the sink drain is securely covered). Pat the jewellery completely dry with a clean, lint-free microfiber polishing cloth before returning it to your child or storing it away.</li>',
+    '<li><strong>Individual Pouch Storage:</strong> When not in use, fasten the clasp securely and store the necklace flat inside an individual velvet-lined pouch or dedicated jewellery compartment. Fastening the clasp prevents frustrating tangles, while isolated storage prevents other jewellery pieces from scratching the soft gold.</li>',
+    '<li><strong>Monthly Clasp and Bail Inspection:</strong> Make it a monthly habit to inspect the clasp spring lever and the soldered link connecting the pendant. If you notice any slack, widening of the loop, or mechanical stiffness, visit a professional jeweller for a quick, complimentary inspection.</li>',
+    '</ul>',
+    '<!-- /wp:list -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Final Thoughts: Choosing a Treasured Keepsake That Grows With Your Child</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>A gold necklace given to a child is far more than an accessory; it is an enduring token of love, family blessing, and shared memory that often becomes a treasured family heirloom passed down through generations. By prioritizing lightweight ergonomics, certified 14K or 18K gold purity, snag-free bezel settings, and verified BIS hallmarking, you ensure that your gift delivers timeless joy without ever compromising your child safety or comfort.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Take the time to assess your child daily habits, select a length with built-in growth flexibility, and choose designs that reflect their unique personality. With thoughtful selection and proper care, a beautifully crafted kids necklace will bring bright smiles today and serve as a cherished nostalgic reminder of childhood milestones for decades to come.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>More Gold &amp; Jewellery Buying Guides</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Explore our comprehensive educational guides to make informed, confident fine jewellery choices for your entire family: learn how to inspect hallmarking in our <a href="https://blog.bluestone.com/how-to-check-gold-purity-2026/">guide to checking gold purity</a>, explore safe everyday chains in our <a href="https://blog.bluestone.com/kids-gold-chain-2026/">kids gold chain buying guide</a>, discover delightful motifs in our <a href="https://blog.bluestone.com/pendant-for-girls-2026/">pendant for girls design guide</a>, master wrist sizing and clasp security with our <a href="https://blog.bluestone.com/hand-bracelet-for-girls-2026/">hand bracelet for girls buying guide</a>, and understand exact tax calculations with our breakdown of <a href="https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/">GST on gold jewellery in India</a>.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":2} -->',
+    '<h2>Frequently Asked Questions About Kids Necklaces</h2>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:heading {"level":3} -->',
+    '<h3>What is the safest material for a kids necklace?</h3>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>The safest and most reliable material for a kids necklace is 14K or 18K solid gold certified with a BIS hallmark. High-purity gold alloys from reputable fine jewellers are strictly nickel-free, hypoallergenic, and resistant to tarnishing or corrosion from skin perspiration. Unlike cheap costume fashion jewellery that often contains toxic trace metals like lead or nickel, solid gold does not irritate sensitive young skin or cause allergic contact dermatitis.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":3} -->',
+    '<h3>What necklace length is recommended for children of different ages?</h3>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>For toddlers and young children aged 3 to 6 years, a 12 to 14-inch chain sits comfortably above the collarbone without hanging low. For growing children aged 7 to 11 years, a 14 to 16-inch chain is ideal, offering a classic princess fit over festive lehengas or casual wear. For pre-teens aged 12 and above, 16 to 18-inch chains become suitable. Always choose chains equipped with extra jump rings so the necklace length can adjust as the child grows.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":3} -->',
+    '<h3>Can a child wear a gold necklace every day?</h3>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Yes, children can wear a gold necklace daily provided the piece is specifically engineered for kids. Look for lightweight designs weighing under 6 grams, smooth bezel or flush stone settings without protruding prongs, rounded edges, and sturdy weaves like cable or curb links. However, parents should always remove necklaces before bedtime, swimming, playground tumbling, or vigorous contact sports to prevent accidental snagging or damage.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":3} -->',
+    '<h3>Why are 14K and 18K gold preferred over 22K gold for kids jewellery?</h3>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>While 22K gold contains 91.6 percent pure gold, its high purity makes it naturally soft, malleable, and prone to stretching or bending under sudden physical stress. For an active child, a 22K chain link or pendant bail can warp and snap easily during play. By comparison, 14K and 18K gold are alloyed with stronger metals, providing the structural hardness and tensile strength necessary to resist active wear while maintaining glorious golden beauty.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":3} -->',
+    '<h3>How do stone necklaces for women differ from kids necklaces?</h3>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Stone necklaces for women are designed for adult frames, typically weighing between 15 and 50 grams or more, which causes significant neck strain and discomfort on young children. Furthermore, adult stone necklaces commonly feature elevated prong settings that easily catch on clothing or scratch skin. In contrast, kids necklaces feature featherlight weights (2 to 6 grams), smooth protective bezel surrounds, and calibrated safety chain lengths.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":3} -->',
+    '<h3>How can I verify the authenticity of a kids gold necklace in India?</h3>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Always check for the mandatory Bureau of Indian Standards (BIS) hallmark laser-engraved on the chain tag or pendant bail. It must include the triangular BIS logo, the gold fineness mark (such as 18K750 or 14K585), and a 6-digit alphanumeric Hallmark Unique Identification (HUID) code. You can verify this 6-digit HUID code instantly using the official BIS Care mobile app to view the hallmarking centre, jeweller details, and verified purity.</p>',
+    '<!-- /wp:paragraph -->',
+
+    '<!-- wp:heading {"level":3} -->',
+    '<h3>How should I clean and store my child gold necklace at home?</h3>',
+    '<!-- /wp:heading -->',
+
+    '<!-- wp:paragraph -->',
+    '<p>Clean your child gold necklace by soaking it in lukewarm water mixed with a few drops of mild, pH-neutral baby shampoo for 10 minutes. Gently brush around links and charm crevices using an ultra-soft baby toothbrush, rinse thoroughly under clean lukewarm water, and pat completely dry with a soft microfiber cloth. Store the necklace flat with its clasp fastened inside a separate soft velvet pouch to prevent scratches and knots.</p>',
+    '<!-- /wp:paragraph -->',
+]
+
+full_content = "\n".join(content_blocks)
+
+# Count visible words in HTML body (excluding comments and tags)
+import re
+plain_text = re.sub(r"<!--.*?-->", " ", full_content, flags=re.DOTALL)
+plain_text = re.sub(r"<[^>]+>", " ", plain_text)
+plain_text = re.sub(r"\s+", " ", plain_text).strip()
+words_count = len(plain_text.split())
+print(f"Draft visible word count: {words_count}")
+
+draft_data = {
+    "title": title,
+    "slug": slug,
+    "meta_title": meta_title,
+    "meta_desc": meta_desc,
+    "primary_kw": primary_kw,
+    "supporting_kw": "stone necklaces for women",
+    "author_id": author_id,
+    "categories": categories,
+    "words_count": words_count,
+    "content": full_content
+}
+
+out_path = ROOT / "output/Week9_Rank81_draft.json"
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(draft_data, f, indent=2, ensure_ascii=False)
+
+print(f"Draft saved to {out_path}")

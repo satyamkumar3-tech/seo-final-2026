@@ -1,0 +1,157 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 163 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 163\n- Action: New\n- Primary keyword: short necklace designs\n- Volume: 3600\n- KD: 18\n- Priority score: 2093.0233\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: short-necklace-designs-2026\n- Article engine: design_listicle\n- Category hint: `Jewellery Trends` 554493317 or `Jewellery & Lifestyle` 554493425\n- Supplied supporting keywords: short necklace designs in gold\n- Supplied competitor URL: https://www.caratlane.com/jewellery/short+necklaces.html\n- Semrush page: short necklace designs\n- Source execution note: Week7 multi-brand fill (strict). intent=short_necklace; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq; from Competitor_Master_Data. One URL only. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank163.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank163.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--`.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n",
+  "--model",
+  "Gemini 3.7 Flash (Medium)"
+]
+
+OUTPUT:
+STEP START: read_docs | time: 2026-08-27T16:03:00+05:30 | elapsed: 0s
+STEP DONE: read_docs | time: 2026-08-27T16:03:31+05:30 | step duration: 31s | total elapsed: 31s
+STEP START: verify_higgsfield | time: 2026-08-27T16:03:31+05:30 | elapsed: 31s
+STEP DONE: verify_higgsfield | time: 2026-08-27T16:03:37+05:30 | step duration: 6s | total elapsed: 37s
+STEP START: inspect_row | time: 2026-08-27T16:03:37+05:30 | elapsed: 37s
+STEP DONE: inspect_row | time: 2026-08-27T16:04:05+05:30 | step duration: 28s | total elapsed: 1m 5s
+STEP START: duplicate_check | time: 2026-08-27T16:04:05+05:30 | elapsed: 1m 5s
+STEP DONE: duplicate_check | time: 2026-08-27T16:04:23+05:30 | step duration: 18s | total elapsed: 1m 23s
+STEP START: fact_check | time: 2026-08-27T16:04:23+05:30 | elapsed: 1m 23s
+STEP DONE: fact_check | time: 2026-08-27T16:04:42+05:30 | step duration: 17s | total elapsed: 1m 40s
+STEP START: keyword_map | time: 2026-08-27T16:04:42+05:30 | elapsed: 1m 40s
+STEP DONE: keyword_map | time: 2026-08-27T16:04:47+05:30 | step duration: 5s | total elapsed: 1m 45s
+STEP START: structure_visuals | time: 2026-08-27T16:04:47+05:30 | elapsed: 1m 45s
+STEP DONE: structure_visuals | time: 2026-08-27T16:04:57+05:30 | step duration: 10s | total elapsed: 1m 55s
+STEP START: draft | time: 2026-08-27T16:04:57+05:30 | elapsed: 1m 55s
+STEP DONE: draft | time: 2026-08-27T16:06:25+05:30 | step duration: 1m 28s | total elapsed: 3m 23s
+STEP START: product_media | time: 2026-08-27T16:06:25+05:30 | elapsed: 3m 23s
+Uploading carousel assets to WordPress...
+STEP DONE: product_media | time: 2026-08-27T16:07:07+05:30 | step duration: 42s | total elapsed: 4m 7s
+STEP START: publish_wordpress | time: 2026-08-27T16:07:07+05:30 | elapsed: 4m 7s
+STEP DONE: publish_wordpress | time: 2026-08-27T16:07:39+05:30 | step duration: 32s | total elapsed: 4m 39s
+STEP START: generate_type3 | time: 2026-08-27T16:07:39+05:30 | elapsed: 4m 39s
+Generating Type 3 images via Higgsfield CLI...
+Generating 3 Type 3 images (hero, flatlay, lifestyle) via Higgsfield CLI...
+Generating remaining Type 3 flatlay and lifestyle images via Higgsfield CLI...
+Generating Type 3 lifestyle image via Higgsfield CLI...
+Completing Type 3 image generation...
+Waiting for lifestyle generation job...
+Generating final Type 3 lifestyle image...
+STEP DONE: generate_type3 | time: 2026-08-27T16:10:52+05:30 | step duration: 3m 13s | total elapsed: 7m 52s
+STEP START: patch_type3 | time: 2026-08-27T16:10:52+05:30 | elapsed: 7m 52s
+STEP DONE: patch_type3 | time: 2026-08-27T16:11:21+05:30 | step duration: 29s | total elapsed: 8m 21s
+STEP START: live_qa | time: 2026-08-27T16:11:21+05:30 | elapsed: 8m 21s
+STEP DONE: live_qa | time: 2026-08-27T16:11:51+05:30 | step duration: 30s | total elapsed: 8m 51s
+STEP START: update_status | time: 2026-08-27T16:11:51+05:30 | elapsed: 8m 51s
+STEP DONE: update_status | time: 2026-08-27T16:12:20+05:30 | step duration: 29s | total elapsed: 9m 20s
+STEP START: final_report | time: 2026-08-27T16:12:20+05:30 | elapsed: 9m 20s
+STEP DONE: final_report | time: 2026-08-27T16:12:23+05:30 | step duration: 3s | total elapsed: 9m 23s
+
+---
+
+# End-to-End Generation Report: Week 7 Rank 163
+
+### 1. Publication & WordPress Status
+* **Live Article URL:** [https://blog.bluestone.com/short-necklace-designs-2026/](https://blog.bluestone.com/short-necklace-designs-2026/)
+* **WordPress Post ID:** `36476`
+* **Article Engine:** `design_listicle`
+* **Author:** Satyam (ID `270271337`), On-page byline: *By Satyam, BlueStone Editorial*, Schema author: `Satyam`
+* **Assigned Categories:** `Jewellery Trends` (554493317), `Jewellery & Lifestyle` (554493425), `Necklace` (554493422), `Gold` (554493348), `Yellow Gold` (554493452), `Diamond` (554493418), `Jewellery Problem & Solution` (554493465)
+* **Live Word Count:** 2,681 words
+* **Canonical URL:** `https://blog.bluestone.com/short-necklace-designs-2026/`
+
+---
+
+### 2. Primary Keyword & Target Metrics
+* **Rank:** 163
+* **Primary Keyword:** `short necklace designs`
+* **Search Volume:** 3,600
+* **Keyword Difficulty (KD):** 18
+* **Priority Score:** 2093.0233
+* **Theme:** Design Listicles
+* **Action:** New
+
+---
+
+### 3. Supporting Keywords Audit & Mapping
+* **Supplied Supporting Keywords:** `short necklace designs in gold`
+* **Topical Relevance Audit:**
+  * `short necklace designs in gold` **[ACCEPTED & MAPPED]**: Formed core H2 section on solid gold collar bands, beaded station chokers, purity grades (18Kt/22Kt/14Kt), and FAQs.
+  * **Polluted / Unrelated Keywords Rejected:** None supplied were off-topic.
+
+---
+
+### 4. H2 Keyword Map & Structural Breakdown
+1. **Introduction + Direct Answer + 2026 Style Summary Box** `[primary-backed]`
+2. **1. Anatomy of Short Necklace Designs: Choker, Collar, and Princess Lengths Explained** `[intent-inferred]`
+3. **2. Trending Short Necklace Designs in Gold for 2026** `[supporting-keyword-backed: "short necklace designs in gold"]`
+4. **3. Contemporary Diamond and Gemstone Short Necklace Patterns** `[primary-backed]`
+5. **4. Curated Short Necklace Recommendations from BlueStone** `[commerce soft CTA + 6-product coverflow carousel]`
+6. **5. How to Style Short Necklaces Across Different Necklines and Outfits** `[competitor-structure-backed]`
+7. **6. Gold Purity, Hallmarking, and Clasp Security Essentials** `[fact-backed / BIS HUID standards]`
+8. **7. Essential Care, Cleaning, and Anti-Tangle Storage Tips** `[intent-inferred / maintenance]`
+9. **8. Final Thoughts: Choosing the Perfect Short Necklace for Your Style** `[intent-inferred / conclusion placed strictly before FAQs]`
+10. **Frequently Asked Questions about Short Necklace Designs** `[primary & supporting keyword FAQ section with 6 complete Q&As]`
+
+---
+
+### 5. Competitor Analysis Summary
+* **Supplied Competitor URL:** `https://www.caratlane.com/jewellery/short+necklaces.html`
+* **Analysis & Differentiation:**
+  * CaratLane hosts a basic PLP for short necklaces with minimal educational guidance.
+  * BlueStone’s editorial establishes comprehensive topical depth: anatomical length differences (14" choker vs 16" collar vs 18" princess), neckline matching principles, BIS HUID 6-digit hallmarking standards, clasp security, and anti-tangle storage guidelines without promotional pricing.
+
+---
+
+### 6. Authoritative Factual Sources Cited
+* **Bureau of Indian Standards (BIS):** Mandatory 6-digit alphanumeric HUID hallmarking, 22Kt (916), 18Kt (750), and 14Kt (585) purity benchmarks ([bis.gov.in](https://www.bis.gov.in/)).
+* **World Gold Council (WGC):** Gold alloy durability, karatage ratios, and necklace length standards ([gold.org](https://www.gold.org/)).
+
+---
+
+### 7. Media & Product Rotation
+
+#### Mid-Article Carousel (Type 2 WebP Assets)
+* **Media IDs:** `36470`, `36471`, `36472`, `36473`, `36474`, `36475`
+1. The Ailia Evil Eye Layered Necklace (`BIAV0987N78`) — Media ID `36470`
+2. The Rapett Evil Eye Charm Necklace (`BIPN0987N07`) — Media ID `36471`
+3. The Casma Mangalsutra (`BIMA0780C53`) — Media ID `36472`
+4. The Shubhlatika Mangalsutra Necklace (`BVPJ0935C06`) — Media ID `36473`
+5. The Ninetta Mangalsutra Necklace (`BINS0780C08`) — Media ID `36474`
+6. The Yeijah Mangaslsutra Necklace (`BIMA1081C01`) — Media ID `36475`
+
+#### Type 3 Photorealistic Imagery (Higgsfield CLI `nano_banana_pro`)
+* **Hero (Featured Image):** The Shubhlatika Mangalsutra Necklace (`BVPJ0935C06`, Female, 5.2×19.5 mm)
+  * Media ID: `36477` | Job ID: `9a29aae6-02e2-4521-963e-d6bf8e6c63a5` (43.74s)
+  * Alt: *Short necklace designs 2026 trending gold collar style, The Shubhlatika Mangalsutra Necklace worn by fair-skinned Indian woman*
+* **Flatlay Image:** The Rapett Evil Eye Charm Necklace (`BIPN0987N07`, Female, 18.75×11.52 mm)
+  * Setting ID: `cafe-tray` (artisanal ceramic cafe tray with espresso cup and linen napkin)
+  * Media ID: `36478` | Job ID: `89ec02f2-cdef-4544-bea7-9ae9b9f486c8` (43.58s)
+  * Caption: *Short necklace designs 2026 vibe: The Rapett Evil Eye Charm Necklace*
+* **Lifestyle Image:** The Ninetta Mangalsutra Necklace (`BINS0780C08`, Female, 9.84×9.84 mm)
+  * Media ID: `36479` | Job ID: `ba47bc9a-118d-4c53-9c4a-2fc742e47bac` (43.52s)
+  * Caption: *Short necklace designs 2026 styling: The Ninetta Mangalsutra Necklace*
+
+---
+
+### 8. Higgsfield API & Credit Accounting
+* **Plan:** Scale
+* **Starting Credits:** `127.32`
+* **Jobs Executed:** 3 jobs (Hero, Flatlay, Lifestyle)
+* **Retries:** 0 (all 3 completed on first submission)
+* **Ending Credits:** `121.32`
+
+---
+
+### 9. Duplicate Intent & Live Quality Audit
+* **Duplicate Intent Gate:** Passed (verified zero conflicting posts for slug `short-necklace-designs-2026`).
+* **HTML / Block Syntax:** Validated Gutenberg comments with closing tags (`<!-- /wp:... -->`), zero HTML tables, zero prices, zero em/en dashes, zero spaced hyphens.
+* **Section Ordering:** "Final Thoughts" strictly precedes FAQ section.
+* **FAQ Verification:** 6 visible question-and-answer pairs rendered in DOM and mirrored in `FAQPage` JSON-LD schema.
+* **Social / OG Image:** Verified live `og:image` correctly points to the hero featured WebP image (`36477`).
+* **Status Updates:** [SEO Strategy 2026.xlsx](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/SEO%20Strategy%202026.xlsx) (Row 164), `Week7_Gift_Guides_PostRank10.csv`, `Week7_Gift_Guides_PostRank10_status.csv`, `product_rotation.json`, and checkpoint [week7_rank163.json](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/checkpoints/week7_rank163.json) fully updated.

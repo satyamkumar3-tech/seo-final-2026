@@ -1,0 +1,135 @@
+{
+  "pipeline": "week9",
+  "rank": 71,
+  "slug": "light-weight-gold-earrings-design-2026",
+  "primary": "light weight gold earrings design",
+  "created_at": "2026-09-25T11:37:27Z",
+  "status": "complete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-25T11:37:56Z",
+      "finished_at": "2026-09-25T11:39:04Z",
+      "docs_read": 11
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-25T11:39:09Z",
+      "finished_at": "2026-09-25T11:39:18Z",
+      "credits": 148.6,
+      "plan": "ultimate"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-25T11:39:23Z",
+      "finished_at": "2026-09-25T11:39:43Z",
+      "action": "New",
+      "primary": "light weight gold earrings design",
+      "volume": 1900,
+      "kd": 17.0
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-25T11:39:47Z",
+      "finished_at": "2026-09-25T11:42:25Z",
+      "slug_status": "available",
+      "conflicting_url": "none",
+      "action": "New"
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "started_at": "2026-09-25T11:42:30Z",
+      "finished_at": "2026-09-25T11:44:36Z",
+      "urls_scraped": 5,
+      "avg_word_count": 11716
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-25T11:44:40Z",
+      "finished_at": "2026-09-25T11:44:46Z",
+      "bis_huid": "verified",
+      "gst": "3_percent",
+      "purity": "14K_585_18K_750_22K_916",
+      "competitor_analyzed": "caratlane_0_to_2_grams"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-25T11:44:50Z",
+      "finished_at": "2026-09-25T11:44:57Z",
+      "accepted_kws": "gold earrings design light weight,light weight earrings gold,light weight gold earrings",
+      "h2_count": 10
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-25T11:45:00Z",
+      "finished_at": "2026-09-25T11:45:16Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "windowsill-daylight"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-25T11:45:20Z",
+      "finished_at": "2026-09-25T11:48:20Z",
+      "word_count": 4366,
+      "draft_file": "output/week9_rank71_draft.json"
+    },
+    "product_media": {
+      "status": "done",
+      "finished_at": "2026-09-25T11:48:20Z",
+      "carousel_media_ids": "40247,40248,40249,40250,40251,40252"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-25T11:48:25Z",
+      "finished_at": "2026-09-25T11:48:47Z",
+      "wp_post_id": 40253,
+      "live_url": "https://blog.bluestone.com/light-weight-gold-earrings-design-2026/",
+      "carousel_media_ids": "40247,40248,40249,40250,40251,40252"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T11:48:53Z",
+      "finished_at": "2026-09-25T11:52:57Z",
+      "hero_job": "c36962e9-c855-4d6e-b924-d89e64b49143",
+      "flatlay_job": "52c4d583-46d9-46eb-805d-4397885f07cd",
+      "lifestyle_job": "5985d3dc-dae7-4be4-8bb3-7d0aa5807f37"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T11:53:07Z",
+      "finished_at": "2026-09-25T11:54:08Z",
+      "type3_media_ids": "40254,40255,40256",
+      "featured_media": 40254
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-25T11:54:17Z",
+      "finished_at": "2026-09-25T11:56:02Z",
+      "result": "passed",
+      "visible_words": 3213,
+      "live_url": "https://blog.bluestone.com/light-weight-gold-earrings-design-2026/"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-25T11:56:07Z",
+      "finished_at": "2026-09-25T11:58:03Z",
+      "status_csv": "upserted",
+      "product_rotation": "updated",
+      "excel": "updated",
+      "confirmed_by": "week9_pipeline_atomic_upsert"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-25T11:57:03Z",
+      "finished_at": "2026-09-25T11:57:19Z",
+      "post_id": 40253,
+      "live_url": "https://blog.bluestone.com/light-weight-gold-earrings-design-2026/"
+    }
+  },
+  "updated_at": "2026-09-25T11:58:03Z",
+  "completed_at": "2026-09-25T11:58:03Z",
+  "last_exit_code": 0,
+  "outcome": "published",
+  "live_url": "https://blog.bluestone.com/light-weight-gold-earrings-design-2026/",
+  "wp_post_id": 40253
+}

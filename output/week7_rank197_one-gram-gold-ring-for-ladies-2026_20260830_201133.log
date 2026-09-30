@@ -1,0 +1,177 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 197 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 197\n- Action: New\n- Primary keyword: one gram gold ring for ladies\n- Volume: 3600\n- KD: 23\n- Priority score: 1875\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: one-gram-gold-ring-for-ladies-2026\n- Article engine: design_listicle\n- Category hint: `Gold` 554493348 + `Jewellery Problem & Solution` 554493465\n- Supplied supporting keywords: one gram gold ring | one gram gold ring for women\n- Supplied competitor URL: blank in source row\n- Semrush page: one gram gold ring for ladies\n- Source execution note: Week7 multi-brand refill after intent collapse. intent=sig:one_gram_ring; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq; from Jewellery_Keywords_Unique. One URL only.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank197.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank197.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--`.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n",
+  "--model",
+  "Gemini 3.7 Flash (Medium)"
+]
+
+OUTPUT:
+STEP START: Read required docs | time: 2026-08-30 20:12:30 | elapsed: 00m 00s
+STEP DONE: Read required docs | time: 2026-08-30 20:12:45 | step duration: 00m 15s | total elapsed: 00m 15s
+STEP START: Verify Higgsfield status and report credits/plan | time: 2026-08-30 20:12:45 | elapsed: 00m 15s
+STEP DONE: Verify Higgsfield status and report credits/plan | time: 2026-08-30 20:12:55 | step duration: 00m 10s | total elapsed: 00m 25s
+STEP START: Inspect the Week 7 target row | time: 2026-08-30 20:12:55 | elapsed: 00m 25s
+STEP DONE: Inspect the Week 7 target row | time: 2026-08-30 20:13:15 | step duration: 00m 20s | total elapsed: 00m 45s
+STEP START: Check duplicate slug and search intent | time: 2026-08-30 20:13:15 | elapsed: 00m 45s
+STEP DONE: Check duplicate slug and search intent | time: 2026-08-30 20:13:40 | step duration: 00m 25s | total elapsed: 01m 10s
+STEP START: Analyze the supplied competitor URL and fact-check current sources | time: 2026-08-30 20:13:40 | elapsed: 01m 10s
+STEP DONE: Analyze the supplied competitor URL and fact-check current sources | time: 2026-08-30 20:13:58 | step duration: 00m 18s | total elapsed: 01m 28s
+STEP START: Filter and map supporting keywords | time: 2026-08-30 20:13:58 | elapsed: 01m 28s
+STEP START: Select article structure and visual concept | time: 2026-08-30 20:14:10 | elapsed: 01m 40s
+STEP DONE: Select article structure and visual concept | time: 2026-08-30 20:15:00 | step duration: 00m 50s | total elapsed: 02m 30s
+STEP START: Draft the complete article | time: 2026-08-30 20:15:00 | elapsed: 02m 30s
+STEP DONE: Draft the complete article | time: 2026-08-30 20:16:05 | step duration: 01m 05s | total elapsed: 03m 35s
+STEP START: Select products and carousel media | time: 2026-08-30 20:16:05 | elapsed: 03m 35s
+I have launched the carousel image conversion and upload process to WordPress. Waiting for the upload to complete...
+STEP DONE: Select products and carousel media | time: 2026-08-30 20:17:00 | step duration: 00m 55s | total elapsed: 04m 30s
+STEP START: Publish the WordPress post | time: 2026-08-30 20:17:00 | elapsed: 04m 30s
+STEP DONE: Publish the WordPress post | time: 2026-08-30 20:17:25 | step duration: 00m 25s | total elapsed: 04m 55s
+STEP START: Generate Type 3 images through the Higgsfield CLI | time: 2026-08-30 20:17:25 | elapsed: 04m 55s
+I have started the Higgsfield Type 3 image generation jobs (hero, flatlay, and lifestyle) via the Higgsfield CLI. Waiting for generation and WebP conversion to complete...
+STEP DONE: Generate Type 3 images through the Higgsfield CLI | time: 2026-08-30 20:23:55 | step duration: 06m 30s | total elapsed: 11m 25s
+STEP START: Patch images and social metadata into WordPress | time: 2026-08-30 20:23:55 | elapsed: 11m 25s
+I have initiated the Type 3 image upload and post patching process for WordPress. Waiting for it to complete...
+STEP DONE: Patch images and social metadata into WordPress | time: 2026-08-30 20:24:30 | step duration: 00m 35s | total elapsed: 12m 00s
+STEP START: Run live QA | time: 2026-08-30 20:24:30 | elapsed: 12m 00s
+STEP DONE: Run live QA | time: 2026-08-30 20:25:25 | step duration: 00m 55s | total elapsed: 12m 55s
+STEP START: Update status files and write the final report | time: 2026-08-30 20:25:25 | elapsed: 12m 55s
+# End-to-End Execution Report: Week 7 Rank 197
+
+The article for **Week 7 Rank 197** has been generated, published, enriched with high-fidelity Type 3 visual assets, and validated live on WordPress.
+
+---
+
+### Core Publication Details
+
+| Field | Detail |
+|---|---|
+| **Live Article URL** | [https://blog.bluestone.com/one-gram-gold-ring-for-ladies-2026/](https://blog.bluestone.com/one-gram-gold-ring-for-ladies-2026/) |
+| **WordPress Post ID** | `36893` |
+| **Status Code** | `200 OK` |
+| **Theme / Article Engine** | Design Listicle (`design_listicle`) |
+| **Author** | Satyam (User ID: `270271337`), on-page byline: *By Satyam, BlueStone Editorial* |
+| **WordPress Categories** | `Gold` (`554493348`) & `Jewellery Problem & Solution` (`554493465`) |
+| **Visible Article Word Count** | **3,364 words** (4,532 total tokens including structured cards/schemas) |
+| **Total Headings** | 1 `<h1>`, 12 editorial content `<h2>` headings |
+| **Visible FAQs** | 6 complete Q&A pairs under dedicated H2 heading |
+| **Schemas Embedded** | `FAQPage` (6 questions) & `BlogPosting` (Author: Satyam, 9 image URLs) |
+
+---
+
+### Keyword Metrics & Mapping Audit
+
+- **Primary Keyword:** `one gram gold ring for ladies` (Volume: 3,600 | KD: 23 | Score: 1875)
+- **Supplied Supporting Keywords Audit:**
+  - `one gram gold ring` (Parent query / core synonym): **Accepted**. Integrated into Title, Meta, Intro, H2, FAQ 1, and BlogPosting schema.
+  - `one gram gold ring for women` (Demographic synonym): **Accepted**. Integrated into H2 (Trending Designs), styling section, and FAQ 4.
+  - **Rejected Keywords:** None (no polluted or off-topic keywords provided in source row).
+
+#### H2 Keyword Attribution Map
+
+1. `Quick Summary: What You Need to Know Before Buying` — **intent-inferred**
+2. `What Does a One Gram Gold Ring for Ladies Mean in Fine Jewellery?` — **primary-backed**
+3. `Solid Gold vs One Gram Gold Plated: Crucial Differences Every Buyer Must Know` — **intent-inferred**
+4. `7 Trending Styles of One Gram Gold Ring for Women in 2026` — **supporting-keyword-backed**
+5. `Curated Fine Gold Rings: Handcrafted Elegance from BlueStone` — **intent-inferred**
+6. `Best Metal Karatage for Lightweight Gold Rings: 14K vs 18K vs 22K` — **intent-inferred**
+7. `Understanding BIS Hallmarking and Regulatory Standards for Lightweight Gold` — **intent-inferred**
+8. `How to Style One Gram Gold Rings for Daily Wear and Office Looks` — **intent-inferred**
+9. `Maintenance and Care: How to Prevent Bending and Keep Lightweight Rings Shiny` — **intent-inferred**
+10. `Ring Sizing and Fit Guide for Delicate Gold Bands` — **intent-inferred**
+11. `Final Thoughts: Choosing the Perfect Everyday Fine Gold Ring` — **intent-inferred** (Placed strictly before FAQs)
+12. `Frequently Asked Questions About One Gram Gold Ring for Ladies` — **primary-backed** (Trailing content section before schema)
+
+---
+
+### Competitor & Factual Verification
+
+- **Competitor URL:** Blank in source row (no synthetic competitor URL invented).
+- **Factual & Legal Due Diligence:**
+  - **BIS Hallmarking Exemption:** Under official Bureau of Indian Standards (BIS) regulations, jewellery items weighing **under 2 grams** are exempt from mandatory laser hallmarking to prevent structural damage to ultra-thin shanks. Reputable fine jewellers (like BlueStone) issue comprehensive itemized tax invoices and authenticity certificates specifying net gold weight, karatage (14K/18K), and lifetime buyback/exchange rights.
+  - **Material Truth & Alloy Hardness:** Addressed the crucial difference between genuine solid gold (14K/18K) versus "1-gram micro gold-plated / forming gold" brass imitation rings. Explained why 14K and 18K solid gold alloys provide superior tensile strength and bend-resistance compared to soft 22K gold for ultra-lightweight rings.
+  - **Citations:** [Bureau of Indian Standards (BIS)](https://www.bis.gov.in/).
+
+---
+
+### Visual Assets & Media IDs
+
+#### Type 2 Carousel (6 Cards, 6 Live Buy Links)
+- Container ID: `bs-cf-one-gram-gold-ring`
+- Format: WebP (`960x535`, quality 82)
+- Uploaded Media IDs:
+  1. The Haily Ring (`BINS0639R11`) — Media ID: `36887`
+  2. The Liza ring (`BIAR0097R07`) — Media ID: `36888`
+  3. The Rafia Ring (`BIAB0503R03`) — Media ID: `36889`
+  4. The Gigi Ring (`BINS0639R18`) — Media ID: `36890`
+  5. The Yuthika Highway Ring (`BIJP0992R60`) — Media ID: `36891`
+  6. The Viperine Twist Ring (`BIJP0993R123`) — Media ID: `36892`
+
+#### Type 3 Concept Images (Higgsfield CLI `nano_banana_pro`, 16:9, 2K)
+- **Hero Image (Featured Media):**
+  - SKU: `BIJP0993R123` (The Viperine Twist Ring)
+  - Dimensions: `product_height_mm=22.21 x product_width_mm=9.68`
+  - References: `1_body_portrait.png` (`@img1`) + `0_primary.png` (`@img2`)
+  - Higgsfield Job ID: `cd8b60cf-c650-4948-a6d5-74156a908d00`
+  - WordPress Media ID: `36894`
+  - Alt Text: `One gram gold ring for ladies 2026 hero: The Viperine Twist Ring worn by a woman`
+- **Flatlay Image:**
+  - SKU: `BIKR0993R117` (The Luvee Highway Ring)
+  - Setting ID: `linen-bedside` (Neutral rumpled linen on oak bedside table with artisanal ceramic dish)
+  - Dimensions: `product_height_mm=20.94 x product_width_mm=7.38`
+  - References: `0_primary.png` + `2_front.png` + `5_close_up.png`
+  - Higgsfield Job ID: `7f1287c9-f267-4ea0-94bc-1c679ec7cd73`
+  - WordPress Media ID: `36895`
+  - Alt Text: `One gram gold ring design 2026 flatlay: The Luvee Highway Ring on linen bedside table`
+  - Caption: `<figcaption>One gram gold ring design 2026 vibe: The Luvee Highway Ring on linen bedside table</figcaption>`
+- **Lifestyle Image:**
+  - SKU: `BIAR0097R16` (The Quinn Ring)
+  - Dimensions: `product_height_mm=21.6 x product_width_mm=7.84`
+  - References: `1_body_portrait.png` (`@img1`) + `0_primary.png` (`@img2`)
+  - Higgsfield Job ID: `389d2af9-326e-4b52-9d17-a0f14674d818`
+  - WordPress Media ID: `36896`
+  - Alt Text: `One gram gold ring for women 2026 lifestyle: The Quinn Ring on woman's hand`
+  - Caption: `<figcaption>One gram gold ring for women 2026 styling: The Quinn Ring</figcaption>`
+
+---
+
+### Higgsfield Account & Credit Consumption
+
+- **Subscription Plan:** `ultimate`
+- **Starting Credits:** `971.37`
+- **Ending Credits:** `965.37`
+- **Credits Consumed:** `6.00` (2 credits × 3 slots)
+- **Retries / Errors:** `0` (100% first-pass generation success)
+
+---
+
+### Product Rotation & Catalog Hygiene
+
+- **Overlap Policy Checked:** Exactly 1 SKU overlap between Type 3 and Carousel (`BIJP0993R123 The Viperine Twist Ring`), complying strictly with the `≤ 1 SKU` overlap rule.
+- **Flatlay Setting Rotation:** Selected `linen-bedside` (last used on Rank 183), properly logged in `output/product_rotation.json`.
+- **Gender Lock:** Female models and female hand profiles applied exclusively to female ring SKUs.
+
+---
+
+### Duplicate Intent & Live Social Meta Verification
+
+- **Duplicate / Cannibalization Check:** Confirmed slug `one-gram-gold-ring-for-ladies-2026` returned 404 prior to creation; zero existing live posts or queue rows target this keyword intent.
+- **Featured Media:** Linked directly to Hero Media ID `36894`.
+- **OpenGraph & Twitter Cards:** Configured via Yoast REST meta for ID `36894`.
+- **Prose Dash & Price Audit:** Passed with 0 em dashes (`—`), 0 en dashes (`–`), 0 spaced hyphens (` - `), and 0 price mentions in article text.
+
+---
+
+### State Artifacts Updated
+
+- [`output/checkpoints/week7_rank197.json`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/checkpoints/week7_rank197.json) (All 15 steps marked `done`)
+- [`output/Week7_Gift_Guides_PostRank10.csv`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week7_Gift_Guides_PostRank10.csv) (Rank 197 action updated to `Done`)
+- [`output/Week7_Gift_Guides_PostRank10_status.csv`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week7_Gift_Guides_PostRank10_status.csv) (Rank 197 record upserted)
+- [`output/product_rotation.json`](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/product_rotation.json) (Rank 197 trio, SKUs, and `linen-bedside` setting upserted)
+- `SEO Strategy 2026.xlsx` (`Week 7` sheet row 198 updated with live URL and execution note)

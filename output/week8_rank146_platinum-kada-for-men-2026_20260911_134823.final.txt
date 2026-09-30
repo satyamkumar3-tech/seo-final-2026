@@ -1,0 +1,217 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 146 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 146\n- Action: New\n- Primary keyword: platinum kada for men\n- Volume: 4400\n- KD: 16.0\n- Priority score: 4628.0488\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: platinum-kada-for-men-2026\n- Article engine: buying_guide\n- Category hint: `Men's Jewellery` 554493434 where product fit is men's jewellery; otherwise `Gift` 554493424\n- Supplied supporting keywords: platinum kada for mens | platinum kada for women | platinum kada for womens\n- Supplied competitor URL: https://www.caratlane.com/jewellery/samuel-platinum-kada-for-men-ub00808-pr0000.html\n- Semrush page: platinum kada for men\n- Source execution note: Week8 new topic. Intent key=sig:kada_platinum; brands=CaratLane,Joyalukkas,Kalyan,Malabar,MergedJewellery,ScoringCL,Tanishq; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank146.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank146.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & LIVE MEDIA VERIFICATION: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html` (matching `mens-black-bracelet-2026`). It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 360px }`, `margin: 1.75rem auto 1.25rem`, `.bs-cf-card { width: min(420px, 78vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class=\"bs-cf\" id=\"bs-cf-<slug>\" data-interval=\"3200\" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards with initial position classes (`.bs-cf-card is-pos-0 data-index=\"0\"` ... `is-pos--1 data-index=\"5\"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` (with NO `<p>` wrappers). This 360px stage height, 420px card width, and initial position classes prevent any bottom overlap, clipping, or initial layout shift. Follow immediately with a `<strong>Curated Design Highlights:</strong>` paragraph and bulleted list hyperlinked to each BlueStone PDP. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.\n- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: read_docs | time: 2026-09-11 13:48:58 | elapsed: 00:00:27
+STEP DONE: read_docs | time: 2026-09-11 13:49:27 | step duration: 00:00:32 | total elapsed: 00:00:56
+STEP START: verify_higgsfield | time: 2026-09-11 13:49:30 | elapsed: 00:00:59
+STEP DONE: verify_higgsfield | time: 2026-09-11 13:49:36 | step duration: 00:00:06 | total elapsed: 00:01:05
+STEP START: inspect_row | time: 2026-09-11 13:49:38 | elapsed: 00:01:07
+STEP DONE: inspect_row | time: 2026-09-11 13:50:40 | step duration: 00:01:02 | total elapsed: 00:02:09
+STEP START: duplicate_check | time: 2026-09-11 13:50:42 | elapsed: 00:02:11
+root agent idle; waiting for 1 background task(s) (bounded by --print-timeout)
+I have launched the WordPress duplicate slug and search intent verification check and am waiting for the results.
+I am waiting for the background WordPress duplicate verification task to complete.
+STEP DONE: duplicate_check | time: 2026-09-11 13:51:20 | step duration: 00:00:38 | total elapsed: 00:02:49
+STEP START: fact_check | time: 2026-09-11 13:51:22 | elapsed: 00:02:51
+STEP DONE: fact_check | time: 2026-09-11 13:51:42 | step duration: 00:00:20 | total elapsed: 00:03:11
+STEP START: keyword_map | time: 2026-09-11 13:51:44 | elapsed: 00:03:13
+STEP DONE: Build the H2 keyword map | time: 2026-09-11 13:52:05 | step duration: 00:00:11 | total elapsed: 00:03:34
+STEP START: structure_visuals | time: 2026-09-11 13:52:07 | elapsed: 00:03:36
+STEP DONE: structure_visuals | time: 2026-09-11 13:53:00 | step duration: 00:00:53 | total elapsed: 00:04:29
+STEP START: draft | time: 2026-09-11 13:53:02 | elapsed: 00:04:31
+I have launched the media ID verification command and will wait for it to complete.
+I have launched the internal links verification command and am waiting for it to finish.
+STEP DONE: draft | time: 2026-09-11 13:56:12 | step duration: 00:03:10 | total elapsed: 00:07:41
+STEP START: product_media | time: 2026-09-11 13:56:14 | elapsed: 00:07:43
+STEP DONE: product_media | time: 2026-09-11 13:56:34 | step duration: 00:00:20 | total elapsed: 00:08:03
+STEP START: publish_wordpress | time: 2026-09-11 13:56:36 | elapsed: 00:08:05
+STEP DONE: publish_wordpress | time: 2026-09-11 13:57:00 | step duration: 00:00:24 | total elapsed: 00:08:29
+STEP START: generate_type3 | time: 2026-09-11 13:57:02 | elapsed: 00:08:31
+I have launched the Higgsfield Type 3 image generation pipeline in the background and am waiting for the generations to complete.
+STEP DONE: generate_type3 | time: 2026-09-11 13:59:54 | step duration: 00:02:52 | total elapsed: 00:11:23
+STEP START: patch_type3 | time: 2026-09-11 13:59:56 | elapsed: 00:11:25
+I have launched the WordPress image upload and patching process and am waiting for it to finish.
+STEP DONE: patch_type3 | time: 2026-09-11 14:00:29 | step duration: 00:00:33 | total elapsed: 00:11:58
+STEP START: live_qa | time: 2026-09-11 14:00:31 | elapsed: 00:12:00
+I have launched the live QA verification script and am waiting for it to complete.
+STEP DONE: live_qa | time: 2026-09-11 14:01:03 | step duration: 00:00:32 | total elapsed: 00:12:32
+STEP START: update_status | time: 2026-09-11 14:01:05 | elapsed: 00:12:34
+I have launched the status update task and am waiting for it to finish.
+STEP DONE: update_status | time: 2026-09-11 14:01:29 | step duration: 00:00:24 | total elapsed: 00:12:58
+STEP START: final_report | time: 2026-09-11 14:01:31 | elapsed: 00:13:00
+STEP DONE: final_report | time: 2026-09-11 14:01:46 | step duration: 00:00:15 | total elapsed: 00:13:15
+
+---
+
+# Week 8 Rank 146 Production Report: Platinum Kada for Men (2026)
+
+### 1. Publication Summary & WordPress Identity
+* **Live Article URL:** [https://blog.bluestone.com/platinum-kada-for-men-2026/](https://blog.bluestone.com/platinum-kada-for-men-2026/)
+* **WordPress Post ID:** `38736`
+* **Article Engine:** `buying_guide` (Engine 2: How-to / Education / Buying Guide from `docs/WEEK6_CLUSTER_PLAYBOOK.md`)
+* **Author:** Satyam (User ID: `270271337`)
+* **On-Page Byline:** `By Satyam, BlueStone Editorial`
+* **Categories:** `Men's Jewellery` (ID: `554493434`)
+* **Visible Article Word Count:** 3,012 words (44,285 characters full Gutenberg markup)
+* **Live `og:image`:** `https://blog.bluestone.com/wp-content/uploads/2026/09/platinum-kada-for-men-hero-2026.webp` (HTTP 200 verified)
+* **Canonical URL:** `https://blog.bluestone.com/platinum-kada-for-men-2026/` (verified matching live DOM)
+
+---
+
+### 2. Search Intent & Keyword Architecture
+* **Primary Keyword:** `platinum kada for men`
+  * **Search Volume:** 4,400
+  * **Keyword Difficulty (KD):** 16.0
+  * **Priority Score:** 4,628.0488
+  * **Theme / Category Fit:** How-to / Education | Jewellery Education
+* **Supplied Supporting Keywords Audit:**
+  * `platinum kada for mens`: **Accepted** (High-relevance linguistic synonym; incorporated into H2 2, body paragraphs, and FAQ #1).
+  * `platinum kada for women`: **Accepted** (Topical cross-gender differentiation; incorporated into H2 5 comparing gauge, gram weight, and curvature, plus FAQ #4).
+  * `platinum kada for womens`: **Accepted** (Grammatical variant; mapped into the comparative differentiation section and FAQ #4).
+  * *Rejected Keywords:* None (all three supplied phrases directly relate to kada wristwear proportions and gender styling).
+
+---
+
+### 3. H2 Keyword Map & Structural Spine
+Every H2 heading appears exactly once from introduction to conclusion:
+
+1. **Why Choose a Platinum Kada for Men? Durability, Weight, and Meaning**
+   * *Backing:* `primary-backed` (Volume: 4,400, KD: 16.0)
+   * *Focus:* Specific gravity (21.45 g/cm³), displacement wear physics (patina vs gold metal loss), hypoallergenic skin chemistry, permanent natural white metal luster.
+2. **Platinum Kada for Mens: Anatomy of Pt950 Purity and BIS Hallmarking**
+   * *Backing:* `supporting-keyword-backed` (`platinum kada for mens`)
+   * *Focus:* 95% pure elemental platinum standard, hardener metals (ruthenium, iridium), BIS hallmarking standard IS 2112:2014, PGI tamper-proof certification, laser HUID verification.
+3. **Key Kada Design Styles: Solid Cuffs, Hinged Clasps, and Dual-Tone Accents**
+   * *Backing:* `competitor-structure-backed` (Derived from CaratLane Samuel Pt950 & 18KT rose gold architecture)
+   * *Focus:* Traditional solid round slip-on kadas, ergonomic anatomical oval cuffs, precision hidden spring-lock clasps, dual-tone platinum and 18K rose/yellow gold inlays.
+4. **Curated BlueStone Men's Platinum and Fine Jewellery Designs**
+   * *Backing:* `intent-inferred` (Commercial showcase)
+   * *Focus:* Official 3D Coverflow carousel with 6 verified BlueStone men's wristwear designs, followed by hyperlinked curated highlights.
+5. **Platinum Kada for Women vs Men: Key Differences in Width, Weight, and Profile**
+   * *Backing:* `supporting-keyword-backed` (`platinum kada for women`, `platinum kada for womens`)
+   * *Focus:* Millimeter width differences (men: 6mm–12mm vs women: 3mm–5mm), precious metal weight ranges (men: 25g–45g vs women: 10g–20g), architectural bevels vs delicate pavé styling.
+6. **How to Size a Men's Kada: Wrist Measurement and Oval Fit Secrets**
+   * *Backing:* `intent-inferred`
+   * *Focus:* Method A for open cuffs and hinged clasps (wrist circumference + 1.2cm–1.5cm ease); Method B for continuous slip-on kadas (compressed knuckle circumference divided by pi).
+7. **Platinum Weight, Making Charges, and 3% GST: Understanding the True Value**
+   * *Backing:* `intent-inferred` (Commercial education & tax rules)
+   * *Focus:* Certified net Pt950 bullion weight, high-temperature craftsmanship charges (1768°C melting point), statutory 3% GST calculation on jewellery, transparent billing.
+8. **Daily Wear, Care, and Patina Maintenance for Men's Platinum Jewellery**
+   * *Backing:* `intent-inferred`
+   * *Focus:* Embracing the satin patina of success, gentle home cleaning routine (lukewarm water + mild liquid soap), gym weightlifting safety, isolated storage.
+9. **Final Thoughts: Selecting a Platinum Kada That Lasts Generations**
+   * *Backing:* `intent-inferred`
+   * *Placement:* Located before the internal links and FAQ section.
+10. **More Jewellery & Buying Guides**
+    * *Backing:* `intent-inferred` (Mandatory Internal Blog Cluster Section)
+    * *Placement:* Located directly between Final Thoughts and FAQs.
+    * *Internal Links (all HTTP 200 verified):*
+      * [Platinum Bracelet for Men Buying Guide 2026](https://blog.bluestone.com/platinum-bracelet-for-men-2026/)
+      * [Hand Bracelet for Men Sizing Manual](https://blog.bluestone.com/hand-bracelet-for-men-2026/)
+      * [Mens Black Bracelet Buying Guide](https://blog.bluestone.com/mens-black-bracelet-2026/)
+      * [Guide to Checking Gold Purity](https://blog.bluestone.com/how-to-check-gold-purity-2026/)
+      * [GST on Jewellery in India Guide](https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/)
+11. **Frequently Asked Questions About Platinum Kada for Men**
+    * *Backing:* `primary-backed` & `supporting-keyword-backed`
+    * *Placement:* Final content section preceding the trailing JSON-LD schema block.
+    * *Visible Content:* 6 full, visible Q&As with zero missing answers.
+
+---
+
+### 4. Competitor Analysis & Authoritative Citations
+* **Supplied Competitor URL:** [CaratLane Samuel Platinum Kada for Men (UB00808-PR0000)](https://www.caratlane.com/jewellery/samuel-platinum-kada-for-men-ub00808-pr0000.html)
+  * *Competitor Spec:* 950 Platinum & 18KT Rose Gold dual-tone cuff, 29.900g gross weight, oval contour with openable latch.
+  * *Differentiation:* CaratLane provides a pure e-commerce product card. BlueStone's buying guide provides comprehensive metallurgical context, physical density comparisons (21.45 g/cm³), BIS IS 2112:2014 hallmarking decoding, sizing math for round vs oval wrists, tax education (3% GST), and daily wear patina maintenance.
+* **Factual & Regulatory Citations Used:**
+  * [Platinum Guild International (PGI)](https://platinumguild.com/) - Global standards for Pt950 alloy compositions and authenticity certification.
+  * [Bureau of Indian Standards (BIS)](https://www.bis.gov.in/) - Indian Standard IS 2112:2014 for platinum hallmarking and HUID traceability.
+  * Ministry of Finance / GST Council - 3% GST statutory rate on precious metal jewellery.
+
+---
+
+### 5. Media Assets & Carousel Verification
+* **Type 2 Mid-Article 3D Coverflow Carousel:**
+  * Container: `.bs-cf` (`#bs-cf-platinum-kada-for-men-2026`), `.bs-cf-stage` (height: 360px), `.bs-cf-card` (width: min(420px, 78vw)), `.bs-cf-dots`.
+  * Initial position classes applied: `is-pos-0`, `is-pos-1`, `is-pos-2`, `is-pos-3`, `is-pos--3`, `is-pos--1`.
+  * Pre-flight verification: All 6 cards return HTTP 200 on live HEAD requests.
+  * Products in Carousel:
+    1. `The Kilxer Link Bracelet For Him` (SKU: `BISL1006V249`) | Media ID: `34481` | [PDP](https://www.bluestone.com/bracelets/the-kilxer-link-bracelet-for-him~163433.html)
+    2. `The Volara Bracelet For Him` (SKU: `BISL1006V287`) | Media ID: `31541` | [PDP](https://www.bluestone.com/bracelets/the-volara-bracelet-for-him~163432.html)
+    3. `The Amandine Bracelet For Him` (SKU: `BIPO0945V21`) | Media ID: `30616` | [PDP](https://www.bluestone.com/bracelets/the-amandine-bracelet-for-him~111826.html)
+    4. `The Fonseca Bracelet For Him` (SKU: `BIPO0945V20`) | Media ID: `30687` | [PDP](https://www.bluestone.com/bracelets/the-fonseca-bracelet-for-him~116367.html)
+    5. `The Bandhan Bracelet For Him` (SKU: `BISV0910V12`) | Media ID: `30405` | [PDP](https://www.bluestone.com/bracelets/the-bandhan-bracelet-for-him~112002.html)
+    6. `The Concatenate Bracelet For Him` (SKU: `BISV0910V22`) | Media ID: `30604` | [PDP](https://www.bluestone.com/bracelets/the-concatenate-bracelet-for-him~109542.html)
+
+* **Type 3 Concept Media (Higgsfield CLI `nano_banana_pro`, 16:9, 2k):**
+  * **Hero (Featured Image):**
+    * *SKU:* `BISL1006V249` (The Kilxer Link Bracelet For Him, Male)
+    * *Scene:* Fair-skinned Indian man in early 30s wearing a charcoal grey linen blazer, seated in a contemporary architectural lounge, wrist naturally resting on table.
+    * *Job ID:* `533e6390-e9d6-4ce0-8b37-d89a9319351e`
+    * *WP Media ID:* `38737`
+    * *Image URL:* `https://blog.bluestone.com/wp-content/uploads/2026/09/platinum-kada-for-men-hero-2026.webp`
+  * **Flatlay (In-Body Concept):**
+    * *SKU:* `BISL1006V287` (The Volara Bracelet For Him)
+    * *Setting ID:* `study-desk` (Dark matte walnut desk, vintage brass fountain pen, dark leather blotter, blank leather journal).
+    * *Job ID:* `53fc05a2-9d99-4d15-a502-83d12172452d`
+    * *WP Media ID:* `38738`
+    * *Image URL:* `https://blog.bluestone.com/wp-content/uploads/2026/09/platinum-kada-for-men-flatlay-2026.webp`
+    * *Caption:* `platinum kada for men 2026 vibe: The Volara Bracelet For Him` (hyperlinked to PDP)
+  * **Lifestyle (In-Body Concept):**
+    * *SKU:* `BIPO0945V20` (The Fonseca Bracelet For Him, Male)
+    * *Scene:* Fair-skinned Indian man in a navy dress shirt with rolled cuffs, checking the fit and clasp of his fine wristwear at a sunlit wooden table.
+    * *Job ID:* `6a4f2444-6bd8-463b-b467-a5ce270ff245`
+    * *WP Media ID:* `38739`
+    * *Image URL:* `https://blog.bluestone.com/wp-content/uploads/2026/09/platinum-kada-for-men-lifestyle-2026.webp`
+    * *Caption:* `platinum kada for men 2026 vibe: The Fonseca Bracelet For Him` (hyperlinked to PDP)
+
+---
+
+### 6. Higgsfield Generation Accounting
+* **Subscription Plan:** `ultimate`
+* **Starting Credits:** `294.54`
+* **Credits Consumed:** `51.00`
+* **Ending Balance:** `243.54`
+* **Generations Attempted / Successful:** 3 / 3 (Hero, Flatlay, Lifestyle)
+* **Retries Required:** 0 (First-pass generation succeeded for all 3 slots)
+
+---
+
+### 7. Product Rotation & Catalog State
+* **Rank 146 Trio Recorded in `output/product_rotation.json`:**
+  * Hero: `BISL1006V249`
+  * Flatlay: `BISL1006V287`
+  * Lifestyle: `BIPO0945V20`
+* **Flatlay Setting Rotation:** `study-desk` logged at the head of `recent_flatlay_settings` (rotated from previous `marble-vanity`).
+* **Catalog Alignment:** All 3 products strictly obey `GenderTag: Male`. Both hero and lifestyle utilized verified `1_body_portrait.png` body references alongside design packshots.
+
+---
+
+### 8. Live QA Verification Matrix
+| Check | Status | Verification Detail |
+|---|---|---|
+| Duplicate Gate | PASS | 0 matches across live slugs and search intent queries before generation |
+| Single H1 | PASS | Exactly one `<h1>` rendered by Creatio theme template |
+| Unique H2s | PASS | 11 distinct H2 headings; zero duplicate sections |
+| Prohibited Dashes | PASS | 0 em dashes, 0 en dashes, 0 spaced hyphens in prose |
+| Price Prohibition | PASS | 0 currency symbols or price figures in content |
+| No HTML Tables | PASS | Zero `<table>` or `<!-- wp:table -->` blocks; structured cards used |
+| 3D Coverflow Carousel | PASS | Official snippet with 360px stage, 420px cards, is-pos classes, and dots |
+| Carousel Media 200 | PASS | All 6 product images verified via live HTTP HEAD |
+| Type 3 Link Attributes | PASS | Both in-body images wrapped in custom PDP links with linked captions |
+| Section Ordering | PASS | Final Thoughts placed before More Guides; More Guides placed before FAQs |
+| Complete FAQs | PASS | All 6 FAQ question-and-answer pairs fully rendered in visible DOM |
+| Schema Integrity | PASS | Valid BlogPosting and FAQPage JSON-LD schemas in trailing block |
+| Author & Category | PASS | Satyam (`270271337`) and Men's Jewellery (`554493434`) verified |
+| Workbook & Queue Status | PASS | Upserted into `Week8_Blog_Queue_status.csv`, `Week8_Blog_Queue.csv`, and `SEO Strategy 2026.xlsx` |
+
+Execution is complete and verified end-to-end.

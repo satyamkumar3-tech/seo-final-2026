@@ -1,0 +1,203 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 9 Rank 64 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 9 and output/Week9_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 9 target block overrides those notes.\n\nTarget row:\n- Rank: 64\n- Action: New\n- Primary keyword: yellow stone ring\n- Volume: 2400\n- KD: 25.0\n- Priority score: 2208\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: yellow-stone-ring-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: yellow sapphire stone ring\n- Supplied competitor URL: https://www.caratlane.com/jewellery/pukhraj+stone+ring.html\n- Semrush page: yellow stone ring\n- Source execution note: Week9 informational gap. Intent key=topic:ring_stone_yellow; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq. Excluded Week1-8 and live BlueStone inventory. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week9_rank64.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week9_checkpoint.py mark --path output/checkpoints/week9_rank64.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 9 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- CRITICAL RUNTIME EXECUTION GATE \u2014 STRICTLY SYNCHRONOUS ONLY:\n  * DO NOT spawn background tasks or execute commands with asynchronous delays.\n  * Execute ALL python scripts, curl/API calls, Higgsfield generations, and WordPress uploads SYNCHRONOUSLY in the foreground (blocking until full completion).\n  * Wait for each command and script to fully complete before calling the next tool or emitting text.\n  * NEVER end your turn or output messages like \"waiting for background task to finish\" while a task is running, as this triggers watchdog idle termination. Run all scripts synchronously from start to finish.\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 9 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & STUDIO IMAGERY: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html` (matching `rudraksh-gold-bracelet-2026` and `mens-black-bracelet-2026`). All 6 carousel images MUST be high-definition studio-styled visuals sourced from `ProductImages/seo images/<Category>/<Product Name>.png` (converted to 960x535 WebP on stone plinths/draped fabric with warm lighting, NEVER plain white packshots). It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 360px }`, `margin: 1.75rem auto 1.25rem`, `.bs-cf-card { width: min(420px, 78vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-cta { background: #111; color: #fff; }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class=\"bs-cf\" id=\"bs-cf-<slug>\" data-interval=\"3200\" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards with initial position classes (`.bs-cf-card is-pos-0 data-index=\"0\"` ... `is-pos--1 data-index=\"5\"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` with the `paint()` and `rel()` rotation functions (with NO `<p>` wrappers). Follow immediately ONLY with a single `<!-- wp:paragraph -->\n<p><strong>Curated Design Highlights:</strong> Explore signature ... <a href=\"<product_url>\">Product Name</a> ...</p>\n<!-- /wp:paragraph -->`. NEVER insert a repetitive product bullet list after the carousel. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.\n- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week9_Blog_Queue_status.csv, output/product_rotation.json, the Week 9 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 9 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: read_docs | time: 2026-09-25T12:47:45+05:30 | elapsed: 00:00:35
+STEP DONE: read_docs | time: 2026-09-25T12:48:47+05:30 | step duration: 00:01:02 | total elapsed: 00:01:37
+STEP START: verify_higgsfield | time: 2026-09-25T12:48:48+05:30 | elapsed: 00:01:38
+STEP DONE: verify_higgsfield | time: 2026-09-25T12:49:03+05:30 | step duration: 00:00:15 | total elapsed: 00:01:53
+STEP START: inspect_row | time: 2026-09-25T12:49:04+05:30 | elapsed: 00:01:54
+STEP DONE: inspect_row | time: 2026-09-25T12:49:30+05:30 | step duration: 00:00:26 | total elapsed: 00:02:20
+STEP START: duplicate_check | time: 2026-09-25T12:49:31+05:30 | elapsed: 00:02:21
+STEP DONE: duplicate_check | time: 2026-09-25T12:50:09+05:30 | step duration: 00:00:38 | total elapsed: 00:02:59
+STEP START: fact_check | time: 2026-09-25T12:50:10+05:30 | elapsed: 00:03:00
+STEP DONE: fact_check | time: 2026-09-25T12:50:43+05:30 | step duration: 00:00:33 | total elapsed: 00:03:33
+STEP START: keyword_map | time: 2026-09-25T12:50:44+05:30 | elapsed: 00:03:34
+STEP DONE: keyword_map | time: 2026-09-25T12:50:56+05:30 | step duration: 00:00:12 | total elapsed: 00:03:46
+STEP START: structure_visuals | time: 2026-09-25T12:50:57+05:30 | elapsed: 00:03:47
+STEP DONE: structure_visuals | time: 2026-09-25T12:52:16+05:30 | step duration: 00:01:13 | total elapsed: 00:05:06
+STEP START: draft | time: 2026-09-25T12:52:17+05:30 | elapsed: 00:05:07
+STEP DONE: draft | time: 2026-09-25T12:53:16+05:30 | step duration: 00:00:59 | total elapsed: 00:06:06
+STEP START: product_media | time: 2026-09-25T12:53:17+05:30 | elapsed: 00:06:07
+STEP DONE: product_media | time: 2026-09-25T12:55:48+05:30 | step duration: 00:02:31 | total elapsed: 00:08:38
+STEP START: publish_wordpress | time: 2026-09-25T12:55:49+05:30 | elapsed: 00:08:39
+STEP DONE: publish_wordpress | time: 2026-09-25T12:56:21+05:30 | step duration: 00:00:32 | total elapsed: 00:09:11
+STEP START: generate_type3 | time: 2026-09-25T12:56:22+05:30 | elapsed: 00:09:12
+STEP DONE: generate_type3 | time: 2026-09-25T12:59:06+05:30 | step duration: 00:02:44 | total elapsed: 00:11:56
+STEP START: patch_type3 | time: 2026-09-25T12:59:07+05:30 | elapsed: 00:11:57
+STEP DONE: patch_type3 | time: 2026-09-25T12:59:56+05:30 | step duration: 00:00:49 | total elapsed: 00:12:46
+STEP START: live_qa | time: 2026-09-25T12:59:57+05:30 | elapsed: 00:12:47
+STEP DONE: live_qa | time: 2026-09-25T13:02:00+05:30 | step duration: 00:02:03 | total elapsed: 00:14:50
+STEP START: update_status | time: 2026-09-25T13:02:01+05:30 | elapsed: 00:14:51
+STEP DONE: update_status | time: 2026-09-25T13:03:12+05:30 | step duration: 00:01:11 | total elapsed: 00:16:02
+STEP START: final_report | time: 2026-09-25T13:03:13+05:30 | elapsed: 00:16:03
+### End-to-End Generation Report: Week 9 Rank 64
+
+**Target Slug:** [`yellow-stone-ring-2026`](https://blog.bluestone.com/yellow-stone-ring-2026/)  
+**Live Article URL:** https://blog.bluestone.com/yellow-stone-ring-2026/  
+**WordPress Post ID:** `40175`  
+**Execution Status:** Completed & Fully Verified  
+
+---
+
+### 1. Core Article Metadata
+
+| Field | Detail |
+|---|---|
+| **Live URL** | [https://blog.bluestone.com/yellow-stone-ring-2026/](https://blog.bluestone.com/yellow-stone-ring-2026/) |
+| **WordPress Post ID** | `40175` |
+| **Article Engine** | `buying_guide` (Jewellery Education / Buying Guide Engine) |
+| **Author** | Satyam (User ID `270271337`) |
+| **On-Page Byline** | `By Satyam, BlueStone Editorial` |
+| **BlogPosting Author** | `Satyam` (Editorial Specialist, BlueStone Jewellery and Lifestyle Limited) |
+| **WordPress Categories** | `Ring` (`554493326`), `Gemstone` (`554493414`), `Jewellery Problem & Solution` (`554493465`) |
+| **Visible Word Count** | **2,957 words** (full buying-guide depth) |
+| **Heading Hierarchy** | 1 H1 (theme rendered above hero), 10 major H2s, 19 H3 subsections |
+| **Year Lock** | **2026** applied consistently across title, slug, meta, body, alt text, and schemas |
+
+---
+
+### 2. Primary & Supporting Keyword Audit
+
+- **Primary Keyword:** `yellow stone ring`
+  - **Volume:** `2,400`
+  - **KD:** `25.0`
+  - **Priority Score:** `2,208`
+  - **Placement:** Title, meta description, first 100 words, H2 headings, body prose, Type 3 hero alt text, and JSON-LD schemas.
+- **Supplied Supporting Keyword:**
+  - `yellow sapphire stone ring`: **Accepted & Integrated**. 100% topically relevant; mapped into dedicated major comparison H2, body sections, FAQs, and schema.
+- **Natural Cluster Inferences:**
+  - `citrine stone ring`: Accepted (key commercial alternative to yellow sapphire).
+  - `pukhraj stone ring`: Accepted (Vedic astrological search parity).
+  - `yellow stone ring designs`: Accepted (solitaires, halos, bezels, highway bands).
+  - `gold purity and setting security`: Accepted (18K vs 14K vs 22K gold mounts).
+- **Rejected Phrases:** None supplied in row; no off-topic phrases forced into copy.
+
+---
+
+### 3. H2 Keyword Map & Classification
+
+Every major H2 is mapped to its authoritative source:
+
+| # | H2 Heading | Label / Backing |
+|---|---|---|
+| 1 | `What Is a Yellow Stone Ring: The Most Popular Gemstone Varieties` | **primary-backed** (`yellow stone ring`) |
+| 2 | `Yellow Sapphire Stone Ring vs Citrine Ring: Which Is Right for You?` | **supporting-keyword-backed** (`yellow sapphire stone ring`) |
+| 3 | `Popular Yellow Stone Ring Designs for Women and Men` | **competitor-structure-backed** (CaratLane PLP design categories) |
+| 4 | `Choosing the Right Gold Karatage: 14K, 18K, and 22K Settings` | **intent-inferred** (gemstone mounting metallurgy) |
+| 5 | `Prong vs Bezel vs Halo Settings: Ensuring Gemstone Security` | **intent-inferred** (structural stone retention) |
+| 6 | `Net Gold Weight and BIS Hallmarking Rules in India` | **intent-inferred** (mandatory Indian consumer buying standards) |
+| 7 | `How to Clean and Care for Your Yellow Stone Ring at Home` | **intent-inferred** (maintenance and stone preservation) |
+| 8 | `Final Thoughts on Selecting the Perfect Yellow Stone Ring` | **primary-backed** (summary framework) |
+| 9 | `More Jewellery & Buying Guides` | **mandatory-cluster** (internal link authority) |
+| 10 | `Frequently Asked Questions About Yellow Stone Rings` | **primary-backed** (6 visible Q&As) |
+
+---
+
+### 4. Competitor URL Analysis & Factual Verification
+
+- **Supplied Competitor URL:** `https://www.caratlane.com/jewellery/pukhraj+stone+ring.html`
+- **Competitor Analysis:**
+  - CaratLane's URL is a commercial Category Product Listing Page (PLP) targeting `pukhraj stone ring` designs (e.g., *Posy Cluster*, *Ira Cutout*, *Amira Radiant Gold Band*).
+  - **Gaps Identified:** The page lacked educational depth on gemstone hardness comparison (Mohs scale), metal tensile strength (why 18K/14K is superior for prong retention vs 22K), BIS hallmarking details (3 signs + 6-digit HUID), net gold weight deduction calculations, and daily care protocols.
+  - **BlueStone Differentiation:** BlueStone provides an authoritative buying guide addressing all yellow gemstones (Yellow Sapphire, Citrine, Yellow Topaz, Yellow Diamond), explaining net weight consumer rights under BIS, and guiding buyers between everyday vs astrological needs.
+- **Factual Sources Verified:**
+  - **GIA & Gemological References:** Corundum hardness (Mohs 9, RI 1.76-1.77), Quartz/Citrine hardness (Mohs 7, RI 1.54-1.55), Topaz basal cleavage (Mohs 8).
+  - **Bureau of Indian Standards (BIS):** 3 mandatory hallmarking signs (BIS triangle mark, Karat fineness stamp `22K916`, `18K750`, `14K585`, and 6-digit alphanumeric laser HUID).
+  - **Consumer Affairs Net Gold Weight Rule:** Mandatory deduction of gemstone carat weight from gross jewellery weight so consumers are charged gold rates strictly on net gold weight.
+
+---
+
+### 5. Media & Visual Production
+
+#### A. 3D Coverflow Carousel (Mid-Article)
+- **HTML Architecture:** Strict single unified `<!-- wp:html -->` block from [`templates/eid_carousel_6_snippet.html`](file:///Users/satyamkumar/Downloads/seo%20final%202026/templates/eid_carousel_6_snippet.html) with 3D CSS perspective, zero-layout-shift classes (`is-pos-0` ... `is-pos--1`), and vanilla JS `paint()`/`rel()` engine.
+- **Imagery:** Converted from [`ProductImages/seo images/Rings/`](file:///Users/satyamkumar/Downloads/seo%20final%202026/ProductImages/seo%20images/Rings/) to 960×535 WebP on warm studio neutral canvas (quality 82).
+- **Curated Follower:** Immediately followed ONLY by a single paragraph highlighting signature silhouettes (no repetitive bullet lists).
+- **Pre-Flight Verification:** Every carousel card image URL was verified via HTTP HEAD returning `200 OK`.
+
+| Card # | Position Class | SKU Code | Product Name | Media ID | Live Image URL | HTTP HEAD |
+|---|---|---|---|---|---|---|
+| 1 | `is-pos-0` | `BIAR0097R07` | The Liza Ring | `40169` | [Image URL](https://blog.bluestone.com/wp-content/uploads/2026/09/the-liza-ring-carousel-19.webp) | `200 OK` |
+| 2 | `is-pos-1` | `BIIP0090R24` | The Ebony Ring | `40170` | [Image URL](https://blog.bluestone.com/wp-content/uploads/2026/09/the-ebony-ring-carousel-12.webp) | `200 OK` |
+| 3 | `is-pos-2` | `BINS0639R11` | The Haily Ring | `40171` | [Image URL](https://blog.bluestone.com/wp-content/uploads/2026/09/the-haily-ring-carousel-4.webp) | `200 OK` |
+| 4 | `is-pos-3` | `BIJP0992R60` | The Yuthika Highway Ring | `40172` | [Image URL](https://blog.bluestone.com/wp-content/uploads/2026/09/the-yuthika-highway-ring-carousel-6.webp) | `200 OK` |
+| 5 | `is-pos--2` | `BIAB0503R03` | The Rafia Ring | `40173` | [Image URL](https://blog.bluestone.com/wp-content/uploads/2026/09/the-rafia-ring-carousel-13.webp) | `200 OK` |
+| 6 | `is-pos--1` | `BIAR0097R16` | The Quinn Ring | `40174` | [Image URL](https://blog.bluestone.com/wp-content/uploads/2026/09/the-quinn-ring-carousel-14.webp) | `200 OK` |
+
+#### B. Type 3 Concept Images (Higgsfield CLI `nano_banana_pro`)
+- **Higgsfield Plan:** `ultimate`
+- **Starting Credits:** `427.1` | **Ending Credits:** `419.1` | **Credits Consumed:** `8.0` (3 generations @ 2k, 0 retries).
+- **Body Image Hard Gate:** Confirmed `@img1` body portrait reference and `@img2` design reference used for people slots.
+- **Product Links:** In-body Type 3 images (flatlay and lifestyle) are wrapped in `<a href="<pdp_url>">` with Gutenberg attribute `"linkDestination":"custom"`, and `<figcaption>` directly hyperlinks the product name to its PDP URL.
+
+| Slot | Product SKU | Gender | Flatlay Setting / Scene | Job ID | Media ID | Live Image URL | HTTP HEAD |
+|---|---|---|---|---|---|---|---|
+| **Hero** | `BINS0639R18` The Gigi Ring | Female | Candid golden-hour lifestyle; fair-skinned Indian woman wearing ring | `f2db900f-25a6-4fa0-8fda-364a89d1172d` | `40176` | [Hero WebP](https://blog.bluestone.com/wp-content/uploads/2026/09/yellow-stone-ring-hero-2026.webp) | `200 OK` |
+| **Flatlay** | `BIPM0017R18` The Malibu Ring | Female | `windowsill-daylight` (painted windowsill, linen curtain blur, brass loupe) | `14c99216-4cac-4123-9c87-05633aff67b4` | `40177` | [Flatlay WebP](https://blog.bluestone.com/wp-content/uploads/2026/09/yellow-stone-ring-flatlay-2026.webp) | `200 OK` |
+| **Lifestyle** | `BIJP0993R123` The Viperine Twist Ring | Female | Candid breakfast nook; woman's hand resting beside fine china cup | `9a05a10e-7b33-439b-add7-9360d59b6a22` | `40178` | [Lifestyle WebP](https://blog.bluestone.com/wp-content/uploads/2026/09/yellow-stone-ring-lifestyle-2026.webp) | `200 OK` |
+
+---
+
+### 6. Product Rotation History
+
+- **Recent Trios Recorded:**
+  - Rank 62: `BIIP0279S08 The Aleena Huggie Earrings` / `BIPM0001H28 The Rohal Huggie Earrings` / `BIPN0880H218 The Nettile Huggie Earrings`
+  - Rank 63: `BISL0851R28 The Jasper Band For Him` / `BISE0932R181 The Le Sommet Ring` / `BISV0910R24 The Interlink Band Ring`
+  - **Rank 64 (Current):** `BINS0639R18 The Gigi Ring` / `BIPM0017R18 The Malibu Ring` / `BIJP0993R123 The Viperine Twist Ring`
+- **Flatlay Setting Rotation:**
+  - Rank 60: `desk-kraft`
+  - Rank 61: `marble-vanity`
+  - Rank 62: `linen-bedside`
+  - Rank 63: `study-desk`
+  - **Rank 64 (Current):** `windowsill-daylight` (Clean rotation maintained, no consecutive repeats).
+- **Carousel vs Type 3 Overlap:** 0 overlap (Type 3 uses Gigi, Malibu, Viperine; Carousel uses Liza, Ebony, Haily, Yuthika, Rafia, Quinn).
+
+---
+
+### 7. Duplicate Check & Cannibalization Prevention
+
+- Target slug [`yellow-stone-ring-2026`](https://blog.bluestone.com/yellow-stone-ring-2026/) did not exist prior to publication.
+- Intent check confirmed no existing general yellow stone ring buying guide on `blog.bluestone.com` (Post `40127` is strictly `yellow-sapphire-ring-for-men-2026`, which was cross-linked as a complementary guide).
+- Zero keyword cannibalization; cleanly fills the Week 9 informational gap.
+
+---
+
+### 8. Live QA & Formatting Gate Verification
+
+- **Live DOM Verification:**
+  - Exactly one `<h1>`: `Yellow Stone Ring Buying Guide 2026: Gemstone Varieties, Gold Settings, Purity and Care`
+  - `og:image`: Verified matching the hero WebP `https://blog.bluestone.com/wp-content/uploads/2026/09/yellow-stone-ring-hero-2026.webp`
+  - `canonical`: `https://blog.bluestone.com/yellow-stone-ring-2026/`
+  - Visible FAQs: 6 complete Q&As under H2 `Frequently Asked Questions About Yellow Stone Rings`.
+  - Section Ordering: `Final Thoughts` (H2 #8) precedes `More Jewellery & Buying Guides` (H2 #9), which precedes `Frequently Asked Questions` (H2 #10), directly followed by trailing JSON-LD schemas.
+- **Copy Restrictions:**
+  - Em dashes (`—`): **0 in article body**
+  - En dashes (`–`): **0 in article body**
+  - Spaced hyphens (` - `): **0 in article body**
+  - Price mentions: **0 in article body**
+  - HTML Tables: **0 raw `<table>` or `<!-- wp:table -->` blocks** (clean structured lists used).
+- **Internal Cluster Links (5 Live Articles):**
+  1. [`yellow-sapphire-ring-for-men-2026`](https://blog.bluestone.com/yellow-sapphire-ring-for-men-2026/)
+  2. [`white-stone-ring-2026`](https://blog.bluestone.com/white-stone-ring-2026/)
+  3. [`gemstone-bracelets-2026`](https://blog.bluestone.com/gemstone-bracelets-2026/)
+  4. [`916-hallmark-gold-2026`](https://blog.bluestone.com/916-hallmark-gold-2026/)
+  5. [`how-to-check-gold-purity-2026`](https://blog.bluestone.com/how-to-check-gold-purity-2026/)
+
+---
+
+### 9. File & Status Manifest
+
+- **Status CSV:** [`output/Week9_Blog_Queue_status.csv`](file:///Users/satyamkumar/Downloads/seo%20final%202026/output/Week9_Blog_Queue_status.csv) updated with Rank 64 `Done`.
+- **Product Rotation:** [`output/product_rotation.json`](file:///Users/satyamkumar/Downloads/seo%20final%202026/output/product_rotation.json) updated with Rank 64 trio and `windowsill-daylight` setting.
+- **Strategy Workbook:** [`SEO Strategy 2026.xlsx`](file:///Users/satyamkumar/Downloads/seo%20final%202026/SEO%20Strategy%202026.xlsx) Sheet `Week 9` Row 65 updated with Live URL and Execution Note.
+- **Checkpoint Ledger:** [`output/checkpoints/week9_rank64.json`](file:///Users/satyamkumar/Downloads/seo%20final%202026/output/checkpoints/week9_rank64.json) marked 100% complete across all 15 pipeline steps.

@@ -1,0 +1,104 @@
+{
+  "pipeline": "week8",
+  "rank": 178,
+  "slug": "finger-rings-for-girls-2026",
+  "primary": "finger rings for girls",
+  "created_at": "2026-09-16T07:08:05Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-16T07:09:48Z",
+      "finished_at": "2026-09-16T07:10:22Z",
+      "docs_read": 11
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-16T07:10:27Z",
+      "finished_at": "2026-09-16T07:10:34Z",
+      "credits": "125.37,plan=ultimate"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-16T07:10:39Z",
+      "finished_at": "2026-09-16T07:10:50Z",
+      "rank": "178,primary=finger rings for girls,action=New"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-16T07:10:53Z",
+      "finished_at": "2026-09-16T07:11:10Z",
+      "result": "clear,http_status=404,wp_posts=0"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-16T07:11:15Z",
+      "finished_at": "2026-09-16T07:11:25Z",
+      "fact_check_file": "output/Week8_Rank178_FingerRingsForGirls_Fact_Check.md"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-16T07:11:31Z",
+      "finished_at": "2026-09-16T07:11:46Z",
+      "accepted_kws": "4,rejected_kws=0"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-16T07:12:04Z",
+      "finished_at": "2026-09-16T07:12:16Z",
+      "engine": "buying_guide,h2_count=10,visual_concept=marble-vanity"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-16T07:13:38Z",
+      "finished_at": "2026-09-16T07:14:27Z",
+      "words": "4110,draft_file=output/week8_rank178_article_content_draft.html"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-16T07:14:32Z",
+      "finished_at": "2026-09-16T07:15:22Z",
+      "media_ids": "39071,39072,39073,39074,39075,39076"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-16T07:15:28Z",
+      "finished_at": "2026-09-16T07:16:19Z",
+      "wp_post_id": "39077,url=https://blog.bluestone.com/finger-rings-for-girls-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-16T07:16:24Z",
+      "finished_at": "2026-09-16T07:22:17Z",
+      "hero_job": "a600f665-db74-4b2d-a7b5-3f68f868f366,flatlay_job=e9f62cc3-ef71-4083-a88c-8436bb465e0e,lifestyle_job=e45f342b-8137-422f-813d-f7f49888cc9c"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-16T07:22:23Z",
+      "finished_at": "2026-09-16T07:23:05Z",
+      "hero_media_id": "39078,flatlay_media_id=39079,lifestyle_media_id=39080"
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-16T07:23:13Z",
+      "finished_at": "2026-09-16T07:25:26Z",
+      "overall": "PASS,visible_words=3510,h1=1,faq=7,carousel_200=6"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-16T07:25:30Z",
+      "finished_at": "2026-09-16T07:26:50Z",
+      "updated_files": "status_csv,queue_csv,rotation_json,workbook_xlsx"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-16T07:26:59Z",
+      "finished_at": "2026-09-16T07:27:04Z",
+      "report": "complete"
+    }
+  },
+  "updated_at": "2026-09-16T07:27:35Z",
+  "completed_at": "2026-09-16T07:27:04Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

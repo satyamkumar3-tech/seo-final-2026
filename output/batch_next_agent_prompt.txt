@@ -1,0 +1,46 @@
+Continue the festive batch queue. Process ONLY the next pending rank end-to-end, then stop and update the queue.
+
+Read fully first:
+- article generation seo codex/HANDOFF.md
+- KnowledgeBase/Writing/SOP_ARTICLE_GENERATION.md
+- KnowledgeBase/Writing/ARTICLE_WORKFLOW.md
+- KnowledgeBase/Writing/HIGGSFIELD_IMAGE_GENERATION.md (Image SEO + people-first Type 3 + credits)
+- KnowledgeBase/Writing/Blog-SEO-AEO-GEO-Checklist-v2.md
+- .cursor/rules/new-blogs-only.mdc
+- .cursor/rules/carousel-seo-images.mdc
+- .cursor/rules/type3-fair-skinned-indians.mdc
+- .cursor/rules/image-seo.mdc
+- article generation seo codex/output/batch_queue.json
+
+Next article: SEO Strategy 2026.xlsx → Week 1-2 → Rank 35
+- Primary KW: birthday wishes for crush
+- Action: NEW only (ignore Optimize)
+- No existing BlueStone URL on sheet.
+- Volume / KD: 8100 / 13
+- Supporting KWs: birthday wishes for crush | happy birthday wishes for crush | birthday wishes for crush female
+- Competitor: None
+- Suggested slug: birthday-wishes-for-crush (override with locked festive year)
+- Category: Festive Wishes (+ Quotes & Wishes). Never Uncategorized.
+
+Execute full New publish (adapt publish_gudi_padwa / Rank 23–24 patterns):
+1. Competitor pass → output/Week1_Rank35_*_Competitor_Analysis.md
+2. Brief + draft NEW pillar (100+ lines if title claims 100+)
+3. Pick 6 products from Seo Products CSV
+4. Type 2 carousel from ProductImages/seo images/ only → WebP + Image SEO
+5. Publish NEW WP post (author Vikas, ID 270271338)
+6. FAQs 40–80 words + FAQPage + BlogPosting
+7. Type 3 AFTER text publish — exactly 3 images (hero+flatlay+lifestyle), count:1 each
+8. Checklist v2; meta title ≤60; meta desc ~150–160; no old years in body
+9. Update Week 1-2 Rank 35 in SEO Strategy 2026.xlsx
+10. Update batch queue:
+    python3 scripts/batch_blog_queue.py mark --rank 35 --status done --url LIVE_URL --wp-id ID --type3-products "Hero: CODE Name | Flatlay: CODE Name | Lifestyle: CODE Name"
+11. Print live URL + Type 3 products used
+
+Hard rules:
+- No prices; products only from Seo Products CSV
+- Carousel mid-article, never last
+- No em/en dashes; no "word - word"
+- Type 3: scene-first people prompts; 2 product refs max; fair-skinned Indians; jewellery worn/on surface; QA against real product refs before shipping
+- Do not redo earlier completed ranks unless asked
+
+Env: .env WP_USER / WP_APP_PASSWORD; Higgsfield via Cursor MCP

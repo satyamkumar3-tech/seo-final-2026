@@ -1,0 +1,80 @@
+{
+  "pipeline": "week7_pipeline",
+  "created_at": "2026-08-19T08:08:15Z",
+  "workspace": "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context",
+  "week7_workbook": "SEO Strategy 2026.xlsx",
+  "week7_csv": "output/Week7_Gift_Guides_PostRank10.csv",
+  "runs": [
+    {
+      "rank": 8,
+      "action": "New",
+      "primary": "gst on gold jewellery",
+      "slug": "gst-on-gold-jewellery-2026",
+      "theme": "How-to / Education",
+      "category_fit": "Buying Guide",
+      "engine": "buying_guide",
+      "category_hint": "`Gold` 554493348 + `Jewellery Problem & Solution` 554493465",
+      "status": "running",
+      "started_at": "2026-08-19T08:08:15Z",
+      "prompt_path": "output/week7_rank8_gst-on-gold-jewellery-2026_20260819_133815.prompt.txt",
+      "log_path": "output/week7_rank8_gst-on-gold-jewellery-2026_20260819_133815.log",
+      "final_path": "output/week7_rank8_gst-on-gold-jewellery-2026_20260819_133815.final.txt",
+      "checkpoint_path": "output/checkpoints/week7_rank8.json",
+      "codex_command": [
+        "/Users/vikasindoria/.local/bin/codex",
+        "exec",
+        "--cd",
+        "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context",
+        "--skip-git-repo-check",
+        "--output-last-message",
+        "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context/output/week7_rank8_gst-on-gold-jewellery-2026_20260819_133815.final.txt",
+        "--approve-for-me",
+        "<prompt stored in output/week7_rank8_gst-on-gold-jewellery-2026_20260819_133815.prompt.txt>"
+      ],
+      "max_parallel_requested": 1
+    },
+    {
+      "rank": 8,
+      "action": "New",
+      "primary": "gst on gold jewellery",
+      "slug": "gst-on-gold-jewellery-2026",
+      "theme": "How-to / Education",
+      "category_fit": "Buying Guide",
+      "engine": "buying_guide",
+      "category_hint": "`Gold` 554493348 + `Jewellery Problem & Solution` 554493465",
+      "status": "complete",
+      "started_at": "2026-08-19T08:11:12Z",
+      "prompt_path": "output/week7_rank8_gst-on-gold-jewellery-2026_20260819_134112.prompt.txt",
+      "log_path": "output/week7_rank8_gst-on-gold-jewellery-2026_20260819_134112.log",
+      "final_path": "output/week7_rank8_gst-on-gold-jewellery-2026_20260819_134112.final.txt",
+      "checkpoint_path": "output/checkpoints/week7_rank8.json",
+      "codex_command": [
+        "/Users/vikasindoria/.local/bin/codex",
+        "exec",
+        "--cd",
+        "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context",
+        "--skip-git-repo-check",
+        "--output-last-message",
+        "/Users/vikasindoria/Documents/Geo and Seo/final seo generation context/output/week7_rank8_gst-on-gold-jewellery-2026_20260819_134112.final.txt",
+        "--approve-for-me",
+        "<prompt stored in output/week7_rank8_gst-on-gold-jewellery-2026_20260819_134112.prompt.txt>"
+      ],
+      "max_parallel_requested": 1,
+      "finished_at": "2026-08-19T08:15:17Z",
+      "duration_seconds": 244.53,
+      "exit_code": 0,
+      "checkpoint_status": "complete",
+      "outcome": "skipped_existing_intent"
+    }
+  ],
+  "requested_ranks": [
+    8
+  ],
+  "codex_bin": "/Users/vikasindoria/.local/bin/codex",
+  "skip_git_repo_check": true,
+  "sandbox_requested": "workspace-write",
+  "sandbox_effective": "workspace-write (managed by --approve-for-me)",
+  "approve_for_me": true,
+  "search_requested_in_prompt": true,
+  "updated_at": "2026-08-19T08:15:17Z"
+}

@@ -1,0 +1,17 @@
+---
+description: Always publish new WordPress posts for any pipeline week. Never optimize or patch existing posts.
+alwaysApply: true
+---
+
+# New blogs only (ignore Optimize) — Week 9 active
+
+**Last updated: 2026-09-29 | Active pipeline: Week 9**
+
+For BlueStone SEO articles from `SEO Strategy 2026.xlsx` — applies to all weeks (Week 9 is the active queue):
+
+1. **Always publish a new WordPress post** (new slug, orchestrated by `scripts/article_pipeline.py`).
+2. **Ignore** sheet `Action = Optimize`. Do not patch or rewrite an existing BlueStone URL for that keyword.
+3. If the sheet still shows an old BlueStone Blog URL on an Optimize-turned-New row, treat it as **reference only** — do not update that post. Create a fresh URL instead.
+4. Do **not** invent a second post for ranks already completed (see Execution Note / live URL in the status CSV). Completed rows stay as-is unless the user explicitly requests a redo.
+5. **Publishing script:** `scripts/article_pipeline.py produce --ranks N --manifest output/week9_N.json --timers --approve-for-me`. Do not use legacy scripts (`publish_diwali_article.py`, `optimize_*.py`, `publish_week1_generic.py`) for new queue work.
+6. The duplicate-intent gate runs before any drafting. If an existing live page already satisfies the same intent, stop safely — no new post, no media created.

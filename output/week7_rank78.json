@@ -1,0 +1,56 @@
+{
+  "pipeline": "week7_pipeline",
+  "created_at": "2026-08-20T12:13:42Z",
+  "workspace": "/Users/satyamkumar/Downloads/seo final 2026",
+  "week7_workbook": "SEO Strategy 2026.xlsx",
+  "week7_csv": "output/Week7_Gift_Guides_PostRank10.csv",
+  "runs": [
+    {
+      "rank": 78,
+      "action": "New",
+      "primary": "engagement rings",
+      "slug": "engagement-rings-2026",
+      "theme": "Gift Guides",
+      "category_fit": "Seasonal / Gifting",
+      "engine": "gift_guide",
+      "category_hint": "`Men's Jewellery` 554493434 where product fit is men's jewellery; otherwise `Gift` 554493424",
+      "status": "incomplete",
+      "started_at": "2026-08-20T12:13:42Z",
+      "prompt_path": "output/week7_rank78_engagement-rings-2026_20260820_174342.prompt.txt",
+      "log_path": "output/week7_rank78_engagement-rings-2026_20260820_174342.log",
+      "final_path": "output/week7_rank78_engagement-rings-2026_20260820_174342.final.txt",
+      "checkpoint_path": "output/checkpoints/week7_rank78.json",
+      "archived_checkpoint_path": null,
+      "allow_existing_intent": false,
+      "runner": "agy",
+      "command": [
+        "/Users/satyamkumar/.local/bin/agy",
+        "--dangerously-skip-permissions",
+        "--print-timeout",
+        "45m",
+        "--output-format",
+        "text",
+        "-p",
+        "<prompt stored in output/week7_rank78_engagement-rings-2026_20260820_174342.prompt.txt>"
+      ],
+      "max_parallel_requested": 1,
+      "finished_at": "2026-08-20T12:31:08Z",
+      "duration_seconds": 1045.86,
+      "exit_code": 0,
+      "checkpoint_status": "incomplete",
+      "outcome": "successful_exit_without_published_live_qa"
+    }
+  ],
+  "requested_ranks": [
+    78
+  ],
+  "codex_bin": "/Users/satyamkumar/.local/bin/codex",
+  "skip_git_repo_check": true,
+  "sandbox_requested": "workspace-write",
+  "sandbox_effective": "workspace-write (managed by --approve-for-me)",
+  "approve_for_me": true,
+  "search_requested_in_prompt": true,
+  "restart_requested": true,
+  "allow_existing_intent": false,
+  "updated_at": "2026-08-20T12:31:08Z"
+}

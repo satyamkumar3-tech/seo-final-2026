@@ -1,0 +1,34 @@
+{
+  "occasion": "christmas-2026",
+  "article": "Week1 Rank8 - xmas wishes quotes",
+  "wp_post_id": 16842,
+  "workflow": "Magnific Mystic realism with hyper-real theme anchor and negative prompt. People scenes use structure_ref null and exact SKU descriptions read from raw JPGs.",
+  "notes": "Thyvarne Pendant: rose gold setting holding a large vertical emerald-cut deep red ruby surrounded by a border of small diamonds. Rohal Huggie Earrings: rose gold rectangular huggies set with a vertical row of small diamonds and a large emerald-cut green emerald gemstone. Asya Huggie Earrings: polished yellow gold huggie hoops with white diamond accents and a hanging round white pearl.",
+  "magnific": {
+    "model": "mystic",
+    "theme_anchor": "Ultra-realistic photography, macro-level detail, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light from the left, warm daylight color temperature, realistic soft shadows. Shot on high-end DSLR, shallow depth of field, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire subjects and jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, product shot on plain background, cropped faces, cut-off heads, cut-off jewellery, out of frame, readable text, logos"
+  },
+  "slots": {
+    "hero": {
+      "structure_ref": null,
+      "prompt": "Christmas 2026 romantic celebration hero. Product-focused 85mm photograph of a couple's hands in the sharp foreground inside a cozy, festively decorated room with a soft-focus warm Christmas tree in the background. An Indian woman's neck and chest are in sharp focus, showing her wearing a rose gold setting holding a large vertical emerald-cut deep red ruby surrounded by a border of small diamonds. The couple's complete smiling faces are softly visible waist-up in the background with safe margins. Traditional winter clothing, soft warm fireplace lighting. The Thyvarne Pendant, hands, and both full heads remain entirely in the frame.",
+      "alt": "Xmas wishes quotes 2026 hero, couple with The Thyvarne Pendant"
+    },
+    "flatlay": {
+      "structure_ref": null,
+      "prompt": "Christmas 2026 cozy writing desk flatlay, top-down with a 100mm macro lens. A blank cream Christmas greetings card, elegant fountain pen, pinecones, a small sprig of green holly with red berries, and a blank dark phone screen fill the dark wooden desk. At the centre, a pair of rose gold rectangular huggies set with a vertical row of small diamonds and a large emerald-cut green emerald gemstone rest fully visible. The Rohal Huggie Earrings are the sharp-focus jewellery hero with physically accurate scale, facets, reflections, and safe margins. No readable text, no logos.",
+      "alt": "Merry Christmas wishes card flatlay with The Rohal Huggie Earrings"
+    },
+    "lifestyle": {
+      "structure_ref": null,
+      "prompt": "Christmas 2026 celebration portrait of a happy Indian couple next to a window, shot at eye level on an 85mm lens. In the sharp foreground, the woman is smiling, her ear in sharp focus showcasing polished yellow gold huggie hoops with white diamond accents and a hanging round white pearl. Both of their complete, uncropped smiling faces appear in the softer background. Soft winter daylight, decorative warm lights in the distant blur. The Asya Huggie Earrings and both full heads remain inside the frame with safe margins.",
+      "alt": "Happy Christmas and New Year messages 2026 lifestyle with The Asya Huggie Earrings"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/christmas-hero-2026.webp",
+    "flatlay": "output/magnific_generated/christmas-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/christmas-lifestyle-2026.webp"
+  }
+}

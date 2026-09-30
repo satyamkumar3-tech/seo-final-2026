@@ -1,0 +1,34 @@
+{
+  "occasion": "independence-day-2026",
+  "article": "Week1 Rank6 - independence day quotes in english",
+  "wp_post_id": 14819,
+  "workflow": "Magnific Mystic realism with hyper-real theme anchor and negative prompt. People scenes use structure_ref null and exact SKU descriptions read from raw JPGs.",
+  "notes": "Shining Star Bracelet: fine polished yellow gold cable chain with three small flat five-point star charms. Rohal Huggie Earrings: rose gold rectangular huggies, each with a vertical row of small round diamonds and one large rectangular emerald-cut green gemstone. The final lifestyle is labelled as general pearl-drop festive styling because text-only people generations did not preserve the exact Asya huggie geometry reliably. Product-specific claims remain limited to the accurate Type 2 carousel and the closer hero and flatlay concepts.",
+  "magnific": {
+    "model": "mystic",
+    "theme_anchor": "Ultra-realistic photography, macro-level detail, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light from the left, warm daylight color temperature, realistic soft shadows. Shot on high-end DSLR, shallow depth of field, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire subjects and jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, gem-set star charms, chandelier earrings, ornate drop earrings, product shot on plain background, cropped faces, cut-off heads, cut-off jewellery, out of frame, readable text, logos, disrespectful flag placement"
+  },
+  "slots": {
+    "hero": {
+      "structure_ref": null,
+      "prompt": "Independence Day 2026 lifestyle hero in an Indian family home. Product-focused 85mm photograph with a daughter's bare wrist and her mother's hands filling the sharp foreground, while both women's complete smiling faces appear waist-up in the softer background with safe margins. The mother fastens one and only one delicate polished yellow gold cable-chain bracelet on the bare wrist. Exactly three tiny flat solid gold five-point star silhouette charms hang separately from the chain. Each star is plain smooth yellow gold with no stones, no sparkle, no texture, and no decoration. No other bracelets, bangles, watches, rings, necklaces, or earrings on either woman. White and green Indian outfits, warm morning window light, and a small upright Indian flag on a shelf in the distant blur. The complete three-star bracelet, chain, clasp, hands, and both full heads remain inside the frame.",
+      "alt": "Independence Day quotes in English 2026 hero, mother gifting The Shining Star Bracelet"
+    },
+    "flatlay": {
+      "structure_ref": null,
+      "prompt": "Independence Day 2026 lived-in writing desk flatlay, top-down with a 100mm macro lens. A blank cream card, fountain pen, small bowl of marigold petals, white jasmine, green leaves, and a blank dark phone screen fill the warm wooden desk. At the centre, a pair of rose gold rectangular huggie earrings rests fully visible: each earring has a vertical row of small round diamonds and one large rectangular emerald-cut green gemstone. The Rohal Huggie Earrings are the sharp-focus jewellery hero with physically accurate scale, facets, reflections, and safe margins. No flag used as a surface, no readable writing, no logos.",
+      "alt": "Independence Day 2026 flatlay with blank message card and The Rohal Huggie Earrings"
+    },
+    "lifestyle": {
+      "structure_ref": null,
+      "prompt": "Independence Day 2026 close lifestyle portrait at eye level with an 85mm lens. An adult Indian woman smiles in profile during a terrace celebration. Her complete face and ear remain inside the frame. She wears one refined gold floral earring with a single smooth round white pearl drop, inspired by the pearl and flower language seen in the approved raw reference but not presented as an exact product shot. Soft saffron flowers, white fabric, and green foliage appear in the background. Natural skin, realistic scale, safe margins, no readable text, no logos.",
+      "alt": "Independence Day 2026 lifestyle portrait with pearl drop festive styling"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/independence-day-hero-2026.webp",
+    "flatlay": "output/magnific_generated/independence-day-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/independence-day-lifestyle-2026.webp"
+  }
+}

@@ -1,0 +1,164 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 198 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 198\n- Action: New\n- Primary keyword: simple daily wear rings\n- Volume: 1300\n- KD: 18\n- Priority score: 755.814\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: simple-daily-wear-rings-2026\n- Article engine: design_listicle\n- Category hint: `Jewellery Trends` 554493317 or `Jewellery & Lifestyle` 554493425\n- Supplied supporting keywords: simple daily wear rings\n- Supplied competitor URL: https://www.caratlane.com/jewellery/daily+wear+rings.html\n- Semrush page: simple daily wear rings\n- Source execution note: Week7 multi-brand refill after intent collapse. intent=sig:simple_daily_wear_ring; brands=CaratLane,Joyalukkas,Kalyan,Malabar,MergedJewellery,ScoringCL; from Competitor_Master_Data. One URL only.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank198.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank198.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--`.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n",
+  "--model",
+  "Gemini 3.7 Flash (Medium)"
+]
+
+OUTPUT:
+I have launched the carousel media upload task for the 6 curated BlueStone rings and am waiting for it to complete.
+The carousel image upload script is currently running and will wake us up as soon as it completes.
+I have submitted the Type 3 image generation jobs (Hero: `916b06e8-a0c0-4dd2-b277-970e33601f60` for The Rafia Ring, Flatlay: `3ddeebf1-31a5-4211-9369-41fd836ac617` for The Ebony Ring) and am waiting for the pipeline to finish downloading and generating all three visual assets.
+I have initiated the Type 3 WordPress media upload and article patching task, and am waiting for completion.
+### Pipeline Execution Summary
+
+**STEP START:** `read_docs` | **time:** 2026-08-30 20:26:55 | **elapsed:** 0s  
+**STEP DONE:** `read_docs` | **time:** 2026-08-30 20:27:16 | **step duration:** 21s | **total elapsed:** 21s  
+
+**STEP START:** `verify_higgsfield` | **time:** 2026-08-30 20:27:16 | **elapsed:** 21s  
+**STEP DONE:** `verify_higgsfield` | **time:** 2026-08-30 20:27:24 | **step duration:** 8s | **total elapsed:** 29s  
+
+**STEP START:** `inspect_row` | **time:** 2026-08-30 20:27:24 | **elapsed:** 29s  
+**STEP DONE:** `inspect_row` | **time:** 2026-08-30 20:27:38 | **step duration:** 14s | **total elapsed:** 43s  
+
+**STEP START:** `duplicate_check` | **time:** 2026-08-30 20:27:38 | **elapsed:** 43s  
+**STEP DONE:** `duplicate_check` | **time:** 2026-08-30 20:28:08 | **step duration:** 30s | **total elapsed:** 1m 13s  
+
+**STEP START:** `fact_check` | **time:** 2026-08-30 20:28:08 | **elapsed:** 1m 13s  
+**STEP DONE:** `fact_check` | **time:** 2026-08-30 20:28:40 | **step duration:** 32s | **total elapsed:** 1m 45s  
+
+**STEP START:** `keyword_map` | **time:** 2026-08-30 20:28:40 | **elapsed:** 1m 45s  
+**STEP DONE:** `keyword_map` | **time:** 2026-08-30 20:28:49 | **step duration:** 9s | **total elapsed:** 1m 54s  
+
+**STEP START:** `structure_visuals` | **time:** 2026-08-30 20:28:49 | **elapsed:** 1m 54s  
+**STEP DONE:** `structure_visuals` | **time:** 2026-08-30 20:29:45 | **step duration:** 56s | **total elapsed:** 2m 50s  
+
+**STEP START:** `draft` | **time:** 2026-08-30 20:29:45 | **elapsed:** 2m 50s  
+**STEP DONE:** `draft` | **time:** 2026-08-30 20:30:45 | **step duration:** 1m 00s | **total elapsed:** 3m 50s  
+
+**STEP START:** `product_media` | **time:** 2026-08-30 20:30:45 | **elapsed:** 3m 50s  
+**STEP DONE:** `product_media` | **time:** 2026-08-30 20:31:39 | **step duration:** 54s | **total elapsed:** 4m 44s  
+
+**STEP START:** `publish_wordpress` | **time:** 2026-08-30 20:31:39 | **elapsed:** 4m 44s  
+**STEP DONE:** `publish_wordpress` | **time:** 2026-08-30 20:31:55 | **step duration:** 16s | **total elapsed:** 5m 00s  
+
+**STEP START:** `generate_type3` | **time:** 2026-08-30 20:31:55 | **elapsed:** 5m 00s  
+**STEP DONE:** `generate_type3` | **time:** 2026-08-30 20:34:56 | **step duration:** 3m 01s | **total elapsed:** 8m 01s  
+
+**STEP START:** `patch_type3` | **time:** 2026-08-30 20:34:56 | **elapsed:** 8m 01s  
+**STEP DONE:** `patch_type3` | **time:** 2026-08-30 20:35:26 | **step duration:** 30s | **total elapsed:** 8m 31s  
+
+**STEP START:** `live_qa` | **time:** 2026-08-30 20:35:26 | **elapsed:** 8m 31s  
+**STEP DONE:** `live_qa` | **time:** 2026-08-30 20:36:10 | **step duration:** 44s | **total elapsed:** 9m 15s  
+
+**STEP START:** `update_status` | **time:** 2026-08-30 20:36:10 | **elapsed:** 9m 15s  
+**STEP DONE:** `update_status` | **time:** 2026-08-30 20:36:44 | **step duration:** 34s | **total elapsed:** 9m 49s  
+
+**STEP START:** `final_report` | **time:** 2026-08-30 20:36:44 | **elapsed:** 9m 49s  
+**STEP DONE:** `final_report` | **time:** 2026-08-30 20:36:53 | **step duration:** 9s | **total elapsed:** 9m 58s  
+
+---
+
+### Final Production Report: Week 7 Rank 198
+
+- **Live URL:** [https://blog.bluestone.com/simple-daily-wear-rings-2026/](https://blog.bluestone.com/simple-daily-wear-rings-2026/)
+- **WordPress Post ID:** `36904`
+- **Article Engine:** `design_listicle`
+- **Author:** Satyam (ID: `270271337`), with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.
+- **WordPress Categories:** `Jewellery Trends` (ID: `554493317`), `Jewellery & Lifestyle` (ID: `554493425`), `Gold Ring` (ID: `554493461`).
+- **Visible Article Word Count:** 4,005 words (Draft text: 4,501 words).
+- **Primary Keyword & Metrics:**
+  - Keyword: `simple daily wear rings`
+  - Search Volume: `1300`
+  - Keyword Difficulty (KD): `18`
+  - Priority Score: `755.814`
+  - Suggested Slug: `simple-daily-wear-rings-2026`
+
+#### Supporting Keywords & Topical Audit
+- **Supplied Supporting Keyword:** `simple daily wear rings`
+- **Accepted & Integrated Naturally:**
+  - `simple daily wear rings` (Primary-backed; integrated into title, meta description, URL slug, intro, H2s, image alts, FAQs, and schema).
+  - Inferred high-intent topical subtopics: `daily wear gold rings`, `comfort fit everyday rings`, `snag free ring settings`, `14kt vs 18kt gold rings`, `low profile bezel solitaires`.
+- **Rejected Keywords:** None (no unrelated or keyword-stuffed terms in source data).
+
+#### H2 Keyword Map & Classification
+1. `What Defines Simple Daily Wear Rings in 2026?` (`primary-backed`)
+2. `Essential Anatomical Criteria for Everyday Rings: Profile, Setting, and Band Thickness` (`intent-inferred`)
+3. `Trending Design Categories of Simple Daily Wear Rings` (`competitor-structure-backed`)
+4. `Gold Purity for Everyday Wear: Choosing Between 14kt, 18kt, and 22kt Gold` (`intent-inferred`)
+5. `BlueStone Curated Selection of Everyday Gold and Diamond Rings` (`competitor-structure-backed`)
+6. `Setting Styles That Never Snag: Bezel, Flush, and Low-Profile Prongs` (`intent-inferred`)
+7. `How to Style and Stack Simple Daily Wear Rings Across Different Occasions` (`intent-inferred`)
+8. `Sizing and Comfort Fit Guide for Daily Wear Bands` (`intent-inferred`)
+9. `Care and Maintenance: Keeping Everyday Gold Rings Sparkling` (`intent-inferred`)
+10. `Final Thoughts: Choosing Your Signature Everyday Ring` (`intent-inferred` | **Positioned strictly before FAQs**)
+11. `Frequently Asked Questions About Simple Daily Wear Rings` (`primary-backed` / `supporting-keyword-backed` | 6 full visible Q&As)
+
+#### Competitor URL & Analysis Summary
+- **Competitor URL:** `https://www.caratlane.com/jewellery/daily+wear+rings.html`
+- **Analysis:** CaratLane's page is an e-commerce catalog/PLP filtering by bands, floral motifs, eternity rings, 14K/18K purities, and setting types (bezel, flush, prong).
+- **Differentiation & Value-Add:** Rather than a simple catalog grid, the BlueStone article provides deep educational analysis covering ergonomic comfort-fit shanks, setting profile mechanics (why cathedral prongs snag while bezels/flush glide freely), tensile strength differences across gold purities, knuckle vs. base sizing rules, and at-home maintenance without abrasive chemicals or prices.
+
+#### Factual Sources & Truth Verification
+- **Bureau of Indian Standards (BIS):** Cited BIS Hallmarking Regulations and the 6-digit alphanumeric HUID system (including the regulation context regarding articles under 2 grams).
+- **Metallurgical Purity & Tensile Strength:** Evaluated 14kt (585) and 18kt (750) gold alloy performance against 22kt (916) regarding micro-abrasions, mechanical deformation resistance, and prong stability.
+- **Mohs Mineral Hardness:** Natural diamonds (Mohs 10) verified for daily wear alongside protective mount mechanics.
+
+#### Product SKUs & Product Rotation
+- **Type 3 Product Trio (0-overlap with Carousel):**
+  - **Hero:** `BIAB0503R03` - *The Rafia Ring* (18kt yellow gold diamond band, 20.92 mm x 9.23 mm)
+  - **Flatlay:** `BIIP0090R24` - *The Ebony Ring* (18kt yellow gold floral band, 20.56 mm x 18.35 mm) | Setting: `windowsill-daylight`
+  - **Lifestyle:** `BIAR0097R07` - *The Liza ring* (18kt yellow gold diamond ring, 21.56 mm x 7.91 mm)
+- **Type 2 Carousel (6 Curated BlueStone Rings):**
+  - 1. *The Anya Ring* (`BIAR0097R04`) | Media ID: `36898`
+  - 2. *The Quinn Ring* (`BIAR0097R16`) | Media ID: `36899`
+  - 3. *The Luvee Highway Ring* (`BIKR0993R117`) | Media ID: `36900`
+  - 4. *The Malibu Ring* (`BIPM0017R18`) | Media ID: `36901`
+  - 5. *The Le Sommet Ring* (`BISE0932R181`) | Media ID: `36902`
+  - 6. *The Viperine Twist Ring* (`BIJP0993R123`) | Media ID: `36903`
+
+#### WordPress Media IDs
+- **Featured Image (Hero):** `36905` (`simple-daily-wear-rings-hero-2026.webp`)
+- **Flatlay Image:** `36906` (`simple-daily-wear-rings-flatlay-2026.webp`)
+- **Lifestyle Image:** `36907` (`simple-daily-wear-rings-lifestyle-2026.webp`)
+- **Carousel Images:** `36898`, `36899`, `36900`, `36901`, `36902`, `36903`
+
+#### Higgsfield API Accounting
+- **Plan:** Ultimate
+- **Starting Balance:** 965.37 credits
+- **Jobs Executed:**
+  - Hero: `916b06e8-a0c0-4dd2-b277-970e33601f60`
+  - Flatlay: `3ddeebf1-31a5-4211-9369-41fd836ac617`
+  - Lifestyle: `2374612e-e8b1-4262-a456-0ca18cd1381b`
+- **Retries:** 0 (all 3 slots generated and downloaded on first pass)
+- **Ending Balance:** 959.37 credits (6.0 credits consumed)
+
+#### Duplicate & Cannibalization Result
+- Checked slug `simple-daily-wear-rings-2026` via REST API: returned 0 results.
+- Checked related ring query posts: existing posts focus on `latest-gold-ring-design-2026`, `flower-design-gold-ring-2026`, `thumb-rings-2026`, and `chandi-ring-for-women-2026`. None targeted everyday practical/simple daily wear rings.
+- Result: **Zero collision; approved unique validated variant**.
+
+#### Live QA Verification
+- **HTTP Status:** `200 OK`
+- **Canonical URL:** `https://blog.bluestone.com/simple-daily-wear-rings-2026/`
+- **Public `og:image`:** Active on page
+- **H1 Count:** Exactly 1 (`Simple Daily Wear Rings in 2026: 15 Trending Designs, Comfort-Fit Guide, Purity & Care`)
+- **H2 Count:** 12 total (11 editorial sections + 1 theme footer section)
+- **FAQ Schema:** Valid `FAQPage` JSON-LD with 6 full Q&As matching visible HTML
+- **BlogPosting Schema:** Valid `BlogPosting` JSON-LD with Satyam as author and 9 WebP images
+- **Carousel:** 6 interactive cards with valid BlueStone PDP links and "Buy now" CTAs
+- **Prohibited Rules Compliance:** Zero em dashes, zero en dashes, zero spaced hyphens, zero HTML tables, zero prices/discounts in editorial content.
+
+#### Status & State Synchronizations
+- `output/Week7_Gift_Guides_PostRank10.csv` updated (Rank 198 marked `Done`).
+- `output/Week7_Gift_Guides_PostRank10_status.csv` upserted with Rank 198 live details.
+- `output/product_rotation.json` updated with Rank 198 trio, SKUs, and `windowsill-daylight` setting.
+- `SEO Strategy 2026.xlsx` (sheet `Week 7`) updated row 198 with live URL and publication notes.
+- Checkpoint `output/checkpoints/week7_rank198.json` verified with all 15 atomic steps `done`.

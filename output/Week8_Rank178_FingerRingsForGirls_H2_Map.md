@@ -1,0 +1,20 @@
+# H2 Keyword Map: Finger Rings for Girls (Week 8 Rank 178)
+
+| Section / H2 Heading | Label / Backing | Primary / Supporting KW | Volume / KD Backed? | Content & Search Intent Strategy |
+|---|---|---|---|---|
+| **H1:** Finger Rings for Girls Buying Guide 2026: Design Styles, Gold Purity, Ring Finger Meaning & Sizing | **primary-backed** | `finger rings for girls` | Yes (Vol: 5,400, KD: 33) | Complete authoritative guide title targeting main user intent with recency lock 2026. |
+| **H2 1:** Finger Rings for Girls: 2026 Buying & Styling Essentials | **primary-backed** | `finger rings for girls` | Yes (Vol: 5,400, KD: 33) | Quick direct answer, TL;DR decision framework, and key considerations (age, lifestyle, hand proportions). |
+| **H2 2:** Gold Finger Ring for Girl: 14K vs 18K vs 22K Purity & BIS Hallmarking | **supporting-keyword-backed** | `gold finger ring for girl` | Yes (Supplied) | Metallurgy breakdown, durability differences, BIS 3-mark hallmarking (triangle, purity stamp, 6-digit HUID), and statutory 3% GST. |
+| **H2 3:** Finger Ring Design for Girl: Floral, Heart, Bow & Geometric Silhouettes | **supporting-keyword-backed** | `finger ring design for girl` | Yes (Supplied) | Detailed aesthetic classification of ring designs: minimalist bands, floral motifs, nature/celestial accents, and open-ended wrap rings. |
+| **H2 4:** Girls Ring Finger: Placement Etiquette, Hand Symbolism & Sizing Standards | **supporting-keyword-backed** | `girls ring finger` | Yes (Supplied) | Cultural and anatomical ring finger symbolism (fourth finger vs index/middle/pinky), left vs right hand traditions, and Indian mm ring sizing chart (Sizes 6-14). |
+| **H2 5:** Gold Finger Ring Design for Girl: Band Ergonomics, Comfort Fit & Safe Settings | **supporting-keyword-backed** | `gold finger ring design for girl` | Yes (Supplied) | Structural safety engineering: bezel vs flush vs prong settings, snag-free gallery construction for delicate fabrics/uniforms, and comfort-fit inner domes. |
+| **H2 6:** Curated Fine Jewellery Highlights for Young Girls | **intent-inferred** | Curated BlueStone Products | No (Intent inferred) | 3D Coverflow carousel featuring 6 verified BlueStone designs, with product PDP links and bulleted design highlights. |
+| **H2 7:** Daily Wear Longevity: Cleaning, Storage & Maintenance Protocol | **intent-inferred** | Maintenance & Care | No (Intent inferred) | Practical care rules: cleaning with warm soapy water and soft brush, avoiding chlorine/harsh cosmetics, and individual pouch storage. |
+| **H2 8:** Final Thoughts on Choosing the Perfect Ring for Girls | **primary-backed** | `finger rings for girls` | Yes (Vol: 5,400, KD: 33) | Summary of key buying advice; placed strictly before the internal blog guides and FAQs. |
+| **H2 9:** More Jewellery & Buying Guides | **intent-inferred** | Internal Blog Cluster Links | No (Intent inferred) | 5 contextual links to published BlueStone guides (`how-to-check-gold-purity-2026`, `gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax`, `is-buying-gold-jewellery-online-safe-in-india-the-honest-answer`, `stackable-rings-2026`, and `hand-bracelet-for-girls-2026`). |
+| **H2 10:** Frequently Asked Questions About Finger Rings for Girls | **primary-backed** | `finger rings for girls` | Yes (Vol: 5,400, KD: 33) | 7 visible, comprehensive Q&A pairs directly addressing user queries on sizing, purity, finger symbolism, and safety. |
+
+## Visual Concept:
+- **Hero Image (Featured):** Fair-skinned Indian young woman / teenage girl in an elegant pastel kurta admiring a dainty gold finger ring on her hand in a sunlit room. (Setting: warm natural morning light, cinematic halation, filmic tonal response).
+- **Flatlay Image:** Setting: `marble-vanity`. Delicate gold finger rings arranged neatly on an Italian marble vanity tray alongside a velvet ring box, a silk ribbon, and small white ceramic blossoms. No readable text, no phones/screens.
+- **Lifestyle Image:** Close-up lifestyle portrait of a fair-skinned Indian girl wearing a delicate gold ring while holding a ceramic teacup near a sunlit window.

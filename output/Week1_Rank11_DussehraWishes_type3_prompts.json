@@ -1,0 +1,34 @@
+{
+  "occasion": "dussehra-2026",
+  "article": "Week1 Rank11 - dussehra wishes in english",
+  "wp_post_id": 30041,
+  "workflow": "Magnific Mystic realism with hyper-real theme anchor and negative prompt. People scenes use structure_ref null and exact SKU descriptions read from raw PNGs.",
+  "notes": "Skein Bangle: classic yellow gold circular bangle featuring a detailed geometric chain pattern studded with small pave diamonds. Thyvarne Pendant: modern yellow gold circular pendant encrusted with clean pave diamonds on a delicate chain. Valeria Rose Pendant: delicate rose gold pendant shaped like a detailed rose bloom with diamond accents.",
+  "magnific": {
+    "model": "mystic",
+    "theme_anchor": "Ultra-realistic photography, macro-level detail, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light from the left, warm daylight color temperature, realistic soft shadows. Shot on high-end DSLR, shallow depth of field, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire subjects and jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, product shot on plain background, cropped faces, cut-off heads, cut-off jewellery, out of frame, readable text, logos"
+  },
+  "slots": {
+    "hero": {
+      "structure_ref": null,
+      "prompt": "Dussehra 2026 Vijayadashami traditional celebration hero. Product-focused 85mm photograph of an Indian woman's wrist adorned with a classic yellow gold circular bangle featuring a detailed geometric chain pattern studded with small pave diamonds. In the softly blurred background, the family is exchanging green Shami tree leaves (apta leaves) next to a traditional burning oil lamp. Woman's complete smiling face is softly visible waist-up with safe margins. Traditional festive saree, warm golden hour indoor light. The Skein Bangle and full head remain entirely in the frame.",
+      "alt": "Happy Dussehra wishes in english 2026 hero, woman with The Skein Bangle"
+    },
+    "flatlay": {
+      "structure_ref": null,
+      "prompt": "Dussehra 2026 festive writing desk flatlay, top-down with a 100mm macro lens. A blank cream greeting card, elegant brass plate with marigold flowers, clay oil lamp (diyas), and a blank dark phone screen fill the dark wooden desk. At the centre, a modern yellow gold circular pendant encrusted with clean pave diamonds rests fully visible. The Thyvarne Pendant is the sharp-focus jewellery hero with physically accurate scale, facets, reflections, and safe margins. No readable text, no logos.",
+      "alt": "Dussehra quotes card flatlay with The Thyvarne Pendant"
+    },
+    "lifestyle": {
+      "structure_ref": null,
+      "prompt": "Dussehra 2026 home celebration portrait of a happy Indian woman standing near a decorated entrance, shot at eye level on an 85mm lens. In the sharp foreground, the woman's neck and chest are in sharp focus, showcasing a delicate rose gold pendant shaped like a detailed rose bloom with diamond accents on a thin chain. The woman's complete, uncropped smiling face appears in the softer background. Soft sunset daylight, orange marigold flower garlands and warm lights in the distant blur. The Valeria Rose Pendant and full head remain inside the frame with safe margins.",
+      "alt": "Shubho bijoya wishes 2026 lifestyle with The Valeria Rose Pendant"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/dussehra-hero-2026.webp",
+    "flatlay": "output/magnific_generated/dussehra-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/dussehra-lifestyle-2026.webp"
+  }
+}

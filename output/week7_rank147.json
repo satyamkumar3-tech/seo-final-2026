@@ -1,0 +1,56 @@
+{
+  "pipeline": "week7_pipeline",
+  "created_at": "2026-08-26T06:32:19Z",
+  "workspace": "/Users/satyamkumar/Downloads/seo final 2026",
+  "week7_workbook": "SEO Strategy 2026.xlsx",
+  "week7_csv": "output/Week7_Gift_Guides_PostRank10.csv",
+  "runs": [
+    {
+      "rank": 147,
+      "action": "New",
+      "primary": "ruby ring",
+      "slug": "ruby-ring-2026",
+      "theme": "Design Listicles",
+      "category_fit": "Jewellery Design",
+      "engine": "design_listicle",
+      "category_hint": "`Jewellery Trends` 554493317 or `Jewellery & Lifestyle` 554493425",
+      "status": "incomplete",
+      "started_at": "2026-08-26T06:32:19Z",
+      "prompt_path": "output/week7_rank147_ruby-ring-2026_20260826_120219.prompt.txt",
+      "log_path": "output/week7_rank147_ruby-ring-2026_20260826_120219.log",
+      "final_path": "output/week7_rank147_ruby-ring-2026_20260826_120219.final.txt",
+      "checkpoint_path": "output/checkpoints/week7_rank147.json",
+      "archived_checkpoint_path": null,
+      "allow_existing_intent": false,
+      "runner": "agy",
+      "command": [
+        "/Users/satyamkumar/.local/bin/agy",
+        "--dangerously-skip-permissions",
+        "--print-timeout",
+        "45m",
+        "--output-format",
+        "text",
+        "-p",
+        "<prompt stored in output/week7_rank147_ruby-ring-2026_20260826_120219.prompt.txt>"
+      ],
+      "max_parallel_requested": 1,
+      "finished_at": "2026-08-26T06:47:40Z",
+      "duration_seconds": 920.78,
+      "exit_code": 0,
+      "checkpoint_status": "incomplete",
+      "outcome": "successful_exit_without_published_live_qa"
+    }
+  ],
+  "requested_ranks": [
+    147
+  ],
+  "codex_bin": "/Users/satyamkumar/.local/bin/codex",
+  "skip_git_repo_check": true,
+  "sandbox_requested": "workspace-write",
+  "sandbox_effective": "workspace-write (managed by --approve-for-me)",
+  "approve_for_me": true,
+  "search_requested_in_prompt": true,
+  "restart_requested": true,
+  "allow_existing_intent": false,
+  "updated_at": "2026-08-26T06:47:40Z"
+}

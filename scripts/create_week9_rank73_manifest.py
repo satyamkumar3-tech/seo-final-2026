@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Create Type 3 prompt manifest for Week 9 Rank 73."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+FILMIC_STYLE = "Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast."
+
+PEOPLE_ANCHOR = "High-end authentic Indian lifestyle photography. Rich natural illumination, architectural depth, organic textures, cinematic realism. Hyper-realistic fine jewellery fidelity."
+
+PRODUCT_ANCHOR = "Professional editorial jewellery still life photography. Pure studio lighting, rich tactile surfaces, immaculate focus, natural shadows. Hyper-realistic fine gold and diamond craftsmanship."
+
+CASTING_GROOM = "Casting: fair-skinned North Indian / urban Indian groom in late 20s with refined styling and warm, joyful expression."
+CASTING_BRIDE = "Casting: fair-skinned North Indian / urban Indian bride in mid-to-late 20s with natural makeup and graceful posture."
+
+NEGATIVE_PEOPLE = "dark skin, deep brown skin, heavily tanned skin, floating packshot, product cutout overlay, CGI, fake render, plastic skin, oversaturation, harsh flash, empty phone, blank screen, placards, readable text, extra fingers, deformed hands, distorted jewellery."
+NEGATIVE_PRODUCT = "floating cutout, 3D render, cartoon, plastic, blurry, oversaturated, harsh flash, empty screens, readable text, logos, hands, people."
+
+manifest = {
+    "workflow": "Higgsfield CLI nano_banana_pro with local product reference images.",
+    "model": "nano_banana_pro",
+    "year": 2026,
+    "primary_keyword": "marriage ring finger",
+    "slug": "marriage-ring-finger-2026",
+    "flatlay_setting": "study-desk",
+    "slots": {
+        "hero": {
+            "slot": "hero",
+            "product_name": "The Jasper Band For Him",
+            "code": "BISL0851R28",
+            "gender": "Male",
+            "pdp": "https://www.bluestone.com/rings/the-jasper-band-for-him~93964.html",
+            "alt": "marriage ring finger traditions showing groom wedding band on fourth digit in 2026",
+            "caption": "The Jasper Band For Him as an elegant marriage ring reflecting enduring Indian wedding heritage",
+            "local_reference_images": [
+                "ProductImages/raw/Rings/The Jasper Band For Him/1_body_portrait.png",
+                "ProductImages/raw/Rings/The Jasper Band For Him/2_front.png"
+            ],
+            "prompt": f"{PEOPLE_ANCHOR} {CASTING_GROOM} Candid Indian wedding lifestyle photograph, mid-shot of a smiling groom in an elegant ivory and gold embroidered sherwani during his wedding celebration. On the fourth digit (ring finger) of his right hand, he is physically wearing the solid gold band from reference images (@img1 body_image worn scale, @img2 design only). GENDER LOCK: adult man only. The ring rests naturally on his finger with soft realistic contact shadows at EXACT PDP jewellery dimensions: height_mm=24.11, width_mm=11.92 (these are fine jewellery dimensions, not body measurements). Keep the jewellery size like @img1 body_image worn finger scale; use @img2 only for design. Camera focuses on the groom; jewellery is sharp, authentic 18K yellow gold with subtle satin finish, zero distortion, perfectly fitted. This is the only ring on his hands. No floating packshot overlay. Safe margins, 16:9 landscape. {FILMIC_STYLE} Avoid: {NEGATIVE_PEOPLE}"
+        },
+        "flatlay": {
+            "slot": "flatlay",
+            "product_name": "The Anya Ring",
+            "code": "BIAR0097R04",
+            "gender": "Female",
+            "pdp": "https://www.bluestone.com/rings/the-anya-ring~7515.html",
+            "alt": "measuring marriage ring finger with jewellery mandrel on study desk flatlay in 2026",
+            "caption": "The Anya Ring presented alongside professional sizing tools for marriage ring selection",
+            "local_reference_images": [
+                "ProductImages/raw/Rings/The Anya Ring/0_primary.png",
+                "ProductImages/raw/Rings/The Anya Ring/2_front.png",
+                "ProductImages/raw/Rings/The Anya Ring/6_angle.png"
+            ],
+            "prompt": f"{PRODUCT_ANCHOR} Top-down flatlay on a dark walnut study desk (setting: study-desk). In the center rests the authentic gold and diamond ring from reference images (@img1, @img2, @img3) at EXACT PDP jewellery dimensions: height_mm=20.57, width_mm=6.28 (jewellery dimensions, not furniture measurements). The ring features gleaming 18K yellow gold with delicate pavé set diamonds. Thoughtfully arranged nearby are a brass ring sizer measuring gauge, an antique brass loupe, a closed dark leather notebook with no text, and a vintage fountain pen on a linen blotter. Controlled soft daylight from one side, gentle realistic shadows, shallow depth of field. Sharp focus on the ring, props remain secondary. No people, no hands, no floating overlays, no readable text or logos on props. 16:9 landscape. {FILMIC_STYLE} Avoid: {NEGATIVE_PRODUCT}"
+        },
+        "lifestyle": {
+            "slot": "lifestyle",
+            "product_name": "The Malibu Ring",
+            "code": "BIPM0017R18",
+            "gender": "Female",
+            "pdp": "https://www.bluestone.com/rings/the-malibu-ring~2321.html",
+            "alt": "bride wearing daily gold marriage ring on fourth finger in 2026",
+            "caption": "The Malibu Ring styled gracefully on the bride ring finger for elegant daily wear",
+            "local_reference_images": [
+                "ProductImages/raw/Rings/The Malibu Ring/1_body_portrait.png",
+                "ProductImages/raw/Rings/The Malibu Ring/2_front.png"
+            ],
+            "prompt": f"{PEOPLE_ANCHOR} {CASTING_BRIDE} Candid lifestyle photograph, mid-shot close-up of a fair-skinned Indian bride dressed in a subtle pastel pink silk sari. Her graceful hand rests gently upon a polished table at a post-wedding celebration. On the fourth digit (ring finger) of her hand, she is physically wearing the gold and diamond ring from reference images (@img1 body_image worn scale, @img2 design only). GENDER LOCK: adult woman only. The ring rests naturally on her finger at EXACT PDP jewellery dimensions: height_mm=21.59, width_mm=8.32 (fine jewellery dimensions, not body measurements). Keep the jewellery size on the finger like @img1 body_image worn scale; use @img2 only for the ring design. Delicate natural nail polish, warm ambient lighting with creamy bokeh. High-end fine jewellery fidelity, zero distortion. This is the only jewellery on her hand. Safe margins, 16:9 landscape. {FILMIC_STYLE} Avoid: {NEGATIVE_PEOPLE}"
+        }
+    },
+    "output": {
+        "hero": "output/marriage-ring-finger-hero-2026.webp",
+        "flatlay": "output/marriage-ring-finger-flatlay-2026.webp",
+        "lifestyle": "output/marriage-ring-finger-lifestyle-2026.webp"
+    }
+}
+
+manifest_path = ROOT / "output" / "Week9_Rank73_MarriageRingFinger_type3_prompts.json"
+manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+print(f"Manifest written to {manifest_path}")

@@ -1,0 +1,55 @@
+{
+  "occasion": "mothers-day-2027",
+  "article": "Week1 Rank22 - mother's day wishes in english",
+  "wp_post_id": 30248,
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE slots: scene-first prompt, 2 refs max, people_theme_anchor (no macro). Flatlay: product_theme_anchor, 3-4 refs.",
+  "notes": "Valeria Rose Pendant: rose gold heart pendant, right half pave diamonds, left half three open rose gold bands, fine rose gold cable chain. Muricelle Bangle: polished yellow gold hinged bangle with triple-band pave diamond front. Shining Star Bracelet: yellow gold bracelet with star motif and diamond accents, delicate link construction.",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "people_theme_anchor": "Candid lifestyle photography, hyper-realistic, natural textures, no illustration. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on high-end DSLR, cinematic realism, widescreen 16:9 with full frame composition and safe margins. People are the primary subject; jewellery is a small worn detail, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "High-end commercial jewellery photography, hyper-realistic, HD quality, no distortion of jewellery, identical scale and design, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight color temperature, realistic soft shadows, proper shallow depth of field. Shot on high-end DSLR, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "notes": "2026-07-19: people-first prompt fixed floating overlay hallucination. Hero regenerated with 2 refs only."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg2.bluestone.com/giproduct/BIHS1145P21_RAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-119073.png",
+        "https://kinclimg2.bluestone.com/giproduct/BIHS1145P21_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-119073.png"
+      ],
+      "prompt": "Mother's Day 2027 candid lifestyle photograph, mid-shot of people (not a product ad). Casting (required): fair-skinned Indian mother and adult daughter only. Light wheatish to fair North Indian / urban Indian complexion. A fair-skinned Indian mother in a soft pastel peach saree warmly hugs her fair-skinned adult daughter in a bright living room with morning window light and fresh flowers softly blurred behind them. Faces and upper bodies fill most of the frame. The mother is physically wearing the rose gold heart pendant from reference images (@img1, @img2) on a fine rose gold cable chain around her neck. The Valeria Rose Pendant rests on her upper chest / saree neckline with a soft contact shadow, at real-world necklace size (about 2 to 3 cm heart, small in frame). Camera focuses on the people; jewellery is sharp but NOT the largest object. Design fidelity: rose gold heart, right-side pave diamonds, left-side open triple rose gold bands. ONLY jewellery in the image. Bare ears and bare wrists. CRITICAL: attached to body, never floating cutout / packshot overlay.",
+      "alt": "mother's day wishes in english 2027 hero, fair-skinned Indian mother wearing The Valeria Rose Pendant"
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00003-1024-62802.png"
+      ],
+      "prompt": "Mother's Day 2027 greeting desk flatlay, top-down view with a 100mm macro lens. A blank cream greeting card, fountain pen, soft pink roses, a linen napkin, and a blank dark phone screen fill a warm wooden desk. At the centre, the identical yellow gold hinged bangle shown in the reference images (@img1, @img2, @img3, @img4) rests fully visible: a polished yellow gold Muricelle Bangle with a triple-band pave diamond front and smooth gold back. The bangle must be in sharp focus at natural product scale with physically accurate reflections and safe margins. No readable text on the card or phone. Keep the design of these jewelries accurate and do not change it's design. Add light, shadow and sufficient depth to the jewelleries. Jewelleries in focus. Hyperrealistic jewelry photography image. Position the jewelries naturally. Do not change or crop the horizontal composition, fit it in the creative ratio. Avoid: floating overlays, graphic drawings, cutouts, product diagrams, extra floating jewelry, split screen, boxes, labels, oversized jewelry, readable text, logos. • Do not distort or hallucinate the jewelries",
+      "alt": "Mother's Day 2027 wishes flatlay with The Muricelle Bangle and roses"
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg5.bluestone.com/giproduct/BIMG0635V45_YAA18XXXXXXXXXXXX_ABCD00-PICS-00000-1024-47150.png",
+        "https://kinclimg5.bluestone.com/giproduct/BIMG0635V45_YAA18XXXXXXXXXXXX_ABCD00-PICS-00001-1024-47150.png"
+      ],
+      "prompt": "Mother's Day 2027 lifestyle wrist close-up at eye level with an 85mm lens. Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Subjects must look ethnically Indian with fair skin. A fair-skinned Indian woman's hand and wrist are in sharp focus as she gently holds a blank cream greeting card near a vase of soft roses, morning window light across her skin. She wears the identical yellow gold star bracelet shown in the reference images (@img1, @img2, @img3, @img4, @img5) naturally on her wrist: The Shining Star Bracelet with its star motif and delicate gold links, rendered 100% accurate to the references with zero distortion at natural product scale. Maintain the exact proportions of the bracelet relative to her wrist, avoiding any oversized or exaggerated rendering. Her complete hand, wrist, and the full bracelet remain inside the frame with safe margins. Soft morning light, warm home blur behind. This bracelet is the single and only piece of jewelry in the entire image. She wears absolutely no other jewelry. No floating overlays, cutouts, or giant product diagrams. Keep the design of these jewelries accurate and do not change it's design. Add light, shadow and sufficient depth to the jewelleries. Jewelleries in focus. Hyperrealistic jewelry photography image. Do not change or crop the horizontal composition, fit it in the creative ratio. Avoid: any other jewelry, extra bracelets, rings, necklaces, distorted hands, extra fingers, floating overlays, graphic drawings, cutouts, product diagrams, oversized jewelry, dark skin, deep brown skin, heavily tanned skin. • Do not distort or hallucinate the jewelries",
+      "alt": "mothers day status 2027 lifestyle wrist shot with The Shining Star Bracelet"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/mothers-day-hero-2027.webp",
+    "flatlay": "output/magnific_generated/mothers-day-flatlay-2027.webp",
+    "lifestyle": "output/magnific_generated/mothers-day-lifestyle-2027.webp"
+  },
+  "regen": {
+    "date": "2026-07-19",
+    "selected_variant": "v1",
+    "job_id": "6af2c55d-4b7a-4bb7-b46a-b96188fe98ce",
+    "wp_media_id": 30253,
+    "qa": "PASS worn natural scale no floating overlay; v2 rejected (extra jewellery)"
+  }
+}

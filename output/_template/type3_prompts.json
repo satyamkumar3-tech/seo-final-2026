@@ -1,0 +1,37 @@
+{
+  "occasion": "OCCASION-SLUG",
+  "article": "Week N RankX - primary keyword",
+  "wp_post_id": 0,
+  "workflow": "Higgsfield MCP nano_banana_pro with CDN product reference medias. Theme anchor + negative prompt. Fair-skinned Indians for people slots.",
+  "notes": "1) Collect 3-5 CDN product angles per Type 3 SKU. 2) media_import_url each URL, then generate_image with medias role=image. 3) Generate AFTER article publish. 4) Carousel uses ProductImages/seo images/ only.",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "theme_anchor": "High-end commercial jewellery photography, hyper-realistic, HD quality, no distortion of jewellery, identical scale and design, macro-level detail, physically accurate details, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight color temperature, realistic soft shadows, proper shallow depth of field. Shot on high-end DSLR, cinematic realism, 4K resolution, widescreen 16:9 landscape with full frame composition and safe margins. Entire subjects and jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, rainbow beads, product shot on plain background, cropped faces, cut-off jewellery, out of frame, dark skin, deep brown skin, heavily tanned skin",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [],
+      "prompt": "Casting (required): fair-skinned Indian subjects only. Light wheatish to fair North Indian / urban Indian complexion. Do not use deep brown, dark, or heavily tanned skin.\n\n[Occasion] [year] lifestyle hero. Close-up mid-shot, 85mm lens. [People + warm scene]. Subject wears the identical jewellery shown in the reference images (@img1, @img2, @img3, @img4) naturally. Exact product scale, sharp focus, single jewellery piece only. Both faces in frame, safe margins.",
+      "alt": "[Occasion] [year] lifestyle hero with [product name]"
+    },
+    "flatlay": {
+      "reference_images": [],
+      "prompt": "[Occasion] [year] flatlay top-down, 100mm macro. [Lived-in desk/table with festive props]. Blank dark phone fully in frame if included. The identical jewellery from reference images (@img1, @img2, @img3, @img4) sharp focus on surface, entire piece visible, natural product scale. Warm light, scene fills frame. No people.",
+      "alt": "[Occasion] [year] lifestyle flatlay with [product name]"
+    },
+    "lifestyle": {
+      "reference_images": [],
+      "prompt": "Casting (required): fair-skinned Indian subjects only. Light wheatish to fair North Indian / urban Indian complexion. Do not use deep brown, dark, or heavily tanned skin.\n\n[Occasion] [year] lifestyle photo. Mid-shot 85mm. [People / hands in action]. The identical jewellery from reference images (@img1, @img2, @img3) worn naturally, sharp macro focus, natural product scale, single piece only. Safe margins.",
+      "alt": "[People/scene] celebrating [Occasion] [year] with [product name]"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/OCCASION-hero.webp",
+    "flatlay": "output/magnific_generated/OCCASION-flatlay.webp",
+    "lifestyle": "output/magnific_generated/OCCASION-lifestyle.webp"
+  }
+}

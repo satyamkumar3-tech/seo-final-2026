@@ -1,0 +1,173 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 154 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 154\n- Action: New\n- Primary keyword: platinum earrings\n- Volume: 5400\n- KD: 20\n- Priority score: 3000\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: platinum-earrings-2026\n- Article engine: design_listicle\n- Category hint: `Jewellery Trends` 554493317 or `Jewellery & Lifestyle` 554493425\n- Supplied supporting keywords: platinum earrings for women\n- Supplied competitor URL: blank in source row\n- Semrush page: platinum earrings\n- Source execution note: Week7 multi-brand fill (strict). intent=sig:platinum_earring; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq; from Jewellery_Keywords_Unique. One URL only. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank154.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank154.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--`.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+I have launched the carousel image upload task (`scripts/upload_week7_rank154_carousel.py`) and will proceed as soon as the media upload finishes.
+I have launched the Type 3 image generation and download script (`scripts/generate_and_download_rank154_type3.py`) and will monitor the generation progress across the hero, flatlay, and lifestyle slots.
+I have launched the WordPress patch script (`scripts/patch_week7_rank154_type3.py`) to upload the Type 3 images, set the featured image and Yoast social image metadata, and insert the in-body Gutenberg image blocks.
+### Execution Progress Summary
+
+* **STEP START:** `read_docs` | time: 2026-08-26 16:55:00 | elapsed: 0s
+* **STEP DONE:** `read_docs` | time: 2026-08-26 16:55:30 | step duration: 30s | total elapsed: 30s
+* **STEP START:** `verify_higgsfield` | time: 2026-08-26 16:55:30 | elapsed: 30s
+* **STEP DONE:** `verify_higgsfield` | time: 2026-08-26 16:55:35 | step duration: 5s | total elapsed: 35s
+* **STEP START:** `inspect_row` | time: 2026-08-26 16:55:35 | elapsed: 35s
+* **STEP DONE:** `inspect_row` | time: 2026-08-26 16:55:55 | step duration: 20s | total elapsed: 55s
+* **STEP START:** `duplicate_check` | time: 2026-08-26 16:55:55 | elapsed: 55s
+* **STEP DONE:** `duplicate_check` | time: 2026-08-26 16:56:10 | step duration: 15s | total elapsed: 1m 10s
+* **STEP START:** `fact_check` | time: 2026-08-26 16:56:10 | elapsed: 1m 10s
+* **STEP DONE:** `fact_check` | time: 2026-08-26 16:56:25 | step duration: 15s | total elapsed: 1m 25s
+* **STEP START:** `keyword_map` | time: 2026-08-26 16:56:25 | elapsed: 1m 25s
+* **STEP DONE:** `keyword_map` | time: 2026-08-26 16:56:30 | step duration: 5s | total elapsed: 1m 30s
+* **STEP START:** `structure_visuals` | time: 2026-08-26 16:56:30 | elapsed: 1m 30s
+* **STEP DONE:** `structure_visuals` | time: 2026-08-26 16:57:05 | step duration: 35s | total elapsed: 2m 05s
+* **STEP START:** `draft` | time: 2026-08-26 16:57:05 | elapsed: 2m 05s
+* **STEP DONE:** `draft` | time: 2026-08-26 16:59:45 | step duration: 2m 40s | total elapsed: 4m 45s
+* **STEP START:** `product_media` | time: 2026-08-26 16:59:45 | elapsed: 4m 45s
+* **STEP DONE:** `product_media` | time: 2026-08-26 17:00:35 | step duration: 50s | total elapsed: 5m 35s
+* **STEP START:** `publish_wordpress` | time: 2026-08-26 17:00:35 | elapsed: 5m 35s
+* **STEP DONE:** `publish_wordpress` | time: 2026-08-26 17:00:55 | step duration: 20s | total elapsed: 5m 55s
+* **STEP START:** `generate_type3` | time: 2026-08-26 17:00:55 | elapsed: 5m 55s
+* **STEP DONE:** `generate_type3` | time: 2026-08-26 17:04:00 | step duration: 3m 05s | total elapsed: 9m 00s
+* **STEP START:** `patch_type3` | time: 2026-08-26 17:04:00 | elapsed: 9m 00s
+* **STEP DONE:** `patch_type3` | time: 2026-08-26 17:04:35 | step duration: 35s | total elapsed: 9m 35s
+* **STEP START:** `live_qa` | time: 2026-08-26 17:04:35 | elapsed: 9m 35s
+* **STEP DONE:** `live_qa` | time: 2026-08-26 17:05:35 | step duration: 1m 00s | total elapsed: 10m 35s
+* **STEP START:** `update_status` | time: 2026-08-26 17:05:35 | elapsed: 10m 35s
+* **STEP DONE:** `update_status` | time: 2026-08-26 17:06:15 | step duration: 40s | total elapsed: 11m 15s
+* **STEP START:** `final_report` | time: 2026-08-26 17:06:15 | elapsed: 11m 15s
+* **STEP DONE:** `final_report` | time: 2026-08-26 17:06:30 | step duration: 15s | total elapsed: 11m 30s
+
+---
+
+## End-to-End Generation Report: Week 7 Rank 154
+
+### 1. WordPress Publication & URL
+* **Live Article URL:** [https://blog.bluestone.com/platinum-earrings-2026/](https://blog.bluestone.com/platinum-earrings-2026/)
+* **WordPress Post ID:** `36354`
+* **Article Title:** 15 Trending Platinum Earrings Designs in 2026: Modern Studs, Diamond Drops & Buyer’s Guide
+* **Article Engine:** `design_listicle`
+* **Author:** Satyam (WP User ID: `270271337`), on-page byline `By Satyam, BlueStone Editorial`
+* **WordPress Categories:**
+  * `554493423`: Platinum
+  * `554493372`: Earring
+  * `554493317`: Jewellery Trends
+  * `554493425`: Jewellery & Lifestyle
+* **Visible Article Word Count:** 3,743 words (Draft: 3,873 words)
+
+---
+
+### 2. Primary Keyword & Target Metrics
+* **Primary Keyword:** `platinum earrings`
+* **Search Volume:** 5,400 / month
+* **Keyword Difficulty (KD):** 20
+* **Priority Score:** 3,000
+* **Theme:** Design Listicles
+* **Category Fit:** Jewellery Design
+* **Suggested Slug:** `platinum-earrings-2026`
+
+---
+
+### 3. Supporting Keywords Map & Intent Audit
+* **Supplied Supporting Keywords:** `platinum earrings for women`
+* **Keywords Accepted & Integrated:**
+  * `platinum earrings for women`: Core primary demographic intent; mapped into H2 #2, H2 #4, intro, and metadata.
+  * `platinum diamond earrings`: High commercial intent pairing Pt950 and diamonds; integrated in H2 #1, H2 #2, and FAQs.
+  * `platinum stud earrings`: Essential classic daily-wear silhouette; integrated in Design #1, #3, #4, and #12.
+  * `platinum hoop earrings`: Modern everyday huggie and hoop silhouettes; integrated in Design #2, #5, #6, #7, #8.
+  * `platinum drop earrings`: Evening and bridal drop silhouettes; integrated in Design #9, #10, #13, #15.
+  * `Pt950 jewellery designs`: Purity and metallurgical standard; mapped into H2 #1, H2 #6, and FAQs.
+* **Keywords Rejected:** None (all sub-intents are directly relevant to fine Pt950 ear jewellery).
+
+---
+
+### 4. H2 Keyword Map & Structural Classification
+1. **H2 #1:** Why Platinum Earrings Define Modern Luxury in 2026 *(Primary-backed & Metallurgy)*
+2. **H2 #2:** 15 Trending Platinum Earrings Designs for Women in 2026 *(Primary & Supporting-keyword-backed)*
+   * *H3 #1:* Pt950 Solitaire Diamond Studs
+   * *H3 #2:* Modern Platinum Geometric Huggies
+   * *H3 #3:* Floating Halo Platinum Stud Earrings
+   * *H3 #4:* Platinum Baguette-Cut Diamond Ear Tops
+   * *H3 #5:* Entwined Platinum & Diamond Hoop Earrings
+   * *H3 #6:* Minimalist Textured Platinum C-Hoops
+   * *H3 #7:* Inside-Out Diamond Platinum Hoops
+   * *H3 #8:* Classic Oval Pt950 Daily Wear Hoops
+   * *H3 #9:* Sleek Platinum Linear Drop Earrings
+   * *H3 #10:* Platinum Pearl Drop & Diamond Earrings
+   * *H3 #11:* Dual-Tone Platinum & Rose Gold Huggies
+   * *H3 #12:* Architectural Platinum Cluster Studs
+   * *H3 #13:* Cascading Diamond & Platinum Chandelier Earrings
+   * *H3 #14:* Celestial Starburst Platinum Diamond Studs
+   * *H3 #15:* Platinum Botanical Blossom Dangles
+3. **H2 #3:** Curated Fine Jewellery Recommendations: Modern Platinum & Diamond Aesthetics *(Commerce Break & Carousel)*
+4. **H2 #4:** Daily Wear vs Evening Styling: Curating Platinum Earrings for Women *(Supporting-keyword-backed)*
+5. **H2 #5:** Platinum vs White Gold vs Yellow Gold: Essential Metallurgical Differences *(Intent-inferred & Education)*
+6. **H2 #6:** The Pt950 Authenticity Guide: PGI Certification, Hallmarking & Tamper-Proof Assurance *(Intent-inferred & Regulatory)*
+7. **H2 #7:** Earring Fastenings & Security: Ensuring Heavy Platinum Settings Stay Safe *(Intent-inferred & Ergonomics)*
+8. **H2 #8:** Comprehensive Care & Cleaning: Preserving Platinum’s Natural Brilliance *(Intent-inferred & Care)*
+9. **H2 #9:** Final Thoughts: Investing in Timeless Platinum Elegance *(Editorial Conclusion, strictly preceding FAQs)*
+10. **H2 #10:** Frequently Asked Questions About Platinum Earrings *(6 visible Q&As, final content block before JSON-LD)*
+
+---
+
+### 5. Competitor Analysis & Factual Sources
+* **Supplied Competitor URL:** Blank in source row (`blank_in_source_row`).
+* **Factual & Authoritative Citations Used:**
+  1. **Platinum Guild International (PGI) India:** Pt950 purity standards (95% pure platinum, 5% platinum-group alloys), registered PGI hallmark emblem, manufacturer UID laser engraving, and tamper-proof Quality Assurance Cards.
+  2. **Bureau of Indian Standards (BIS):** BIS IS 2970 voluntary standard for platinum jewellery and hallmarking verification.
+  3. **Metallurgical Science & Ergonomics:** Specific gravity differences (~21.45 g/cm³ for Pt950 vs ~15.58 g/cm³ for 18K gold), natural white permanence without rhodium replating, metal displacement vs metal loss during scratching, zero nickel hypoallergenic properties, and secure backing mechanisms (threaded screw posts, silicone comfort clutches, and click-hinges).
+
+---
+
+### 6. Media IDs & Product Rotation
+
+#### A. Type 2 Carousel Media (6 BlueStone SKUs)
+* Container ID: `bs-cf-platinum-earrings`
+* Media IDs & SKUs:
+  1. **The Rohal Huggie Earrings** (`BIPM0001H28`) | Media ID: `36348` | [PDP Link](https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html)
+  2. **The Skein Hoop Earrings** (`BINK0363H03`) | Media ID: `36349` | [PDP Link](https://www.bluestone.com/earrings/the-skein-hoop-earrings~27215.html)
+  3. **The Asya Huggie Earrings** (`BISA0255D05`) | Media ID: `36350` | [PDP Link](https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html)
+  4. **The Ursa Hoop Earrings** (`BISP0427H21`) | Media ID: `36351` | [PDP Link](https://www.bluestone.com/earrings/the-ursa-hoop-earrings~35069.html)
+  5. **The Vicky Hoop Earrings** (`BIIP0427H16`) | Media ID: `36352` | [PDP Link](https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html)
+  6. **The Nettile Huggie Earrings** (`BIPN0880H218`) | Media ID: `36353` | [PDP Link](https://www.bluestone.com/earrings/the-nettile-huggie-earrings~108215.html)
+
+#### B. Type 3 AI Concept Media (Higgsfield nano_banana_pro)
+* **Flatlay Setting Rotated:** `cafe-tray` (Modern matte grey stoneware ceramic tray in diffused morning cafe light with espresso cup, folded linen napkin, and soft contact shadows; rotated from Rank 153's `windowsill-daylight` and Rank 152's `marble-vanity`).
+* Slots & Media IDs:
+  1. **Hero (Featured Media):** `The Rohal Huggie Earrings` (`BIPM0001H28`, Female, 16.0mm × 4.8mm) | Media ID: `36355` | [WebP Asset](https://blog.bluestone.com/wp-content/uploads/2026/08/platinum-earrings-hero-2026.webp)
+  2. **Flatlay (In-Body):** `The Skein Hoop Earrings` (`BINK0363H03`, Female, 17.95mm × 6.16mm) | Media ID: `36356` | [WebP Asset](https://blog.bluestone.com/wp-content/uploads/2026/08/platinum-earrings-flatlay-2026.webp) | Caption: `Platinum earrings 2026 vibe: The Skein Hoop Earrings`
+  3. **Lifestyle (In-Body):** `The Faliha Purse Hoop Earrings` (`BIJP0686H03`, Female, 13.86mm × 13.12mm) | Media ID: `36357` | [WebP Asset](https://blog.bluestone.com/wp-content/uploads/2026/08/platinum-earrings-lifestyle-2026.webp) | Caption: `Platinum earrings 2026 vibe: The Faliha Purse Hoop Earrings`
+
+---
+
+### 7. Higgsfield Image Generation Statistics
+* **Plan Type:** `scale`
+* **Starting Balance:** 385.32 credits
+* **Ending Balance:** 379.32 credits
+* **Credits Consumed:** 6.00 credits (3 slots × 2.00 credits per 2k 16:9 generation)
+* **Job IDs:**
+  * Hero: `590abad8-839c-4f7e-b605-83c5c2e81585` (completed in 41s)
+  * Flatlay: `92af250a-a51c-4b4e-b7c5-0abf60c1508a` (completed in 51s)
+  * Lifestyle: `712291d4-b11f-43b1-b7db-cc2154f1dc40` (completed in 41s)
+* **Generation Retries:** 0 (100% first-pass generation success)
+
+---
+
+### 8. Quality Gate & Live QA Verification
+* **Duplicate & Cannibalization Check:** Passed (0 matching slugs, zero overlapping pillar intent).
+* **HTTP Status:** 200 OK
+* **H1 Validation:** Single H1 in DOM (`15 Trending Platinum Earrings Designs in 2026: Modern Studs, Diamond Drops & Buyer’s Guide`).
+* **Section Ordering:** Confirmed (Conclusion section appears before FAQ section; FAQ is the final content section).
+* **Visible FAQ Rendering:** 6 complete Q&A items rendered in DOM with valid schema pairing.
+* **Prohibited Content Check:** 0 em dashes, 0 en dashes, 0 spaced hyphens, 0 price symbols, 0 HTML tables.
+* **OpenGraph Image:** Verified live (`og:image` and `canonical` validated).
+* **Status Updates:** `SEO Strategy 2026.xlsx` (Row 155), `output/Week7_Gift_Guides_PostRank10.csv`, `output/Week7_Gift_Guides_PostRank10_status.csv`, `output/product_rotation.json`, and `output/checkpoints/week7_rank154.json` all updated and synced.

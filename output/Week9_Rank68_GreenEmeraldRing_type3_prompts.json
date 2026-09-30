@@ -1,0 +1,80 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "flatlay_setting": "marble-vanity",
+  "slots": {
+    "hero": {
+      "slot": "hero",
+      "product_name": "The Anya Ring",
+      "code": "BIAR0097R04",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/rings/the-anya-ring~7515.html",
+      "dimensions": "product_height_mm=20.57, product_width_mm=6.28 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Anya Ring/1_body_portrait.png",
+        "ProductImages/raw/Rings/The Anya Ring/2_front.png"
+      ],
+      "alt": "Green emerald ring 2026 hero lifestyle featuring The Anya Ring worn by a fair-skinned Indian woman",
+      "caption": "The Anya Ring worn with effortless grace, highlighting vivid emerald green brilliance on 18K yellow gold",
+      "prompt": "Photoreal candid lifestyle photograph with high-end fine jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Controlled soft key light with gentle fill, realistic soft shadows, proper shallow depth of field (85mm lens), balanced exposure with no blown whites and no HDR glare. Shot on DSLR, HD quality, 16:9 full frame with safe margins. People are the primary subject and remain candid; the jewellery is an exquisite worn detail that is 100% identical to product refs. Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Mid-shot candid portrait of an elegant, graceful fair-skinned Indian woman in her late 20s wearing a rich emerald green silk sari with gold zari border in a sunlit luxury heritage courtyard during golden hour. Her hand rests gently near her clavicle as she smiles softly, fingers relaxed and clearly visible in the frame. She is physically wearing The Anya Ring from reference images (@img1 body_image worn scale, @img2 design only) on her ring finger. GENDER LOCK: Female adult woman only. The ring rests naturally on her finger with authentic soft contact shadows against skin at EXACT jewellery dimensions: product_height_mm=20.57 x product_width_mm=6.28 (these are jewellery dimensions, not face or body measurements). Keep the jewellery size on the person like @img1 body_image (worn finger scale). Use @img2 only for the jewellery design. Do not make it bigger for visibility. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Camera focuses naturally on the woman and her hand; the vivid green emerald stone set in lustrous 18K yellow gold band is sharp, true, and refined with warm metallic glow. This is the single and only piece of jewellery in the entire image. Bare ears, bare neck, bare wrists, no other rings. Safe margins, full face, shoulder, and hand clearly visible. CRITICAL anti-collage: the jewellery is physically attached to the finger, never a floating cutout, never a giant product diagram composited over the photo, never a packshot overlay. 16:9 landscape. Avoid: floating jewellery overlay, giant ring collage, product cutout over people, packshot composited on lifestyle photo, jewellery upscaled for visibility, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, unreal scale, oversized jewellery, distorted jewellery, warped metal, melted stones, wrong design, distorted hands, extra fingers, extra rings, extra bracelets, product shot on plain background, cropped hands, readable text, logos, dark skin, deep brown skin, heavily tanned skin"
+    },
+    "flatlay": {
+      "slot": "flatlay",
+      "product_name": "The Malibu Ring",
+      "code": "BIPM0017R18",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/rings/the-malibu-ring~2321.html",
+      "dimensions": "product_height_mm=21.59, product_width_mm=8.32 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Malibu Ring/0_primary.png",
+        "ProductImages/raw/Rings/The Malibu Ring/2_front.png",
+        "ProductImages/raw/Rings/The Malibu Ring/5_close_up.png"
+      ],
+      "alt": "Green emerald ring 2026 marble vanity flatlay featuring The Malibu Ring",
+      "caption": "The Malibu Ring displayed on a marble vanity with a gemologist loupe, showcasing certified 18K gold setting security",
+      "prompt": "Photoreal high-end jewellery commercial flatlay, HD quality, no distortion of jewellery, identical scale and design (100% match to refs), physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Controlled soft key light with gentle realistic shadows, proper shallow depth of field, balanced exposure with no blown whites and no HDR glare. Shot on DSLR, 16:9 full frame with safe margins. Top-down editorial jewellery flatlay. Flatlay setting ID: marble-vanity. Surface + props: polished Italian white Carrara marble vanity countertop with delicate grey veining, a small beige linen tray, an antique brass gemologist loupe, fine precision tweezers, and a sprig of fresh olive leaves softly blurred in the background. The identical The Malibu Ring from (@img1, @img2, @img3) rests cleanly on the marble surface at EXACT jewellery dimensions: product_height_mm=21.59 x product_width_mm=8.32 (these are jewellery dimensions, not face or body measurements). Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. HD hyperreal yellow gold texture with soft specular highlights, polished prong architecture holding the luminous green emerald gemstone, and authentic precious metal luster. Props stay secondary; jewellery is the clear subject. No people, no hands, no skin. No floating overlays or cutouts. No readable text, logos, or brand marks on props. Avoid: illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, artificial harsh lighting, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, blurry jewellery, distorted jewellery, warped metal, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, people, hands, skin"
+    },
+    "lifestyle": {
+      "slot": "lifestyle",
+      "product_name": "The Ebony Ring",
+      "code": "BIIP0090R24",
+      "GenderTag": "Female",
+      "pdp": "https://www.bluestone.com/rings/the-ebony-ring~9686.html",
+      "dimensions": "product_height_mm=20.56, product_width_mm=18.35 (explicitly jewellery dimensions, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Ebony Ring/1_body_portrait.png",
+        "ProductImages/raw/Rings/The Ebony Ring/2_front.png"
+      ],
+      "alt": "Green emerald ring 2026 lifestyle action close-up featuring The Ebony Ring",
+      "caption": "The Ebony Ring styled for an evening celebration, capturing royal green colour saturation and diamond sparkle",
+      "prompt": "Photoreal candid lifestyle photograph with high-end fine jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Controlled soft key light with gentle fill, realistic soft shadows, proper shallow depth of field (85mm lens), balanced exposure with no blown whites and no HDR glare. Shot on DSLR, HD quality, 16:9 full frame with safe margins. People are the primary subject and remain candid; the jewellery is an exquisite worn detail that is 100% identical to product refs. Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion, clear fair skin tones. Do not use deep brown, dark, or heavily tanned skin. Close-up candid lifestyle photograph of a fair-skinned Indian woman's manicured hand resting gently on a dark walnut dining table next to an elegant fluted crystal glass during an upscale celebration. Her fingers are relaxed with the ring finger positioned sharply in the focal plane. She is physically wearing The Ebony Ring from reference images (@img1 body_image worn scale, @img2 design only) on her ring finger. GENDER LOCK: Female adult woman only. The ring rests naturally on her finger with realistic contact shadows against skin at EXACT jewellery dimensions: product_height_mm=20.56 x product_width_mm=18.35 (these are jewellery dimensions, not face or body measurements). Keep the jewellery size on the person like @img1 body_image (worn finger scale). Use @img2 only for the jewellery design. Do not make it bigger for visibility. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Camera focuses sharply on the hand and ring; the intricate 18K yellow gold setting, rich green gemstone center, and brilliant diamond accents are sharp and true with authentic luxury glow. Bare wrists, bare arms, no other rings or jewellery in frame. Safe margins, full hand and fingers clearly in frame. CRITICAL anti-collage: the jewellery is physically attached to the finger, never a floating cutout, never a giant product diagram composited over the photo, never a packshot overlay. 16:9 landscape. Avoid: floating jewellery overlay, giant ring collage, product cutout over people, packshot composited on lifestyle photo, jewellery upscaled for visibility, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, blown whites, overexposed highlights, washed-out lighting, unreal scale, oversized jewellery, distorted jewellery, warped metal, melted stones, wrong design, distorted hands, extra fingers, extra rings, extra bracelets, product shot on plain background, cropped hands, readable text, logos, dark skin, deep brown skin, heavily tanned skin"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/green-emerald-ring-hero-2026.webp",
+    "flatlay": "output/magnific_generated/green-emerald-ring-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/green-emerald-ring-lifestyle-2026.webp"
+  },
+  "higgsfield_jobs": {
+    "hero_accepted_cli_candidate": {
+      "job_id": "8b77b258-244e-4719-9a1d-5168e8623542",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_083435_8b77b258-244e-4719-9a1d-5168e8623542.png",
+      "local_raw": "output/magnific_generated/green-emerald-ring-hero-2026.raw.png"
+    },
+    "flatlay_accepted_cli_candidate": {
+      "job_id": "12dafb72-1613-4257-97e5-749ddbdf59c7",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_083543_12dafb72-1613-4257-97e5-749ddbdf59c7.png",
+      "local_raw": "output/magnific_generated/green-emerald-ring-flatlay-2026.raw.png"
+    },
+    "lifestyle_accepted_cli_candidate": {
+      "job_id": "48b9b21a-3161-4d04-9259-9cf23ec8e1f6",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_30dprT6AStriTdilMnAVIyL1c0u/hf_20260925_083623_48b9b21a-3161-4d04-9259-9cf23ec8e1f6.png",
+      "local_raw": "output/magnific_generated/green-emerald-ring-lifestyle-2026.raw.png"
+    }
+  }
+}

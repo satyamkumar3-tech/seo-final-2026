@@ -1,0 +1,55 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+    "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+  },
+  "slots": {
+    "hero": {
+      "product_name": "The Thaloria Pendant",
+      "code": "BISW1080P131",
+      "pdp": "https://www.bluestone.com/pendants/the-thaloria-pendant~165041.html",
+      "product_dimensions": "36.91mm height by 25.28mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Thaloria Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Thaloria Pendant/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Candid portrait of an elegant fair-skinned North Indian woman with a delicate light wheatish complexion, radiant skin texture, and refined graceful features, enjoying a serene morning in an airy urban living room. She is physically wearing The Thaloria Pendant from @img2 on an authentic delicate 18Kt gold chain resting on her collarbone at true worn scale matching @img1 body_image (product_height_mm=36.91 and product_width_mm=25.28; these are jewellery dimensions, not face or body measurements). The exquisite polished gold pendant with its luminous blue gemstone centerpiece catches soft natural sunlight with warm specular highlights and realistic contact shadows against her skin. She is dressed in an understated pastel silk tunic. In the softly blurred background are sheer white curtains and a minimalist marble console with a ceramic vase, zero phones, zero screens, zero readable text. Editorial magazine aesthetic, natural depth of field. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen, laptop.",
+      "alt": "stone necklace for women 2026 hero: fair-skinned Indian woman wearing elegant gold gemstone pendant necklace in warm morning sunlight"
+    },
+    "flatlay": {
+      "product_name": "The Xarvithis Pendant",
+      "code": "BISW1080P246",
+      "pdp": "https://www.bluestone.com/pendants/the-xarvithis-pendant~156920.html",
+      "product_dimensions": "20.5mm height by 14.3mm width (jewellery dimensions only)",
+      "setting": "windowsill-daylight",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Xarvithis Pendant/0_primary.png",
+        "ProductImages/raw/Pendants/The Xarvithis Pendant/2_front.png",
+        "ProductImages/raw/Pendants/The Xarvithis Pendant/5_close_up.png"
+      ],
+      "prompt": "Top-down commercial jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with gentle falloff. Flatlay setting: windowsill-daylight. Arranged on a painted matte white wooden windowsill in soft directional morning daylight: @img1, authentic fine 18Kt yellow gold pendant necklace, accompanied by detailed views from @img2 and @img3, resting centered at true life scale (20.5mm height by 14.3mm width). Beside the gold stone necklace are authentic styling props: a small textured off-white ceramic pot, delicate sprigs of dried botanical greenery, a folded sheer ivory linen cloth, and an antique unbranded brass jeweller loupe with clear glass lens. Soft natural window illumination, delicate organic shadows, Kodak Portra filmic tonal response, analog grain. No people, no hands, no readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark, ruler markings, numbers.",
+      "alt": "stone necklace for women 2026 flatlay: The Xarvithis Pendant on painted windowsill with sheer linen and ceramic pot in daylight",
+      "caption": "The <a href=\"https://www.bluestone.com/pendants/the-xarvithis-pendant~156920.html\">Xarvithis Pendant</a> in 18Kt gold featuring luminous natural stone accents for timeless daily elegance"
+    },
+    "lifestyle": {
+      "product_name": "The Aagarna Pendant",
+      "code": "BIIP0550P16",
+      "pdp": "https://www.bluestone.com/pendants/the-aagarna-pendant~54965.html",
+      "product_dimensions": "20.31mm height by 13.41mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Aagarna Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Aagarna Pendant/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic candid lifestyle action photograph, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A refined fair-skinned North Indian woman with a delicate light wheatish complexion and soft swept-up hair is captured in a graceful candid moment seated before a mirror, gently fastening the gold clasp of The Aagarna Pendant necklace from @img2 around her collarbone at exact worn scale matching @img1 body_image (product_height_mm=20.31 and product_width_mm=13.41; jewellery dimensions only). The intricate openwork gold pendant with its glowing gemstone drop rests flush against her skin, catching warm ambient room daylight. Natural skin texture, realistic hand anatomy and fingers, tasteful cream silk blouse, warm serene interior dressing room setting. Editorial fashion quality, zero phone screens, no readable text. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen.",
+      "alt": "stone necklace for women 2026 lifestyle: fair-skinned Indian woman fastening gold stone pendant necklace around collarbone",
+      "caption": "The <a href=\"https://www.bluestone.com/pendants/the-aagarna-pendant~54965.html\">Aagarna Pendant</a> in 18Kt gold showcasing intricate gemstone openwork styling"
+    }
+  },
+  "output": {
+    "hero": "output/stone-necklace-for-women-hero-2026.webp",
+    "flatlay": "output/stone-necklace-for-women-flatlay-2026.webp",
+    "lifestyle": "output/stone-necklace-for-women-lifestyle-2026.webp"
+  }
+}

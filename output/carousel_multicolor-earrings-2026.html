@@ -1,0 +1,301 @@
+<!-- wp:html -->
+<style>
+.bs-cf {
+  max-width: 900px;
+  margin: 1.75rem auto 1.25rem;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  position: relative;
+  perspective: 1200px;
+}
+.bs-cf-stage {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  overflow: visible;
+}
+.bs-cf-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(420px, 78vw);
+  margin-left: calc(min(420px, 78vw) / -2);
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #ececec;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform .45s cubic-bezier(.25,1,.35,1), opacity .45s ease, z-index .45s step-end;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.bs-cf-card.is-pos-0 {
+  transform: translate3d(0, 0, 0) scale(1);
+  z-index: 10;
+  opacity: 1;
+}
+.bs-cf-card.is-pos-1 {
+  transform: translate3d(55%, 0, -120px) scale(0.88);
+  z-index: 7;
+  opacity: 0.85;
+}
+.bs-cf-card.is-pos-2 {
+  transform: translate3d(95%, 0, -220px) scale(0.76);
+  z-index: 4;
+  opacity: 0.55;
+}
+.bs-cf-card.is-pos-3 {
+  transform: translate3d(0, 0, -320px) scale(0.65);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+.bs-cf-card.is-pos--2 {
+  transform: translate3d(-95%, 0, -220px) scale(0.76);
+  z-index: 4;
+  opacity: 0.55;
+}
+.bs-cf-card.is-pos--1 {
+  transform: translate3d(-55%, 0, -120px) scale(0.88);
+  z-index: 7;
+  opacity: 0.85;
+}
+.bs-cf-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #f6f6f6;
+  overflow: hidden;
+  display: block;
+}
+.bs-cf-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .4s ease;
+}
+.bs-cf-card:hover .bs-cf-media img {
+  transform: scale(1.04);
+}
+.bs-cf-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  background: #ffffff;
+}
+.bs-cf-name {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bs-cf-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: #111111;
+  color: #ffffff !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none !important;
+  border-radius: 999px;
+  transition: background .2s ease, transform .15s ease;
+  width: fit-content;
+}
+.bs-cf-cta:hover {
+  background: #333333;
+  transform: translateY(-1px);
+}
+.bs-cf-nav {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  font-size: 18px;
+  color: #222;
+  transition: background .2s, transform .15s;
+}
+.bs-cf-nav:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.06);
+}
+.bs-cf-prev { left: -6px; }
+.bs-cf-next { right: -6px; }
+.bs-cf-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.bs-cf-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d4d4d4;
+  cursor: pointer;
+  transition: background .25s ease, transform .25s ease;
+}
+.bs-cf-dot.is-active {
+  background: #111111;
+  transform: scale(1.25);
+}
+@media (max-width: 700px) {
+  .bs-cf-stage { height: 300px; }
+  .bs-cf-card { width: min(340px, 82vw); margin-left: calc(min(340px, 82vw) / -2); }
+  .bs-cf-card.is-pos-1 { transform: translate3d(42%, 0, -100px) scale(0.86); }
+  .bs-cf-card.is-pos--1 { transform: translate3d(-42%, 0, -100px) scale(0.86); }
+}
+</style>
+<div class="bs-cf" id="bs-cf-multicolor-earrings-2026" data-interval="3200">
+  <div class="bs-cf-stage">
+    <div class="bs-cf-card is-pos-0" data-index="0">
+      <a class="bs-cf-media" href="https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html">
+        <img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-aleena-huggie-earrings-multicolor-earrings-carousel-2026.webp" alt="multicolor earrings 2026: The Aleena Huggie Earrings" loading="eager" />
+      </a>
+      <div class="bs-cf-body">
+        <h4 class="bs-cf-name">The Aleena Huggie Earrings</h4>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos-1" data-index="1">
+      <a class="bs-cf-media" href="https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html">
+        <img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-vicky-hoop-earrings-multicolor-earrings-carousel-2026.webp" alt="multicolor earrings 2026: The Vicky Hoop Earrings" loading="lazy" />
+      </a>
+      <div class="bs-cf-body">
+        <h4 class="bs-cf-name">The Vicky Hoop Earrings</h4>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos-2" data-index="2">
+      <a class="bs-cf-media" href="https://www.bluestone.com/earrings/the-faliha-purse-hoop-earrings~73262.html">
+        <img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-faliha-purse-hoop-earrings-multicolor-earrings-carousel-2026.webp" alt="multicolor earrings 2026: The Faliha Purse Hoop Earrings" loading="lazy" />
+      </a>
+      <div class="bs-cf-body">
+        <h4 class="bs-cf-name">The Faliha Purse Hoop Earrings</h4>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/earrings/the-faliha-purse-hoop-earrings~73262.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos-3" data-index="3">
+      <a class="bs-cf-media" href="https://www.bluestone.com/earrings/the-skein-hoop-earrings~27215.html">
+        <img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-skein-hoop-earrings-multicolor-earrings-carousel-2026.webp" alt="multicolor earrings 2026: The Skein Hoop Earrings" loading="lazy" />
+      </a>
+      <div class="bs-cf-body">
+        <h4 class="bs-cf-name">The Skein Hoop Earrings</h4>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/earrings/the-skein-hoop-earrings~27215.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos--2" data-index="4">
+      <a class="bs-cf-media" href="https://www.bluestone.com/earrings/the-ursa-hoop-earrings~35069.html">
+        <img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-ursa-hoop-earrings-multicolor-earrings-carousel-2026.webp" alt="multicolor earrings 2026: The Ursa Hoop Earrings" loading="lazy" />
+      </a>
+      <div class="bs-cf-body">
+        <h4 class="bs-cf-name">The Ursa Hoop Earrings</h4>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/earrings/the-ursa-hoop-earrings~35069.html">Buy now</a>
+      </div>
+    </div>
+    <div class="bs-cf-card is-pos--1" data-index="5">
+      <a class="bs-cf-media" href="https://www.bluestone.com/earrings/the-nettile-huggie-earrings~108215.html">
+        <img src="https://blog.bluestone.com/wp-content/uploads/2026/09/the-nettile-huggie-earrings-multicolor-earrings-carousel-2026.webp" alt="multicolor earrings 2026: The Nettile Huggie Earrings" loading="lazy" />
+      </a>
+      <div class="bs-cf-body">
+        <h4 class="bs-cf-name">The Nettile Huggie Earrings</h4>
+        <a class="bs-cf-cta" href="https://www.bluestone.com/earrings/the-nettile-huggie-earrings~108215.html">Buy now</a>
+      </div>
+    </div>
+  </div>
+  <button class="bs-cf-nav bs-cf-prev" aria-label="Previous card">&#10094;</button>
+  <button class="bs-cf-nav bs-cf-next" aria-label="Next card">&#10095;</button>
+  <div class="bs-cf-dots">
+    <span class="bs-cf-dot is-active" data-index="0"></span>
+    <span class="bs-cf-dot" data-index="1"></span>
+    <span class="bs-cf-dot" data-index="2"></span>
+    <span class="bs-cf-dot" data-index="3"></span>
+    <span class="bs-cf-dot" data-index="4"></span>
+    <span class="bs-cf-dot" data-index="5"></span>
+  </div>
+</div>
+<script>
+(function(){
+  var root = document.getElementById('bs-cf-multicolor-earrings-2026');
+  if (!root || root.dataset.ready === '1') return;
+  root.dataset.ready = '1';
+  var cards = Array.prototype.slice.call(root.querySelectorAll('.bs-cf-card'));
+  var dots = Array.prototype.slice.call(root.querySelectorAll('.bs-cf-dot'));
+  var total = cards.length;
+  var current = 0;
+  var timer = null;
+  var interval = parseInt(root.getAttribute('data-interval') || '3200', 10);
+  var classOrder = ['is-pos-0', 'is-pos-1', 'is-pos-2', 'is-pos-3', 'is-pos--2', 'is-pos--1'];
+  function rel(i, c) { return (i-c + total) % total; }
+  function paint() {
+    for (var i = 0; i < total; i++) {
+      var r = rel(i, current);
+      var el = cards[i];
+      for (var k = 0; k < classOrder.length; k++) {
+        el.classList.remove(classOrder[k]);
+      }
+      el.classList.add(classOrder[r]);
+    }
+    for (var d = 0; d < dots.length; d++) {
+      if (d === current) {
+        dots[d].classList.add('is-active');
+      } else {
+        dots[d].classList.remove('is-active');
+      }
+    }
+  }
+  function go(dir) {
+    current = (current + dir + total) % total;
+    paint();
+  }
+  function start() {
+    stop();
+    timer = setInterval(function(){ go(1); }, interval);
+  }
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+  var prevBtn = root.querySelector('.bs-cf-prev');
+  var nextBtn = root.querySelector('.bs-cf-next');
+  if (prevBtn) prevBtn.addEventListener('click', function(e){ e.preventDefault(); go(-1); start(); });
+  if (nextBtn) nextBtn.addEventListener('click', function(e){ e.preventDefault(); go(1); start(); });
+  dots.forEach(function(dot){
+    dot.addEventListener('click', function(){
+      var idx = parseInt(this.getAttribute('data-index'), 10);
+      if (!isNaN(idx)) { current = idx; paint(); start(); }
+    });
+  });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('touchstart', stop, { passive: true });
+  root.addEventListener('touchend', start, { passive: true });
+  paint();
+  start();
+})();
+</script>
+<!-- /wp:html -->

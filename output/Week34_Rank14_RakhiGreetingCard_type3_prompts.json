@@ -1,0 +1,138 @@
+{
+  "rank": "Week3-4 Rank 14",
+  "slug": "rakhi-greeting-card-2026",
+  "primary_kw": "rakhi greeting card",
+  "output_prefix": "Week34_Rank14_RakhiGreetingCard",
+  "caption_occasion": "Rakhi greeting card",
+  "caption_year": "2026",
+  "flatlay_setting": "rakhi-thali",
+  "workflow": "Higgsfield CLI nano_banana_pro. People shots require @img1 body_image plus @img2 design. Max 2 concurrent generations total. If queue/generation error occurs, wait 40-50 seconds before retry. No visible screens/devices.",
+  "higgsfield_jobs": {
+    "hero_accepted_cli_candidate": {
+      "job_id": "fedb7470-a8a6-4af9-9a11-16358544f008",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GwrMYSstFWd2sn4uUzDNUNAQXa/hf_20260730_084352_fedb7470-a8a6-4af9-9a11-16358544f008.png",
+      "local_raw": "output/magnific_generated/rakhi-greeting-card-hero-2026.raw.png"
+    },
+    "flatlay_accepted_cli_candidate": {
+      "job_id": "7bd6dd76-012f-4a85-92d8-6f0155def371",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GwrMYSstFWd2sn4uUzDNUNAQXa/hf_20260730_084356_7bd6dd76-012f-4a85-92d8-6f0155def371.png",
+      "local_raw": "output/magnific_generated/rakhi-greeting-card-flatlay-2026.raw.png"
+    },
+    "lifestyle_accepted_cli_candidate": {
+      "job_id": "efcedfd6-b163-4eb3-95bd-4cdecb2a0d34",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GwrMYSstFWd2sn4uUzDNUNAQXa/hf_20260730_084444_efcedfd6-b163-4eb3-95bd-4cdecb2a0d34.png",
+      "local_raw": "output/magnific_generated/rakhi-greeting-card-lifestyle-2026.raw.png"
+    }
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "insert_h2s_json": "output/Week34_Rank14_RakhiGreetingCard_insert_h2s.json",
+  "product_media_json": "output/Week34_Rank14_RakhiGreetingCard_product_media.json",
+  "output": {
+    "hero": "output/magnific_generated/rakhi-greeting-card-hero-2026.webp",
+    "flatlay": "output/magnific_generated/rakhi-greeting-card-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/rakhi-greeting-card-lifestyle-2026.webp"
+  },
+  "media_titles": {
+    "hero": "rakhi greeting card 2026 Hero",
+    "flatlay": "rakhi greeting card 2026 Flatlay",
+    "lifestyle": "rakhi greeting card 2026 Lifestyle"
+  },
+  "schema_keywords": [
+    "rakhi greeting card",
+    "rakhi card message",
+    "raksha bandhan card",
+    "rakhi wishes",
+    "rakhi greeting"
+  ],
+  "slots": {
+    "hero": {
+      "code": "BISW1080P133",
+      "name": "The Lumeelle Cluster Pendant",
+      "gender": "Female",
+      "category": "Pendants",
+      "height_mm": 32.66,
+      "width_mm": 32.66,
+      "size_prompt_note": "product_height_mm=32.66; product_width_mm=32.66; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/pendants/the-lumeelle-cluster-pendant~162509.html",
+      "cdn_primary": "https://kinclimg8.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BISW1080P133_RAA18DIG4SYEMXXXX_ABCD00-PICS-00004-1024-114851.png",
+      "alt": "rakhi greeting card 2026 hero with The Lumeelle Cluster Pendant",
+      "caption": "Rakhi 2026 mood: The Lumeelle Cluster Pendant",
+      "product": {
+        "code": "BISW1080P133",
+        "name": "The Lumeelle Cluster Pendant",
+        "pdp": "https://www.bluestone.com/pendants/the-lumeelle-cluster-pendant~162509.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Lumeelle Cluster Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Lumeelle Cluster Pendant/0_primary.png"
+      ],
+      "ref_roles": [
+        "body_image",
+        "front_primary"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Rakhi greeting card 2026 hero, solo fair-skinned Indian adult woman in a soft cream festive kurta preparing a rakhi thali with flowers, kumkum bowl, rice grains, and a small wrapped gift, no card facing camera, full face visible, neck and pendant clearly visible. Exactly one jewellery wearer only. Casting: fair-skinned Indian adult woman only, light wheatish to fair North Indian or urban Indian complexion, clear fair skin tones. Shot on DSLR, natural skin texture, 85mm candid lifestyle look, 16:9 full frame with safe margins.\n\nNo visible phones, laptops, tablets, TVs, or blank screens anywhere in the image. No poster card, no large blank paper, no upright rectangle, no white screen-like prop, no board, and no placard facing camera. Use warm physical props instead: wrapped gift box, flowers, diya, ceramic cup, brass bowl, tray, ribbon, folded fabric, or a closed book blurred in the background. If any device is unavoidable, show only the back or edge with the screen out of frame. No readable text anywhere. Any card, tag, notebook, label, package, paper, or prop must be blank or turned away from camera.\n\nThe woman physically wears The Lumeelle Cluster Pendant from @img1 body_image and @img2 design only on her neck. GENDER LOCK: Female product on adult woman only. Product dimensions from PDP: product_height_mm=32.66; product_width_mm=32.66; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Keep the jewellery size on the person like @img1 body_image worn neck scale: subtle real PDP size, not enlarged. Use @img2 only for jewellery design.\n\nReplicate the jewellery exactly, 100 percent identical to refs, zero distortion, HD metal and stone detail. This is the single and only jewellery object in the entire image. Other visible people, if any, wear absolutely no jewellery.\n\nAvoid: visible phone, phone screen, laptop, tablet, TV, blank screen, floating jewellery overlay, giant product collage, product cutout over people, packshot composited on lifestyle photo, oversized jewellery, extra jewellery, extra earrings, extra necklace, extra rings, extra bracelets, watch, bangle, wrong gender wearer, second jewellery wearer, cropped face, cropped head, readable text, letters, numbers, logo, dark skin, deep brown skin, heavily tanned skin, illustration, CGI, HDR glow, large pendant, extra necklace, readable card, brother in frame, rakhi on wrist."
+    },
+    "flatlay": {
+      "code": "BIHM1002V07",
+      "name": "The Protector Evil Eye Rakhi",
+      "gender": "Male",
+      "category": "Adjustable Bracelets",
+      "height_mm": 9.8,
+      "width_mm": 10.21,
+      "size_prompt_note": "product_height_mm=9.8; product_width_mm=10.21; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/adjustable+bracelets/the-protector-evil-eye-rakhi~114521.html",
+      "cdn_primary": "https://kinclimg4.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIHM1002V07_YAA14XXXXXXXXXXXX_ABCD00-PICS-00000-1024-80608.png",
+      "alt": "rakhi greeting card 2026 flatlay with The Protector Evil Eye Rakhi",
+      "caption": "Rakhi 2026 detail: The Protector Evil Eye Rakhi",
+      "product": {
+        "code": "BIHM1002V07",
+        "name": "The Protector Evil Eye Rakhi",
+        "pdp": "https://www.bluestone.com/adjustable+bracelets/the-protector-evil-eye-rakhi~114521.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Adjustable Bracelets/The Protector Evil Eye Rakhi/0_primary.png",
+        "ProductImages/raw/Adjustable Bracelets/The Protector Evil Eye Rakhi/2_side_1.png",
+        "ProductImages/raw/Adjustable Bracelets/The Protector Evil Eye Rakhi/4_close_up.png"
+      ],
+      "ref_roles": [
+        "primary",
+        "side",
+        "close_up"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Photoreal high-end jewellery still life, top-down editorial product flatlay. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast.\n\nRakhi greeting card 2026 top-down flatlay. Flatlay setting ID: rakhi-thali. Surface and props: cream festive surface with brass thali, roli bowl, rice grains, marigold flowers, folded fabric, small wrapped gift, no paper and no text. No visible phones, laptops, tablets, TVs, or blank screens anywhere in the image. No poster card, no large blank paper, no upright rectangle, no white screen-like prop, no board, and no placard facing camera. Use warm physical props instead: wrapped gift box, flowers, diya, ceramic cup, brass bowl, tray, ribbon, folded fabric, or a closed book blurred in the background. If any device is unavoidable, show only the back or edge with the screen out of frame. The identical The Protector Evil Eye Rakhi from @img1, @img2 and @img3 rests naturally on the surface at true PDP scale. Product dimensions from PDP: product_height_mm=9.8; product_width_mm=10.21; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Do not enlarge for visibility. Full jewellery visible, 100 percent identical design, zero distortion, HD metal and stone detail.\n\nProps stay secondary. No people, no hands, no logos, no readable text, no letters, no numbers, no other jewellery.\n\nAvoid: phones, laptops, tablets, TVs, blank screens, hands, people, floating overlays, cutouts, incorrect jewellery design, readable text, logos, price tags, blown whites, HDR glow, illustration, CGI."
+    },
+    "lifestyle": {
+      "code": "BIIP0427H16",
+      "name": "The Vicky Hoop Earrings",
+      "gender": "Female",
+      "category": "Earrings",
+      "height_mm": 14.75,
+      "width_mm": 6.04,
+      "size_prompt_note": "product_height_mm=14.75; product_width_mm=6.04; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html",
+      "cdn_primary": "https://kinclimg4.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIIP0427H16_YAA18DIG6XXXXXXXX_ABCD00-PICS-00004-1024-76610.png",
+      "alt": "rakhi greeting card 2026 lifestyle with The Vicky Hoop Earrings",
+      "caption": "Rakhi 2026 look: The Vicky Hoop Earrings",
+      "product": {
+        "code": "BIIP0427H16",
+        "name": "The Vicky Hoop Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Vicky Hoop Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Vicky Hoop Earrings/0_primary.png"
+      ],
+      "ref_roles": [
+        "body_image",
+        "front_primary"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Rakhi greeting card 2026 lifestyle, solo fair-skinned Indian adult woman smiling beside a rakhi thali and wrapped gift, hands arranging flowers not jewellery, full head visible and both ears visible, cream blouse, no necklace and wrists out of frame. Exactly one jewellery wearer only. Casting: fair-skinned Indian adult woman only, light wheatish to fair North Indian or urban Indian complexion, clear fair skin tones. Shot on DSLR, natural skin texture, 85mm candid lifestyle look, 16:9 full frame with safe margins.\n\nNo visible phones, laptops, tablets, TVs, or blank screens anywhere in the image. No poster card, no large blank paper, no upright rectangle, no white screen-like prop, no board, and no placard facing camera. Use warm physical props instead: wrapped gift box, flowers, diya, ceramic cup, brass bowl, tray, ribbon, folded fabric, or a closed book blurred in the background. If any device is unavoidable, show only the back or edge with the screen out of frame. No readable text anywhere. Any card, tag, notebook, label, package, paper, or prop must be blank or turned away from camera.\n\nThe woman physically wears The Vicky Hoop Earrings from @img1 body_image and @img2 design only on her ear. GENDER LOCK: Female product on adult woman only. Product dimensions from PDP: product_height_mm=14.75; product_width_mm=6.04; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Keep the jewellery size on the person like @img1 body_image worn ear scale: subtle real PDP size, not enlarged. Use @img2 only for jewellery design.\n\nReplicate the jewellery exactly, 100 percent identical to refs, zero distortion, HD metal and stone detail. This is the single and only jewellery object in the entire image. Other visible people, if any, wear absolutely no jewellery.\n\nAvoid: visible phone, phone screen, laptop, tablet, TV, blank screen, floating jewellery overlay, giant product collage, product cutout over people, packshot composited on lifestyle photo, oversized jewellery, extra jewellery, extra earrings, extra necklace, extra rings, extra bracelets, watch, bangle, wrong gender wearer, second jewellery wearer, cropped face, cropped head, readable text, letters, numbers, logo, dark skin, deep brown skin, heavily tanned skin, illustration, CGI, HDR glow, necklace, bracelet, ring, watch, readable greeting card, phone, brother in frame."
+    }
+  },
+  "wp_post_id": 32646
+}

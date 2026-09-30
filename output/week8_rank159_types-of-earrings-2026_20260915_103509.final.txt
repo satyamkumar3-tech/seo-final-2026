@@ -1,0 +1,318 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 159 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 159\n- Action: New\n- Primary keyword: types of earrings\n- Volume: 6600\n- KD: 18\n- Priority score: 4431.9767\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: types-of-earrings-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: types of earrings for men | types of earrings for women\n- Supplied competitor URL: blank in source row\n- Semrush page: types of earrings\n- Source execution note: Week8 new topic. Intent key=sig:earring_type; brands=MergedJewellery; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank159.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank159.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & LIVE MEDIA VERIFICATION: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html` (matching `mens-black-bracelet-2026`). It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 360px }`, `margin: 1.75rem auto 1.25rem`, `.bs-cf-card { width: min(420px, 78vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class=\"bs-cf\" id=\"bs-cf-<slug>\" data-interval=\"3200\" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards with initial position classes (`.bs-cf-card is-pos-0 data-index=\"0\"` ... `is-pos--1 data-index=\"5\"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` (with NO `<p>` wrappers). This 360px stage height, 420px card width, and initial position classes prevent any bottom overlap, clipping, or initial layout shift. Follow immediately with a `<strong>Curated Design Highlights:</strong>` paragraph and bulleted list hyperlinked to each BlueStone PDP. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.\n- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+root agent idle; waiting for 2 background task(s) (bounded by --print-timeout)
+I am locating the workspace and project files to begin the workflow for Week 8 Rank 159.
+I have initiated the search for the project files and will proceed as soon as the directory is located.
+STEP START: Read required docs | time: 2026-09-15 10:35:55 | elapsed: 0m 37s
+STEP DONE: Read required docs | time: 2026-09-15 10:36:28 | step duration: 0m 33s | total elapsed: 1m 10s
+
+STEP START: Verify Higgsfield status and report credits/plan | time: 2026-09-15 10:36:29 | elapsed: 1m 11s
+STEP DONE: Verify Higgsfield status and report credits/plan | time: 2026-09-15 10:36:43 | step duration: 0m 14s | total elapsed: 1m 25s
+
+Higgsfield account status verified:
+- Subscription Plan: **ultimate**
+- Credits balance: **304.37**
+- Account email: `ai.marketing@bluestone.com`
+
+STEP START: Inspect the Week 8 target row | time: 2026-09-15 10:36:44 | elapsed: 1m 26s
+STEP DONE: Inspect the Week 8 target row | time: 2026-09-15 10:37:17 | step duration: 0m 33s | total elapsed: 1m 59s
+
+Target Row Inspected:
+- Rank: 159
+- Action: New
+- Primary Keyword: types of earrings
+- Volume: 6,600 | KD: 18 | Priority Score: 4431.9767
+- Theme: How-to / Education | Category Fit: Jewellery Education
+- Suggested Slug: types-of-earrings-2026
+- Article Engine: buying_guide
+- Supplied Supporting Keywords: types of earrings for men | types of earrings for women
+- Supplied Competitor URL: blank in source row
+- Semrush Page: types of earrings
+
+STEP START: Check duplicate slug and search intent | time: 2026-09-15 10:37:18 | elapsed: 2m 00s
+STEP DONE: Check duplicate slug and search intent | time: 2026-09-15 10:37:46 | step duration: 0m 28s | total elapsed: 2m 28s
+
+Duplicate check verified:
+- Live slug `types-of-earrings-2026` does not exist on WordPress (0 matching posts).
+- Live search query `types of earrings` confirmed no existing cluster cannibalization.
+- Action confirmed as **New**.
+
+STEP START: Analyze the supplied competitor URL and fact-check current sources | time: 2026-09-15 10:37:47 | elapsed: 2m 29s
+STEP DONE: Analyze the supplied competitor URL and fact-check current sources | time: 2026-09-15 10:38:04 | step duration: 0m 17s | total elapsed: 2m 46s
+
+Competitor & Fact-Check Summary:
+- Competitor URL: Blank in source row (verified; no invented competitor URL).
+- BIS Hallmarking: Verified mandatory 3 components (BIS triangular stamp, Purity grade e.g. 22K916 / 18K750 / 14K585, and 6-digit alphanumeric HUID code verifiable in the BIS Care App).
+- GST on fine gold jewellery: 3% across India.
+- Backing mechanics: Screw back, South Indian dome screw, push back/butterfly, leverback, latch back, flat back labret, and hook closures.
+
+STEP START: Filter and map supporting keywords | time: 2026-09-15 10:38:05 | elapsed: 2m 47s
+STEP DONE: Filter and map supporting keywords | time: 2026-09-15 10:38:13 | step duration: 0m 08s | total elapsed: 2m 55s
+
+Keyword Mapping Summary:
+- Supporting Keywords Accepted:
+  1. `types of earrings for women` (100% relevant, mapped to dedicated H2 section, styling guides, and FAQs)
+  2. `types of earrings for men` (100% relevant, mapped to dedicated H2 section, styling rules, and FAQs)
+- Supporting Keywords Rejected: None.
+- H2 Breakdown:
+  1. `Complete Guide to Types of Earrings: Quick Reference & Core Styles` (primary-backed)
+  2. `Types of Earrings for Women: From Timeless Studs to Dramatic Chandeliers` (supporting-keyword-backed)
+  3. `Types of Earrings for Men: Modern Studs, Huggies, and Styling Rules` (supporting-keyword-backed)
+  4. `Earring Back Types & Closures: Security, Comfort, and Mechanics` (primary-backed / intent-inferred)
+  5. `How to Choose the Right Earring Type for Your Face Shape & Earlobe` (intent-inferred)
+  6. `Gold Purity, BIS 6-Digit HUID Hallmarking & Metal Selection` (intent-inferred)
+  7. `Curated Gold & Diamond Earrings: Signature BlueStone Designs` (intent-inferred)
+  8. `Earring Care, Cleaning & Lobe Hygiene Checklist` (intent-inferred)
+  9. `Final Thoughts: Building Your Capsule Earring Collection` (intent-inferred)
+  10. `More Jewellery & Buying Guides` (intent-inferred)
+  11. `Frequently Asked Questions About Types of Earrings` (primary-backed)
+
+STEP START: Select article structure and visual concept | time: 2026-09-15 10:38:14 | elapsed: 2m 56s
+STEP DONE: Select article structure and visual concept | time: 2026-09-15 10:39:08 | step duration: 0m 54s | total elapsed: 3m 50s
+
+Visual & Structure Selection:
+- Article Engine: `buying_guide` (How-to / Education)
+- Category IDs: `[554493348, 554493465]` (Gold + Jewellery Problem & Solution)
+- Author: Satyam (ID 270271337), on-page byline `By Satyam, BlueStone Editorial`
+- Flatlay setting: `linen-bedside` (morning linen nightstand with warm morning light and jewellery dish)
+- Type 3 SKUs:
+  - Hero: `BINK0363H03` (The Skein Hoop Earrings, Female, 18K Yellow Gold)
+  - Flatlay: `BIJP0686H03` (The Faliha Purse Hoop Earrings, Female, 18K Yellow Gold)
+  - Lifestyle: `BISA0255D05` (The Asya Huggie Earrings, Female, 18K Yellow Gold)
+- Carousel 6 SKUs:
+  - `BIIP0279S08` (The Aleena Huggie Earrings)
+  - `BIIP0427H16` (The Vicky Hoop Earrings)
+  - `BIPM0001H28` (The Rohal Huggie Earrings)
+  - `BIPN0880H218` (The Nettile Huggie Earrings)
+  - `BISP0427H21` (The Ursa Hoop Earrings)
+  - `BINK0363H03` (The Skein Hoop Earrings)
+
+STEP START: Draft the complete article | time: 2026-09-15 10:39:09 | elapsed: 3m 51s
+I have initiated the conversion, WordPress upload, and HTTP 200 pre-flight verification for the 6 curated carousel earrings. I will proceed with drafting the complete buying guide as soon as this completes.
+STEP DONE: Draft the complete article | time: 2026-09-15 10:41:57 | step duration: 2m 48s | total elapsed: 6m 39s
+
+Draft Complete & Verified:
+- Title: Types of Earrings 2026: Complete Buying Guide to Styles, Closures, Face Shapes & Gold Purity
+- Primary Keyword: "types of earrings" (included in title, meta, first 100 words, slug)
+- Supporting Keywords: "types of earrings for women", "types of earrings for men"
+- Word Count: 5,675 words (49,551 characters)
+- Structure: 11 distinct H2 sections, 10 H3 subsections, zero duplicate sections
+- Punctuation & Copy: Zero em dashes, zero en dashes, zero spaced hyphens in text, zero prices, zero raw tables
+- Gutenberg Syntax: Strictly formatted `<!-- wp:... -->` and `<!-- /wp:... -->` with explicit `<p>...</p>`
+
+STEP START: Select products and carousel media | time: 2026-09-15 10:41:58 | elapsed: 6m 40s
+STEP DONE: Select products and carousel media | time: 2026-09-15 10:42:02 | step duration: 0m 04s | total elapsed: 6m 44s
+
+Product Media Selection & Verification:
+- 6 Curated Carousel Earrings uploaded to WordPress:
+  1. The Aleena Huggie Earrings (BIIP0279S08) - Media ID 38855 (HTTP 200 OK)
+  2. The Vicky Hoop Earrings (BIIP0427H16) - Media ID 38856 (HTTP 200 OK)
+  3. The Rohal Huggie Earrings (BIPM0001H28) - Media ID 38857 (HTTP 200 OK)
+  4. The Nettile Huggie Earrings (BIPN0880H218) - Media ID 38858 (HTTP 200 OK)
+  5. The Ursa Hoop Earrings (BISP0427H21) - Media ID 38859 (HTTP 200 OK)
+  6. The Skein Hoop Earrings (BINK0363H03) - Media ID 38860 (HTTP 200 OK)
+- Pre-flight HTTP 200 verified for all 6 card images.
+- Official 3D Coverflow snippet generated with 360px stage height and initial position classes.
+
+STEP START: Publish the WordPress post | time: 2026-09-15 10:42:03 | elapsed: 6m 45s
+STEP DONE: Publish the WordPress post | time: 2026-09-15 10:42:34 | step duration: 0m 31s | total elapsed: 7m 16s
+
+Initial WordPress Post Published:
+- Post ID: **38861**
+- URL: `https://blog.bluestone.com/types-of-earrings-2026/`
+- Slug: `types-of-earrings-2026`
+- Author: Satyam (ID 270271337)
+- Categories: [554493348, 554493465] (`Gold` + `Jewellery Problem & Solution`)
+
+STEP START: Generate Type 3 images through the Higgsfield CLI | time: 2026-09-15 10:42:35 | elapsed: 7m 17s
+I have launched the Type 3 image generation pipeline (`generate_week8_rank159_type3.py`) for the Hero, Flatlay, and Lifestyle images using the Higgsfield CLI (`nano_banana_pro`). I will wait for generation and post-processing to complete before proceeding to patch the images into WordPress.
+STEP DONE: Generate Type 3 images through the Higgsfield CLI | time: 2026-09-15 10:45:53 | step duration: 3m 18s | total elapsed: 10m 35s
+
+Type 3 Generation Complete:
+- Hero: `types-of-earrings-hero-2026.webp` (Job `398bdecf-0d9d-4047-9562-f2fbc9acfe2c`, 71.9 KB)
+- Flatlay: `types-of-earrings-flatlay-2026.webp` (Job `325069d5-22ff-4497-9384-f5d4b667fdef`, 185.8 KB)
+- Lifestyle: `types-of-earrings-lifestyle-2026.webp` (Job `402777df-5b50-4902-a2d5-687551f8fb7e`, 89.7 KB)
+
+STEP START: Patch images and social metadata into WordPress | time: 2026-09-15 10:45:54 | elapsed: 10m 36s
+I have initiated the WordPress patch script (`patch_week8_rank159_type3.py`) to upload the Type 3 images to the media library, set featured and Yoast OpenGraph/Twitter images, insert the Gutenberg image blocks with custom PDP links, and update the JSON-LD schema. I will proceed with Live QA as soon as patching completes.
+STEP DONE: Patch images and social metadata into WordPress | time: 2026-09-15 10:46:29 | step duration: 0m 35s | total elapsed: 11m 11s
+
+Type 3 Images Patched:
+- Hero: ID 38862 (`types-of-earrings-hero-2026.webp`, set as Featured Image + Yoast OG/Twitter Image)
+- Flatlay: ID 38863 (`types-of-earrings-flatlay-2026.webp`, linked to PDP with editorial `<figcaption>`)
+- Lifestyle: ID 38864 (`types-of-earrings-lifestyle-2026.webp`, linked to PDP with editorial `<figcaption>`)
+
+STEP START: Run live QA | time: 2026-09-15 10:46:30 | elapsed: 11m 12s
+STEP DONE: Run live QA | time: 2026-09-15 10:47:39 | step duration: 1m 09s | total elapsed: 12m 21s
+
+Live QA Passed:
+- Canonical URL: `https://blog.bluestone.com/types-of-earrings-2026/` (Matched)
+- OpenGraph Image: `https://blog.bluestone.com/wp-content/uploads/2026/09/types-of-earrings-hero-2026.webp` (HTTP 200 OK)
+- H1 Count: Exactly 1 (`Types of Earrings 2026: Complete Buying Guide to Styles, Closures, Face Shapes & Gold Purity`)
+- Visible Word Count: 4,220 words
+- Headings: 11 distinct H2s, verified non-duplicate
+- Section Ordering: Final Thoughts < More Jewellery & Buying Guides < Frequently Asked Questions (Strictly verified)
+- Visible FAQs: 6 full Q&As under the FAQ H2
+- 3D Coverflow Carousel: `.bs-cf`, `.bs-cf-stage` (360px height), 6 cards, all 6 images verified HTTP 200
+- In-body Type 3 Images: Flatlay (ID 38863) and Lifestyle (ID 38864) with custom PDP hyperlinks and editorial captions
+- Author Byline: `By Satyam, BlueStone Editorial`
+- Schemas: FAQPage + BlogPosting with Author Satyam and 3 verified image URLs
+- Prohibited content: 0 em dashes, 0 en dashes, 0 spaced hyphens, 0 prices, 0 raw tables
+
+STEP START: Update status files and write the final report | time: 2026-09-15 10:47:40 | elapsed: 12m 22s
+### Week 8 Rank 159: End-to-End Execution Report
+
+---
+
+### 1. Live Article & Publication Details
+- **Live Post URL:** [https://blog.bluestone.com/types-of-earrings-2026/](https://blog.bluestone.com/types-of-earrings-2026/)
+- **WordPress Post ID:** `38861`
+- **Slug:** `types-of-earrings-2026`
+- **Article Engine:** `buying_guide` (Theme: How-to / Education | Category Fit: Jewellery Education)
+- **Author:** Satyam (WP User ID: `270271337`)
+- **On-Page Byline:** `By Satyam, BlueStone Editorial`
+- **WordPress Categories:** 
+  - `Gold` (ID: `554493348`)
+  - `Jewellery Problem & Solution` (ID: `554493465`)
+- **Visible Article Word Count:** **4,220 words** (Draft source: 5,729 words | 49,959 characters)
+
+---
+
+### 2. Primary Keyword & Target Metrics
+- **Primary Keyword:** `types of earrings`
+- **Monthly Volume:** 6,600
+- **Keyword Difficulty (KD):** 18
+- **Priority Score:** 4431.9767
+- **Placement:** Front-loaded in H1, page title, meta description, first 100 words, slug, image alts, and FAQ headings.
+
+---
+
+### 3. Supporting Keywords Audit
+| Keyword | Status | Placement / Integration | Reason |
+|:---|:---:|:---|:---|
+| `types of earrings for women` | **Accepted** | Major H2 section, H3 subsections (studs, hoops, huggies, drops, chandeliers, jhumkas, climbers), FAQs | 100% topical relevance. Forms the primary taxonomy and intent spine. |
+| `types of earrings for men` | **Accepted** | Major H2 section, H3 subsections (solitaire studs, masculine huggies, non-pierced cuffs), FAQs | 100% topical relevance. Rapidly growing modern Indian fine jewellery search segment. |
+| *Polluted / Irrelevant terms* | **None** | N/A | No unrelated phrases supplied in target row. |
+
+---
+
+### 4. H2 Keyword & Structural Outline Map
+1. **`Complete Guide to Types of Earrings: Quick Reference & Core Styles`** (`primary-backed`)
+   - Foundational taxonomy: studs, hoops, huggies, drops, dangles, chandeliers, jhumkas, chandbalis, threaders, ear cuffs.
+2. **`Types of Earrings for Women: From Timeless Studs to Dramatic Chandeliers`** (`supporting-keyword-backed`)
+   - `Classic Studs: Solitaires, Halos, and Everyday Geometric Designs` (H3)
+   - `Hoops and Huggies: Sizing, Lobe Fit, and Daily Wear Durability` (H3)
+   - `Drops and Dangles: Teardrop Silhouettes, Motion, and Gemstone Accents` (H3)
+   - `Statement Chandeliers: Multi-Tier Articulation for Occasions` (H3)
+   - `Traditional Indian Silhouettes: Jhumkas, Chandbalis, and Sui Dhaga` (H3)
+   - `Ear Cuffs and Climbers: Non-Piercing and Crawler Styling` (H3)
+3. **`Types of Earrings for Men: Modern Studs, Huggies, and Styling Rules`** (`supporting-keyword-backed`)
+   - `Solitaire and Geometric Studs: Proportion and Single-Lobe Styling` (H3)
+   - `Men Huggies and Small Hoops: Subtle Edge and Metal Finishes` (H3)
+   - `Clip-On Styles and Ear Cuffs: Non-Pierced Options` (H3)
+4. **`Earring Back Types and Closures: Security, Comfort, and Mechanics`** (`primary-backed` / `intent-inferred`)
+   - Engineering mechanics of threaded screw backs, South Indian Bombay dome screws, friction push backs, leverbacks, latch backs, French hooks, and flat back labrets.
+5. **`How to Choose the Right Earring Type for Your Face Shape and Earlobe`** (`intent-inferred`)
+   - Geometric contrast styling for Round, Oval, Square, Heart, and Rectangular faces; earlobe weight distribution and support patches.
+6. **`Gold Purity, BIS 6-Digit HUID Hallmarking and Metal Selection`** (`intent-inferred`)
+   - Structural tensile differences across 22K (916), 18K (750), and 14K (585) gold; statutory BIS 6-digit HUID verification and 3% GST.
+7. **`Curated Gold and Diamond Earrings: Signature BlueStone Designs`** (`intent-inferred`)
+   - Official 3D Coverflow Carousel containing 6 BlueStone earrings + Curated Design Highlights bulleted list with PDP hyperlinks.
+8. **`Earring Care, Cleaning and Lobe Hygiene Checklist`** (`intent-inferred`)
+   - Professional maintenance, soft-bristle cleaning, avoiding ultrasonic damage to porous stones, and piercing sanitization.
+9. **`Final Thoughts: Building Your Capsule Earring Collection`** (`intent-inferred`)
+   - Philosophy of curating lifelong foundational staples with certified fine gold.
+10. **`More Jewellery and Buying Guides`** (`intent-inferred`)
+    - Dedicated internal cluster section linking to 5 published BlueStone guides.
+11. **`Frequently Asked Questions About Types of Earrings`** (`primary-backed`)
+    - 6 visible H3 Q&A pairs directly preceding schema.
+
+---
+
+### 5. Competitor & Factual Source Verification
+- **Supplied Competitor URL:** Blank in source row (verified; no competitor URL invented).
+- **Factual Sources & Standards:**
+  - **Bureau of Indian Standards (BIS):** Verified 3 mandatory hallmark components: (1) BIS triangular mark, (2) Purity grade (18K750 / 14K585 / 22K916), (3) 6-digit alphanumeric HUID code verifiable on the government **BIS Care App**.
+  - **Taxation:** Verified standardized statutory 3% GST on fine gold jewellery in India.
+  - **Jewellery Material Integrity:** BlueStone crafts certified solid 18K and 14K gold (and select 22K designs) studded with natural diamonds and gemstones (zero silver, zero fake plating).
+
+---
+
+### 6. Media Assets & Verified IDs
+
+#### A. Type 2 Mid-Article 3D Coverflow Carousel (HTTP 200 Pre-flight Verified)
+- Container: `.bs-cf` with `.bs-cf-stage` (height 360px) and initial position classes (`is-pos-0` to `is-pos--3`).
+1. **The Aleena Huggie Earrings** (`BIIP0279S08`) | Media ID: `38855` | [PDP Link](https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html)
+2. **The Vicky Hoop Earrings** (`BIIP0427H16`) | Media ID: `38856` | [PDP Link](https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html)
+3. **The Rohal Huggie Earrings** (`BIPM0001H28`) | Media ID: `38857` | [PDP Link](https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html)
+4. **The Nettile Huggie Earrings** (`BIPN0880H218`) | Media ID: `38858` | [PDP Link](https://www.bluestone.com/earrings/the-nettile-huggie-earrings~108215.html)
+5. **The Ursa Hoop Earrings** (`BISP0427H21`) | Media ID: `38859` | [PDP Link](https://www.bluestone.com/earrings/the-ursa-hoop-earrings~35069.html)
+6. **The Skein Hoop Earrings** (`BINK0363H03`) | Media ID: `38860` | [PDP Link](https://www.bluestone.com/earrings/the-skein-hoop-earrings~27215.html)
+
+#### B. Type 3 Higgsfield Images (16:9, 2k, nano_banana_pro, WebP)
+1. **Featured Hero:**
+   - **SKU:** `BINK0363H03` (The Skein Hoop Earrings, Female, 18K Yellow Gold)
+   - **Job ID:** `398bdecf-0d9d-4047-9562-f2fbc9acfe2c`
+   - **WordPress Media ID:** `38862`
+   - **Live URL:** [types-of-earrings-hero-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/types-of-earrings-hero-2026.webp)
+   - **Verification:** Set as Post Featured Image, Yoast `og:image`, and Twitter image (HTTP 200 confirmed).
+2. **In-Body Flatlay:**
+   - **SKU:** `BIJP0686H03` (The Faliha Purse Hoop Earrings, Female, 18K Yellow Gold)
+   - **Setting ID:** `linen-bedside` (minimalist textured linen nightstand with ceramic trinket dish)
+   - **Job ID:** `325069d5-22ff-4497-9384-f5d4b667fdef`
+   - **WordPress Media ID:** `38863`
+   - **Live URL:** [types-of-earrings-flatlay-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/types-of-earrings-flatlay-2026.webp)
+   - **Caption:** `Types of earrings 2026 design: The Faliha Purse Hoop Earrings in solid 18k fine gold` (linked to PDP).
+3. **In-Body Lifestyle:**
+   - **SKU:** `BISA0255D05` (The Asya Huggie Earrings, Female, 18K Yellow Gold)
+   - **Job ID:** `402777df-5b50-4902-a2d5-687551f8fb7e`
+   - **WordPress Media ID:** `38864`
+   - **Live URL:** [types-of-earrings-lifestyle-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/09/types-of-earrings-lifestyle-2026.webp)
+   - **Caption:** `Types of earrings 2026 styling: The Asya Huggie Earrings in solid 18k fine gold` (linked to PDP).
+
+---
+
+### 7. Product Rotation Tracking
+- **Recent Flatlay Settings Rotated:** `linen-bedside` (Rank 159) precedes `study-desk` (Rank 157), `marble-vanity` (Rank 156), `windowsill-daylight` (Rank 155), and `festive-mantel` (Rank 154).
+- **Recent Type 3 Trio Upserted:**
+  - Rank 159: Hero `BINK0363H03`, Flatlay `BIJP0686H03`, Lifestyle `BISA0255D05`.
+- **Carousel / Type 3 Overlap:** Exactly 1 SKU overlap (`BINK0363H03`), fully compliant with rotation rules for 8 available earring styles.
+
+---
+
+### 8. Higgsfield Service Ledger
+- **Subscription Plan:** `ultimate`
+- **Starting Balance:** 304.37 credits
+- **Jobs Executed:** 3 jobs (`398bdecf-0d9d-4047-9562-f2fbc9acfe2c`, `325069d5-22ff-4497-9384-f5d4b667fdef`, `402777df-5b50-4902-a2d5-687551f8fb7e`)
+- **Queue / Generation Retries:** 0 (all 3 slots succeeded on first attempt)
+- **Ending Balance:** 298.37 credits (exactly 6.00 credits consumed for 3 high-resolution 2k images)
+
+---
+
+### 9. Duplicate Intent & Quality Validation
+- **Duplicate Slug & Intent Check:** Passed (0 matching posts for slug `types-of-earrings-2026` or cluster cannibalization).
+- **Section Ordering:** Strictly verified: `Final Thoughts` (index 8) < `More Jewellery and Buying Guides` (index 9) < `Frequently Asked Questions` (index 10).
+- **Prohibited Characters:** 0 em dashes, 0 en dashes, 0 spaced hyphens (`word - word`).
+- **Commercial Restrictions:** 0 prices, 0 raw `<table>` blocks, 0 competitor digs.
+- **Internal Blog Links:** 5 contextual guides linking to `daily-use-gold-earrings-2026`, `how-to-check-gold-purity-2026`, `gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax`, `is-buying-gold-jewellery-online-safe-in-india-the-honest-answer`, and `green-earrings-2026`.
+- **Schema Validation:** Both `FAQPage` (6 Q&As) and `BlogPosting` (with Author Satyam and all 3 image URLs) active and valid.
+
+---
+
+### 10. Ledger & Workbook Updates
+- [Week8_Blog_Queue_status.csv](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week8_Blog_Queue_status.csv): Upserted Rank 159 as `Published`.
+- [Week8_Blog_Queue.csv](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/Week8_Blog_Queue.csv): Upserted Rank 159 with live execution note.
+- [product_rotation.json](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/product_rotation.json): Updated with Rank 159 trio and `linen-bedside` setting.
+- [SEO Strategy 2026.xlsx](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/SEO%20Strategy%202026.xlsx): Appended/updated Rank 159 in sheet `Week 8` with live URL and execution note.
+- [week8_rank159.json](file:///Users/satyamkumar/Downloads/final%20seo%20generation%20context/output/checkpoints/week8_rank159.json): All 15 steps marked `done`.

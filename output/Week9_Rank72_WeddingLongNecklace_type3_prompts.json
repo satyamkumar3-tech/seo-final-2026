@@ -1,0 +1,59 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images.",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "flatlay_setting": "festive-mantel",
+  "slots": {
+    "hero": {
+      "product_name": "The Shubhlatika Mangalsutra Necklace",
+      "code": "BVPJ0935C06",
+      "pdp": "https://www.bluestone.com/mangalsutra+chains/the-shubhlatika-mangalsutra-necklace~146084.html",
+      "dimensions": "product_height_mm=5.2; product_width_mm=19.5 (jewellery dimensions only)",
+      "local_reference_images": [
+        "ProductImages/raw/Mangalsutra Chains/The Shubhlatika Mangalsutra Necklace/1_body_portrait.png",
+        "ProductImages/raw/Mangalsutra Chains/The Shubhlatika Mangalsutra Necklace/2_front.png"
+      ],
+      "prompt": "Authentic 35mm film photography, subtle analog grain, Kodak Portra color science, creamy bokeh, natural highlight halation, filmic tonal response, editorial color grading, natural dynamic range, filmic contrast. Fair-skinned Indian bride with light wheatish complexion, natural radiant wedding makeup, dressed in an elegant bridal silk attire with delicate embroidery. Candid bridal portrait of a fair-skinned Indian bride adjusting her dupatta in front of a warm lit dressing area before the wedding ceremony. Around her are fresh marigold and jasmine garlands, brass decorative bowls, and soft warm ambient lighting. She wears @img1 body_image and @img2 design representing The Shubhlatika Mangalsutra Necklace in authentic yellow gold with delicate black auspicious beads and curved floral bar motif. The necklace drapes naturally across her neckline and upper chest. Keep jewellery size authentic to @img1 body_image (product_height_mm 5.2, product_width_mm 19.5; these are jewellery dimensions only, not face or body measurements), @img2 design only; do not enlarge for artificial visibility. Avoid: dark skin, deep brown skin, heavily tanned skin, empty phone, screen, blank card, placard, readable text, blurry, distorted, extra limbs, oversaturated, artificial render, floating jewellery, CGI, 3D render, cartoon, silver metal, plastic.",
+      "alt": "Wedding gold long necklace designs 2026: The Shubhlatika Mangalsutra Necklace worn by an Indian bride",
+      "title": "Wedding Gold Long Necklace Designs 2026: The Shubhlatika Mangalsutra Necklace",
+      "caption": "The Shubhlatika Mangalsutra Necklace as an elegant wedding gold long necklace design"
+    },
+    "flatlay": {
+      "product_name": "The Ailia Evil Eye Layered Necklace",
+      "code": "BIAV0987N78",
+      "pdp": "https://www.bluestone.com/necklaces/the-ailia-evil-eye-layered-necklace~116379.html",
+      "dimensions": "product_height_mm=7.45; product_width_mm=7.45 (jewellery dimensions only)",
+      "local_reference_images": [
+        "ProductImages/raw/Necklaces/The Ailia Evil Eye Layered Necklace/1_front.png",
+        "ProductImages/raw/Necklaces/The Ailia Evil Eye Layered Necklace/4_angle.png"
+      ],
+      "prompt": "Editorial still life photograph of The Ailia Evil Eye Layered Necklace (@img1 front, @img2 angle) resting gracefully on a velvet-lined jewellery display tray atop a festive teakwood bridal mantel. Surrounding the jewellery are fresh white jasmine blossoms, a polished brass diya with a soft golden glow, and folded raw bridal silk fabric. Soft morning window light illuminates the fine gold links and multi-tier concentric circular charms. The jewellery dimensions are product_height_mm 7.45 and product_width_mm 7.45 (jewellery dimensions only, not face measurements). Rich analog film grain, Kodak Portra color grading, creamy bokeh. Avoid: phones, screens, readable text, certificates, dark shadows, cartoon, CGI, silver jewellery.",
+      "alt": "Wedding gold long necklace flatlay: The Ailia Evil Eye Layered Necklace on festive bridal mantel",
+      "title": "Wedding Gold Long Necklace Designs 2026: The Ailia Evil Eye Layered Necklace Flatlay",
+      "caption": "The Ailia Evil Eye Layered Necklace displayed as a versatile wedding gold long necklace design"
+    },
+    "lifestyle": {
+      "product_name": "The Yeijah Mangaslsutra Necklace",
+      "code": "BIMA1081C01",
+      "pdp": "https://www.bluestone.com/mangalsutra+chains/the-yeijah-mangaslsutra-necklace~163411.html",
+      "dimensions": "product_height_mm=11.9; product_width_mm=11.9 (jewellery dimensions only)",
+      "local_reference_images": [
+        "ProductImages/raw/Mangalsutra Chains/The Yeijah Mangaslsutra Necklace/1_body_portrait.png",
+        "ProductImages/raw/Mangalsutra Chains/The Yeijah Mangaslsutra Necklace/2_front.png"
+      ],
+      "prompt": "Candid lifestyle photograph of a fair-skinned Indian bride laughing softly with family during her wedding reception banquet. She is dressed in an ivory and gold embroidered bridal lehenga. She wears @img1 body_image and @img2 design representing The Yeijah Mangaslsutra Necklace in fine yellow gold with delicate black beads and twin circular concentric motifs. The necklace rests gracefully against her collarbone and upper chest. Keep jewellery scale natural matching @img1 body_image (product_height_mm 11.9, product_width_mm 11.9; jewellery dimensions only, not body measurements). Kodak Portra 400 color science, subtle analog grain, natural highlight roll-off, soft ambient event lighting. Avoid: dark skin, deep brown skin, empty phone, screens, placards, readable text, oversaturated, cartoon, CGI, silver jewellery.",
+      "alt": "Bridal wedding gold long necklace styling: The Yeijah Mangaslsutra Necklace worn during reception celebration",
+      "title": "Wedding Gold Long Necklace Designs 2026: The Yeijah Mangaslsutra Necklace Lifestyle",
+      "caption": "The Yeijah Mangaslsutra Necklace styled with contemporary bridal wedding gold long necklace designs"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/wedding-gold-long-necklace-hero-2026.webp",
+    "flatlay": "output/magnific_generated/wedding-gold-long-necklace-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/wedding-gold-long-necklace-lifestyle-2026.webp"
+  }
+}

@@ -1,0 +1,42 @@
+---
+description: Rotate SEO/Type3 products, caption Type 3 images, mix paragraphs on education posts.
+alwaysApply: true
+---
+
+# Product rotation + Type 3 captions + education prose
+
+**Last updated: 2026-09-29 | Active pipeline: Week 9**
+
+## Product rotation (carousel + Type 3)
+
+1. **Do not default** every article to Valeria / Muricelle / Rohal.
+2. Across a batch, **rotate categories**: pendants, earrings, bangles, rings, bracelets, mangalsutra, necklaces, chains, kids (when relevant).
+3. Track recent Type 3 SKUs in `output/product_rotation.json` and avoid reusing the same hero/flatlay/lifestyle trio on consecutive ranks.
+4. **Occasion fit still wins:**
+ - Men / mama ji / him gifts → **Male** GenderTag only (For Him pendants, bracelets, bands, chains)
+ - Newborn / kids → **Kids** GenderTag (Kids Bracelets + protective evil-eye styles)
+ - Wedding / mangalsutra intent → mangalsutra in the mix (**Female**)
+ - Romantic crush / couple → pendants, rings, earrings (vary SKUs; wearer must match GenderTag)
+4b. **Type 3 gender lock:** never put a Male SKU on a woman or Female on a man. Read GenderTag from `Seo Products - consolidated.csv`.
+4c. **Type 3 exact size:** CSV `height_mm` × `width_mm` + short body_image line: keep size like `@img1` body_image; `@img2` design only; do not make bigger for visibility.
+4d. **Body image hard gate (hero + lifestyle):** `@img1` must be raw/`BP-PICS` **body_image** (or `1_body_portrait`). `@img2` = front/design only. If no body_image exists for a SKU, **skip that SKU** and pick another with a body shot. Never generate people hero/lifestyle from packshots alone. Flatlay is exempt (3 to 4 packshot angles OK).
+5. Carousel (6 products) and Type 3 (3 products) should **overlap at most 1 SKU** when the SEO library allows.
+6. **Flatlay settings must rotate** (not always wood desk + kraft box + linen). Pick one ID from the 8-setting menu in `docs/HIGGSFIELD_IMAGE_GENERATION.md` (`desk-kraft`, `marble-vanity`, `linen-bedside`, `cafe-tray`, `festive-mantel`, `windowsill-daylight`, `gift-wrapping-station`, `study-desk`). Track in `output/product_rotation.json` → `recent_flatlay_settings`. Avoid the same setting on consecutive ranks. Set `"flatlay_setting"` in Type 3 prompts JSON. Props stay secondary; no readable text.
+
+## Type 3 image captions (required)
+
+For every body Type 3 image (flatlay + lifestyle; featured hero caption optional in media title only):
+
+- Gutenberg `wp:image` must include a short `<figcaption>` under the image.
+- Caption pattern: one warm editorial line naming the exact product and matching the article intent. Avoid robotic labels like `detail: Product`, `look: Product`, or `vibe: Product` unless the phrase is genuinely natural in context. No prices; no em/en dash; no spaced hyphen.
+- Example: `The Lumeelle Cluster Pendant as a thoughtful birthday jewellery gift`
+- Keep captions unique per slot; sync with product used in that image.
+
+## Educational / explainer blogs
+
+When the article is meaning/history/why/how (not a 100+ wishes listicle):
+
+1. Prefer **short paragraphs** as the main reading experience.
+2. Use **short bullet lists** only for quick facts, steps, or 4 to 8 key takeaways, not every H2.
+3. Typical H2 pattern: 1 to 3 paragraphs, then optional compact list, then a bridge sentence into the next section.
+4. Still meet FAQ, schema, year lock, and hard copy rules.

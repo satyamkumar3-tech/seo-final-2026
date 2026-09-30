@@ -1,0 +1,171 @@
+{
+  "pipeline": "week6",
+  "rank": 3,
+  "slug": "bangle-size-2026",
+  "primary": "bangle size",
+  "created_at": "2026-08-18T11:14:10Z",
+  "status": "complete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-18T11:17:25Z",
+      "finished_at": "2026-08-18T11:17:45Z",
+      "files": "11_required_docs_plus_higgsfield_skill"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-18T11:17:50Z",
+      "finished_at": "2026-08-18T11:20:42Z",
+      "credits": 273.37,
+      "plan": "ultimate",
+      "account": "ai.marketing@bluestone.com"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-18T11:20:49Z",
+      "finished_at": "2026-08-18T11:20:53Z",
+      "row_file": "output/Week6_Gift_Guides_100.csv",
+      "primary": "bangle size",
+      "volume": 8100,
+      "kd": 15,
+      "score": 3.2923,
+      "theme": "How-to / Education",
+      "category_fit": "Buying Guide",
+      "slug": "bangle-size-2026",
+      "supporting_keywords": "not_supplied",
+      "competitor_url": "not_supplied"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-18T11:20:59Z",
+      "finished_at": "2026-08-18T11:21:59Z",
+      "exact_slug_matches": 0,
+      "existing_near_intent_id": 14544,
+      "existing_near_intent_url": "https://blog.bluestone.com/how-to-measure-bangle-size-at-home-accurately/",
+      "differentiation": "comprehensive size chart, two measurement methods, fit diagnostics, closed/open bangle guidance, conversion and buying checklist",
+      "decision": "proceed_with_distinct_full_buying_guide"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-08-18T11:22:21Z",
+      "finished_at": "2026-08-18T11:22:45Z",
+      "artifact": "output/Week6_Rank3_BangleSize_fact_check.md",
+      "source_count": 3,
+      "chart_sizes": 8,
+      "verified": "hand circumference, inner diameter, closed versus openable sizing caveat"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-08-18T11:22:54Z",
+      "finished_at": "2026-08-18T11:23:10Z",
+      "artifact": "output/Week6_Rank3_BangleSize_keyword_map.md",
+      "major_h2s": 10,
+      "primary_backed": 6,
+      "intent_inferred": 4,
+      "supporting_keyword_backed": 0,
+      "competitor_structure_backed": 0,
+      "supporting_phrases": "16 inferred; no supplied volume or KD"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-08-18T11:23:17Z",
+      "finished_at": "2026-08-18T11:24:25Z",
+      "artifact": "output/Week6_Rank3_BangleSize_structure_visuals.md",
+      "engine": "buying_guide",
+      "categories": "554493465,554493412",
+      "carousel_products": 6,
+      "type3_trio": "BIDG0393O37,BIPS0003O06,BINK0363B03",
+      "flatlay_setting": "desk-kraft",
+      "body_image_gate": "passed"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-08-18T11:24:33Z",
+      "finished_at": "2026-08-18T11:26:45Z",
+      "sections": "output/Week6_Rank3_BangleSize_sections.json",
+      "config": "output/publish_configs/week6_rank3.json",
+      "source_words": 2466,
+      "section_lines": 90,
+      "faqs": 8,
+      "meta_description_chars": 152,
+      "dash_price_checks": "passed"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-08-18T11:26:55Z",
+      "finished_at": "2026-08-18T11:27:57Z",
+      "config": "output/publish_configs/week6_rank3.json",
+      "product_count": 6,
+      "skus": "BENS0325O09,BISM0003O14,BIPS0003O06,BIDG0393O37,BINK0363B03,BISL0804O13",
+      "seo_images_verified": 6,
+      "upload_state": "deferred to exactly-once publish script",
+      "type3_manifest": "output/Week6_Rank3_BangleSize_type3_prompts.json"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-08-18T11:28:10Z",
+      "finished_at": "2026-08-18T11:28:50Z",
+      "wp_post_id": 34822,
+      "live_url": "https://blog.bluestone.com/bangle-size-2026/",
+      "carousel_media_ids": "34816,34817,34818,34819,34820,34821",
+      "article": "output/Week6_Rank3_BangleSize_article.html",
+      "validation": "passed"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-08-18T11:29:05Z",
+      "finished_at": "2026-08-18T11:35:35Z",
+      "hero_job_id": "95ee667d-4c4e-4912-8a1f-83f0f8bca059",
+      "flatlay_job_id": "8d411245-152a-4f54-a4ec-a71443087184",
+      "lifestyle_job_id": "8f439f9c-adee-4417-8da1-203ebae67904",
+      "accepted_raw": "output/magnific_generated/bangle-size-hero-2026.raw.png,output/magnific_generated/bangle-size-flatlay-2026.raw.png,output/magnific_generated/bangle-size-lifestyle-2026.raw.png",
+      "qa": "hero full face and unmarked ribbon; flatlay no readable text; lifestyle passed",
+      "replacements": "hero composition then text cleanup; flatlay text cleanup"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-08-18T11:35:48Z",
+      "finished_at": "2026-08-18T11:36:09Z",
+      "type3_media_ids": "34823,34824,34825",
+      "media_checkpoint": "output/Week6_Rank3_BangleSize_type3_media.json",
+      "featured_media": 34823,
+      "body_media": "34824,34825",
+      "article": "output/Week6_Rank3_BangleSize_article.html"
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-08-18T11:36:18Z",
+      "finished_at": "2026-08-18T11:38:35Z",
+      "artifact": "output/Week6_Rank3_BangleSize_Checklist_v2.md",
+      "visible_words": 3276,
+      "h1_count": 1,
+      "h2_count": 15,
+      "carousel_cards": 6,
+      "faq_count": 8,
+      "schema_images": 9,
+      "internal_links": 8,
+      "factual_source_links": 3,
+      "result": "passed"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-08-18T11:38:44Z",
+      "finished_at": "2026-08-18T11:51:09Z",
+      "product_rotation": "upserted",
+      "status_csv": "upserted",
+      "confirmed_by": "atomic_pipeline_upsert"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-18T11:40:38Z",
+      "finished_at": "2026-08-18T11:41:00Z",
+      "artifact": "output/Week6_Rank3_BangleSize_final_report.md",
+      "completion": "published_and_live_qa_passed_with_status_csv_blocker"
+    }
+  },
+  "updated_at": "2026-08-18T11:51:09Z",
+  "last_exit_code": 0,
+  "completed_at": "2026-08-18T11:51:09Z",
+  "live_url": "https://blog.bluestone.com/bangle-size-2026/",
+  "wp_post_id": 34822
+}

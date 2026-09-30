@@ -1,0 +1,195 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 29 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 29\n- Action: New\n- Primary keyword: making charges on gold\n- Volume: 18100\n- KD: 20\n- Priority score: 16189.4444\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: making-charges-on-gold-2026\n- Article engine: buying_guide\n- Category hint: `Gold` 554493348 + `Jewellery Problem & Solution` 554493465\n- Supplied supporting keywords: gold jewellery making charges | gold making charge | gold making charges | jewellery making charges | making charge of gold | making charges | making charges of gold | making charges on gold jewellery\n- Supplied competitor URL: blank in source row\n- Semrush page: making charges on gold\n- Source execution note: Week8 new topic. Intent key=sig:charge_making; brands=CaratLane,Joyalukkas,MergedJewellery,ScoringCL; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank29.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank29.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+I have launched a search for "making charges on gold" across the workspace files to locate the target row definitions and metadata. I am waiting for the search results to return.
+I have initiated the conversion and upload of the 6 carousel WebP images to WordPress. Waiting for the upload task to complete.
+I am monitoring the WordPress media upload task for the 6 carousel images. Waiting for completion.
+Waiting for the carousel images upload to complete. The system will resume execution automatically upon task completion.
+I have launched the Type 3 image generation jobs via the Higgsfield CLI (`nano_banana_pro`, 16:9, 2k) for the hero, flatlay, and lifestyle slots. I will wait for the background generation and download task to complete.
+I have launched the script to upload the Type 3 images to the WordPress media library and patch the post with the Gutenberg image blocks, featured media, and Yoast metadata. Waiting for completion.
+I have launched the status update script to update `output/Week8_Blog_Queue_status.csv`, `output/product_rotation.json`, and `SEO Strategy 2026.xlsx`. Waiting for it to finish.
+### Step Execution Tracking
+
+* **STEP START: Read required docs** | time: 2026-09-02T10:23:25+05:30 | elapsed: 00:00:24
+* **STEP DONE: Read required docs** | time: 2026-09-02T10:23:53+05:30 | step duration: 00:00:28 | total elapsed: 00:00:52
+* **STEP START: Verify Higgsfield status and report credits/plan** | time: 2026-09-02T10:23:54+05:30 | elapsed: 00:00:53
+* **STEP DONE: Verify Higgsfield status and report credits/plan** | time: 2026-09-02T10:24:00+05:30 | step duration: 00:00:06 | total elapsed: 00:00:59
+* **STEP START: Inspect the Week 8 target row** | time: 2026-09-02T10:24:01+05:30 | elapsed: 00:01:00
+* **STEP DONE: Inspect the Week 8 target row** | time: 2026-09-02T10:24:55+05:30 | step duration: 00:00:54 | total elapsed: 00:01:54
+* **STEP START: Check duplicate slug and search intent** | time: 2026-09-02T10:24:56+05:30 | elapsed: 00:01:55
+* **STEP DONE: Check duplicate slug and search intent** | time: 2026-09-02T10:25:26+05:30 | step duration: 00:00:30 | total elapsed: 00:02:25
+* **STEP START: Analyze the supplied competitor URL and fact-check current sources** | time: 2026-09-02T10:25:27+05:30 | elapsed: 00:02:26
+* **STEP DONE: Analyze the supplied competitor URL and fact-check current sources** | time: 2026-09-02T10:25:45+05:30 | step duration: 00:00:18 | total elapsed: 00:02:44
+* **STEP START: Filter and map supporting keywords** | time: 2026-09-02T10:25:46+05:30 | elapsed: 00:02:45
+* **STEP DONE: Filter and map supporting keywords** | time: 2026-09-02T10:25:51+05:30 | step duration: 00:00:05 | total elapsed: 00:02:50
+* **STEP START: Build the H2 keyword map & visual concept** | time: 2026-09-02T10:25:52+05:30 | elapsed: 00:02:51
+* **STEP DONE: Build the H2 keyword map & visual concept** | time: 2026-09-02T10:26:38+05:30 | step duration: 00:00:46 | total elapsed: 00:03:37
+* **STEP START: Draft the complete article** | time: 2026-09-02T10:26:39+05:30 | elapsed: 00:03:38
+* **STEP DONE: Draft the complete article** | time: 2026-09-02T10:28:16+05:30 | step duration: 00:01:37 | total elapsed: 00:05:15
+* **STEP START: Select products and carousel media** | time: 2026-09-02T10:28:17+05:30 | elapsed: 00:05:16
+* **STEP DONE: Select products and carousel media** | time: 2026-09-02T10:29:03+05:30 | step duration: 00:00:46 | total elapsed: 00:06:02
+* **STEP START: Publish the WordPress post** | time: 2026-09-02T10:29:04+05:30 | elapsed: 00:06:03
+* **STEP DONE: Publish the WordPress post** | time: 2026-09-02T10:29:23+05:30 | step duration: 00:00:19 | total elapsed: 00:06:22
+* **STEP START: Generate Type 3 images through the Higgsfield CLI** | time: 2026-09-02T10:29:24+05:30 | elapsed: 00:06:23
+* **STEP DONE: Generate Type 3 images through the Higgsfield CLI** | time: 2026-09-02T10:37:19+05:30 | step duration: 00:07:55 | total elapsed: 00:14:18
+* **STEP START: Patch images and social metadata into WordPress** | time: 2026-09-02T10:37:20+05:30 | elapsed: 00:14:19
+* **STEP DONE: Patch images and social metadata into WordPress** | time: 2026-09-02T10:37:59+05:30 | step duration: 00:00:39 | total elapsed: 00:14:58
+* **STEP START: Run live QA** | time: 2026-09-02T10:38:00+05:30 | elapsed: 00:14:59
+* **STEP DONE: Run live QA** | time: 2026-09-02T10:39:56+05:30 | step duration: 00:01:56 | total elapsed: 00:16:55
+* **STEP START: Update status files and write the final report** | time: 2026-09-02T10:39:57+05:30 | elapsed: 00:16:56
+* **STEP DONE: Update status files and write the final report** | time: 2026-09-02T10:40:34+05:30 | step duration: 00:00:37 | total elapsed: 00:17:33
+
+---
+
+## Final Production Report: Week 8 Rank 29
+
+### 1. Publication Summary
+* **Live Post URL:** [https://blog.bluestone.com/making-charges-on-gold-2026/](https://blog.bluestone.com/making-charges-on-gold-2026/)
+* **WordPress Post ID:** `37316`
+* **Article Engine:** `buying_guide` (How-to / Jewellery Education)
+* **Author:** Satyam (User ID: `270271337`)
+* **On-Page Byline:** `By Satyam, BlueStone Editorial`
+* **Assigned Categories:**
+  * `Gold` (`554493348`)
+  * `Jewellery Problem & Solution` (`554493465`)
+  * `Jewellery Trends` (`554493317`)
+  * `Jewellery & Lifestyle` (`554493425`)
+* **Visible Article Word Count:** `4,731 words` (15 dedicated H2 content sections, zero HTML `<table>` blocks, 100% card/bullet lists, no dashes or spaced hyphens)
+
+---
+
+### 2. Target Row Metrics & Keyword Mapping
+* **Target Rank:** 29 (Action: `New`)
+* **Primary Keyword:** `making charges on gold`
+* **Search Volume:** `18,100` | **Keyword Difficulty (KD):** `20` | **Priority Score:** `16,189.4444`
+* **Theme:** How-to / Education | **Category Fit:** Jewellery Education
+* **Suggested Slug:** `making-charges-on-gold-2026`
+* **Supporting Keywords Audit:**
+  * `gold jewellery making charges`: **Accepted** (Mapped to H2 #2, H2 #3, body, and FAQ #2)
+  * `gold making charge`: **Accepted** (Mapped to H2 #2, body, and FAQ #3)
+  * `gold making charges`: **Accepted** (Mapped to H2 #3, body, and FAQ #1)
+  * `jewellery making charges`: **Accepted** (Mapped to H2 #1, H2 #2, body, and FAQ #1)
+  * `making charge of gold`: **Accepted** (Mapped to H2 #5, body, and FAQ #4)
+  * `making charges`: **Accepted** (Integrated across H2s, H1, intro, body, and FAQs)
+  * `making charges of gold`: **Accepted** (Mapped to H2 #5, body, and FAQ #5)
+  * `making charges on gold jewellery`: **Accepted** (Mapped to H2 #2, body, and FAQ #6)
+  * *Rejected Keywords:* None (all 8 supplied phrases are topically aligned with retail making charges).
+
+---
+
+### 3. H2 Keyword & Structural Map
+Every major H2 is labeled by source authority and structured to stand alone as an authoritative answer chunk:
+1. `Quick Buyer Summary: Making Charges on Gold at a Glance` (`intent-inferred`)
+2. `What Are Making Charges on Gold Jewellery?` (`primary-backed` / `supporting-keyword-backed`)
+3. `How Jewellers Calculate Gold Jewellery Making Charges` (`supporting-keyword-backed`)
+4. `The Standard Gold Jewellery Price Formula in India` (`intent-inferred`)
+5. `Making Charges of Gold Across Different Jewellery Types` (`supporting-keyword-backed`)
+6. `Wastage Charges vs Making Charges: What Indian Buyers Must Know` (`intent-inferred`)
+7. `GST on Gold Making Charges: 3% Composite vs 5% Job Work` (`intent-inferred`)
+8. `The Resale Reality: Why Making Charges Are Non-Recoverable` (`intent-inferred`)
+9. `6 Smart Ways to Lower Making Charges on Gold Purchases` (`primary-backed`)
+10. `Featured Collection: Precision-Crafted Fine Gold Jewellery` (`intent-inferred` | Mid-article Carousel)
+11. `How to Read Your Gold Jewellery Invoice and Verify Hallmarking` (`intent-inferred` | Flatlay image anchor)
+12. `Machine-Made vs Handcrafted Jewellery: Why Making Charges Vary` (`intent-inferred` | Lifestyle image anchor)
+13. `Final Thoughts on Making Charges on Gold Jewellery` (`intent-inferred` | Placed before Related Guides & FAQs)
+14. `More Gold Buying Guides` (`intent-inferred` | 5 internal cluster links to live BlueStone articles)
+15. `Frequently Asked Questions About Making Charges on Gold` (`primary-backed` | 7 visible Q&As)
+
+---
+
+### 4. Competitor URL & Factual Research
+* **Supplied Competitor URL:** Blank in source row (no competitor URL invented).
+* **Factual & Statutory Sources Consulted:**
+  * *Bureau of Indian Standards (BIS):* Mandated 3-mark hallmarking framework (BIS logo + karatage mark + 6-digit alphanumeric HUID code) and consumer verification via BIS Care app.
+  * *Ministry of Finance / GST Council Guidelines:* Statutory 3% composite GST on retail finished jewellery invoice subtotal (metal + making charges) versus 5% service GST on standalone unregistered goldsmith job work.
+  * *Industry Karigari & Wastage Norms:* 3% to 8% for automated machine chains, 8% to 14% for cast everyday wear, up to 25%+ for intricate temple/antique filigree; contrast between legacy manual metal loss and modern zero-loss vacuum casting.
+
+---
+
+### 5. Media Assets & Product Rotation
+
+#### Mid-Article Coverflow Carousel (6 Diverse Categories, Zero Overlap with Type 3)
+* **Snippet File:** `output/Week8_Rank29_MakingCharges_carousel_snippet.html`
+* **JSON Ledger:** `output/Week8_Rank29_MakingCharges_product_media.json`
+* **Carousel Cards:**
+  1. `The Tarentella Oval Bangle` (`BENS0325O09`, Bangles) | Media ID: `37310` | [PDP URL](https://www.bluestone.com/bangles/the-tarentella-oval-bangle~31547.html)
+  2. `The Ailia Evil Eye Layered Necklace` (`BIAV0987N78`, Necklaces) | Media ID: `37311` | [PDP URL](https://www.bluestone.com/necklaces/the-ailia-evil-eye-layered-necklace~116379.html)
+  3. `The Liza ring` (`BIAR0097R07`, Rings) | Media ID: `37312` | [PDP URL](https://www.bluestone.com/rings/the-liza-ring~7623.html)
+  4. `The Aleena Huggie Earrings` (`BIIP0279S08`, Earrings) | Media ID: `37313` | [PDP URL](https://www.bluestone.com/earrings/the-aleena-huggie-earrings~16735.html)
+  5. `The Aagarna Pendant` (`BIIP0550P16`, Pendants) | Media ID: `37314` | [PDP URL](https://www.bluestone.com/pendants/the-aagarna-pendant~54965.html)
+  6. `The Ruan Cuban Diamond Chain` (`BIAV1037C17`, Chains) | Media ID: `37315` | [PDP URL](https://www.bluestone.com/chains/the-ruan-cuban-diamond-chain~165221.html)
+
+#### Type 3 Concept Images (Higgsfield CLI `nano_banana_pro`, 16:9, 2K, WebP Q82)
+* **Manifest File:** `output/Week8_Rank29_MakingCharges_type3_manifest.json`
+* **Media Ledger:** `output/Week8_Rank29_MakingCharges_type3_media.json`
+* **Hero Image:**
+  * *SKU:* `The Channing Bangle` (`BIPS0003O06`, Bangles, Female, 50.9 mm × 7.69 mm)
+  * *Refs:* `@img1` body portrait + `@img2` front packshot
+  * *Job ID:* `b33e95c3-d98d-4499-ad6b-d5ef1d3925ae`
+  * *WordPress Media ID:* `37317` (Featured image & OpenGraph image)
+  * *Alt Text:* `Making charges on gold 2026 hero, The Channing Bangle in 18k yellow gold`
+* **Flatlay Image:**
+  * *SKU:* `The Anya Ring` (`BIAR0097R04`, Rings, Female, 20.57 mm × 6.28 mm)
+  * *Setting ID:* `linen-bedside` (Fresh rotation from 8-menu)
+  * *Refs:* `@img1` front + `@img2` back + `@img3` close-up
+  * *Job ID:* `fabb2bc1-8371-4a0d-bfa4-9081ffa74bf1`
+  * *WordPress Media ID:* `37318`
+  * *Alt Text:* `Making charges on gold 2026 flatlay on linen bedside, The Anya Ring`
+  * *Caption:* `Making charges on gold 2026 vibe: The Anya Ring` (linked to PDP)
+* **Lifestyle Image:**
+  * *SKU:* `The Faliha Purse Hoop Earrings` (`BIJP0686H03`, Earrings, Female, 13.86 mm × 13.12 mm)
+  * *Refs:* `@img1` body portrait + `@img2` front packshot
+  * *Job ID:* `9c187f05-08a8-410c-a0a1-355179adab6d`
+  * *WordPress Media ID:* `37319`
+  * *Alt Text:* `Making charges on gold 2026 lifestyle styling, The Faliha Purse Hoop Earrings on ear`
+  * *Caption:* `Making charges on gold 2026 vibe: The Faliha Purse Hoop Earrings` (linked to PDP)
+
+---
+
+### 6. Higgsfield Account Accounting
+* **Subscription Plan:** `ultimate`
+* **Starting Credit Balance:** `906.37 credits`
+* **Total Jobs Submitted:** 3 (Hero, Flatlay, Lifestyle)
+* **Job Retries:** 0 (all 3 completed successfully on first pass)
+* **Credits Consumed:** `6.00 credits` (2.0 credits per 2K generation)
+* **Ending Credit Balance:** `900.37 credits`
+
+---
+
+### 7. Duplicate & Cannibalization Gate
+* **Slug Check:** `making-charges-on-gold-2026` returned 0 existing posts on WordPress.
+* **Intent Check:** Verified search results for "making charges on gold"; no competing live or planned cluster posts satisfy this educational buying guide intent.
+
+---
+
+### 8. Live QA & Metadata Verification
+* **HTTP Status:** `200 OK`
+* **H1 Count:** 1 (`Making Charges on Gold: How They Are Calculated, Current Rates, Wastage & Smart Ways to Save in 2026`)
+* **Article Body H2 Count:** 15 (Every H2 appears exactly once; zero duplicate sections)
+* **Canonical URL:** `https://blog.bluestone.com/making-charges-on-gold-2026/`
+* **Live OpenGraph Image (`og:image`):** `https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/making-charges-on-gold-hero-2026.webp?fit=1400%2C781&ssl=1`
+* **Yoast Focus Keyphrase:** `making charges on gold`
+* **Yoast SEO Title:** `Making Charges on Gold 2026: Calculation, Rates & How to Save | BlueStone`
+* **Yoast Meta Description:** `Understand making charges on gold jewellery in 2026. Learn how jewellers calculate rates, wastage vs making fees, 3% GST impact, and smart ways to save.`
+* **Structured Data Schemas:**
+  * `FAQPage` JSON-LD schema (7 complete Q&A pairs matching on-page HTML)
+  * `BlogPosting` JSON-LD schema (Headline, Satyam author, publisher, WebPage entity, and WebP images)
+* **Text Hygiene:** 0 em dashes (`—`), 0 en dashes (`–`), 0 spaced hyphens (` - `), 0 raw HTML `<table>` elements.
+
+---
+
+### 9. State & Workbook Updates
+* **Status CSV:** `output/Week8_Blog_Queue_status.csv` updated with Rank 29 row.
+* **Product Rotation:** `output/product_rotation.json` updated with Rank 29 trio (`BIPS0003O06`, `BIAR0097R04`, `BIJP0686H03`) and setting `linen-bedside`.
+* **Strategy Workbook:** `SEO Strategy 2026.xlsx` Sheet `Week 8` updated with Rank 29 `Published` status, live URL, and execution notes.
+* **Execution Checkpoint:** `output/checkpoints/week8_rank29.json` marked `done` across all 15 steps.

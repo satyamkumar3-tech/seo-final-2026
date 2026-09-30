@@ -1,0 +1,74 @@
+{
+  "pipeline": "week9",
+  "rank": 5,
+  "slug": "ear-piercing-jewelry-2026",
+  "primary": "ear piercing jewelry",
+  "created_at": "2026-09-18T06:51:57Z",
+  "status": "done",
+  "steps": {
+    "read_docs": {
+      "status": "done"
+    },
+    "verify_higgsfield": {
+      "status": "done"
+    },
+    "inspect_row": {
+      "status": "done"
+    },
+    "duplicate_check": {
+      "status": "done"
+    },
+    "fact_check": {
+      "status": "done"
+    },
+    "keyword_map": {
+      "status": "done"
+    },
+    "structure_visuals": {
+      "status": "done"
+    },
+    "draft": {
+      "status": "done",
+      "detail": [
+        "words=3246"
+      ]
+    },
+    "product_media": {
+      "status": "done"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "detail": [
+        "post_id=39393"
+      ]
+    },
+    "generate_type3": {
+      "status": "done",
+      "detail": [
+        "hero=39390",
+        "flatlay=39391",
+        "lifestyle=39392"
+      ]
+    },
+    "patch_type3": {
+      "status": "done"
+    },
+    "live_qa": {
+      "status": "done",
+      "detail": [
+        "status=200",
+        "words=3246",
+        "dom=valid"
+      ]
+    },
+    "update_status": {
+      "status": "done"
+    },
+    "final_report": {
+      "status": "done"
+    }
+  },
+  "updated_at": "2026-09-18T07:15:00Z",
+  "last_exit_code": 0,
+  "outcome": "published_and_verified"
+}

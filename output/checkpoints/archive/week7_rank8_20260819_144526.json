@@ -1,0 +1,120 @@
+{
+  "pipeline": "week7",
+  "rank": 8,
+  "slug": "gst-on-gold-jewellery-2026",
+  "primary": "gst on gold jewellery",
+  "created_at": "2026-08-19T08:05:17Z",
+  "status": "complete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-19T13:41:24+05:30",
+      "finished_at": "2026-08-19T08:11:48Z",
+      "files_read": 11,
+      "skill": "higgsfield-generate"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-19T13:41:47+05:30",
+      "finished_at": "2026-08-19T08:12:17Z",
+      "plan": "scale",
+      "starting_credits": 7497.32,
+      "workspace": "BlueStone"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-19T13:42:17+05:30",
+      "finished_at": "2026-08-19T08:12:42Z",
+      "action": "New",
+      "workbook_sheet": "Week 7",
+      "source_csv": "output/Week7_Gift_Guides_PostRank10.csv",
+      "volume": 9900,
+      "kd": 21,
+      "priority_score": 2.4039
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-19T13:42:42+05:30",
+      "finished_at": "2026-08-19T08:14:41Z",
+      "exact_slug_available": true,
+      "outcome": "blocked_duplicate_intent",
+      "conflicting_url": "https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/",
+      "conflicting_post_id": 28892,
+      "conflicting_slug": "gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax",
+      "reason": "Exact live search intent already satisfied; new page would cannibalize existing BlueStone article."
+    },
+    "fact_check": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:41Z",
+      "reason": "duplicate_intent_gate"
+    },
+    "keyword_map": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:41Z",
+      "reason": "duplicate_intent_gate"
+    },
+    "structure_visuals": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:41Z",
+      "reason": "duplicate_intent_gate"
+    },
+    "draft": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:42Z",
+      "reason": "duplicate_intent_gate"
+    },
+    "product_media": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:42Z",
+      "reason": "duplicate_intent_gate"
+    },
+    "publish_wordpress": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:42Z",
+      "reason": "duplicate_intent_gate",
+      "wordpress_creation": false
+    },
+    "generate_type3": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:42Z",
+      "reason": "duplicate_intent_gate",
+      "jobs_created": 0,
+      "retries": 0
+    },
+    "patch_type3": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:42Z",
+      "reason": "duplicate_intent_gate",
+      "uploads_created": 0
+    },
+    "live_qa": {
+      "status": "skipped",
+      "finished_at": "2026-08-19T08:14:42Z",
+      "reason": "duplicate_intent_gate"
+    },
+    "update_status": {
+      "status": "done",
+      "finished_at": "2026-08-19T08:15:17Z",
+      "confirmed_by": "week7_pipeline_atomic_upsert",
+      "status_csv": "upserted"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-19T13:44:42+05:30",
+      "finished_at": "2026-08-19T08:14:51Z",
+      "outcome": "skipped_existing_intent",
+      "existing_post_id": 28892,
+      "existing_url": "https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/",
+      "higgsfield_ending_credits": 7497.32,
+      "wordpress_creation": false,
+      "type3_jobs": 0,
+      "carousel_uploads": 0
+    }
+  },
+  "updated_at": "2026-08-19T08:15:17Z",
+  "last_exit_code": 0,
+  "outcome": "skipped_existing_intent",
+  "conflicting_url": "https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/",
+  "conflicting_post_id": 28892,
+  "completed_at": "2026-08-19T08:15:17Z"
+}

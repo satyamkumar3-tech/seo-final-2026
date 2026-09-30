@@ -1,0 +1,141 @@
+{
+  "rank": "Week3-4 Rank 7",
+  "slug": "romantic-diwali-wishes-for-lover-2026",
+  "primary_kw": "romantic diwali wishes for lover",
+  "output_prefix": "Week34_Rank7_RomanticDiwaliLover",
+  "caption_occasion": "Romantic Diwali wishes",
+  "caption_year": "2026",
+  "flatlay_setting": "marble-vanity",
+    "workflow": "Higgsfield MCP nano_banana_pro. Do not generate until balance succeeds. People shots require @img1 body_image plus @img2 design. Max 2 concurrent generations total. If queue/generation error occurs, wait 40-50 seconds before retry.",
+    "higgsfield_jobs": {
+        "hero_rejected": {
+            "job_id": "322bebae-9998-4f7a-bd05-f9b4e7991636",
+            "reason": "Cropped face/head",
+            "local_raw": "output/magnific_generated/romantic-diwali-wishes-for-lover-hero-2026.raw.png"
+        },
+        "hero_accepted": {
+            "job_id": "7764eb74-322f-4591-8792-6191d8bd5fbd",
+            "local_raw": "output/magnific_generated/romantic-diwali-wishes-for-lover-hero-2026.regen.raw.png"
+        },
+        "flatlay_accepted": {
+            "job_id": "c8d4438a-1d02-401c-b0dc-d366d2e2c6c1",
+            "local_raw": "output/magnific_generated/romantic-diwali-wishes-for-lover-flatlay-2026.raw.png"
+        },
+        "lifestyle_accepted": {
+            "job_id": "87132c4a-7190-4aa9-b4f3-4139f6b06279",
+            "local_raw": "output/magnific_generated/romantic-diwali-wishes-for-lover-lifestyle-2026.raw.png"
+        }
+    },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "count": 1
+  },
+  "insert_h2s_json": "output/Week34_Rank7_RomanticDiwaliLover_insert_h2s.json",
+  "product_media_json": "output/Week34_Rank7_RomanticDiwaliLover_product_media.json",
+  "output": {
+    "hero": "output/magnific_generated/romantic-diwali-wishes-for-lover-hero-2026.webp",
+    "flatlay": "output/magnific_generated/romantic-diwali-wishes-for-lover-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/romantic-diwali-wishes-for-lover-lifestyle-2026.webp"
+  },
+  "media_titles": {
+    "hero": "romantic Diwali wishes for lover 2026 Hero",
+    "flatlay": "romantic Diwali wishes for lover 2026 Flatlay",
+    "lifestyle": "romantic Diwali wishes for lover 2026 Lifestyle"
+  },
+  "schema_keywords": [
+    "romantic diwali wishes for lover",
+    "happy diwali my love",
+    "diwali wishes for boyfriend",
+    "diwali love messages for girlfriend",
+    "romantic diwali quotes",
+    "diwali captions for couples"
+  ],
+  "slots": {
+    "hero": {
+      "code": "BISW1080P132",
+      "name": "The Sarvanya Pendant",
+      "gender": "Female",
+      "category": "Pendants",
+      "height_mm": 33.35,
+      "width_mm": 23.79,
+      "size_prompt_note": "product_height_mm=33.35; product_width_mm=23.79; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/pendants/the-sarvanya-pendant~156927.html",
+      "cdn_primary": "https://kinclimg9.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BISW1080P132_WAA18DIG4LNBTXXXX_ABCD00-PICS-00004-1024-104460.png",
+      "alt": "romantic Diwali wishes for lover 2026 hero with The Sarvanya Pendant",
+      "caption": "Romantic Diwali wishes 2026 mood: The Sarvanya Pendant",
+      "product": {
+        "code": "BISW1080P132",
+        "name": "The Sarvanya Pendant",
+        "pdp": "https://www.bluestone.com/pendants/the-sarvanya-pendant~156927.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Sarvanya Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Sarvanya Pendant/0_primary.png"
+      ],
+      "ref_roles": [
+        "body_image",
+        "front_primary"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Romantic Diwali wishes for lover 2026 hero, solo fair-skinned Indian adult woman in an elegant ivory festive kurta seated beside soft Diwali diyas, smiling while holding a completely blank cream love note card near her heart, full face visible, neck and pendant clearly visible, warm intimate home celebration mood. Exactly one jewellery wearer only. Casting: fair-skinned Indian adult woman only, light wheatish to fair North Indian or urban Indian complexion, clear fair skin tones. Shot on DSLR, natural skin texture, 85mm candid lifestyle look, 16:9 full frame with safe margins.\n\nThe woman physically wears The Sarvanya Pendant from @img1 body_image and @img2 design only on her neck. GENDER LOCK: Female product on adult woman only. Product dimensions from PDP: product_height_mm=33.35; product_width_mm=23.79; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Keep the jewellery size on the person like @img1 body_image worn neck scale: subtle real PDP size, not enlarged. Use @img2 only for jewellery design.\n\nReplicate the jewellery exactly, 100 percent identical to refs, zero distortion, HD metal and stone detail. This is the single and only jewellery object in the entire image. Other visible people, if any, wear absolutely no jewellery. No readable text anywhere. Any card, tag, notebook, diya label, laptop, or phone screen must be completely blank.\n\nAvoid: floating jewellery overlay, giant product collage, product cutout over people, packshot composited on lifestyle photo, oversized jewellery, extra jewellery, extra earrings, extra necklace, extra rings, extra bracelets, watch, bangle, wrong gender wearer, second jewellery wearer, cropped face, cropped head, readable text, letters, numbers, logo, dark skin, deep brown skin, heavily tanned skin, illustration, CGI, HDR glow, large pendant, pendant covering chest, crowded decorations."
+    },
+    "flatlay": {
+      "code": "BINS0639R11",
+      "name": "The Haily Ring",
+      "gender": "Female",
+      "category": "Rings",
+      "height_mm": 21.96,
+      "width_mm": 14.64,
+      "size_prompt_note": "product_height_mm=21.96; product_width_mm=14.64; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/rings/the-haily-ring~64366.html",
+      "cdn_primary": "https://kinclimg0.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BINS0639R11_YAA22XXXXXXXXXXXX_ABCD00-PICS-00001-1024-65665.png",
+      "alt": "romantic Diwali wishes for lover 2026 flatlay with The Haily Ring",
+      "caption": "Romantic Diwali wishes 2026 vibe: The Haily Ring",
+      "product": {
+        "code": "BINS0639R11",
+        "name": "The Haily Ring",
+        "pdp": "https://www.bluestone.com/rings/the-haily-ring~64366.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Rings/The Haily Ring/0_primary.png",
+        "ProductImages/raw/Rings/The Haily Ring/2_front.png",
+        "ProductImages/raw/Rings/The Haily Ring/6_angle.png"
+      ],
+      "ref_roles": [
+        "primary",
+        "front",
+        "angle"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Photoreal high-end jewellery still life, top-down editorial product flatlay. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast.\n\nRomantic Diwali wishes for lover 2026 top-down flatlay. Flatlay setting ID: marble-vanity. Surface and props: soft cream marble vanity, small brass diya without markings, rose petals, blank cream love note card, warm lamp reflection, no text. The identical The Haily Ring from @img1, @img2 and @img3 rests naturally on the surface at true PDP scale. Product dimensions from PDP: product_height_mm=21.96; product_width_mm=14.64; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Do not enlarge for visibility. Full jewellery visible, 100 percent identical design, zero distortion, HD metal and stone detail.\n\nProps stay secondary. No people, no hands, no logos, no readable text, no letters, no numbers, no other jewellery.\n\nAvoid: hands, people, floating overlays, cutouts, incorrect jewellery design, readable text, logos, price tags, blown whites, HDR glow, illustration, CGI."
+    },
+    "lifestyle": {
+      "code": "BIIP0427H16",
+      "name": "The Vicky Hoop Earrings",
+      "gender": "Female",
+      "category": "Earrings",
+      "height_mm": 14.75,
+      "width_mm": 6.04,
+      "size_prompt_note": "product_height_mm=14.75; product_width_mm=6.04; these are product dimensions, not face-size instructions",
+      "pdp": "https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html",
+      "cdn_primary": "https://kinclimg4.bluestone.com/f_jpg,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIIP0427H16_YAA18DIG6XXXXXXXX_ABCD00-PICS-00004-1024-76610.png",
+      "alt": "romantic Diwali wishes for lover 2026 lifestyle with The Vicky Hoop Earrings",
+      "caption": "Romantic Diwali wishes 2026 look: The Vicky Hoop Earrings",
+      "product": {
+        "code": "BIIP0427H16",
+        "name": "The Vicky Hoop Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-vicky-hoop-earrings~35071.html"
+      },
+      "local_reference_images": [
+        "ProductImages/raw/Earrings/The Vicky Hoop Earrings/1_body_portrait.png",
+        "ProductImages/raw/Earrings/The Vicky Hoop Earrings/0_primary.png"
+      ],
+      "ref_roles": [
+        "body_image",
+        "front_primary"
+      ],
+      "prompt": "STRICT JEWELLERY-COMPLIANCE PHOTOREAL IMAGE. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Romantic Diwali wishes for lover 2026 lifestyle, solo fair-skinned Indian adult woman near a softly lit balcony with blurred Diwali lamps behind her, looking down at a completely blank phone screen with a gentle smile, full head visible and both ears visible, simple ivory festive blouse, no necklace and wrists out of frame. Exactly one jewellery wearer only. Casting: fair-skinned Indian adult woman only, light wheatish to fair North Indian or urban Indian complexion, clear fair skin tones. Shot on DSLR, natural skin texture, 85mm candid lifestyle look, 16:9 full frame with safe margins.\n\nThe woman physically wears The Vicky Hoop Earrings from @img1 body_image and @img2 design only on her ear. GENDER LOCK: Female product on adult woman only. Product dimensions from PDP: product_height_mm=14.75; product_width_mm=6.04; these are product dimensions, not face-size instructions. These values describe only the jewellery product dimensions, never a face or body measurement. Keep the jewellery size on the person like @img1 body_image worn ear scale: subtle real PDP size, not enlarged. Use @img2 only for jewellery design.\n\nReplicate the jewellery exactly, 100 percent identical to refs, zero distortion, HD metal and stone detail. This is the single and only jewellery object in the entire image. Other visible people, if any, wear absolutely no jewellery. No readable text anywhere. Any card, tag, notebook, diya label, laptop, or phone screen must be completely blank.\n\nAvoid: floating jewellery overlay, giant product collage, product cutout over people, packshot composited on lifestyle photo, oversized jewellery, extra jewellery, extra earrings, extra necklace, extra rings, extra bracelets, watch, bangle, wrong gender wearer, second jewellery wearer, cropped face, cropped head, readable text, letters, numbers, logo, dark skin, deep brown skin, heavily tanned skin, illustration, CGI, HDR glow, necklace, bracelet, ring, watch, readable phone screen."
+    }
+  },
+  "wp_post_id": 32481
+}

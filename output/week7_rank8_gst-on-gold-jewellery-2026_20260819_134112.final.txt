@@ -1,0 +1,35 @@
+STEP DONE: Update status files and write the final report | time: 2026-08-19 13:44:51 IST | step duration: 9s | total elapsed: 3m 27s
+
+Week 7 Rank 8 stopped safely at the duplicate intent gate. No new post or media was created.
+
+- Existing live URL: [GST on Gold Jewellery in India](https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/)
+- Existing WordPress post ID: `28892`
+- Duplicate result: Proposed slug is available, but the existing article fully satisfies the same GST intent. Publishing would cause cannibalization.
+- Planned engine: `buying_guide`
+- Planned author: Vikas, ID `270271338`
+- Planned categories: Gold `554493348`; Jewellery Problem & Solution `554493465`
+- Primary keyword: `gst on gold jewellery`
+- Supplied metrics: Volume `9,900`; KD `21`; priority score `2.4039`
+- Visible word count: Not applicable, no article drafted
+- H2 keyword map: Not created because the duplicate gate precedes drafting
+
+Supporting keyword disposition:
+
+- Relevant but unused: `gold gst rate in india`, `gold tax rate`, `what is the gst for gold`
+- Rejected as polluted: piercing phrases, `gold necklace earring set`, `demi fine jewelry meaning`, `2.2 bangle size`, and `bangle size 2.6`. These target piercing, product discovery, jewellery definitions, or sizing rather than gold taxation.
+
+Competitor and factual work:
+
+- Supplied competitor: [CaratLane GST article](https://www.caratlane.com/blog/how-much-gst-is-applied-to-gold-jewellery-in-india/)
+- Competitor analysis and authoritative tax fact checking were not continued after the mandatory duplicate stop.
+- The existing BlueStone page already covers GST rates, bill components, buyer calculations, exchange implications, misconceptions, and FAQs.
+
+Media and product results:
+
+- Carousel media IDs: None
+- Type 3 media IDs: None
+- Product SKUs and rotation changes: None
+- `og:image` verification: Not applicable because no new page was published
+- Higgsfield: BlueStone Scale plan; starting balance `7,497.32`; ending balance `7,497.32`; jobs `0`; retries `0`
+
+The checkpoint records `skipped_existing_intent`. The active Week 7 wrapper will atomically upsert Rank 8 into the Week 7 status CSV. The workbook was not edited because the required spreadsheet artifact runtime was unavailable, so that optional update was not forced.

@@ -1,0 +1,55 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+    "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+  },
+  "slots": {
+    "hero": {
+      "product_name": "The Estrella Oval Bangle",
+      "code": "BIDG0393O37",
+      "pdp": "https://www.bluestone.com/bangles/the-estrella-oval-bangle~34771.html",
+      "product_dimensions": "50.19mm height by 7.1mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Bangles/The Estrella Oval Bangle/1_body_portrait.png",
+        "ProductImages/raw/Bangles/The Estrella Oval Bangle/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Candid portrait of an elegant fair-skinned North Indian woman with a delicate light wheatish complexion, warm expressive eyes, and natural radiant smile, seated at an elegant sunlit vanity dressing table. She is wearing an understated ivory raw silk blouse. Her wrist physically wears The Estrella Oval Bangle from @img2 at true worn scale matching @img1 body_image (product_height_mm=50.19 and product_width_mm=7.1; these are jewellery dimensions, not face or body measurements). The slim rose gold oval bangle features two parallel sweeping rails and central pavé diamond cluster catching soft morning light. The bangle is the single and only jewellery piece in the frame. Warm ambient daylight streaming from sheer curtains, soft marble tabletop with a crystal water glass and fresh blush roses in the background, zero phones, zero readable text. Editorial jewellery magazine aesthetic, natural depth of field. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen, laptop.",
+      "alt": "rose gold bangle 2026 hero: fair-skinned Indian woman wearing The Estrella Oval Bangle in warm natural daylight"
+    },
+    "flatlay": {
+      "product_name": "The Channing Bangle",
+      "code": "BIPS0003O06",
+      "pdp": "https://www.bluestone.com/bangles/the-channing-bangle~975.html",
+      "product_dimensions": "50.9mm height by 7.69mm width (jewellery dimensions only)",
+      "setting": "study-desk",
+      "local_reference_images": [
+        "ProductImages/raw/Bangles/The Channing Bangle/0_primary.png",
+        "ProductImages/raw/Bangles/The Channing Bangle/2_front.png",
+        "ProductImages/raw/Bangles/The Channing Bangle/4_close_up.png"
+      ],
+      "prompt": "Top-down commercial jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with gentle falloff. Flatlay setting: study-desk. Arranged on a smooth natural honey oak study desk: @img1, an authentic fine 18Kt rose gold bangle with diamond accents, accompanied by detailed views from @img2 and @img3, resting flat and centered at true life scale (50.9mm height by 7.69mm width). Beside the bangle are authentic educational inspection props: a matte vintage brass jewellery caliper, an antique brass jeweller's loupe, a flexible plain cream cloth measuring strip without readable markings, and a folded beige linen runner. Soft directional morning window daylight, warm organic shadows, Kodak Portra filmic tonal response, analog grain. No people, no hands, no readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark, ruler markings, numbers.",
+      "alt": "rose gold bangle 2026 flatlay: The Channing Bangle on study desk with brass calipers and loupe",
+      "caption": "The <a href=\"https://www.bluestone.com/bangles/the-channing-bangle~975.html\">Channing Bangle</a> in 18Kt rose gold evaluated for precision sizing and daily wear comfort"
+    },
+    "lifestyle": {
+      "product_name": "The Muricelle Bangle",
+      "code": "BISM0003O14",
+      "pdp": "https://www.bluestone.com/bangles/the-muricelle-bangle~1001.html",
+      "product_dimensions": "52.03mm height by 14.3mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Bangles/The Muricelle Bangle/1_body_portrait.png",
+        "ProductImages/raw/Bangles/The Muricelle Bangle/0_primary.png"
+      ],
+      "prompt": "Hyper-realistic candid lifestyle action photograph, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A poised, fair-skinned North Indian professional woman with gentle light wheatish complexion is captured in an authentic candid moment at a modern sunlit architectural lounge. She wears a tailored charcoal blazer with sleeves pushed back slightly to the forearm. Her wrist physically wears The Muricelle Bangle from @img2 at exact worn scale matching @img1 body_image (product_height_mm=52.03 and product_width_mm=14.3; jewellery dimensions only). The fine rose gold bangle with intricate lattice diamond detailing glows softly under warm indoor daylight. She gently adjusts the secure clasp with her fingers, showing natural skin texture and realistic hand anatomy. Warm wooden architectural beams, lush green monstera leaves blurred in the creamy background, zero phone screens, no readable text. Editorial magazine quality. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen.",
+      "alt": "rose gold bangle 2026 lifestyle: fair-skinned Indian professional woman wearing The Muricelle Bangle in modern office lounge",
+      "caption": "The <a href=\"https://www.bluestone.com/bangles/the-muricelle-bangle~1001.html\">Muricelle Bangle</a> features an openwork lattice design in 18Kt rose gold and diamonds for daily office styling"
+    }
+  },
+  "output": {
+    "hero": "output/rose-gold-bangle-hero-2026.webp",
+    "flatlay": "output/rose-gold-bangle-flatlay-2026.webp",
+    "lifestyle": "output/rose-gold-bangle-lifestyle-2026.webp"
+  }
+}

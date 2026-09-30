@@ -1,0 +1,176 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 133 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 133\n- Action: New\n- Primary keyword: pearl jewellery set\n- Volume: 9900\n- KD: 25\n- Priority score: 4950\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: pearl-jewellery-set-2026\n- Article engine: design_listicle\n- Category hint: `Jewellery Trends` 554493317 or `Jewellery & Lifestyle` 554493425\n- Supplied supporting keywords: pearl jewellery set for women\n- Supplied competitor URL: blank in source row\n- Semrush page: pearl jewellery set\n- Source execution note: Week7 multi-brand fill (strict). intent=sig:pearl_jewellery_set; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq; from Competitor_Master_Data. One URL only. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank133.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank133.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--`.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: Read required docs | time: 2026-08-25T16:05:30+05:30 | elapsed: 00:00:00
+STEP DONE: Read required docs | time: 2026-08-25T16:06:00+05:30 | step duration: 00:00:30 | total elapsed: 00:00:30
+
+STEP START: Verify Higgsfield status and report credits/plan | time: 2026-08-25T16:06:00+05:30 | elapsed: 00:00:30
+STEP DONE: Verify Higgsfield status and report credits/plan | time: 2026-08-25T16:06:10+05:30 | step duration: 00:00:10 | total elapsed: 00:00:40
+
+STEP START: Inspect the Week 7 target row | time: 2026-08-25T16:06:10+05:30 | elapsed: 00:00:40
+STEP DONE: Inspect the Week 7 target row | time: 2026-08-25T16:06:40+05:30 | step duration: 00:00:30 | total elapsed: 00:01:10
+
+STEP START: Check duplicate slug and search intent | time: 2026-08-25T16:06:40+05:30 | elapsed: 00:01:10
+STEP DONE: Check duplicate slug and search intent | time: 2026-08-25T16:07:15+05:30 | step duration: 00:00:35 | total elapsed: 00:01:45
+
+STEP START: Analyze the supplied competitor URL and fact-check current sources | time: 2026-08-25T16:07:15+05:30 | elapsed: 00:01:45
+STEP DONE: Analyze the supplied competitor URL and fact-check current sources | time: 2026-08-25T16:07:20+05:30 | step duration: 00:00:05 | total elapsed: 00:01:50
+
+STEP START: Filter and map supporting keywords | time: 2026-08-25T16:07:20+05:30 | elapsed: 00:01:50
+STEP DONE: Filter and map supporting keywords | time: 2026-08-25T16:07:30+05:30 | step duration: 00:00:10 | total elapsed: 00:02:00
+
+STEP START: Build the H2 keyword map | time: 2026-08-25T16:07:30+05:30 | elapsed: 00:02:00
+STEP DONE: Select article structure and visual concept | time: 2026-08-25T16:08:35+05:30 | step duration: 00:01:05 | total elapsed: 00:03:05
+
+STEP START: Draft the complete article | time: 2026-08-25T16:08:35+05:30 | elapsed: 00:03:05
+STEP DONE: Draft the complete article | time: 2026-08-25T16:09:30+05:30 | step duration: 00:00:55 | total elapsed: 00:04:00
+
+STEP START: Select products and carousel media | time: 2026-08-25T16:09:30+05:30 | elapsed: 00:04:00
+STEP DONE: Select products and carousel media | time: 2026-08-25T16:10:15+05:30 | step duration: 00:00:45 | total elapsed: 00:04:45
+
+STEP START: Publish the WordPress post | time: 2026-08-25T16:10:15+05:30 | elapsed: 00:04:45
+STEP DONE: Publish the WordPress post | time: 2026-08-25T16:10:35+05:30 | step duration: 00:00:20 | total elapsed: 00:05:05
+
+STEP START: Generate Type 3 images through the Higgsfield CLI | time: 2026-08-25T16:10:35+05:30 | elapsed: 00:05:05
+I have launched the Type 3 image generation pipeline for Week 7 Rank 133 (`pearl-jewellery-set-2026`) via the Higgsfield CLI (`nano_banana_pro`, 16:9, 2k). I am currently awaiting completion of the generation and conversion of the Hero, Flatlay, and Lifestyle images.
+The Hero and Flatlay Type 3 images have generated and downloaded successfully. The final Lifestyle slot is currently `in_progress` in Higgsfield and downloading shortly.
+STEP DONE: Generate Type 3 images through the Higgsfield CLI | time: 2026-08-25T16:14:25+05:30 | step duration: 00:03:50 | total elapsed: 00:08:55
+
+STEP START: Patch images and social metadata into WordPress | time: 2026-08-25T16:14:25+05:30 | elapsed: 00:08:55
+STEP DONE: Patch images and social metadata into WordPress | time: 2026-08-25T16:15:00+05:30 | step duration: 00:00:35 | total elapsed: 00:09:30
+
+STEP START: Run live QA | time: 2026-08-25T16:15:00+05:30 | elapsed: 00:09:30
+STEP DONE: Run live QA | time: 2026-08-25T16:15:35+05:30 | step duration: 00:00:35 | total elapsed: 00:10:05
+
+STEP START: Update status files and write the final report | time: 2026-08-25T16:15:35+05:30 | elapsed: 00:10:05
+STEP DONE: Update status files and write the final report | time: 2026-08-25T16:16:15+05:30 | step duration: 00:00:40 | total elapsed: 00:10:45
+
+---
+
+# Week 7 Rank 133 End-to-End Execution Report
+
+### Core Post Details
+- **Live URL**: [https://blog.bluestone.com/pearl-jewellery-set-2026/](https://blog.bluestone.com/pearl-jewellery-set-2026/)
+- **WordPress Post ID**: `36092`
+- **Article Engine**: `design_listicle`
+- **Author**: Satyam (ID: `270271337`), on-page byline `By Satyam, BlueStone Editorial`
+- **Categories Assigned**:
+  - `Jewellery Trends` (ID: `554493317`)
+  - `Jewellery & Lifestyle` (ID: `554493425`)
+  - `Pearl` (ID: `554493472`)
+  - `Necklace` (ID: `554493422`)
+  - `Earring` (ID: `554493372`)
+  - `Gemstone` (ID: `554493414`)
+  - `Gold` (ID: `554493348`)
+  - `Gift` (ID: `554493424`)
+- **Visible Word Count**: 3,125 words (Prose + FAQs)
+
+---
+
+### Keyword & Search Metrics
+- **Primary Keyword**: `pearl jewellery set`
+  - **Search Volume**: 9,900
+  - **Keyword Difficulty (KD)**: 25
+  - **Priority Score**: 4,950
+- **Supplied Supporting Keywords**:
+  - `pearl jewellery set for women` (**Accepted & Mapped**: Integrated across H2 headings, intro within first 100 words, body sections, FAQs, and JSON-LD schemas)
+- **Supporting Keywords Rejected**: None (all supplied keywords were 100% topically relevant)
+
+---
+
+### H2 Keyword & Section Map
+1. **H2: What Defines a Modern Pearl Jewellery Set in 2026?** `[primary-backed]`
+2. **H2: 15 Trending Pearl Jewellery Set Designs for Women in 2026** `[supporting-keyword-backed]`
+   - *H3: 1. Solitaire Pearl Pendant and Matching Stud Earring Set*
+   - *H3: 2. Diamond Halo Pearl Necklace and Drop Earring Set*
+   - *H3: 3. Multi-Strand Cultured Pearl Choker and Huggie Set*
+   - *H3: 4. Royal Rani Haar Layered Pearl Set with Jhumkas*
+   - *H3: 5. Contemporary Floating Pearl Y-Lariat and Ear Threader Set*
+   - *H3: 6. Floral Yellow Gold Filigree Pearl Pendant and Tops Set*
+   - *H3: 7. Modern Rose Gold Pearl and Diamond Cluster Set*
+   - *H3: 8. Classic Freshwater Pearl Princess Necklace and Stud Set*
+   - *H3: 9. South Sea Golden Pearl Pendant and Dangling Earring Set*
+   - *H3: 10. Bridal Polki-Embellished Pearl Haar and Chandbali Set*
+   - *H3: 11. Minimalist Bar Pendant and Petite Pearl Stud Set*
+   - *H3: 12. Geometric Asymmetrical Pearl and Diamond Set*
+   - *H3: 13. Vintage Victorian-Inspired Pearl Choker and Earring Ensemble*
+   - *H3: 14. White Gold Tahitian Black Pearl Set*
+   - *H3: 15. Modular Pearl Necklace and Convertible Drop Earring Set*
+3. **H2: Curated Pearl Jewellery Sets for Every Occasion** `[intent-inferred]` (Houses the 6-card interactive coverflow carousel)
+4. **H2: How to Choose the Perfect Pearl Jewellery Set for Women: Metal Purity, Pearl Grading & Fit** `[supporting-keyword-backed]`
+5. **H2: Occasion Styling Guide: Matching Necklines, Outfits & Color Palettes** `[intent-inferred]`
+6. **H2: BIS Hallmarking, Diamond Certification & Authenticity Verification** `[intent-inferred]`
+7. **H2: Care and Maintenance: Preserving the Nacre and Luster of Your Pearl Jewellery Set** `[primary-backed]`
+8. **H2: Final Thoughts on Curating Your Pearl Jewellery Set in 2026** `[primary-backed]`
+9. **H2: Frequently Asked Questions about Pearl Jewellery Sets** `[primary-backed]` (6 visible Q&A pairs)
+
+---
+
+### Competitor Analysis & Fact-Checking Summary
+- **Competitor URL**: Blank in source row (no invented competitor URL).
+- **Factual Sources & Regulations Verified**:
+  - **Bureau of Indian Standards (BIS)**: Mandatory 3-part laser hallmark (Triangular BIS mark, purity grade e.g., 18K750 / 14K585 / 22K916, 6-digit HUID code verifiable via BIS CARE app).
+  - **Gemological Standards (GIA / IGI)**: 4Cs grading for diamonds, pearl grading criteria (luster, surface cleanliness, nacre thickness, symmetry, color overtones).
+  - **Pearl Chemistry & Care**: Organic nacre protection; "last on, first off" rule; avoidance of ultrasonic cleaners and acidic cosmetic sprays; flat soft velvet storage.
+
+---
+
+### Media & Visual Assets
+
+#### Type 2 Carousel Media (6 Cards)
+| Card | Product Name | SKU Code | Category | Media ID | Live WebP Asset URL |
+|---|---|---|---|---|---|
+| 1 | The Thaloria Pendant | `BISW1080P131` | Pendants | `36086` | [the-thaloria-pendant-carousel-27.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/the-thaloria-pendant-carousel-27.webp) |
+| 2 | The Asya Huggie Earrings | `BISA0255D05` | Earrings | `36087` | [the-asya-huggie-earrings-carousel-24.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/the-asya-huggie-earrings-carousel-24.webp) |
+| 3 | The Shining Star Bracelet | `BIMG0635V45` | Bracelets | `36088` | [the-shining-star-bracelet-carousel-25.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/the-shining-star-bracelet-carousel-25.webp) |
+| 4 | The Muricelle Bangle | `BISM0003O14` | Bangles | `36089` | [the-muricelle-bangle-carousel-14.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/the-muricelle-bangle-carousel-14.webp) |
+| 5 | The Casma Mangalsutra | `BIMA0780C53` | Mangalsutra Chains | `36090` | [the-casma-mangalsutra-carousel-3.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/the-casma-mangalsutra-carousel-3.webp) |
+| 6 | The Liza ring | `BIAR0097R07` | Rings | `36091` | [the-liza-ring-carousel-16.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/the-liza-ring-carousel-16.webp) |
+
+#### Type 3 Concept Media (Higgsfield nano_banana_pro, 16:9, 2k)
+| Slot | Product Name | SKU Code | Setting / Scene | Media ID | Higgsfield Job ID | Live WebP Asset URL |
+|---|---|---|---|---|---|---|
+| **Hero (Featured)** | The Thaloria Pendant | `BISW1080P131` | Candid drawing room lifestyle portrait | `36093` | `64297982-3cd0-4eda-9492-bd8fc176d044` | [pearl-jewellery-set-hero-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/pearl-jewellery-set-hero-2026.webp) |
+| **Flatlay** | The Asya Huggie Earrings | `BISA0255D05` | `festive-mantel` (Stone/teak mantel, marigold petals, brass diya, raw silk) | `36094` | `392c75de-48b2-4b5d-b633-84a0fddd92ec` | [pearl-jewellery-set-flatlay-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/pearl-jewellery-set-flatlay-2026.webp) |
+| **Lifestyle** | The Ursa Hoop Earrings | `BISP0427H21` | Side profile terrace window candid motion | `36095` | `0850199e-99ec-42a9-ac1d-1bd6c15527db` | [pearl-jewellery-set-lifestyle-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/pearl-jewellery-set-lifestyle-2026.webp) |
+
+---
+
+### Higgsfield Usage & Balance
+- **Subscription Plan**: `scale`
+- **Starting Credits**: `1093.32`
+- **Total Generations Submitted**: 3 jobs (`count: 1` per slot)
+- **Retries**: `0` (100% first-pass generation success)
+- **Ending Credits**: `977.32`
+
+---
+
+### Duplicate Check & Live QA Verification
+- **Duplicate Slug & Search Intent Check**: Passed (0 prior duplicate posts for `pearl-jewellery-set-2026` or matching intent).
+- **HTTP Status Code**: `200 OK`
+- **Single H1 Tag**: Verified (`15 Trending Pearl Jewellery Set Designs for Women in 2026: Modern Gold, Choker & Pendant Sets`).
+- **Section Ordering**: "Final Thoughts on Curating Your Pearl Jewellery Set in 2026" is placed immediately before "Frequently Asked Questions about Pearl Jewellery Sets".
+- **FAQ Count**: 6 visible Q&A pairs rendered in the DOM with matching `FAQPage` JSON-LD schema.
+- **BlogPosting Schema**: Verified with 3 image URLs and author `Satyam`.
+- **Prohibited Syntax**: Zero em dashes, zero en dashes, zero spaced hyphens, and zero price mentions.
+- **Social Metadata**: Public `og:image` and `twitter:image` verified matching the Type 3 Featured Hero WebP.
+- **Canonical URL**: Verified pointing to `https://blog.bluestone.com/pearl-jewellery-set-2026/`.
+
+---
+
+### Status & State Synchronization
+1. `output/Week7_Gift_Guides_PostRank10_status.csv` upserted with Rank 133 details.
+2. `output/Week7_Gift_Guides_PostRank10.csv` updated (Rank 133 marked as `Done`).
+3. `output/product_rotation.json` updated with Rank 133 Type 3 trio and `festive-mantel` setting.
+4. `SEO Strategy 2026.xlsx` Sheet `Week 7` row 133 updated with live URL, `Done` action, and execution notes.
+5. Checkpoint `output/checkpoints/week7_rank133.json` marked complete across all 15 stages.

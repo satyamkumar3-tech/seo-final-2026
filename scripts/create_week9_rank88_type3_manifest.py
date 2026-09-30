@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Create Type 3 prompts manifest for Week 9 Rank 88: panna stone ring."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+manifest = {
+    "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+    "higgsfield": {
+        "model": "nano_banana_pro",
+        "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+        "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+    },
+    "slots": {
+        "hero": {
+            "product_name": "The Jasper Band For Him",
+            "code": "BISL0851R28",
+            "pdp": "https://www.bluestone.com/rings/the-jasper-band-for-him~93964.html",
+            "product_dimensions": "24.11mm height by 11.92mm width (jewellery dimensions only, not face or body measurements)",
+            "local_reference_images": [
+                "ProductImages/raw/Rings/The Jasper Band For Him/1_body_portrait.png",
+                "ProductImages/raw/Rings/The Jasper Band For Him/2_front.png"
+            ],
+            "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Candid portrait of an accomplished fair-skinned North Indian man with a refined light wheatish complexion, neatly groomed beard, and warm natural presence, seated at a dark wooden consultation desk in an upscale fine jewellery studio. He is physically wearing The Jasper Band For Him from @img2 on his finger at true worn scale matching @img1 body_image (product_height_mm=24.11 and product_width_mm=11.92; these are jewellery dimensions only, not face or body measurements). The substantial 18Kt yellow gold band with its rich golden polish and set gemstone catches soft diffused morning window light, casting a gentle contact shadow against his skin. He wears a tailored charcoal linen shirt. Softly blurred in the background are curated jewellery trays and a wooden bookshelf; zero phones, zero screens, zero readable text. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen, laptop.",
+            "alt": "panna stone ring 2026 hero: fair-skinned Indian man wearing substantial gold band ring in warm studio light"
+        },
+        "flatlay": {
+            "product_name": "The Quinn Ring",
+            "code": "BIAR0097R16",
+            "pdp": "https://www.bluestone.com/rings/the-quinn-ring~57845.html",
+            "product_dimensions": "21.6mm height by 7.84mm width (jewellery dimensions only)",
+            "setting": "cafe-tray",
+            "local_reference_images": [
+                "ProductImages/raw/Rings/The Quinn Ring/0_primary.png",
+                "ProductImages/raw/Rings/The Quinn Ring/2_front.png",
+                "ProductImages/raw/Rings/The Quinn Ring/5_close_up.png"
+            ],
+            "prompt": "Top-down commercial fine jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with gentle falloff. Flatlay setting: cafe-tray. Arranged on a vintage polished brass cafe tray with subtle patinated edges resting on a bistro table in soft morning cafe daylight: @img1, authentic fine 18Kt yellow gold ring with sparkling gemstone setting, accompanied by macro details from @img2 and @img3, resting centered at true life scale (21.6mm height by 7.84mm width). Beside the ring are authentic tactile styling props: a folded oatmeal linen napkin, a small unglazed ceramic trinket dish, and an antique unbranded brass jeweller loupe with clear glass lens. Soft natural morning illumination, delicate organic shadows, Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. No people, no hands, no readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark, numbers, phone screen.",
+            "alt": "panna stone ring 2026 flatlay: The Quinn Ring on vintage brass cafe tray with linen napkin and brass loupe",
+            "caption": "The <a href=\"https://www.bluestone.com/rings/the-quinn-ring~57845.html\">Quinn Ring</a> in fine gold showcasing precision setting security and timeless gemstone radiance"
+        },
+        "lifestyle": {
+            "product_name": "The Gigi Ring",
+            "code": "BINS0639R18",
+            "pdp": "https://www.bluestone.com/rings/the-gigi-ring~64382.html",
+            "product_dimensions": "23.0mm height by 16.12mm width (jewellery dimensions only, not face or body measurements)",
+            "local_reference_images": [
+                "ProductImages/raw/Rings/The Gigi Ring/1_body_portrait.png",
+                "ProductImages/raw/Rings/The Gigi Ring/2_front.png"
+            ],
+            "prompt": "Hyper-realistic candid lifestyle action photograph, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A refined fair-skinned North Indian woman with a delicate light wheatish complexion, graceful posture, and softly pinned hair is captured in a serene candid moment, gently admiring The Gigi Ring from @img2 worn on her hand at exact worn scale matching @img1 body_image (product_height_mm=23.0 and product_width_mm=16.12; jewellery dimensions only). The exquisite 18Kt gold statement ring with its sparkling diamond and gemstone halo rests flush against her finger, catching warm natural room daylight with soft highlights and organic contact shadows. She wears a tasteful emerald-green raw silk kurti. Warm serene interior setting, sheer curtains in soft focus, zero phone screens, no readable text. Visual style: subtle cinematic film grain / analog grain, Kodak Portra color science, gentle highlight halation, creamy bokeh, filmic tonal response with smooth highlight roll-off, editorial color grading, natural dynamic range, filmic contrast. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen.",
+            "alt": "panna stone ring 2026 lifestyle: fair-skinned Indian woman styling fine gold statement gemstone ring with festive attire",
+            "caption": "The <a href=\"https://www.bluestone.com/rings/the-gigi-ring~64382.html\">Gigi Ring</a> in 18Kt gold styled gracefully for versatile everyday elegance and festive celebrations"
+        }
+    },
+    "output": {
+        "hero": "output/panna-stone-ring-hero-2026.webp",
+        "flatlay": "output/panna-stone-ring-flatlay-2026.webp",
+        "lifestyle": "output/panna-stone-ring-lifestyle-2026.webp"
+    }
+}
+
+manifest_path = ROOT / "output/Week9_Rank88_PannaStoneRing_type3_prompts.json"
+manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+print(f"Manifest written to {manifest_path}")
+

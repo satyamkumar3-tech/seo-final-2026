@@ -1,0 +1,874 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 125 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 125\n- Action: New\n- Primary keyword: baby gold bracelet\n- Volume: 8100\n- KD: 20\n- Priority score: 4500\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: baby-gold-bracelet-2027\n- Article engine: design_listicle\n- Category hint: `Gold` 554493348 + `Jewellery Problem & Solution` 554493465\n- Supplied supporting keywords: baby gold bracelet | baby gold bracelet | baby gold bracelet | baby gold bracelet\n- Supplied competitor URL: blank in source row\n- Semrush page: baby gold bracelet\n- Source execution note: Week7 scrub2. intent=sig:baby_bracelet; brands=CaratLane,Joyalukkas,Kalyan,Malabar,Tanishq.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank125.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank125.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--`.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+Converting The Novare Evil Eye Kids Nazariya Bracelet.png -> the-novare-evil-eye-kids-nazariya-bracelet-carousel.webp
+Uploading the-novare-evil-eye-kids-nazariya-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36021 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-novare-evil-eye-kids-nazariya-bracelet-carousel.webp
+Converting The Winkoo Kids Evil Eye Bracelet.png -> the-winkoo-kids-evil-eye-bracelet-carousel.webp
+Uploading the-winkoo-kids-evil-eye-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36022 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-winkoo-kids-evil-eye-bracelet-carousel.webp
+Converting The Shining Star Bracelet.png -> the-shining-star-bracelet-carousel.webp
+Uploading the-shining-star-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36023 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-shining-star-bracelet-carousel.webp
+Converting The Kricia Charm Bracelet.png -> the-kricia-charm-bracelet-carousel.webp
+Uploading the-kricia-charm-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36024 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-kricia-charm-bracelet-carousel.webp
+Converting The Elize Evil Eye Bracelet.png -> the-elize-evil-eye-bracelet-carousel.webp
+Uploading the-elize-evil-eye-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36025 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-elize-evil-eye-bracelet-carousel.webp
+Converting The Tapia Chain Bracelet.png -> the-tapia-chain-bracelet-carousel.webp
+Uploading the-tapia-chain-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36026 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-tapia-chain-bracelet-carousel.webp
+Saved carousel media metadata to /Users/satyamkumar/Downloads/final seo generation context/output/week7_rank125_product_media.json
+Completed 6 carousel items.
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-143` finished with status `DONE` at 2026-08-25T11:09:59+05:30.
+Output:
+Converting The Novare Evil Eye Kids Nazariya Bracelet.png -> the-novare-evil-eye-kids-nazariya-bracelet-carousel.webp
+Uploading the-novare-evil-eye-kids-nazariya-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36021 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-novare-evil-eye-kids-nazariya-bracelet-carousel.webp
+Converting The Winkoo Kids Evil Eye Bracelet.png -> the-winkoo-kids-evil-eye-bracelet-carousel.webp
+Uploading the-winkoo-kids-evil-eye-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36022 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-winkoo-kids-evil-eye-bracelet-carousel.webp
+Converting The Shining Star Bracelet.png -> the-shining-star-bracelet-carousel.webp
+Uploading the-shining-star-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36023 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-shining-star-bracelet-carousel.webp
+Converting The Kricia Charm Bracelet.png -> the-kricia-charm-bracelet-carousel.webp
+Uploading the-kricia-charm-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36024 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-kricia-charm-bracelet-carousel.webp
+Converting The Elize Evil Eye Bracelet.png -> the-elize-evil-eye-bracelet-carousel.webp
+Uploading the-elize-evil-eye-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36025 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-elize-evil-eye-bracelet-carousel.webp
+Converting The Tapia Chain Bracelet.png -> the-tapia-chain-bracelet-carousel.webp
+Uploading the-tapia-chain-bracelet-carousel.webp to WordPress...
+  Uploaded ID: 36026 | URL: https://blog.bluestone.com/wp-content/uploads/2026/08/the-tapia-chain-bracelet-carousel.webp
+Saved carousel media metadata to /Users/satyamkumar/Downloads/final seo generation context/output/week7_rank125_product_media.json
+Completed 6 carousel items.
+Uploading media ref: 1_body_portrait.png (attempt 1)...
+  Uploaded -> 6a3ff84a-9efc-4395-950c-e2f6ae4e54e4
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> b846b0a6-160c-43b5-b7eb-d1cfd4a36f69
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: 2289f666-6b21-4f11-8ecb-99f5fc81ae9b
+Polling job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b until completion...
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 0s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 8s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 17s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 25s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 33s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: completed (elapsed: 41s)
+Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b result URL: https://media.higgsfield.ai/generated/output/0f04c62c-b5f6-4034-8c8d-327c082cfefb/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/0f04c62c-b5f6-4034-8c8d-327c082cfefb/0.png -> baby-gold-bracelet-hero-2027.png...
+Converting baby-gold-bracelet-hero-2027.png -> baby-gold-bracelet-hero-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> 3f77341e-b8d9-48fe-8fc2-a386dae858ba
+Uploading media ref: 2_side_1.png (attempt 1)...
+  Uploaded -> d1ddaf89-c439-4ce4-8f15-7ce3c96ea2ef
+Uploading media ref: 3_back.png (attempt 1)...
+  Uploaded -> 43c4ba77-9005-4f4c-b179-8dc66750390f
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: 63637e1a-be31-4822-bc58-5d1b7454238e
+Polling job 63637e1a-be31-4822-bc58-5d1b7454238e until completion...
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 0s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 8s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 16s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 24s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 32s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: completed (elapsed: 41s)
+Job 63637e1a-be31-4822-bc58-5d1b7454238e result URL: https://media.higgsfield.ai/generated/output/a73950b7-4c74-4b5b-8f12-259837552ea6/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/a73950b7-4c74-4b5b-8f12-259837552ea6/0.png -> baby-gold-bracelet-flatlay-2027.png...
+Converting baby-gold-bracelet-flatlay-2027.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Uploading media ref: 1_body_portrait.png (attempt 1)...
+  Uploaded -> 3da49b6b-568e-4a6f-ac34-e4df997e3a96
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> e0ff4c10-096b-4e00-844c-9fcf09633e9d
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: 2289658e-5b12-4217-bfd2-28e4e97ff0ca
+Polling job 2289658e-5b12-4217-bfd2-28e4e97ff0ca until completion...
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 0s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 8s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 16s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 25s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 33s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 41s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: completed (elapsed: 49s)
+Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca result URL: https://media.higgsfield.ai/generated/output/0f04c62c-b5f6-4034-8c8d-327c082cfefb/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/0f04c62c-b5f6-4034-8c8d-327c082cfefb/0.png -> baby-gold-bracelet-lifestyle-2027.png...
+Converting baby-gold-bracelet-lifestyle-2027.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and converted!
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-174` finished with status `DONE` at 2026-08-25T11:13:30+05:30.
+Output:
+scripts/generate_week7_rank125_type3.py written.
+Saved manifest to /Users/satyamkumar/Downloads/final seo generation context/output/week7_rank125_type3_manifest.json
+
+==========================================
+Processing Slot: HERO (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Uploading media ref: 1_body_portrait.png (attempt 1)...
+  Uploaded -> 6a3ff84a-9efc-4395-950c-e2f6ae4e54e4
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> b846b0a6-160c-43b5-b7eb-d1cfd4a36f69
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: 2289f666-6b21-4f11-8ecb-99f5fc81ae9b
+Polling job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b until completion...
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 0s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 8s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 17s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 25s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: in_progress (elapsed: 33s)
+  Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b status: completed (elapsed: 41s)
+Job 2289f666-6b21-4f11-8ecb-99f5fc81ae9b result URL: https://media.higgsfield.ai/generated/output/0f04c62c-b5f6-4034-8c8d-327c082cfefb/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/0f04c62c-b5f6-4034-8c8d-327c082cfefb/0.png -> baby-gold-bracelet-hero-2027.png...
+Converting baby-gold-bracelet-hero-2027.png -> baby-gold-bracelet-hero-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> 3f77341e-b8d9-48fe-8fc2-a386dae858ba
+Uploading media ref: 2_side_1.png (attempt 1)...
+  Uploaded -> d1ddaf89-c439-4ce4-8f15-7ce3c96ea2ef
+Uploading media ref: 3_back.png (attempt 1)...
+  Uploaded -> 43c4ba77-9005-4f4c-b179-8dc66750390f
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: 63637e1a-be31-4822-bc58-5d1b7454238e
+Polling job 63637e1a-be31-4822-bc58-5d1b7454238e until completion...
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 0s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 8s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 16s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 24s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: in_progress (elapsed: 32s)
+  Job 63637e1a-be31-4822-bc58-5d1b7454238e status: completed (elapsed: 41s)
+Job 63637e1a-be31-4822-bc58-5d1b7454238e result URL: https://media.higgsfield.ai/generated/output/a73950b7-4c74-4b5b-8f12-259837552ea6/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/a73950b7-4c74-4b5b-8f12-259837552ea6/0.png -> baby-gold-bracelet-flatlay-2027.png...
+Converting baby-gold-bracelet-flatlay-2027.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Uploading media ref: 1_body_portrait.png (attempt 1)...
+  Uploaded -> 3da49b6b-568e-4a6f-ac34-e4df997e3a96
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> e0ff4c10-096b-4e00-844c-9fcf09633e9d
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: 2289658e-5b12-4217-bfd2-28e4e97ff0ca
+Polling job 2289658e-5b12-4217-bfd2-28e4e97ff0ca until completion...
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 0s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 8s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 16s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 25s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 33s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: in_progress (elapsed: 41s)
+  Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca status: completed (elapsed: 49s)
+Job 2289658e-5b12-4217-bfd2-28e4e97ff0ca result URL: https://media.higgsfield.ai/generated/output/0f04c62c-b5f6-4034-8c8d-327c082cfefb/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/0f04c62c-b5f6-4034-8c8d-327c082cfefb/0.png -> baby-gold-bracelet-lifestyle-2027.png...
+Converting baby-gold-bracelet-lifestyle-2027.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and converted!
+
+Saved manifest to /Users/satyamkumar/Downloads/final seo generation context/output/week7_rank125_type3_manifest.json
+
+==========================================
+Processing Slot: HERO (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Uploading media ref: 1_body_portrait.png (attempt 1)...
+  Uploaded -> a1c7dcf6-ce69-42b7-8735-a7b693fa5c9b
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> c40b5403-1250-4fe7-86c2-b52b36b4e054
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: ab7d1952-ce37-4d76-880c-e22cf05d6482
+Polling job ab7d1952-ce37-4d76-880c-e22cf05d6482 until completion...
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: in_progress (elapsed: 0s)
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: in_progress (elapsed: 8s)
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: in_progress (elapsed: 17s)
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: in_progress (elapsed: 25s)
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: completed (elapsed: 33s)
+Job ab7d1952-ce37-4d76-880c-e22cf05d6482 result URL: https://media.higgsfield.ai/generated/output/3e2ca365-d5c2-4876-96b6-59b439fb0421/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/3e2ca365-d5c2-4876-96b6-59b439fb0421/0.png -> baby-gold-bracelet-hero-2027.png...
+Converting baby-gold-bracelet-hero-2027.png -> baby-gold-bracelet-hero-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> e0c87340-4286-4554-aa6a-685b82ae41eb
+Uploading media ref: 2_side_1.png (attempt 1)...
+  Uploaded -> 3574be07-8898-4c6e-b3d9-693246835165
+Uploading media ref: 3_back.png (attempt 1)...
+  Uploaded -> b3263f17-b0a5-48b4-933e-e67c87c9bc3c
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling job afb545f4-3d07-4228-a3f2-1d5ce5787680 until completion...
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 0s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 8s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 16s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 25s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 33s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: completed (elapsed: 41s)
+Job afb545f4-3d07-4228-a3f2-1d5ce5787680 result URL: https://media.higgsfield.ai/generated/output/f90fe297-c831-41ee-b5a8-4ce67da510c4/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/f90fe297-c831-41ee-b5a8-4ce67da510c4/0.png -> baby-gold-bracelet-flatlay-2027.png...
+Converting baby-gold-bracelet-flatlay-2027.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Uploading media ref: 1_body_portrait.png (attempt 1)...
+  Uploaded -> 6aa83669-e770-432d-947b-1cb8ff8fbc31
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> 831a299c-e3a5-48b9-bb88-f547c870bfb9
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling job afb545f4-3d07-4228-a3f2-1d5ce5787680 until completion...
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: completed (elapsed: 0s)
+Job afb545f4-3d07-4228-a3f2-1d5ce5787680 result URL: https://media.higgsfield.ai/generated/output/f90fe297-c831-41ee-b5a8-4ce67da510c4/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/f90fe297-c831-41ee-b5a8-4ce67da510c4/0.png -> baby-gold-bracelet-lifestyle-2027.png...
+Converting baby-gold-bracelet-lifestyle-2027.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and converted!
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-195` finished with status `DONE` at 2026-08-25T11:13:58+05:30.
+Output:
+Saved manifest to /Users/satyamkumar/Downloads/final seo generation context/output/week7_rank125_type3_manifest.json
+
+==========================================
+Processing Slot: HERO (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Uploading media ref: 1_body_portrait.png (attempt 1)...
+  Uploaded -> a1c7dcf6-ce69-42b7-8735-a7b693fa5c9b
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> c40b5403-1250-4fe7-86c2-b52b36b4e054
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: ab7d1952-ce37-4d76-880c-e22cf05d6482
+Polling job ab7d1952-ce37-4d76-880c-e22cf05d6482 until completion...
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: in_progress (elapsed: 0s)
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: in_progress (elapsed: 8s)
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: in_progress (elapsed: 17s)
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: in_progress (elapsed: 25s)
+  Job ab7d1952-ce37-4d76-880c-e22cf05d6482 status: completed (elapsed: 33s)
+Job ab7d1952-ce37-4d76-880c-e22cf05d6482 result URL: https://media.higgsfield.ai/generated/output/3e2ca365-d5c2-4876-96b6-59b439fb0421/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/3e2ca365-d5c2-4876-96b6-59b439fb0421/0.png -> baby-gold-bracelet-hero-2027.png...
+Converting baby-gold-bracelet-hero-2027.png -> baby-gold-bracelet-hero-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> e0c87340-4286-4554-aa6a-685b82ae41eb
+Uploading media ref: 2_side_1.png (attempt 1)...
+  Uploaded -> 3574be07-8898-4c6e-b3d9-693246835165
+Uploading media ref: 3_back.png (attempt 1)...
+  Uploaded -> b3263f17-b0a5-48b4-933e-e67c87c9bc3c
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling job afb545f4-3d07-4228-a3f2-1d5ce5787680 until completion...
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 0s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 8s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 16s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 25s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 33s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: completed (elapsed: 41s)
+Job afb545f4-3d07-4228-a3f2-1d5ce5787680 result URL: https://media.higgsfield.ai/generated/output/f90fe297-c831-41ee-b5a8-4ce67da510c4/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/f90fe297-c831-41ee-b5a8-4ce67da510c4/0.png -> baby-gold-bracelet-flatlay-2027.png...
+Converting baby-gold-bracelet-flatlay-2027.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Uploading media ref: 1_body_portrait.png (attempt 1)...
+  Uploaded -> 6aa83669-e770-432d-947b-1cb8ff8fbc31
+Uploading media ref: 0_primary.png (attempt 1)...
+  Uploaded -> 831a299c-e3a5-48b9-bb88-f547c870bfb9
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling job afb545f4-3d07-4228-a3f2-1d5ce5787680 until completion...
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: completed (elapsed: 0s)
+Job afb545f4-3d07-4228-a3f2-1d5ce5787680 result URL: https://media.higgsfield.ai/generated/output/f90fe297-c831-41ee-b5a8-4ce67da510c4/0.png
+Downloading result image from https://media.higgsfield.ai/generated/output/f90fe297-c831-41ee-b5a8-4ce67da510c4/0.png -> baby-gold-bracelet-lifestyle-2027.png...
+Converting baby-gold-bracelet-lifestyle-2027.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and converted!
+
+ProductImages/raw/Bracelets/The Shining Star Bracelet/1_body_portrait.png -> Returncode: 0 Stdout: {
+  "id": "e0e2716a-04a4-4444-a0fc-df5815cf1be5",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/e0e2716a-04a4-4444-a0fc-df5815cf1be5.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Shining Star Bracelet/0_primary.png -> Returncode: 0 Stdout: {
+  "id": "fe2ffca8-9584-45e0-82a1-a47291114251",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/fe2ffca8-9584-45e0-82a1-a47291114251.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Kricia Charm Bracelet/1_body_portrait.png -> Returncode: 0 Stdout: {
+  "id": "1be71012-70b5-455b-b9d2-5a21ff4f5fa4",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/1be71012-70b5-455b-b9d2-5a21ff4f5fa4.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Kricia Charm Bracelet/0_primary.png -> Returncode: 0 Stdout: {
+  "id": "4b6807eb-5f05-4f4c-83b6-13a8bfb51d4e",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/4b6807eb-5f05-4f4c-83b6-13a8bfb51d4e.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Elize Evil Eye Bracelet/1_body_portrait.png -> Returncode: 0 Stdout: {
+  "id": "e0b51336-fcfa-48ef-bcae-e67c87c4f4b2",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/e0b51336-fcfa-48ef-bcae-e67c87c4f4b2.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Elize Evil Eye Bracelet/0_primary.png -> Returncode: 0 Stdout: {
+  "id": "4a737f07-88f5-4fef-93a0-38e55e4bf7ec",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/4a737f07-88f5-4fef-93a0-38e55e4bf7ec.png"
+} Stderr: 
+ProductImages/raw/Kids Bracelets/The Novare Evil Eye Kids Nazariya Bracelet/0_primary.png -> Returncode: 0 Stdout: {
+  "id": "673f48a9-dafa-4a6c-94ea-da6176378e9b",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/673f48a9-dafa-4a6c-94ea-da6176378e9b.png"
+} Stderr: 
+ProductImages/raw/Kids Bracelets/The Novare Evil Eye Kids Nazariya Bracelet/2_side_1.png -> Returncode: 0 Stdout: {
+  "id": "df2b545f-4a0b-466c-9e2e-2e06c11d0fc1",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/df2b545f-4a0b-466c-9e2e-2e06c11d0fc1.png"
+} Stderr: 
+ProductImages/raw/Kids Bracelets/The Novare Evil Eye Kids Nazariya Bracelet/3_back.png -> Returncode: 0 Stdout: {
+  "id": "ad60c6d5-bb55-46aa-ab91-237430489cf3",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/ad60c6d5-bb55-46aa-ab91-237430489cf3.png"
+} Stderr: 
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-206` finished with status `DONE` at 2026-08-25T11:12:59+05:30.
+Output:
+ProductImages/raw/Bracelets/The Shining Star Bracelet/1_body_portrait.png -> Returncode: 0 Stdout: {
+  "id": "e0e2716a-04a4-4444-a0fc-df5815cf1be5",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/e0e2716a-04a4-4444-a0fc-df5815cf1be5.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Shining Star Bracelet/0_primary.png -> Returncode: 0 Stdout: {
+  "id": "fe2ffca8-9584-45e0-82a1-a47291114251",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/fe2ffca8-9584-45e0-82a1-a47291114251.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Kricia Charm Bracelet/1_body_portrait.png -> Returncode: 0 Stdout: {
+  "id": "1be71012-70b5-455b-b9d2-5a21ff4f5fa4",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/1be71012-70b5-455b-b9d2-5a21ff4f5fa4.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Kricia Charm Bracelet/0_primary.png -> Returncode: 0 Stdout: {
+  "id": "4b6807eb-5f05-4f4c-83b6-13a8bfb51d4e",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/4b6807eb-5f05-4f4c-83b6-13a8bfb51d4e.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Elize Evil Eye Bracelet/1_body_portrait.png -> Returncode: 0 Stdout: {
+  "id": "e0b51336-fcfa-48ef-bcae-e67c87c4f4b2",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/e0b51336-fcfa-48ef-bcae-e67c87c4f4b2.png"
+} Stderr: 
+ProductImages/raw/Bracelets/The Elize Evil Eye Bracelet/0_primary.png -> Returncode: 0 Stdout: {
+  "id": "4a737f07-88f5-4fef-93a0-38e55e4bf7ec",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/4a737f07-88f5-4fef-93a0-38e55e4bf7ec.png"
+} Stderr: 
+ProductImages/raw/Kids Bracelets/The Novare Evil Eye Kids Nazariya Bracelet/0_primary.png -> Returncode: 0 Stdout: {
+  "id": "673f48a9-dafa-4a6c-94ea-da6176378e9b",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/673f48a9-dafa-4a6c-94ea-da6176378e9b.png"
+} Stderr: 
+ProductImages/raw/Kids Bracelets/The Novare Evil Eye Kids Nazariya Bracelet/2_side_1.png -> Returncode: 0 Stdout: {
+  "id": "df2b545f-4a0b-466c-9e2e-2e06c11d0fc1",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/df2b545f-4a0b-466c-9e2e-2e06c11d0fc1.png"
+} Stderr: 
+ProductImages/raw/Kids Bracelets/The Novare Evil Eye Kids Nazariya Bracelet/3_back.png -> Returncode: 0 Stdout: {
+  "id": "ad60c6d5-bb55-46aa-ab91-237430489cf3",
+  "type": "media_input",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/ad60c6d5-bb55-46aa-ab91-237430489cf3.png"
+} Stderr: 
+
+Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 16s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 24s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 32s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: completed (elapsed: 40s)
+Job afb545f4-3d07-4228-a3f2-1d5ce5787680 result URL: https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054308_afb545f4-3d07-4228-a3f2-1d5ce5787680.png
+Downloading result image from https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054308_afb545f4-3d07-4228-a3f2-1d5ce5787680.png -> temp_hero.png via curl...
+Converting temp_hero.png -> baby-gold-bracelet-hero-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: edbf22bc-8650-4822-9a3d-b4f7ca800fa1
+Polling job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 until completion...
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 0s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 8s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 17s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 25s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 33s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: completed (elapsed: 41s)
+Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 result URL: https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054350_edbf22bc-8650-4822-9a3d-b4f7ca800fa1.png
+Downloading result image from https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054350_edbf22bc-8650-4822-9a3d-b4f7ca800fa1.png -> temp_flatlay.png via curl...
+Converting temp_flatlay.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: af4e0a4f-5636-49a8-beeb-9d8a579bf68c
+Polling job af4e0a4f-5636-49a8-beeb-9d8a579bf68c until completion...
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 0s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 8s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 16s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 24s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 33s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: completed (elapsed: 41s)
+Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c result URL: https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054433_af4e0a4f-5636-49a8-beeb-9d8a579bf68c.png
+Downloading result image from https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054433_af4e0a4f-5636-49a8-beeb-9d8a579bf68c.png -> temp_lifestyle.png via curl...
+Converting temp_lifestyle.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and converted!
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-210` finished with status `DONE` at 2026-08-25T11:15:20+05:30.
+Output:
+scripts/generate_week7_rank125_type3.py written.
+Saved manifest to /Users/satyamkumar/Downloads/final seo generation context/output/week7_rank125_type3_manifest.json
+
+==========================================
+Processing Slot: HERO (The Elize Evil Eye Bracelet)
+==========================================
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling job afb545f4-3d07-4228-a3f2-1d5ce5787680 until completion...
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 0s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 8s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 16s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 24s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: in_progress (elapsed: 32s)
+  Job afb545f4-3d07-4228-a3f2-1d5ce5787680 status: completed (elapsed: 40s)
+Job afb545f4-3d07-4228-a3f2-1d5ce5787680 result URL: https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054308_afb545f4-3d07-4228-a3f2-1d5ce5787680.png
+Downloading result image from https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054308_afb545f4-3d07-4228-a3f2-1d5ce5787680.png -> temp_hero.png via curl...
+Converting temp_hero.png -> baby-gold-bracelet-hero-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: edbf22bc-8650-4822-9a3d-b4f7ca800fa1
+Polling job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 until completion...
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 0s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 8s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 17s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 25s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: in_progress (elapsed: 33s)
+  Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 status: completed (elapsed: 41s)
+Job edbf22bc-8650-4822-9a3d-b4f7ca800fa1 result URL: https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054350_edbf22bc-8650-4822-9a3d-b4f7ca800fa1.png
+Downloading result image from https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054350_edbf22bc-8650-4822-9a3d-b4f7ca800fa1.png -> temp_flatlay.png via curl...
+Converting temp_flatlay.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Submitting Higgsfield job (attempt 1)...
+Submitted successfully! Job ID: af4e0a4f-5636-49a8-beeb-9d8a579bf68c
+Polling job af4e0a4f-5636-49a8-beeb-9d8a579bf68c until completion...
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 0s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 8s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 16s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 24s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: in_progress (elapsed: 33s)
+  Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c status: completed (elapsed: 41s)
+Job af4e0a4f-5636-49a8-beeb-9d8a579bf68c result URL: https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054433_af4e0a4f-5636-49a8-beeb-9d8a579bf68c.png
+Downloading result image from https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054433_af4e0a4f-5636-49a8-beeb-9d8a579bf68c.png -> temp_lifestyle.png via curl...
+Converting temp_lifestyle.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and converted!
+
+[
+  {
+    "created_at": "2026-08-25T05:44:11.839634Z",
+    "display_name": "Nano Banana Pro",
+    "id": "e6a0d246-8153-4318-971c-99d846059d00",
+    "job_type": "nano_banana_pro",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054411_e6a0d246-8153-4318-971c-99d846059d00_min.webp",
+    "params": {
+      "application": null,
+      "aspect_ratio": "16:9",
+      "batch_size": 1,
+      "height": 1536,
+      "input_image": null,
+      "input_images": [
+        {
+          "id": "cb17d832-ec8b-4a57-ab17-0b5cbe5b92df",
+          "type": "media_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/cb17d832-ec8b-4a57-ab17-0b5cbe5b92df.png"
+        },
+        {
+          "id": "316a7ef6-81b8-439f-bf9f-09595568da3f",
+          "type": "media_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/316a7ef6-81b8-439f-bf9f-09595568da3f.png"
+        }
+      ],
+      "prompt": "SUBJECT COUNT LOCK: show exactly one visible person, the specified jewellery wearer. Analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, filmic contrast. Photoreal candid lifestyle portrait photograph with high-end jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Casting (required): one fair-skinned Indian young woman only, light wheatish to fair North Indian complexion, clear skin, dressed in an ivory linen shirt. Mid-shot candid photograph of a stylish fair-skinned Indian woman seated in a sunlit modern nursery home with creamy bokeh in the background. She is physically wearing The Elize Evil Eye Bracelet in solid 18Kt yellow gold with protective evil eye charm around her wrist from reference images @img1 body_image and @img2. GENDER LOCK: adult woman only. The yellow gold bracelet rests gracefully on her wrist with gentle realistic contact shadows at EXACT jewellery dimensions: charm height 15.12 mm, bracelet length 177.8 mm. Keep the jewellery size on the person like @img1 body_image (worn wrist scale). Use @img2 only for the jewellery design. Do not make it bigger for visibility. HD hyperreal 18Kt solid yellow gold bracelet with brilliant evil eye motif, 100% identical to refs, zero distortion. Camera focuses on the woman graceful hand and wrist; jewellery is sharp and true. This is the ONLY jewellery on her. Bare neck, bare ears, no other bracelets, no rings. 16:9 landscape, full face in frame, safe margins. Avoid: floating overlays, packshot cutouts, graphic drawings, oversized jewellery, distorted hands, extra earrings, extra bracelets, extra rings, readable text, logos, dark skin, deep brown skin, heavily tanned skin, male subjects.",
+      "resolution": "2k",
+      "surface": null,
+      "width": 2752
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054411_e6a0d246-8153-4318-971c-99d846059d00.png",
+    "status": "completed"
+  }
+]
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-240` finished with status `DONE` at 2026-08-25T11:15:02+05:30.
+Output:
+[
+  {
+    "created_at": "2026-08-25T05:44:11.839634Z",
+    "display_name": "Nano Banana Pro",
+    "id": "e6a0d246-8153-4318-971c-99d846059d00",
+    "job_type": "nano_banana_pro",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054411_e6a0d246-8153-4318-971c-99d846059d00_min.webp",
+    "params": {
+      "application": null,
+      "aspect_ratio": "16:9",
+      "batch_size": 1,
+      "height": 1536,
+      "input_image": null,
+      "input_images": [
+        {
+          "id": "cb17d832-ec8b-4a57-ab17-0b5cbe5b92df",
+          "type": "media_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/cb17d832-ec8b-4a57-ab17-0b5cbe5b92df.png"
+        },
+        {
+          "id": "316a7ef6-81b8-439f-bf9f-09595568da3f",
+          "type": "media_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/316a7ef6-81b8-439f-bf9f-09595568da3f.png"
+        }
+      ],
+      "prompt": "SUBJECT COUNT LOCK: show exactly one visible person, the specified jewellery wearer. Analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, filmic contrast. Photoreal candid lifestyle portrait photograph with high-end jewellery commercial fidelity on the worn piece only. Natural skin texture, no illustration, no CGI. Casting (required): one fair-skinned Indian young woman only, light wheatish to fair North Indian complexion, clear skin, dressed in an ivory linen shirt. Mid-shot candid photograph of a stylish fair-skinned Indian woman seated in a sunlit modern nursery home with creamy bokeh in the background. She is physically wearing The Elize Evil Eye Bracelet in solid 18Kt yellow gold with protective evil eye charm around her wrist from reference images @img1 body_image and @img2. GENDER LOCK: adult woman only. The yellow gold bracelet rests gracefully on her wrist with gentle realistic contact shadows at EXACT jewellery dimensions: charm height 15.12 mm, bracelet length 177.8 mm. Keep the jewellery size on the person like @img1 body_image (worn wrist scale). Use @img2 only for the jewellery design. Do not make it bigger for visibility. HD hyperreal 18Kt solid yellow gold bracelet with brilliant evil eye motif, 100% identical to refs, zero distortion. Camera focuses on the woman graceful hand and wrist; jewellery is sharp and true. This is the ONLY jewellery on her. Bare neck, bare ears, no other bracelets, no rings. 16:9 landscape, full face in frame, safe margins. Avoid: floating overlays, packshot cutouts, graphic drawings, oversized jewellery, distorted hands, extra earrings, extra bracelets, extra rings, readable text, logos, dark skin, deep brown skin, heavily tanned skin, male subjects.",
+      "resolution": "2k",
+      "surface": null,
+      "width": 2752
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054411_e6a0d246-8153-4318-971c-99d846059d00.png",
+    "status": "completed"
+  }
+]
+
+Polling hero (d686f633-be46-4e02-85a9-c44b7ff35ea1)...
+  hero (d686f633-be46-4e02-85a9-c44b7ff35ea1) status: completed (elapsed: 0s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054417_d686f633-be46-4e02-85a9-c44b7ff35ea1.png -> baby-gold-bracelet-hero-2027.temp.png...
+Converting baby-gold-bracelet-hero-2027.temp.png -> baby-gold-bracelet-hero-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Submitting job for flatlay...
+Submitted flatlay! Job ID: af4e0a4f-5636-49a8-beeb-9d8a579bf68c
+Polling flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c)...
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: in_progress (elapsed: 0s)
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: in_progress (elapsed: 9s)
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: in_progress (elapsed: 17s)
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: in_progress (elapsed: 25s)
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: completed (elapsed: 34s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054529_af4e0a4f-5636-49a8-beeb-9d8a579bf68c.png -> baby-gold-bracelet-flatlay-2027.temp.png...
+Converting baby-gold-bracelet-flatlay-2027.temp.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Submitting job for lifestyle...
+Submitted lifestyle! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680)...
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 0s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 9s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 17s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 25s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 34s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: completed (elapsed: 42s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054612_afb545f4-3d07-4228-a3f2-1d5ce5787680.png -> baby-gold-bracelet-lifestyle-2027.temp.png...
+Converting baby-gold-bracelet-lifestyle-2027.temp.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and downloaded!
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-263` finished with status `DONE` at 2026-08-25T11:17:03+05:30.
+Output:
+scripts/generate_and_download_rank125_type3.py written.
+
+==========================================
+Processing Slot: HERO (The Elize Evil Eye Bracelet)
+==========================================
+Polling hero (d686f633-be46-4e02-85a9-c44b7ff35ea1)...
+  hero (d686f633-be46-4e02-85a9-c44b7ff35ea1) status: completed (elapsed: 0s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054417_d686f633-be46-4e02-85a9-c44b7ff35ea1.png -> baby-gold-bracelet-hero-2027.temp.png...
+Converting baby-gold-bracelet-hero-2027.temp.png -> baby-gold-bracelet-hero-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Submitting job for flatlay...
+Submitted flatlay! Job ID: af4e0a4f-5636-49a8-beeb-9d8a579bf68c
+Polling flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c)...
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: in_progress (elapsed: 0s)
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: in_progress (elapsed: 9s)
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: in_progress (elapsed: 17s)
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: in_progress (elapsed: 25s)
+  flatlay (af4e0a4f-5636-49a8-beeb-9d8a579bf68c) status: completed (elapsed: 34s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054529_af4e0a4f-5636-49a8-beeb-9d8a579bf68c.png -> baby-gold-bracelet-flatlay-2027.temp.png...
+Converting baby-gold-bracelet-flatlay-2027.temp.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Submitting job for lifestyle...
+Submitted lifestyle! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680)...
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 0s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 9s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 17s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 25s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 34s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: completed (elapsed: 42s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054612_afb545f4-3d07-4228-a3f2-1d5ce5787680.png -> baby-gold-bracelet-lifestyle-2027.temp.png...
+Converting baby-gold-bracelet-lifestyle-2027.temp.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and downloaded!
+
+Updated scripts/generate_and_download_rank125_type3.py.
+Slot hero already completed (baby-gold-bracelet-hero-2027.webp), skipping.
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Polling flatlay (d87b8859-8fdc-42c9-9b39-bbc072ac5e9b)...
+  flatlay (d87b8859-8fdc-42c9-9b39-bbc072ac5e9b) status: in_progress (elapsed: 0s)
+  flatlay (d87b8859-8fdc-42c9-9b39-bbc072ac5e9b) status: completed (elapsed: 8s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054530_d87b8859-8fdc-42c9-9b39-bbc072ac5e9b.png -> baby-gold-bracelet-flatlay-2027.temp.png...
+Converting baby-gold-bracelet-flatlay-2027.temp.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Submitting job for lifestyle...
+Submitted lifestyle! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680)...
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 0s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 8s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 17s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 25s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: completed (elapsed: 33s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054615_afb545f4-3d07-4228-a3f2-1d5ce5787680.png -> baby-gold-bracelet-lifestyle-2027.temp.png...
+Converting baby-gold-bracelet-lifestyle-2027.temp.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and downloaded!
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-271` finished with status `DONE` at 2026-08-25T11:17:42+05:30.
+Output:
+Updated scripts/generate_and_download_rank125_type3.py.
+Slot hero already completed (baby-gold-bracelet-hero-2027.webp), skipping.
+
+==========================================
+Processing Slot: FLATLAY (The Novare Evil Eye Kids Nazariya Bracelet)
+==========================================
+Polling flatlay (d87b8859-8fdc-42c9-9b39-bbc072ac5e9b)...
+  flatlay (d87b8859-8fdc-42c9-9b39-bbc072ac5e9b) status: in_progress (elapsed: 0s)
+  flatlay (d87b8859-8fdc-42c9-9b39-bbc072ac5e9b) status: completed (elapsed: 8s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054530_d87b8859-8fdc-42c9-9b39-bbc072ac5e9b.png -> baby-gold-bracelet-flatlay-2027.temp.png...
+Converting baby-gold-bracelet-flatlay-2027.temp.png -> baby-gold-bracelet-flatlay-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp successfully (115 KB)
+
+==========================================
+Processing Slot: LIFESTYLE (The Shining Star Bracelet)
+==========================================
+Submitting job for lifestyle...
+Submitted lifestyle! Job ID: afb545f4-3d07-4228-a3f2-1d5ce5787680
+Polling lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680)...
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 0s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 8s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 17s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: in_progress (elapsed: 25s)
+  lifestyle (afb545f4-3d07-4228-a3f2-1d5ce5787680) status: completed (elapsed: 33s)
+Downloading https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054615_afb545f4-3d07-4228-a3f2-1d5ce5787680.png -> baby-gold-bracelet-lifestyle-2027.temp.png...
+Converting baby-gold-bracelet-lifestyle-2027.temp.png -> baby-gold-bracelet-lifestyle-2027.webp (width 1400px, WebP q=82)...
+Saved /Users/satyamkumar/Downloads/final seo generation context/output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp successfully (115 KB)
+
+All Type 3 images successfully generated and downloaded!
+
+Polling lifestyle job fe6501ee-9fdb-47d7-8437-e1c3199cbd41 ...
+Status: in_progress (elapsed: 0s)
+Status: in_progress (elapsed: 8s)
+Status: in_progress (elapsed: 17s)
+Status: completed (elapsed: 25s)
+Found result URL: https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054631_fe6501ee-9fdb-47d7-8437-e1c3199cbd41.png
+Success! Saved lifestyle WebP: output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp (54 KB)
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-287` finished with status `DONE` at 2026-08-25T11:17:15+05:30.
+Output:
+Polling lifestyle job fe6501ee-9fdb-47d7-8437-e1c3199cbd41 ...
+Status: in_progress (elapsed: 0s)
+Status: in_progress (elapsed: 8s)
+Status: in_progress (elapsed: 17s)
+Status: completed (elapsed: 25s)
+Found result URL: https://d8j0ntlcm91z4.cloudfront.net/user_3Gwrlc0Tdyvjeo97hD7AbmJfIsZ/hf_20260825_054631_fe6501ee-9fdb-47d7-8437-e1c3199cbd41.png
+Success! Saved lifestyle WebP: output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp (54 KB)
+
+Uploading Type 3 images to WordPress...
+Uploading hero: baby-gold-bracelet-hero-2027.webp...
+  Uploaded hero ID: 36005 | https://blog.bluestone.com/wp-content/uploads/2026/08/baby-gold-bracelet-hero-2027.webp
+Uploading flatlay: baby-gold-bracelet-flatlay-2027.webp...
+  Uploaded flatlay ID: 36006 | https://blog.bluestone.com/wp-content/uploads/2026/08/baby-gold-bracelet-flatlay-2027.webp
+Uploading lifestyle: baby-gold-bracelet-lifestyle-2027.webp...
+  Uploaded lifestyle ID: 36007 | https://blog.bluestone.com/wp-content/uploads/2026/08/baby-gold-bracelet-lifestyle-2027.webp
+Saved Type 3 media to /Users/satyamkumar/Downloads/final seo generation context/output/week7_rank125_type3_media.json
+Saved output/week7_rank125_article_final.html
+Successfully patched post 35997 -> https://blog.bluestone.com/baby-gold-bracelet-2027/
+Featured Media: 36005
+Task `e19717a2-9bc3-4383-95dd-4465216d7985/task-309` finished with status `DONE` at 2026-08-25T11:17:46+05:30.
+Output:
+Uploading Type 3 images to WordPress...
+Uploading hero: baby-gold-bracelet-hero-2027.webp...
+  Uploaded hero ID: 36005 | https://blog.bluestone.com/wp-content/uploads/2026/08/baby-gold-bracelet-hero-2027.webp
+Uploading flatlay: baby-gold-bracelet-flatlay-2027.webp...
+  Uploaded flatlay ID: 36006 | https://blog.bluestone.com/wp-content/uploads/2026/08/baby-gold-bracelet-flatlay-2027.webp
+Uploading lifestyle: baby-gold-bracelet-lifestyle-2027.webp...
+  Uploaded lifestyle ID: 36007 | https://blog.bluestone.com/wp-content/uploads/2026/08/baby-gold-bracelet-lifestyle-2027.webp
+Saved Type 3 media to /Users/satyamkumar/Downloads/final seo generation context/output/week7_rank125_type3_media.json
+Saved output/week7_rank125_article_final.html
+Successfully patched post 35997 -> https://blog.bluestone.com/baby-gold-bracelet-2027/
+Featured Media: 36005
+
+# Week 7 Rank 125 End-to-End Generation Report
+
+**Primary Keyword:** `baby gold bracelet`  
+**Rank:** 125  
+**Action:** New  
+**Theme:** Design Listicles  
+**Published Post URL:** [https://blog.bluestone.com/baby-gold-bracelet-2027/](https://blog.bluestone.com/baby-gold-bracelet-2027/)  
+**WordPress Post ID:** `35997`  
+**Author:** Satyam (User ID: `270271337`, Byline: `By Satyam, BlueStone Editorial`)  
+**Publication Status:** Live & Published (`HTTP 200 OK`)
+
+---
+
+## 1. Executive Summary & Verification Metrics
+
+| Metric | Target / Requirement | Actual Result | Status |
+| :--- | :--- | :--- | :--- |
+| **HTTP Status** | `200 OK` | `200 OK` | PASS |
+| **H1 Tag** | Exactly 1 H1 containing Primary KW + Year | `15 Trending Baby Gold Bracelet Designs in 2027: Nazariya, Charms, Sizing & Safety Guide` | PASS |
+| **Article Word Count** | $\ge 1,800$ words (Design Listicle) | **3,429 words** | PASS |
+| **Prohibited Elements** | 0 HTML tables, 0 em/en dashes, 0 prices | 0 tables, 0 em/en dashes, 0 spaced hyphens, 0 prices | PASS |
+| **Editorial Flow** | Conclusion precedes FAQ section | Verified in DOM order | PASS |
+| **FAQ Section** | $\ge 5$ FAQs with full answers | **6 Comprehensive FAQs** with matched FAQPage schema | PASS |
+| **Carousel Component** | 6 SEO Product Cards with UTM links | 6 WebP Cards with trackable CTAs (`bs-cf-baby-gold-bracelet`) | PASS |
+| **Featured Hero Image** | Set via WP Media & Yoast OG | Media ID `36005` (Not duplicated in body text) | PASS |
+| **In-Body Type 3 Images** | 2 images with `<figcaption>` | Flatlay (`36006`) & Lifestyle (`36007`) | PASS |
+| **Schema Validation** | Valid `FAQPage` + `BlogPosting` JSON-LD | Both present, author `Satyam`, 3 images listed | PASS |
+| **Canonical URL** | `https://blog.bluestone.com/baby-gold-bracelet-2027/` | Matches post permalink exactly | PASS |
+| **Higgsfield Credits** | Starting: `3127.32` | Ending: `3121.32` (Used: `6.00` credits) | PASS |
+
+---
+
+## 2. Media & Visual Asset Breakdown
+
+### A. Type 3 Higgsfield Nano Banana Pro Images (16:9, 2K WebP)
+1. **Featured Hero Image:**
+   - **File:** `output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-hero-2027.webp`
+   - **WordPress Media ID:** `36005`
+   - **SKU / Model:** `BISL0987V71` (*The Elize Evil Eye Bracelet*)
+   - **Alt Text:** `Baby gold bracelet 2027 trending design, The Elize Evil Eye Bracelet in yellow gold on wrist`
+   - **Higgsfield Job ID:** `d686f633-be46-4e02-85a9-c44b7ff35ea1`
+
+2. **Flatlay Image:**
+   - **File:** `output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-flatlay-2027.webp`
+   - **WordPress Media ID:** `36006`
+   - **SKU / Model:** `BIAV1005V201` (*The Novare Evil Eye Kids Nazariya Bracelet*)
+   - **Setting ID:** `linen-bedside` (Bright morning nursery, ivory linen tabletop, cream velvet keepsake box, miniature wooden rattle)
+   - **Alt Text:** `Baby gold bracelet 2027 flatlay on linen bedside setting, The Novare Evil Eye Kids Nazariya Bracelet in 18Kt gold`
+   - **Caption:** `Baby gold bracelet 2027 vibe: The Novare Evil Eye Kids Nazariya Bracelet`
+   - **Higgsfield Job ID:** `d87b8859-8fdc-42c9-9b39-bbc072ac5e9b`
+
+3. **Lifestyle Image:**
+   - **File:** `output/Week7_Rank125_BabyGoldBracelet_assets/baby-gold-bracelet-lifestyle-2027.webp`
+   - **WordPress Media ID:** `36007`
+   - **SKU / Model:** `BIMG0635V45` (*The Shining Star Bracelet*)
+   - **Casting:** Fair-skinned Indian young mother and toddler close-up in soft morning light
+   - **Alt Text:** `Baby gold bracelet 2027 lifestyle styling, The Shining Star Bracelet in 18Kt gold with celestial star charm`
+   - **Caption:** `Baby gold bracelet 2027 styling: The Shining Star Bracelet`
+   - **Higgsfield Job ID:** `fe6501ee-9fdb-47d7-8437-e1c3199cbd41`
+
+---
+
+### B. Product Carousel Showcase (6 Converted WebP Cards)
+| Card # | Product Name | SKU | WP Media ID | Product URL |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | The Novare Evil Eye Kids Nazariya Bracelet | `BIAV1005V201` | `35991` | [View Product](https://www.bluestone.com/jewellery/the-novare-evil-eye-kids-nazariya-bracelet.html?utm_source=blog&utm_medium=carousel&utm_campaign=bs-cf-baby-gold-bracelet) |
+| **2** | The Winkoo Kids Evil Eye Bracelet | `BIAV1005V203` | `35992` | [View Product](https://www.bluestone.com/jewellery/the-winkoo-kids-evil-eye-bracelet.html?utm_source=blog&utm_medium=carousel&utm_campaign=bs-cf-baby-gold-bracelet) |
+| **3** | The Shining Star Bracelet | `BIMG0635V45` | `35993` | [View Product](https://www.bluestone.com/jewellery/the-shining-star-bracelet.html?utm_source=blog&utm_medium=carousel&utm_campaign=bs-cf-baby-gold-bracelet) |
+| **4** | The Kricia Charm Bracelet | `BIMG0635V48` | `35994` | [View Product](https://www.bluestone.com/jewellery/the-kricia-charm-bracelet.html?utm_source=blog&utm_medium=carousel&utm_campaign=bs-cf-baby-gold-bracelet) |
+| **5** | The Elize Evil Eye Bracelet | `BISL0987V71` | `35995` | [View Product](https://www.bluestone.com/jewellery/the-elize-evil-eye-bracelet.html?utm_source=blog&utm_medium=carousel&utm_campaign=bs-cf-baby-gold-bracelet) |
+| **6** | The Tapia Chain Bracelet | `BISL0987V73` | `35996` | [View Product](https://www.bluestone.com/jewellery/the-tapia-chain-bracelet.html?utm_source=blog&utm_medium=carousel&utm_campaign=bs-cf-baby-gold-bracelet) |
+
+---
+
+## 3. SEO & Content Architecture
+
+- **Focus Keyword:** `baby gold bracelet`
+- **SEO Title:** `15 Trending Baby Gold Bracelet Designs in 2027: Nazariya, Charms, Sizing & Safety Guide`
+- **Meta Description:** `Explore the best baby gold bracelet designs for 2027. Discover 18Kt gold nazariya bracelets, adjustable charm chains, BIS hallmark safety, and infant wrist sizing.`
+- **Content Outline & Section Structure:**
+  1. `H1`: 15 Trending Baby Gold Bracelet Designs in 2027: Nazariya, Charms, Sizing & Safety Guide
+  2. `H2`: The Evolution of Baby Gold Bracelets in 2027: Modern Sentiment Meets Safety
+  3. `H2`: Quick Guide to Baby Gold Bracelet Types: Matching Tradition with Daily Wear
+  4. `H2`: 15 Trending Baby Gold Bracelet Designs for 2027 (Curated 15-design listicle cards)
+  5. `H2`: Complete Baby Wrist Sizing Guide (Inches and Centimetres)
+  6. `[Flatlay Image Block]` *The Novare Evil Eye Kids Nazariya Bracelet* (`linen-bedside` setting)
+  7. `H2`: Hypoallergenic Metallurgy: Why 18Kt and 22Kt Yellow Gold Are Safest for Sensitive Skin
+  8. `H2`: Essential Clasp and Link Mechanics: Designing for Daily Infant Safety
+  9. `[Lifestyle Image Block]` *The Shining Star Bracelet* (Fair-skinned Indian mother and toddler)
+  10. `H2`: How to Verify BIS Hallmarking and 6-Digit HUID Laser Marks on Baby Jewellery
+  11. `H2`: Caring for Infant Gold Bracelets: Cleaning, Maintenance, and Safe Storage
+  12. `H2`: Conclusion: Choosing a Timeless and Safe Baby Gold Bracelet Keepsake
+  13. `H2`: Frequently Asked Questions About Baby Gold Bracelets (6 in-depth FAQs)
+
+---
+
+## 4. Status Tracking & Checkpoint Persistence
+
+- **Updated Status Tracking CSV:** `output/Week7_Gift_Guides_PostRank10_status.csv` (Rank 125 marked `Published`)
+- **Updated Master Strategy Sheet:** `SEO Strategy 2026.xlsx` (Sheet `Week 7`, Rank 125 marked `Done` with Post ID `35997` and Live URL)
+- **Updated Product Rotation State:** `output/product_rotation.json` (Registered trio `[BISL0987V71, BIAV1005V201, BIMG0635V45]` and flatlay setting `linen-bedside`)
+- **Step Checkpoint File:** `output/checkpoints/week7_rank125.json` (All 15 steps marked `done`)

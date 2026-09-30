@@ -1,0 +1,91 @@
+{
+  "occasion": "crush-birthday-2026",
+  "article": "Week1 Rank35",
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max. FLATLAY: 3-4 refs. Credits: 3 images count 1.",
+  "prompt_rules": {
+    "people_slots": "scene first, jewellery second; 2 refs max; people_theme_anchor; negative_prompt_people; count=1; retry only if QA fails",
+    "flatlay": "product_theme_anchor OK; 3-4 refs; count=1; match exact SKU from refs",
+    "credits": "Exactly 3 images per article (hero+flatlay+lifestyle). No dual variants by default.",
+    "anti_overlay": "Do not lead people prompts with commercial/macro jewellery language"
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg2.bluestone.com/giproduct/BIHS1145P21_RAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-119073.png",
+        "https://kinclimg2.bluestone.com/giproduct/BIHS1145P21_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-119073.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian complexion.\n\nbirthday wishes for crush 2026 candid lifestyle mid-shot in cafe crush birthday morning. She wears The Valeria Rose Pendant from (@img1,@img2): rose gold heart, LEFT three open rose gold bands, RIGHT pave diamonds, small on chest with contact shadow. Bare ears wrists. Never floating packshot. 16:9 full face safe margins.",
+      "alt": "birthday wishes for crush 2026 hero with The Lumeelle Cluster Pendant",
+      "product": {
+        "code": "BISW1080P133",
+        "name": "The Lumeelle Cluster Pendant",
+        "pdp": "https://www.bluestone.com/pendants/the-valeria-rose-pendant~181266.html"
+      },
+      "caption": "Crush birthday 2026 vibe: The Lumeelle Cluster Pendant"
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00003-1024-62802.png"
+      ],
+      "prompt": "birthday wishes for crush 2026 top-down flatlay on cafe table with pink rose and blank card. Muricelle Bangle from (@img1,@img2,@img3,@img4) at natural scale: yellow gold hinged bangle with triple-band pave diamond front. No people. No readable text.",
+      "alt": "birthday wishes for crush 2026 flatlay with The Estrella Oval Bangle",
+      "product": {
+        "code": "BIDG0393O37",
+        "name": "The Estrella Oval Bangle",
+        "pdp": "https://www.bluestone.com/bangles/the-muricelle-bangle~1001.html"
+      },
+      "caption": "Crush birthday 2026 vibe: The Estrella Oval Bangle"
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg5.bluestone.com/giproduct/BIPM0001H28_YAA18DIG6SYEMXXXX_ABCD00-PICS-00000-1024-79820.png",
+        "https://kinclimg5.bluestone.com/giproduct/BIPM0001H28_YAA18DIG6SYEMXXXX_ABCD00-PICS-00001-1024-79820.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only.\n\nbirthday wishes for crush 2026 lifestyle mid-shot soft profile with cafe window soft blur. Wears The Rohal Huggie Earrings from (@img1,@img2): gold huggie, white pave bar, emerald-cut green gem drop, only near-side earring, natural scale. Bare neck wrists. 16:9 full face safe margins.",
+      "alt": "birthday wishes for crush 2026 lifestyle with The Aleena Huggie Earrings",
+      "product": {
+        "code": "BIIP0279S08",
+        "name": "The Aleena Huggie Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-rohal-huggie-earrings~21864.html"
+      },
+      "caption": "Crush birthday 2026 vibe: The Aleena Huggie Earrings"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/crush-birthday-hero-2026.webp",
+    "flatlay": "output/magnific_generated/crush-birthday-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/crush-birthday-lifestyle-2026.webp"
+  },
+  "insert_h2s_json": "output/Week1_Rank35_CrushBirthday_insert_h2s.json",
+  "product_media_json": "output/Week1_Rank35_CrushBirthday_product_media.json",
+  "output_prefix": "Week1_Rank35_CrushBirthday",
+  "schema_keywords": [
+    "birthday wishes for crush",
+    "happy birthday wishes for crush",
+    "birthday wishes for crush female",
+    "crush birthday captions",
+    "crush birthday 2026"
+  ],
+  "media_titles": {
+    "hero": "birthday wishes for crush 2026 Hero",
+    "flatlay": "birthday wishes for crush 2026 Flatlay",
+    "lifestyle": "birthday wishes for crush 2026 Lifestyle"
+  },
+  "wp_post_id": 30396,
+  "webp_prefix": "crush-birthday",
+  "caption_occasion": "Crush birthday",
+  "caption_year": "2026"
+}

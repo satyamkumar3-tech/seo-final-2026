@@ -1,0 +1,134 @@
+{
+  "pipeline": "week8",
+  "rank": 1,
+  "slug": "diamond-rings-2026",
+  "primary": "diamond rings",
+  "created_at": "2026-08-31T09:25:38Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-31T09:26:54Z",
+      "finished_at": "2026-08-31T09:27:25Z",
+      "files_read": 11
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-31T09:27:27Z",
+      "finished_at": "2026-08-31T09:27:33Z",
+      "plan": "ultimate",
+      "credits": 804.37
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-31T09:27:35Z",
+      "finished_at": "2026-08-31T09:27:53Z",
+      "action": "New",
+      "primary": "diamond rings",
+      "volume": 201000,
+      "kd": 46,
+      "slug": "diamond-rings-2026"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-31T09:27:55Z",
+      "finished_at": "2026-08-31T09:39:59Z",
+      "slug_matches": 0,
+      "intent_matches": 0,
+      "result": "clean"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-08-31T09:28:18Z",
+      "finished_at": "2026-08-31T09:28:24Z",
+      "competitor": "blank",
+      "note": "No competitor URL in row, proceeded per guide from keyword cluster/Semrush page/supporting KWs",
+      "facts": "GIA/SGL/IGI certification, BIS HUID hallmarking, 4Cs, 14K/18K gold purity settings, 3-stone trilogy symbolism, 3% GST"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-08-31T09:28:26Z",
+      "finished_at": "2026-08-31T09:28:29Z",
+      "accepted": "3 diamond ring, 3 diamond ring design, best diamond ring designs, best diamond rings, best diamond rings for women, diamond for ring, diamond ring design",
+      "rejected": "diamond ring diamond ring (malformed duplicate query)"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-08-31T09:28:31Z",
+      "finished_at": "2026-08-31T09:28:45Z",
+      "engine": "buying_guide",
+      "categories": "554493418,554493326,554493475,554493465",
+      "flatlay_setting": "marble-vanity"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-08-31T09:28:48Z",
+      "finished_at": "2026-08-31T09:32:35Z",
+      "word_count": 3557,
+      "chars": 27159
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-08-31T09:32:38Z",
+      "finished_at": "2026-08-31T09:33:12Z",
+      "carousel_media_ids": [
+        36931,
+        36932,
+        36933,
+        36934,
+        36935,
+        36936
+      ]
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-08-31T09:33:19Z",
+      "finished_at": "2026-08-31T09:33:34Z",
+      "post_id": 36937,
+      "link": "https://blog.bluestone.com/diamond-rings-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-08-31T09:33:38Z",
+      "finished_at": "2026-08-31T09:36:49Z",
+      "hero_job": "8dd5dad4-2e28-432d-97fe-d32703122ab8",
+      "flatlay_job": "5d4a6a5e-1559-46c4-b50c-2357bfc47065",
+      "lifestyle_job": "943f9524-41cb-4afa-a481-c278cf89b232"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-08-31T09:36:54Z",
+      "finished_at": "2026-08-31T09:37:23Z",
+      "hero_media_id": 36938,
+      "flatlay_media_id": 36939,
+      "lifestyle_media_id": 36940
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-08-31T09:37:27Z",
+      "finished_at": "2026-08-31T09:39:04Z",
+      "word_count": 3007,
+      "h1": "Diamond Rings in 2026: Complete Guide to Styles, Diamond Selection (4Cs), Settings & Buying Tips",
+      "og_image": "https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/08/diamond-rings-hero-2026.webp?fit=1400%2C781&ssl=1"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-08-31T09:39:09Z",
+      "finished_at": "2026-08-31T09:39:44Z",
+      "status_csv": "output/Week8_Blog_Queue_status.csv",
+      "rotation": "output/product_rotation.json",
+      "workbook": "SEO Strategy 2026.xlsx:Week 8:Row 2"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-31T09:39:48Z",
+      "finished_at": "2026-08-31T09:39:51Z",
+      "url": "https://blog.bluestone.com/diamond-rings-2026/",
+      "post_id": 36937
+    }
+  },
+  "updated_at": "2026-08-31T09:40:11Z",
+  "completed_at": "2026-08-31T09:39:59Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

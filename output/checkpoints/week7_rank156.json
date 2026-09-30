@@ -1,0 +1,120 @@
+{
+  "pipeline": "week7",
+  "rank": 156,
+  "slug": "platinum-necklace-2026",
+  "primary": "platinum necklace",
+  "created_at": "2026-08-26T11:50:27Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-26T11:52:51Z",
+      "finished_at": "2026-08-26T11:53:30Z",
+      "note": "All required documents and rules reviewed"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-26T11:53:33Z",
+      "finished_at": "2026-08-26T11:53:36Z",
+      "plan": "scale",
+      "credits": 373.32
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-26T11:53:39Z",
+      "finished_at": "2026-08-26T11:53:42Z",
+      "action": "New",
+      "primary": "platinum necklace",
+      "volume": 4400,
+      "kd": 19,
+      "slug": "platinum-necklace-2026"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-26T11:53:46Z",
+      "finished_at": "2026-08-26T11:54:11Z",
+      "slug": "platinum-necklace-2026",
+      "result": "vacant and unique"
+    },
+    "fact_check": {
+      "status": "done",
+      "finished_at": "2026-08-26T11:54:17Z",
+      "sources": "BIS Pt950, PGI, GIA/IGI, GST 3%"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-08-26T11:54:21Z",
+      "finished_at": "2026-08-26T11:54:28Z",
+      "primary": "platinum necklace",
+      "mapped": "platinum necklace for women, platinum diamond necklace, modern platinum necklace designs, Pt950 platinum necklace"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-08-26T11:54:34Z",
+      "finished_at": "2026-08-26T11:54:38Z",
+      "engine": "design_listicle",
+      "flatlay_setting": "linen-bedside"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-08-26T11:55:32Z",
+      "finished_at": "2026-08-26T11:57:47Z",
+      "word_count": "3500+"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-08-26T11:56:07Z",
+      "finished_at": "2026-08-26T11:56:44Z",
+      "carousel_media_ids": "36374,36375,36376,36377,36378,36379"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-08-26T11:57:52Z",
+      "finished_at": "2026-08-26T11:59:13Z",
+      "post_id": 36380,
+      "url": "https://blog.bluestone.com/platinum-necklace-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-08-26T11:59:17Z",
+      "finished_at": "2026-08-26T12:01:59Z",
+      "hero_job": "398152a5-5418-4331-b544-a81af2627769",
+      "flatlay_job": "32483b20-aaee-4e55-9640-e7d9f671c8fe",
+      "lifestyle_job": "51c3dd7d-7034-448e-b9eb-f3bf8508a530"
+    },
+    "patch_type3": {
+      "status": "done",
+      "finished_at": "2026-08-26T12:02:49Z",
+      "hero_id": 36381,
+      "flatlay_id": 36382,
+      "lifestyle_id": 36383
+    },
+    "live_qa": {
+      "status": "done",
+      "finished_at": "2026-08-26T12:04:20Z",
+      "http_status": 200,
+      "canonical": "verified",
+      "og_image": "verified",
+      "qa_status": "passed"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-08-26T12:04:26Z",
+      "finished_at": "2026-08-26T12:04:47Z",
+      "status_csv": "updated",
+      "product_rotation": "updated",
+      "workbook": "updated"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-26T12:04:51Z",
+      "finished_at": "2026-08-26T12:04:59Z",
+      "post_id": 36380,
+      "url": "https://blog.bluestone.com/platinum-necklace-2026/"
+    }
+  },
+  "updated_at": "2026-08-26T12:05:16Z",
+  "completed_at": "2026-08-26T12:04:59Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

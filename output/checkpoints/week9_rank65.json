@@ -1,0 +1,122 @@
+{
+  "pipeline": "week9",
+  "rank": 65,
+  "slug": "blue-stone-ring-for-men-2026",
+  "primary": "blue stone ring for men",
+  "created_at": "2026-09-25T07:34:00Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "finished_at": "2026-09-25T07:35:13Z",
+      "note": "all_required_docs_read"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-25T07:35:20Z",
+      "finished_at": "2026-09-25T07:35:32Z",
+      "credits": 419.1,
+      "plan": "ultimate"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-25T07:35:35Z",
+      "finished_at": "2026-09-25T07:36:09Z",
+      "action": "New",
+      "primary": "blue stone ring for men",
+      "slug": "blue-stone-ring-for-men-2026",
+      "volume": 3600,
+      "kd": 23.0,
+      "engine": "buying_guide"
+    },
+    "duplicate_check": {
+      "status": "clean_no_duplicate",
+      "started_at": "2026-09-25T07:36:14Z",
+      "finished_at": "2026-09-25T07:36:43Z",
+      "existing_matches": 0
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-25T07:36:51Z",
+      "finished_at": "2026-09-25T07:36:55Z",
+      "competitor_url": "blank_in_source_row",
+      "sources": "BIS_hallmarking_and_gemstone_standards"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-25T07:36:59Z",
+      "finished_at": "2026-09-25T07:37:08Z",
+      "primary": "blue stone ring for men",
+      "accepted": "stone ring design for man",
+      "rejected": "none"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-25T07:37:12Z",
+      "finished_at": "2026-09-25T07:37:31Z",
+      "structure": "buying_guide_h2_map",
+      "flatlay_setting": "cafe-tray"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-25T07:38:45Z",
+      "finished_at": "2026-09-25T07:42:33Z",
+      "words": 2419
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-25T07:42:51Z",
+      "finished_at": "2026-09-25T07:42:58Z",
+      "carousel_ids": "40182,40183,40184,40185,40186,40187"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-25T07:43:04Z",
+      "finished_at": "2026-09-25T07:43:26Z",
+      "post_id": 40188,
+      "url": "https://blog.bluestone.com/blue-stone-ring-for-men-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T07:43:31Z",
+      "finished_at": "2026-09-25T07:46:43Z",
+      "hero_job": "a3d29a21-ec3c-4ebd-842f-8581900e2ecd",
+      "flatlay_job": "c43f4cd8-06bb-463d-afcd-9630f605128d",
+      "lifestyle_job": "6a8c7a75-83df-4278-8250-96e1c1f5bf5d",
+      "ending_credits": 413.1
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T07:46:48Z",
+      "finished_at": "2026-09-25T07:48:04Z",
+      "featured_media": 40189,
+      "flatlay_id": 40190,
+      "lifestyle_id": 40191
+    },
+    "live_qa": {
+      "status": "all_passed",
+      "started_at": "2026-09-25T07:48:09Z",
+      "finished_at": "2026-09-25T07:50:04Z",
+      "h1_count": 1,
+      "h2_count": 11,
+      "carousel_count": 6,
+      "faqs": 6
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-25T07:50:12Z",
+      "finished_at": "2026-09-25T07:50:55Z",
+      "csv_status": "updated",
+      "rotation_json": "updated",
+      "excel_row": "updated"
+    },
+    "final_report": {
+      "status": "done",
+      "finished_at": "2026-09-25T07:51:00Z",
+      "url": "https://blog.bluestone.com/blue-stone-ring-for-men-2026/"
+    }
+  },
+  "updated_at": "2026-09-25T07:51:50Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

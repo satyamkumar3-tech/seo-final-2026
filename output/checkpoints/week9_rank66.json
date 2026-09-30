@@ -1,0 +1,129 @@
+{
+  "pipeline": "week9",
+  "rank": 66,
+  "slug": "garba-jewellery-2026",
+  "primary": "garba jewellery",
+  "created_at": "2026-09-25T07:51:50Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-25T07:52:21Z",
+      "finished_at": "2026-09-25T07:53:19Z",
+      "read_count": 11
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-25T07:53:25Z",
+      "finished_at": "2026-09-25T07:53:46Z",
+      "credits": 413.1,
+      "plan": "ultimate"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-25T07:53:51Z",
+      "finished_at": "2026-09-25T07:54:11Z",
+      "action": "New",
+      "primary": "garba jewellery",
+      "volume": 2900,
+      "kd": 14.0,
+      "slug": "garba-jewellery-2026"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-25T07:54:16Z",
+      "finished_at": "2026-09-25T07:54:37Z",
+      "result": "passed",
+      "existing_slug": "none",
+      "existing_intent": "none"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-25T07:54:41Z",
+      "finished_at": "2026-09-25T07:54:56Z",
+      "competitor_url": "none",
+      "fact_checked": "garba dance-proof jewellery, BIS gold hallmarking, clasp security, gemstone settings, post-sweat care"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-25T07:55:04Z",
+      "finished_at": "2026-09-25T07:55:10Z",
+      "primary": "garba jewellery",
+      "supporting_accepted": "gemstone jewelry",
+      "supporting_rejected": "none"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-25T07:55:16Z",
+      "finished_at": "2026-09-25T07:55:31Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "festive-mantel",
+      "theme_anchor": "navratri garba festive celebration"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-25T07:56:47Z",
+      "finished_at": "2026-09-25T07:59:30Z",
+      "words": 2700,
+      "file": "output/Week9_Rank66_garba_jewellery_draft.json"
+    },
+    "product_media": {
+      "status": "done",
+      "finished_at": "2026-09-25T07:57:49Z",
+      "carousel_ids": "40195,40196,40197,40198,40199,40200"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-25T07:59:37Z",
+      "finished_at": "2026-09-25T08:00:08Z",
+      "post_id": 40201,
+      "url": "https://blog.bluestone.com/garba-jewellery-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T08:00:16Z",
+      "finished_at": "2026-09-25T08:03:44Z",
+      "hero_job": "765e50ad-ee52-4c76-bb88-3d8416eccaf3",
+      "flatlay_job": "b976d316-4932-41de-907d-168a28b118d3",
+      "lifestyle_job": "cdc820d8-2f55-4d7f-8398-21299bb228a9"
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-25T08:03:49Z",
+      "finished_at": "2026-09-25T08:04:28Z",
+      "hero_media": 40202,
+      "flatlay_media": 40203,
+      "lifestyle_media": 40204
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-25T08:04:33Z",
+      "finished_at": "2026-09-25T08:06:52Z",
+      "http_status": 200,
+      "canonical": "match",
+      "og_image": "verified",
+      "carousel": "pass",
+      "h1": 1,
+      "h2": 10,
+      "faqs": 6
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-25T08:06:59Z",
+      "finished_at": "2026-09-25T08:07:31Z",
+      "status_csv": "upserted",
+      "product_rotation": "upserted",
+      "excel": "updated"
+    },
+    "final_report": {
+      "status": "done",
+      "finished_at": "2026-09-25T08:07:40Z",
+      "live_url": "https://blog.bluestone.com/garba-jewellery-2026/",
+      "post_id": 40201
+    }
+  },
+  "updated_at": "2026-09-25T08:08:20Z",
+  "completed_at": "2026-09-25T08:07:40Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

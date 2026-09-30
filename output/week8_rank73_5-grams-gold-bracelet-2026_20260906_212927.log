@@ -1,0 +1,196 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 73 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 73\n- Action: New\n- Primary keyword: 5 grams gold bracelet\n- Volume: 9900\n- KD: 21\n- Priority score: 7102.1739\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: 5-grams-gold-bracelet-2026\n- Article engine: buying_guide\n- Category hint: `Gold` 554493348 + `Jewellery Problem & Solution` 554493465\n- Supplied supporting keywords: 5 grams gold bracelet for women\n- Supplied competitor URL: blank in source row\n- Semrush page: 5 grams gold bracelet\n- Source execution note: Week8 new topic. Intent key=sig:bracelet_gram; brands=MergedJewellery,ScoringCL; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank73.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank73.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: read_docs | time: 2026-09-06T21:30:00+05:30 | elapsed: 0m 24s
+STEP DONE: read_docs | time: 2026-09-06T21:30:27+05:30 | step duration: 0m 27s | total elapsed: 0m 51s
+STEP START: verify_higgsfield | time: 2026-09-06T21:30:27+05:30 | elapsed: 0m 51s
+STEP DONE: verify_higgsfield | time: 2026-09-06T21:30:35+05:30 | step duration: 0m 08s | total elapsed: 0m 59s
+STEP START: inspect_row | time: 2026-09-06T21:30:35+05:30 | elapsed: 0m 59s
+STEP DONE: inspect_row | time: 2026-09-06T21:31:29+05:30 | step duration: 0m 54s | total elapsed: 1m 53s
+STEP START: duplicate_check | time: 2026-09-06T21:31:29+05:30 | elapsed: 1m 53s
+STEP DONE: duplicate_check | time: 2026-09-06T21:31:53+05:30 | step duration: 0m 24s | total elapsed: 2m 17s
+STEP START: fact_check | time: 2026-09-06T21:31:53+05:30 | elapsed: 2m 17s
+STEP DONE: fact_check | time: 2026-09-06T21:32:10+05:30 | step duration: 0m 17s | total elapsed: 2m 34s
+STEP START: keyword_map | time: 2026-09-06T21:32:10+05:30 | elapsed: 2m 34s
+STEP DONE: keyword_map | time: 2026-09-06T21:32:17+05:30 | step duration: 0m 07s | total elapsed: 2m 41s
+STEP START: structure_visuals | time: 2026-09-06T21:32:17+05:30 | elapsed: 2m 41s
+STEP DONE: structure_visuals | time: 2026-09-06T21:33:14+05:30 | step duration: 0m 54s | total elapsed: 3m 38s
+STEP START: draft | time: 2026-09-06T21:33:14+05:30 | elapsed: 3m 38s
+STEP DONE: draft | time: 2026-09-06T21:35:18+05:30 | step duration: 2m 04s | total elapsed: 5m 42s
+STEP START: product_media | time: 2026-09-06T21:35:18+05:30 | elapsed: 5m 42s
+I have initiated the conversion and upload of the 6 approved BlueStone bracelet carousel images to WordPress in the background. Once the task finishes, execution will automatically resume.
+I have launched the carousel conversion and upload task in the background. Standing by for task completion.
+STEP DONE: product_media | time: 2026-09-06T21:36:50+05:30 | step duration: 1m 32s | total elapsed: 7m 14s
+STEP START: publish_wordpress | time: 2026-09-06T21:36:50+05:30 | elapsed: 7m 14s
+STEP DONE: publish_wordpress | time: 2026-09-06T21:37:59+05:30 | step duration: 1m 09s | total elapsed: 8m 23s
+STEP START: generate_type3 | time: 2026-09-06T21:37:59+05:30 | elapsed: 8m 23s
+I have launched the Higgsfield Type 3 image generation for the Hero, Flatlay, and Lifestyle slots in the background (conforming to the two-generation concurrency limit). I will automatically resume once the images are generated and downloaded.
+STEP DONE: generate_type3 | time: 2026-09-06T21:40:43+05:30 | step duration: 2m 44s | total elapsed: 11m 07s
+STEP START: patch_type3 | time: 2026-09-06T21:40:43+05:30 | elapsed: 11m 07s
+I have initiated uploading the Type 3 WebP images and patching the WordPress post (including featured media, in-body Gutenberg blocks, and social metadata) in the background. Standing by for task completion.
+STEP DONE: patch_type3 | time: 2026-09-06T21:41:30+05:30 | step duration: 0m 42s | total elapsed: 11m 54s
+STEP START: live_qa | time: 2026-09-06T21:41:30+05:30 | elapsed: 11m 54s
+I have launched the check for og:image tags across recent posts to verify their behavior. Standing by for task completion.
+STEP DONE: live_qa | time: 2026-09-06T21:44:22+05:30 | step duration: 2m 52s | total elapsed: 14m 46s
+STEP START: update_status | time: 2026-09-06T21:44:22+05:30 | elapsed: 14m 46s
+STEP DONE: update_status | time: 2026-09-06T21:45:37+05:30 | step duration: 1m 17s | total elapsed: 15m 43s
+
+STEP START: final_report | time: 2026-09-06T21:45:40+05:30 | elapsed: 15m 46s
+
+---
+
+# Week 8 Rank 73 Execution Report: 5 Grams Gold Bracelet
+
+### 1. Publication Summary
+- **Live URL:** [https://blog.bluestone.com/5-grams-gold-bracelet-2026/](https://blog.bluestone.com/5-grams-gold-bracelet-2026/)
+- **WordPress Post ID:** `37775`
+- **Slug:** `5-grams-gold-bracelet-2026`
+- **Article Engine:** `buying_guide` (How-to / Education)
+- **Author:** Satyam (Author ID `270271337`)
+- **Byline Displayed:** By Satyam, BlueStone Editorial
+- **WordPress Categories:** 
+  - `Gold` (Category ID `554493348`)
+  - `Jewellery Problem & Solution` (Category ID `554493465`)
+- **Word Count:** 4,619 visible words on page (draft raw block count: 5,569 words)
+
+---
+
+### 2. Search Engine & Topic Metrics
+- **Primary Keyword:** `5 grams gold bracelet`
+- **Search Volume:** 9,900
+- **Keyword Difficulty (KD):** 21
+- **Priority Score:** 7102.1739
+- **Theme / Category Fit:** How-to / Education | Jewellery Education
+- **Supplied Supporting Keywords Used:**
+  - `5 grams gold bracelet for women` (Accepted: Assigned dedicated H2 section, contextual body discussions, image alts, and FAQ mapping)
+- **Supplied Supporting Keywords Rejected:** None (all provided queue terms were valid and matched search intent)
+- **Natural Semantic Variations Integrated:**
+  - `5 grams gold bracelet designs`
+  - `5 gm gold bracelet daily wear`
+  - `22k vs 18k 5 gram gold bracelet`
+  - `5g gold bracelet price calculation`
+  - `lightweight gold bracelet durability`
+
+---
+
+### 3. Competitor URL & Gap Analysis Summary
+- **Supplied Competitor URL:** Blank in source row (no fabricated competitor analysis performed).
+- **SERP Gap Strategy:** Standard generic buying guides for 5-gram gold bracelets frequently omit technical durability considerations (such as solid link versus hollow link integrity), provide unclear explanations of gross weight versus net gold weight, or display volatile, outdated prices. This comprehensive guide establishes authority by walking buyers through exact clasp engineering, purity trade-offs (22K daily wear softness versus 18K alloyed tensile strength), BIS hallmarking verification via the BIS Care app, and transparent billing breakdown formulas without ever hardcoding volatile prices.
+
+---
+
+### 4. H2 Keyword & Structural Map
+The article features 15 H2 headings strategically organized to satisfy user intent and SEO/AEO crawling architecture:
+
+1. **Why a 5 Grams Gold Bracelet Is the Ultimate Everyday Luxury Choice** *(Spine: Primary Keyword Hook)*
+2. **What Does a 5 Grams Gold Bracelet Look Like on the Wrist?** *(Spine: Structural Architecture & Visual Proportions)*
+3. **Popular 5 Grams Gold Bracelet for Women Designs and Daily Wear Silhouettes** *(Spine: Supporting Keyword Focus)*
+4. **Featured Everyday Gold Bracelets from BlueStone** *(Visual: Interactive Product Showcase & Coverflow Carousel)*
+5. **Purity Breakdown: Choosing Between 22K, 18K, and 14K for a 5 Gram Bracelet** *(Spine: Metallurgical Durability & Alloy Mechanics)*
+6. **Chain Links vs Hollow Bangles: Durability Realities for Five Gram Gold** *(Spine: Hollow vs Solid Longevity Analysis)*
+7. **Clasp and Fastener Safety: Securing Your Lightweight Gold Bracelet** *(Spine: Functional Hardware & Clasp Integrity)*
+8. **Wrist Sizing and Fit Guide: Avoiding Tension on Delicate Gold Chains** *(Spine: Sizing Accuracy & Tension Prevention)*
+9. **How Pricing Works for a 5 Grams Gold Bracelet in India** *(Spine: Bullion, Making Charges, and 3% GST Formula Breakdown)*
+10. **Hallmarking Essentials: Checking the 6-Digit BIS HUID Before You Buy** *(Trust & Compliance: BIS HUID Verification Guide)*
+11. **Styling and Layering Tips for Sleek 5 Gram Gold Bracelets** *(Spine: Daily Wear & Multi-Metal Stack Styling)*
+12. **Daily Care, Cleaning, and Safe Storage Practices** *(Spine: Maintenance, Chemical Avoidance, and Storage)*
+13. **Conclusion: Selecting the Perfect Five Gram Gold Bracelet for Your Collection** *(Spine: Summary & Decision Framework; strictly precedes Related Guides)*
+14. **Related Jewellery Buying Guides and Style Inspiration** *(Spine: Internal Cluster Linking directly between Conclusion and FAQs)*
+15. **Frequently Asked Questions About 5 Grams Gold Bracelets** *(Spine: 6 Complete FAQ Pairs Preceding Trailing JSON-LD Schema)*
+
+---
+
+### 5. Factual Sources & Consumer Protection Standards
+- **Bureau of Indian Standards (BIS):** Mandatory 6-digit alphanumeric HUID (Hallmark Unique Identification) authentication protocols and verification via the official BIS Care mobile application.
+- **Purity Standards:** 22K (916 hallmark, 91.6% purity), 18K (750 hallmark, 75.0% purity), and 14K (585 hallmark, 58.5% purity).
+- **Transparent Price Breakdown:** Outlined the standard industry formula: `(Net Gold Weight × Bullion Spot Rate for Selected Karat) + Making Charges + 3% GST`, highlighting the strict exclusion of enamel or stone weight from gold calculations.
+- **Structural Integrity:** Emphasized solid-core link designs over hollow tubes for daily wear longevity at the 5-gram weight point.
+
+---
+
+### 6. Media & Visual Assets
+
+#### Type 2 Carousel Media (6 Cards Uploaded to Media Library)
+- **Media ID `37769`:** `the-shining-star-bracelet-carousel.webp` (The Shining Star Bracelet, SKU `BIMG0635V45`)
+- **Media ID `37770`:** `the-tapia-chain-bracelet-carousel.webp` (The Tapia Chain Bracelet, SKU `BIPO0987V31`)
+- **Media ID `37771`:** `the-elize-evil-eye-bracelet-carousel.webp` (The Elize Evil Eye Bracelet, SKU `BISL0987V71`)
+- **Media ID `37772`:** `the-kricia-charm-bracelet-carousel.webp` (The Kricia Charm Bracelet, SKU `BIPO0730V39`)
+- **Media ID `37773`:** `the-pervinca-charm-holder-bracelet-carousel.webp` (The Pervinca Charm Holder Bracelet, SKU `BIAV0865V24`)
+- **Media ID `37774`:** `the-malocchio-charm-holder-bracelet-carousel.webp` (The Malocchio Charm Holder Bracelet, SKU `BIAV0865V25`)
+
+#### Type 3 Photorealistic Imagery (Generated via Higgsfield `nano_banana_pro`)
+- **Hero Image (Media ID `37776`):**
+  - **Filename:** `5-grams-gold-bracelet-hero-2026.webp`
+  - **Job ID:** `e57f783a-a830-4322-86b4-f4ef67dad2ee`
+  - **SKU Featured:** `BIPO0987V31` (The Tapia Chain Bracelet)
+  - **Prompt Structure:** Fair-skinned Indian woman wearing the delicate textured 5-gram link chain bracelet, styled in refined natural morning light, attached as post featured image.
+- **Flatlay Image (Media ID `37777`):**
+  - **Filename:** `5-grams-gold-bracelet-flatlay-2026.webp`
+  - **Job ID:** `9a02565c-37eb-4ea1-bfcf-4b90873e3a38`
+  - **SKU Featured:** `BISL0987V71` (The Elize Evil Eye Bracelet)
+  - **Setting:** `desk-kraft` (Warm natural wood desk surface, textured kraft sketchbook, soft natural desk lamp illumination).
+- **Lifestyle Editorial Image (Media ID `37778`):**
+  - **Filename:** `5-grams-gold-bracelet-lifestyle-2026.webp`
+  - **Job ID:** `6162edd3-8446-4e40-b9ad-5e896b87814e`
+  - **SKU Featured:** `BIMG0635V45` (The Shining Star Bracelet)
+  - **Prompt Structure:** Candid profile portrait of a fair-skinned Indian professional woman at a bright modern window cafe, wearing the delicate star motif gold bracelet.
+
+---
+
+### 7. Product Rotation & Catalog Compliance
+- **Flatlay Surface Rotation:** Rotated to `desk-kraft` (previous posts utilized `linen-bedside` in Rank 72 and `marble-vanity` in Rank 71).
+- **Product Catalog Overlap Compliance:** Exactly 6 female bracelet models exist in the approved catalog file (`Seo Products - consolidated.csv`). All 6 models were deployed across the coverflow carousel cards, and the 3 models featuring human reference imagery were assigned to the 3 Type 3 visual slots.
+
+---
+
+### 8. Higgsfield Engine Status
+- **Subscription Plan:** `ultimate`
+- **Starting Credit Balance:** `667.37`
+- **Ending Credit Balance:** `661.37`
+- **Total Credits Consumed:** `6.00` (3 generations @ 2.00 credits each)
+- **Retries:** 0 (all 3 image generations passed validation on initial submission)
+
+---
+
+### 9. Duplicate & Cannibalization Gate
+- **Pre-Publish Verification:** Verified against live WordPress REST API search and exact slug queries for `5-grams-gold-bracelet-2026`. No identical or cannibalizing URLs existed on the domain. Safe to deploy.
+
+---
+
+### 10. Live QA & Metadata Validation
+- **HTTP Response:** `200 OK`
+- **Headings Structure:** Exactly 1 H1 heading and 15 H2 headings.
+- **Section Ordering:** Conclusion correctly precedes Related Guides, which directly precedes the 6 FAQ items.
+- **Formatting Constraints:**
+  - Em dashes (`—`): 0 found
+  - En dashes (`–`): 0 found
+  - Spaced hyphens (` - `): 0 found
+  - Currency symbols (`₹`, `Rs`, `INR`): 0 found
+  - HTML Tables (`<table`, `wp:table`): 0 found
+- **Schema Validation:**
+  - `FAQPage` schema fully configured with all 6 on-page questions and answers.
+  - `BlogPosting` schema verified with complete article metadata and 3-image WebP array.
+- **Open Graph Image Resolution:**
+  - Attached featured media `37776` resolved directly by Yoast and Jetpack Photon to:
+    `https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/5-grams-gold-bracelet-hero-2026.webp?fit=1400%2C781&ssl=1` (with `og:image:width: 1400` and `og:image:height: 781`).
+
+---
+
+### 11. State & Status Tracking
+- **`output/Week8_Blog_Queue_status.csv`:** Updated with live URL, post ID `37775`, status `Published`, and featured SKU identifiers.
+- **`output/product_rotation.json`:** Updated with entry `week8_rank73`.
+- **`output/Week8_Blog_Queue.csv`:** Updated Rank 73 status to `Published`.
+- **`SEO Strategy 2026.xlsx` (Sheet `Week 8`):** Updated Rank 73 row with status `Published`, live URL `https://blog.bluestone.com/5-grams-gold-bracelet-2026/`, and execution details.
+- **`output/checkpoints/week8_rank73.json`:** All 15 pipeline stages verified as `done`.
+
+STEP DONE: final_report | time: 2026-09-06T21:45:55+05:30 | step duration: 0m 15s | total elapsed: 16m 01s

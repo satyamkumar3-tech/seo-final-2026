@@ -1,0 +1,135 @@
+{
+  "pipeline": "week9",
+  "rank": 74,
+  "slug": "neelam-stone-ring-2026",
+  "primary": "neelam stone ring",
+  "created_at": "2026-09-26T10:19:24Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "finished_at": "2026-09-26T11:05:10Z",
+      "completed": true
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-26T11:05:16Z",
+      "finished_at": "2026-09-26T11:05:34Z",
+      "plan": "ultimate",
+      "starting_credits": 70.35
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-26T11:05:41Z",
+      "finished_at": "2026-09-26T11:06:36Z",
+      "primary": "neelam stone ring",
+      "volume": 2400,
+      "kd": 23.0,
+      "action": "New",
+      "slug": "neelam-stone-ring-2026"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-26T11:06:44Z",
+      "finished_at": "2026-09-26T11:07:08Z",
+      "exact_slug_matches": 0,
+      "conflict": "none",
+      "approved": true
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "started_at": "2026-09-26T11:07:13Z",
+      "finished_at": "2026-09-26T11:08:58Z",
+      "urls_scraped": 5,
+      "avg_word_count": 3127
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-26T11:09:03Z",
+      "finished_at": "2026-09-26T11:09:13Z",
+      "competitor_url": "none_supplied",
+      "bis_standards_checked": true,
+      "gemological_facts_verified": true
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-26T11:09:19Z",
+      "finished_at": "2026-09-26T11:09:51Z",
+      "primary": "neelam stone ring",
+      "supporting": "neelam stone ring design",
+      "h2_count": 11
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-26T11:09:57Z",
+      "finished_at": "2026-09-26T11:10:11Z",
+      "engine": "Buying Guide / Education",
+      "flatlay_setting": "cafe-tray"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-26T11:11:06Z",
+      "finished_at": "2026-09-26T11:13:25Z",
+      "word_count": 3313,
+      "h2_count": 11,
+      "slug": "neelam-stone-ring-2026"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-26T11:13:31Z",
+      "finished_at": "2026-09-26T11:13:36Z",
+      "carousel_ids": "40280,40281,40282,40283,40284,40285",
+      "verified": true
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-26T11:13:42Z",
+      "finished_at": "2026-09-26T11:14:48Z",
+      "post_id": 40286,
+      "url": "https://blog.bluestone.com/neelam-stone-ring-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-26T11:14:55Z",
+      "finished_at": "2026-09-26T11:20:06Z",
+      "hero_job": "8bee567c-0827-490f-9e5b-67c2ae509212",
+      "flatlay_job": "47e2acad-f609-49dd-b156-5f82cedc688a",
+      "lifestyle_job": "4d98bae5-b191-4075-9a4f-7bbd7581ef12",
+      "retries": 0
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-26T11:20:17Z",
+      "finished_at": "2026-09-26T11:21:19Z",
+      "hero_id": 40287,
+      "flatlay_id": 40288,
+      "lifestyle_id": 40289,
+      "patched": true
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-26T11:21:23Z",
+      "finished_at": "2026-09-26T11:22:50Z",
+      "all_checks_passed": true,
+      "live_url": "https://blog.bluestone.com/neelam-stone-ring-2026/",
+      "word_count": 3443
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-26T11:22:56Z",
+      "finished_at": "2026-09-26T11:23:31Z",
+      "status_csv": true,
+      "product_rotation": true,
+      "excel_workbook": true
+    },
+    "final_report": {
+      "status": "done",
+      "finished_at": "2026-09-26T11:23:36Z",
+      "completed": true
+    }
+  },
+  "updated_at": "2026-09-26T11:24:24Z",
+  "completed_at": "2026-09-26T11:23:36Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

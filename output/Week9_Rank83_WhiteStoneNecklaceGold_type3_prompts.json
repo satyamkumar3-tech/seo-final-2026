@@ -1,0 +1,55 @@
+{
+  "workflow": "Higgsfield CLI nano_banana_pro with local product reference images",
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "theme_anchor": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, filmic tonal response, natural dynamic range, filmic contrast, subtle analog grain. Fair-skinned Indian subject, light wheatish complexion.",
+    "negative_prompt": "dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, illustration, 3d render, cgi, blurry, bad anatomy, distorted hands, text, logo, watermark, readable text, phone screen, laptop screen"
+  },
+  "slots": {
+    "hero": {
+      "product_name": "The Lumeelle Cluster Pendant",
+      "code": "BISW1080P133",
+      "pdp": "https://www.bluestone.com/pendants/the-lumeelle-cluster-pendant~162509.html",
+      "product_dimensions": "32.66mm height by 32.66mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Lumeelle Cluster Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Lumeelle Cluster Pendant/2_front.png"
+      ],
+      "prompt": "Hyper-realistic commercial lifestyle photography, cinematic 35mm film still, Kodak Portra 400 color science, highlight halation, creamy bokeh, subtle analog grain. Candid portrait of an elegant fair-skinned North Indian woman with a delicate light wheatish complexion, warm expressive dark eyes, and a radiant natural smile, seated gracefully near a sunlit window. She is wearing a minimal champagne raw silk top with a soft scoop neckline. Around her neck, resting delicately along the collarbone, she wears a fine yellow gold chain holding The Lumeelle Cluster Pendant from @img2 at true worn scale matching @img1 body_image (product_height_mm=32.66 and product_width_mm=32.66; these are jewellery dimensions, not face or body measurements). The circular gold pendant features brilliant faceted white stones catching soft morning illumination with crisp adamantine sparkle. The necklace is the single and only jewellery piece in the frame. Warm ambient daylight streaming through sheer curtains, soft neutral architectural interior with a blurred ceramic vase of white orchids in the background, zero phones, zero readable text. Editorial jewellery magazine aesthetic, natural skin texture, gentle depth of field. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen, laptop.",
+      "alt": "white stone necklace gold 2026 hero: fair-skinned Indian woman wearing The Lumeelle Cluster Pendant in warm natural daylight"
+    },
+    "flatlay": {
+      "product_name": "The Teshvarya Pendant",
+      "code": "BISW1080P32",
+      "pdp": "https://www.bluestone.com/pendants/the-teshvarya-pendant~173771.html",
+      "product_dimensions": "22.56mm height by 22.56mm width (jewellery dimensions only)",
+      "setting": "marble-vanity",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Teshvarya Pendant/0_primary.png",
+        "ProductImages/raw/Pendants/The Teshvarya Pendant/2_front.png",
+        "ProductImages/raw/Pendants/The Teshvarya Pendant/5_close_up.png"
+      ],
+      "prompt": "Top-down commercial jewellery flatlay photography, 50mm macro lens, f/4 aperture, sharp focus on jewellery with gentle falloff. Flatlay setting: marble-vanity. Arranged on a luxurious honed white Italian Carrara marble vanity surface with subtle grey veining: @img1, an authentic fine 18Kt yellow gold pendant necklace studded with geometric white stones, accompanied by detailed views from @img2 and @img3, resting flat and centered at true life scale (22.56mm height by 22.56mm width). Beside the gold necklace are authentic styling props: a compact circular brushed brass jewellery dish, an antique brass jeweller loupe with glass lens, a folded blush velvet pouch, and a sheer silk ribbon without readable markings. Soft directional morning window daylight, warm organic shadows, Kodak Portra filmic tonal response, analog grain. No people, no hands, no readable text, no cards, no screens, no logos. Avoid: floating packshot, cartoon, 3d render, CGI, plastic textures, blurry, artificial lighting, text, watermark, ruler markings, numbers.",
+      "alt": "white stone necklace gold 2026 flatlay: The Teshvarya Pendant on marble vanity with velvet pouch and brass loupe",
+      "caption": "The <a href=\"https://www.bluestone.com/pendants/the-teshvarya-pendant~173771.html\">Teshvarya Pendant</a> in 18Kt yellow gold with brilliant white stones displayed on a marble vanity"
+    },
+    "lifestyle": {
+      "product_name": "The Sarvanya Pendant",
+      "code": "BISW1080P132",
+      "pdp": "https://www.bluestone.com/pendants/the-sarvanya-pendant~156927.html",
+      "product_dimensions": "33.35mm height by 23.79mm width (jewellery dimensions only, not face or body measurements)",
+      "local_reference_images": [
+        "ProductImages/raw/Pendants/The Sarvanya Pendant/1_body_portrait.png",
+        "ProductImages/raw/Pendants/The Sarvanya Pendant/2_front.png"
+      ],
+      "prompt": "Hyper-realistic candid lifestyle action photograph, 35mm film still, Kodak Portra 400 color science, creamy bokeh, natural dynamic range, highlight halation, subtle film grain. A graceful, fair-skinned North Indian woman with a delicate light wheatish complexion and soft swept-back hair is captured in an authentic candid moment in a modern sunlit dressing room. She is dressed in an understated ivory and gold embroidered festive kurta. Around her neck, she wears a delicate gold chain holding The Sarvanya Pendant from @img2 at exact worn scale matching @img1 body_image (product_height_mm=33.35 and product_width_mm=23.79; jewellery dimensions only). The fine gold pendant features intricate white stone accents that catch the warm natural morning light. She gently touches the pendant with her fingertips as if adjusting it in a mirror, showing natural skin texture and realistic hand anatomy. Warm wooden architectural trim, soft ambient room reflections in the creamy background, zero phone screens, no readable text. Editorial magazine quality. Avoid: dark skin, deep brown skin, heavily tanned skin, duplicate jewellery, floating packshot, cartoon, 3d render, blurry, distorted hands, text, watermark, phone screen.",
+      "alt": "white stone necklace gold 2026 lifestyle: fair-skinned Indian woman adjusting The Sarvanya Pendant in sunlit dressing room",
+      "caption": "The <a href=\"https://www.bluestone.com/pendants/the-sarvanya-pendant~156927.html\">Sarvanya Pendant</a> styled in 18Kt gold with shimmering white stones for elegant neckline framing"
+    }
+  },
+  "output": {
+    "hero": "output/white-stone-necklace-gold-hero-2026.webp",
+    "flatlay": "output/white-stone-necklace-gold-flatlay-2026.webp",
+    "lifestyle": "output/white-stone-necklace-gold-lifestyle-2026.webp"
+  }
+}

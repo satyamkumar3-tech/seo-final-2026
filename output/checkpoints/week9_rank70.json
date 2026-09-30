@@ -1,0 +1,116 @@
+{
+  "pipeline": "week9",
+  "rank": 70,
+  "slug": "citrine-bracelet-benefits-2026",
+  "primary": "citrine bracelet benefits",
+  "created_at": "2026-09-25T10:42:53Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:45:43Z",
+      "docs_read": 11
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:45:50Z",
+      "plan": "ultimate",
+      "credits": 192.6
+    },
+    "inspect_row": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:46:08Z",
+      "action": "New",
+      "primary": "citrine bracelet benefits",
+      "volume": 2400,
+      "kd": 20.0
+    },
+    "duplicate_check": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:46:31Z",
+      "slug_status": "available",
+      "intent_status": "unique"
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:53:15Z",
+      "urls_scraped": 5,
+      "avg_word_count": 2031
+    },
+    "fact_check": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:53:23Z",
+      "competitor_analyzed": "caratlane",
+      "mohs_hardness": 7,
+      "bis_standards": "verified"
+    },
+    "keyword_map": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:53:32Z",
+      "primary": "citrine bracelet benefits",
+      "supporting": "pyrite stone bracelet benefits",
+      "h2_count": 11
+    },
+    "structure_visuals": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:53:46Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "linen-bedside",
+      "visual_concept": "warm golden citrine bracelet, linen-bedside setting, fair-skinned Indian editorial"
+    },
+    "draft": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:57:57Z",
+      "word_count": 2614,
+      "draft_json": "output/week9_rank70_draft.json"
+    },
+    "product_media": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:56:26Z",
+      "carousel_count": 6,
+      "media_ids": "40230,40231,40232,40233,40234,40235"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "finished_at": "2026-09-25T10:58:30Z",
+      "post_id": 40236,
+      "url": "https://blog.bluestone.com/citrine-bracelet-benefits-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "finished_at": "2026-09-25T11:02:16Z",
+      "hero_job": "227c19ee-5115-42c7-b8ef-53c74eef2e39",
+      "flatlay_job": "539809ed-a336-4fa3-ac80-114defbe5ebc",
+      "lifestyle_job": "c1a4e3dd-ed27-4ede-9dfc-b2d08c266a11"
+    },
+    "patch_type3": {
+      "status": "done",
+      "finished_at": "2026-09-25T11:03:10Z",
+      "hero_media": 40237,
+      "flatlay_media": 40238,
+      "lifestyle_media": 40239
+    },
+    "live_qa": {
+      "status": "done",
+      "finished_at": "2026-09-25T11:04:53Z",
+      "http_status": 200,
+      "og_image_verified": true,
+      "carousel_verified": true
+    },
+    "update_status": {
+      "status": "done",
+      "finished_at": "2026-09-25T11:05:57Z",
+      "status_csv": "updated",
+      "rotation_json": "updated",
+      "excel_sheet": "updated"
+    },
+    "final_report": {
+      "status": "done",
+      "finished_at": "2026-09-25T11:06:01Z"
+    }
+  },
+  "updated_at": "2026-09-25T11:06:34Z",
+  "completed_at": "2026-09-25T11:06:01Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

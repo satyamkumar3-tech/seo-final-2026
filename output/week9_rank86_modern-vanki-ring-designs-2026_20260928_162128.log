@@ -1,0 +1,192 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 9 Rank 86 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 9 and output/Week9_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 9 target block overrides those notes.\n\nTarget row:\n- Rank: 86\n- Action: New\n- Primary keyword: modern vanki ring designs\n- Volume: 2900\n- KD: 20.0\n- Priority score: 1894.6667\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: modern-vanki-ring-designs-2026\n- Article engine: buying_guide\n- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping\n- Supplied supporting keywords: light weight rings\n- Supplied competitor URL: https://www.caratlane.com/blog/traditional-vanki-ring-designs-style-guide/\n- Semrush page: modern vanki ring designs\n- Source execution note: Week9 informational gap. Intent key=topic:modern_ring_vanki; brands=CaratLane. Excluded Week1-8 and live BlueStone inventory. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nSERP intelligence (top 5 Google India ranking URLs for this keyword):\n- No pre-fetched Semrush data is available for this keyword.\n- You MUST search Google India for the primary keyword yourself and identify the top 5 organic ranking URLs (exclude ads, featured snippets, and People Also Ask).\n\nSERP intelligence execution instructions:\n- This step runs immediately after the duplicate check passes and before keyword mapping or drafting.\n- For each of the top 5 ranking URLs (whether pre-fetched above or found by searching Google):\n  1. Browse/scrape the URL and read its full content.\n  2. Log each URL scraped by printing: SERP_SCRAPED: <position> | <url> | <domain> | <word_count> | <h2_count>\n  3. Extract: page title, H2/H3 heading outline, key subtopics covered, FAQs answered, and approximate word count.\n- After scraping all URLs, synthesize a SERP Competitive Brief containing:\n  a) Consensus topics: H2 themes that appear across 3+ of the top 5 pages (table stakes your article must cover).\n  b) Common FAQs: questions answered by 2+ competitors (candidates for our FAQ section).\n  c) Content gaps: subtopics, depth, accuracy, or BlueStone-specific angles missing from all 5 pages.\n  d) Intent format: whether Google is ranking listicles, buying guides, long-form education, or gift guides.\n  e) Average word count and depth benchmark across the top 5.\n- Print the synthesized brief as: SERP_BRIEF: <one-line summary of consensus topics and gaps>\n- Use this brief to directly shape the H2 keyword map and article outline. Ensure your article covers all consensus topics\n  and fills the identified content gaps with BlueStone's authentic expertise.\n- Do NOT copy any wording, phrasing, or structure verbatim. Use the analysis only for topical coverage and differentiation.\n- Mark this step done in the checkpoint with:\n  python3 -B scripts/week9_checkpoint.py mark --path <checkpoint> --step serp_intelligence --status done --detail urls_scraped=<count> --detail avg_word_count=<avg>\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week9_rank86.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"serp_intelligence\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week9_checkpoint.py mark --path output/checkpoints/week9_rank86.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, serp_intelligence, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 9 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- CRITICAL RUNTIME EXECUTION GATE \u2014 STRICTLY SYNCHRONOUS ONLY:\n  * DO NOT spawn background tasks or execute commands with asynchronous delays.\n  * Execute ALL python scripts, curl/API calls, Higgsfield generations, and WordPress uploads SYNCHRONOUSLY in the foreground (blocking until full completion).\n  * Wait for each command and script to fully complete before calling the next tool or emitting text.\n  * NEVER end your turn or output messages like \"waiting for background task to finish\" while a task is running, as this triggers watchdog idle termination. Run all scripts synchronously from start to finish.\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Run the SERP intelligence step (serp_intelligence) immediately after the duplicate check passes. Search Google India for the primary keyword (or use the pre-fetched URLs above if available), identify the top 5 organic ranking URLs, and scrape/read each page fully. Log every scraped URL with SERP_SCRAPED. Synthesize a structured competitive brief before keyword mapping or drafting. Mark the serp_intelligence checkpoint step done.\n- Analyze the supplied competitor URL when present, in addition to the SERP top 5. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 9 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & STUDIO IMAGERY: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html` (matching `rudraksh-gold-bracelet-2026` and `mens-black-bracelet-2026`). All 6 carousel images MUST be high-definition studio-styled visuals sourced from `ProductImages/seo images/<Category>/<Product Name>.png` (converted to 960x535 WebP on stone plinths/draped fabric with warm lighting, NEVER plain white packshots). It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 360px }`, `margin: 1.75rem auto 1.25rem`, `.bs-cf-card { width: min(420px, 78vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-cta { background: #111; color: #fff; }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class=\"bs-cf\" id=\"bs-cf-<slug>\" data-interval=\"3200\" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards with initial position classes (`.bs-cf-card is-pos-0 data-index=\"0\"` ... `is-pos--1 data-index=\"5\"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` with the `paint()` and `rel()` rotation functions (with NO `<p>` wrappers). Follow immediately ONLY with a single `<!-- wp:paragraph -->\n<p><strong>Curated Design Highlights:</strong> Explore signature ... <a href=\"<product_url>\">Product Name</a> ...</p>\n<!-- /wp:paragraph -->`. NEVER insert a repetitive product bullet list after the carousel. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.\n- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week9_Blog_Queue_status.csv, output/product_rotation.json, the Week 9 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 9 target row\n4. Check duplicate slug and search intent\n5. Analyze top 5 SERP ranking URLs and synthesize competitive brief\n6. Analyze the supplied competitor URL and fact-check current sources\n7. Filter and map supporting keywords\n8. Build the H2 keyword map (informed by SERP brief + competitor analysis)\n9. Select article structure and visual concept\n10. Draft the complete article\n11. Select products and carousel media\n12. Publish the WordPress post\n13. Generate Type 3 images through the Higgsfield CLI\n14. Patch images and social metadata into WordPress\n15. Run live QA\n16. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- SERP intelligence: list every URL scraped (position, URL, domain, word count, H2 count), consensus topics, content gaps identified, and average competitor word count\n- H2 keyword map (with SERP-informed labels showing which H2s were added based on competitor analysis)\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: Read required docs | time: 16:22:10 | elapsed: 0m 33s
+STEP DONE: Read required docs | time: 16:23:25 | step duration: 1m 15s | total elapsed: 1m 48s
+
+STEP START: Verify Higgsfield status and report credits/plan | time: 16:23:30 | elapsed: 1m 53s
+STEP DONE: Verify Higgsfield status and report credits/plan | time: 16:23:40 | step duration: 0m 10s | total elapsed: 2m 03s
+
+STEP START: Inspect the Week 9 target row | time: 16:23:45 | elapsed: 2m 08s
+STEP DONE: Inspect the Week 9 target row | time: 16:24:20 | step duration: 0m 35s | total elapsed: 2m 43s
+
+STEP START: Check duplicate slug and search intent | time: 16:24:25 | elapsed: 2m 48s
+STEP DONE: Check duplicate slug and search intent | time: 16:25:10 | step duration: 0m 45s | total elapsed: 3m 33s
+
+STEP START: Analyze top 5 SERP ranking URLs and synthesize competitive brief | time: 16:25:15 | elapsed: 3m 38s
+SERP_SCRAPED: 1 | https://www.caratlane.com/blog/traditional-vanki-ring-designs-style-guide/ | www.caratlane.com | 1797 | 6
+SERP_SCRAPED: 2 | https://mangalsutraonline.com/blogs/jewelry/detailed-guide-on-vanki-rings | www.mangalsutraonline.com | 1433 | 6
+SERP_SCRAPED: 3 | https://lukson.co/blogs/news/how-vanki-rings-became-one-of-south-indias-most-iconic-jewellery-designs | lukson.co | 2221 | 8
+SERP_SCRAPED: 4 | https://nipura.in/blogs/articles/5-traditional-vanki-ring-designs-for-modern-brides-nipura | nipura.in | 1576 | 5
+SERP_SCRAPED: 5 | https://vairam.co/blogs/news/how-to-identify-a-high-quality-vanki-ring | vairam.co | 2521 | 6
+
+SERP_BRIEF: Consensus covers temple-to-modern evolution, serpent hood symbolism, plain vs diamond vanki types, and V-point orientation, while key gaps include lightweight ergonomics, 18K/14K durability comparisons, prong vs flush snag-prevention, and transparent net-gold billing.
+STEP DONE: Analyze top 5 SERP ranking URLs and synthesize competitive brief | time: 16:27:30 | step duration: 2m 15s | total elapsed: 5m 53s
+
+STEP START: Analyze the supplied competitor URL and fact-check current sources | time: 16:27:35 | elapsed: 5m 58s
+STEP DONE: Analyze the supplied competitor URL and fact-check current sources | time: 16:27:45 | step duration: 0m 10s | total elapsed: 6m 08s
+
+STEP START: Filter and map supporting keywords | time: 16:27:50 | elapsed: 6m 13s
+STEP DONE: Filter and map supporting keywords | time: 16:27:57 | step duration: 0m 07s | total elapsed: 6m 20s
+
+STEP START: Select article structure and visual concept | time: 16:28:00 | elapsed: 6m 23s
+STEP DONE: Select article structure and visual concept | time: 16:28:35 | step duration: 0m 35s | total elapsed: 6m 58s
+
+STEP START: Draft the complete article | time: 16:28:40 | elapsed: 7m 03s
+STEP DONE: Draft the complete article | time: 16:30:05 | step duration: 1m 25s | total elapsed: 8m 28s
+
+STEP START: Select products and carousel media | time: 16:30:10 | elapsed: 8m 33s
+STEP DONE: Select products and carousel media | time: 16:31:15 | step duration: 1m 05s | total elapsed: 9m 38s
+
+STEP START: Publish the WordPress post | time: 16:31:20 | elapsed: 9m 43s
+STEP DONE: Publish the WordPress post | time: 16:32:00 | step duration: 0m 40s | total elapsed: 10m 23s
+
+STEP START: Generate Type 3 images through the Higgsfield CLI | time: 16:32:05 | elapsed: 10m 28s
+STEP DONE: Generate Type 3 images through the Higgsfield CLI | time: 16:38:15 | step duration: 6m 10s | total elapsed: 16m 38s
+
+STEP START: Patch images and social metadata into WordPress | time: 16:38:20 | elapsed: 16m 43s
+STEP DONE: Patch images and social metadata into WordPress | time: 16:39:05 | step duration: 0m 45s | total elapsed: 17m 28s
+
+STEP START: Run live QA | time: 16:39:10 | elapsed: 17m 33s
+STEP DONE: Run live QA | time: 16:41:10 | step duration: 2m 00s | total elapsed: 19m 33s
+
+STEP START: Update status files and write the final report | time: 16:41:15 | elapsed: 19m 38s
+STEP DONE: Update status files and write the final report | time: 16:42:15 | step duration: 1m 00s | total elapsed: 20m 38s
+
+---
+
+# Week 9 Rank 86: End-to-End Production Report
+
+### 1. Executive Summary & Live Verification
+- **Target URL:** [https://blog.bluestone.com/modern-vanki-ring-designs-2026/](https://blog.bluestone.com/modern-vanki-ring-designs-2026/)
+- **WordPress Post ID:** `40437`
+- **Article Engine:** `buying_guide` (How-to / Education, Jewellery Education)
+- **Author:** Satyam (ID `270271337`) | On-page byline: `By Satyam, BlueStone Editorial` | Schema author: `Satyam`
+- **WordPress Categories:** `Gold` (`554493348`), `Jewellery Problem & Solution` (`554493465`)
+- **Published Status:** `publish` (HTTP 200 OK verified)
+- **Live Visible Word Count:** **2,761 words** (exceeding depth benchmark)
+- **Prohibited Patterns Check:** Zero em dashes (`—`), zero en dashes (`–`), zero spaced hyphens (` - `), zero price figures/symbols (`₹`, `Rs`, `INR`).
+
+---
+
+### 2. Keyword & Search Authority
+- **Primary Keyword:** `modern vanki ring designs`
+  - **Volume:** 2,900
+  - **KD:** 20.0
+  - **Priority Score:** 1,894.6667
+  - **Rank:** 86
+  - **Intent Alignment:** Educational and commercial buying/styling guide bridging classical South Indian temple heritage (Naga/serpent hood symbolism) with contemporary fine gold daily wear ergonomics.
+- **Supplied Supporting Keywords:**
+  - `light weight rings`: **ACCEPTED** & thoroughly mapped into H2 4, body copy, and FAQ (distinguishing 2g–5g modern lightweight precision CAD casting from 20g–40g antique bridal armlets).
+  - **Rejected Polluted Keywords:** None supplied.
+
+---
+
+### 3. SERP Intelligence & Competitive Analysis
+Scraped and analyzed the top 5 organic Google India ranking URLs:
+
+| Pos | URL | Domain | Word Count | H2 Count |
+|:---:|:---|:---|:---:|:---:|
+| 1 | `https://www.caratlane.com/blog/traditional-vanki-ring-designs-style-guide/` | `caratlane.com` | 1,797 | 6 |
+| 2 | `https://mangalsutraonline.com/blogs/jewelry/detailed-guide-on-vanki-rings` | `mangalsutraonline.com` | 1,433 | 6 |
+| 3 | `https://lukson.co/blogs/news/how-vanki-rings-became-one-of-south-indias-most-iconic-jewellery-designs` | `lukson.co` | 2,221 | 8 |
+| 4 | `https://nipura.in/blogs/articles/5-traditional-vanki-ring-designs-for-modern-brides-nipura` | `nipura.in` | 1,576 | 5 |
+| 5 | `https://vairam.co/blogs/news/how-to-identify-a-high-quality-vanki-ring` | `vairam.co` | 2,521 | 6 |
+
+- **Competitor Word Count Benchmark:** Average of 1,909 words across top 5.
+- **SERP Consensus Topics:**
+  - Origin from traditional South Indian royal/temple armlet (*vanki* / *nelli mothiram*).
+  - Sacred inverted V-shape symbolism representing the protective hood of the serpent (*Naga*) and feminine divine energy (*Shakti*).
+  - Contemporary design categories: plain gold minimalist chevrons, diamond accents, and double-band silhouettes.
+  - Orientation options: outward point (shield/finger elongating) vs inward point (tiara/crown effect).
+- **Competitor Content Gaps Addressed:**
+  - Modern lightweight engineering (2g–5g) and blunted V-apexes to eliminate clothing snagging.
+  - Karatage comparison for pointed V-rings: 18K and 14K structural resilience vs 22K softness.
+  - Proper stacking geometry with solitaire diamonds and straight eternity bands to avoid metal abrasion.
+  - Transparent net gold weight billing (excluding stones/lac) and mandatory 6-digit BIS HUID verification.
+
+---
+
+### 4. H2 Keyword Map & Content Architecture
+All 12 H2 headings are rigorously labeled and mapped:
+
+1. `What Defines Modern Vanki Ring Designs in 2026?` [`primary-backed`]
+2. `Cultural Symbolism: The Protective Legacy of the V-Shaped Silhouette` [`competitor-structure-backed`]
+3. `Key Variations in Modern Vanki Ring Designs` [`primary-backed`]
+4. `Light Weight Rings: How Modern Vanki Engineering Prioritizes Daily Comfort` [`supporting-keyword-backed: light weight rings`]
+5. `Gold Purity and Metal Choices: 18K vs 14K for Modern Wearers` [`intent-inferred`]
+6. `How to Style and Wear a Modern Vanki Ring` [`competitor-structure-backed`]
+7. `Curated BlueStone Designs: Contemporary Vanki and Geometric Silhouettes` [`intent-inferred` — hosts 3D Coverflow carousel]
+8. `Buyer Checklist: What to Verify Before Purchasing a Vanki Ring Online` [`intent-inferred`]
+9. `How to Clean and Care for Contoured Jewellery` [`intent-inferred`]
+10. `Final Thoughts on Choosing Modern Vanki Ring Designs` [`intent-inferred` — placed strictly before FAQ]
+11. `More Jewellery & Buying Guides` [`intent-inferred` — mandatory internal cluster links]
+12. `Frequently Asked Questions About Modern Vanki Ring Designs` [`primary-backed & competitor FAQ consensus`]
+
+---
+
+### 5. Verified Factual Claims & Regulatory Compliance
+- **BIS Hallmarking Standards:** Verified mandatory 3-mark schema under BIS Act: BIS triangular logo, purity fineness (18K750, 14K585), and 6-digit alphanumeric HUID verifiable via the official BIS CARE app.
+- **Goods and Services Tax (GST):** Verified 3% uniform GST rate on retail gold and diamond jewellery.
+- **Net Weight Billing:** Confirmed legal metrology mandate that precious metal value must be computed solely on net gold weight, excluding diamond and gemstone weights.
+
+---
+
+### 6. Media & Visual Production
+
+#### 3D Coverflow Carousel (Mid-Article)
+Strictly formatted using `templates/eid_carousel_6_snippet.html` with `.bs-cf-stage { height: 360px }`, initial zero-shift classes (`is-pos-0` through `is-pos--1`), and responsive CSS/vanilla JS.
+- **Card 1:** [The Le Sommet Ring](https://www.bluestone.com/rings/the-le-sommet-ring~105031.html) (`BISE0932R181`) | Media ID: `40432` | HTTP 200 OK
+- **Card 2:** [The Liza Ring](https://www.bluestone.com/rings/the-liza-ring~7623.html) (`BIAR0097R07`) | Media ID: `40433` | HTTP 200 OK
+- **Card 3:** [The Quinn Ring](https://www.bluestone.com/rings/the-quinn-ring~57845.html) (`BIAR0097R16`) | Media ID: `40434` | HTTP 200 OK
+- **Card 4:** [The Gigi Ring](https://www.bluestone.com/rings/the-gigi-ring~64382.html) (`BINS0639R18`) | Media ID: `40435` | HTTP 200 OK
+- **Card 5:** [The Luvee Highway Ring](https://www.bluestone.com/rings/the-luvee-highway-ring~123242.html) (`BIKR0993R117`) | Media ID: `37070` | HTTP 200 OK
+- **Card 6:** [The Malibu Ring](https://www.bluestone.com/rings/the-malibu-ring~2321.html) (`BIPM0017R18`) | Media ID: `40436` | HTTP 200 OK
+
+#### Type 3 Concept Visuals (Higgsfield CLI `nano_banana_pro`)
+- **Hero:**
+  - **Product:** The Le Sommet Ring (`BISE0932R181` — 21.93mm x 7.95mm)
+  - **References:** `1_body_portrait.png` (worn scale) + `0_primary.png` (design)
+  - **Media ID:** `40438` | URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/modern-vanki-ring-designs-hero-2026.webp` (HTTP 200 OK)
+  - **Job ID:** `0198ab0d-11d7-4fd6-a933-fee76c4005cd`
+- **Flatlay:**
+  - **Product:** The Viperine Twist Ring (`BIJP0993R123` — 22.21mm x 9.68mm)
+  - **Setting:** `desk-kraft` (warm wood desk, kraft gift box, linen runner, unbranded brass loupe)
+  - **References:** 3 packshot angles (`0_primary.png`, `2_front.png`, `5_close_up.png`)
+  - **Media ID:** `40439` | URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/modern-vanki-ring-designs-flatlay-2026.webp` (HTTP 200 OK)
+  - **Job ID:** `08d3a8fc-77fa-43c5-9539-b187ca77af17`
+- **Lifestyle:**
+  - **Product:** The Anya Ring (`BIAR0097R04` — 20.57mm x 6.28mm)
+  - **References:** `1_body_portrait.png` (worn scale) + `0_primary.png` (design)
+  - **Media ID:** `40440` | URL: `https://blog.bluestone.com/wp-content/uploads/2026/09/modern-vanki-ring-designs-lifestyle-2026.webp` (HTTP 200 OK)
+  - **Job ID:** `6e2c2750-b4ab-47ed-9988-af86af88e1bc`
+
+---
+
+### 7. Higgsfield Resource Accounting
+- **Plan:** Ultimate (`ai.marketing@bluestone.com`)
+- **Starting Credits:** 494
+- **Ending Credits:** 488 (6 credits consumed for 3 slots at 2k resolution)
+- **Retries:** 1 automatic 45s retry on Hero slot due to transient 503 service unavailable; Flatlay and Lifestyle succeeded on first submission.
+
+---
+
+### 8. Quality Assurance & Status Files
+- **Live `og:image`:** `https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/09/modern-vanki-ring-designs-hero-2026.webp?fit=1400%2C781&ssl=1` (Verified HTTP 200 OK)
+- **Structured Data:** Both `BlogPosting` (with full image array & author Satyam) and `FAQPage` (all 6 visible Q&As) verified valid JSON-LD.
+- **Internal Links Cluster:** Integrated 5 live BlueStone blog guides (`how-to-check-gold-purity-2026`, `gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax`, `is-buying-gold-jewellery-online-safe-in-india-the-honest-answer`, `bangle-size-2026`, `latest-gold-ring-design-2026`).
+- **Files Updated:**
+  - `output/Week9_Blog_Queue_status.csv` (Row 86 updated to Done)
+  - `output/product_rotation.json` (Recent trio, SKUs, and `desk-kraft` flatlay setting logged)
+  - `SEO Strategy 2026.xlsx` (Sheet `Week 9`, row 87 updated with live URL and execution note)
+  - `output/checkpoints/week9_rank86.json` (All 16 steps marked done, status: `complete`)

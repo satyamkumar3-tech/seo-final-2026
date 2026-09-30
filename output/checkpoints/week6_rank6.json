@@ -1,0 +1,117 @@
+{
+  "pipeline": "week6",
+  "rank": 6,
+  "slug": "marriage-gifts-for-girls-2026",
+  "primary": "marriage gifts for girls",
+  "created_at": "2026-08-18T12:19:34Z",
+  "status": "blocked",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-18T12:19:54Z",
+      "finished_at": "2026-08-18T12:20:22Z",
+      "files": "11_required_docs_plus_higgsfield_skill"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-18T12:20:28Z",
+      "finished_at": "2026-08-18T12:20:40Z",
+      "credits": 255.37,
+      "plan": "ultimate",
+      "path": "cli"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-18T12:20:47Z",
+      "finished_at": "2026-08-18T12:20:52Z",
+      "primary": "marriage_gifts_for_girls",
+      "volume": 9900,
+      "kd": 23,
+      "score": 2.914,
+      "theme": "Gift_Guides",
+      "category_fit": "Occasion_Gifting",
+      "competitor_column": "absent",
+      "supporting_keyword_column": "absent"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-18T12:20:57Z",
+      "finished_at": "2026-08-18T12:21:34Z",
+      "exact_slug_matches": 0,
+      "conflicting_post_id": 34833,
+      "conflicting_url": "https://blog.bluestone.com/wedding-gifts-for-girls-2026/",
+      "reason": "near_duplicate_intent",
+      "evidence": "rank5_targets_same_recipient_occasion_and_already_maps_marriage_gifts_for_girls"
+    },
+    "fact_check": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "keyword_map": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "structure_visuals": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "draft": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "product_media": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "publish_wordpress": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "generate_type3": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "patch_type3": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "live_qa": {
+      "status": "skipped",
+      "finished_at": "2026-08-18T12:22:00Z",
+      "reason": "existing_intent_satisfied"
+    },
+    "update_status": {
+      "status": "done",
+      "finished_at": "2026-08-18T12:22:50Z",
+      "reason": "existing_intent_satisfied",
+      "started_at": "2026-08-18T12:22:50Z",
+      "status_csv": "upserted",
+      "product_rotation": "no_change_no_new_skus_or_media",
+      "retry_reason": "module_import_path"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-18T12:23:17Z",
+      "finished_at": "2026-08-18T12:23:17Z",
+      "artifact": "output/Week6_Rank6_Marriage_Gifts_final_report.md",
+      "outcome": "blocked_duplicate_intent",
+      "conflicting_post_id": 34833,
+      "conflicting_url": "https://blog.bluestone.com/wedding-gifts-for-girls-2026/"
+    }
+  },
+  "updated_at": "2026-08-18T12:23:28Z",
+  "completed_at": "2026-08-18T12:23:17Z",
+  "last_exit_code": 0,
+  "outcome": "blocked_duplicate_intent",
+  "blocked_at": "2026-08-18T12:23:28Z",
+  "conflicting_url": "https://blog.bluestone.com/wedding-gifts-for-girls-2026/",
+  "conflicting_post_id": 34833
+}

@@ -1,0 +1,95 @@
+Workspace root: final seo generation context
+
+Read these fully before doing task work:
+- HANDOFF.md
+- docs/SOP_ARTICLE_GENERATION.md
+- docs/ARTICLE_WORKFLOW.md
+- docs/WEEK6_CLUSTER_PLAYBOOK.md
+- docs/HIGGSFIELD_IMAGE_GENERATION.md
+- docs/Blog-SEO-AEO-GEO-Checklist-v2.md
+- cursor-rules/new-blogs-only.mdc
+- cursor-rules/carousel-seo-images.mdc
+- cursor-rules/type3-fair-skinned-indians.mdc
+- cursor-rules/image-seo.mdc
+- cursor-rules/product-rotation-captions-education.mdc
+
+Generate Week 6 Rank 6 end-to-end.
+
+Target row:
+- Rank: 6
+- Primary keyword: marriage gifts for girls
+- Volume: 9900
+- KD: 23
+- Score: 2.914
+- Theme: Gift Guides
+- Category fit: Occasion/Gifting
+- Suggested slug: marriage-gifts-for-girls-2026
+- Article engine: gift_guide
+- Category hint: `Gift` 554493424 + `Wedding Jewellery` 554493443
+
+Checkpoint and idempotency:
+- Checkpoint file: `output/checkpoints/week6_rank6.json`
+- Existing step state: {"read_docs": "pending", "verify_higgsfield": "pending", "inspect_row": "pending", "duplicate_check": "pending", "fact_check": "pending", "keyword_map": "pending", "structure_visuals": "pending", "draft": "pending", "product_media": "pending", "publish_wordpress": "pending", "generate_type3": "pending", "patch_type3": "pending", "live_qa": "pending", "update_status": "pending", "final_report": "pending"}
+- Before each major step, read the checkpoint. If that step is already `done`, verify its recorded artifact or external ID and SKIP the side effect.
+- Mark each step `running`, then `done` or `failed` with:
+  `python3 -B scripts/week6_checkpoint.py mark --path output/checkpoints/week6_rank6.json --step <step_name> --status <status> [--detail key=value]`
+- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.
+- WordPress create is exactly-once: reuse a tracked matching post ID; if the slug already exists without a trusted matching ID, stop instead of creating another post.
+- Reuse recorded Higgsfield jobs, downloaded image files, carousel media IDs, and Type 3 media IDs. Do not regenerate or re-upload a completed slot unless the user explicitly requested a replacement.
+- Update the status CSV by rank and product rotation by SKU as upserts, never blind append operations.
+- Do not modify shared helper scripts during an article production run. If a required capability is missing, mark the relevant checkpoint failed and report the blocker.
+
+Mandatory gates:
+- Verify Higgsfield status/balance first using the active working path, MCP balance if available or CLI `higgsfield account status --json`.
+- Do not generate Type 3 images until Higgsfield status succeeds.
+- New WordPress post only. Check duplicate slug before publishing.
+- Week 6 CSV has no supporting keyword or competitor URL column. Do not invent a competitor URL. Use natural supporting phrases and report them as inferred unless backed by supplied data.
+- Build an H2 keyword map. Label every major H2 as primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Do not claim volume/KD for inferred H2s.
+- Use the Week 6 engine rules from docs/WEEK6_CLUSTER_PLAYBOOK.md.
+- If the topic touches GST, hallmarking, purity standards, gold buying dates, measurement charts, BIS rules, or other current facts, use live web search and cite reliable factual sources.
+- Use editorial Type 3 captions that name the product and reflect intent. Do not use robotic captions like `detail: Product`, `look: Product`, or `vibe: Product`.
+- Type 3 hero + lifestyle must obey body_image hard gate. Never generate people shots from packshots alone.
+- If Higgsfield generation or queue errors happen, wait 40 to 50 seconds before retrying once.
+- No prices, no fake stats, no competitor digs.
+- No em dashes, en dashes, or spaced hyphens.
+- Update output/Week6_Gift_Guides_100_status.csv and product_rotation.json when done.
+
+
+Progress display requirement:
+Before starting each major step, print:
+STEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>
+
+After finishing each major step, print:
+STEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>
+
+Use these steps:
+1. Read required docs
+2. Verify Higgsfield status and report credits/plan
+3. Inspect Week 6 target row
+4. Check duplicate slug
+5. Fact-check current sources if the topic is factual/current
+6. Build H2 keyword map
+7. Select article structure and visual concept
+8. Draft full article
+9. Select products/media only where useful for intent
+10. Publish WordPress post
+11. Generate Type 3 images through Higgsfield CLI
+12. Patch images into WordPress
+13. Run live QA
+14. Update status files
+15. Final report
+
+Final report must include:
+- live URL
+- WP post ID
+- article engine used
+- categories used
+- article length in visible words
+- H2 keyword map
+- supporting phrases used and whether inferred or backed
+- competitor URL status
+- factual sources used, if applicable
+- carousel media IDs
+- Type 3 media IDs
+- product SKUs used
+- duplicate/cannibalization note

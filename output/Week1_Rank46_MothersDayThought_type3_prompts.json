@@ -1,0 +1,88 @@
+{
+  "occasion": "mothers-day-thought-2027",
+  "article": "Week1 Rank46",
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max. FLATLAY: 3-4 refs. Credits: 3 images count 1.",
+  "prompt_rules": {
+    "people_slots": "scene first; 2 refs max; count=1",
+    "flatlay": "3-4 refs; count=1",
+    "credits": "Exactly 3 images"
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions",
+    "casting_rule": "Fair-skinned Indians only for hero/lifestyle (any visible people/skin). Light wheatish to fair North Indian / urban Indian complexion. Flatlay with no people is exempt."
+  },
+  "slots": {
+    "hero": {
+      "reference_images": [
+        "https://kinclimg6.bluestone.com/giproduct/BISW1080P32_RAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-116053.png",
+        "https://kinclimg1.bluestone.com/giproduct/BISW1080P32_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-116053.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian mother and daughter. Light wheatish to fair North Indian complexion.\n\nmothers day thought 2027 candid lifestyle mid-shot fair-skinned Indian mother and adult daughter hugging at home soft morning light. The woman wears The Teshvarya Pendant from (@img1,@img2): rose gold statement pendant with gemstone cluster design, small on chest. Bare ears wrists. Never floating packshot. 16:9 full faces safe margins.",
+      "alt": "mothers day thought 2027 hero with The Teshvarya Pendant",
+      "product": {
+        "code": "BISW1080P32",
+        "name": "The Teshvarya Pendant",
+        "pdp": "https://www.bluestone.com/pendants/the-teshvarya-pendant~173771.html"
+      },
+      "caption": "Mothers Day 2027 vibe: The Teshvarya Pendant"
+    },
+    "flatlay": {
+      "reference_images": [
+        "https://kinclimg6.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-62802.png",
+        "https://kinclimg9.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-62802.png",
+        "https://kinclimg6.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-62802.png"
+      ],
+      "prompt": "mothers day thought 2027 top-down flatlay on kitchen table with blank cream card, coffee cup soft blur, soft petals. The Muricelle Bangle from (@img1,@img2,@img3,@img4) at natural scale: yellow gold hinged bangle with triple-band pave diamond front. No people. No readable text.",
+      "alt": "mothers day thought 2027 flatlay with The Muricelle Bangle",
+      "product": {
+        "code": "BISM0003O14",
+        "name": "The Muricelle Bangle",
+        "pdp": "https://www.bluestone.com/bangles/the-muricelle-bangle~1001.html"
+      },
+      "caption": "Mothers Day 2027 vibe: The Muricelle Bangle"
+    },
+    "lifestyle": {
+      "reference_images": [
+        "https://kinclimg3.bluestone.com/giproduct/BISA0255D05_YAA14DIG6PRWHXXXX_ABCD00-PICS-00000-1024-80521.png",
+        "https://kinclimg6.bluestone.com/giproduct/BISA0255D05_YAA14DIG6PRWHXXXX_ABCD00-PICS-00001-1024-80521.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only.\n\nmothers day thought 2027 lifestyle mid-shot soft profile fair-skinned Indian woman near window calm gratitude mood. Wears The Asya Huggie Earrings from (@img1,@img2): yellow gold huggie earrings with diamond accents, only near-side earring. Bare neck wrists. 16:9 full face safe margins.",
+      "alt": "mothers day thought 2027 lifestyle with The Asya Huggie Earrings",
+      "product": {
+        "code": "BISA0255D05",
+        "name": "The Asya Huggie Earrings",
+        "pdp": "https://www.bluestone.com/earrings/the-asya-huggie-earrings~13494.html"
+      },
+      "caption": "Mothers Day 2027 vibe: The Asya Huggie Earrings"
+    }
+  },
+  "output": {
+    "hero": "output/magnific_generated/mothers-day-thought-hero-2027.webp",
+    "flatlay": "output/magnific_generated/mothers-day-thought-flatlay-2027.webp",
+    "lifestyle": "output/magnific_generated/mothers-day-thought-lifestyle-2027.webp"
+  },
+  "insert_h2s_json": "output/Week1_Rank46_MothersDayThought_insert_h2s.json",
+  "product_media_json": "output/Week1_Rank46_MothersDayThought_product_media.json",
+  "output_prefix": "Week1_Rank46_MothersDayThought",
+  "schema_keywords": [
+    "mothers day thought",
+    "nice mothers day quotes",
+    "mothers day wishes quotes"
+  ],
+  "media_titles": {
+    "hero": "mothers day thought 2027 Hero",
+    "flatlay": "mothers day thought 2027 Flatlay",
+    "lifestyle": "mothers day thought 2027 Lifestyle"
+  },
+  "wp_post_id": 30543,
+  "webp_prefix": "mothers-day-thought",
+  "caption_occasion": "Mothers Day",
+  "caption_year": "2027"
+}

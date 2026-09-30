@@ -1,0 +1,132 @@
+{
+  "pipeline": "week6",
+  "rank": 8,
+  "slug": "marriage-gifts-2026",
+  "primary": "marriage gifts",
+  "created_at": "2026-08-19T05:53:48Z",
+  "status": "incomplete",
+  "outcome": "skipped_existing_intent",
+  "conflicting_url": "https://blog.bluestone.com/top-8-marriage-gift-ideas-for-couples-in-2025/",
+  "conflicting_post_id": 15531,
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-19T05:54:06Z",
+      "finished_at": "2026-08-19T05:54:22Z",
+      "files": "11_required_plus_higgsfield_skill"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-19T05:54:27Z",
+      "finished_at": "2026-08-19T05:54:38Z",
+      "credits": 137.37,
+      "plan": "ultimate",
+      "path": "cli"
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-19T05:54:45Z",
+      "finished_at": "2026-08-19T05:54:50Z",
+      "primary": "marriage_gifts",
+      "volume": 9900,
+      "kd": 23,
+      "engine": "gift_guide"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-19T05:54:57Z",
+      "finished_at": "2026-08-19T05:55:56Z",
+      "exact_slug_matches": 0,
+      "reason": "near_duplicate_intent",
+      "conflicting_post_id": 15531,
+      "conflicting_url": "https://blog.bluestone.com/top-8-marriage-gift-ideas-for-couples-in-2025/",
+      "secondary_conflicts": "16162,28131",
+      "evidence": "existing_broad_marriage_and_newlywed_gift_guides"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:03Z",
+      "finished_at": "2026-08-19T05:56:03Z",
+      "applicability": "not_required",
+      "reason": "nonfactual_gift_guide_and_existing_intent"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:10Z",
+      "finished_at": "2026-08-19T05:56:10Z",
+      "outcome": "not_created",
+      "reason": "existing_intent_satisfied"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:17Z",
+      "finished_at": "2026-08-19T05:56:17Z",
+      "outcome": "not_selected",
+      "reason": "existing_intent_satisfied"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:24Z",
+      "finished_at": "2026-08-19T05:56:24Z",
+      "outcome": "not_created",
+      "reason": "existing_intent_satisfied"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:30Z",
+      "finished_at": "2026-08-19T05:56:30Z",
+      "outcome": "no_products_or_media",
+      "reason": "existing_intent_satisfied"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:36Z",
+      "finished_at": "2026-08-19T05:56:36Z",
+      "outcome": "no_post_created",
+      "reason": "duplicate_intent_gate"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:43Z",
+      "finished_at": "2026-08-19T05:56:43Z",
+      "outcome": "no_jobs_submitted",
+      "reason": "duplicate_intent_gate",
+      "credits_spent": 0
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:50Z",
+      "finished_at": "2026-08-19T05:56:50Z",
+      "outcome": "no_patch",
+      "reason": "no_post_or_media"
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-08-19T05:56:56Z",
+      "finished_at": "2026-08-19T05:57:12Z",
+      "outcome": "conflicts_verified_live",
+      "http_statuses": "15531:200,16162:200,28131:200",
+      "new_url": "not_created"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-08-19T05:57:17Z",
+      "finished_at": "2026-08-19T05:57:31Z",
+      "status_csv": "upserted",
+      "product_rotation": "no_change_no_new_skus_or_media",
+      "outcome": "skipped_existing_intent"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-19T05:57:58Z",
+      "finished_at": "2026-08-19T05:58:15Z",
+      "artifact": "output/Week6_Rank8_Marriage_Gifts_final_report.md",
+      "outcome": "skipped_existing_intent",
+      "conflicting_post_id": 15531,
+      "conflicting_url": "https://blog.bluestone.com/top-8-marriage-gift-ideas-for-couples-in-2025/"
+    }
+  },
+  "updated_at": "2026-08-19T05:58:28Z",
+  "completed_at": "2026-08-19T05:58:15Z",
+  "last_exit_code": 0
+}

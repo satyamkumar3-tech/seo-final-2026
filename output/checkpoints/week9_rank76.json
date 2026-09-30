@@ -1,0 +1,149 @@
+{
+  "pipeline": "week9",
+  "rank": 76,
+  "slug": "ruby-earrings-2026",
+  "primary": "ruby earrings",
+  "created_at": "2026-09-26T16:17:32Z",
+  "status": "done",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "finished_at": "2026-09-26T16:18:40Z",
+      "docs_read": 11
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-26T16:18:46Z",
+      "finished_at": "2026-09-26T16:18:53Z",
+      "plan": "ultimate",
+      "credits": 56
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-26T16:18:57Z",
+      "finished_at": "2026-09-26T16:19:25Z",
+      "action": "New",
+      "primary": "ruby earrings",
+      "volume": 2900,
+      "kd": 17.0,
+      "slug": "ruby-earrings-2026"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-26T16:19:30Z",
+      "finished_at": "2026-09-26T16:21:12Z",
+      "exact_slug_matches": 0,
+      "cannibalization": "none",
+      "checked_slug": "ruby-earrings-2026",
+      "result": "pass_no_duplicate"
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "started_at": "2026-09-26T16:21:20Z",
+      "finished_at": "2026-09-26T16:24:44Z",
+      "urls_scraped": 5,
+      "avg_word_count": 1875
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-26T16:24:49Z",
+      "finished_at": "2026-09-26T16:25:01Z",
+      "sources": "BIS,GIA,MoF_GST",
+      "competitor_url": "blank_in_source_row",
+      "sources_checked": "BIS,GIA,IGI,GST_Act"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-26T16:25:08Z",
+      "finished_at": "2026-09-26T16:25:15Z",
+      "mapped_h2_count": 11,
+      "supporting_kw": "ruby stone earrings"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-26T16:25:20Z",
+      "finished_at": "2026-09-26T16:26:32Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "desk-kraft",
+      "hero": "BIIP0279S08 The Aleena Huggie Earrings",
+      "flatlay": "BIPN0880H218 The Nettile Huggie Earrings",
+      "lifestyle": "BIPM0001H28 The Rohal Huggie Earrings"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-26T16:27:49Z",
+      "finished_at": "2026-09-26T16:30:08Z",
+      "word_count": 3648,
+      "h2_count": 13,
+      "faq_count": 7,
+      "draft_json": "output/week9_rank76_draft.json"
+    },
+    "product_media": {
+      "status": "done",
+      "finished_at": "2026-09-26T16:30:12Z",
+      "carousel_count": 6,
+      "media_ids": "40304,40305,40306,40307,40308,40309",
+      "carousel_media": "40209,40063,40211,40210,40199,40207"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-26T16:30:16Z",
+      "finished_at": "2026-09-26T16:31:05Z",
+      "post_id": 40310,
+      "url": "https://blog.bluestone.com/ruby-earrings-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-26T16:31:11Z",
+      "finished_at": "2026-09-26T16:34:04Z",
+      "hero_job": "61557a05-292a-412e-8aa9-323c60c3c758",
+      "flatlay_job": "b9fe4313-5c85-46f4-b298-0dec0472c4ae",
+      "lifestyle_job": "bedeb786-2258-4108-b779-32073ae22f56",
+      "remaining_credits": 48,
+      "hero": "ruby-earrings-hero-2026.webp",
+      "flatlay": "ruby-earrings-flatlay-2026.webp",
+      "lifestyle": "ruby-earrings-lifestyle-2026.webp",
+      "ending_credits": 48
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-26T16:34:14Z",
+      "finished_at": "2026-09-26T16:36:30Z",
+      "hero_id": 40315,
+      "flatlay_id": 40316,
+      "lifestyle_id": 40317,
+      "hero_media": 40315,
+      "flatlay_media": 40316,
+      "lifestyle_media": 40317
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-26T16:36:36Z",
+      "finished_at": "2026-09-26T16:37:19Z",
+      "word_count": 3903,
+      "og_image_verified": true,
+      "carousel_cards": 6,
+      "faqs": 6,
+      "og_image_status": 200
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-26T16:37:27Z",
+      "finished_at": "2026-09-26T16:38:01Z",
+      "excel_row": 77,
+      "status_csv": "updated",
+      "rotation": "updated"
+    },
+    "final_report": {
+      "status": "published",
+      "finished_at": "2026-09-26T16:38:14Z",
+      "post_id": 40310,
+      "url": "https://blog.bluestone.com/ruby-earrings-2026/",
+      "started_at": "2026-09-26T16:38:05Z"
+    }
+  },
+  "updated_at": "2026-09-26T16:38:14Z",
+  "last_exit_code": 0,
+  "outcome": "published",
+  "completed_at": "2026-09-26T16:38:01Z"
+}

@@ -1,0 +1,447 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 7 Rank 54 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 7 and output/Week7_Gift_Guides_PostRank10.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 7 target block overrides those notes.\n\nTarget row:\n- Rank: 54\n- Action: New\n- Primary keyword: evil eye silver bracelet\n- Volume: 8100\n- KD: 18\n- Priority score: 1.774\n- Theme: Design Listicles\n- Category fit: Jewellery Design\n- Suggested slug: evil-eye-silver-bracelet-2026\n- Article engine: design_listicle\n- Category hint: `Jewellery Trends` 554493317 or `Jewellery & Lifestyle` 554493425\n- Supplied supporting keywords: evil eye silver bracelet\n- Supplied competitor URL: http://www.caratlane.com/shaya/urja-evil-eye-bracelet-in-gold-plated-925-silver-at00413-ss0000.html\n- Semrush page: evil eye silver bracelet\n- Source execution note: Week7 intent-unique. intent=evil_eye_bracelet. Distinct from carried 43. Live WP duplicate-intent gate required. No prices.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week7_rank54.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week7_checkpoint.py mark --path output/checkpoints/week7_rank54.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 7 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 7 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week7_Gift_Guides_PostRank10_status.csv, output/product_rotation.json, the Week 7 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 7 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+The duplicate check script is currently querying WordPress REST API for existing slugs and search intent matching `evil eye silver bracelet`. I will process the results once received.
+I will wait for the background task to complete.
+The carousel media conversion and WordPress upload is currently processing. I will continue once it finishes.
+I will wait for the task to finish.
+Waiting for WordPress media upload to complete.
+Waiting for carousel upload task.
+I will wait for the task to complete.
+Higgsfield Type 3 image generation for hero, flatlay, and lifestyle slots has started in the background. I will wait for completion.
+Waiting for Type 3 image generation.
+Waiting for Higgsfield generation.
+Waiting for Higgsfield generation to finish.
+The Higgsfield image generation process is actively running for all three image slots (Hero, Flatlay, and Lifestyle). I am waiting for the process to complete and will proceed with the workflow upon notification.
+I am waiting for the background Higgsfield generation task to complete.
+Waiting for Higgsfield generation to finish.
+Waiting for Higgsfield generation to finish.
+I am waiting for the Higgsfield generation task to complete.
+Waiting for Higgsfield generation.
+I will wait for the task to finish.
+I am waiting for the Higgsfield Type 3 generation task to complete.
+I will wait for the generation task to finish and wake up.
+I will now wait for the background Higgsfield generation task to complete and wake me up.
+The Higgsfield Type 3 image generation process is running for all 3 slots (Hero, Flatlay, Lifestyle). I am waiting for completion.
+The Type 3 image generation script is now downloading the hero image and generating the Flatlay and Lifestyle slots. I will wait for completion.
+Waiting for Type 3 image generation.
+I am waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to finish.
+I am waiting for the Higgsfield Type 3 generation task to complete.
+I will now wait for the background Higgsfield generation task to complete and notify me.
+The Higgsfield image generation process is actively running. I will wait for it to complete.
+I will wait for the task to finish and wake me up.
+Waiting for Higgsfield generation to finish.
+I am waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for the background image generation task.
+Waiting for generation task.
+Waiting for Higgsfield generation to finish.
+I am waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to complete.
+Waiting for task completion.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to finish.
+Waiting for Type 3 image generation.
+Waiting for Higgsfield generation to finish.
+I will wait for the task to finish.
+Waiting for image generation to complete.
+Waiting for Type 3 image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for task-214 to complete.
+Waiting for Higgsfield generation to finish.
+Waiting for image generation to complete.
+Waiting for Higgsfield generation to finish.
+I will wait for the background generation task to finish and wake me up.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+Waiting for Higgsfield generation to complete.
+I am waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for Higgsfield generation to finish.
+Waiting for generation task.
+I will wait for the task to finish.
+Waiting for Type 3 image generation.
+Waiting for generation to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for Type 3 image generation.
+Waiting for image generation to complete.
+Waiting for generation task.
+I am waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for Type 3 image generation.
+Waiting for image generation to complete.
+Waiting for Higgsfield generation to finish.
+Waiting for task-214 to complete.
+Waiting for Type 3 image generation.
+I am waiting for the Higgsfield Type 3 generation task to complete.
+Waiting for Higgsfield generation to complete.
+Waiting for generation task.
+I will wait for the task to finish.
+Waiting for Type 3 image generation.
+Waiting for generation completion.
+Waiting for Higgsfield generation to finish.
+Waiting for image generation to complete.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for generation to complete.
+Waiting for Higgsfield generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+Waiting for Type 3 image generation.
+I will wait for the task to finish.
+Waiting for Higgsfield generation to complete.
+Waiting for image generation.
+Waiting for Higgsfield generation to finish.
+Waiting for generation completion.
+The Type 3 image upload and WordPress post patch script is currently executing. I will wait for completion.
+Waiting for WordPress post patch to finish.
+STEP START: Read required docs | time: 16:43:15 | elapsed: 0s  
+STEP DONE: Read required docs | time: 16:44:17 | step duration: 62s | total elapsed: 62s  
+
+STEP START: Verify Higgsfield status and report credits/plan | time: 16:44:18 | elapsed: 63s  
+STEP DONE: Verify Higgsfield status and report credits/plan | time: 16:44:27 | step duration: 9s | total elapsed: 72s  
+
+STEP START: Inspect the Week 7 target row | time: 16:44:28 | elapsed: 73s  
+STEP DONE: Inspect the Week 7 target row | time: 16:44:52 | step duration: 24s | total elapsed: 97s  
+
+STEP START: Check duplicate slug and search intent | time: 16:44:53 | elapsed: 98s  
+STEP DONE: Check duplicate slug and search intent | time: 16:45:21 | step duration: 28s | total elapsed: 126s  
+
+STEP START: Analyze the supplied competitor URL and fact-check current sources | time: 16:45:22 | elapsed: 127s  
+STEP DONE: Analyze the supplied competitor URL and fact-check current sources | time: 16:45:39 | step duration: 17s | total elapsed: 144s  
+
+STEP START: Filter and map supporting keywords | time: 16:45:40 | elapsed: 145s  
+STEP DONE: Filter and map supporting keywords | time: 16:45:45 | step duration: 5s | total elapsed: 150s  
+
+STEP START: Build the H2 keyword map | time: 16:45:46 | elapsed: 151s  
+STEP DONE: Build the H2 keyword map | time: 16:45:56 | step duration: 10s | total elapsed: 161s  
+
+STEP START: Select products and carousel media | time: 16:45:57 | elapsed: 162s  
+STEP DONE: Select products and carousel media | time: 16:46:17 | step duration: 20s | total elapsed: 182s  
+
+STEP START: Draft the complete article | time: 16:46:18 | elapsed: 183s  
+STEP DONE: Draft the complete article | time: 16:47:16 | step duration: 58s | total elapsed: 241s  
+
+STEP START: Upload carousel media | time: 16:47:17 | elapsed: 242s  
+STEP DONE: Upload carousel media | time: 16:47:53 | step duration: 36s | total elapsed: 278s  
+
+STEP START: Publish the WordPress post | time: 16:47:54 | elapsed: 279s  
+STEP DONE: Publish the WordPress post | time: 16:48:07 | step duration: 13s | total elapsed: 292s  
+
+STEP START: Generate Type 3 images through the Higgsfield CLI | time: 16:48:08 | elapsed: 293s  
+STEP DONE: Generate Type 3 images through the Higgsfield CLI | time: 17:02:44 | step duration: 876s | total elapsed: 1169s  
+
+STEP START: Patch images and social metadata into WordPress | time: 17:02:45 | elapsed: 1170s  
+STEP DONE: Patch images and social metadata into WordPress | time: 17:03:14 | step duration: 29s | total elapsed: 1199s  
+
+STEP START: Run live QA | time: 17:03:15 | elapsed: 1200s  
+STEP DONE: Run live QA | time: 17:04:27 | step duration: 72s | total elapsed: 1272s  
+
+STEP START: Update status files and write the final report | time: 17:04:28 | elapsed: 1273s  
+STEP DONE: Update status files and write the final report | time: 17:04:49 | step duration: 22s | total elapsed: 1294s  
+
+---
+
+# Final Production Report: Week 7 Rank 54
+
+### 1. Live URL & WordPress Post Details
+- **Live Article URL:** [https://blog.bluestone.com/evil-eye-silver-bracelet-2026/](https://blog.bluestone.com/evil-eye-silver-bracelet-2026/)
+- **WordPress Post ID:** `34901`
+- **Article Engine:** `design_listicle`
+- **Author:** Satyam (WordPress User ID `270271337`, byline: *By Satyam, BlueStone Editorial*)
+- **Assigned Categories:**
+  - `Evil Eye Jewellery` (ID: `554493318`)
+  - `bracelet` (ID: `554493421`)
+  - `Jewellery Trends` (ID: `554493317`)
+  - `Jewellery & Lifestyle` (ID: `554493425`)
+
+---
+
+### 2. Article Metrics & SEO Structure
+- **Target Row Rank:** 54
+- **Action:** New
+- **Primary Keyword:** `evil eye silver bracelet`
+- **Monthly Search Volume:** 8,100 | **KD:** 18 | **Priority Score:** 1.774
+- **Visible Article Word Count:** **2,638 words**
+- **Page Title:** `7 Trending Evil Eye Silver Bracelet Designs 2026 | BlueStone`
+- **Meta Description:** `Explore trending evil eye silver bracelet designs for 2026. Discover 925 sterling silver charms, nazariya bands, BIS hallmarking standards, and styling tips.`
+- **H1 Count:** `1` (`7 Trending Evil Eye Silver Bracelet Designs in 2026: Modern Styling, Sterling Silver Purity & Protection Guide`)
+- **H2 Count:** `9` (8 core editorial sections + 1 theme related section)
+- **H3 Count:** `17` (7 design trend breakdowns + 7 visible FAQs + sub-categories)
+- **Formatting Policy:** Zero em dashes (`—`), zero en dashes (`–`), zero spaced hyphens (` - `), and zero price mentions.
+
+---
+
+### 3. Supporting Keywords Mapping & Audit
+| Keyword Phrase | Status | Placement / Mapping Rationale |
+|---|---|---|
+| `evil eye silver bracelet` | **Mapped** | Title tag, Meta Description, H1, first 100 words, Hero alt, body intro, FAQs |
+| `evil eye silver bracelet design` | **Mapped** | Major H2 + 7 design H3 sections |
+| `925 evil eye silver bracelet` | **Mapped** | Purity & BIS Hallmarking H2, materials table, FAQs |
+| `sterling silver evil eye bracelet` | **Mapped** | Technical specs section, care & cleaning guide, FAQ 3 |
+| `evil eye nazariya silver bracelet` | **Mapped** | Design H3 #2 (Dual-Tone Silver Nazariya), styling H2 |
+| `simple evil eye silver bracelet` | **Mapped** | Design H3 #1 (Minimalist Solitaire Chain) |
+| `evil eye silver chain bracelet` | **Mapped** | Design H3 #1 & #5 (Charm Link), wrist stacking section |
+| `evil eye silver bracelet price` | **Rejected** | Prohibited under zero-price content policy |
+| `caratlane evil eye silver bracelet` | **Rejected** | Off-brand competitor entity phrase |
+| `tanishq / giva evil eye silver bracelet` | **Rejected** | Off-brand competitor brand queries |
+| `cheap evil eye silver bracelet` | **Rejected** | Low-quality query conflicting with BlueStone fine jewellery standards |
+
+---
+
+### 4. H2 Keyword & Structure Map
+1. **The Enduring Allure of the Evil Eye Silver Bracelet in 2026** *(Primary-backed & intent-inferred)*
+2. **7 Trending Evil Eye Silver Bracelet Designs Defining Modern Fine Jewellery** *(Primary-backed)*
+   - *H3 1:* Minimalist Solitaire Evil Eye Silver Chain Bracelet
+   - *H3 2:* Dual-Tone Enamel & 925 Sterling Silver Evil Eye Nazariya
+   - *H3 3:* Cubic Zirconia Halo Evil Eye Silver Tennis Bracelet
+   - *H3 4:* Adjustable Slider Evil Eye Silver Bolo Bracelet
+   - *H3 5:* Symbolic Multi-Charm Link Bracelet
+   - *H3 6:* Beaded Silver & Mother-of-Pearl Evil Eye Protective Band
+   - *H3 7:* Modern Rigid Silver Cuff with Inlaid Blue Enamel Eye
+3. **Curated BlueStone Fine Jewellery Picks for Daily Elegance** *(Intent-inferred / Commerce CTA + 6-card Coverflow Carousel)*
+4. **Understanding 925 Sterling Silver Purity, BIS Hallmarking & Craftsmanship** *(Supporting-keyword & fact-backed)*
+5. **Evil Eye Colour Symbolism: Choosing the Right Protection Charm** *(Competitor-structure-backed & intent-inferred)*
+6. **How to Style and Stack Your Evil Eye Silver Bracelet for Any Occasion** *(Competitor-structure-backed & intent-inferred)*
+7. **Caring for Your Sterling Silver Evil Eye Bracelet: Cleaning & Maintenance Tips** *(Competitor-structure-backed)*
+8. **Frequently Asked Questions About Evil Eye Silver Bracelets** *(Supporting-keyword-backed, 7 visible Q&As)*
+
+---
+
+### 5. Competitor Analysis & Factual Sources
+- **Competitor URL:** `http://www.caratlane.com/shaya/urja-evil-eye-bracelet-in-gold-plated-925-silver-at00413-ss0000.html`
+- **Competitor Gaps Identified:** Standard e-commerce PDP lacking design categorization, wrist stacking techniques, colour symbolism breakdown, silver purity verification guidelines, and structured consumer FAQs.
+- **BlueStone Differentiation:** Authoritative 2,638-word design listicle with comparison tables, 7 detailed design breakdowns, cultural nazar context, anti-tarnish rhodium plating details, and an interactive 6-card coverflow carousel.
+- **Authoritative Factual Standards Used:**
+  - Bureau of Indian Standards (BIS) **IS 2112** for silver jewellery hallmarking in India.
+  - 925 Sterling Silver composition (92.5% fine silver, 7.5% strengthening alloy).
+  - 6-digit Hallmark Unique Identification (HUID) code verification via the BIS Care App.
+
+---
+
+### 6. Media Assets & Product Selection
+#### A. Coverflow Carousel (6 Type 2 WebP Cards)
+- **Carousel ID:** `bs-cf-evileyesilverbracelet-2026`
+1. `The Elize Evil Eye Bracelet` (SKU: `BISL0987V71`) | Media ID: `34895` | [PDP Link](https://www.bluestone.com/bracelets/the-elize-evil-eye-bracelet~121012.html)
+2. `The Malocchio Charm Holder Bracelet` (SKU: `BIAV0865V25`) | Media ID: `34896` | [PDP Link](https://www.bluestone.com/bracelets/the-malocchio-charm-holder-bracelet~95653.html)
+3. `The Pervinca Charm Holder Bracelet` (SKU: `BIAV0865V24`) | Media ID: `34897` | [PDP Link](https://www.bluestone.com/bracelets/the-pervinca-charm-holder-bracelet~103133.html)
+4. `The Pear Evil Eye Toggle Bangle` (SKU: `BISL0804O13`) | Media ID: `34898` | [PDP Link](https://www.bluestone.com/bangles/the-pear-evil-eye-toggle-bangle~87037.html)
+5. `The Tapia Chain Bracelet` (SKU: `BIPO0987V31`) | Media ID: `34899` | [PDP Link](https://www.bluestone.com/bracelets/the-tapia-chain-bracelet~115379.html)
+6. `The Kricia Charm Bracelet` (SKU: `BIPO0730V39`) | Media ID: `34900` | [PDP Link](https://www.bluestone.com/bracelets/the-kricia-charm-bracelet~75605.html)
+
+#### B. Type 3 Lifestyle Assets (Generated via Higgsfield CLI)
+- **Hero Image (Featured Media & Social):**
+  - **Media ID:** `34902`
+  - **SKU:** `BISL0987V71` (`The Elize Evil Eye Bracelet`, Female, dims: 15.12mm × 177.8mm)
+  - **Alt:** `evil eye silver bracelet 2026: The Elize Evil Eye Bracelet worn on wrist in modern sunlit lifestyle scene`
+  - **Higgsfield Job ID:** `8206c26f-c50d-4808-aa8d-8c3194f2188f`
+  - **URL:** [https://blog.bluestone.com/wp-content/uploads/2026/08/evil-eye-silver-bracelet-hero-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/evil-eye-silver-bracelet-hero-2026.webp)
+- **Flatlay Image (In-Body with Figcaption):**
+  - **Media ID:** `34903`
+  - **SKU:** `BISL0804O13` (`The Pear Evil Eye Toggle Bangle`, dims: 57.18mm × 9.57mm)
+  - **Setting ID:** `cafe-tray` (wooden & marble tray, ceramic espresso cup, linen napkin)
+  - **Caption:** `Evil eye silver bracelet 2026 vibe: The Pear Evil Eye Toggle Bangle`
+  - **Alt:** `evil eye silver bracelet 2026: The Pear Evil Eye Toggle Bangle flatlay on cafe tray with espresso cup`
+  - **Higgsfield Job ID:** `47e4c6a4-54c5-4b49-b7a8-2779007a3859`
+  - **URL:** [https://blog.bluestone.com/wp-content/uploads/2026/08/evil-eye-silver-bracelet-flatlay-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/evil-eye-silver-bracelet-flatlay-2026.webp)
+- **Lifestyle Image (In-Body with Figcaption):**
+  - **Media ID:** `34904`
+  - **SKU:** `BIAV0865V25` (`The Malocchio Charm Holder Bracelet`, Female, dims: 177.8mm × 6.36mm)
+  - **Caption:** `Evil eye silver bracelet 2026 vibe: The Malocchio Charm Holder Bracelet`
+  - **Alt:** `evil eye silver bracelet 2026: The Malocchio Charm Holder Bracelet close-up lifestyle on wrist`
+  - **Higgsfield Job ID:** `9e4d1b81-9802-4d67-810f-415999a2a4d6`
+  - **URL:** [https://blog.bluestone.com/wp-content/uploads/2026/08/evil-eye-silver-bracelet-lifestyle-2026.webp](https://blog.bluestone.com/wp-content/uploads/2026/08/evil-eye-silver-bracelet-lifestyle-2026.webp)
+
+---
+
+### 7. Higgsfield Account & Credits
+- **Subscription Plan:** `scale`
+- **Account:** `satyam.kumar3@bluestone.com`
+- **Starting Credits:** `7,349.32`
+- **Ending Credits:** `7,341.32`
+- **Total Generations:** 3 slots (Hero, Flatlay, Lifestyle) with 1 queued retry on lifestyle cleanly recovered.
+
+---
+
+### 8. Live QA & Verification Results
+- **Duplicate & Cannibalization Check:** Passed (zero matching slugs prior to publish; distinct design listicle intent).
+- **Public OG Image:** `https://i0.wp.com/blog.bluestone.com/wp-content/uploads/2026/08/evil-eye-silver-bracelet-hero-2026.webp?fit=1400%2C781&ssl=1` (Verified passing).
+- **Canonical URL:** `https://blog.bluestone.com/evil-eye-silver-bracelet-2026/` (Verified passing).
+- **Structured Data / Schema:**
+  - `FAQPage` JSON-LD schema validated with 7 comprehensive questions.
+  - `BlogPosting` JSON-LD schema validated with all 3 Type 3 WebP image URLs.
+- **Internal Linking:** Integrated 5 relevant contextual internal links (`silver-anklet-design-2026`, `second-stud-earrings-2026`, `platinum-couple-rings-2026`, `bangle-size-2026`, and BlueStone bracelets category) + 1 official BIS external reference.
+
+---
+
+### 9. State & Registry Persistence
+- **Checkpoint:** `output/checkpoints/week7_rank54.json` (all 15 steps marked `done`).
+- **Status CSV Updated:** `output/Week7_Gift_Guides_PostRank10_status.csv` (Row for Rank 54 upserted).
+- **Product Rotation JSON Updated:** `output/product_rotation.json` (updated with `cafe-tray` setting, Rank 54 SKUs, and carousel mapping).

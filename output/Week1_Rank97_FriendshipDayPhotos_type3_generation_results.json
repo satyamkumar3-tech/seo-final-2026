@@ -1,0 +1,58 @@
+{
+  "rank": 97,
+  "slug": "friendship-day-photos-2026",
+  "wp_post_id": 31443,
+  "url": "https://blog.bluestone.com/friendship-day-photos-2026/",
+  "higgsfield": {
+    "plan": "ultimate",
+    "balance_before_type3": 511.23,
+    "balance_after_type3": 491.23,
+    "notes": [
+      "Lifestyle first pass had background people and was rejected; one retry used a stricter empty cafe prompt and passed.",
+      "Type 3 people prompts used body_image as @img1 and design as @img2, with PDP dimensions explicitly described as product dimensions, not face-size instructions.",
+      "Filmic prompt language included analog grain, Kodak Portra color science, highlight halation, creamy bokeh, highlight roll-off, editorial grading, natural dynamic range, and filmic contrast."
+    ]
+  },
+  "jobs": {
+    "hero_final": "060d362c-e4f9-4371-9afc-8068557be942",
+    "flatlay_final": "94366153-c3b7-4a60-ae84-72e0130a7d1d",
+    "lifestyle_rejected_background_people": "904de268-333a-4286-b4b4-20b1cb778a14",
+    "lifestyle_final": "02de1f00-2a7a-4ae6-b04c-4a5ca71b4f09"
+  },
+  "reference_media_ids": {
+    "hero_body": "546aa46b-17ee-47e0-93b9-c6a61a428ef3",
+    "hero_design": "1b76b9d5-604b-4fe8-bda9-a09f36424312",
+    "flatlay_primary": "f8139260-5713-4bef-bbac-ca952365da44",
+    "flatlay_angle": "3a81282f-66e8-4669-8761-b673f3b3ba56",
+    "flatlay_back": "65cf4c4e-6b99-4c06-a23e-93f99aad8f68",
+    "lifestyle_body": "62099b26-8232-4909-ac74-23fe8b63a8bd",
+    "lifestyle_design": "ca175a26-5795-44df-bdba-1ccb5d63b114"
+  },
+  "wp_media_ids": {
+    "hero": 31459,
+    "flatlay": 31460,
+    "lifestyle": 31461
+  },
+  "local_files": {
+    "hero": "output/magnific_generated/friendship-day-photos-hero-2026.webp",
+    "flatlay": "output/magnific_generated/friendship-day-photos-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/friendship-day-photos-lifestyle-2026.webp"
+  },
+  "qa": {
+    "hero": "Passed: full face/head, pendant attached at realistic scale, no earrings/bracelets/watch/extra necklace, no readable text.",
+    "flatlay": "Passed: top-down cafe-tray bracelet flatlay, no people/hands/readable text, bracelet visible.",
+    "lifestyle": "Passed after retry: one adult woman only, earrings visible, bare neck/wrists, no readable text."
+  },
+  "verification": {
+    "wp_status": "publish",
+    "featured_media": 31459,
+    "slug_count": 1,
+    "h1_count": 1,
+    "body_image_blocks": 2,
+    "public_page_contains_hero": true,
+    "public_page_contains_flatlay": true,
+    "public_page_contains_lifestyle": true,
+    "captions_present": true,
+    "buy_now_ctas": 6
+  }
+}

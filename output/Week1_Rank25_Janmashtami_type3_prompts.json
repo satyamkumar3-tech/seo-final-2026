@@ -1,0 +1,50 @@
+{
+  "occasion": "janmashtami-2026",
+  "article": "Week1 Rank25 - happy janmashtami",
+  "wp_post_id": 30285,
+  "workflow": "Higgsfield MCP nano_banana_pro. PEOPLE: scene-first + 2 refs max + people_theme_anchor. FLATLAY: product_theme_anchor + 3-4 refs.",
+  "notes": "Valeria Rose Pendant BIHS1145P21: rose gold heart, right pave diamonds, left open triple bands. Muricelle Bangle BISM0003O14: yellow gold hinged bangle, triple-band pave diamond front. Rohal Huggie BIPM0001H28: gold huggie with white pave bar + emerald-cut green gem drop.",
+  "slots": {
+    "hero": {
+      "product": {"code": "BIHS1145P21", "name": "The Valeria Rose Pendant"},
+      "reference_images": [
+        "https://kinclimg2.bluestone.com/giproduct/BIHS1145P21_RAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-119073.png",
+        "https://kinclimg2.bluestone.com/giproduct/BIHS1145P21_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-119073.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion.\n\nJanmashtami 2026 candid lifestyle photograph, mid-shot of people (not a product ad). A fair-skinned Indian woman in a soft yellow festive saree smiles during a home Janmashtami evening with warm aarti lamps and marigold flowers softly blurred behind her. Faces and upper body fill most of the frame. She is physically wearing the rose gold heart pendant from (@img1, @img2) on a fine rose gold cable chain. The Valeria Rose Pendant rests on her upper chest with a soft contact shadow, natural necklace size (about 2 to 3 cm heart, small in frame). Camera focuses on the person; jewellery sharp but NOT the largest object. Design fidelity: rose gold heart, right-side pave diamonds, left-side open triple rose gold bands. ONLY jewellery. Bare ears and wrists. CRITICAL: attached to body, never floating packshot overlay. 16:9, safe margins.",
+      "alt": "happy janmashtami 2026 hero, fair-skinned Indian woman wearing The Valeria Rose Pendant"
+    },
+    "flatlay": {
+      "product": {"code": "BISM0003O14", "name": "The Muricelle Bangle"},
+      "reference_images": [
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00000-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00002-1024-62802.png",
+        "https://kinclimg2.bluestone.com/giproduct/BISM0003O14_YAA18DIG6XXXXXXXX_ABCD00-PICS-00003-1024-62802.png"
+      ],
+      "prompt": "Janmashtami 2026 top-down flatlay. Lived-in wooden desk with blank cream greeting card, fountain pen, marigold petals, peacock feather (no readable text), small brass diya unlit, linen napkin, blank dark phone screen. The identical yellow gold hinged bangle from (@img1, @img2, @img3, @img4) rests on the surface at natural scale: The Muricelle Bangle with polished yellow gold body and triple-band pave diamond front (exact ref fidelity). Warm window light. No people. No floating overlays. No readable text.",
+      "alt": "Janmashtami 2026 wishes flatlay with The Muricelle Bangle"
+    },
+    "lifestyle": {
+      "product": {"code": "BIPM0001H28", "name": "The Rohal Huggie Earrings"},
+      "reference_images": [
+        "https://kinclimg5.bluestone.com/giproduct/BIPM0001H28_YAA18DIG6SYEMXXXX_ABCD00-PICS-00000-1024-79820.png",
+        "https://kinclimg5.bluestone.com/giproduct/BIPM0001H28_YAA18DIG6SYEMXXXX_ABCD00-PICS-00001-1024-79820.png"
+      ],
+      "prompt": "Casting (required): fair-skinned Indian woman only. Light wheatish to fair North Indian / urban Indian complexion.\n\nJanmashtami 2026 lifestyle mid-shot. A fair-skinned Indian woman in soft profile during festive evening. Her ear and cheek in sharp focus as she physically wears the identical gold huggie drop earring from (@img1, @img2) at natural scale with contact shadow: The Rohal Huggie Earrings with white pave diamond bar and rectangular emerald-cut green gem drop. Jewellery sharp but small vs face. ONLY jewellery. Bare neck and wrists. Never floating packshot overlay. Full face and earring in frame. Soft warm aarti light, marigold blur behind.",
+      "alt": "janmashtami captions for instagram 2026 lifestyle with The Rohal Huggie Earrings"
+    }
+  },
+  "higgsfield": {
+    "model": "nano_banana_pro",
+    "people_theme_anchor": "Photoreal candid lifestyle photograph, natural skin texture, no illustration, no CGI. Soft natural window light, warm daylight, realistic soft shadows, gentle shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. People are the primary subject; jewellery is a small worn detail on the body, not a floating product graphic. Entire faces and worn jewellery fully visible, nothing cropped at frame edges.",
+    "product_theme_anchor": "Photoreal product-in-scene jewellery photograph, HD quality, no distortion of jewellery, identical scale and design, physically accurate metal and stone detail, natural textures only, no stylization, no illustration. Soft natural window light, warm daylight, realistic soft shadows, shallow depth of field. Shot on DSLR, 16:9 full frame with safe margins. Entire jewellery fully visible, nothing cropped at frame edges.",
+    "negative_prompt_people": "floating jewellery overlay, giant pendant collage, product cutout over people, packshot composited on lifestyle photo, oversized necklace covering torso, graphic drawings, cutouts, product diagrams, split screen, illustration, CGI look, cartoon, fake diamonds, studio HDR glow, unreal scale, oversized jewellery, distorted hands, extra fingers, extra bracelets, extra rings, extra earrings, product shot on plain background, cropped faces, cut-off heads, readable text, logos, dark skin, deep brown skin, heavily tanned skin",
+    "negative_prompt": "illustration, CGI look, cartoon, fantasy style, over-stylized, plastic glass, fake diamonds, fake gemstones, artificial lighting, studio HDR glow, unreal reflections, blurry jewellery, noise, low detail, AI artifacts, painting, digital art, unreal scale, oversized jewellery, floating overlays, cutouts, product diagrams, readable text, logos, exaggerated proportions"
+  },
+  "output": {
+    "hero": "output/magnific_generated/janmashtami-hero-2026.webp",
+    "flatlay": "output/magnific_generated/janmashtami-flatlay-2026.webp",
+    "lifestyle": "output/magnific_generated/janmashtami-lifestyle-2026.webp"
+  }
+}

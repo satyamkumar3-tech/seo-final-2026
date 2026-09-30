@@ -1,0 +1,141 @@
+Workspace root: final seo generation context
+
+Read these fully before doing task work:
+- HANDOFF.md
+- docs/SOP_ARTICLE_GENERATION.md
+- docs/ARTICLE_WORKFLOW.md
+- docs/WEEK6_CLUSTER_PLAYBOOK.md
+- docs/HIGGSFIELD_IMAGE_GENERATION.md
+- docs/Blog-SEO-AEO-GEO-Checklist-v2.md
+- cursor-rules/new-blogs-only.mdc
+- cursor-rules/carousel-seo-images.mdc
+- cursor-rules/type3-fair-skinned-indians.mdc
+- cursor-rules/image-seo.mdc
+- cursor-rules/product-rotation-captions-education.mdc
+
+Generate Week 9 Rank 14 end-to-end.
+
+Source authority:
+- Use SEO Strategy 2026.xlsx sheet Week 9 and output/Week9_Blog_Queue.csv.
+- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.
+- HANDOFF.md may contain historical Week 6 notes. This Week 9 target block overrides those notes.
+
+Target row:
+- Rank: 14
+- Action: New
+- Primary keyword: gemstone jewellery
+- Volume: 4400
+- KD: 28.0
+- Priority score: 3818.8679
+- Theme: How-to / Education
+- Category fit: Jewellery Education
+- Suggested slug: gemstone-jewellery-2026
+- Article engine: buying_guide
+- Category hint: Use `docs/WEEK6_CLUSTER_PLAYBOOK.md` category mapping
+- Supplied supporting keywords: gemstone jewellery designs | gemstone jewelry
+- Supplied competitor URL: https://www.caratlane.com/jewellery/gemstone.html
+- Semrush page: gemstone jewellery
+- Source execution note: Week9 informational gap. Intent key=topic:gemstone_jewellery; brands=CaratLane,Joyalukkas,Kalyan,MergedJewellery,ScoringCL,Tanishq. Excluded Week1-8 and live BlueStone inventory. Run live WordPress duplicate gate before publishing.
+
+
+Duplicate-intent handling:
+- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.
+
+
+Checkpoint and idempotency:
+- Checkpoint file: output/checkpoints/week9_rank14.json
+- Existing step state: {"read_docs": "pending", "verify_higgsfield": "pending", "inspect_row": "pending", "duplicate_check": "pending", "fact_check": "pending", "keyword_map": "pending", "structure_visuals": "pending", "draft": "pending", "product_media": "pending", "publish_wordpress": "pending", "generate_type3": "pending", "patch_type3": "pending", "live_qa": "pending", "update_status": "pending", "final_report": "pending"}
+- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.
+- Mark each step running, then done or failed with:
+  python3 -B scripts/week9_checkpoint.py mark --path output/checkpoints/week9_rank14.json --step <step_name> --status <status> --detail key=value
+- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.
+- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.
+- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.
+- Update the Week 9 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.
+- Do not modify shared helper scripts during an article production run.
+
+Mandatory content gates:
+- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.
+- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.
+- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.
+- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.
+- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 9 row.
+- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.
+- Preserve full article depth. Parallel image work never permits shorter content.
+- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.
+- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.
+- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.
+- No em dashes, en dashes, or spaced hyphens.
+- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.
+- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.
+- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.
+- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.
+- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->
+<p>Paragraph text...</p>
+<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.
+- SECTION ORDERING: The "Final Thoughts" / "Conclusion" section MUST ALWAYS BE PLACED BEFORE the "Frequently Asked Questions" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.
+- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.
+- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.
+- MANDATORY 3D COVERFLOW CAROUSEL SYNTAX & LIVE MEDIA VERIFICATION: The mid-article 6-product carousel MUST strictly use the official 3D Coverflow snippet from `templates/eid_carousel_6_snippet.html` (matching `mens-black-bracelet-2026`). It MUST be inserted as a SINGLE unified `<!-- wp:html -->` block containing: (1) the full `<style>...</style>` (with `.bs-cf-stage { height: 360px }`, `margin: 1.75rem auto 1.25rem`, `.bs-cf-card { width: min(420px, 78vw) }`, `.bs-cf-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }`, `.bs-cf-card.is-pos-0`, `.bs-cf-dots`, etc. with NO `<p>` tags inside), (2) the `<div class="bs-cf" id="bs-cf-<slug>" data-interval="3200" ...>` container with both nav buttons (`.bs-cf-prev`, `.bs-cf-next`), all 6 product cards with initial position classes (`.bs-cf-card is-pos-0 data-index="0"` ... `is-pos--1 data-index="5"`) and dots, and (3) the vanilla JS `<script>(function(){...})();</script>` (with NO `<p>` wrappers). This 360px stage height, 420px card width, and initial position classes prevent any bottom overlap, clipping, or initial layout shift. Follow immediately with a `<strong>Curated Design Highlights:</strong>` paragraph and bulleted list hyperlinked to each BlueStone PDP. NEVER emit custom unstyled wrappers like `bs-cf-wrap` or `bs-cf-track`, NEVER omit the `<style>` or `<script>` tags, NEVER split style/div/script into multiple separate blocks, and NEVER prepend or wrap lines with single quotes.
+- CAROUSEL MEDIA PRE-FLIGHT VERIFICATION: Every single product image URL in the carousel MUST be verified to return HTTP 200 before inserting into WordPress. Never hallucinate, guess, or manually increment upload filenames without checking WordPress media library. Every card MUST display a valid, working image without any broken image icons or fallback alt text.
+- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the "Final Thoughts" / "Conclusion" section and the "Frequently Asked Questions" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.
+
+Mandatory image gates:
+- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.
+- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.
+- Run no more than two Higgsfield generations simultaneously.
+- On a queue or generation error, wait 45 seconds and retry once.
+- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.
+- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.
+- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.
+- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.
+- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.
+- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.
+- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href="<product_url>">` and set Gutenberg block attribute `"linkDestination":"custom"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class="bs-cf-media" href="<product_url>"><img .../></a>` and `<a class="bs-cf-cta" href="<product_url>">Buy now</a>`.
+
+WordPress and live QA:
+- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.
+- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.
+- LIVE QA CAROUSEL GATE: Verify that the published post DOM contains `.bs-cf`, `.bs-cf-stage`, `.bs-cf-card`, and `.bs-cf-dots` (the official 3D Coverflow snippet), and verify via HTTP HEAD that all 6 carousel card image URLs return HTTP 200. If an unstyled `bs-cf-wrap` format or broken/404 image is detected, immediately replace it with the 3D Coverflow template from `templates/eid_carousel_6_snippet.html` and verify before completing.
+- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.
+- Update output/Week9_Blog_Queue_status.csv, output/product_rotation.json, the Week 9 workbook row when safely supported, and the checkpoint exactly once.
+
+
+Progress display requirement:
+Before each major step, print:
+STEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>
+
+After each major step, print:
+STEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>
+
+Use these steps:
+1. Read required docs
+2. Verify Higgsfield status and report credits/plan
+3. Inspect the Week 9 target row
+4. Check duplicate slug and search intent
+5. Analyze the supplied competitor URL and fact-check current sources
+6. Filter and map supporting keywords
+7. Build the H2 keyword map
+8. Select article structure and visual concept
+9. Draft the complete article
+10. Select products and carousel media
+11. Publish the WordPress post
+12. Generate Type 3 images through the Higgsfield CLI
+13. Patch images and social metadata into WordPress
+14. Run live QA
+15. Update status files and write the final report
+
+Final report must include:
+- live URL and WordPress post ID
+- article engine, author, and categories
+- visible article word count
+- primary keyword and supplied metrics
+- supporting keywords used and rejected, with reasons
+- H2 keyword map
+- competitor URL and analysis summary
+- factual sources used
+- carousel and Type 3 media IDs
+- product SKUs and product rotation
+- Higgsfield plan, starting balance, jobs, retries, and ending balance when available
+- duplicate and cannibalization result
+- live og:image verification

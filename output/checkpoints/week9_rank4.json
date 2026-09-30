@@ -1,0 +1,70 @@
+{
+  "pipeline": "week9",
+  "rank": 4,
+  "slug": "long-necklace-2026",
+  "primary": "long necklace",
+  "created_at": "2026-09-18T06:42:04Z",
+  "status": "done",
+  "steps": {
+    "read_docs": {
+      "status": "done"
+    },
+    "verify_higgsfield": {
+      "status": "done"
+    },
+    "inspect_row": {
+      "status": "done"
+    },
+    "duplicate_check": {
+      "status": "done"
+    },
+    "fact_check": {
+      "status": "done"
+    },
+    "keyword_map": {
+      "status": "done"
+    },
+    "structure_visuals": {
+      "status": "done"
+    },
+    "draft": {
+      "status": "done"
+    },
+    "product_media": {
+      "status": "done"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "detail": [
+        "post_id=39382"
+      ]
+    },
+    "generate_type3": {
+      "status": "done",
+      "detail": [
+        "hero=39386",
+        "flatlay=39387",
+        "lifestyle=39388"
+      ]
+    },
+    "patch_type3": {
+      "status": "done"
+    },
+    "live_qa": {
+      "status": "done",
+      "detail": [
+        "status=200",
+        "dom=valid"
+      ]
+    },
+    "update_status": {
+      "status": "done"
+    },
+    "final_report": {
+      "status": "done"
+    }
+  },
+  "updated_at": "2026-09-18T06:58:00Z",
+  "last_exit_code": 0,
+  "outcome": "published_and_verified"
+}

@@ -1,0 +1,134 @@
+{
+  "pipeline": "week7",
+  "rank": 196,
+  "slug": "big-earrings-2026",
+  "primary": "big earrings",
+  "created_at": "2026-08-30T14:26:30Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-08-30T14:28:23Z",
+      "finished_at": "2026-08-30T14:28:52Z",
+      "note": "Read HANDOFF, SOPs, workflows, cluster playbook, checklist v2, and cursor rules"
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-08-30T14:28:54Z",
+      "finished_at": "2026-08-30T14:28:58Z",
+      "plan": "ultimate",
+      "starting_credits": 977.37
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-08-30T14:29:01Z",
+      "finished_at": "2026-08-30T14:29:11Z",
+      "action": "New",
+      "primary": "big earrings",
+      "volume": 4400,
+      "kd": 18,
+      "slug": "big-earrings-2026",
+      "theme": "Design Listicles"
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-08-30T14:29:15Z",
+      "finished_at": "2026-08-30T14:29:33Z",
+      "result": "clear",
+      "slug": "big-earrings-2026",
+      "conflict": "none"
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-08-30T14:29:36Z",
+      "finished_at": "2026-08-30T14:29:41Z",
+      "competitor": "blank_in_row",
+      "note": "No competitor URL in row; BIS 3-mark rules verified; lobe engineering and styling facts verified"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-08-30T14:29:43Z",
+      "finished_at": "2026-08-30T14:29:49Z",
+      "primary": "big earrings",
+      "supplied_supporting": "big earrings for women",
+      "accepted": "big earrings for women",
+      "rejected": "none"
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-08-30T14:29:52Z",
+      "finished_at": "2026-08-30T14:30:28Z",
+      "engine": "design_listicle",
+      "hero": "The Asya Huggie Earrings (BISA0255D05)",
+      "flatlay": "The Skein Hoop Earrings (BINK0363H03)",
+      "lifestyle": "The Faliha Purse Hoop Earrings (BIJP0686H03)",
+      "flatlay_setting": "cafe-tray"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-08-30T14:30:30Z",
+      "finished_at": "2026-08-30T14:32:23Z",
+      "words": 2816,
+      "primary": "big earrings",
+      "supporting": "big earrings for women",
+      "faqs": 6
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-08-30T14:32:26Z",
+      "finished_at": "2026-08-30T14:32:59Z",
+      "carousel_ids": "36876,36877,36878,36879,36880,36881"
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-08-30T14:33:01Z",
+      "finished_at": "2026-08-30T14:33:44Z",
+      "post_id": 36882,
+      "link": "https://blog.bluestone.com/big-earrings-2026/",
+      "author": 270271337
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-08-30T14:33:46Z",
+      "finished_at": "2026-08-30T14:37:08Z",
+      "hero_job": "8fc2d6e4-6bdb-4b34-82cd-703dd5a0cef7",
+      "flatlay_job": "6aee97ae-fb18-4dac-b64c-8fe21507ef28",
+      "lifestyle_job": "96f40da9-9d44-4c4a-b145-1442448989a7",
+      "ending_credits": 971.37
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-08-30T14:37:11Z",
+      "finished_at": "2026-08-30T14:37:41Z",
+      "hero_id": 36883,
+      "flatlay_id": 36884,
+      "lifestyle_id": 36885,
+      "featured_media": 36883
+    },
+    "live_qa": {
+      "status": "pass",
+      "started_at": "2026-08-30T14:37:46Z",
+      "finished_at": "2026-08-30T14:40:23Z",
+      "url": "https://blog.bluestone.com/big-earrings-2026/",
+      "words": 2816,
+      "og_image": "https://blog.bluestone.com/wp-content/uploads/2026/08/big-earrings-hero-2026.webp"
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-08-30T14:40:27Z",
+      "finished_at": "2026-08-30T14:40:52Z",
+      "status_csv": "updated",
+      "rotation": "updated",
+      "workbook": "updated"
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-08-30T14:40:56Z",
+      "finished_at": "2026-08-30T14:41:05Z",
+      "report": "complete"
+    }
+  },
+  "updated_at": "2026-08-30T14:41:33Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

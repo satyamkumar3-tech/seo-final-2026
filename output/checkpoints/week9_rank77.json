@@ -1,0 +1,136 @@
+{
+  "pipeline": "week9",
+  "rank": 77,
+  "slug": "blue-sapphire-ring-for-men-2026",
+  "primary": "blue sapphire ring for men",
+  "created_at": "2026-09-26T16:37:27Z",
+  "status": "incomplete",
+  "steps": {
+    "read_docs": {
+      "status": "done",
+      "started_at": "2026-09-26T16:38:11Z",
+      "finished_at": "2026-09-26T16:38:55Z",
+      "read_all_11_docs": true
+    },
+    "verify_higgsfield": {
+      "status": "done",
+      "started_at": "2026-09-26T16:38:59Z",
+      "finished_at": "2026-09-26T16:39:08Z",
+      "plan": "ultimate",
+      "credits": 48
+    },
+    "inspect_row": {
+      "status": "done",
+      "started_at": "2026-09-26T16:39:14Z",
+      "finished_at": "2026-09-26T16:39:36Z",
+      "action": "New",
+      "primary": "blue sapphire ring for men",
+      "volume": 2900,
+      "kd": 18.0
+    },
+    "duplicate_check": {
+      "status": "done",
+      "started_at": "2026-09-26T16:39:45Z",
+      "finished_at": "2026-09-26T16:40:10Z",
+      "slug_exists": false,
+      "intent_unique": true
+    },
+    "serp_intelligence": {
+      "status": "done",
+      "started_at": "2026-09-26T16:40:15Z",
+      "finished_at": "2026-09-26T16:43:22Z",
+      "urls_scraped": 5,
+      "avg_word_count": 14524
+    },
+    "fact_check": {
+      "status": "done",
+      "started_at": "2026-09-26T16:43:27Z",
+      "finished_at": "2026-09-26T16:43:33Z",
+      "competitor_url": "blank",
+      "fact_checked": "corundum_mohs_9,bis_huid_hallmark,net_weight_billing,vedic_middle_finger"
+    },
+    "keyword_map": {
+      "status": "done",
+      "started_at": "2026-09-26T16:43:37Z",
+      "finished_at": "2026-09-26T16:43:47Z",
+      "h2_count": 10,
+      "primary_backed": 2,
+      "supporting_backed": 1,
+      "competitor_backed": 4,
+      "intent_inferred": 3
+    },
+    "structure_visuals": {
+      "status": "done",
+      "started_at": "2026-09-26T16:43:52Z",
+      "finished_at": "2026-09-26T16:45:52Z",
+      "engine": "buying_guide",
+      "flatlay_setting": "linen-bedside",
+      "hero_sku": "BISL0851R28",
+      "flatlay_sku": "BISE0932R181",
+      "lifestyle_sku": "BISV0910R24"
+    },
+    "draft": {
+      "status": "done",
+      "started_at": "2026-09-26T16:45:57Z",
+      "finished_at": "2026-09-26T16:48:30Z",
+      "word_count": 3988,
+      "slug": "blue-sapphire-ring-for-men-2026"
+    },
+    "product_media": {
+      "status": "done",
+      "started_at": "2026-09-26T16:46:25Z",
+      "finished_at": "2026-09-26T16:47:18Z",
+      "media_ids": "40319,40320,40321,40322,40323,40324",
+      "verified_count": 6
+    },
+    "publish_wordpress": {
+      "status": "done",
+      "started_at": "2026-09-26T16:48:39Z",
+      "finished_at": "2026-09-26T16:49:16Z",
+      "post_id": 40325,
+      "url": "https://blog.bluestone.com/blue-sapphire-ring-for-men-2026/"
+    },
+    "generate_type3": {
+      "status": "done",
+      "started_at": "2026-09-26T16:49:24Z",
+      "finished_at": "2026-09-26T16:54:36Z",
+      "hero_job": "6d6c9857-0212-444c-ad6e-82bf06ecfe69",
+      "flatlay_job": "51021f52-0331-43f9-9405-9636ef8bafde",
+      "lifestyle_job": "c0946148-085d-4f93-9428-a1bf6eadc23b",
+      "ending_credits": 42
+    },
+    "patch_type3": {
+      "status": "done",
+      "started_at": "2026-09-26T16:54:41Z",
+      "finished_at": "2026-09-26T16:55:37Z",
+      "hero_id": 40326,
+      "flatlay_id": 40327,
+      "lifestyle_id": 40328
+    },
+    "live_qa": {
+      "status": "done",
+      "started_at": "2026-09-26T16:55:44Z",
+      "finished_at": "2026-09-26T16:56:18Z",
+      "visible_words": 2778,
+      "status_code": 200,
+      "qa_passed": true
+    },
+    "update_status": {
+      "status": "done",
+      "started_at": "2026-09-26T16:56:28Z",
+      "finished_at": "2026-09-26T16:57:04Z",
+      "status_csv": "updated",
+      "rotation_json": "updated",
+      "excel_row_updated": 78
+    },
+    "final_report": {
+      "status": "done",
+      "started_at": "2026-09-26T16:57:11Z",
+      "finished_at": "2026-09-26T16:57:19Z"
+    }
+  },
+  "updated_at": "2026-09-26T16:58:09Z",
+  "completed_at": "2026-09-26T16:57:19Z",
+  "last_exit_code": 0,
+  "outcome": "successful_exit_without_published_live_qa"
+}

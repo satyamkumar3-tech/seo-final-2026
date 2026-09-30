@@ -1,0 +1,330 @@
+COMMAND:
+[
+  "/Users/satyamkumar/.local/bin/agy",
+  "--dangerously-skip-permissions",
+  "--print-timeout",
+  "45m",
+  "--output-format",
+  "text",
+  "-p",
+  "Workspace root: final seo generation context\n\nRead these fully before doing task work:\n- HANDOFF.md\n- docs/SOP_ARTICLE_GENERATION.md\n- docs/ARTICLE_WORKFLOW.md\n- docs/WEEK6_CLUSTER_PLAYBOOK.md\n- docs/HIGGSFIELD_IMAGE_GENERATION.md\n- docs/Blog-SEO-AEO-GEO-Checklist-v2.md\n- cursor-rules/new-blogs-only.mdc\n- cursor-rules/carousel-seo-images.mdc\n- cursor-rules/type3-fair-skinned-indians.mdc\n- cursor-rules/image-seo.mdc\n- cursor-rules/product-rotation-captions-education.mdc\n\nGenerate Week 8 Rank 60 end-to-end.\n\nSource authority:\n- Use SEO Strategy 2026.xlsx sheet Week 8 and output/Week8_Blog_Queue.csv.\n- Ignore the Week 6 sheet, Week 6 CSV, Week 6 status file, and Week 6 checkpoints completely.\n- HANDOFF.md may contain historical Week 6 notes. This Week 8 target block overrides those notes.\n\nTarget row:\n- Rank: 60\n- Action: New\n- Primary keyword: rudraksha bracelet for men\n- Volume: 8100\n- KD: 15.0\n- Priority score: 8150.625\n- Theme: How-to / Education\n- Category fit: Jewellery Education\n- Suggested slug: rudraksha-bracelet-for-men-2026\n- Article engine: buying_guide\n- Category hint: `Men's Jewellery` 554493434 where product fit is men's jewellery; otherwise `Gift` 554493424\n- Supplied supporting keywords: rudraksha bracelet for ladies | rudraksha bracelet for women | rudraksha bracelet gold\n- Supplied competitor URL: https://www.caratlane.com/jewellery/om-rudraksh-chain-bracelet-jt02454-1yp9rs.html\n- Semrush page: rudraksha bracelet for men\n- Source execution note: Week8 new topic. Intent key=sig:bracelet_rudraksha; brands=CaratLane,Joyalukkas,MergedJewellery,ScoringCL; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.\n\n\nDuplicate-intent handling:\n- The normal duplicate-intent gate is active. If an existing live page already satisfies the same intent, stop safely without creating a new post.\n\n\nCheckpoint and idempotency:\n- Checkpoint file: output/checkpoints/week8_rank60.json\n- Existing step state: {\"read_docs\": \"pending\", \"verify_higgsfield\": \"pending\", \"inspect_row\": \"pending\", \"duplicate_check\": \"pending\", \"fact_check\": \"pending\", \"keyword_map\": \"pending\", \"structure_visuals\": \"pending\", \"draft\": \"pending\", \"product_media\": \"pending\", \"publish_wordpress\": \"pending\", \"generate_type3\": \"pending\", \"patch_type3\": \"pending\", \"live_qa\": \"pending\", \"update_status\": \"pending\", \"final_report\": \"pending\"}\n- Before each major step, read the checkpoint. If a step is already done, verify its artifact or external ID and skip its side effect.\n- Mark each step running, then done or failed with:\n  python3 -B scripts/week8_checkpoint.py mark --path output/checkpoints/week8_rank60.json --step <step_name> --status <status> --detail key=value\n- Step names in order: read_docs, verify_higgsfield, inspect_row, duplicate_check, fact_check, keyword_map, structure_visuals, draft, product_media, publish_wordpress, generate_type3, patch_type3, live_qa, update_status, final_report.\n- WordPress creation is exactly once. Reuse a trusted matching post ID. If an untracked matching slug exists, stop instead of creating a duplicate.\n- Reuse recorded Higgsfield jobs, local images, carousel media IDs, and Type 3 media IDs. Never regenerate or re-upload a completed slot without explicit user approval.\n- Update the Week 8 status CSV by rank and product rotation by rank or SKU as upserts, never blind appends.\n- Do not modify shared helper scripts during an article production run.\n\nMandatory content gates:\n- Confirm this row is Action New. If it is Done or Skip-Existing, stop without publishing.\n- Run the duplicate slug and search-intent check before research or drafting. Follow the duplicate-intent handling block above.\n- Analyze the supplied competitor URL when present. Use it for intent, structure, omissions, and differentiation. Do not copy wording. If blank, do not invent a competitor URL.\n- Audit every supplied supporting keyword for topical relevance. Map relevant phrases naturally into H2s, body, FAQs, and schema. Explicitly reject unrelated or polluted phrases instead of forcing them into the article.\n- Build an H2 map and label every major H2 primary-backed, supporting-keyword-backed, competitor-structure-backed, or intent-inferred. Only claim metrics supplied by the Week 8 row.\n- Use the appropriate Gift Guide, Buying Guide / Education, or Design Listicle engine from docs/WEEK6_CLUSTER_PLAYBOOK.md. The engine rules are reusable; Week 6 queue data is not.\n- Preserve full article depth. Parallel image work never permits shorter content.\n- For gift guides, include 5 to 6 useful named BlueStone recommendations with distinct reasons and no prices.\n- For buying guides and factual topics, explain calculations and buyer implications clearly. If the topic touches GST, tax, hallmarking, purity, measurements, or regulations, browse current authoritative sources and cite them.\n- No prices, fake statistics, unsupported legal or tax claims, or competitor criticism.\n- No em dashes, en dashes, or spaced hyphens.\n- Author: Always set author to Satyam (ID 270271337) with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`.\n- NO HTML TABLES: Never insert raw HTML `<table>` or `<!-- wp:table -->` blocks into the article body. Convert comparison tables to clean structured bullet lists/cards or generate styled PNG graphics and embed as `wp:image`.\n- Jewellery Material Truth: BlueStone is a fine gold and diamond jeweller (does not sell silver). Never recolor BlueStone SKUs or describe authentic gold/diamond jewellery as silver in image prompts.\n- EXACTLY ONCE CONTENT & NO DUPLICATE SECTIONS: When inserting in-body Type 3 images and schemas during the patch phase, replace image placeholder targets precisely. Never prepend, concatenate, or duplicate the first half of the article. Verify that every H2 heading and section appears exactly once from intro to conclusion.\n- STRICT GUTENBERG BLOCK SYNTAX: Every WordPress block comment MUST be strictly formatted with opening and closing hyphens (e.g., `<!-- /wp:paragraph -->`, `<!-- /wp:list -->`, `<!-- /wp:heading -->`, `<!-- /wp:image -->`). Never emit malformed comments like `<!-- /wp:paragraph>` without `--` or typos like `<!-- /wp:paragraph)` with a parenthesis. Verify that no unclosed `<!--` comments exist in the article body before publishing. Every paragraph block MUST explicitly enclose its text in `<p>...</p>` tags (e.g., `<!-- wp:paragraph -->\n<p>Paragraph text...</p>\n<!-- /wp:paragraph -->`). Never leave raw unwrapped text inside paragraph blocks, which causes distinct paragraphs and numbered items to concatenate into a single wall of text in the browser.\n- SECTION ORDERING: The \"Final Thoughts\" / \"Conclusion\" section MUST ALWAYS BE PLACED BEFORE the \"Frequently Asked Questions\" section. The Frequently Asked Questions section (with 5 to 7 visible Q&As) must be the final content section directly preceding the trailing JSON-LD schema.\n- COMPLETE FAQ & SECTION RENDERING: Every article must include 5 to 7 full FAQ question-and-answer pairs in the visible HTML body directly under the FAQ H2 heading. Live QA must verify that every FAQ question and heading renders in the live browser DOM.\n- CLEAN IMAGE CAPTIONS: Use standard `<figcaption>editorial caption</figcaption>` without extra classes to prevent Gutenberg editor recovery warnings.\n- MANDATORY RELATED GUIDES SECTION (INTERNAL BLOG CLUSTER): Directly between the \"Final Thoughts\" / \"Conclusion\" section and the \"Frequently Asked Questions\" section, you MUST include a dedicated H2 heading (e.g., `More Gold Buying Guides` or `More Jewellery & Buying Guides`) followed by a paragraph containing 4 to 5 natural, contextual hyperlinks pointing to live, related BlueStone blog articles (e.g., `https://blog.bluestone.com/how-to-check-gold-purity-2026/`, `https://blog.bluestone.com/gst-on-gold-jewellery-in-india-what-youre-actually-paying-in-tax/`, `https://blog.bluestone.com/is-buying-gold-jewellery-online-safe-in-india-the-honest-answer/`, or other published cluster blogs) to establish strong topical authority and connect readers to other blog guides.\n\nMandatory image gates:\n- Verify Higgsfield status first using MCP balance when available or higgsfield account status --json. Report plan and credits. Do not start Type 3 generation until it succeeds.\n- Use Higgsfield CLI nano_banana_pro, 16:9, 2k, count 1 per slot.\n- Run no more than two Higgsfield generations simultaneously.\n- On a queue or generation error, wait 45 seconds and retry once.\n- Higgsfield CLI Result URL Rule: When polling or reading Higgsfield job JSON output, extract the image URL directly from `result_url` (e.g., job['result_url'] or job.get('result_url')), not 'results' or 'output'.\n- Hero and lifestyle require image reference 1 as BP-PICS body_image and image reference 2 as the design. If a SKU lacks body_image, select another SKU. Never create people shots from packshots alone.\n- Product dimensions are product_height_mm and product_width_mm only, explicitly described as jewellery dimensions, not face or body measurements.\n- Use analog grain, Kodak Portra color science, highlight halation, creamy bokeh, filmic tonal response, editorial color grading, natural dynamic range, and filmic contrast.\n- No empty phones, screens, cards, boards, placards, readable text, logos, or product overlays. Use physical props.\n- Use WebP, unique keyword-led alt text, editorial product-specific captions, and no duplicate hero in the body.\n- Product Links on Images: Every product image in the article must be wrapped in a direct hyperlink to its BlueStone product page (PDP URL) from `Seo Products - consolidated.csv`. For in-body Type 3 images (flatlay and lifestyle), wrap `<img .../>` in `<a href=\"<product_url>\">` and set Gutenberg block attribute `\"linkDestination\":\"custom\"`. Also link the product name in `<figcaption>` to `<product_url>`. For carousels, ensure every card has `<a class=\"bs-cf-media\" href=\"<product_url>\"><img .../></a>` and `<a class=\"bs-cf-cta\" href=\"<product_url>\">Buy now</a>`.\n\nWordPress and live QA:\n- Publish through the existing WordPress API helpers as a new post only after duplicate checks pass.\n- Set the accepted hero as featured media and Yoast social image. Prefer the API. If this site's Yoast social-image field is not exposed through REST, use the authenticated editor UI only for that field.\n- Verify the public og:image, canonical URL, visible word count, heading counts, carousel cards, buy links, FAQ schema, BlogPosting schema images, internal links, image formats, unique alt text, captions, author, categories, and prohibited dash or price patterns.\n- Update output/Week8_Blog_Queue_status.csv, output/product_rotation.json, the Week 8 workbook row when safely supported, and the checkpoint exactly once.\n\n\nProgress display requirement:\nBefore each major step, print:\nSTEP START: <step name> | time: <current time> | elapsed: <elapsed since run start>\n\nAfter each major step, print:\nSTEP DONE: <step name> | time: <current time> | step duration: <duration> | total elapsed: <elapsed>\n\nUse these steps:\n1. Read required docs\n2. Verify Higgsfield status and report credits/plan\n3. Inspect the Week 8 target row\n4. Check duplicate slug and search intent\n5. Analyze the supplied competitor URL and fact-check current sources\n6. Filter and map supporting keywords\n7. Build the H2 keyword map\n8. Select article structure and visual concept\n9. Draft the complete article\n10. Select products and carousel media\n11. Publish the WordPress post\n12. Generate Type 3 images through the Higgsfield CLI\n13. Patch images and social metadata into WordPress\n14. Run live QA\n15. Update status files and write the final report\n\nFinal report must include:\n- live URL and WordPress post ID\n- article engine, author, and categories\n- visible article word count\n- primary keyword and supplied metrics\n- supporting keywords used and rejected, with reasons\n- H2 keyword map\n- competitor URL and analysis summary\n- factual sources used\n- carousel and Type 3 media IDs\n- product SKUs and product rotation\n- Higgsfield plan, starting balance, jobs, retries, and ending balance when available\n- duplicate and cannibalization result\n- live og:image verification\n"
+]
+
+OUTPUT:
+STEP START: Read required docs | time: 2026-09-04T11:11:20+05:30 | elapsed: 00:00:15
+STEP DONE: Read required docs | time: 2026-09-04T11:11:55+05:30 | step duration: 00:00:35 | total elapsed: 00:00:50
+
+STEP START: Verify Higgsfield status and report credits/plan | time: 2026-09-04T11:11:55+05:30 | elapsed: 00:00:50
+STEP DONE: Verify Higgsfield status and report credits/plan | time: 2026-09-04T11:12:07+05:30 | step duration: 00:00:12 | total elapsed: 00:01:02
+
+Higgsfield Status:
+- Subscription plan: ultimate
+- Credits: 666.87
+- Account: ai.marketing@bluestone.com
+
+STEP START: Inspect the Week 8 target row | time: 2026-09-04T11:12:07+05:30 | elapsed: 00:01:02
+STEP DONE: Inspect the Week 8 target row | time: 2026-09-04T11:13:08+05:30 | step duration: 00:01:01 | total elapsed: 00:02:03
+
+Target Row Details:
+- Rank: 60
+- Action: New
+- Primary keyword: rudraksha bracelet for men
+- Volume: 8100
+- KD: 15.0
+- Priority score: 8150.625
+- Theme: How-to / Education
+- Category fit: Jewellery Education
+- Suggested slug: rudraksha-bracelet-for-men-2026
+- Article engine: buying_guide
+- Category hint: Men's Jewellery 554493434 (or Gift 554493424)
+- Supplied supporting keywords: rudraksha bracelet for ladies | rudraksha bracelet for women | rudraksha bracelet gold
+- Supplied competitor URL: https://www.caratlane.com/jewellery/om-rudraksh-chain-bracelet-jt02454-1yp9rs.html
+- Semrush page: rudraksha bracelet for men
+- Source execution note: Week8 new topic. Intent key=sig:bracelet_rudraksha; brands=CaratLane,Joyalukkas,MergedJewellery,ScoringCL; no Week1-7 keyword match. Run live WordPress duplicate gate before publishing.
+
+STEP START: Check duplicate slug and search intent | time: 2026-09-04T11:13:08+05:30 | elapsed: 00:02:03
+STEP DONE: Check duplicate slug and search intent | time: 2026-09-04T11:13:58+05:30 | step duration: 00:00:50 | total elapsed: 00:02:53
+
+Duplicate Check Summary:
+- Target Slug: `rudraksha-bracelet-for-men-2026`
+- Live Post Matching Target Slug: None found (0 matches on WordPress)
+- Related Post Found: Post 23614 (`a-simple-guide-to-rudraksha-bracelets-meaning-care-and-style`, short 550-word generic lifestyle overview from March 2026, no commercial buying guide, no men's gold focus, BlueStone officially marked Absent for keyword in `Keywords Scoring CL`)
+- Decision: Proceed with fresh targeted post for Rank 60 `rudraksha-bracelet-for-men-2026` as New under Men's Jewellery education.
+
+STEP START: Analyze the supplied competitor URL and fact-check current sources | time: 2026-09-04T11:13:58+05:30 | elapsed: 00:02:53
+STEP DONE: Analyze the supplied competitor URL and fact-check current sources | time: 2026-09-04T11:14:27+05:30 | step duration: 00:00:29 | total elapsed: 00:03:22
+
+Competitor Analysis & Fact-Check Summary:
+- Competitor URL: `https://www.caratlane.com/jewellery/om-rudraksh-chain-bracelet-jt02454-1yp9rs.html`
+- Product Analyzed: Om Rudraksh Chain Bracelet (14K yellow gold, 2.98g, diamonds 0.148ct)
+- Omissions Identified: Zero educational breakdown of Rudraksha mukhi types, no gold purity durability comparison (18K vs 22K), no men's wrist sizing instructions, no organic bead care advice (metal vs botanical seed care), no BIS HUID verification guide, and no ladies/women cross-intent coverage.
+- Authoritative Factual Benchmarks:
+  * GST on Gold Jewellery: 3% unified GST on value and making charges.
+  * BIS Hallmarking: Mandatory 3 symbols (BIS Triangle logo, Karat/Fineness e.g. 18K750 / 22K916, and unique 6-digit alphanumeric HUID code verifiable via BIS Care App).
+  * Bead Purity: 5-Mukhi (Panchamukhi) sacred natural bead representing Lord Shiva (Kalagni Rudra).
+
+STEP START: Filter and map supporting keywords | time: 2026-09-04T11:14:27+05:30 | elapsed: 00:03:22
+STEP DONE: Filter and map supporting keywords | time: 2026-09-04T11:14:42+05:30 | step duration: 00:00:15 | total elapsed: 00:03:37
+
+Keyword Audit & Mapping Summary:
+- Accepted Keywords:
+  1. `rudraksha bracelet gold` (Primary-aligned commercial buying intent: 18K/22K gold settings, caps, chains, and hallmarking)
+  2. `rudraksha bracelet for ladies` (Audience expansion & styling comparison: delicate 4-6mm bead proportions, lightweight gold links)
+  3. `rudraksha bracelet for women` (Gift pairing and unisex spiritual etiquette: left vs right wrist, daily wear, sacred guidelines)
+- Rejected Keywords: None (all 3 supplied supporting keywords are topically relevant)
+
+STEP START: Build the H2 keyword map | time: 2026-09-04T11:14:42+05:30 | elapsed: 00:03:37
+STEP DONE: Build the H2 keyword map & select structure and visuals | time: 2026-09-04T11:15:02+05:30 | step duration: 00:00:20 | total elapsed: 00:03:57
+
+H2 Keyword Map & Classification:
+1. `What Defines an Authentic Rudraksha Bracelet for Men?` (`primary-backed`)
+2. `Rudraksha Bracelet Gold: 18K vs 22K Purity, Gold Caps, and Durability` (`supporting-keyword-backed`: `rudraksha bracelet gold`)
+3. `Popular Design Styles: Sacred Motifs, Chain Links, and Solid Bands` (`competitor-structure-backed`)
+4. `How to Find Your Exact Men's Wrist Size for a Rudraksha Bracelet` (`intent-inferred`)
+5. `Spiritual Rules and Daily Wearing Etiquette for Men` (`intent-inferred`)
+6. `Rudraksha Bracelet for Ladies and Women: Key Differences in Bead Scale and Styling` (`supporting-keyword-backed`: `rudraksha bracelet for ladies`, `rudraksha bracelet for women`)
+7. `Essential Care and Cleaning: Protecting Organic Seeds and Fine Gold` (`intent-inferred`)
+8. `How to Identify Genuine Rudraksha Beads from Synthetic Imitations` (`intent-inferred`)
+9. `Curated BlueStone Gold Jewellery for Men: Spiritual & Modern Wristwear` (`intent-inferred` + brand integration with mid-article carousel)
+10. `Final Thoughts on Investing in a Men's Gold Rudraksha Bracelet` (`intent-inferred` - Conclusion placed strictly BEFORE Related Guides and FAQs)
+11. `More Jewellery & Buying Guides` (`intent-inferred` - Mandatory internal blog cluster section with 5 live links)
+12. `Frequently Asked Questions About Rudraksha Bracelets for Men` (`primary-backed` - 6 visible Q&A pairs)
+
+Visual Concept & Settings:
+- Article Engine: `buying_guide` (How-to / Education)
+- Flatlay Setting: `desk-kraft` (warm wood desk, kraft gift box, blank cream card, linen napkin; rotated from Rank 59 `study-desk`)
+
+STEP START: Draft the complete article | time: 2026-09-04T11:15:02+05:30 | elapsed: 00:03:57
+STEP DONE: Draft the complete article | time: 2026-09-04T11:18:07+05:30 | step duration: 00:03:05 | total elapsed: 00:07:02
+
+Draft Summary:
+- Draft Content File: `output/Week8_Rank60_RudrakshaBraceletForMen_draft_content.html`
+- Visible Word Count: 3,377 words
+- Prohibited Dashes: em=False, en=False, spaced_hyphens=False
+- Content Integrity: No prices, no raw HTML tables, clean Gutenberg syntax, proper section ordering (Conclusion -> Internal Blog Cluster -> Visible FAQs)
+
+STEP START: Select products and carousel media | time: 2026-09-04T11:18:07+05:30 | elapsed: 00:07:02
+I have started the conversion and upload process for the 6 carousel product images for Rank 60 via WordPress REST API. Waiting for completion...
+I am awaiting the completion of task-177 (uploading carousel product media to WordPress).
+STEP DONE: Select products and carousel media | time: 2026-09-04T11:18:55+05:30 | step duration: 00:00:48 | total elapsed: 00:07:50
+
+Product Media Summary:
+- 6 Approved BlueStone Men's Gold Bracelets Converted to WebP (960x535) and Uploaded to WordPress:
+  1. The Fonseca Bracelet For Him (ID 37619)
+  2. The Kilxer Link Bracelet For Him (ID 37620)
+  3. The Volara Bracelet For Him (ID 37621)
+  4. The Bandhan Bracelet For Him (ID 37622)
+  5. The Concatenate Bracelet For Him (ID 37623)
+  6. The Amandine Bracelet For Him (ID 37624)
+- Carousel Snippet Saved: `output/Week8_Rank60_RudrakshaBraceletForMen_carousel_snippet.html`
+- Product Media JSON Saved: `output/Week8_Rank60_RudrakshaBraceletForMen_product_media.json`
+- Full Article With Carousel Saved: `output/Week8_Rank60_RudrakshaBraceletForMen_article_with_carousel.html`
+
+STEP START: Publish the WordPress post | time: 2026-09-04T11:18:55+05:30 | elapsed: 00:07:50
+STEP DONE: Publish the WordPress post | time: 2026-09-04T11:19:21+05:30 | step duration: 00:00:26 | total elapsed: 00:08:16
+
+Publish Summary:
+- Post ID: 37625
+- Live URL: https://blog.bluestone.com/rudraksha-bracelet-for-men-2026/
+- Author ID: 270271337 (Satyam)
+- Categories: [554493434, 554493465, 554493348, 554493421] (Men's Jewellery, Jewellery Problem & Solution, Gold, Bracelet)
+- Yoast SEO: Focus keyphrase, SEO Title, and Meta Description set via REST API.
+
+STEP START: Generate Type 3 images through the Higgsfield CLI | time: 2026-09-04T11:19:21+05:30 | elapsed: 00:08:16
+I have launched the Higgsfield CLI generation task for the Type 3 images (hero, flatlay, and lifestyle) with reference images and casting specifications. The system is executing this in the background; I will continue once generation completes.
+STEP DONE: Generate Type 3 images through the Higgsfield CLI | time: 2026-09-04T11:22:23+05:30 | step duration: 00:03:02 | total elapsed: 00:11:18
+
+Type 3 Generation Summary:
+- Hero:
+  Job ID: `24d01f87-23e6-4fdd-a098-ceb3077d514b`
+  SKU: `BISL1006V249` (The Kilxer Link Bracelet For Him)
+  File: `output/magnific_generated/rudraksha-bracelet-for-men-hero-2026.webp` (1400px wide, WebP q=82)
+- Flatlay:
+  Job ID: `af64d246-bb9f-49af-8987-d057ce4ec4dc`
+  SKU: `BIPO0945V21` (The Amandine Bracelet For Him)
+  File: `output/magnific_generated/rudraksha-bracelet-for-men-flatlay-2026.webp` (1400px wide, WebP q=82)
+- Lifestyle:
+  Job ID: `b456bb30-fa5f-41ab-b2a2-5b93544a3424`
+  SKU: `BISV0910V22` (The Concatenate Bracelet For Him)
+  File: `output/magnific_generated/rudraksha-bracelet-for-men-lifestyle-2026.webp` (1400px wide, WebP q=82)
+
+STEP START: Patch images and social metadata into WordPress | time: 2026-09-04T11:22:23+05:30 | elapsed: 00:11:18
+STEP DONE: Patch images and social metadata into WordPress | time: 2026-09-04T11:23:17+05:30 | step duration: 00:00:54 | total elapsed: 00:12:12
+
+WordPress Patch Summary:
+- Post ID: 37625
+- Featured Media ID: 37626 (Hero: `rudraksha-bracelet-for-men-hero-2026.webp`)
+- Flatlay Media ID: 37627 (In-body: `rudraksha-bracelet-for-men-flatlay-2026.webp` with PDP link & caption)
+- Lifestyle Media ID: 37628 (In-body: `rudraksha-bracelet-for-men-lifestyle-2026.webp` with PDP link & caption)
+- Yoast Social Images: og:image and twitter:image updated with Hero URL and Media ID 37626
+- Schema: FAQPage (6 questions) + BlogPosting (including 3 Type 3 and 6 Carousel WebP images) attached.
+
+STEP START: Run live QA | time: 2026-09-04T11:23:17+05:30 | elapsed: 00:12:12
+STEP DONE: Run live QA | time: 2026-09-04T11:24:10+05:30 | step duration: 00:00:53 | total elapsed: 00:13:05
+
+Live QA Summary:
+- Live URL Verified: https://blog.bluestone.com/rudraksha-bracelet-for-men-2026/?v=1
+- HTTP Status: 200 OK
+- Exact H1: `Rudraksha Bracelet for Men: Gold Purity, Mukhi Guide, Sizing & Care 2026` (Count: 1)
+- Article H2 Count: 12 (All unique, exactly once)
+- Visible Word Count: 4,295 words
+- Canonical URL: `https://blog.bluestone.com/rudraksha-bracelet-for-men-2026/`
+- OG Title: `Rudraksha Bracelet for Men: Gold Purity, Sizing & Buying Guide 2026 | BlueStone`
+- Meta Description: `Discover the complete 2026 buying guide for rudraksha bracelet for men. Learn 18K vs 22K gold settings, 5-mukhi authenticity, wrist sizing, and care tips.`
+- OG Image: Verified live in page head
+- Schemas: FAQPage + BlogPosting JSON-LD schemas parsed and valid
+- Coverflow Carousel: 6 product cards with active Buy Now links to BlueStone PDPs
+- Visible FAQs: 6 complete Q&As rendered
+- Prohibited Dashes: PASSED (zero em dashes, zero en dashes, zero spaced hyphens)
+- Prohibited Prices: PASSED (zero prices found)
+- Prohibited HTML Tables: PASSED (zero HTML tables)
+- Author & Byline: PASSED (`By Satyam, BlueStone Editorial`)
+
+STEP START: Update status files and write the final report | time: 2026-09-04T11:24:10+05:30 | elapsed: 00:13:05
+STEP DONE: Update status files and write the final report | time: 2026-09-04T11:25:05+05:30 | step duration: 00:00:55 | total elapsed: 00:14:00
+
+---
+
+# Production Report: Week 8 Rank 60 End-to-End
+
+### 1. WordPress Publication & URL Details
+* **Live Article URL:** [https://blog.bluestone.com/rudraksha-bracelet-for-men-2026/](https://blog.bluestone.com/rudraksha-bracelet-for-men-2026/)
+* **WordPress Post ID:** `37625`
+* **Slug:** `rudraksha-bracelet-for-men-2026`
+* **Article Engine:** `buying_guide` (How-to / Education)
+* **Author:** Satyam (User ID: `270271337`), with on-page byline `By Satyam, BlueStone Editorial` and BlogPosting schema author `Satyam`
+* **Categories:** 
+  * `Men's Jewellery` (ID: `554493434`)
+  * `Jewellery Problem & Solution` (ID: `554493465`)
+  * `Gold` (ID: `554493348`)
+  * `Bracelet` (ID: `554493421`)
+* **Visible Article Word Count:** 4,295 words
+
+---
+
+### 2. Primary Keyword & Target Metrics
+* **Rank:** 60
+* **Action:** New
+* **Primary Keyword:** `rudraksha bracelet for men`
+* **Search Volume:** 8,100
+* **Keyword Difficulty (KD):** 15.0
+* **Priority Score:** 8,150.625
+* **Theme:** How-to / Education
+* **Category Fit:** Jewellery Education
+
+---
+
+### 3. Supporting Keywords Audit & Mapping
+* **Supplied Supporting Keywords:** `rudraksha bracelet for ladies | rudraksha bracelet for women | rudraksha bracelet gold`
+* **Accepted Keywords:**
+  1. `rudraksha bracelet gold`: Accepted. Formed the foundation of the commercial buying guide section comparing 18K vs 22K gold purity, gold fluted caps, wire loops, clasp durability, and BIS HUID hallmarking.
+  2. `rudraksha bracelet for ladies`: Accepted. Formed the dedicated styling section exploring delicate 4 mm to 6 mm calibrated bead scales, dainty gold links, and female wearability.
+  3. `rudraksha bracelet for women`: Accepted. Integrated into the women's styling and spiritual etiquette section (left wrist Ida Nadi wearing traditions, couple gift sets).
+* **Rejected Keywords:** None. All supplied supporting phrases were directly topically relevant and integrated without pollution.
+
+---
+
+### 4. H2 Keyword Map & Classification
+1. `What Defines an Authentic Rudraksha Bracelet for Men?` (`primary-backed`)
+2. `Rudraksha Bracelet Gold: 18K vs 22K Purity, Gold Caps, and Durability` (`supporting-keyword-backed`: `rudraksha bracelet gold`)
+3. `Popular Design Styles: Sacred Motifs, Chain Links, and Solid Bands` (`competitor-structure-backed`)
+4. `How to Find Your Exact Men's Wrist Size for a Rudraksha Bracelet` (`intent-inferred`)
+5. `Spiritual Rules and Daily Wearing Etiquette for Men` (`intent-inferred`)
+6. `Rudraksha Bracelet for Ladies and Women: Key Differences in Bead Scale and Styling` (`supporting-keyword-backed`: `rudraksha bracelet for ladies`, `rudraksha bracelet for women`)
+7. `Essential Care and Cleaning: Protecting Organic Seeds and Fine Gold` (`intent-inferred`)
+8. `How to Identify Genuine Rudraksha Beads from Synthetic Imitations` (`intent-inferred`)
+9. `Curated BlueStone Gold Jewellery for Men: Spiritual & Modern Wristwear` (`intent-inferred` + brand integration)
+10. `Final Thoughts on Investing in a Men's Gold Rudraksha Bracelet` (`intent-inferred` — Conclusion section placed strictly before Related Guides and FAQs)
+11. `More Jewellery & Buying Guides` (`intent-inferred` — Mandatory internal cluster section with 5 live links)
+12. `Frequently Asked Questions About Rudraksha Bracelets for Men` (`primary-backed` — 6 visible Q&A pairs)
+
+---
+
+### 5. Competitor Analysis Summary
+* **Supplied Competitor URL:** `https://www.caratlane.com/jewellery/om-rudraksh-chain-bracelet-jt02454-1yp9rs.html`
+* **Analysis & Key Omissions Identified:**
+  * CaratLane ranks with a single commercial PDP (Om Rudraksh Chain Bracelet, 14K yellow gold, 2.98g, diamonds 0.148ct) featuring minimal textual depth.
+  * Omissions addressed in BlueStone guide:
+    1. Zero explanation of Panchamukhi (5-mukhi) seed authenticity and Vedic significance.
+    2. No 18K vs 22K gold alloy durability comparison for active daily men's wristwear.
+    3. No three-dimensional wrist measuring protocol accounting for bead depth clearance.
+    4. No dual-material maintenance guide balancing organic seed oiling with fine gold care.
+    5. No BIS 6-digit HUID hallmarking verification or GST transparency.
+    6. No styling guidance for women/ladies seeking refined, smaller bead scales.
+
+---
+
+### 6. Factual Sources & Standards Used
+* **BIS Hallmarking Standards:** Mandated 3 symbols (BIS Triangle logo, Karat/Fineness `18K750` / `22K916`, and laser-etched 6-digit alphanumeric HUID code verifiable on the government BIS Care App).
+* **Indian GST Regulations:** Unified 3% GST on gold value and making charges.
+* **Botanical Authenticity:** Natural *Elaeocarpus ganitrus* seed morphology, cellular density, and Panchamukhi (5-mukhi) specifications.
+
+---
+
+### 7. Product SKUs, Media IDs & Rotation
+
+#### A. Type 2 Carousel Products (6 Cards, WebP 960x535)
+| # | Product Name | SKU | Media ID | Live PDP Link |
+|---|---|---|---|---|
+| 1 | The Fonseca Bracelet For Him | `BIPO0945V20` | `37619` | [View Product](https://www.bluestone.com/bracelets/the-fonseca-bracelet-for-him~116367.html) |
+| 2 | The Kilxer Link Bracelet For Him | `BISL1006V249` | `37620` | [View Product](https://www.bluestone.com/bracelets/the-kilxer-link-bracelet-for-him~163433.html) |
+| 3 | The Volara Bracelet For Him | `BISL1006V287` | `37621` | [View Product](https://www.bluestone.com/bracelets/the-volara-bracelet-for-him~163432.html) |
+| 4 | The Bandhan Bracelet For Him | `BISV0910V12` | `37622` | [View Product](https://www.bluestone.com/bracelets/the-bandhan-bracelet-for-him~112002.html) |
+| 5 | The Concatenate Bracelet For Him | `BISV0910V22` | `37623` | [View Product](https://www.bluestone.com/bracelets/the-concatenate-bracelet-for-him~109542.html) |
+| 6 | The Amandine Bracelet For Him | `BIPO0945V21` | `37624` | [View Product](https://www.bluestone.com/bracelets/the-amandine-bracelet-for-him~111826.html) |
+
+#### B. Type 3 Concept Images (Higgsfield nano_banana_pro, 2K, 16:9, WebP q=82)
+| Slot | Product Name | SKU | Media ID | Setting / Scene | Dimensions |
+|---|---|---|---|---|---|
+| **Hero** | The Kilxer Link Bracelet For Him | `BISL1006V249` | `37626` | Fair-skinned Indian man in ivory silk kurta resting arm on teak console | H=13.2mm, W=12.63mm |
+| **Flatlay** | The Amandine Bracelet For Him | `BIPO0945V21` | `37627` | Setting `desk-kraft`: warm solid oak desk, kraft box, blank cream card, linen napkin | H=177.8mm, W=12.37mm |
+| **Lifestyle** | The Concatenate Bracelet For Him | `BISV0910V22` | `37628` | Fair-skinned Indian man's wrist in motion resting on matte ceramic cup | H=203.2mm, W=8.5mm |
+
+* **Product Rotation Check:** Fully rotated away from Rank 59 (`BIAB0503R03`, `BISL0851R28`, `BISV0910R24`) and Rank 57 Type 3 trio. Flatlay setting rotated to `desk-kraft` (Rank 59 used `study-desk`).
+
+---
+
+### 8. Higgsfield Generation & Credit Ledger
+* **Subscription Plan:** `ultimate`
+* **Starting Credits:** `666.87`
+* **Generations:** Exactly 3 images (`hero`, `flatlay`, `lifestyle`), 1 count each
+* **Job IDs:**
+  * Hero: `24d01f87-23e6-4fdd-a098-ceb3077d514b`
+  * Flatlay: `af64d246-bb9f-49af-8987-d057ce4ec4dc`
+  * Lifestyle: `b456bb30-fa5f-41ab-b2a2-5b93544a3424`
+* **Retries:** 0 (all 3 submitted and succeeded on first pass)
+* **Ending Credits:** `660.87` (6 credits consumed)
+
+---
+
+### 9. Duplicate & Cannibalization Resolution
+* **Live Slug Verification:** `rudraksha-bracelet-for-men-2026` had 0 matches on WordPress before creation.
+* **Pre-existing Post Audit:** Found post `23614` (`a-simple-guide-to-rudraksha-bracelets-meaning-care-and-style`, March 2026, 550 words). That post was a generic introductory overview without commercial intent, no men's gold buying guide, no sizing metrics, and BlueStone was officially recorded as Absent for `rudraksha bracelet for men` in `Keywords Scoring CL`. Post 23614 was naturally integrated as an authoritative internal cluster link in the new guide.
+
+---
+
+### 10. Live QA Verification
+* **HTTP Status:** `200 OK`
+* **Single H1 Verified:** `Rudraksha Bracelet for Men: Gold Purity, Mukhi Guide, Sizing & Care 2026`
+* **Headings:** 12 unique article H2 headings (0 duplicate sections)
+* **Live og:image:** Verified in live DOM (`https://blog.bluestone.com/wp-content/uploads/2026/09/rudraksha-bracelet-for-men-hero-2026.webp` as featured media and social share image)
+* **Canonical Tag:** `https://blog.bluestone.com/rudraksha-bracelet-for-men-2026/`
+* **Coverflow Carousel:** 6 cards with 6 valid Buy Now PDP hyperlinks
+* **Visible FAQs:** 6 full Q&A pairs rendered in the DOM
+* **Internal Cluster Links:** 5 contextual links to BlueStone buying guides
+* **Mandatory Gates:**
+  * Em dashes (`—`): 0
+  * En dashes (`–`): 0
+  * Spaced hyphens (` - `): 0
+  * Price mentions: 0
+  * Raw HTML tables: 0
+  * Gutenberg block comments: 100% strictly formatted and closed
+
+---
+
+### 11. State & Workbook Updates
+* `output/checkpoints/week8_rank60.json`: All 15 steps marked `done`.
+* `output/Week8_Blog_Queue_status.csv`: Upserted row for Rank 60 with Status `Published`.
+* `output/product_rotation.json`: Recorded Rank 60 Type 3 trio, setting `desk-kraft`, and updated recent SKUs.
+* `output/Week8_Blog_Queue.csv`: Upserted Rank 60 with Status `Published` and full execution note.
+* `SEO Strategy 2026.xlsx` (Sheet: `Week 8`): Updated row for Rank 60 with Live URL and Execution Note.
